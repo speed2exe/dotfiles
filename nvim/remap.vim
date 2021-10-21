@@ -47,7 +47,7 @@ nnoremap <END> <CMD>lcd %:p:h<CR>
 nnoremap <leader>x <CMD>split<CR>
 nnoremap <leader>X <CMD>new<CR>
 nnoremap <leader>v <CMD>vsplit<CR>
-nnoremap <leader>V <CMD>vnew<new>
+nnoremap <leader>V <CMD>vnew<CR>
 
 " move between windows
 nnoremap <LEFT> <C-W>h
