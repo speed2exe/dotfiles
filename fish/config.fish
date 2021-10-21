@@ -227,10 +227,10 @@ end
 function d
     if [ (count $argv) -eq 0 ]
         set path (pwd)
-        set argv (find $path | fpr --query $path)
+        set argv (find $path | fpr --query "$path/")
     else if [ -d $argv ]
         set path (get_dir $argv)
-        set argv (find $path | fpr --query $path)
+        set argv (find $path | fpr --query "$path/")
     end
     
     if [ $argv ] 
