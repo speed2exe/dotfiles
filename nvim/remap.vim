@@ -1,0 +1,136 @@
+let mapleader = " "
+
+" Move next line up
+nnoremap J mzJ`z
+
+" Move to end of sentence
+nnoremap ( k{<SPACE>^
+nnoremap ) j}<BS>$
+
+" Easy Access Shell Commands
+nnoremap <ESC> :!
+nnoremap <leader><leader> :.!
+vnoremap <CR> y:!<C-R>"<CR>
+vnoremap <leader><leader> y:.!<C-R>"<CR>
+
+" Copy and Paste
+vnoremap <leader>c :w! ~/.clipboard<CR>
+nnoremap <leader>p :r ~/.clipboard<CR>
+
+" move blocks
+vnoremap <C-J> :m '>+1<CR>gv
+vnoremap <C-K> :m '<-2<CR>gv
+nnoremap <C-J> :m .+1<CR>
+nnoremap <C-K> :m .-2<CR>
+
+" toggle search hightlight
+nnoremap <expr> <leader>h (&hls && v:hlsearch ? ':set nohlsearch' : ':set hlsearch')."\n"
+
+" Indent
+nnoremap <leader>i gg=G<C-O>
+
+" write, quit, reload from disk
+nnoremap <leader>w <CMD>w!<CR>
+nnoremap <leader>q <CMD>q!<CR>
+nnoremap <leader>wq <CMD>wq!<CR>
+nnoremap <leader>e <CMD>e!<CR>
+
+" toggle jump back and forth
+nnoremap <PAGEUP> <C-O>
+nnoremap <PAGEDOWN> <C-I>
+
+" Previous Directory
+nnoremap <HOME> <CMD>cd ..<CR>
+nnoremap <END> <CMD>lcd %:p:h<CR>
+
+" new windows
+nnoremap <leader>x <CMD>split<CR>
+nnoremap <leader>X <CMD>new<CR>
+nnoremap <leader>v <CMD>vsplit<CR>
+nnoremap <leader>V <CMD>vnew<new>
+
+" move between windows
+nnoremap <LEFT> <C-W>h
+nnoremap <DOWN> <C-W>j
+nnoremap <UP> <C-W>k
+nnoremap <RIGHT> <C-W>l
+
+" windows layout
+nnoremap <S-LEFT> <C-W>H
+nnoremap <S-DOWN> <C-W>J
+nnoremap <S-UP> <C-W>K
+nnoremap <S-RIGHT> <C-W>L
+
+" resize windows
+nnoremap + <CMD>vertical resize +10<CR>
+nnoremap - <CMD>vertical resize -10<CR>
+nnoremap \| <CMD>resize +10<CR>
+nnoremap _ <CMD>resize -10<CR>
+
+" search visually selected text
+vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+" Quick fix list
+" " Global List
+nnoremap [[ <CMD>cprev<CR>
+nnoremap ]] <CMD>cnext<CR>
+" " Local List
+nnoremap [( <CMD>lprev<CR>
+nnoremap ]) <CMD>lnext<CR>
+
+" Telescope
+nnoremap <leader>t :Telescope 
+nnoremap <leader>tf <CMD>Telescope find_files<CR>
+nnoremap <leader>tl <CMD>Telescope live_grep<CR>
+nnoremap <leader>tg <CMD>Telescope grep_string<CR>
+nnoremap <leader>tb <CMD>Telescope buffers<CR>
+nnoremap <leader>ta <CMD>Telescope lsp_code_actions<CR>
+vnoremap <leader>ta <CMD>Telescope lsp_range_code_actions<CR>
+vnoremap <leader>to <CMD>Telescope lsp_document_diagnostics<CR>
+vnoremap <leader>tw <CMD>Telescope lsp_workspace_diagnostics<CR>
+nnoremap <leader>tt <CMD>Telescope lsp_type_definitions<CR>
+nnoremap <leader>td <CMD>Telescope lsp_definitions<CR>
+nnoremap <leader>ti <CMD>Telescope lsp_implementations<CR>
+nnoremap <leader>tr <CMD>Telescope lsp_references<CR>
+
+" CHADTree
+" nnoremap <leader>f :CHADopen 
+" nnoremap <leader>ft <CMD>CHADopen<CR>
+" nnoremap <leader>ff <CMD>CHADopen --always-focus<CR>
+" nnoremap <leader>fn <CMD>CHADopen --nofocus<CR>
+" nnoremap <leader>fv <CMD>CHADopen --version-ctl<CR>
+
+" NerdTree
+" nnoremap <leader>n :nerdtree
+" nnoremap <leader>nt <CMD>NERDTreeToggleVCS<CR>
+" nnoremap <leader>nf <CMD>NERDTreeFind<CR>
+" nnoremap <leader>nc <CMD>NERDTreeCWD<CR>
+
+" NvimTree
+nnoremap <leader>n :nvimtree
+nnoremap <leader>nt <CMD>NvimTreeToggle<CR>
+nnoremap <leader>nf <CMD>NvimTreeFindFile<CR>
+nnoremap <leader>nc <CMD>NvimTreeClose<CR>
+nnoremap <leader>nr <CMD>NvimTreeRefresh<CR>
+
+" Lspsaga
+nnoremap <leader>s :Lspsaga 
+nnoremap <leader>sd <CMD>Lspsaga preview_definition<CR>
+nnoremap <leader>sf <CMD>Lspsaga lsp_finder<CR>
+nnoremap <leader>sr <CMD>Lspsaga rename<CR>
+nnoremap <leader>si <CMD>Lspsaga implement<CR>
+nnoremap <leader>sa <CMD>Lspsaga code_action<CR>
+nnoremap <leader>sh <CMD>Lspsaga hover_doc<CR>
+nnoremap <leader>ss <CMD>Lspsaga signature_help<CR>
+nnoremap <leader>sj <CMD>Lspsaga diagnostic_jump_next<CR>
+nnoremap <leader>sk <CMD>Lspsaga diagnostic_jump_prev<CR>
+
+" barbar.nvim
+nnoremap <S-TAB> <CMD>BufferPrevious<CR>
+nnoremap <TAB> <CMD>BufferNext<CR>
+nnoremap <C-a> <CMD>BufferMovePrevious<CR>
+nnoremap <C-o> <CMD>BufferMoveNext<CR>
+nnoremap <leader><TAB> <CMD>BufferPick<CR>
+nnoremap <leader>b :Buffer
+nnoremap <leader>bp <CMD>BufferPin<CR>
+nnoremap <leader>bc <CMD>BufferClose<CR>
