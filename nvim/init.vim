@@ -50,7 +50,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'bluz71/vim-moonfly-colors'
 
 " lualine
-Plug 'hoob3rt/lualine.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 
 " dev icons
 Plug 'kyazdani42/nvim-web-devicons'
@@ -73,8 +73,13 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
 
+" Lspsaga
+Plug 'glepnir/lspsaga.nvim'
+" Plug 'tami5/lspsaga.nvim'
+
 " TreeSitter stuff
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
 
 " nvim-tree
 Plug 'kyazdani42/nvim-tree.lua'
@@ -111,10 +116,12 @@ require('nvim-tree_conf')
 require('barbar_conf')
 require('lualine_conf')
 require('lspinstall_conf')
+require('lspsaga_conf')
 require('lspkind_conf')
 require('nvim-cmp_conf')
 require('telescope_conf')
 require('treesitter_conf')
+require('treesitter-refactor_conf')
 require('neoscroll_conf')
 EOF
 
