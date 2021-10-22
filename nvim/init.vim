@@ -77,7 +77,6 @@ Plug 'glepnir/lspsaga.nvim'
 
 " TreeSitter stuff
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-refactor'
 
 " nvim-tree
 Plug 'kyazdani42/nvim-tree.lua'
