@@ -72,8 +72,6 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " LSP stuff
 Plug 'neovim/nvim-lspconfig'
 Plug 'kabouzeid/nvim-lspinstall'
-Plug 'nvim-lua/lsp-status.nvim'
-Plug 'glepnir/lspsaga.nvim'
 
 " TreeSitter stuff
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
