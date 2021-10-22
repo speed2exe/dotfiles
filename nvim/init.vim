@@ -29,7 +29,7 @@ set signcolumn=yes
 set colorcolumn=80
 set encoding=UTF-8
 set updatetime=1000
-set completeopt=menu,menuone,preview,noselect
+set completeopt=menu,menuone,preview,noinsert,noselect
 set splitbelow
 set splitright
 set wildmenu
@@ -86,10 +86,11 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'onsails/lspkind-nvim'
 
 " nvim-cmp
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
 " For vsnip user.
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
