@@ -1,23 +1,9 @@
 -- Setup nvim-cmp.
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+lspkind.init()
 
 cmp.setup({
-    completion = {
-        completeopt = 'menu,menuone,noinsert',
-    },
-    snippet = {
-        expand = function(args)
-            -- For `vsnip` user.
-            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` user.
-
-            -- For `luasnip` user.
-            -- require('luasnip').lsp_expand(args.body)
-
-            -- For `ultisnips` user.
-            -- vim.fn["UltiSnips#Anon"](args.body)
-        end,
-    },
     mapping = {
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
@@ -27,36 +13,36 @@ cmp.setup({
         ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
         ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
     },
-    experimental = {
-        ghost_text = true,
-    },
     sources = {
         { name = 'nvim_lsp' },
         { name = 'treesitter' },
+        { name = 'nvim_lua' },
         { name = 'path' },
-        { name = 'spell' },
-        {
-            name = 'buffer',
-            opts = {
-                get_bufnrs = function()
-                    return vim.api.nvim_list_bufs()
-                end,
+        { name = 'luasnip' },
+        { name = 'buffer'},
+    },
+    snippet = {
+        expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+        end,
+    },
+    formatting = {
+        format = lspkind.cmp_format {
+            with_text = true,
+            menu = {
+                buffer = "[buf]",
+                nvim_lsp = "[LSP]",
+                nvim_lua = "[api]",
+                path = "[path]",
+                luasnip = "[snip]",
+                treesitter = "[TS]",
             },
         },
-
-        -- For vsnip user.
-        { name = 'vsnip' },
-
-        -- For luasnip user.
-        -- { name = 'luasnip' },
-
-        -- For ultisnips user.
-        -- { name = 'ultisnips' },
-
-        formatting = {
-            format = lspkind.cmp_format(),
-        },
     },
+    experimental = {
+        native_menu = false,
+        ghost_text = true,
+    }
 })
 
 -- Setup lspconfig.
