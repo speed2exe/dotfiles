@@ -36,6 +36,9 @@ if status is-interactive
     neofetch
 end
 
+# gcloud
+alias gcloud /root/google-cloud-sdk/bin/gcloud
+
 # Go
 fish_add_path /usr/local/go/bin
 set GOPATH $HOME/go
