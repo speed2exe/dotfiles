@@ -1,15 +1,8 @@
 {
+    "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": 
     [
-        {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+c"
-        },
         {
             "command": "unbound",
             "keys": "alt+f4"
@@ -17,10 +10,6 @@
         {
             "command": "unbound",
             "keys": "ctrl+shift+w"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+shift+c"
         },
         {
             "command": "unbound",
@@ -44,23 +33,11 @@
         },
         {
             "command": "unbound",
-            "keys": "ctrl+shift+f"
-        },
-        {
-            "command": "unbound",
             "keys": "ctrl+numpad_plus"
         },
         {
             "command": "unbound",
             "keys": "ctrl+alt+left"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+shift+t"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+shift+n"
         },
         {
             "command": "unbound",
@@ -76,15 +53,7 @@
         },
         {
             "command": "unbound",
-            "keys": ""
-        },
-        {
-            "command": "unbound",
             "keys": "shift+insert"
-        },
-        {
-            "command": "unbound",
-            "keys": "ctrl+shift+v"
         },
         {
             "command": "unbound",
@@ -128,7 +97,43 @@
         },
         {
             "command": "unbound",
+            "keys": "alt+shift+d"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+w"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+f"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+p"
+        },
+        {
+            "command": "unbound",
             "keys": "alt+c"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+f"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+minus"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+plus"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+t"
         },
         {
             "command": "unbound",
@@ -136,11 +141,111 @@
         },
         {
             "command": "unbound",
-            "keys": "alt+shift+d"
+            "keys": "ctrl+v"
         },
         {
             "command": "unbound",
-            "keys": "alt+f"
+            "keys": ""
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+v"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+numpad0"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+x"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+down"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+left"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+right"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+up"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+c"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+i"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+j"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+v"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+t"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+1"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+2"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+3"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+4"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+5"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+6"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+7"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+8"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+9"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+n"
+        },
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+alt+c"
         },
         {
             "command": 
@@ -148,26 +253,26 @@
                 "action": "adjustFontSize",
                 "delta": -1
             },
-            "keys": "alt+minus"
+            "keys": "ctrl+alt+i"
+        },
+        {
+            "command": "paste",
+            "keys": "ctrl+alt+v"
         },
         {
             "command": 
             {
                 "action": "splitPane",
-                "split": "horizontal"
+                "split": "right"
             },
-            "keys": "alt+x"
+            "keys": "ctrl+alt+o"
         },
         {
             "command": 
             {
                 "action": "newTab"
             },
-            "keys": "alt+t"
-        },
-        {
-            "command": "paste",
-            "keys": "ctrl+v"
+            "keys": "ctrl+alt+t"
         },
         {
             "command": "toggleFullscreen",
@@ -178,10 +283,33 @@
             {
                 "action": "newWindow"
             },
-            "keys": "alt+w"
+            "keys": "ctrl+alt+n"
         },
         {
             "command": "closeWindow"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab",
+                "index": 1
+            },
+            "keys": "ctrl+2"
+        },
+        {
+            "command": 
+            {
+                "action": "scrollUp"
+            },
+            "keys": "alt+k"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "keys": "ctrl+alt+e"
         },
         {
             "command": 
@@ -193,7 +321,7 @@
         },
         {
             "command": "find",
-            "keys": "ctrl+f"
+            "keys": "ctrl+alt+f"
         },
         {
             "command": 
@@ -201,16 +329,31 @@
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
-            },
-            "keys": "alt+v"
+            }
+        },
+        {
+            "command": "scrollUpPage",
+            "keys": "alt+u"
         },
         {
             "command": "closePane",
             "keys": "ctrl+w"
         },
         {
-            "command": "scrollUpPage",
-            "keys": "alt+u"
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "right"
+            },
+            "keys": "alt+shift+o"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "left"
+            },
+            "keys": "ctrl+alt+a"
         },
         {
             "command": 
@@ -218,7 +361,7 @@
                 "action": "adjustFontSize",
                 "delta": 1
             },
-            "keys": "alt+shift+plus"
+            "keys": "ctrl+alt+j"
         },
         {
             "command": "duplicateTab"
@@ -228,7 +371,11 @@
             {
                 "action": "commandPalette"
             },
-            "keys": "alt+p"
+            "keys": "ctrl+shift+enter"
+        },
+        {
+            "command": "scrollToBottom",
+            "keys": "alt+shift+g"
         },
         {
             "command": 
@@ -238,12 +385,16 @@
             "keys": "alt+j"
         },
         {
-            "command": "scrollToBottom",
-            "keys": "alt+shift+g"
-        },
-        {
             "command": "scrollDownPage",
             "keys": "alt+d"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "up"
+            },
+            "keys": "ctrl+alt+u"
         },
         {
             "command": "scrollToTop",
@@ -252,20 +403,101 @@
         {
             "command": 
             {
-                "action": "scrollUp"
+                "action": "resizePane",
+                "direction": "left"
             },
-            "keys": "alt+k"
+            "keys": "alt+shift+a"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "down"
+            },
+            "keys": "alt+shift+e"
+        },
+        {
+            "command": 
+            {
+                "action": "resizePane",
+                "direction": "up"
+            },
+            "keys": "alt+shift+u"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab",
+                "index": 0
+            },
+            "keys": "ctrl+1"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab",
+                "index": 2
+            },
+            "keys": "ctrl+3"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab",
+                "index": 3
+            },
+            "keys": "ctrl+4"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab",
+                "index": 4
+            },
+            "keys": "ctrl+5"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab",
+                "index": 5
+            },
+            "keys": "ctrl+6"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab",
+                "index": 6
+            },
+            "keys": "ctrl+7"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab",
+                "index": 7
+            },
+            "keys": "ctrl+8"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab",
+                "index": 8
+            },
+            "keys": "ctrl+9"
         }
     ],
     "copyFormatting": "none",
     "copyOnSelect": true,
-    "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+    "defaultProfile": "{776d54a6-0adb-468e-bed2-a472f4a66e6b}",
+    "firstWindowPreference": "persistedWindowLayout",
     "focusFollowMouse": true,
     "profiles": 
     {
         "defaults": 
         {
-            "acrylicOpacity": 0.0,
             "antialiasingMode": "cleartype",
             "bellStyle": "audible",
             "colorScheme": "MoonFly",
@@ -275,6 +507,7 @@
                 "face": "Iosevka Term SS14"
             },
             "intenseTextStyle": "none",
+            "opacity": 0,
             "padding": "0",
             "scrollbarState": "hidden",
             "useAcrylic": true
@@ -304,6 +537,29 @@
                 "hidden": false,
                 "name": "Azure Cloud Shell",
                 "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+                "hidden": false,
+                "name": "Ubuntu-20.04",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "altGrAliasing": true,
+                "closeOnExit": "graceful",
+                "commandline": "powershell.exe -Command  \"docker start dev; docker exec -it dev /bin/fish\"",
+                "cursorShape": "bar",
+                "font": 
+                {
+                    "size": 12
+                },
+                "guid": "{776d54a6-0adb-468e-bed2-a472f4a66e6b}",
+                "hidden": false,
+                "historySize": 9001,
+                "icon": "ms-appx:///ProfileIcons/{61c54bbd-c2c6-5271-96e7-009a87ff44bf}.png",
+                "name": "PowerShell -> Arch(docker)",
+                "snapOnInput": true,
+                "startingDirectory": "%USERPROFILE%"
             }
         ]
     },
