@@ -45,11 +45,6 @@ fish_add_path $GOPATH/bin
 # Ruby
 fish_add_path "/root/.local/share/gem/ruby/3.0.0/bin"
 
-# nvim
-alias v "nvim"
-alias vi "nvim"
-alias vim "nvim"
-
 # jobs 
 alias j "jobs"
 
@@ -186,7 +181,7 @@ end
 
 # History
 function h
-    set cmd (history | fr --no-sort) && $cmd
+    set cmd (history | fr --no-sort) && commandline $cmd
 end
 
 # create file and make path if not available
@@ -295,4 +290,5 @@ end
 function learn
   printf "$argv" | sed "s/ /\//g" | xargs -I {} curl cht.sh/{} 
 end
+
 
