@@ -18,12 +18,15 @@ cmp.setup({
         { name = 'treesitter' },
         { name = 'nvim_lua' },
         { name = 'path' },
-        { name = 'luasnip' },
+        { name = 'vsnip' },
         { name = 'buffer'},
     },
     snippet = {
         expand = function(args)
-            require("luasnip").lsp_expand(args.body)
+            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+            -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
         end,
     },
     formatting = {
@@ -34,7 +37,7 @@ cmp.setup({
                 nvim_lsp = "[LSP]",
                 nvim_lua = "[api]",
                 path = "[path]",
-                luasnip = "[snip]",
+                vsnip = "[snip]",
                 treesitter = "[TS]",
             },
         },
