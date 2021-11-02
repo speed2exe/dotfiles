@@ -93,7 +93,7 @@ function show
 end
 
 # https://github.com/BurntSushi/ripgrep
-alias grep "echo Use 'rg' instead"
+alias grep "rg"
 
 # Pipe to this command for no color
 alias nc "sed 's/\x1b\[[0-9;]*[a-zA-Z]//g'"
