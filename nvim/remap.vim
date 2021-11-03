@@ -1,5 +1,8 @@
 let mapleader = " "
 
+" Always go to file with line number if possible
+nnoremap gf gF
+
 " Move next line up
 nnoremap J mzJ`z
 
@@ -12,6 +15,11 @@ nnoremap <ESC> :!
 nnoremap <leader><leader> :.!
 vnoremap <CR> y:!<C-R>"<CR>
 vnoremap <leader><leader> y:.!<C-R>"<CR>
+
+" copy current file path and line number to ~/marks/files.txt
+nnoremap <leader>m <CMD>redir @m<CR><CMD>echo expand('%:p') . ':' . line(".")<CR><CMD>redir END<CR>:!m<C-R>m<CR><CR>
+" quick access to marked files
+nnoremap <leader>g <CMD>e ~/marks/files.txt<CR>
 
 " Copy and Paste
 vnoremap <leader>c :w! ~/.clipboard<CR>
