@@ -290,6 +290,11 @@ function m
         echo (pwd) >> ~/marks/directories.txt
     else
         for arg in $argv
+            if test -z $arg
+                continue
+            end
+            set arg (string trim $arg)
+
             set path (realpath $arg)
             if test -d $path
                 echo $path >> ~/marks/directories.txt
@@ -308,14 +313,18 @@ function m
     end
 end
 
+function md
+    nvim ~/marks/directories.txt
+end
+
+function mf
+    nvim ~/marks/files.txt
+end
+
 # find directory
 function gd
     commandline (cat ~/marks/directories.txt | fpr)
     commandline -i "/"
-end
-
-function gde
-    nvim ~/marks/directories.txt
 end
 
 # find files
@@ -327,10 +336,6 @@ function gf
     else
         commandline "nvim +$splitted[2] $splitted[1]"
     end
-end
-
-function gfe
-    nvim ~/marks/files.txt
 end
 
 # warning/todo: works very slow if there are many contents, and still loading after it's done looking
@@ -355,5 +360,3 @@ end
 function learn
   printf "$argv" | sed "s/ /\//g" | xargs -I {} curl cht.sh/{} 
 end
-
-
