@@ -276,27 +276,42 @@ function m
     if [ (count $argv) -eq 0 ]
         echo (pwd) >> ~/marks/directories.txt
     else
-        set path (realpath $argv)
-        if test -d $path
-            echo $path >> ~/marks/directories.txt
-        else if test -e $path
-            echo $path >> ~/marks/files.txt
-        else
-            set_color red; echo "invalid path: $argv"
+        for arg in $argv
+            set path (realpath $arg)
+            if test -d $path
+                echo $path >> ~/marks/directories.txt
+            else if test -e $path
+                echo $path >> ~/marks/files.txt
+            else
+                set_color red; echo "invalid path: $arg"
+            end
         end
     end
 end
 
 # find directory
 function gd
-    commandline (cat ~/marks/directories.txt | fzf)
+    commandline (cat ~/marks/directories.txt | fpr)
     commandline -i "/"
+end
+
+function gde
+    nvim ~/marks/directories.txt
 end
 
 # find files
 function gf
-    set file (cat ~/marks/files.txt | fzf)
-    commandline "nvim $file"
+    set file (cat ~/marks/files.txt | fpr)
+    set splitted (string split ":" $file)
+    if [ (count $splitted) -ne 2 ]
+        commandline "nvim $file"
+    else
+        commandline "nvim +$splitted[2] $splitted[1]"
+    end
+end
+
+function gfe
+    nvim ~/marks/files.txt
 end
 
 # warning/todo: works very slow if there are many contents, and still loading after it's done looking
