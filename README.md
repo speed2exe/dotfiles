@@ -27,6 +27,9 @@ fish load.fish
 touch ~/.savedir
 touch ~/.clipboard
 mkdir ~/notes
+mkdir ~/marks
+touch ~/marks/directories.txt
+touch ~/marks/files.txt
 ```
 
 # change default shell to fish
