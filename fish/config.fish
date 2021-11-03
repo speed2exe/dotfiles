@@ -271,6 +271,34 @@ function savedir
     echo (pwd) > ~/.savedir
 end
 
+# mark
+function m
+    if [ (count $argv) -eq 0 ]
+        echo (pwd) >> ~/marks/directories.txt
+    else
+        set path (realpath $argv)
+        if test -d $path
+            echo $path >> ~/marks/directories.txt
+        else if test -e $path
+            echo $path >> ~/marks/files.txt
+        else
+            set_color red; echo "invalid path: $argv"
+        end
+    end
+end
+
+# find directory
+function gd
+    commandline (cat ~/marks/directories.txt | fzf)
+    commandline -i "/"
+end
+
+# find files
+function gf
+    set file (cat ~/marks/files.txt | fzf)
+    commandline "nvim $file"
+end
+
 # warning/todo: works very slow if there are many contents, and still loading after it's done looking
 # Search for file name or file content, jumps to nvim and edit at line number
 function s
