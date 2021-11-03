@@ -78,6 +78,7 @@ alias ltd "lt --only-dirs"
 # end
 
 # https://github.com/sharkdp/bat
+alias bat "bat --theme Dracula"
 alias cat "bat"
 function show
     if [ (count $argv) -eq 0 ]
@@ -85,11 +86,23 @@ function show
         if [ $path ]
             show $path
         end
-    else if [ -d $argv ] 
+    else if [ (count $argv) -ne 1 ]
+        set_color red; echo "invalid arguments: $argv"
+    else if test -d $argv
         ll $argv
     else
-        cat --color=always --style=numbers $argv
-  end
+        set file (string split : $argv)
+        if [ (count $file) -ne 2 ]
+            bat --color=always --style=numbers $argv
+        else
+            set line_start (math $file[2] - 5)
+            if [ $line_start -lt 0 ]
+                set line_start 0
+            end
+
+            bat --color=always --style=numbers --line-range $line_start: --highlight-line $file[2]: $file[1]
+        end
+    end
 end
 
 # https://github.com/BurntSushi/ripgrep
@@ -283,7 +296,13 @@ function m
             else if test -e $path
                 echo $path >> ~/marks/files.txt
             else
-                set_color red; echo "invalid path: $arg"
+                set splitted (string split : $arg)
+                set splitted[1] (realpath $splitted[1])
+                if test -e $splitted[1]
+                    echo "$splitted[1]:$splitted[2]" >> ~/marks/files.txt
+                else
+                    set_color red; echo "invalid path: $arg"
+                end
             end
         end
     end
