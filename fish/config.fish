@@ -37,7 +37,10 @@ if status is-interactive
 end
 
 # gcloud
-alias gcloud /root/google-cloud-sdk/bin/gcloud
+alias gcloud "/root/google-cloud-sdk/bin/gcloud"
+
+# git root
+alias gitroot "git rev-parse --show-toplevel"
 
 # Go
 fish_add_path /usr/local/go/bin
