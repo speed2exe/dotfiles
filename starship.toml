@@ -1,0 +1,6 @@
+format = "[ ](bg:blue) $all"
+
+[character]
+success_symbol = "[ ](bg:green)"
+error_symbol = "[ ](bg:red)"
+
