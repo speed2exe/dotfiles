@@ -91,6 +91,7 @@ nnoremap <leader>t :Telescope
 nnoremap <leader>tf <CMD>Telescope find_files<CR>
 nnoremap <leader>tl <CMD>Telescope live_grep<CR>
 nnoremap <leader>tg <CMD>Telescope grep_string<CR>
+nnoremap <leader>tj <CMD>Telescope jumplist<CR>
 nnoremap <leader>tb <CMD>Telescope buffers<CR>
 nnoremap <leader>ta <CMD>Telescope lsp_code_actions<CR>
 vnoremap <leader>ta <CMD>Telescope lsp_range_code_actions<CR>
