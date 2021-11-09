@@ -101,6 +101,10 @@ Plug 'hrsh7th/vim-vsnip'
 
 " kitty terminal emulator config helper
 Plug 'fladson/vim-kitty'
+
+" Debugger Adapeter Protocol
+Plug 'mfussenegger/nvim-dap'
+Plug 'Pocco81/DAPInstall.nvim'
 call plug#end()
 
 " nvim-tree Setup
@@ -125,6 +129,7 @@ require('telescope_conf')
 require('treesitter_conf')
 require('treesitter-refactor_conf')
 require('neoscroll_conf')
+require('dapinstall_conf')
 EOF
 
 " default is already dark
