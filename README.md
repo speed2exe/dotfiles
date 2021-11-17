@@ -53,3 +53,10 @@ gh auth refresh -h github.com -s admin:public_key
 gh ssh-key add ~/.ssh/id_ed25519.pub
 ssh -T git@github.com
 ```
+
+# update mirror list for faster packages download
+```
+pacman -Syu rsync reflector
+reflector -a 10 -c sg -f 5 --sort rate --save /etc/pacman.d/mirrorlist
+```
+
