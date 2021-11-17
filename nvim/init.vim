@@ -46,8 +46,8 @@ Plug 'karb94/neoscroll.nvim'
 " fzf search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-" vim-moonfly-colors
-Plug 'bluz71/vim-moonfly-colors'
+" https://draculatheme.com/vim
+Plug 'dracula/vim', {'as': 'dracula'}
 
 " lualine
 Plug 'nvim-lualine/lualine.nvim'
@@ -96,8 +96,6 @@ Plug 'hrsh7th/cmp-path'
 Plug 'ray-x/cmp-treesitter'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-" Plug 'L3MON4D3/LuaSnip'
-" Plug 'saadparwaiz1/cmp_luasnip'
 
 " kitty terminal emulator config helper
 Plug 'fladson/vim-kitty'
@@ -116,7 +114,6 @@ call plug#end()
 source ~/.config/nvim/nvim-tree.vim
 
 lua << EOF
-require('moonfly_conf')
 require('nvim-web-devicons')
 require('nvim-tree_conf')
 require('barbar_conf')
@@ -131,6 +128,9 @@ require('treesitter-refactor_conf')
 require('neoscroll_conf')
 require('dapinstall_conf')
 EOF
+
+" set theme
+colorscheme dracula
 
 " default is already dark
 " set background=dark
