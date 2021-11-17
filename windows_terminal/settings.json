@@ -4,6 +4,22 @@
     "actions": 
     [
         {
+            "command": 
+            {
+                "action": "swapPane",
+                "direction": "down"
+            },
+            "keys": "alt+shift+down"
+        },
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+alt+c"
+        },
+        {
             "command": "unbound",
             "keys": "alt+f4"
         },
@@ -161,22 +177,6 @@
         },
         {
             "command": "unbound",
-            "keys": "alt+shift+down"
-        },
-        {
-            "command": "unbound",
-            "keys": "alt+shift+left"
-        },
-        {
-            "command": "unbound",
-            "keys": "alt+shift+right"
-        },
-        {
-            "command": "unbound",
-            "keys": "alt+shift+up"
-        },
-        {
-            "command": "unbound",
             "keys": "ctrl+shift+c"
         },
         {
@@ -240,24 +240,19 @@
             "keys": "ctrl+shift+n"
         },
         {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+alt+c"
+            "command": "unbound",
+            "keys": "ctrl+alt+shift+e"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+alt+shift+5"
         },
         {
             "command": 
             {
-                "action": "adjustFontSize",
-                "delta": -1
+                "action": "newTab"
             },
-            "keys": "ctrl+alt+i"
-        },
-        {
-            "command": "paste",
-            "keys": "ctrl+alt+v"
+            "keys": "ctrl+alt+t"
         },
         {
             "command": 
@@ -268,15 +263,24 @@
             "keys": "ctrl+alt+o"
         },
         {
-            "command": 
-            {
-                "action": "newTab"
-            },
-            "keys": "ctrl+alt+t"
+            "command": "paste",
+            "keys": "ctrl+alt+v"
         },
         {
-            "command": "toggleFullscreen",
-            "keys": "alt+enter"
+            "command": 
+            {
+                "action": "adjustFontSize",
+                "delta": -1
+            },
+            "keys": "ctrl+alt+i"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab",
+                "index": 8
+            },
+            "keys": "ctrl+9"
         },
         {
             "command": 
@@ -287,6 +291,10 @@
         },
         {
             "command": "closeWindow"
+        },
+        {
+            "command": "toggleFullscreen",
+            "keys": "alt+enter"
         },
         {
             "command": 
@@ -318,6 +326,22 @@
                 "direction": "previous"
             },
             "keys": "alt+backspace"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab",
+                "index": 6
+            },
+            "keys": "ctrl+7"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab",
+                "index": 7
+            },
+            "keys": "ctrl+8"
         },
         {
             "command": "find",
@@ -403,6 +427,14 @@
         {
             "command": 
             {
+                "action": "swapPane",
+                "direction": "up"
+            },
+            "keys": "alt+shift+up"
+        },
+        {
+            "command": 
+            {
                 "action": "resizePane",
                 "direction": "left"
             },
@@ -415,6 +447,14 @@
                 "direction": "down"
             },
             "keys": "alt+shift+e"
+        },
+        {
+            "command": 
+            {
+                "action": "swapPane",
+                "direction": "left"
+            },
+            "keys": "alt+shift+left"
         },
         {
             "command": 
@@ -467,26 +507,10 @@
         {
             "command": 
             {
-                "action": "newTab",
-                "index": 6
+                "action": "swapPane",
+                "direction": "right"
             },
-            "keys": "ctrl+7"
-        },
-        {
-            "command": 
-            {
-                "action": "newTab",
-                "index": 7
-            },
-            "keys": "ctrl+8"
-        },
-        {
-            "command": 
-            {
-                "action": "newTab",
-                "index": 8
-            },
-            "keys": "ctrl+9"
+            "keys": "alt+shift+right"
         }
     ],
     "copyFormatting": "none",
@@ -500,14 +524,14 @@
         {
             "antialiasingMode": "cleartype",
             "bellStyle": "audible",
-            "colorScheme": "MoonFly",
+            "colorScheme": "Dracula",
             "experimental.retroTerminalEffect": false,
             "font": 
             {
                 "face": "Iosevka Term SS14"
             },
             "intenseTextStyle": "none",
-            "opacity": 0,
+            "opacity": 50,
             "padding": "0",
             "scrollbarState": "hidden",
             "useAcrylic": true
@@ -565,6 +589,29 @@
     },
     "schemes": 
     [
+	{
+        "name": "Dracula",
+        "cursorColor": "#F8F8F2",
+        "selectionBackground": "#44475A",
+        "background": "#282A36",
+        "foreground": "#F8F8F2",
+        "black": "#21222C",
+        "blue": "#BD93F9",
+        "cyan": "#8BE9FD",
+        "green": "#50FA7B",
+        "purple": "#FF79C6",
+        "red": "#FF5555",
+        "white": "#F8F8F2",
+        "yellow": "#F1FA8C",
+        "brightBlack": "#6272A4",
+        "brightBlue": "#D6ACFF",
+        "brightCyan": "#A4FFFF",
+        "brightGreen": "#69FF94",
+        "brightPurple": "#FF92DF",
+        "brightRed": "#FF6E6E",
+        "brightWhite": "#FFFFFF",
+        "brightYellow": "#FFFFA5"
+    	},
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
