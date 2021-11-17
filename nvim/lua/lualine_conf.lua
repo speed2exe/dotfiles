@@ -1,6 +1,5 @@
 require'lualine'.setup {
     options = {
-        --theme = 'moonfly',
         theme = 'auto',
         component_separators = {
             left = '', 
