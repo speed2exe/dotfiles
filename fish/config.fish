@@ -14,9 +14,6 @@ if status is-interactive
     # Intro
     echo "you got this bro!"
 
-    # https://opensourcelibs.com/lib/fish-color-scheme-switcher
-    scheme set zenburn
-
     # https://starship.rs/
     starship init fish | source
     set STARSHIP_CONFIG "~/.config/starship.toml"
