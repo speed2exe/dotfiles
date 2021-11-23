@@ -37,12 +37,6 @@ nnoremap <expr> <leader>h (&hls && v:hlsearch ? ':set nohlsearch' : ':set hlsear
 " Indent
 nnoremap <leader>i gg=G<C-O>
 
-" write, quit, reload from disk
-nnoremap <leader>w <CMD>w!<CR>
-nnoremap <leader>q <CMD>q!<CR>
-nnoremap <leader>wq <CMD>wq!<CR>
-nnoremap <leader>e <CMD>e!<CR>
-
 " toggle jump back and forth
 nnoremap <PAGEUP> <C-O>
 nnoremap <PAGEDOWN> <C-I>
