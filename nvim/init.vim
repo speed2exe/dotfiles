@@ -1,11 +1,11 @@
 filetype plugin indent on
 syntax on
 set shell=/usr/sbin/fish
-set showmode
 set clipboard^=unnamed,unnamedplus
 set termguicolors
 set backspace=indent,eol,start
 set nocompatible
+set noshowmode
 set exrc
 set nohlsearch
 set hidden
