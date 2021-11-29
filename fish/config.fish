@@ -237,15 +237,6 @@ function c
     end
 end
 
-# like rm but can be use for both file or folder
-function delete_file_or_dir
-    if [ -d $argv ]
-        commandline "rm -r $argv"
-    else
-        commandline "rm $argv"
-    end
-end
-
 # quick delete path or file
 # TODO rework
 function d
@@ -258,7 +249,7 @@ function d
     end
     
     if [ $argv ] 
-        delete_file_or_dir $argv
+        trash $argv
     end
 end
 
@@ -288,7 +279,7 @@ function nd
     d ~/notes
     set path (fzf_notes_path)
     if [ $path ] 
-        delete_file_or_dir $path
+        trash $path
     end
 end
 
