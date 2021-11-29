@@ -31,7 +31,19 @@ if status is-interactive
 
     # Display Dope stuff
     neofetch
+
+    # keybinds
+    bind -k ppage prevd
+    bind -k npage nextd
+
 end
+
+# matrx screensaver
+alias n "cmatrix -as -u 7 -C blue"
+
+# pacman
+alias install "pacman -Syu"
+alias uninstall "pacman -Rcns"
 
 # gcloud
 alias gcloud "/root/google-cloud-sdk/bin/gcloud"
@@ -235,6 +247,7 @@ function delete_file_or_dir
 end
 
 # quick delete path or file
+# TODO rework
 function d
     if [ (count $argv) -eq 0 ]
         set path (pwd)
@@ -323,13 +336,13 @@ end
 
 # find directory
 function gd
-    commandline (cat ~/marks/directories.txt | fpr)
+    commandline (tac ~/marks/directories.txt | fpr)
     commandline -i "/"
 end
 
 # find files
 function gf
-    set file (cat ~/marks/files.txt | fpr)
+    set file (tac ~/marks/files.txt | fpr)
     set splitted (string split ":" $file)
     if [ (count $splitted) -ne 2 ]
         commandline "nvim $file"
@@ -360,3 +373,4 @@ end
 function learn
   printf "$argv" | sed "s/ /\//g" | xargs -I {} curl cht.sh/{} 
 end
+
