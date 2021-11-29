@@ -71,7 +71,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " LSP stuff
 Plug 'neovim/nvim-lspconfig'
-Plug 'kabouzeid/nvim-lspinstall'
+Plug 'williamboman/nvim-lsp-installer'
 
 " Lspsaga
 Plug 'glepnir/lspsaga.nvim'
@@ -118,10 +118,10 @@ require('nvim-web-devicons')
 require('nvim-tree_conf')
 require('barbar_conf')
 require('lualine_conf')
-require('lspinstall_conf')
+require('nvim-lsp-installer_conf')
 require('lspsaga_conf')
 require('lspkind_conf')
-require('nvim-cmp_conf')
+--require('nvim-cmp_conf')
 require('telescope_conf')
 require('treesitter_conf')
 require('treesitter-refactor_conf')
