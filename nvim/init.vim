@@ -29,7 +29,7 @@ set signcolumn=yes
 set colorcolumn=80
 set encoding=UTF-8
 set updatetime=1000
-set completeopt=menu,menuone,preview,noinsert,noselect
+set completeopt=menu,menuone,preview
 set splitbelow
 set splitright
 set wildmenu

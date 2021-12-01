@@ -80,6 +80,9 @@ nnoremap ]] <CMD>cnext<CR>
 nnoremap [( <CMD>lprev<CR>
 nnoremap ]) <CMD>lnext<CR>
 
+" Startify
+nnoremap <leader>ESC <CMD>Startify<CR>
+
 " Telescope
 nnoremap <leader>t :Telescope 
 nnoremap <leader>tf <CMD>Telescope find_files<CR>
