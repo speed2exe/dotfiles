@@ -76,6 +76,9 @@ Plug 'williamboman/nvim-lsp-installer'
 " Display LSP stuff nicer
 Plug 'folke/trouble.nvim'
 
+" Display LSP status
+Plug 'nvim-lua/lsp-status.nvim'
+
 " Lspsaga
 Plug 'glepnir/lspsaga.nvim'
 " Plug 'tami5/lspsaga.nvim'
@@ -153,3 +156,14 @@ autocmd FileType help wincmd L
 
 " https://www.reddit.com/r/vim/comments/jcecyb/vims_background_turns_opaque_in_new_windows/
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE " transparent bg
+
+
+" Statusline
+function! LspStatus() abort
+  if luaeval('#vim.lsp.buf_get_clients() > 0')
+    return luaeval("require('lsp-status').status()")
+  endif
+
+  return ''
+endfunction
+
