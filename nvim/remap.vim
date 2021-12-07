@@ -81,7 +81,7 @@ nnoremap [( <CMD>lprev<CR>
 nnoremap ]) <CMD>lnext<CR>
 
 " Startify
-nnoremap <leader>ESC <CMD>Startify<CR>
+nnoremap <leader><ESC> <CMD>Startify<CR>
 
 " Telescope
 nnoremap <leader>t :Telescope 

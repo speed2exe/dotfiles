@@ -73,6 +73,9 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 
+" Display LSP stuff nicer
+Plug 'folke/trouble.nvim'
+
 " Lspsaga
 Plug 'glepnir/lspsaga.nvim'
 " Plug 'tami5/lspsaga.nvim'
@@ -119,6 +122,7 @@ require('nvim-tree_conf')
 require('barbar_conf')
 require('lualine_conf')
 require('nvim-lsp-installer_conf')
+require('trouble').setup{}
 require('lspsaga_conf')
 require('lspkind_conf')
 require('nvim-cmp_conf')
