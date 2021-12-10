@@ -40,13 +40,13 @@ require'nvim-tree'.setup {
     open_on_setup       = true,
     ignore_ft_on_setup  = {},
     auto_close          = true,
-    open_on_tab         = true,
+    open_on_tab         = false,
     update_to_buf_dir   = {
-        enable = true,
+        enable = false,
         auto_open = true,
     },
     hijack_cursor       = true,
-    update_cwd          = true,
+    update_cwd          = false,
     diagnostics = {
         enable = true,
         icons = {
