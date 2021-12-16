@@ -4,22 +4,6 @@
     "actions": 
     [
         {
-            "command": 
-            {
-                "action": "swapPane",
-                "direction": "down"
-            },
-            "keys": "alt+shift+down"
-        },
-        {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+alt+c"
-        },
-        {
             "command": "unbound",
             "keys": "alt+f4"
         },
@@ -117,10 +101,6 @@
         },
         {
             "command": "unbound",
-            "keys": "ctrl+c"
-        },
-        {
-            "command": "unbound",
             "keys": "alt+w"
         },
         {
@@ -133,23 +113,7 @@
         },
         {
             "command": "unbound",
-            "keys": "alt+c"
-        },
-        {
-            "command": "unbound",
-            "keys": "alt+f"
-        },
-        {
-            "command": "unbound",
             "keys": "alt+minus"
-        },
-        {
-            "command": "unbound",
-            "keys": "alt+shift+plus"
-        },
-        {
-            "command": "unbound",
-            "keys": "alt+t"
         },
         {
             "command": "unbound",
@@ -162,10 +126,6 @@
         {
             "command": "unbound",
             "keys": ""
-        },
-        {
-            "command": "unbound",
-            "keys": "alt+v"
         },
         {
             "command": "unbound",
@@ -248,31 +208,80 @@
             "keys": "ctrl+alt+shift+5"
         },
         {
-            "command": 
-            {
-                "action": "newTab"
-            },
+            "command": "unbound",
+            "keys": "ctrl+alt+c"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+alt+f"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+alt+j"
+        },
+        {
+            "command": "unbound",
             "keys": "ctrl+alt+t"
         },
         {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "right"
-            },
+            "command": "unbound",
+            "keys": "ctrl+shift+enter"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+alt+e"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+alt+a"
+        },
+        {
+            "command": "unbound",
             "keys": "ctrl+alt+o"
         },
         {
-            "command": "paste",
+            "command": "unbound",
+            "keys": "ctrl+alt+u"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+e"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+a"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+o"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+u"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+c"
+        },
+        {
+            "command": "unbound",
             "keys": "ctrl+alt+v"
         },
         {
             "command": 
             {
-                "action": "adjustFontSize",
-                "delta": -1
+                "action": "copy",
+                "singleLine": false
             },
-            "keys": "ctrl+alt+i"
+            "keys": "alt+c"
+        },
+        {
+            "command": 
+            {
+                "action": "swapPane",
+                "direction": "down"
+            },
+            "keys": "alt+shift+down"
         },
         {
             "command": 
@@ -285,6 +294,33 @@
         {
             "command": 
             {
+                "action": "adjustFontSize",
+                "delta": -1
+            },
+            "keys": "ctrl+alt+i"
+        },
+        {
+            "command": "paste",
+            "keys": "alt+v"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "right"
+            },
+            "keys": "alt+6"
+        },
+        {
+            "command": 
+            {
+                "action": "newTab"
+            },
+            "keys": "alt+t"
+        },
+        {
+            "command": 
+            {
                 "action": "newWindow"
             },
             "keys": "ctrl+alt+n"
@@ -293,8 +329,7 @@
             "command": "closeWindow"
         },
         {
-            "command": "toggleFullscreen",
-            "keys": "alt+enter"
+            "command": "toggleFullscreen"
         },
         {
             "command": 
@@ -317,7 +352,7 @@
                 "action": "splitPane",
                 "split": "down"
             },
-            "keys": "ctrl+alt+e"
+            "keys": "alt+5"
         },
         {
             "command": 
@@ -345,7 +380,7 @@
         },
         {
             "command": "find",
-            "keys": "ctrl+alt+f"
+            "keys": "alt+f"
         },
         {
             "command": 
@@ -369,7 +404,7 @@
                 "action": "resizePane",
                 "direction": "right"
             },
-            "keys": "alt+shift+o"
+            "keys": "alt+shift+6"
         },
         {
             "command": 
@@ -377,7 +412,7 @@
                 "action": "splitPane",
                 "split": "left"
             },
-            "keys": "ctrl+alt+a"
+            "keys": "alt+4"
         },
         {
             "command": 
@@ -385,7 +420,7 @@
                 "action": "adjustFontSize",
                 "delta": 1
             },
-            "keys": "ctrl+alt+j"
+            "keys": "alt+shift+plus"
         },
         {
             "command": "duplicateTab"
@@ -395,7 +430,7 @@
             {
                 "action": "commandPalette"
             },
-            "keys": "ctrl+shift+enter"
+            "keys": "alt+enter"
         },
         {
             "command": "scrollToBottom",
@@ -418,7 +453,7 @@
                 "action": "splitPane",
                 "split": "up"
             },
-            "keys": "ctrl+alt+u"
+            "keys": "alt+8"
         },
         {
             "command": "scrollToTop",
@@ -438,7 +473,7 @@
                 "action": "resizePane",
                 "direction": "left"
             },
-            "keys": "alt+shift+a"
+            "keys": "alt+shift+4"
         },
         {
             "command": 
@@ -446,7 +481,7 @@
                 "action": "resizePane",
                 "direction": "down"
             },
-            "keys": "alt+shift+e"
+            "keys": "alt+shift+5"
         },
         {
             "command": 
@@ -462,7 +497,7 @@
                 "action": "resizePane",
                 "direction": "up"
             },
-            "keys": "alt+shift+u"
+            "keys": "alt+shift+8"
         },
         {
             "command": 
@@ -523,7 +558,11 @@
         "defaults": 
         {
             "antialiasingMode": "cleartype",
-            "bellStyle": "audible",
+            "bellStyle": 
+            [
+                "audible",
+                "taskbar"
+            ],
             "colorScheme": "Dracula",
             "experimental.retroTerminalEffect": false,
             "font": 
@@ -534,6 +573,8 @@
             "opacity": 50,
             "padding": "0",
             "scrollbarState": "hidden",
+            "suppressApplicationTitle": false,
+            "unfocusedAppearance": {},
             "useAcrylic": true
         },
         "list": 
@@ -563,6 +604,7 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
+                "cursorShape": "filledBox",
                 "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
                 "hidden": false,
                 "name": "Ubuntu-20.04",
@@ -589,29 +631,6 @@
     },
     "schemes": 
     [
-	{
-        "name": "Dracula",
-        "cursorColor": "#F8F8F2",
-        "selectionBackground": "#44475A",
-        "background": "#282A36",
-        "foreground": "#F8F8F2",
-        "black": "#21222C",
-        "blue": "#BD93F9",
-        "cyan": "#8BE9FD",
-        "green": "#50FA7B",
-        "purple": "#FF79C6",
-        "red": "#FF5555",
-        "white": "#F8F8F2",
-        "yellow": "#F1FA8C",
-        "brightBlack": "#6272A4",
-        "brightBlue": "#D6ACFF",
-        "brightCyan": "#A4FFFF",
-        "brightGreen": "#69FF94",
-        "brightPurple": "#FF92DF",
-        "brightRed": "#FF6E6E",
-        "brightWhite": "#FFFFFF",
-        "brightYellow": "#FFFFA5"
-    	},
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
@@ -657,6 +676,29 @@
             "selectionBackground": "#FFFFFF",
             "white": "#CCCCCC",
             "yellow": "#C19C00"
+        },
+        {
+            "background": "#282A36",
+            "black": "#21222C",
+            "blue": "#BD93F9",
+            "brightBlack": "#6272A4",
+            "brightBlue": "#D6ACFF",
+            "brightCyan": "#A4FFFF",
+            "brightGreen": "#69FF94",
+            "brightPurple": "#FF92DF",
+            "brightRed": "#FF6E6E",
+            "brightWhite": "#FFFFFF",
+            "brightYellow": "#FFFFA5",
+            "cursorColor": "#F8F8F2",
+            "cyan": "#8BE9FD",
+            "foreground": "#F8F8F2",
+            "green": "#50FA7B",
+            "name": "Dracula",
+            "purple": "#FF79C6",
+            "red": "#FF5555",
+            "selectionBackground": "#44475A",
+            "white": "#F8F8F2",
+            "yellow": "#F1FA8C"
         },
         {
             "background": "#080808",
