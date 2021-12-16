@@ -1,7 +1,10 @@
 let mapleader = " "
 
-" Always go to file with line number if possible
-nnoremap gf gF
+" create file with filename under cursor if not exists
+nnoremap <leader>e :e <cfile><CR>
+
+" navigate to file with line number
+nnoremap <leader>f gF
 
 " Move next line up
 nnoremap J mzJ`z
@@ -98,19 +101,6 @@ nnoremap <leader>tt <CMD>Telescope lsp_type_definitions<CR>
 nnoremap <leader>td <CMD>Telescope lsp_definitions<CR>
 nnoremap <leader>ti <CMD>Telescope lsp_implementations<CR>
 nnoremap <leader>tr <CMD>Telescope lsp_references<CR>
-
-" CHADTree
-" nnoremap <leader>f :CHADopen 
-" nnoremap <leader>ft <CMD>CHADopen<CR>
-" nnoremap <leader>ff <CMD>CHADopen --always-focus<CR>
-" nnoremap <leader>fn <CMD>CHADopen --nofocus<CR>
-" nnoremap <leader>fv <CMD>CHADopen --version-ctl<CR>
-
-" NerdTree
-" nnoremap <leader>n :nerdtree
-" nnoremap <leader>nt <CMD>NERDTreeToggleVCS<CR>
-" nnoremap <leader>nf <CMD>NERDTreeFind<CR>
-" nnoremap <leader>nc <CMD>NERDTreeCWD<CR>
 
 " NvimTree
 nnoremap <leader>n :nvimtree
