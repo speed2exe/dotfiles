@@ -1,3 +1,6 @@
+" https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
+autocmd BufEnter * lcd %:p:h
+
 " Automatically install missing plugins on startup
 " https://github.com/junegunn/vim-plug/wiki/extra
 autocmd VimEnter *
@@ -31,4 +34,3 @@ function! LspStatus() abort
 
     return ''
 endfunction
-

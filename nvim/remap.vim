@@ -15,8 +15,8 @@ nnoremap ) j}<BS>$
 
 
 " Quick Terminal
-nnoremap <ESC> :!savedir<CR>:terminal<CR>a
-" nnoremap <ESC> :!
+nnoremap <leader><CR> :!savedir<CR>:terminal<CR>a
+nnoremap <ESC> :!
 nnoremap <leader><leader> :.!
 " vnoremap <CR> y:!<C-R>"<CR>
 vnoremap <CR> :w! ~/.cmd<CR>:terminal<CR>a
@@ -37,10 +37,12 @@ vnoremap <C-K> :m '<-2<CR>gv
 nnoremap <C-J> :m .+1<CR>
 nnoremap <C-K> :m .-2<CR>
 
-" toggle search hightlight
+" toggle search highlight
 nnoremap <expr> <leader>h (&hls && v:hlsearch ? ':set nohlsearch' : ':set hlsearch')."\n"
 
 " Indent
+vnoremap , <gv
+vnoremap . >gv
 nnoremap <leader>i gg=G<C-O>
 
 " toggle jump back and forth
@@ -48,8 +50,8 @@ nnoremap <PAGEUP> <C-O>
 nnoremap <PAGEDOWN> <C-I>
 
 " Previous Directory
-nnoremap <HOME> <CMD>cd ..<CR>
-nnoremap <END> <CMD>lcd %:p:h<CR>
+nnoremap < <CMD>cd ..<CR>
+nnoremap > <CMD>lcd %:p:h<CR>
 
 " new windows
 nnoremap <leader>x <CMD>split<CR>
