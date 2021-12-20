@@ -7,7 +7,7 @@ docker exec -it dev /usr/bin/bash
 # inside bash
 ```
 cd ~
-pacman -Syu exa fzf bat ripgrep neovim fish neofetch which gcc git trash-cli --noconfirm
+pacman -Syu exa fzf bat ripgrep neovim fish neofetch which gcc git trash-cli fortune-mod --noconfirm
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" # prompts yes/no
 ```
 # install omf and get into fish shell
@@ -25,6 +25,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 fish load.fish
 touch ~/.savedir
 touch ~/.clipboard
+touch ~/.cmd
 mkdir ~/notes
 mkdir ~/marks
 touch ~/marks/directories.txt
