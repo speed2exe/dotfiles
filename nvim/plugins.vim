@@ -15,6 +15,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " https://draculatheme.com/vim
 Plug 'dracula/vim', {'as': 'dracula'}
 
+" floating terminal
+Plug 'voldikss/vim-floaterm'
+
 " lualine
 Plug 'nvim-lualine/lualine.nvim'
 
