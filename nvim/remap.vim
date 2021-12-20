@@ -13,7 +13,6 @@ nnoremap J mzJ`z
 nnoremap ( k{<SPACE>^
 nnoremap ) j}<BS>$
 
-
 " Quick Terminal
 nnoremap <leader><CR> :!savedir<CR>:terminal<CR>a
 nnoremap <ESC> :!
@@ -45,12 +44,16 @@ vnoremap , <gv
 vnoremap . >gv
 nnoremap <leader>i gg=G<C-O>
 
+" repeat last command
+nnoremap , @:
+
 " toggle jump back and forth
 nnoremap <PAGEUP> <C-O>
 nnoremap <PAGEDOWN> <C-I>
 
 " Previous Directory
 nnoremap < <CMD>cd ..<CR>
+" Current File Directory
 nnoremap > <CMD>lcd %:p:h<CR>
 
 " new windows
