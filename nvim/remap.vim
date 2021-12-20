@@ -13,14 +13,6 @@ nnoremap J mzJ`z
 nnoremap ( k{<SPACE>^
 nnoremap ) j}<BS>$
 
-" Quick Terminal
-nnoremap <leader><CR> :!savedir<CR>:terminal<CR>a
-nnoremap <ESC> :!
-nnoremap <leader><leader> :.!
-" vnoremap <CR> y:!<C-R>"<CR>
-vnoremap <CR> :w! ~/.cmd<CR>:terminal<CR>a
-vnoremap <leader><leader> y:.!<C-R>"<CR>
-
 " copy current file path and line number to ~/marks/files.txt
 nnoremap <leader>m <CMD>redir @m<CR><CMD>echo expand('%:p') . ':' . line(".")<CR><CMD>redir END<CR>:!m<C-R>m<CR><CR>
 " quick access to marked files
@@ -152,3 +144,10 @@ nnoremap <leader>d<SPACE> <CMD>lua require('dap').run_to_cursor()<CR>
 nnoremap <leader>d<CR> <CMD>lua require('dap').continue()<CR>
 nnoremap <leader>d<TAB> <CMD>lua require('dap').repl.toggle()<CR>
 
+" terminal access with https://github.com/voldikss/vim-floaterm
+nnoremap <leader><CR> :!savedir<CR>:FloatermToggle<CR><CR>
+nnoremap <ESC> :!
+nnoremap <leader><leader> :.!
+" vnoremap <CR> y:!<C-R>"<CR>
+vnoremap <CR> :w! ~/.cmd<CR>:FloatermToggle<CR>
+vnoremap <leader><leader> y:.!<C-R>"<CR>

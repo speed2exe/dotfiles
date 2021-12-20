@@ -8,7 +8,14 @@ set TERM xterm-256color
 set fish_term24bit 1
 
 function fish_greeting
-    fortune
+    # execute command if there is
+    set cmd (cat ~/.cmd)
+    if test $cmd
+        $cmd
+        :> ~/.cmd
+    else
+        neofetch && fortune
+    end
 end
 
 if status is-interactive
@@ -31,16 +38,6 @@ if status is-interactive
         case insert
             echo -en "\e[6 q"
         end
-    end
-
-    # execute command if there is
-    set cmd (cat ~/.cmd)
-    if test $cmd
-        $cmd
-        :> ~/.cmd
-    else
-        neofetch
-        set fish_greeting
     end
 end
 
@@ -370,4 +367,3 @@ end
 function learn
   printf "$argv" | sed "s/ /\//g" | xargs -I {} curl cht.sh/{} 
 end
-
