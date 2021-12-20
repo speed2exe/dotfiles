@@ -7,12 +7,16 @@
 set TERM xterm-256color  
 set fish_term24bit 1
 
+function fish_greeting
+    fortune
+end
+
 if status is-interactive
+    clear
+
     # load from save_dir 
     cd (cat ~/.savedir)
-
-    # Intro
-    echo "you got this bro!"
+    :> ~/.savedir
 
     # https://starship.rs/
     starship init fish | source
@@ -29,13 +33,15 @@ if status is-interactive
         end
     end
 
-    # Display Dope stuff
-    neofetch
-
-    # keybinds
-    bind -k ppage prevd
-    bind -k npage nextd
-
+    # execute command if there is
+    set cmd (cat ~/.cmd)
+    if test $cmd
+        $cmd
+        :> ~/.cmd
+    else
+        neofetch
+        set fish_greeting
+    end
 end
 
 # matrx screensaver

@@ -13,8 +13,10 @@ nnoremap J mzJ`z
 nnoremap ( k{<SPACE>^
 nnoremap ) j}<BS>$
 
-" Easy Access Shell Commands
-nnoremap <ESC> :!
+" Quick Terminal at current file dirctory
+nnoremap <leader><CR> :!savedir<CR>:terminal<CR>
+" nnoremap <ESC> :!
+" Read from terminal output
 nnoremap <leader><leader> :.!
 vnoremap <CR> y:!<C-R>"<CR>
 vnoremap <leader><leader> y:.!<C-R>"<CR>
