@@ -39,7 +39,7 @@ require('lspkind').init({
         Struct = "פּ",
         Event = "",
         Operator = "",
-        TypeParameter = "Τ"
+        TypeParameter = "<Τ>"
     },
 })
 
