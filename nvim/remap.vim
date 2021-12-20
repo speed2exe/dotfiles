@@ -13,12 +13,13 @@ nnoremap J mzJ`z
 nnoremap ( k{<SPACE>^
 nnoremap ) j}<BS>$
 
-" Quick Terminal at current file dirctory
-nnoremap <leader><CR> :!savedir<CR>:terminal<CR>
+
+" Quick Terminal
+nnoremap <ESC> :!savedir<CR>:terminal<CR>a
 " nnoremap <ESC> :!
-" Read from terminal output
 nnoremap <leader><leader> :.!
-vnoremap <CR> y:!<C-R>"<CR>
+" vnoremap <CR> y:!<C-R>"<CR>
+vnoremap <CR> :w! ~/.cmd<CR>:terminal<CR>a
 vnoremap <leader><leader> y:.!<C-R>"<CR>
 
 " copy current file path and line number to ~/marks/files.txt
