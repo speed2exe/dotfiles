@@ -131,7 +131,7 @@ function! LspStatus() abort
 endfunction
 
 func RustInlay(timer)
-    lua require'lsp_extensions'.inlay_hints{ prefix = ' » ', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"}}
+    lua require'lsp_extensions'.inlay_hints{ prefix = ' -> ', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"}}
 endfunc
 
 " lsp_extensions: Rust Analyzer Inlay
