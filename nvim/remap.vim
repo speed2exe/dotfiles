@@ -145,9 +145,9 @@ nnoremap <leader>d<CR> <CMD>lua require('dap').continue()<CR>
 nnoremap <leader>d<TAB> <CMD>lua require('dap').repl.toggle()<CR>
 
 " terminal access with https://github.com/voldikss/vim-floaterm
-nnoremap <CR> :!savedir<CR>:FloatermToggle<CR><CR>
+nnoremap <CR> :!savedir<CR>:FloatermNew --autoclose=1<CR><CR>
 nnoremap <ESC> :!
 nnoremap <leader><leader> :.!
 " vnoremap <CR> y:!<C-R>"<CR>
-vnoremap <CR> :w! ~/.cmd<CR>:FloatermToggle<CR>
+vnoremap <CR> :w! ~/.cmd<CR>:FloatermNew --autoclose=1<CR>
 vnoremap <leader><leader> y:.!<C-R>"<CR>
