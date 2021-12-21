@@ -1,3 +1,11 @@
+" Automatically install missing plugins on startup
+" https://github.com/junegunn/vim-plug/wiki/extra
+autocmd VimEnter *
+            \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+            \|   PlugInstall --sync | q
+            \| endif
+
+
 call plug#begin('~/.vim/plugged')
 
 " Nice starting splash screen
@@ -41,6 +49,9 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " LSP stuff
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
+
+" inlay hints
+Plug 'nvim-lua/lsp_extensions.nvim'
 
 " Display LSP stuff nicer
 Plug 'folke/trouble.nvim'
@@ -110,3 +121,19 @@ lua << EOF
     require('dapinstall_conf')              -- ~/.config/nvim/lua/dapinstall_conf.lua
 EOF
 
+" LSP Statusline
+function! LspStatus() abort
+    if luaeval('#vim.lsp.buf_get_clients() > 0')
+        return luaeval("require('lsp-status').status()")
+    endif
+
+    return ''
+endfunction
+
+func RustInlay(timer)
+    lua require'lsp_extensions'.inlay_hints{ prefix = ' » ', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"}}
+endfunc
+
+" lsp_extensions: Rust Analyzer Inlay
+autocmd BufWritePost *.rs call timer_start(0, 'RustInlay')
+autocmd BufReadPost *.rs call timer_start(2000, 'RustInlay')
