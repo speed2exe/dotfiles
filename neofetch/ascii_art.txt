@@ -1,16 +1,16 @@
-${c1}VAVAVAVAVAVAVAVAVAV${c2}AVAVAV
- ${c1}VAVAVAVAVAVAVAVAV ${c2}VAVAV
-             ${c1}AVAV  ${c2}AVAV
-            ${c1}AVAV  ${c2}AVAV
-           ${c1}AVAV  ${c2}AVAV
-          ${c1}AVAV${c2}A AVAV
-         ${c1}AVAV${c2}AVAVAV
-        ${c1}AVAV${c2} VAVAV
-       ${c1}AVAV  ${c2}AVAVA
-      ${c1}AVAV  ${c2}AVAVAVA
-     ${c1}AVAV  ${c2}AVAV VAVA
-    ${c1}AVAV  ${c2}AVAV   VAVA
-   ${c1}AVAV  ${c2}AVAV     VAVA
-  ${c1}AVAV  ${c2}AVAV       VAVA
- ${c1}AVAVAV${c2}AVAVA       AVAVA
-${c1}AVAVAV${c2}AVAVAVA     AVAVAVA
+   ${c1}VAVAVAVAVAVAVAVAVAV${c2}AVAVAV
+    ${c1}VAVAVAVAVAVAVAVAV ${c2}VAVAV
+                ${c1}AVAV  ${c2}AVAV
+               ${c1}AVAV  ${c2}AVAV
+              ${c1}AVAV  ${c2}AVAV
+             ${c1}AVAV${c2}A AVAV
+            ${c1}AVAV${c2}AVAVAV
+           ${c1}AVAV${c2} VAVAV
+          ${c1}AVAV  ${c2}AVAVA
+         ${c1}AVAV  ${c2}AVAVAVA
+        ${c1}AVAV  ${c2}AVAV VAVA
+       ${c1}AVAV  ${c2}AVAV   VAVA
+      ${c1}AVAV  ${c2}AVAV     VAVA
+     ${c1}AVAV  ${c2}AVAV       VAVA
+    ${c1}AVAVAV${c2}AVAVA       AVAVA
+   ${c1}AVAVAV${c2}AVAVAVA     AVAVAVA
