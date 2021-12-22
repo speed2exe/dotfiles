@@ -367,3 +367,71 @@ end
 function learn
   printf "$argv" | sed "s/ /\//g" | xargs -I {} curl cht.sh/{} 
 end
+
+# compress
+function compress
+    if test (count $argv) -eq 1
+        set type ""
+        set path $argv[1]
+    else
+        set type $argv[1]
+        set path $argv[2]
+    end
+
+    # set ext based on type
+    switch $type
+        case j
+            set ext ".bz2"
+        case z
+            set ext ".gz"
+    end
+
+    # remove trailing slashes
+    set target (string trim --right --chars=/ $path)
+    # add file extensions
+    set target $target".tar$ext"
+
+    set cmd "tar -cv"$type"f "$target" $path"
+    commandline $cmd
+end
+
+alias mktar "compress "
+alias mktgz "compress z"
+alias mktbz "compress j"
+
+# extract
+function extract
+    if test ! -f $argv
+        echo "extract expects a path to file"
+        return 1
+    end
+
+    set path $argv
+    switch $path
+        case *.tar.bz2
+            tar xvjf $path
+        case *.tar.gz
+            tar xvzf $path
+        case *.bz2
+            bunzip2 $path
+        case *.rar
+            rar x $path
+        case *.gz
+            gunzip $path
+        case *.tar
+            tar xvf $path
+        case *.tbz2
+            tar xvjf $path
+        case *.tgz
+            tar xvzf $path
+        case *.zip
+            unzip $path
+        case *.Z
+            uncompress $path
+        case *.7z
+            7z x $path
+        case *
+            echo "unknown file extension for extraction"
+            return 1
+    end
+end
