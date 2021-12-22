@@ -15,7 +15,7 @@ function fish_greeting
         :> ~/.cmd
     else
         echo
-        neofetch && fortune
+        neofetch && set_color brblack; fortune
     end
 end
 
