@@ -46,7 +46,7 @@ require'nvim-tree'.setup {
         auto_open = true,
     },
     hijack_cursor       = true,
-    update_cwd          = true,
+    update_cwd          = false,
     diagnostics = {
         enable = true,
         icons = {
