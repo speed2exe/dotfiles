@@ -14,6 +14,7 @@ function fish_greeting
         $cmd
         :> ~/.cmd
     else
+        echo
         neofetch && fortune
     end
 end
