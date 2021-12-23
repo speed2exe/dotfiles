@@ -12,7 +12,7 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)" # prompts yes/no
 ```
 # install omf and get into fish shell
 ```
-curl -L https://get.oh-my.fish | fish 
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 ```
 
 # inside fish
