@@ -46,8 +46,8 @@ end
 alias n "cmatrix -as -u 7 -C blue"
 
 # pacman
-alias install "pacman -Syu"
-alias uninstall "pacman -Rcns"
+alias inst "sudo pacman -Syu"
+alias uninst "sudo pacman -Rcns"
 
 # gcloud
 alias gcloud "/root/google-cloud-sdk/bin/gcloud"
@@ -63,6 +63,9 @@ fish_add_path $GOPATH/bin
 
 # Ruby
 fish_add_path "/root/.local/share/gem/ruby/3.0.0/bin"
+
+# https://github.com/dalance/procs
+alias ps "procs"
 
 # jobs 
 alias j "jobs"
@@ -98,7 +101,7 @@ alias bat "bat --theme Dracula"
 alias cat "bat"
 function show
     if [ (count $argv) -eq 0 ]
-        set path (find . | fpr)
+        set path (fd_all . | fpr)
         if [ $path ]
             show $path
         end
@@ -128,11 +131,13 @@ alias grep "rg"
 alias nc "sed 's/\x1b\[[0-9;]*[a-zA-Z]//g'"
 
 # https://github.com/junegunn/fzf/
-# alias fp "fzf -i --preview ' echo \"if [ -d {} ] ; ll {} ; else ; bat --color=always --style=numbers --line-range=:500 {}\" | fish '"
-alias fp "fzf -i --preview 'echo \"show {}\" | fish'"
+alias fp "fzf --ansi -i --preview 'echo \"show {}\" | fish'"
 alias fpr "fp --layout reverse --height 30%"
 alias fprp "fpr --print-query"
 alias fr "fzf -i --layout reverse --height 30%"
+
+# https://github.com/sharkdp/fd
+alias fd_all "fd --hidden --no-ignore --color=always"
 
 function get_dir
     if [ $argv ]
@@ -144,7 +149,7 @@ end
 
 function fprp_optional
     set path (get_dir $argv)
-    set path (find $path | fprp --query "$path/")
+    set path (fd_all $path | fprp --query "$path/")
     if [ $status -eq 0 ] 
         if [ (string match "*.." $path[1] ) ]
             echo (realpath $path[1])
@@ -172,7 +177,7 @@ end
 # find and change to that directory
 function lookup_dir
     set path (get_dir $argv)
-    set path (find $path -type d | fprp --query "$path/")
+    set path (fd_all --type d $path | fprp --query "$path/")
 
     if [ (string match "*/.." $path[1]) ]
         echo "$path[1]"
@@ -246,10 +251,10 @@ end
 function d
     if [ (count $argv) -eq 0 ]
         set path (pwd)
-        set argv (find $path | fpr --query "$path/")
+        set argv (fd_all $path | fpr --query "$path/")
     else if [ -d $argv ]
         set path (get_dir $argv)
-        set argv (find $path | fpr --query "$path/")
+        set argv (fd_all $path | fpr --query "$path/")
     end
     
     if [ $argv ] 
@@ -259,7 +264,7 @@ end
 
 # quick note access
 function fzf_notes_path
-    set path (find ~/notes | fpr --print-query --query ~/notes/)
+    set path (fd_all ~/notes | fpr --print-query --query ~/notes/)
     if [ $status -eq 0 ] 
         echo $path[2]
     else
@@ -349,7 +354,7 @@ end
 # warning/todo: works very slow if there are many contents, and still loading after it's done looking
 # Search for file name or file content, jumps to nvim and edit at line number
 function s
-   find -type f | xargs -I {} echo "cat -n {} | tac | sed 's/ *//' | awk '{print \"{}:\"\$0}' " | fish | fzf -i --exact --no-sort | awk '{print $1}' | awk -F ':' '{print "nvim +"$2" "$1}' | fish
+   fd_all -type f | xargs -I {} echo "cat -n {} | tac | sed 's/ *//' | awk '{print \"{}:\"\$0}' " | fish | fzf -i --exact --no-sort | awk '{print $1}' | awk -F ':' '{print "nvim +"$2" "$1}' | fish
 end
 
 function copy 
@@ -396,7 +401,7 @@ function compress
     commandline $cmd
 end
 
-alias mktar "compress "
+alias mktar "compress"
 alias mktgz "compress z"
 alias mktbz "compress j"
 
