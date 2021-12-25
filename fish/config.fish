@@ -81,27 +81,12 @@ alias lt "ll --tree"
 alias lta "lt --all"
 alias ltd "lt --only-dirs"
 
-# set history_path "~/.local/share/fish/fish_history"
-# function add_to_history
-#     set timestamp (date '+%s')
-#     set cmd $argv[1]
-#     set paths $argsv[2..]
-#     echo "- cmd: $cmd" >> $history_path
-#     echo "- when: $timestamp" >> $history_path
-#     if [ (count $paths) ]
-#         echo "- paths:"
-#         for path in $paths
-#             echo "    - $path"
-#         end
-#     end
-# end
-
 # https://github.com/sharkdp/bat
 alias bat "bat --theme Dracula"
 alias cat "bat"
 function show
     if [ (count $argv) -eq 0 ]
-        set path (fd_all . | fpr)
+        set path (fd_all --exact-depth 1 . | fpr)
         if [ $path ]
             show $path
         end
@@ -110,7 +95,7 @@ function show
     else if test -d $argv
         ll $argv
     else
-        set file (string split : $argv)
+        set file (string split : $argv) # handle case for file with line number
         if [ (count $file) -ne 2 ]
             bat --color=always --style=numbers $argv
         else
@@ -147,9 +132,10 @@ function get_dir
     end
 end
 
+# returns fzf result if found, elso return user input
 function fprp_optional
     set path (get_dir $argv)
-    set path (fd_all $path | fprp --query "$path/")
+    set path (fd_all . $path | fprp --query "$path/")
     if [ $status -eq 0 ] 
         if [ (string match "*.." $path[1] ) ]
             echo (realpath $path[1])
@@ -177,7 +163,7 @@ end
 # find and change to that directory
 function lookup_dir
     set path (get_dir $argv)
-    set path (fd_all --type d $path | fprp --query "$path/")
+    set path (fd_all --type d . $path | fprp --query "$path/")
 
     if [ (string match "*/.." $path[1]) ]
         echo "$path[1]"
@@ -189,9 +175,9 @@ function lookup_dir
     end
 end
 
+# quick navigate to directory
 function g
-    set path (lookup_dir $argv)
-    commandline "cd $path"
+    commandline (lookup_dir $argv)'/'
 end
 
 # same as g but keeps going until stopped
@@ -217,9 +203,7 @@ function e
 end
 
 # History
-function h
-    set cmd (history | fr --no-sort) && commandline $cmd
-end
+alias h "commandline (history | fr --no-sort)"
 
 # create file and make path if not available
 function t
@@ -247,55 +231,31 @@ function c
 end
 
 # quick delete path or file
-# TODO rework
 function d
     if [ (count $argv) -eq 0 ]
         set path (pwd)
-        set argv (fd_all $path | fpr --query "$path/")
     else if [ -d $argv ]
         set path (get_dir $argv)
-        set argv (fd_all $path | fpr --query "$path/")
     end
+
+    set argv (fd_all --exact-depth 1 . $path | fpr --query "$path/")
     
     if [ $argv ] 
-        trash $argv
-    end
-end
-
-# quick note access
-function fzf_notes_path
-    set path (fd_all ~/notes | fpr --print-query --query ~/notes/)
-    if [ $status -eq 0 ] 
-        echo $path[2]
-    else
-        echo $path[1]
+        commandline "trash $argv"
     end
 end
 
 # quick note edit
-function ne
-    e ~/notes
-end
+alias ne "e ~/notes"
 
 # quick note display
-function ns
-    set path (lookup_file ~/notes)
-    commandline "cat $path"
-end
+alias ns "cat (lookup_file ~/notes)"
 
 # quick note delete
-function nd
-    d ~/notes
-    set path (fzf_notes_path)
-    if [ $path ] 
-        trash $path
-    end
-end
+alias nd "d (lookup_file ~/notes)"
 
 # save current directory
-function savedir
-    echo (pwd) > ~/.savedir
-end
+alias savedir "echo (pwd) > ~/.savedir"
 
 # mark
 function m
@@ -326,24 +286,19 @@ function m
     end
 end
 
-function md
-    nvim ~/marks/directories.txt
-end
+# edit saved directories
+alias md "nvim ~/marks/directories.txt"
 
-function mf
-    nvim ~/marks/files.txt
-end
+# edit saved file paths
+alias mf "nvim ~/marks/files.txt"
 
 # find directory
-function gd
-    commandline (tac ~/marks/directories.txt | fpr)
-    commandline -i "/"
-end
+alias gd "commandline (tac ~/marks/directories.txt | fpr)'/'"
 
 # find files
 function gf
     set file (tac ~/marks/files.txt | fpr)
-    set splitted (string split ":" $file)
+    set splitted (string split ":" $file) # account for line number if exists
     if [ (count $splitted) -ne 2 ]
         commandline "nvim $file"
     else
@@ -354,7 +309,7 @@ end
 # warning/todo: works very slow if there are many contents, and still loading after it's done looking
 # Search for file name or file content, jumps to nvim and edit at line number
 function s
-   fd_all -type f | xargs -I {} echo "cat -n {} | tac | sed 's/ *//' | awk '{print \"{}:\"\$0}' " | fish | fzf -i --exact --no-sort | awk '{print $1}' | awk -F ':' '{print "nvim +"$2" "$1}' | fish
+   fd_all -type f . | xargs -I {} echo "cat -n {} | tac | sed 's/ *//' | awk '{print \"{}:\"\$0}' " | fish | fzf -i --exact --no-sort | awk '{print $1}' | awk -F ':' '{print "nvim +"$2" "$1}' | fish
 end
 
 function copy 
@@ -414,29 +369,29 @@ function extract
 
     set path $argv
     switch $path
-        case *.tar.bz2
-            tar xvjf $path
-        case *.tar.gz
-            tar xvzf $path
-        case *.bz2
-            bunzip2 $path
-        case *.rar
-            rar x $path
-        case *.gz
-            gunzip $path
-        case *.tar
-            tar xvf $path
-        case *.tbz2
-            tar xvjf $path
-        case *.tgz
-            tar xvzf $path
-        case *.zip
-            unzip $path
-        case *.Z
-            uncompress $path
-        case *.7z
-            7z x $path
-        case *
+        case '*.tar.bz2'
+            tar xvjf $path; return
+        case '*.tar.gz'
+            tar xvzf $path; return
+        case '*.bz2'
+            bunzip2 $path; return
+        case '*.rar'
+            rar x $path; return
+        case '*.gz'
+            gunzip $path; return
+        case '*.tar'
+            tar xvf $path; return
+        case '*.tbz2'
+            tar xvjf $path; return
+        case '*.tgz'
+            tar xvzf $path; return
+        case '*.zip'
+            unzip $path; return
+        case '*.Z'
+            uncompress $path; return
+        case '*.7z'
+            7z x $path; return
+        case '*'
             echo "unknown file extension for extraction"
             return 1
     end
