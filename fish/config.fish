@@ -64,6 +64,9 @@ fish_add_path $GOPATH/bin
 # Ruby
 fish_add_path "/root/.local/share/gem/ruby/3.0.0/bin"
 
+# always check for overwrite before copy
+alias cp "cp -i"
+
 # https://github.com/dalance/procs
 alias ps "procs"
 
