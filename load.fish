@@ -10,3 +10,4 @@ cp -r kitty/ ~/.config/kitty/
 cp -r neofetch/ ~/.config/neofetch/
 cp starship.toml ~/.config/starship.toml
 
+
