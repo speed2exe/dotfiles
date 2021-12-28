@@ -59,4 +59,3 @@ ssh -T git@github.com
 pacman -Syu rsync reflector
 reflector -a 10 -c sg -f 5 --sort rate --save /etc/pacman.d/mirrorlist
 ```
-
