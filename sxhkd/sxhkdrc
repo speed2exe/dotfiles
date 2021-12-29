@@ -1,0 +1,77 @@
+##---------- Rofi Launcher & Menus ----------##
+
+# Rofi App Launcher
+super + space
+	sh ~/.config/bspwm/rofi/bin/launcher
+
+# Rofi Network Menu
+super + n
+	nmd
+
+# Rofi Themes Menu
+super + t
+	sh ~/.config/bspwm/rofi/bin/themes
+
+## Rofi Menus/Applets
+super + {w,m,x,r,s,i}
+	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,asroot,screenshot,network}
+
+###---------- System Keys ----------##
+
+# Brighness control
+XF86MonBrightness{Up,Down}
+	brightness{ --inc, --dec}
+
+# Volume control
+XF86Audio{RaiseVolume,LowerVolume}
+	volume{ --inc, --dec}
+
+XF86AudioMute
+	volume --toggle
+
+##---------- Bspwm ----------##
+
+# Close App
+super + BackSpace
+	bspc node -c
+
+# Toggle for good aspect ratio
+super + Return
+    bspc node -t "~"{fullscreen,pseudo_tiled}
+
+# Toggle floating and tiled
+super + Escape
+    bspc node -t "~"{floating,tiled}
+
+# Change focus
+super + {a,u,o,e}
+	bspc node -f {west,north,east,south}
+
+# Swap
+super + {Left,Up,Right,Down}
+    bspc node -s {west,north,east,south} --follow
+
+# Rotate
+super + Delete
+    bspc node @parent -R 90
+
+# Expanding windows
+super + shift + {Left,Right,Up,Down}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+
+## Shrinking windows
+super + alt + {Right,Left,Down,Up}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+
+## Move floating windows
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# Change Desktop
+super + {1-8}
+    bspc desktop -f '^{1-8}'
+
+# Send focused window to another workspace
+super + shift + {1-8}
+	bspc node -d '^{1-8}'
+
