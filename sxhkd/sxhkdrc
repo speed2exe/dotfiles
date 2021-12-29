@@ -52,8 +52,8 @@ super + {Left,Up,Right,Down}
     bspc node -s {west,north,east,south} --follow
 
 # Rotate
-super + Delete
-    bspc node @parent -R 90
+super + {Next,Prior}
+    bspc node @parent -R {90,270}
 
 # Expanding windows
 super + shift + {Left,Right,Up,Down}
