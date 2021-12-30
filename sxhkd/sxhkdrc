@@ -68,10 +68,19 @@ super + ctrl + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # Change Desktop
-super + {1-8}
-    bspc desktop -f '^{1-8}'
+super + {1-7}
+    bspc desktop -f '^{1-7}'
+
+# Go to last destktop
+super + Tab
+    bspc desktop -f last
 
 # Send focused window to another workspace
-super + shift + {1-8}
-	bspc node -d '^{1-8}'
+super + shift + {1-7}
+	bspc node -d '^{1-7}' --follow
+
+# Send to previous opened desktop
+# usually happens after rofi windows search
+super + shift + Tab
+    bspc node -d last --follow
 
