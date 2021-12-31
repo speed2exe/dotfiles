@@ -1,3 +1,7 @@
+# Terminal
+super + Return
+    alacritty
+
 ##---------- Rofi Launcher & Menus ----------##
 
 # Rofi App Launcher
@@ -32,16 +36,16 @@ XF86AudioMute
 ##---------- Bspwm ----------##
 
 # Close App
-super + BackSpace
+super + c
 	bspc node -c
 
-# Toggle for good aspect ratio
-super + Return
-    bspc node -t "~"{fullscreen,pseudo_tiled}
+# Kill App
+super + q
+	bspc node -k
 
-# Toggle floating and tiled
+# Toggle Modes
 super + Escape
-    bspc node -t "~"{floating,tiled}
+    bspc node -t "~"{floating,tiled,fullscreen}
 
 # Change focus
 super + {a,u,o,e}
