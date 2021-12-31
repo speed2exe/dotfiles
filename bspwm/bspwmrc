@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+
+xrandr --output DP-0 --mode 3840x1080 --rate 120 &
+
 set -U SXHKD_SHELL /usr/bin/bash
 
 ## Configurations --------------------------------------------#
@@ -19,7 +22,8 @@ bspc config split_ratio 0.50
 killall -9 xsettingsd sxhkd dunst xfce4-power-manager picom polybar
 
 # wallpaper
-feh --no-fehbg --bg-fill '/usr/share/backgrounds/nordic.jpg' &
+#feh --no-fehbg --bg-fill '/usr/share/backgrounds/nordic.jpg' &
+feh --no-fehbg --bg-fill '/home/zx/Downloads/sunset.jpg' &
 
 # start polybar
 polybar main &
