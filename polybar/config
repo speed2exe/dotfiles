@@ -26,10 +26,6 @@ font-1 =
 
 modules-left = sep temperature sep cpu sep memory sep swap sep fs_label filesystem
 modules-center = mode bspwm
-modules-right = network sep date
-;; TODO: bluetooth, volume, brightness
+modules-right = date sep
 
 local = en_SG.UTF-8
-
-tray-position = center
-tray-offset-x = 4%
