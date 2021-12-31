@@ -1,6 +1,6 @@
 [base]
 format-foreground = ${color.FOREGROUND}
-format-prefix-foreground = ${color.ALTBLACK}
+format-prefix-foreground = ${color.BLUE}
 
 ;; ===================== separator ========================
 [module/sep]
@@ -66,7 +66,7 @@ label = %gb_swap_used%/%gb_swap_total%(%percentage_swap_used%%)
 [module/fs_label]
 type = custom/text
 content = DISK:
-content-foreground = ${color.ALTBLACK}
+content-foreground = ${color.BLUE}
 
 ;; ===================== filesystem ========================
 
@@ -81,28 +81,19 @@ label-mounted = %used%/%total%(%percentage_used%%)
 ;; ===================== network ========================
 
 [module/network]
+inherit = base
 type = internal/network
 interval = 3
 
 ; TODO: resolve this automatically
 interface = wlan0
 
-format-connected = <label-connected>(<ramp-signal>)
+format-connected = <label-connected>
 format-disconnected = <label-disconnected>
 format-packetloss = <animation-packetloss> <label-connected>
 
-label-connected = %essid%:%signal%, down:%downspeed%, up:%upspeed%
-label-connected-foreground = ${color.GREEN}
-
+label-connected = ssid:%essid%|signal:%signal%%|down:%downspeed%|up:%upspeed%
 label-disconnected = N.A.
-label-disconnected-foreground = ${color.RED}
-
-ramp-signal-0 = 0/5
-ramp-signal-1 = 1/5
-ramp-signal-2 = 2/5
-ramp-signal-3 = 3/5
-ramp-signal-4 = 4/5
-ramp-signal-5 = 5/5
 
 ;; ===================== xwindow ========================
 
@@ -117,21 +108,15 @@ format-padding = 1
 type = internal/bspwm
 
 format = <label-mode>
-format-background = ${color.FOREGROUND}
+format-background = ${color.BLUE}
 format-foreground = ${color.BACKGROUND}
 format-padding = 1
 
-label-monocle = "Monocle"
-label-tiled = "Tiled"
-
-label-floating = ", Float"
-label-pseudotiled = ", Pseudo"
-label-fullscreen = ", Full"
-
-label-locked = " | Locked"
-label-sticky = " | Sticky"
-label-private = " | Private"
-
+label-tiled = " Tiled "
+label-monocle = " Monocle "
+label-floating = " Float "
+label-fullscreen = " Full "
+label-pseudotiled = " Pseudo "
 
 ;; ===================== bspwm ========================
 
@@ -143,34 +128,32 @@ format-padding = 1
 
 label-focused = " %name% "
 label-focused-foreground = ${color.BACKGROUND}
-label-focused-background = ${color.FOREGROUND}
+label-focused-background = ${color.BLUE}
 
 label-occupied = " %name% "
-label-occupied-foreground = ${color.FOREGROUND}
-label-occupied-background = ${color.BACKGROUND}
+label-occupied-foreground = ${color.BLUE}
+label-occupied-background = $000
 
 label-urgent = " %name% "
 label-urgent-underline = ${color.RED}
 
 label-empty = " %name% "
-label-empty-foreground = ${color.BACKGROUND}
+label-empty-foreground = $000
 label-empty-background = $000
 
-; Separator in between workspaces
 label-separator = ""
-label-separator-padding = 0
-label-separator-foreground = ${color.FOREGROUND}
-
 
 ;; ====================== date =======================
+
 [module/date]
 type = internal/date
 interval = 1
 
-date = %A, %d %B %Y
+date = %A %d %B %Y
 time = %H:%M:%S
+time-prefix = TIME:
 
 format = <label>
 
-label = %time%, %date%
+label = %time% %date%
 label-font = 3
