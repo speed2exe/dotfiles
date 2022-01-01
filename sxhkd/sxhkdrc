@@ -4,13 +4,13 @@ super + Return
 
 ##---------- Rofi Launcher & Menus ----------##
 
-# Rofi App Launcher
+# get window and pull it to current desktop
 super + space
-	sh ~/.config/bspwm/rofi/bin/launcher
+    ~/.config/sxhkd/get.sh
 
 # Rofi Menus/Applets
-super + {w,m,x,s,i}
-	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,screenshot,network}
+super + {m,x,s,i}
+    sh ~/.config/bspwm/rofi/bin/{mpd,powermenu,screenshot,network}
 
 ###---------- System Keys ----------##
 
@@ -76,6 +76,8 @@ super + {h,t,r,n}
 # Swap desktop
 super + {F6,F8}
     bspc desktop -s {prev,next} --follow
+# TODO: auto rename each desktop moved
+
 
 ##---------- Transfer Management ----------##
 
