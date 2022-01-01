@@ -1,9 +1,11 @@
 /*Dracula theme based on the Purple official rofi theme*/
 
-* {
-	font: "Jost 12";
+configuration {
 	modi: "window,run,ssh,windowcd,drun,combi,keys,filebrowser";
+    font: "Iosevka Term SS14 12";
+}
 
+* {
     foreground: #f8f8f2;
     background: #282a36;
     active-background: #6272a4;
@@ -18,7 +20,6 @@
 #window {
     background-color: @background;
     border:           1;
-    border-radius: 6;
     border-color: @bordercolor;
     padding:          5;
 }
