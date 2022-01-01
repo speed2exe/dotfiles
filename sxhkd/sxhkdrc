@@ -8,9 +8,12 @@ super + Return
 super + space
     ~/.config/sxhkd/get.sh
 
+super + s
+    ~/.config/sxhkd/screenshot.sh
+
 # Rofi Menus/Applets
-super + {m,x,s,i}
-    sh ~/.config/bspwm/rofi/bin/{mpd,powermenu,screenshot,network}
+super + {x,i}
+	sh ~/.config/bspwm/rofi/bin/{powermenu,network}
 
 ###---------- System Keys ----------##
 
