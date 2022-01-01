@@ -8,17 +8,9 @@ super + Return
 super + space
 	sh ~/.config/bspwm/rofi/bin/launcher
 
-# Rofi Network Menu
-super + n
-	nmd
-
-# Rofi Themes Menu
-super + t
-	sh ~/.config/bspwm/rofi/bin/themes
-
-## Rofi Menus/Applets
-super + {w,m,x,r,s,i}
-	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,asroot,screenshot,network}
+# Rofi Menus/Applets
+super + {w,m,x,s,i}
+	sh ~/.config/bspwm/rofi/bin/{windows,mpd,powermenu,screenshot,network}
 
 ###---------- System Keys ----------##
 
@@ -33,14 +25,14 @@ XF86Audio{RaiseVolume,LowerVolume}
 XF86AudioMute
 	volume --toggle
 
-##---------- Bspwm ----------##
+##---------- Node Management ----------##
 
 # Close App
-super + c
+super + q
 	bspc node -c
 
 # Kill App
-super + q
+super + shift + q
 	bspc node -k
 
 # Toggle Modes
@@ -71,20 +63,27 @@ super + alt + {Right,Left,Down,Up}
 super + ctrl + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# Change Desktop
-super + {1-7}
-    bspc desktop -f '^{1-7}'
+# Send node to N
+super + BackSpace
+    bspc node -d '^1'
 
-# Go to last destktop
+##---------- Desktop Management ----------##
+
+# Go to prev or next desktop
+super + {h,t,r,n}
+    bspc desktop -f {prev,next,'^1',last}
+
+# Swap desktop
+super + {F6,F8}
+    bspc desktop -s {prev,next} --follow
+
+##---------- Transfer Management ----------##
+
+# Move Node across desktop
+super + {Home,End}
+    bspc node -d {prev,next} --follow
+
+# Move Node to last desktop
+# usually happens aftar rofi window search
 super + Tab
-    bspc desktop -f last
-
-# Send focused window to another workspace
-super + shift + {1-7}
-	bspc node -d '^{1-7}' --follow
-
-# Send to previous opened desktop
-# usually happens after rofi windows search
-super + shift + Tab
     bspc node -d last --follow
-
