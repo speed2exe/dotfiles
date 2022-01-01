@@ -151,9 +151,7 @@ interval = 1
 
 date = %A %d %B %Y
 time = %H:%M:%S
-time-prefix = TIME:
 
 format = <label>
 
 label = %time% %date%
-label-font = 3

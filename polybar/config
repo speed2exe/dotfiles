@@ -21,11 +21,12 @@ border = 0
 background = $000
 foreground = ${color.FOREGROUND}
 
-font-0 = Iosevka Term SS14:style=Regular:size=12;3
-font-1 =
+font-0 = Jost:style=Regular:size=12;3
+font-1 = Iosevka Term SS14:style=Regular:size=12;3
+font-2 =
 
 modules-left = sep temperature sep cpu sep memory sep swap sep fs_label filesystem
-modules-center = mode bspwm
+modules-center = bspwm
 modules-right = date sep
 
 local = en_SG.UTF-8
