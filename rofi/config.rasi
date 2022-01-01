@@ -1,8 +1,9 @@
 /*Dracula theme based on the Purple official rofi theme*/
 
 configuration {
-	modi: "window,run,ssh,windowcd,drun,combi,keys,filebrowser";
+	modi: "combi,filebrowser,ssh,keys";
     font: "Iosevka Term SS14 12";
+    combi-modi: "window,drun";
 }
 
 * {
