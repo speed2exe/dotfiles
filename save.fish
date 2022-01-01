@@ -1,21 +1,14 @@
 git stash
 
-rm -r fish/
-rm -r nvim/
-rm -r kitty/
-rm -r neofetch/
-rm -r fonts/
-rm -r fontconfig/
-rm -r alacritty/
-rm starship.toml
+set folder_names fish nvim kitty neofetch fonts fontconfig \
+    alacritty bspwm polybar sxhkd rofi
 
-cp -r ~/.config/fish/ .
-cp -r ~/.config/nvim/ .
-cp -r ~/.config/kitty/ .
-cp -r ~/.config/neofetch/ .
-cp -r ~/.config/fonts/ .
-cp -r ~/.config/fontconfig/ .
-cp -r ~/.config/alacritty/ .
+for name in $folder_names
+    rm -rf $name/
+    cp -r ~/.config/$name/ .
+end
+
+rm starship.toml
 cp ~/.config/starship.toml .
 
 git diff
