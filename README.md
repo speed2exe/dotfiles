@@ -62,7 +62,7 @@ reflector -a 10 -c sg -f 5 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Dependencies for Desktop Env
 ```
-pacman -Syu picom sxhkd bspwm pinta maim rofi
+pacman -Syu picom sxhkd bspwm pinta maim rofi bsplock betterlockscreen dunst dunstify
 ```
 - Fonts: Iosevka Term SS14 (in repo), Jost (downloadable)
 
