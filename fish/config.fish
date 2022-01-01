@@ -56,10 +56,11 @@ alias gcloud "/root/google-cloud-sdk/bin/gcloud"
 alias gitroot "git rev-parse --show-toplevel"
 
 # Go
-fish_add_path /usr/local/go/bin
-set GOPATH $HOME/go
-fish_add_path $GOROOT/bin
-fish_add_path $GOPATH/bin
+#fish_add_path /usr/local/go/bin
+#fish_add_path /usr/lib/go/bin
+#set GOPATH $HOME/go
+#fish_add_path $GOROOT/bin
+#fish_add_path $GOPATH/bin
 
 # Ruby
 fish_add_path "/root/.local/share/gem/ruby/3.0.0/bin"
@@ -185,6 +186,8 @@ end
 
 # same as g but keeps going until stopped
 function gr
+    echo
+    la $argv
     set path (lookup_dir $argv)
     if [ $status -ne 0 ]
         commandline "cd $path"
