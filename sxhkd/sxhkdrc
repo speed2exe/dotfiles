@@ -1,13 +1,22 @@
-# Terminal
-super + Return
-    alacritty
+
+##---------- Menu ----------##
 
 # reset the keyboard daemon
 # usually happens after modification to sxhkd file
 super + r
     killall -q sxhkd && sxhkd &
 
-##---------- Rofi Launcher & Menus ----------##
+# Terminal
+super + Return
+    alacritty
+
+# Spawns Receptacle
+super + x
+    bspc node -i
+
+# Remove all Receptacles
+super + k
+    ~/.config/sxhkd/remove_receptacle.sh
 
 # get window and pull it to current desktop
 super + space
@@ -39,6 +48,10 @@ XF86AudioMute
 	volume --toggle
 
 ##---------- Node Management ----------##
+
+# Auto Resize
+super + period
+    bspc node @/ -B
 
 # Close App
 super + q
