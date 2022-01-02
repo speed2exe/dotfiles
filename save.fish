@@ -1,7 +1,7 @@
 git stash
 
 set folder_names fish nvim kitty neofetch fonts fontconfig \
-    alacritty bspwm polybar sxhkd rofi picom
+    alacritty bspwm polybar sxhkd rofi picom dunst
 
 for name in $folder_names
     rm -rf $name/
