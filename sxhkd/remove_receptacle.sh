@@ -1,4 +1,4 @@
-for win in $(bspc query -N -n '.leaf.!window')
+for win in $(bspc query -N -n '.local.leaf.!window')
 do
     bspc node $win -k
 done
