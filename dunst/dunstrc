@@ -1,0 +1,17 @@
+[global]
+    frame_width = 1
+    frame_color = "#bd93f9"
+    font = Jost Regular 12
+    format = %s\n%b
+
+[urgency_low]
+    background = "#282a36"
+    foreground = "#bd93f9"
+
+[urgency_normal]
+    background = "#282a36"
+    foreground = "#bd93f9"
+
+[urgency_critical]
+    background = "#282a36"
+    foreground = "#bd93f9"

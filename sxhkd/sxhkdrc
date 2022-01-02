@@ -13,6 +13,10 @@ super + r
 super + space
     ~/.config/sxhkd/get.sh
 
+# file browser
+super + f
+    rofi -show filebrowser -steal-focus
+
 # screenshot menu
 super + s
     ~/.config/sxhkd/screenshot.sh
