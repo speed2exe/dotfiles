@@ -1,4 +1,4 @@
-uptime=$(uptime)
+uptime=$(uptime -p)
 dunstify "$uptime"
 
 # Options
