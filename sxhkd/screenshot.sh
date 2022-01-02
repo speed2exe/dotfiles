@@ -48,8 +48,7 @@ fi
 # Variable passed to rofi
 options="$desktop\n$area\n$window\n$infive\n$inten"
 
-#chosen="$(echo -e "$options" | $rofi_command -p 'Take Screenshot' -dmenu -selected-row 0)"
-chosen="$(echo -e "$options" | rofi -l 5 -p 'screenshot' -dmenu -theme-str 'window {width:15%;}')"
+chosen="$(echo -e "$options" | rofi -steal-focus -l 5 -p 'screenshot' -dmenu -theme-str 'window {width:15%;}')"
 case $chosen in
     $desktop)
 		shotnow
