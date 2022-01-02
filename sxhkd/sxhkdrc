@@ -2,6 +2,11 @@
 super + Return
     alacritty
 
+# reset the keyboard daemon
+# usually happens after modification to sxhkd file
+super + r
+    killall -q sxhkd && sxhkd &
+
 ##---------- Rofi Launcher & Menus ----------##
 
 # get window and pull it to current desktop
@@ -67,29 +72,28 @@ super + alt + {Right,Left,Down,Up}
 super + ctrl + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# Send node to N
-super + BackSpace
-    bspc node -d '^1'
-
 ##---------- Desktop Management ----------##
 
-# Go to prev or next desktop
-super + {h,t,r,n}
-    bspc desktop -f {prev,next,'^1',last}
+# focus to specific desktop
+super + {0-7}
+    bspc desktop -f '^{1-8}'
 
 # Swap desktop
-super + {F6,F8}
+super + {8,9}
     bspc desktop -s {prev,next} --follow
-# TODO: auto rename each desktop moved
 
 
 ##---------- Transfer Management ----------##
-
-# Move Node across desktop
-super + {Home,End}
-    bspc node -d {prev,next} --follow
 
 # Move Node to last desktop
 # usually happens aftar rofi window search
 super + Tab
     bspc node -d last --follow
+
+# Send node to N
+super + BackSpace
+    bspc node -d '^1'
+
+# Send node to specific desktop
+super + shift + {0-7}
+    bspc node -d  '^{1-8}'
