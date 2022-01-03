@@ -1,5 +1,5 @@
 #!/bin/env sh
 
-node=$(bspc query -N -n)
+desk=$(bspc query -D -d)
 rofi -show combi -show-icons -sidebar-mode -steal-focus
-bspc node -n $node --follow
+bspc node -d $desk --follow
