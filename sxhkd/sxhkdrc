@@ -1,4 +1,3 @@
-
 ##---------- Menu ----------##
 
 # reset the keyboard daemon
@@ -10,12 +9,12 @@ super + r
 super + Return
     alacritty
 
-# Spawns Receptacle
-super + x
+# Make Receptacle
+super + i
     bspc node -i
 
 # Remove all Receptacles
-super + k
+super + x
     ~/.config/sxhkd/remove_receptacle.sh
 
 # get window and pull it to current desktop
@@ -108,7 +107,7 @@ super + Tab
 
 # Send node to N
 super + BackSpace
-    bspc node -d '^1'
+    ~/.config/sxhkd/recycle_node.sh
 
 # Send node to specific desktop
 super + shift + {0-7}
