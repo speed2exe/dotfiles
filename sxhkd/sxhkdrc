@@ -50,7 +50,7 @@ XF86AudioMute
 
 # Close App
 super + q
-	bspc node -c
+	bspc node -i && bspc node -c
 
 # Kill App
 super + shift + q
