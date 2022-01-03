@@ -10,11 +10,11 @@ super + Return
     alacritty
 
 # Make Receptacle
-super + i
+super + x
     bspc node -i
 
 # Remove all Receptacles
-super + x
+super + k
     ~/.config/sxhkd/remove_receptacle.sh
 
 # get window and pull it to current desktop
@@ -57,7 +57,7 @@ super + shift + q
 	bspc node -k
 
 # Toggle Modes
-super + Escape
+super + z
     bspc node -t "~"{floating,tiled,fullscreen}
 
 # Change focus
@@ -68,9 +68,13 @@ super + {a,u,o,e}
 super + {Left,Up,Right,Down}
     bspc node -s {west,north,east,south} --follow
 
+# Fill Receptacle
+super + i
+    ~/.config/sxhkd/move_to_recep.sh
+
 # Rotate
-super + {Next,Prior}
-    bspc node @parent -R {90,270}
+super + {Next,Prior,End}
+    bspc node @parent -R {90,180,270}
 
 # Auto Resize
 super + period
@@ -94,6 +98,10 @@ super + ctrl + {Left,Down,Up,Right}
 super + {0-7}
     bspc desktop -f '^{1-8}'
 
+# select last desktop
+super Tab
+    bspc desktop -f last
+
 # Swap desktop
 super + {8,9}
     bspc desktop -s {prev,next} --follow
@@ -102,7 +110,7 @@ super + {8,9}
 
 # Move Node to last desktop
 # usually happens aftar rofi window search
-super + Tab
+super + Escape
     bspc node -d last --follow
 
 # Send node to N
