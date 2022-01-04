@@ -10,9 +10,9 @@ suspend="suspend"
 logout="logout"
 
 # Variable passed to rofi
-options="$shutdown\n$hibernate\n$reboot\n$lock\n$suspend\n$logout"
+options="$lock\n$logout\n$suspend\n$hibernate\n$shutdown\n$reboot\n"
 
-chosen="$(echo -e "$options" | rofi -p "powered menu" -steal-focus -dmenu -l 6 -theme-str 'window{width:15%;}')"
+chosen="$(echo -e "$options" | rofi -p "power menu" -steal-focus -dmenu -l 6 -theme-str 'window{width:15%;}')"
 case $chosen in
     $shutdown)
         systemctl poweroff
@@ -33,4 +33,3 @@ case $chosen in
         bspc quit
         ;;
 esac
-
