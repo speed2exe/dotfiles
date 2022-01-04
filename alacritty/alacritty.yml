@@ -548,6 +548,7 @@ key_bindings:
   - { key: K,        mods: Alt,           action: ScrollLineUp     }
   - { key: G,        mods: Alt,           action: ScrollToTop      }
   - { key: Return,   mods: Alt,           action: ScrollToBottom   }
+  - { key: Space,   mods: Alt,            action: ToggleViMode     }
 
 #debug:
   # Display the time it takes to redraw each frame.
