@@ -43,3 +43,6 @@ xfce4-power-manager &
 
 # picom
 picom &
+
+# set default desktop to be I
+sleep 1 && bspc desktop -f '^2' &
