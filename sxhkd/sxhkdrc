@@ -19,7 +19,7 @@ super + k
 
 # get window and pull it to current desktop
 super + space
-    ~/.config/sxhkd/get.sh
+    rofi -show combi -show-icons -sidebar-mode -steal-focus
 
 # file browser
 super + f
