@@ -95,24 +95,24 @@ super + shift + Up
     ~/.config/sxhkd/resize.sh top 0 -16
 
 # Expand from Bottom
-super + shift + Up
+super + shift + Down
     ~/.config/sxhkd/resize.sh bottom 0 16
 
 # Shrink from Right
 super + alt + Right
-    ~/.config/sxhkd/resize.sh left 16 0
+    ~/.config/sxhkd/resize.sh left 16 0 || ~/.config/sxhkd/auto_recep.sh west
 
 # Shrink from Left
 super + alt + Left
-    ~/.config/sxhkd/resize.sh right -16 0
+    ~/.config/sxhkd/resize.sh right -16 0 || ~/.config/sxhkd/auto_recep.sh east
 
 # Shrink from Top
 super + alt + Down
-    ~/.config/sxhkd/resize.sh top 0 16
+    ~/.config/sxhkd/resize.sh top 0 16 || ~/.config/sxhkd/auto_recep.sh north
 
 # Shrink from Bottom
 super + alt + Up
-    ~/.config/sxhkd/resize.sh bottom 0 -16
+    ~/.config/sxhkd/resize.sh bottom 0 -16 || ~/.config/sxhkd/auto_recep.sh south
 
 ## Move floating windows
 super + ctrl + {Left,Down,Up,Right}
