@@ -33,6 +33,7 @@ super + s
 super + p
     ~/.config/sxhkd/power.sh
 
+
 ###---------- System Keys ----------##
 
 # Brighness control
@@ -45,6 +46,7 @@ XF86Audio{RaiseVolume,LowerVolume}
 
 XF86AudioMute
 	volume --toggle
+
 
 ##---------- Node Management ----------##
 
@@ -80,17 +82,42 @@ super + {Next,Prior,End}
 super + period
     bspc node @/ -B
 
-# Expanding windows
-super + shift + {Left,Right,Up,Down}
-	bspc node -z {left -50 0,right 50 0,top 0 -50,bottom 0 50}
+# Expand from Left
+super + shift + Left
+    ~/.config/sxhkd/resize.sh left -16 0
 
-## Shrinking windows
-super + alt + {Right,Left,Down,Up}
-	bspc node -z {left 50 0,right -50 0,top 0 50,bottom 0 -50}
+# Expand from Right
+super + shift + Right
+    ~/.config/sxhkd/resize.sh right 16 0
+
+# Expand from Top
+super + shift + Up
+    ~/.config/sxhkd/resize.sh top 0 -16
+
+# Expand from Bottom
+super + shift + Up
+    ~/.config/sxhkd/resize.sh bottom 0 16
+
+# Shrink from Right
+super + alt + Right
+    ~/.config/sxhkd/resize.sh left 16 0
+
+# Shrink from Left
+super + alt + Left
+    ~/.config/sxhkd/resize.sh right -16 0
+
+# Shrink from Top
+super + alt + Down
+    ~/.config/sxhkd/resize.sh top 0 16
+
+# Shrink from Bottom
+super + alt + Up
+    ~/.config/sxhkd/resize.sh bottom 0 -16
 
 ## Move floating windows
 super + ctrl + {Left,Down,Up,Right}
 	bspc node -v {-50 0,0 50,0 -50,50 0}
+
 
 ##---------- Desktop Management ----------##
 
@@ -105,6 +132,7 @@ super Tab
 # Swap desktop
 super + {8,9}
     bspc desktop -s {prev,next} --follow
+
 
 ##---------- Transfer Management ----------##
 
