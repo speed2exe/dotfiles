@@ -15,6 +15,7 @@ workspaces() {
 workspaces
 
 bspc config focused_border_color \#BD93F9
+bspc config normal_border_color \#000
 bspc config border_width 1
 bspc config window_gap 0
 #bspc config split_ratio 0.50
@@ -23,8 +24,8 @@ bspc config window_gap 0
 killall -9 xsettingsd sxhkd dunst xfce4-power-manager picom polybar
 
 # wallpaper
-#feh --no-fehbg --bg-fill '/usr/share/backgrounds/nordic.jpg' &
-feh --no-fehbg --bg-fill '/home/zx/Downloads/sunset.jpg' &
+# feh --no-fehbg --bg-fill '/usr/share/backgrounds/nordic.jpg' &
+feh --no-fehbg --bg-fill ~/Downloads/DESERT-NIGHT-V2-4K.png &
 
 # start polybar
 polybar main &
@@ -41,7 +42,7 @@ sxhkd &
 # Power management
 xfce4-power-manager &
 
-# picom
+# picom 
 picom &
 
 # set default desktop to be I

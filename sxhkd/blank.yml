@@ -1,0 +1,11 @@
+background_opacity: 0.1
+
+shell:
+  program: /bin/bash
+  args:
+    - -c
+    # - ~/.config/sxhkd/get_2.sh
+    # - "read -s -n 1 ; bspc node -i ; sh -c 'nohup ~/.config/sxhkd/get_2.sh &' ; sleep 5"
+    # - "read -s -n 1 ; nohup ~/.config/sxhkd/get_2.sh &"
+    - "~/.config/sxhkd/handle_blank.sh"
+    # - "read -s -n 1 ; bspc node -i ; exec "
