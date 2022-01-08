@@ -124,8 +124,8 @@ nnoremap <leader>sk <CMD>Lspsaga diagnostic_jump_prev<CR>
 " barbar.nvim
 nnoremap <S-TAB> <CMD>BufferPrevious<CR>
 nnoremap <TAB> <CMD>BufferNext<CR>
-nnoremap <C-a> <CMD>BufferMovePrevious<CR>
-nnoremap <C-o> <CMD>BufferMoveNext<CR>
+nnoremap <C-LEFT> <CMD>BufferMovePrevious<CR>
+nnoremap <C-RIGHT> <CMD>BufferMoveNext<CR>
 nnoremap <leader><TAB> <CMD>BufferPick<CR>
 nnoremap <leader>b :Buffer
 nnoremap <leader>bp <CMD>BufferPin<CR>
