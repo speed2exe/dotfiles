@@ -66,3 +66,9 @@ pacman -Syu picom sxhkd bspwm pinta maim rofi bsplock betterlockscreen dunst dun
 ```
 - Fonts: Iosevka Term SS14 (in repo), Jost (downloadable)
 
+# Extras to consider
+- Full Dracula theme https://draculatheme.com/
+- Chinese Fonts (downloadable)
+- use xrandr to change display mode
+
+
