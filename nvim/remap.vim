@@ -1,8 +1,5 @@
 let mapleader = " "
 
-" quick exit, same as exiting in shell
-nnoremap <C-D> ZZ
-
 " create file with filename under cursor if not exists
 nnoremap <leader>e :e <cfile><CR>
 
