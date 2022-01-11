@@ -52,7 +52,7 @@ XF86AudioMute
 
 # Close App
 super + q
-	bspc node -i && bspc node -c
+    ~/.config/sxhkd/quit.sh
 
 # Kill App
 super + shift + q
