@@ -80,8 +80,8 @@ vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
 nnoremap [[ <CMD>cprev<CR>
 nnoremap ]] <CMD>cnext<CR>
 " " Local List
-nnoremap [( <CMD>lprev<CR>
-nnoremap ]) <CMD>lnext<CR>
+nnoremap {{ <CMD>lprev<CR>
+nnoremap }} <CMD>lnext<CR>
 
 " Startify
 nnoremap <leader><ESC> <CMD>Startify<CR>
@@ -145,9 +145,14 @@ nnoremap <leader>d<CR> <CMD>lua require('dap').continue()<CR>
 nnoremap <leader>d<TAB> <CMD>lua require('dap').repl.toggle()<CR>
 
 " terminal access with https://github.com/voldikss/vim-floaterm
-nnoremap <CR> :!savedir<CR>:FloatermNew --autoclose=1<CR><CR>
+nnoremap <leader><CR> :!savedir<CR>:FloatermNew --autoclose=1<CR><CR>
 nnoremap <ESC> :!
 nnoremap <leader><leader> :.!
-" vnoremap <CR> y:!<C-R>"<CR>
 vnoremap <CR> :w! ~/.cmd<CR>:FloatermNew --autoclose=1<CR>
 vnoremap <leader><leader> y:.!<C-R>"<CR>
+
+" lsp trouble
+nnoremap <leader>a :Trouble
+nnoremap <leader>at <CMD>TroubleToggle<CR>
+nnoremap <leader>ar <CMD>TroubleRefresh<CR>
+nnoremap <leader>ac <CMD>TroubleClose<CR>
