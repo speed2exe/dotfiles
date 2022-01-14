@@ -2,7 +2,7 @@
 
 # reset the keyboard daemon
 # usually happens after modification to sxhkd file
-super + r
+super + l
     killall -q sxhkd && sxhkd &
 
 # Terminal
@@ -133,6 +133,9 @@ super Tab
 super + {8,9}
     bspc desktop -s {prev,next} --follow
 
+# rename destkop
+super + r
+    ~/.config/sxhkd/rename_desktop.sh
 
 ##---------- Transfer Management ----------##
 
