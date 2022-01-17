@@ -1,5 +1,9 @@
 let mapleader = " "
 
+" https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
+inoremap <C-BS> <C-W>
+inoremap <C-H> <C-W>
+
 " create file with filename under cursor if not exists
 nnoremap <leader>e :e <cfile><CR>
 
