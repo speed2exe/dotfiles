@@ -133,8 +133,8 @@ super + ctrl + Down
 ##---------- Desktop Management ----------##
 
 # focus desktop
-super + {4,6}
-    bspc desktop -f {prev,next}
+super + {4,6,2}
+    bspc desktop -f {prev,next,'^1'}
 
 # Swap desktop
 super + shift {4,6}
