@@ -114,10 +114,21 @@ super + alt + Down
 super + alt + Up
     ~/.config/sxhkd/resize.sh bottom 0 -16 || ~/.config/sxhkd/auto_recep.sh south
 
-## Move floating windows
-super + ctrl + {Left,Down,Up,Right}
-	bspc node -v {-50 0,0 50,0 -50,50 0}
+# Move window left
+super + ctrl + Left
+    ~/.config/sxhkd/move.sh left -16 0
 
+# Move window right
+super + ctrl + Right
+    ~/.config/sxhkd/move.sh right 16 0
+
+# Move window up
+super + ctrl + Up
+    ~/.config/sxhkd/move.sh top 0 -16
+
+# Move window down
+super + ctrl + Down
+    ~/.config/sxhkd/move.sh bottom 0 16
 
 ##---------- Desktop Management ----------##
 
