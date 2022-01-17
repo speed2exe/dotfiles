@@ -132,17 +132,18 @@ super + ctrl + Down
 
 ##---------- Desktop Management ----------##
 
-# focus to specific desktop
-super + {0-7}
-    bspc desktop -f '^{1-8}'
-
-# select last desktop
-super Tab
-    bspc desktop -f last
+# focus desktop
+super + {4,6}
+    bspc desktop -f {prev,next}
 
 # Swap desktop
-super + {8,9}
+super + shift {4,6}
     bspc desktop -s {prev,next} --follow
+
+# select last desktop
+# good for switching back after rofi search
+super Tab
+    bspc desktop -f last
 
 # rename destkop
 super + r
@@ -159,6 +160,6 @@ super + Escape
 super + BackSpace
     ~/.config/sxhkd/recycle_node.sh
 
-# Send node to specific desktop
-super + shift + {0-7}
-    bspc node -d  '^{1-8}'
+# Send node to previous or next desktop
+super + {8,5}
+    bspc node -d {prev,next} --follow
