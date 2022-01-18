@@ -9,10 +9,6 @@ super + l
 super + Return
     alacritty
 
-# Make Receptacle
-super + x
-    bspc node -i
-
 # Remove all Receptacles
 super + k
     ~/.config/sxhkd/remove_receptacle.sh
@@ -50,17 +46,29 @@ XF86AudioMute
 
 ##---------- Node Management ----------##
 
+# Spawn Receptacle
+super + x
+    bspc node -i
+
+# Next through floating windows
+super + n
+    bspc node -f next.local.floating
+
+# Previous through floating windows
+super + r
+    bspc node -f prev.local.floating
+
 # Close App
 super + q
-    ~/.config/sxhkd/quit.sh
+    bspc node -c
 
 # Kill App
 super + shift + q
 	bspc node -k
 
 # Toggle Modes
-super + z
-    bspc node -t "~"{floating,tiled,fullscreen}
+super + t
+    bspc node -t "~"{floating,tiled}
 
 # Change focus
 super + {a,u,o,e}
@@ -146,7 +154,7 @@ super Tab
     bspc desktop -f last
 
 # rename destkop
-super + r
+super + d
     ~/.config/sxhkd/rename_desktop.sh
 
 ##---------- Transfer Management ----------##
