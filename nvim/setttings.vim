@@ -34,4 +34,6 @@ set splitbelow
 set splitright
 set wildmenu
 set wildmode=longest:full,full
+set laststatus=2
+set statusline+=%F
 " set autochdir "might break plugins

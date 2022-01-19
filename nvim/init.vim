@@ -1,8 +1,8 @@
 " https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
 autocmd BufEnter * lcd %:p:h
 
-source ~/.config/nvim/setttings.vim
 source ~/.config/nvim/plugins.vim
+source ~/.config/nvim/setttings.vim
 source ~/.config/nvim/remap.vim
 
 colorscheme dracula
@@ -18,4 +18,3 @@ autocmd FileType help wincmd L
 
 " https://www.reddit.com/r/vim/comments/jcecyb/vims_background_turns_opaque_in_new_windows/
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE " transparent bg
-
