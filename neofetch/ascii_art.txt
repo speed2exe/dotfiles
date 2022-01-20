@@ -1,5 +1,5 @@
-   ${c1}VAVAVAVAVAVAVAVAVAV${c2}AVAVAV
-    ${c1}VAVAVAVAVAVAVAVAV ${c2}VAVAV
+   ${c1}VAVAVAVAVAVAVAVAVAV${c2}  AVAV
+    ${c1}VAVAVAVAVAVAVAVAV ${c2} AVAV
            ${c4}VAVA ${c1}AVAV  ${c2}AVAV
             ${c4}VAV${c1}AVAV  ${c2}AVAV
              ${c4}V${c1}AVAV  ${c2}AVAV
@@ -12,5 +12,5 @@
        ${c1}AVAV  ${c2}AVAV   VAVA
       ${c1}AVAV  ${c2}AVAV     VAVA
      ${c1}AVAV  ${c2}AVAV       VAVA
-    ${c1}AVAVAV${c2}AVAVA${c4}VAVAVA ${c2}AVAVA
-   ${c1}AVAVAV${c2}AVAVAVA${c4}VAVAV${c2}AVAVAVA
+    ${c1}AVAVAV${c2}AVAV${c4}AVAVAVA ${c2} VAVA
+   ${c1}AVAVAV${c2}AVAV${c4}AVAVAVAVA${c2}  VAVA
