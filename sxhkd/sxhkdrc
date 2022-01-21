@@ -6,8 +6,8 @@ super + l
     killall -q sxhkd && sxhkd &
 
 # Terminal
-super + Return
-    alacritty
+super + {_,shift +}Return
+    {alacritty, bspc rule -a \* -o state=floating && alacritty}
 
 # Remove all Receptacles
 super + k
