@@ -1,5 +1,16 @@
 let mapleader = " "
 
+" auto quotes
+inoremap ' ''<LEFT>
+inoremap '' ''
+
+inoremap " ""<LEFT>
+inoremap "" ""
+
+inoremap ` ``<LEFT>
+inoremap ``
+inoremap ``` ``````<LEFT><LEFT><LEFT><CR><ESC>O
+
 " auto braces
 inoremap ( ()<LEFT>
 inoremap () ()
