@@ -169,5 +169,5 @@ super + BackSpace
     ~/.config/sxhkd/recycle_node.sh
 
 # Send node to previous or next desktop
-super + {8,5}
+super + alt + {4,6}
     bspc node -d {prev,next} --follow

@@ -56,6 +56,7 @@ alias gcloud "/root/google-cloud-sdk/bin/gcloud"
 alias gitroot "git rev-parse --show-toplevel"
 
 fish_add_path "~/.local/bin"
+fish_add_path "/home/zx/.local/bin"
 
 # Go
 #fish_add_path /usr/local/go/bin
