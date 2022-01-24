@@ -1,5 +1,22 @@
 let mapleader = " "
 
+" auto braces
+inoremap ( ()<LEFT>
+inoremap () ()
+inoremap (<CR> ()<LEFT><CR><ESC>O
+
+inoremap [ []<LEFT>
+inoremap [] []
+inoremap [<CR> []<LEFT><CR><ESC>O
+
+inoremap { {}<LEFT>
+inoremap {} {}
+inoremap {<CR> {}<LEFT><CR><ESC>O
+
+inoremap < <><LEFT>
+inoremap <> <>
+inoremap <<CR> <><LEFT><CR><ESC>O
+
 " https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
 inoremap <C-BS> <C-W>
 inoremap <C-H> <C-W>
