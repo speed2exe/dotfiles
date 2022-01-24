@@ -540,8 +540,8 @@ key_bindings:
     # (Windows, Linux, and BSD only)
   - { key: V,        mods: Alt,           action: Paste            }
   - { key: C,        mods: Alt,           action: Copy             }
-  - { key: Plus,     mods: Alt,           action: IncreaseFontSize }
-  - { key: Minus,    mods: Alt,           action: DecreaseFontSize }
+  - { key: Y,        mods: Alt,           action: IncreaseFontSize }
+  - { key: I,        mods: Alt,           action: DecreaseFontSize }
   - { key: D,        mods: Alt,           action: ScrollPageDown   }
   - { key: U,        mods: Alt,           action: ScrollPageUp     }
   - { key: J,        mods: Alt,           action: ScrollLineDown   }
