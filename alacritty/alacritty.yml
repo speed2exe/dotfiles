@@ -66,7 +66,7 @@ window:
   title: ""
 
   # Opacity
-  opacity: 0.5
+  opacity: 0.7
 
   # Window class (Linux/BSD only):
   class:
