@@ -8,8 +8,7 @@ inoremap " ""<LEFT>
 inoremap "" ""
 
 inoremap ` ``<LEFT>
-inoremap ``
-inoremap ``` ``````<LEFT><LEFT><LEFT><CR><ESC>O
+inoremap `` ``
 
 " auto braces
 inoremap ( ()<LEFT>
