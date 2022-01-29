@@ -1,7 +1,7 @@
 let mapleader = " "
 
 " quick quit
-nnoremap Q :q!
+nnoremap Q <CMD>q!<CR>
 
 " auto quotes
 inoremap ' ''<LEFT>
