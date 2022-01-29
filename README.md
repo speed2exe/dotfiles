@@ -62,7 +62,7 @@ reflector -a 10 -c sg -f 5 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Dependencies for Desktop Env
 ```
-pacman -Syu picom sxhkd bspwm pinta maim rofi bsplock betterlockscreen dunst dunstify
+pacman -Syu picom sxhkd bspwm pinta maim rofi bsplock betterlockscreen dunst dunstify kitty
 ```
 - Fonts: Iosevka Term SS14 (in repo), Jost (downloadable)
 
@@ -70,5 +70,3 @@ pacman -Syu picom sxhkd bspwm pinta maim rofi bsplock betterlockscreen dunst dun
 - Full Dracula theme https://draculatheme.com/
 - Chinese Fonts (downloadable)
 - use xrandr to change display mode
-
-
