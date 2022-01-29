@@ -1,5 +1,8 @@
 let mapleader = " "
 
+" quick quit
+nnoremap Q :q!
+
 " auto quotes
 inoremap ' ''<LEFT>
 inoremap '' ''
