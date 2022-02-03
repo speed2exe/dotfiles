@@ -29,19 +29,23 @@ super + s
 super + p
     ~/.config/sxhkd/power.sh
 
+# change wallpaper
+super + w
+    nitrogen --set-zoom-fill --random ~/wallpaper
+
 
 ###---------- System Keys ----------##
 
 # Brighness control
 XF86MonBrightness{Up,Down}
-	brightness{ --inc, --dec}
+    dunstify TODO:\ Implement\ Me
 
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume}
-	volume{ --inc, --dec}
+    pactl set-sink-volume @DEFAULT_SINK@ {+,-}1000 && ~/.config/sxhkd/dunstify_volume.sh
 
 XF86AudioMute
-	volume --toggle
+    pactl set-sink-mute @DEFAULT_SINK@ toggle && ~/.config/sxhkd/dunstify_volume.sh
 
 
 ##---------- Node Management ----------##
