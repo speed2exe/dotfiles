@@ -1,5 +1,5 @@
 set folder_names fish nvim fish kitty neofetch fonts fontconfig \
-    alacritty bspwm polybar sxhkd rofi picom dunst kitty
+    alacritty bspwm polybar sxhkd rofi picom dunst kitty gtk-3.0
 
 for name in $folder_names
     rm -rf ~/.config/$name/
