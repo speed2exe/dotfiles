@@ -23,8 +23,7 @@ bspc config window_gap 7
 killall -9 xsettingsd sxhkd dunst xfce4-power-manager picom polybar
 
 # wallpaper
-# feh --no-fehbg --bg-fill '/usr/share/backgrounds/nordic.jpg' &
-feh --no-fehbg --bg-fill ~/Downloads/DESERT-NIGHT-V2-4K.png &
+nitrogen --set-zoom-fill --random ~/wallpaper
 
 # start polybar
 polybar main &
