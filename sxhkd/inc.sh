@@ -1,13 +1,13 @@
 input_key=$1
-current_key=$(cat ~/.config/sxhkd/inc.key)
+current_key=$(cat /tmp/inc.key)
 
 if [ "$input_key" == "$current_key" ]
 then
-    value=$(($(cat ~/.config/sxhkd/inc.value)*2))
+    value=$(($(cat /tmp/inc.value)*2))
 else
-    echo $input_key > ~/.config/sxhkd/inc.key
+    echo $input_key > /tmp/inc.key
     value=1
 fi
 
-echo $value > ~/.config/sxhkd/inc.value
+echo $value > /tmp/inc.value
 echo $value
