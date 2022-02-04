@@ -1,5 +1,8 @@
 let mapleader = " "
 
+" quick macro (after qq)
+nnoremap <C-Q> @q
+
 " quick quit
 nnoremap Q <CMD>q!<CR>
 
