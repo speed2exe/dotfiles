@@ -1,8 +1,5 @@
 let mapleader = " "
 
-" write as sudo
-cmap w!! w !sudo tee > /dev/null %
-
 " quick quit
 nnoremap Q <CMD>q!<CR>
 
