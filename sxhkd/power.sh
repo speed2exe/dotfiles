@@ -2,20 +2,24 @@ uptime=$(uptime -p)
 dunstify "$uptime"
 
 # Options
+lock="lock"
+logout="logout"
 shutdown="shutdown"
 hibernate="hibernate"
 reboot="reboot"
-lock="lock"
 suspend="suspend"
-logout="logout"
 
-# Variable passed to rofi
-options="$lock\n$logout\n$suspend\n$hibernate\n$shutdown\n$reboot\n"
-
+options="$lock\n$logout\n$suspend\n$hibernate\n$reboot\n$shutdown"
 chosen="$(echo -e "$options" | rofi -p "power menu" -steal-focus -dmenu -l 6 -theme-str 'window{width:15%;}')"
 case $chosen in
-    $shutdown)
-        systemctl poweroff
+    $lock)
+        slock
+        ;;
+    $logout)
+        killall bspwm
+        ;;
+    $suspend)
+        systemctl suspend && slock
         ;;
     $hibernate)
         systemctl hibernate
@@ -23,13 +27,7 @@ case $chosen in
     $reboot)
         systemctl reboot
         ;;
-    $lock)
-        bsplock
-        ;;
-    $suspend)
-        betterlockscreen --suspend
-        ;;
-    $logout)
-        bspc quit
+    $shutdown)
+        systemctl poweroff
         ;;
 esac
