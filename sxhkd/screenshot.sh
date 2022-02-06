@@ -1,13 +1,6 @@
 unique=$(date -Iseconds)
-dir="`xdg-user-dir PICTURES`/Screenshots"
-file="Screenshot_${unique}.png"
-
-# Options
-desktop=desktop
-area=area
-window=window
-infive="5 Seconds"
-inten="10 Seconds"
+mkdir ~/screenshots/
+file="$HOME/screenshots/${unique}.png"
 
 ts=$(date +%s)
 # countdown
@@ -20,34 +13,34 @@ countdown () {
 
 # take shots
 shotnow () {
-	cd ${dir} && sleep 0.5 && maim -f png "$file"
+	sleep 0.5 && maim -f png "$file"
 }
 
 shot5 () {
 	countdown '5'
-	sleep 1 && cd ${dir} && maim -f png "$file"
+	sleep 1 && maim -f png "$file"
 }
 
 shot10 () {
 	countdown '10'
-	sleep 1 && cd ${dir} && maim -f png "$file"
+	sleep 1 && maim -f png "$file"
 }
 
 shotwin () {
-	cd ${dir} && maim -f png -i `xdotool getactivewindow` "$file"
+	maim -f png -i `xdotool getactivewindow` "$file"
 }
 
 shotarea () {
-	cd ${dir} && maim -f png -s "$file"
+	maim -f png -s "$file"
 }
 
-if [[ ! -d "$dir" ]]; then
-	mkdir -p "$dir"
-fi
-
-# Variable passed to rofi
+# Options
+desktop=desktop
+area=area
+window=window
+infive="5 Seconds"
+inten="10 Seconds"
 options="$desktop\n$area\n$window\n$infive\n$inten"
-
 chosen="$(echo -e "$options" | rofi -steal-focus -l 5 -p 'screenshot' -dmenu -theme-str 'window {width:15%;}')"
 case $chosen in
     $desktop)
@@ -68,5 +61,5 @@ case $chosen in
     *) exit 1 ;;
 esac
 
-xclip -selection clipboard -t image/png ${dir}/"$file"
-pinta ${dir}/"$file"
+xclip -selection clipboard -t image/png "$file"
+pinta "$file"
