@@ -1,9 +1,16 @@
-set TERM xterm-256color  
-set fish_term24bit 1
+# Start X at login
+# if status is-login
+#     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
+#         startx
+#     end
+# end
 
 if status is-interactive
     source ~/.config/fish/interactive/functions.fish &
     source ~/.config/fish/interactive/alias.fish &
+
+    set TERM xterm-256color
+    set fish_term24bit 1
 
     clear
 
