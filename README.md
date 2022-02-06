@@ -7,7 +7,7 @@ docker exec -it dev /usr/bin/bash
 # inside bash
 ```
 cd ~
-pacman -Syu exa fzf bat ripgrep neovim fish neofetch which gcc git trash-cli fortune-mod --noconfirm
+pacman -Syu exa fzf bat ripgrep neovim fish neofetch which gcc git trash-cli fortune-mod btop pkgfile --noconfirm
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" # prompts yes/no
 ```
 # install omf and get into fish shell
