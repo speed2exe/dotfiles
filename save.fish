@@ -11,4 +11,6 @@ end
 rm starship.toml
 cp ~/.config/starship.toml .
 
-git diff
+git add .
+git diff --cached
+git status
