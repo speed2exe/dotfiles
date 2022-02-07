@@ -7,7 +7,7 @@ docker exec -it dev /usr/bin/bash
 # inside bash
 ```
 cd ~
-pacman -Syu exa fzf bat ripgrep neovim fish neofetch which gcc git trash-cli fortune-mod btop pkgfile slock --noconfirm
+pacman -Syu exa fzf bat ripgrep neovim fish neofetch which gcc git trash-cli fortune-mod btop pkgfile --noconfirm
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" # prompts yes/no
 ```
 # install omf and get into fish shell
@@ -63,7 +63,7 @@ reflector -a 10 -c sg -f 5 --sort rate --save /etc/pacman.d/mirrorlist
 
 # Dependencies for Desktop Env
 ```
-pacman -Syu picom sxhkd bspwm pinta maim rofi bsplock betterlockscreen dunst dunstify kitty
+pacman -Syu picom sxhkd bspwm pinta maim rofi bsplock betterlockscreen dunst dunstify kitty noto-fonts-emoji slock
 ```
 - Fonts: Iosevka Term SS14 (in repo), Jost (downloadable)
 
