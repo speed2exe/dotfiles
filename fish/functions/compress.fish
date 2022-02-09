@@ -1,10 +1,15 @@
 function compress
-    if test (count $argv) -eq 1
+    if test (count $argv) -eq 0
+        set_color red ; echo "require at least 1 arg"
+        return 1
+    else if test (count $argv) -eq 1
         set type ""
         set path $argv[1]
-    else
+    else if test (count $argv) -eq 2
         set type $argv[1]
         set path $argv[2]
+    else
+        set_color red ; echo "too many args, max: 2 ([type], path)"
     end
 
     # set ext based on type
