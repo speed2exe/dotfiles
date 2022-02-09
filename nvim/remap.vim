@@ -8,24 +8,36 @@ nnoremap Q <CMD>q!<CR>
 
 " auto quotes
 inoremap ' ''<LEFT>
+inoremap '<SPACE> '
 inoremap '' ''
+inoremap ''' ''''''<LEFT><LEFT><LEFT>
+inoremap '''<CR> ''''''<LEFT><LEFT><LEFT><CR><ESC>O
 
 inoremap " ""<LEFT>
+inoremap "<SPACE> "
 inoremap "" ""
+inoremap """ """"""<LEFT><LEFT><LEFT>
+inoremap """<CR> """"""<LEFT><LEFT><LEFT><CR><ESC>O
 
 inoremap ` ``<LEFT>
+inoremap `<SPACE> `
 inoremap `` ``
+inoremap ``` ``````<LEFT><LEFT><LEFT>
+inoremap ```<CR> ``````<LEFT><LEFT><LEFT><CR><ESC>O
 
 " auto braces
 inoremap ( ()<LEFT>
+inoremap (<SPACE> (
 inoremap () ()
 inoremap (<CR> ()<LEFT><CR><ESC>O
 
 inoremap [ []<LEFT>
+inoremap [<SPACE> [
 inoremap [] []
 inoremap [<CR> []<LEFT><CR><ESC>O
 
 inoremap { {}<LEFT>
+inoremap [<SPACE> [
 inoremap {} {}
 inoremap {<CR> {}<LEFT><CR><ESC>O
 

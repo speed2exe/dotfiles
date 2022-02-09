@@ -6,9 +6,6 @@ if status is-login
 end
 
 if status is-interactive
-    source ~/.config/fish/interactive/functions.fish &
-    source ~/.config/fish/interactive/alias.fish &
-
     set TERM xterm-256color
     set fish_term24bit 1
 
