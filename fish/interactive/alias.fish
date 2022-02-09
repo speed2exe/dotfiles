@@ -58,5 +58,8 @@ alias ltd "lt --only-dirs"
 alias bat "bat --theme Dracula"
 alias cat "bat"
 
-# History
+# search History
 alias h "commandline (history | fr --no-sort)"
+
+# repeat last command as root
+alias asroot "set last (history -n 1) && commandline \"doas \$last\""
