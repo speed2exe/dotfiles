@@ -37,11 +37,12 @@ inoremap [] []
 inoremap [<CR> []<LEFT><CR><ESC>O
 
 inoremap { {}<LEFT>
-inoremap [<SPACE> [
+inoremap {<SPACE> {
 inoremap {} {}
 inoremap {<CR> {}<LEFT><CR><ESC>O
 
 inoremap < <><LEFT>
+inoremap <<SPACE> <
 inoremap <> <>
 inoremap <<CR> <><LEFT><CR><ESC>O
 
