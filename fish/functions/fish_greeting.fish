@@ -6,7 +6,7 @@ function fish_greeting
     # execute command if there is
     set cmd (cat ~/.cmd)
     if test $cmd
-        $cmd
+        commandline $cmd
         :> ~/.cmd
     else
         echo

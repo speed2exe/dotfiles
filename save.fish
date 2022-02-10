@@ -1,7 +1,6 @@
-git stash
+set folder_names (cat folders.txt)
 
-set folder_names fish nvim kitty neofetch fonts fontconfig \
-    alacritty bspwm polybar sxhkd rofi picom dunst kitty gtk-3.0
+git stash
 
 for name in $folder_names
     rm -rf $name/
