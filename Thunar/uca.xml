@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Open Terminal Here</name>
+	<unique-id>1644515250274217-1</unique-id>
+	<command>echo %d &gt; ~/.savedir &amp;&amp; echo %N &gt; ~/.cmd &amp;&amp; kitty</command>
+	<description>opens terminal in the current directory</description>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+</actions>
