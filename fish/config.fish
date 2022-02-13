@@ -9,8 +9,6 @@ if status is-interactive
     set TERM xterm-256color
     set fish_term24bit 1
 
-    clear
-
     # https://starship.rs/
     starship init fish | source
     set STARSHIP_CONFIG "~/.config/starship.toml"
@@ -25,6 +23,13 @@ if status is-interactive
             echo -en "\e[6 q"
         end
     end
+
+    # neofetch && set_color brblack; fortune
+    echo
+    set_color brblack; fortune
+
+    # run startup script
+    setup
 end
 
 # local binaries

@@ -1,9 +1,15 @@
 ##---------- Menu ----------##
+# To check input name, run "xev" in terminal
+# Modifiers: super, shift, alt, ctrl
 
 # reset the keyboard daemon
 # usually happens after modification to sxhkd file
 super + l
     killall -q sxhkd && sxhkd &
+
+# On the fly scripts
+super + Escape
+    ~/.config/sxhkd/shortcuts.sh
 
 # Terminal
 super + {_,shift +}Return
@@ -165,7 +171,7 @@ super + d
 
 # Move Node to last desktop
 # usually happens aftar rofi window search
-super + Escape
+super + shift + Tab
     bspc node -d last --follow
 
 # Send node to N
