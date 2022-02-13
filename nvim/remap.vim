@@ -198,7 +198,7 @@ nnoremap <leader>d<TAB> <CMD>lua require('dap').repl.toggle()<CR>
 nnoremap <leader><CR> :!savedir<CR>:FloatermNew --autoclose=1<CR><CR>
 nnoremap <ESC> :!
 nnoremap <leader><leader> :.!
-vnoremap <CR> :w! ~/.cmd<CR>:FloatermNew --autoclose=1<CR>
+vnoremap <CR> :w! /tmp/.cmd<CR>:FloatermNew --autoclose=1<CR>
 vnoremap <leader><leader> y:.!<C-R>"<CR>
 
 " lsp trouble
