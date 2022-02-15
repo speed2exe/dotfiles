@@ -23,9 +23,6 @@ git clone https://github.com/speed2exe/dotfiles
 dotfiles/
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 fish load.fish
-touch ~/.savedir
-touch ~/.clipboard
-touch ~/.cmd
 mkdir ~/notes
 mkdir ~/screenshots
 mkdir ~/marks
@@ -57,7 +54,7 @@ ssh -T git@github.com
 
 # update mirror list for faster packages download
 ```
-pacman -Syu rsync reflector
+pacman -S rsync reflector
 reflector -a 10 -c sg -f 5 --sort rate --save /etc/pacman.d/mirrorlist
 ```
 

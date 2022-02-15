@@ -10,6 +10,9 @@ end
 rm starship.toml
 cp ~/.config/starship.toml .
 
+rm .xinitrc
+cp ~/.xinitrc .
+
 git add .
 git diff --cached
 git status
