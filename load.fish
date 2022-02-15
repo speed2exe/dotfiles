@@ -7,3 +7,6 @@ end
 
 rm -f ~/.config/starship.toml
 cp starship.toml ~/.config/starship.toml
+
+rm -f ~/.xinitrc
+cp .xinitrc ~/.xinitrc
