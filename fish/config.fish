@@ -9,6 +9,9 @@ if status is-interactive
     set TERM xterm-256color
     set fish_term24bit 1
 
+    # apply dracula theme
+    source ~/.config/fish/functions/dracula.fish
+
     # https://starship.rs/
     starship init fish | source
     set STARSHIP_CONFIG "~/.config/starship.toml"
