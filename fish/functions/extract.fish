@@ -30,6 +30,8 @@ function extract
             7z x $path; return
         case '*.zip'
             unzip $path; return
+        case '*.xz'
+            xz -d $path; return
         case '*'
             echo "unknown file extension for extraction"
             return 1
