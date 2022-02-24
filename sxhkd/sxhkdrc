@@ -44,7 +44,7 @@ super + w
 
 # Brighness control
 XF86MonBrightness{Up,Down}
-    dunstify TODO:\ Implement\ Me
+    backlight_control {+,-}10
 
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume}
