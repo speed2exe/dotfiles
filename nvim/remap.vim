@@ -6,46 +6,6 @@ nnoremap <C-Q> @q
 " quick quit
 nnoremap Q <CMD>q!<CR>
 
-" auto quotes
-inoremap ' ''<LEFT>
-inoremap '<SPACE> '
-inoremap '' ''
-inoremap ''' ''''''<LEFT><LEFT><LEFT>
-inoremap '''<CR> ''''''<LEFT><LEFT><LEFT><CR><ESC>O
-
-inoremap " ""<LEFT>
-inoremap "<SPACE> "
-inoremap "" ""
-inoremap """ """"""<LEFT><LEFT><LEFT>
-inoremap """<CR> """"""<LEFT><LEFT><LEFT><CR><ESC>O
-
-inoremap ` ``<LEFT>
-inoremap `<SPACE> `
-inoremap `` ``
-inoremap ``` ``````<LEFT><LEFT><LEFT>
-inoremap ```<CR> ``````<LEFT><LEFT><LEFT><CR><ESC>O
-
-" auto braces
-inoremap ( ()<LEFT>
-inoremap (<SPACE> (
-inoremap () ()
-inoremap (<CR> ()<LEFT><CR><ESC>O
-
-inoremap [ []<LEFT>
-inoremap [<SPACE> [
-inoremap [] []
-inoremap [<CR> []<LEFT><CR><ESC>O
-
-inoremap { {}<LEFT>
-inoremap {<SPACE> {
-inoremap {} {}
-inoremap {<CR> {}<LEFT><CR><ESC>O
-
-inoremap < <><LEFT>
-inoremap <<SPACE> <
-inoremap <> <>
-inoremap <<CR> <><LEFT><CR><ESC>O
-
 " https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
 inoremap <C-BS> <C-W>
 inoremap <C-H> <C-W>
