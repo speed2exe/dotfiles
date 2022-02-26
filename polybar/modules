@@ -78,6 +78,25 @@ mount-0 = /
 format-mounted = <label-mounted>
 label-mounted = %used%/%total%(%percentage_used%%)
 
+
+;; ===================== battery ========================
+
+[module/battery]
+inherit = base
+type = internal/battery
+
+; TODO: resolve this automatically
+battery = BAT0
+adapter = ADP1
+
+poll-interval = 5
+
+format-charging = <label-charging>
+label-charging = %percentage_raw%+%consumption%W
+
+format-discharging = <label-discharging>
+label-discharging = %percentage_raw%-%consumption%W
+
 ;; ===================== network ========================
 
 [module/network]
@@ -90,7 +109,6 @@ interface = wlan0
 
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
-format-packetloss = <animation-packetloss> <label-connected>
 
 label-connected = ssid:%essid%|signal:%signal%%|down:%downspeed%|up:%upspeed%
 label-disconnected = N.A.
