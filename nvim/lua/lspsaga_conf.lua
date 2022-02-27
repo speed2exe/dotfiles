@@ -19,7 +19,6 @@ lspsaga.setup { -- defaults ...
     finder_definition_icon = "  ",
     finder_reference_icon = "  ",
     max_preview_lines = 10,
-
     finder_action_keys = {
         open = '<CR>',
         vsplit = 'v',
@@ -40,8 +39,8 @@ lspsaga.setup { -- defaults ...
     border_style = "single",
     rename_prompt_prefix = "➤",
     rename_output_qflist = {
-        enable = true,
-        auto_open_qflist = true,
+        enable = false,
+        auto_open_qflist = false,
     },
     server_filetype_map = {},
     diagnostic_prefix_format = "%d. ",
