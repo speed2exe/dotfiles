@@ -60,8 +60,8 @@ Plug 'folke/trouble.nvim'
 Plug 'nvim-lua/lsp-status.nvim'
 
 " Lspsaga
-Plug 'glepnir/lspsaga.nvim'
-" Plug 'tami5/lspsaga.nvim'
+" Plug 'glepnir/lspsaga.nvim'
+Plug 'tami5/lspsaga.nvim'
 
 " TreeSitter stuff
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
