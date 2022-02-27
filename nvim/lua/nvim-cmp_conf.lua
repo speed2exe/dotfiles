@@ -24,7 +24,7 @@ cmp.setup({
     snippet = {
         expand = function(args)
             vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            -- require('luasnip').lsp_expand(args.body)
             -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
             -- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
         end,
@@ -37,7 +37,7 @@ cmp.setup({
                 treesitter = "[TS]",
                 nvim_lua = "[api]",
                 path = "[path]",
-                vsnip = "[vsnip]",
+                vsnip = "[snip]",
                 buffer = "[buf]",
                 nvim_lsp_signature_help = "[signature]"
             },
@@ -56,5 +56,3 @@ for _, server in pairs(servers) do
         capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
     }
 end
-
-
