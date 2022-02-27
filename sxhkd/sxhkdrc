@@ -44,10 +44,10 @@ XF86MonBrightness{Up,Down}
 
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume}
-    pactl set-sink-volume @DEFAULT_SINK@ {+,-}1000 && ~/.config/sxhkd/dunstify_volume.sh
+    pamixer --{increase,decrease} 5 && ~/.config/sxhkd/dunstify_volume.sh
 
 XF86AudioMute
-    pactl set-sink-mute @DEFAULT_SINK@ toggle && ~/.config/sxhkd/dunstify_volume.sh
+    pamixer --toggle-mute && ~/.config/sxhkd/dunstify_volume.sh
 
 
 ##---------- Node Management ----------##
