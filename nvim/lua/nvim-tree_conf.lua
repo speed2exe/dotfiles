@@ -16,9 +16,9 @@ local list = {
     { key = "h",                            cb = tree_cb("toggle_dotfiles") },
     { key = "e",                            cb = tree_cb("refresh") },
     { key = "a",                            cb = tree_cb("create") },
-    --{ key = "<C-R>",                        cb = tree_cb("remove") },
+        --{ key = "<C-R>",                        cb = tree_cb("remove") },
     { key = "<C-R>",                        cb = tree_cb("trash") },
-    --{ key = "r",                            cb = tree_cb("rename") },
+        --{ key = "r",                            cb = tree_cb("rename") },
     { key = "r",                            cb = tree_cb("full_rename") },
     { key = "x",                            cb = tree_cb("cut") },
     { key = "c",                            cb = tree_cb("copy") },
@@ -35,18 +35,24 @@ local list = {
 }
 
 require'nvim-tree'.setup {
-    disable_netrw       = true,
-    hijack_netrw        = true,
-    open_on_setup       = false,
-    ignore_ft_on_setup  = {},
-    auto_close          = true,
-    open_on_tab         = true,
-    update_to_buf_dir   = {
+    disable_netrw        = true,
+    hijack_netrw         = true,
+    open_on_setup        = false,
+    ignore_ft_on_setup   = {},
+    auto_close           = true,
+    auto_reload_on_write = true,
+    open_on_tab          = true,
+    update_to_buf_dir    = {
         enable = true,
         auto_open = true,
     },
     hijack_cursor       = true,
     update_cwd          = false,
+    hijack_unnamed_buffer_when_opening = false,
+    hijack_directories   = {
+        enable = true,
+        auto_open = true,
+    },
     diagnostics = {
         enable = true,
         icons = {
@@ -62,7 +68,7 @@ require'nvim-tree'.setup {
         ignore_list = {},
     },
     system_open = {
-        cmd  = nil,
+        cmd  = "open",
         args = {}
     },
     filters  = {
@@ -80,14 +86,37 @@ require'nvim-tree'.setup {
         hide_root_folder = false,
         side = 'left',
         auto_resize = true,
+        preserve_window_proportions = false,
         mappings = {
             custom_only = true,
             list = list
-        }
+        },
+        number = false,
+        relativenumber = false,
+        signcolumn = "yes"
     },
     trash = {
         cmd = "trash",
         require_confirm = true
+    },
+    actions = {
+        change_dir = {
+            enable = true,
+            global = false,
+        },
+        open_file = {
+            quit_on_open = false,
+            window_picker = {
+                enable = true,
+                chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+                exclude = {
+                    filetype = {
+                        "notify",
+                        "packer",
+                        "qf"
+                    }
+                }
+            }
+        }
     }
 }
-
