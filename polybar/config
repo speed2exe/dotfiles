@@ -27,6 +27,6 @@ font-2 =
 
 modules-left = sep temperature sep cpu sep memory sep swap sep fs_label filesystem
 modules-center = bspwm
-modules-right = battery sep date sep
+modules-right = battery sep internet sep date sep
 
 local = en_SG.UTF-8
