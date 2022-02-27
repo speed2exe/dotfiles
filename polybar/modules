@@ -3,6 +3,7 @@ format-foreground = ${color.FOREGROUND}
 format-prefix-foreground = ${color.BLUE}
 
 ;; ===================== separator ========================
+
 [module/sep]
 type = custom/text
 content = " "
@@ -67,6 +68,13 @@ label = %gb_swap_used%/%gb_swap_total%(%percentage_swap_used%%)
 type = custom/text
 content = DISK:
 content-foreground = ${color.BLUE}
+
+
+;; ===================== internet ========================
+
+[module/internet]
+type = custom/script
+exec = "nmcli | sed -n '1p'"
 
 ;; ===================== filesystem ========================
 
