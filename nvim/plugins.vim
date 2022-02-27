@@ -84,8 +84,10 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'ray-x/cmp-treesitter'
 
+" snippets
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
+Plug 'golang/vscode-go'
 
 " kitty terminal emulator config helper
 Plug 'fladson/vim-kitty'
