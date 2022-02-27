@@ -1,7 +1,3 @@
-##---------- Menu ----------##
-# To check input name, run "xev" in terminal
-# Modifiers: super, shift, alt, ctrl
-
 # reset the keyboard daemon
 # usually happens after modification to sxhkd file
 super + l
