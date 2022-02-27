@@ -91,11 +91,17 @@ adapter = ADP1
 
 poll-interval = 5
 
+format-charging-prefix = BATTERY:
+format-charging-foreground = ${color.FOREGROUND}
+format-charging-prefix-foreground = ${color.BLUE}
 format-charging = <label-charging>
-label-charging = %percentage_raw%+%consumption%W
+label-charging = %percentage%% + %consumption%W
 
+format-discharging-prefix = BATTERY:
+format-discharging-foreground = ${color.FOREGROUND}
+format-discharging-prefix-foreground = ${color.BLUE}
 format-discharging = <label-discharging>
-label-discharging = %percentage_raw%-%consumption%W
+label-discharging = %percentage%% - %consumption%W
 
 ;; ===================== network ========================
 
@@ -105,7 +111,7 @@ type = internal/network
 interval = 3
 
 ; TODO: resolve this automatically
-interface = wlan0
+interface = wlo1
 
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
