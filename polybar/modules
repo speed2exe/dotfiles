@@ -73,8 +73,12 @@ content-foreground = ${color.BLUE}
 ;; ===================== internet ========================
 
 [module/internet]
+inherit = base
+
 type = custom/script
 exec = "nmcli | sed -n '1p'"
+
+format-prefix = NETWORK:
 
 ;; ===================== filesystem ========================
 
