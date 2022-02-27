@@ -19,6 +19,7 @@ cmp.setup({
         { name = 'path' },
         { name = 'vsnip' },
         { name = 'buffer'},
+        { name = 'nvim_lsp_signature_help' }
     },
     snippet = {
         expand = function(args)
@@ -32,12 +33,13 @@ cmp.setup({
         format = lspkind.cmp_format {
             with_text = true,
             menu = {
-                buffer = "[buf]",
                 nvim_lsp = "[LSP]",
+                treesitter = "[TS]",
                 nvim_lua = "[api]",
                 path = "[path]",
-                vsnip = "[snip]",
-                treesitter = "[TS]",
+                vsnip = "[vsnip]",
+                buffer = "[buf]",
+                nvim_lsp_signature_help = "[signature]"
             },
         },
     },
