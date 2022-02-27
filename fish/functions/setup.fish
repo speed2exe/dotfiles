@@ -8,12 +8,6 @@ function setup
     :> /tmp/.savedir
 
     # execute command if there is
-    set cmd (cat /tmp/.cmd)
-    if test -n "$cmd"
-        for ln in $cmd
-            set c (string split ' ' $ln)
-            $c
-        end
-        :> /tmp/.cmd
-    end
+    fish /tmp/.cmd
+    :> /tmp/.cmd
 end
