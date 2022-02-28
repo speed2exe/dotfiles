@@ -17,6 +17,9 @@ Plug 'Pocco81/AutoSave.nvim'
 " Smooth Scrolling
 Plug 'karb94/neoscroll.nvim'
 
+" camelcase and snake case handling
+Plug 'chaoren/vim-wordmotion'
+
 " fzf search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
