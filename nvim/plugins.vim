@@ -84,13 +84,17 @@ Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-vsnip'
 Plug 'ray-x/cmp-treesitter'
 
 " snippets
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-Plug 'golang/vscode-go'
+Plug 'dcampos/nvim-snippy'
+Plug 'honza/vim-snippets'
+Plug 'dcampos/cmp-snippy'
+
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/vim-vsnip-integ'
+" Plug 'golang/vscode-go'
 
 " kitty terminal emulator config helper
 Plug 'fladson/vim-kitty'
@@ -131,6 +135,7 @@ lua << EOF
     require('neoscroll_conf')               -- ~/.config/nvim/lua/neoscroll_conf.lua
     require('dapinstall_conf')              -- ~/.config/nvim/lua/dapinstall_conf.lua
     require('scrollbar_conf')               -- ~/.config/nvim/lua/scrollbar_conf.lua
+    require('snippy_conf')                  -- ~/.config/nvim/lua/snippy_conf.lua
 
     require('trouble').setup{}
 EOF
