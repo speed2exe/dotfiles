@@ -20,8 +20,8 @@ nnoremap <leader>f gF
 nnoremap J mzJ`z
 
 " Move to end of sentence
-nnoremap ( k{<SPACE>^
-nnoremap ) j}<BS>$
+nnoremap ( k{<SPACE>^:Beacon<CR>
+nnoremap ) j}<BS>$:Beacon<CR>
 
 " copy current file path and line number to ~/marks/files.txt
 nnoremap <leader>m <CMD>redir @m<CR><CMD>echo expand('%:p') . ':' . line(".")<CR><CMD>redir END<CR>:!m<C-R>m<CR><CR>
@@ -50,8 +50,8 @@ nnoremap <leader>i gg=G<C-O>
 nnoremap , @:
 
 " toggle jump back and forth
-nnoremap <PAGEUP> <C-O>
-nnoremap <PAGEDOWN> <C-I>
+nnoremap <PAGEUP> <C-O>:Beacon<CR>
+nnoremap <PAGEDOWN> <C-I>:Beacon<CR>
 
 " Previous Directory
 nnoremap < <CMD>cd ..<CR>
@@ -87,11 +87,11 @@ vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " Quick fix list
 " " Global List
-nnoremap [[ <CMD>cprev<CR>
-nnoremap ]] <CMD>cnext<CR>
+nnoremap [[ <CMD>cprev<CR>:Beacon<CR>
+nnoremap ]] <CMD>cnext<CR>:Beacon<CR>
 " " Local List
-nnoremap {{ <CMD>lprev<CR>
-nnoremap }} <CMD>lnext<CR>
+nnoremap {{ <CMD>lprev<CR>:Beacon<CR>
+nnoremap }} <CMD>lnext<CR>:Beacon<CR>
 
 " Startify
 nnoremap <leader><ESC> <CMD>Startify<CR>
@@ -108,7 +108,7 @@ vnoremap <leader>ta <CMD>Telescope lsp_range_code_actions<CR>
 vnoremap <leader>to <CMD>Telescope lsp_document_diagnostics<CR>
 vnoremap <leader>tw <CMD>Telescope lsp_workspace_diagnostics<CR>
 nnoremap <leader>tt <CMD>Telescope lsp_type_definitions<CR>
-nnoremap <leader>td <CMD>Telescope lsp_definitions<CR>
+nnoremap <leader>td <CMD>Telescope lsp_definitions<CR>:Beacon<CR>
 nnoremap <leader>ti <CMD>Telescope lsp_implementations<CR>
 nnoremap <leader>tr <CMD>Telescope lsp_references<CR>
 

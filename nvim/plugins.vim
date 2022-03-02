@@ -11,6 +11,9 @@ call plug#begin('~/.vim/plugged')
 " Nice starting splash screen
 Plug 'mhinz/vim-startify'
 
+" Blink Cursor when doing jumps
+Plug 'danilamihailov/beacon.nvim'
+
 " Auto save
 Plug 'Pocco81/AutoSave.nvim'
 
