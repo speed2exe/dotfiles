@@ -19,6 +19,9 @@ nnoremap <leader>f gF
 " Move next line up
 nnoremap J mzJ`z
 
+" Center
+nnoremap zz zz:Beacon<CR>
+
 " Move to end of sentence
 nnoremap ( k{<SPACE>^:Beacon<CR>
 nnoremap ) j}<BS>$:Beacon<CR>
