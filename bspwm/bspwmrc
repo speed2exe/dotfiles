@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# xrandr --output DP-0 --mode 3840x1080 --rate 120 &
 machine=$(cat /etc/machine-id)
 machine_script="$HOME/.config/bspwm/$machine"
 if test -f $machine_script
