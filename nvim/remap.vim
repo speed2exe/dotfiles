@@ -62,8 +62,8 @@ nnoremap , @:
 nnoremap <PAGEUP> <C-O>:Beacon<CR>
 nnoremap <PAGEDOWN> <C-I>:Beacon<CR>
 
-" Previous Directory
-nnoremap < <CMD>cd ..<CR>
+" To project root
+nnoremap < <CMD>ProjectRoot<CR>
 " Current File Directory
 nnoremap > <CMD>lcd %:p:h<CR>
 
