@@ -10,6 +10,15 @@ nnoremap Q <CMD>q!<CR>
 inoremap <C-BS> <C-W>
 inoremap <C-H> <C-W>
 
+" Search and replace in visual template
+vnoremap <leader>s y:%s/<C-R>"/<C-R>"
+
+" Copy
+vnoremap <C-C> y
+
+" Paste
+inoremap <C-V> <C-R>*
+
 " create file with filename under cursor if not exists
 nnoremap <leader>e :e <cfile><CR>
 
