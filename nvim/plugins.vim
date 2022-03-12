@@ -8,6 +8,9 @@ autocmd VimEnter *
 
 call plug#begin('~/.vim/plugged')
 
+" Project management
+Plug 'ahmedkhalf/project.nvim'
+
 " Nice starting splash screen
 Plug 'mhinz/vim-startify'
 
@@ -139,6 +142,7 @@ lua << EOF
     require('dapinstall_conf')              -- ~/.config/nvim/lua/dapinstall_conf.lua
     require('scrollbar_conf')               -- ~/.config/nvim/lua/scrollbar_conf.lua
     require('snippy_conf')                  -- ~/.config/nvim/lua/snippy_conf.lua
+    require('project_conf')                 -- ~/.config/nvim/lua/project_conf.lua
 
     require('trouble').setup{}
 EOF
