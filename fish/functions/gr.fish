@@ -3,7 +3,7 @@ function gr
     la $argv
     set path (lookup_dir $argv)
     if [ $status -ne 0 ]
-        commandline "cd $path"
+        commandline "$path"
     else
         gr $path
     end
