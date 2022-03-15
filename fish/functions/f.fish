@@ -4,7 +4,7 @@ function f
     end
 
     set dir (get_dir $argv)
-    set path (fd . $dir | fprp --query "$dir/")
+    set path (fd -H -I -d 1 . $dir | fprp --query "$dir/")
 
     if [ $status -eq 0 ]
         if [ (string match "*.." $path[1] ) ]
