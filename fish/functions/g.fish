@@ -1,3 +1,3 @@
 function g
-    commandline (lookup_dir $argv)'/'
+    commandline (lookup_dir $argv)
 end
