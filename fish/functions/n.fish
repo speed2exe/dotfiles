@@ -1,4 +1,6 @@
 function n
     set dir (cat ~/marks/dir_history.txt | fr)
-    commandline "$dir/"
+    if [ $status -eq 0 ]
+        commandline "$dir/"
+    end
 end
