@@ -1,9 +1,6 @@
 function fish_greeting
-    # put command if there is
-    set cmdln (cat /tmp/.cmdln)
-    if test -n "$cmdln"
-        echo $cmdln
-        commandline $cmdln
-        :> /tmp/.cmdln
+    if test -f /tmp/.cmdln
+        commandline (cat /tmp/.cmdln)
+        rm /tmp/.cmdln
     end
 end
