@@ -1,10 +1,15 @@
 let mapleader = " "
 
 " quick macro (after qq)
-nnoremap <C-Q> @q
+nnoremap Q @q
 
 " quick quit
-nnoremap Q <CMD>q!<CR>
+nnoremap <C-Q> <CMD>q!<CR>
+inoremap <C-Q> <CMD>q!<CR>
+
+" quick write
+nnoremap <C-W> <CMD>wa<CR>
+inoremap <C-W> <CMD>wa<CR>
 
 " https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
 inoremap <C-BS> <C-W>
@@ -56,7 +61,7 @@ nnoremap <expr> <leader>h (&hls && v:hlsearch ? ':set nohlsearch' : ':set hlsear
 " Indent
 vnoremap , <gv
 vnoremap . >gv
-nnoremap <leader>i gg=G<C-O>
+nnoremap <leader>i jgg=G<C-O>k
 
 " repeat last command
 nnoremap , @:
@@ -168,10 +173,8 @@ nnoremap <leader>d<TAB> <CMD>lua require('dap').repl.toggle()<CR>
 
 " terminal access with https://github.com/voldikss/vim-floaterm
 nnoremap <leader><CR> :!savedir<CR>:FloatermNew --autoclose=1<CR><CR>
-nnoremap <ESC> :!
-nnoremap <leader><leader> :.!
-vnoremap <CR> :w! /tmp/.cmd<CR>:FloatermNew --autoclose=1<CR>
-vnoremap <leader><leader> y:.!<C-R>"<CR>
+nnoremap <leader><leader> o<ESC>:.!
+vnoremap <leader><leader> c<CR><CR><UP><ESC>:.!<C-R>"<CR>k
 
 " lsp trouble
 nnoremap <leader>a :Trouble
