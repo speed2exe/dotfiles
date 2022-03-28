@@ -10,8 +10,11 @@ nnoremap Q <CMD>q!<CR>
 inoremap <C-BS> <C-W>
 inoremap <C-H> <C-W>
 
-" Search and replace in visual template
-vnoremap <leader>s y:%s/<C-R>"/<C-R>"
+" Search and replace for visually selected on entire document template
+vnoremap <leader>S y:%s/<C-R>"/<C-R>"
+
+" Search and replace for clipboard content on visually selected
+vnoremap <leader>s :s/<C-R>"/<C-R>"
 
 " Copy
 vnoremap <C-C> y
