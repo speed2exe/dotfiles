@@ -1,13 +1,12 @@
 function setup
-    touch /tmp/.savedir \
-        /tmp/.cmd \
-        /tmp/.cmdln
+    if test -f /tmp/.savedir
+        cd (cat /tmp/.savedir)
+        rm /tmp/.savedir
+    end
 
-    # load from save_dir
-    cd (cat /tmp/.savedir)
-    :> /tmp/.savedir
-
-    # execute command if there is
-    fish /tmp/.cmd
-    :> /tmp/.cmd
+    if test -f /tmp/.cmd
+        mv /tmp/.cmd /tmp/.cmd.tmp
+        fish /tmp/.cmd.tmp
+        rm /tmp/.cmd.tmp
+    end
 end
