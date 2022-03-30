@@ -1,5 +1,8 @@
 let mapleader = " "
 
+" Show Cursor
+nnoremap <ESC> <CMD>Beacon<CR>
+
 " quick macro (after qq)
 nnoremap Q @q
 
