@@ -16,7 +16,7 @@ function f
         if test -d $path
             f $path
         else
-            commandline -a $path
+            commandline $path
         end
     else
         commandline $dir/
