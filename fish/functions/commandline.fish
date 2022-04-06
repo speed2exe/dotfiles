@@ -1,3 +1,3 @@
-function commandline
-    echo $argv
-end
+# function commandline
+#     echo $argv
+# end
