@@ -48,7 +48,7 @@ ssh-keygen -t ed25519 -C "speed2exe@live.com.sg"
 eval (ssh-agent -c)
 ssh-add ~/.ssh/id_ed25519
 gh auth refresh -h github.com -s admin:public_key
-gh ssh-key add ~/.ssh/id_ed25519.pub
+gh ssh-key add ~/.ssh/id_ed25519
 ssh -T git@github.com
 ```
 
