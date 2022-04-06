@@ -12,7 +12,7 @@ function setup
         rm /tmp/.cmd.tmp
     end
 
-    # setup keybindings
+    # TODO: set up keybindings
     bind yy fish_clipboard_copy
     bind p fish_clipboard_copy
 end
