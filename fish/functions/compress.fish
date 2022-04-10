@@ -26,5 +26,5 @@ function compress
     set target $target".tar$ext"
 
     set cmd "tar -cv"$type"f "$target" $path"
-    commandline $cmd
+    eval $cmd
 end

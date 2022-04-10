@@ -19,6 +19,7 @@ function f
             $dir/
             echo $path
             printf $path | xclip -sel clip
+            set_color yellow; echo "'$path' copied to clipboard!"
         end
     else
         $dir/
