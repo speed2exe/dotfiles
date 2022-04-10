@@ -5,7 +5,7 @@ function c
     end
 
     set trimmed (string trim --right --chars "/" $argv)
-    if [ $status -eq 0 ] # is path
+    if test $status -eq 0
         commandline "mkdir -p $trimmed"
     else
         t $argv
