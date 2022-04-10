@@ -1,3 +1,3 @@
 function g
-    commandline (lookup_dir $argv)
+    cd (lookup_dir $argv)
 end
