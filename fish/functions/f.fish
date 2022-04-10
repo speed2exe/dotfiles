@@ -18,6 +18,7 @@ function f
         else
             $dir/
             echo $path
+            echo $path | copy
         end
     else
         $dir/

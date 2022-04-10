@@ -14,5 +14,5 @@ function setup
 
     # keybinding to emulate yank line and paste in vi mode
     bind yy fish_clipboard_copy
-    bind p fish_clipboard_copy
+    bind p fish_clipboard_paste
 end
