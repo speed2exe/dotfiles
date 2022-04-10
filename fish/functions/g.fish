@@ -1,3 +1,6 @@
 function g
-    cd (lookup_dir $argv)
+    set dir (lookup_dir $argv)
+    if test $status -eq 0
+        $dir
+    end
 end
