@@ -4,7 +4,7 @@ function lookup_file
     end
 
     set path (fprp_optional $argv)
-    if [ -d $path ]
+    if test -d $path
         lookup_file $path
     else
         echo $path
