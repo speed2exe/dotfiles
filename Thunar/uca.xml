@@ -4,7 +4,7 @@
 	<icon>utilities-terminal</icon>
 	<name>Open Terminal Here</name>
 	<unique-id>1644515250274217-1</unique-id>
-    <command>echo %d &gt; /tmp/.savedir &amp;&amp; echo %N &gt; /tmp/.cmdln &amp;&amp; kitty</command>
+    <command>echo %d &gt; /tmp/.savedir &amp;&amp; printf %N &gt; /tmp/.cmdln &amp;&amp; kitty</command>
 	<description>opens terminal in the current directory</description>
 	<patterns>*</patterns>
 	<directories/>
