@@ -1,3 +1,6 @@
 function gd
-    commandline (cat ~/marks/directories.txt | fpr)'/' $argv
+    set dir (cat ~/marks/directories.txt | fpr)'/'
+    if test $status -eq 0
+        $dir
+    end
 end
