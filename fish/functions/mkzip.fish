@@ -4,5 +4,5 @@ function mkzip
     end
 
     set target (string trim --right --chars=/ $argv)
-    commandline "zip -vr $target.zip $argv"
+    eval "zip -vr $target.zip $argv"
 end
