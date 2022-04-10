@@ -1,3 +1,3 @@
 function paste
-    cat ~/.clipboard
+    cat /tmp/.clipboard
 end
