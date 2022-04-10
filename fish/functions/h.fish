@@ -1,3 +1,6 @@
 function h
-  commandline (history | fr --no-sort) $argv
+    set cmd (history | fr --no-sort)
+    if test $status -eq 0
+        eval $cmd
+    end
 end

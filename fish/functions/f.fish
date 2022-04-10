@@ -6,7 +6,7 @@ function f
     set dir (get_dir $argv)
     set path (fd -H -I -d 1 . $dir | fprp --query "$dir/")
 
-    if [ $status -eq 0 ]
+    if test $status -eq 0
         if [ (string match "*.." $path[1] ) ]
             set path (realpath $path[1])
         else
@@ -18,7 +18,7 @@ function f
         else
             $dir/
             echo $path
-            echo $path | xclip -sel clip
+            printf $path | xclip -sel clip
         end
     else
         $dir/
