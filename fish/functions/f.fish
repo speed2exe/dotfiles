@@ -18,7 +18,7 @@ function f
         else
             $dir/
             echo $path
-            echo $path | copy
+            echo $path | xclip -sel clip
         end
     else
         $dir/
