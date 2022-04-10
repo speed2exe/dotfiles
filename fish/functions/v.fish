@@ -1,3 +1,3 @@
-function v --wraps=jobs --description 'alias v nvim'
-    command nvim
+function v
+    command nvim $argv
 end
