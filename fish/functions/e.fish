@@ -1,3 +1,6 @@
 function e
-    edit_file (lookup_file $argv)
+    set f (lookup_file $argv)
+    if test -f $f
+        nvim $f
+    end
 end
