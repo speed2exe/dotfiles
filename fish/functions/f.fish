@@ -16,9 +16,10 @@ function f
         if test -d $path
             f $path
         else
-            commandline $path
+            $dir/
+            echo $path
         end
     else
-        commandline $dir/
+        $dir/
     end
 end
