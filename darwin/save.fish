@@ -4,7 +4,7 @@ git stash
 
 for name in $folder_names
     rm -rf ../$name
-    cp -r ~/.config/$name/ ..
+    cp -r ~/.config/$name/ $name/
 end
 
 rm ../starship.toml
