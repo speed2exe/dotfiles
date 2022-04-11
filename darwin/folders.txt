@@ -1,0 +1,6 @@
+fish
+nvim
+kitty
+neofetch
+fontconfig
+alacritty
