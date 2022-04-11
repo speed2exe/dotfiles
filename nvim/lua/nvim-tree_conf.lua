@@ -59,7 +59,16 @@ require'nvim-tree'.setup {
             custom_only = true,
             list = list,
         },
-        -- auto_resize = true,
+    },
+    renderer = {
+        indent_markers = {
+            enable = false,
+            icons = {
+                corner = "└ ",
+                edge = "│ ",
+                none = "  ",
+            },
+        },
     },
     hijack_directories   = {
         enable = true,
@@ -96,12 +105,14 @@ require'nvim-tree'.setup {
         timeout = 1000,
     },
     actions = {
+        use_system_clipboard = true,
         change_dir = {
             enable = true,
             global = false,
         },
         open_file = {
             quit_on_open = false,
+            resize_window = false,
             window_picker = {
                 enable = true,
                 chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
@@ -127,9 +138,4 @@ require'nvim-tree'.setup {
             profile = false,
         },
     },
-
-    -- update_to_buf_dir    = {
-    --     enable = true,
-    --     auto_open = true,
-    -- },
 }
