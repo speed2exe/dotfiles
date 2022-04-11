@@ -11,6 +11,5 @@ sxhkd
 rofi
 picom
 dunst
-kitty
 gtk-3.0
 Thunar
