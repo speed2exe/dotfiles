@@ -1,3 +1,3 @@
-function ne --wraps='e ~/notes' --description 'alias ne e ~/notes'
-  e ~/notes $argv; 
+function ne
+    nvim ~/notes/
 end
