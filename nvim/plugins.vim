@@ -75,6 +75,7 @@ Plug 'tami5/lspsaga.nvim'
 " TreeSitter stuff
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug 'p00f/nvim-ts-rainbow'
 
 " nvim-tree
 Plug 'kyazdani42/nvim-tree.lua'
@@ -143,6 +144,7 @@ lua << EOF
     require('scrollbar_conf')               -- ~/.config/nvim/lua/scrollbar_conf.lua
     require('snippy_conf')                  -- ~/.config/nvim/lua/snippy_conf.lua
     require('project_conf')                 -- ~/.config/nvim/lua/project_conf.lua
+    require('nvim-ts-rainbow_conf')         -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
 
     require('trouble').setup{}
 EOF
