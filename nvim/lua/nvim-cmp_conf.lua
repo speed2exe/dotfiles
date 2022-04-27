@@ -14,12 +14,17 @@ cmp.setup({
     },
     sources = {
         { name = 'nvim_lsp' },
+        { name = 'fish' },
         { name = 'treesitter' },
         { name = 'nvim_lua' },
         { name = 'path' },
         { name = 'snippy' },
         { name = 'buffer'},
-        { name = 'nvim_lsp_signature_help' }
+        { name = 'nvim_lsp_signature_help' },
+        { name = 'nvim_lsp_document_symbol' },
+        { name = 'calc' },
+        { name = 'dictionary' },
+        { name = 'digraphs' },
     },
     snippet = {
         expand = function(args)
@@ -34,12 +39,17 @@ cmp.setup({
             with_text = true,
             menu = {
                 nvim_lsp = "[LSP]",
+                fish = "[fish]",
                 treesitter = "[TS]",
-                nvim_lua = "[api]",
+                nvim_lua = "[lua]",
                 path = "[path]",
                 snippy = "[snip]",
                 buffer = "[buf]",
-                nvim_lsp_signature_help = "[signature]"
+                nvim_lsp_signature_help = "[signature]",
+                nvim_lsp_document_symbol = "[symbol]",
+                calc = "[math]",
+                dictionary = "[dict]",
+                digraphs = "[digraphs]",
             },
         },
     },
