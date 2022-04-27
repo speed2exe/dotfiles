@@ -21,7 +21,6 @@ cmp.setup({
         { name = 'snippy' },
         { name = 'buffer'},
         { name = 'nvim_lsp_signature_help' },
-        { name = 'nvim_lsp_document_symbol' },
         { name = 'calc' },
         { name = 'dictionary' },
         { name = 'digraphs' },
@@ -46,17 +45,28 @@ cmp.setup({
                 snippy = "[snip]",
                 buffer = "[buf]",
                 nvim_lsp_signature_help = "[signature]",
-                nvim_lsp_document_symbol = "[symbol]",
                 calc = "[math]",
                 dictionary = "[dict]",
                 digraphs = "[digraphs]",
             },
         },
     },
-    experimental = {
-        native_menu = false,
-        ghost_text = true,
-    }
+})
+
+cmp.setup.cmdline('/', {
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp_document_symbol' }
+	}, {
+			{ name = 'buffer' }
+		})
+})
+
+cmp.setup.cmdline(':', {
+	sources = cmp.config.sources({
+		{ name = 'path' }
+	}, {
+			{ name = 'cmdline' }
+		})
 })
 
 -- Setup lspconfig.
