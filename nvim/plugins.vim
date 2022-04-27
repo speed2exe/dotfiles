@@ -86,11 +86,16 @@ Plug 'onsails/lspkind-nvim'
 " nvim-cmp
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-calc'
+Plug 'dmitmel/cmp-digraphs'
+Plug 'uga-rosa/cmp-dictionary'
+Plug 'mtoohey31/cmp-fish'
 Plug 'ray-x/cmp-treesitter'
 
 " snippets
@@ -145,6 +150,7 @@ lua << EOF
     require('snippy_conf')                  -- ~/.config/nvim/lua/snippy_conf.lua
     require('project_conf')                 -- ~/.config/nvim/lua/project_conf.lua
     require('nvim-ts-rainbow_conf')         -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
+    require('cmp_dictionary_conf')			-- ~/.config/nvim/lua/cmp_dictionary_conf.lua
 
     require('trouble').setup{}
 EOF
@@ -178,4 +184,3 @@ noremap g# g#<Cmd>lua require('hlslens').start()<CR>
 
 " use : instead of <Cmd>
 nnoremap <silent> <leader>l :noh<CR>
-
