@@ -5,9 +5,9 @@ lspkind.init()
 
 cmp.setup({
     mapping = {
-        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-d>'] = cmp.mapping.scroll_docs(4),
-        ['<C-c>'] = cmp.mapping.close(),
+        ['<C-U>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-D>'] = cmp.mapping.scroll_docs(4),
+        ['<ESC>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm(),
         ['<TAB>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
         ['<S-TAB>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
@@ -54,6 +54,7 @@ cmp.setup({
 })
 
 cmp.setup.cmdline('/', {
+	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources(
 		{ { name = 'nvim_lsp_document_symbol' } },
 		{ { name = 'buffer' } }
@@ -61,6 +62,7 @@ cmp.setup.cmdline('/', {
 })
 
 cmp.setup.cmdline(':', {
+	mapping = cmp.mapping.preset.cmdline(),
 	sources = cmp.config.sources(
 		{ { name = 'path' } }, 
 		{ { name = 'cmdline' } }
