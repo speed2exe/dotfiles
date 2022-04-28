@@ -1,0 +1,14 @@
+#!/opt/homebrew/bin/fish
+
+# neovim
+rm -rf ~/.config/nvim/ && cp -r ~/dotfiles/nvim/ ~/.config/nvim/
+sed -i -e 's/set\ shell=\/usr\/sbin\/fish/set\ shell=\/opt\/homebrew\/bin\/fish/' ~/.config/nvim/setttings.vim
+
+
+# kitty terminal
+rm -rf ~/.config/kitty/ && cp -r ~/dotfiles/kitty/ ~/.config/kitty/
+sed -i -e 's/Iosevka\ Term\ SS14\ Nerd\ Font\ Complete/Iosevka\ Nerd\ Font\ Regular/' ~/.config/kitty/kitty.conf
+sed -i -e 's/Iosevka\ Term\ SS14\ Bold\ Nerd\ Font\ Complete/Iosevka\ Nerd\ Font\ Bold/' ~/.config/kitty/kitty.conf
+sed -i -e 's/Iosevka\ Term\ SS14\ Italic\ Nerd\ Font\ Complete/Iosevka\ Nerd\ Font\ Italic/' ~/.config/kitty/kitty.conf
+sed -i -e 's/Iosevka\ Term\ SS14\ Bold\ Italic\ Nerd\ Font\ Complete/Iosevka\ Nerd\ Font\ Bold\ Italic/' ~/.config/kitty/kitty.conf
+sed -i -e 's/font_size\ 12/font_size 14/' ~/.config/kitty/kitty.conf
