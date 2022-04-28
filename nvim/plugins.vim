@@ -112,8 +112,8 @@ Plug 'dcampos/cmp-snippy'
 Plug 'fladson/vim-kitty'
 
 " Debugger Adapter Protocol
-Plug 'mfussenegger/nvim-dap'
-Plug 'Pocco81/DAPInstall.nvim'
+" Plug 'mfussenegger/nvim-dap'
+" Plug 'Pocco81/DAPInstall.nvim'
 
 " Fancy Scroll Bar
 Plug 'petertriho/nvim-scrollbar'
@@ -145,7 +145,7 @@ lua << EOF
     require('treesitter_conf')              -- ~/.config/nvim/lua/treesitter_conf.lua
     require('treesitter-refactor_conf')     -- ~/.config/nvim/lua/treesitter-refactor_conf.lua
     require('neoscroll_conf')               -- ~/.config/nvim/lua/neoscroll_conf.lua
-    require('dapinstall_conf')              -- ~/.config/nvim/lua/dapinstall_conf.lua
+    -- require('dapinstall_conf')              -- ~/.config/nvim/lua/dapinstall_conf.lua
     require('scrollbar_conf')               -- ~/.config/nvim/lua/scrollbar_conf.lua
     require('snippy_conf')                  -- ~/.config/nvim/lua/snippy_conf.lua
     require('project_conf')                 -- ~/.config/nvim/lua/project_conf.lua
