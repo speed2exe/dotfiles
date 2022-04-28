@@ -12,3 +12,4 @@ sed -i -e 's/Iosevka\ Term\ SS14\ Bold\ Nerd\ Font\ Complete/Iosevka\ Nerd\ Font
 sed -i -e 's/Iosevka\ Term\ SS14\ Italic\ Nerd\ Font\ Complete/Iosevka\ Nerd\ Font\ Italic/' ~/.config/kitty/kitty.conf
 sed -i -e 's/Iosevka\ Term\ SS14\ Bold\ Italic\ Nerd\ Font\ Complete/Iosevka\ Nerd\ Font\ Bold\ Italic/' ~/.config/kitty/kitty.conf
 sed -i -e 's/font_size\ 12/font_size 14/' ~/.config/kitty/kitty.conf
+sed -i -e 's/background_opacity\ 0.7/background_opacity\ 0.85/' ~/.config/kitty/kitty.conf
