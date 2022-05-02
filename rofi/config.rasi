@@ -1,10 +1,10 @@
 /*Dracula theme based on the Purple official rofi theme*/
 
 configuration {
-	modi: "combi,ssh,keys,filebrowser,window,drun";
+	modi: "combi,window,drun";
     font: "Iosevka Custom 12";
     combi-modi: "window,drun";
-    window-command: "echo '{window}' > ~/result.txt";
+    window-command: "bspc node '{window}' -d focused";
 }
 
 * {
