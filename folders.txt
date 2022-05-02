@@ -2,7 +2,6 @@ fish
 nvim
 kitty
 neofetch
-fonts
 fontconfig
 alacritty
 bspwm
