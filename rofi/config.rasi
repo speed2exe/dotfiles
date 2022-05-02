@@ -2,7 +2,7 @@
 
 configuration {
 	modi: "combi,ssh,keys,filebrowser,window,drun";
-    font: "Iosevka Term SS14 12";
+    font: "Iosevka Custom 12";
     combi-modi: "window,drun";
     window-command: "echo '{window}' > ~/result.txt";
 }
