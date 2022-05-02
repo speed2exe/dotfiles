@@ -9,8 +9,8 @@ cmp.setup({
         ['<C-D>'] = cmp.mapping.scroll_docs(4),
         ['<C-C>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm(),
-        ['<TAB>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
-        ['<S-TAB>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
+        ['<DOWN>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 's' }),
+        ['<UP>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 's' }),
     },
     sources = {
         { name = 'nvim_lsp' },
