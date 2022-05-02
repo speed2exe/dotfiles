@@ -11,7 +11,7 @@ super + Escape
 
 # Terminal
 super + {_,shift +}Return
-    {kitty, bspc rule -a \* -o state=floating && kitty}
+    {alacritty, bspc rule -a \* -o state=floating && alacritty}
 
 # Remove all Receptacles
 super + k
