@@ -1,3 +1,5 @@
+# use xev cli app (from org-xev package) to check input
+#
 # reset the keyboard daemon
 # usually happens after modification to sxhkd file
 super + l
