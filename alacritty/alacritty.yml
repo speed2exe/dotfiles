@@ -991,6 +991,9 @@ hints:
        key: Return
        mods: Alt
 
+window:
+  opacity: 0.85
+
 colors:
   primary:
     background: '#282a36'
