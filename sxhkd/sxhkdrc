@@ -172,9 +172,9 @@ super + d
 super + shift + Tab
     bspc node -d last --follow
 
-# Send node to N
+# Send node to first desktop
 super + BackSpace
-    ~/.config/sxhkd/recycle_node.sh
+	bspc node -d '^1'
 
 # Send node to previous or next desktop
 super + alt + {4,6}
