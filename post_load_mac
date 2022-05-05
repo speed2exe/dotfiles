@@ -4,6 +4,9 @@
 rm -rf ~/.config/nvim/ && cp -r ~/dotfiles/nvim/ ~/.config/nvim/
 sed -i -e 's/set\ shell=\/usr\/sbin\/fish/set\ shell=\/opt\/homebrew\/bin\/fish/' ~/.config/nvim/setttings.vim
 
+# alacritty
+rm -rf ~/.config/alacritty/ && cp -r ~/dotfiles/alacritty/ ~/.config/alacritty/
+printf 'key_bindings:\n  - { key: Q, mods: Control, chars: "\\\\x11" }' >> ~/.config/alacritty/alacritty.yml
 
 # kitty terminal
 rm -rf ~/.config/kitty/ && cp -r ~/dotfiles/kitty/ ~/.config/kitty/
