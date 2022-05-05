@@ -95,7 +95,7 @@ super + {Next,Prior,End}
     bspc node @parent -R {90,180,270}
 
 # Auto Resize
-super + y
+super + g
     bspc node @/ -B
 
 # Expand from Left
