@@ -1,0 +1,11 @@
+#!/usr/bin/expect
+
+spawn bluetoothctl
+expect "Agent registered"
+send "menu gatt\r"
+send "select-attribute /org/bluez/hci0/dev_F4_53_E0_66_88_53/service0010/char0011\r"
+expect "#"
+send "read\r"
+sleep 1
+send "exit\r"
+expect eof
