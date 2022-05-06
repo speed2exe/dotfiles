@@ -7,13 +7,19 @@ sed -i -e 's/set\ shell=\/usr\/sbin\/fish/set\ shell=\/opt\/homebrew\/bin\/fish/
 # alacritty
 # https://github.com/alacritty/alacritty/issues/1359
 rm -rf ~/.config/alacritty/ && cp -r ~/dotfiles/alacritty/ ~/.config/alacritty/
-printf 'key_bindings:\n  - { key: Q, mods: Control, chars: "\\\\x11" }' >> ~/.config/alacritty/alacritty.yml
+printf '\nkey_bindings:
+  - { key: N,        mods: Command, action: CreateNewWindow  }
+  - { key: Q,        mods: Control, chars: "\\\\x11"         }
+  - { key: V,        mods: Option,  action: Paste            }
+  - { key: C,        mods: Option,  action: Copy             }
+  - { key: Plus,     mods: Option,  action: IncreaseFontSize }
+  - { key: Minus,    mods: Option,  action: DecreaseFontSize }
+  - { key: D,        mods: Option,  action: ScrollPageDown   }
+  - { key: U,        mods: Option,  action: ScrollPageUp     }
+  - { key: J,        mods: Option,  action: ScrollLineDown   }
+  - { key: K,        mods: Option,  action: ScrollLineUp     }
+  - { key: G,        mods: Option,  action: ScrollToTop      }
+  - { key: Return,   mods: Option,  action: ScrollToBottom   }
+  - { key: Escape,   mods: Option,  action: ToggleViMode     }' >> ~/.config/alacritty/alacritty.yml
 
-# kitty terminal
-rm -rf ~/.config/kitty/ && cp -r ~/dotfiles/kitty/ ~/.config/kitty/
-sed -i -e 's/Iosevka\ Term\ SS14\ Nerd\ Font\ Complete/Iosevka\ Nerd\ Font\ Regular/' ~/.config/kitty/kitty.conf
-sed -i -e 's/Iosevka\ Term\ SS14\ Bold\ Nerd\ Font\ Complete/Iosevka\ Nerd\ Font\ Bold/' ~/.config/kitty/kitty.conf
-sed -i -e 's/Iosevka\ Term\ SS14\ Italic\ Nerd\ Font\ Complete/Iosevka\ Nerd\ Font\ Italic/' ~/.config/kitty/kitty.conf
-sed -i -e 's/Iosevka\ Term\ SS14\ Bold\ Italic\ Nerd\ Font\ Complete/Iosevka\ Nerd\ Font\ Bold\ Italic/' ~/.config/kitty/kitty.conf
-sed -i -e 's/font_size\ 12/font_size 14/' ~/.config/kitty/kitty.conf
-sed -i -e 's/background_opacity\ 0.7/background_opacity\ 0.85/' ~/.config/kitty/kitty.conf
+sed -i -e 's/Iosevka\ Custom/Iosevka\ Nerd\ Font/g' ~/.config/alacritty/alacritty.yml
