@@ -6,6 +6,7 @@ sed -i -e 's/set\ shell=\/usr\/sbin\/fish/set\ shell=\/opt\/homebrew\/bin\/fish/
 
 # alacritty
 # https://github.com/alacritty/alacritty/issues/1359
+# https://github.com/alacritty/alacritty/issues/5782
 rm -rf ~/.config/alacritty/ && cp -r ~/dotfiles/alacritty/ ~/.config/alacritty/
 printf '\nkey_bindings:
   - { key: N,        mods: Command, action: CreateNewWindow  }
@@ -21,5 +22,4 @@ printf '\nkey_bindings:
   - { key: G,        mods: Option,  action: ScrollToTop      }
   - { key: Return,   mods: Option,  action: ScrollToBottom   }
   - { key: Escape,   mods: Option,  action: ToggleViMode     }' >> ~/.config/alacritty/alacritty.yml
-
 sed -i -e 's/Iosevka\ Custom/Iosevka\ Nerd\ Font/g' ~/.config/alacritty/alacritty.yml
