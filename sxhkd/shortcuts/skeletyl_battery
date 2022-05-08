@@ -1,0 +1,8 @@
+#!/usr/bin/fish
+set battery_percent_hex (~/.config/sxhkd/scripts/skeletyl_battery \
+	| rg  Attribute --after-context 1 \
+	| tail -n1 \
+	| string sub --start 51 --length 2)
+
+set battery_percent_dec (math "0x$battery_percent_hex")
+dunstify "skeletyl battery level: $battery_percent_dec%"
