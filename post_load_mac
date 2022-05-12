@@ -1,5 +1,8 @@
 #!/opt/homebrew/bin/fish
 
+# starship
+rm -f ~/.config/starship.toml && cp ~/dotfiles/starship.toml ~/.config/starship.toml
+
 # fish
 rm -rf ~/.config/fish/ && cp -r ~/dotfiles/fish/ ~/.config/fish/
 
