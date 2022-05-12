@@ -883,6 +883,10 @@
 
 # Start of Actual Configuration
 
+# Shell
+shell:
+  program: /bin/fish
+
 # Font configuration
 font:
   # Normal (roman) font face
