@@ -1,5 +1,9 @@
 #!/opt/homebrew/bin/fish
 
+# fish
+rm -rf ~/.config/fish/ && cp -r ~/dotfiles/fish/ ~/.config/fish/
+sed -i -e 's/set\ shell=\/usr\/sbin\/fish/set\ shell=\/opt\/homebrew\/bin\/fish/' ~/.config/nvim/setttings.vim
+
 # neovim
 rm -rf ~/.config/nvim/ && cp -r ~/dotfiles/nvim/ ~/.config/nvim/
 sed -i -e 's/set\ shell=\/usr\/sbin\/fish/set\ shell=\/opt\/homebrew\/bin\/fish/' ~/.config/nvim/setttings.vim
