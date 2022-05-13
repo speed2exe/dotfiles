@@ -5,45 +5,50 @@ if status is-login
     end
 end
 
-if status is-interactive
-    set TERM xterm-256color
-    set fish_term24bit 1
-
-    # apply dracula theme
-    source ~/.config/fish/functions/dracula.fish
-
-    # https://starship.rs/
-    starship init fish | source
-    set STARSHIP_CONFIG "~/.config/starship.toml"
-
-    # VI Key Bindings
-    fish_vi_key_bindings
-    function fish_mode_prompt
-        switch $fish_bind_mode
-        case default
-            echo -en "\e[2 q"
-        case insert
-            echo -en "\e[6 q"
-        end
-    end
-
-    # neofetch && set_color brblack; fortune
-    echo
-    set_color brblack; fortune
-
-    # run startup script
-    setup
-end
-
 # local binaries
 fish_add_path "~/.local/bin"
 
-# Go
-#fish_add_path /usr/local/go/bin
-#fish_add_path /usr/lib/go/bin
-#set GOPATH $HOME/go
-#fish_add_path $GOROOT/bin
-#fish_add_path $GOPATH/bin
+# return if not interactive
+not status is-interactive && return
 
-# Ruby
-fish_add_path "/root/.local/share/gem/ruby/3.0.0/bin"
+set TERM xterm-256color
+set fish_term24bit 1
+
+# apply dracula theme
+source ~/.config/fish/functions/dracula.fish
+
+# https://starship.rs/
+starship init fish | source
+set STARSHIP_CONFIG "~/.config/starship.toml"
+
+# VI Key Bindings
+fish_vi_key_bindings
+function fish_mode_prompt
+	switch $fish_bind_mode
+	case default
+		echo -en "\e[2 q"
+	case insert
+		echo -en "\e[6 q"
+	end
+end
+
+# neofetch && set_color brblack; fortune
+echo
+set_color brblack; fortune
+
+# cd to .savedir if exists
+if test -f /tmp/.savedir
+	cd (cat /tmp/.savedir)
+	rm /tmp/.savedir
+end
+
+# run .cmd if exists
+if test -f /tmp/.cmd
+	mv /tmp/.cmd /tmp/.cmd.tmp
+	fish /tmp/.cmd.tmp
+	rm /tmp/.cmd.tmp
+end
+
+# keybinding to emulate yank line and paste in vi mode
+bind yy fish_clipboard_copy
+bind p fish_clipboard_paste
