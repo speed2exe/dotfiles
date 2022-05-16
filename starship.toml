@@ -3,3 +3,14 @@ format = "[ ](bg:blue) $all"
 [character]
 success_symbol = "[ ](bg:green)"
 error_symbol = "[ ](bg:red)"
+vicmd_symbol = "[ ](bg:yellow)"
+
+[status]
+disabled = false
+format = "[$status]($style) "
+
+[git_metrics]
+disabled = false
+
+[kubernetes]
+disabled = false
