@@ -26,6 +26,6 @@ function cd_override
 
     string join \n $dir_hists | head -25 > ~/marks/dir_history.txt
 
-    l
+    la
     alias cd "cd_override"
 end
