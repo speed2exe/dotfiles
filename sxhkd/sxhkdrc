@@ -149,12 +149,12 @@ super + ctrl + e
 ##---------- Desktop Management ----------##
 
 # focus desktop
-super + {4,6,2}
+super + {4,6,5}
     bspc desktop -f {prev,next,'^1'}
 
 # Swap desktop
-super + shift + {4,6}
-    bspc desktop -s {prev,next} --follow
+super + shift + {4,6,5}
+    bspc desktop -s {prev,next,'^1'} --follow
 
 # select last desktop
 # good for switching back after rofi search
