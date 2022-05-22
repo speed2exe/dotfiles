@@ -94,56 +94,56 @@ super + i
 super + {Next,Prior,End}
     bspc node @parent -R {90,180,270}
 
-# Auto Resize
+# Auto Resize with equal area
 super + g
     bspc node @/ -B
 
 # Expand from Left
-super + shift + Left
+super + shift + a
     ~/.config/sxhkd/resize.sh left -16 0
 
 # Expand from Right
-super + shift + Right
+super + shift + o
     ~/.config/sxhkd/resize.sh right 16 0
 
 # Expand from Top
-super + shift + Up
+super + shift + u
     ~/.config/sxhkd/resize.sh top 0 -16
 
 # Expand from Bottom
-super + shift + Down
+super + shift + x
     ~/.config/sxhkd/resize.sh bottom 0 16
 
 # Shrink from Right
-super + alt + Right
+super + alt + o
     ~/.config/sxhkd/resize.sh left 16 0 || ~/.config/sxhkd/auto_recep.sh west
 
 # Shrink from Left
-super + alt + Left
+super + alt + a
     ~/.config/sxhkd/resize.sh right -16 0 || ~/.config/sxhkd/auto_recep.sh east
 
 # Shrink from Top
-super + alt + Down
+super + alt + e
     ~/.config/sxhkd/resize.sh top 0 16 || ~/.config/sxhkd/auto_recep.sh north
 
 # Shrink from Bottom
-super + alt + Up
+super + alt + u
     ~/.config/sxhkd/resize.sh bottom 0 -16 || ~/.config/sxhkd/auto_recep.sh south
 
 # Move window left
-super + ctrl + Left
+super + ctrl + a
     ~/.config/sxhkd/move.sh left -16 0
 
 # Move window right
-super + ctrl + Right
+super + ctrl + o
     ~/.config/sxhkd/move.sh right 16 0
 
 # Move window up
-super + ctrl + Up
+super + ctrl + u
     ~/.config/sxhkd/move.sh top 0 -16
 
 # Move window down
-super + ctrl + Down
+super + ctrl + e
     ~/.config/sxhkd/move.sh bottom 0 16
 
 ##---------- Desktop Management ----------##
