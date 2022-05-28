@@ -48,6 +48,7 @@ let s:yellow = "F09F17"
 let s:orange = "D4843E"
 let s:darkOrange = "F16529"
 let s:pink = "CB6F6F"
+
 let s:salmon = "EE6E73"
 let s:green = "8FAA54"
 let s:lightGreen = "31B53E"
