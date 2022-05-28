@@ -20,6 +20,9 @@ Plug 'danilamihailov/beacon.nvim'
 " Auto save
 Plug 'Pocco81/AutoSave.nvim'
 
+" go to last cursor position
+Plug 'farmergreg/vim-lastplace'
+
 " Smooth Scrolling
 Plug 'karb94/neoscroll.nvim'
 
@@ -107,9 +110,6 @@ Plug 'dcampos/cmp-snippy'
 " Plug 'hrsh7th/vim-vsnip'
 " Plug 'hrsh7th/vim-vsnip-integ'
 " Plug 'golang/vscode-go'
-
-" kitty terminal emulator config helper
-Plug 'fladson/vim-kitty'
 
 " Debugger Adapter Protocol
 " Plug 'mfussenegger/nvim-dap'
