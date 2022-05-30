@@ -8,6 +8,9 @@ autocmd VimEnter *
 
 call plug#begin('~/.vim/plugged')
 
+" Github Co-pilot
+Plug 'github/copilot.vim'
+
 " Project management
 Plug 'ahmedkhalf/project.nvim'
 

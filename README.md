@@ -68,4 +68,3 @@ pacman -Syu picom sxhkd bspwm pinta maim rofi bsplock betterlockscreen dunst dun
 - Full Dracula theme https://draculatheme.com/
 - Chinese Fonts (downloadable)
 - use xrandr to change display mode
-
