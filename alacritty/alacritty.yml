@@ -941,7 +941,7 @@ font:
 key_bindings:
   - { key: V,        mods: Alt,           action: Paste            }
   - { key: C,        mods: Alt,           action: Copy             }
-  - { key: Plus,     mods: Alt,           action: IncreaseFontSize }
+  - { key: Equals,   mods: Alt,           action: IncreaseFontSize }
   - { key: Minus,    mods: Alt,           action: DecreaseFontSize }
   - { key: D,        mods: Alt,           action: ScrollPageDown   }
   - { key: U,        mods: Alt,           action: ScrollPageUp     }
