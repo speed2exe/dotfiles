@@ -14,8 +14,8 @@ Plug 'github/copilot.vim'
 " Project management
 Plug 'ahmedkhalf/project.nvim'
 
-" Nice starting splash screen
-Plug 'mhinz/vim-startify'
+" Session Management
+Plug 'Shatur/neovim-session-manager'
 
 " Blink Cursor when doing jumps
 Plug 'danilamihailov/beacon.nvim'
@@ -58,6 +58,7 @@ Plug 'mhinz/vim-signify'
 " Telescope stuff
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
@@ -147,6 +148,7 @@ lua << EOF
     require('project_conf')                 -- ~/.config/nvim/lua/project_conf.lua
     require('nvim-ts-rainbow_conf')         -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
     require('cmp_dictionary_conf')			-- ~/.config/nvim/lua/cmp_dictionary_conf.lua
+    require('session_manager_conf')			-- ~/.config/nvim/lua/session_manager_conf.lua
 
     require('trouble').setup{}
 EOF
@@ -177,6 +179,3 @@ noremap * *<Cmd>lua require('hlslens').start()<CR>
 noremap # #<Cmd>lua require('hlslens').start()<CR>
 noremap g* g*<Cmd>lua require('hlslens').start()<CR>
 noremap g# g#<Cmd>lua require('hlslens').start()<CR>
-
-" use : instead of <Cmd>
-nnoremap <silent> <leader>l :noh<CR>
