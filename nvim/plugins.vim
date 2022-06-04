@@ -14,12 +14,8 @@ Plug 'github/copilot.vim'
 " Project management
 Plug 'ahmedkhalf/project.nvim'
 
-" Start Screen
+" Fancy Start Screen
 Plug 'mhinz/vim-startify'
-
-" Session Management
-Plug 'rmagatti/auto-session'
-Plug 'rmagatti/session-lens'
 
 " Blink Cursor when doing jumps
 Plug 'danilamihailov/beacon.nvim'
