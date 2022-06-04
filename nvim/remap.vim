@@ -141,6 +141,9 @@ nnoremap <leader>td <CMD>Telescope lsp_definitions<CR>:Beacon<CR>
 nnoremap <leader>ti <CMD>Telescope lsp_implementations<CR>
 nnoremap <leader>tr <CMD>Telescope lsp_references<CR>
 
+" session-lens
+nnoremap <leader>ts <CMD>lua require('session-lens').search_session()<CR>
+
 " NvimTree
 nnoremap <leader>n :nvimtree
 nnoremap <leader>nt <CMD>NvimTreeToggle<CR>
