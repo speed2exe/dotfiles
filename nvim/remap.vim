@@ -67,6 +67,9 @@ nnoremap <C-K> :m .-2<CR>
 " toggle search highlight
 nnoremap <expr> <leader>h (&hls && v:hlsearch ? ':set nohlsearch' : ':set hlsearch')."\n"
 
+" cancel search highlight
+nnoremap <ESC><ESC> <CMD>noh<CR>
+
 " Indent
 vnoremap , <gv
 vnoremap . >gv
@@ -109,7 +112,7 @@ nnoremap \| <CMD>resize +10<CR>
 nnoremap _ <CMD>resize -10<CR>
 
 " search visually selected text
-vnoremap / y/\V<C-R>=escape(@",'/\')<CR><CR>
+vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " Quick fix list
 " " Global List
