@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
 		for i, v in ipairs(path_list) do
 			if cur_path == v then
 				table.remove(path_list, i)
-				table.insert(path_list, i)
+				table.insert(path_list, v)
 				found = true
 				break
 			end
