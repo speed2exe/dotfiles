@@ -947,9 +947,8 @@ key_bindings:
   - { key: U,        mods: Alt,           action: ScrollPageUp     }
   - { key: J,        mods: Alt,           action: ScrollLineDown   }
   - { key: K,        mods: Alt,           action: ScrollLineUp     }
-  - { key: G,        mods: Alt,           action: ScrollToTop      }
-  - { key: Return,   mods: Alt,           action: ScrollToBottom   }
-  - { key: Escape,   mods: Alt,           action: ToggleViMode     }
+  - { key: Space,    mods: Alt,           action: ToggleViMode     }
+  - { key: Return,   mods: Alt,           action: CreateNewWindow  }
 
 # Regex hints
 #
@@ -992,7 +991,7 @@ hints:
        enabled: true
        mods: None
      binding:
-       key: Return
+       key: Escape
        mods: Alt
 
 window:
