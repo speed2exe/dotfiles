@@ -7,10 +7,11 @@ set backspace=indent,eol,start
 set nocompatible
 set noshowmode
 set exrc
-" set nohlsearch
+set nohlsearch
 set hidden
 set noerrorbells
-set tabstop=4 softtabstop=4
+set tabstop=4
+set softtabstop=4
 " set expandtab
 set smarttab
 set shiftwidth=4
