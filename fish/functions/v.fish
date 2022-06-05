@@ -1,3 +1,3 @@
 function v
-    command nvim $argv
+	nvim (cat ~/marks/file_history.txt | fpr)
 end
