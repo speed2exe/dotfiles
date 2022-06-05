@@ -29,7 +29,7 @@ end
 local function append_to_path_list(path)
 	local last_used = io.open(last_used_path, "a")
 	io.output(last_used)
-	io.write(path .. "\n")
+	io.write("\n" .. path)
 	io.close(last_used)
 end
 
@@ -59,15 +59,12 @@ vim.api.nvim_create_autocmd("BufEnter", {
 vim.api.nvim_create_autocmd("ExitPre", {
 	callback = function()
 		local final_path_list = {}
-		for _, v in pairs(path_list) do
-			if file_exists(v) then
-				table.insert(final_path_list, v)
-			end
-		end
-
 		local final_path_set = {}
 		for _, v in pairs(path_list) do
-			final_path_set[v] = true
+			if file_exists(v) and not final_path_set[v] then
+				table.insert(final_path_list, v)
+				final_path_set[v] = true
+			end
 		end
 
 		local lastest_path_list = get_path_list()
@@ -82,12 +79,14 @@ vim.api.nvim_create_autocmd("ExitPre", {
 			if i > 25 then
 				break
 			end
-			table.insert(last_25_path_list, v)
+			if string.len(v) > 0 then
+				table.insert(last_25_path_list, v)
+			end
 		end
 
 		local last_used = io.open(last_used_path, "w")
 		io.output(last_used)
-		io.write(table.concat(last_25_path_list, "\n") .. "\n")
+		io.write(table.concat(last_25_path_list, "\n").."\n")
 		io.close(last_used)
 	end
 })
