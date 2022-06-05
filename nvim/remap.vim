@@ -67,9 +67,6 @@ nnoremap <C-K> :m .-2<CR>
 " toggle search highlight
 nnoremap <expr> <leader>h (&hls && v:hlsearch ? ':set nohlsearch' : ':set hlsearch')."\n"
 
-" cancel search highlight
-nnoremap <ESC><ESC> <CMD>noh<CR>
-
 " Indent
 vnoremap , <gv
 vnoremap . >gv
