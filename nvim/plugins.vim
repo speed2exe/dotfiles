@@ -150,6 +150,8 @@ lua << EOF
     require('cmp_dictionary_conf')			-- ~/.config/nvim/lua/cmp_dictionary_conf.lua
 
     require('trouble').setup{}
+
+    require('last_used')					-- ~/.config/nvim/lua/last_used.lua
 EOF
 
 " LSP Statusline
