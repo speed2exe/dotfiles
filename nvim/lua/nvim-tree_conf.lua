@@ -43,7 +43,7 @@ require'nvim-tree'.setup {
 	hijack_unnamed_buffer_when_opening = false,
 	ignore_buffer_on_setup = false,
 	open_on_setup = false,
-	open_on_setup_file = false,
+	open_on_setup_file = true,
 	open_on_tab = true,
 	sort_by = "name",
 	update_cwd = false,
