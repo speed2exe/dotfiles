@@ -69,7 +69,7 @@ vim.api.nvim_create_autocmd("ExitPre", {
 
 		local lastest_path_list = get_path_list()
 		for _, v in pairs(lastest_path_list) do
-			if not final_path_set[v] then
+			if file_exists(v) and not final_path_set[v] then
 				table.insert(final_path_list, v)
 			end
 		end

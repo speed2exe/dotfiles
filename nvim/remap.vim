@@ -1,5 +1,24 @@
 let mapleader = " "
 
+" Auto bracketing
+inoremap {<CR> {}<LEFT><CR><ESC>O
+inoremap { {}
+inoremap {} {}
+
+inoremap (<CR> ()<LEFT><CR><ESC>O
+inoremap ( ()
+inoremap () ()
+
+inoremap [<CR> []<LEFT><CR><ESC>O
+inoremap [ []
+inoremap [] []
+
+inoremap <<CR> <><LEFT><CR><ESC>O
+inoremap < <>
+inoremap <> <>
+inoremap <- <-
+inoremap <= <=
+
 " Remove all empty lines within a range
 " https://linuxize.com/post/vim-delete-line
 vnoremap <leader>d :g/^\s*$/d<CR>
