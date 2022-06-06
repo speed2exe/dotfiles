@@ -4,33 +4,40 @@ let mapleader = " "
 inoremap {<CR> {}<LEFT><CR><ESC>O
 inoremap { {}<LEFT>
 inoremap {} {}
+inoremap {<ESC> {<ESC>
 
 inoremap (<CR> ()<LEFT><CR><ESC>O
 inoremap ( ()<LEFT>
 inoremap () ()
+inoremap (<ESC> (<ESC>
 
 inoremap [<CR> []<LEFT><CR><ESC>O
 inoremap [ []<LEFT>
 inoremap [] []
+inoremap [<ESC> [<ESC>
 
 inoremap <<CR> <><LEFT><CR><ESC>O
 inoremap < <><LEFT>
 inoremap <> <>
 inoremap <- <-
 inoremap <= <=
+inoremap <<ESC> <<ESC>
 
 " Auto quoting
 inoremap ' ''<LEFT>
 inoremap '' ''
 inoremap ''' ''''''<LEFT><LEFT><LEFT><CR><ESC>O
+inoremap '<ESC> '<ESC>
 
 inoremap " ""<LEFT>
 inoremap "" ""
 inoremap """ """"""<LEFT><LEFT><LEFT><CR><ESC>O
+inoremap "<ESC> "<ESC>
 
 inoremap ` ``<LEFT>
 inoremap `` ``
 inoremap ``` ``````<LEFT><LEFT><LEFT><CR><ESC>O
+inoremap `<ESC> `<ESC>
 
 " Remove all empty lines within a range
 " https://linuxize.com/post/vim-delete-line
