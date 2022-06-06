@@ -5,10 +5,10 @@ function cd_override
 
     set prev_git (git rev-parse --show-toplevel 2> /dev/null)
     cd $argv
-	set cur_git (git rev-parse --show-toplevel 2> /dev/null)
+    set cur_git (git rev-parse --show-toplevel 2> /dev/null)
 
-	# display git info if in different git repo
-	test "$cur_git" && test "$prev_git" != "$cur_git" && onefetch
+    # display git info if in different git repo
+    test "$cur_git" && test "$prev_git" != "$cur_git" && onefetch
 
     # make sure file exists
     if test ! -f ~/marks/dir_history.txt
