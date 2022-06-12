@@ -97,11 +97,13 @@ nnoremap <leader>g <CMD>e ~/marks/files.txt<CR>
 vnoremap <leader>c :w! ~/.clipboard<CR>
 nnoremap <leader>p :r ~/.clipboard<CR>
 
-" move blocks
+" Move lines up and down
 vnoremap <C-J> :m '>+1<CR>gv
 vnoremap <C-K> :m '<-2<CR>gv
 nnoremap <C-J> :m .+1<CR>
 nnoremap <C-K> :m .-2<CR>
+inoremap <C-J> <ESC>:m .+1<CR>a
+inoremap <C-K> <ESC>:m .-2<CR>a
 
 " toggle search highlight
 nnoremap <expr> <leader>h (&hls && v:hlsearch ? ':set nohlsearch' : ':set hlsearch')."\n"
@@ -109,6 +111,10 @@ nnoremap <expr> <leader>h (&hls && v:hlsearch ? ':set nohlsearch' : ':set hlsear
 " Indent
 vnoremap , <gv
 vnoremap . >gv
+nnoremap < <<^
+nnoremap > >>$
+inoremap <C-N> <ESC><<I
+inoremap <C-T> <ESC>>>A
 nnoremap <leader>i jgg=G<C-O>k
 
 " repeat last command
@@ -119,9 +125,9 @@ nnoremap <PAGEUP> <C-O>:Beacon<CR>
 nnoremap <PAGEDOWN> <C-I>:Beacon<CR>
 
 " To project root
-nnoremap < <CMD>ProjectRoot<CR>
+nnoremap <HOME> <CMD>ProjectRoot<CR>
 " Current File Directory
-nnoremap > <CMD>lcd %:p:h<CR>
+nnoremap <END> <CMD>lcd %:p:h<CR>
 
 " new windows
 nnoremap <leader>x <CMD>split<CR>
