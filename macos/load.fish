@@ -5,9 +5,7 @@ rm -f ~/.config/starship.toml && cp ~/dotfiles/starship.toml ~/.config/starship.
 
 # fish
 rm -rf ~/.config/fish/ && cp -r ~/dotfiles/fish/ ~/.config/fish/
-printf '# homebrew\nfish_add_path "/opt/homebrew/bin"\n' > ~/.config/fish/config.fish
-printf '# node@16\nfish_add_path "/opt/homebrew/Cellar/node@16/16.15.0/bin"\n' >> ~/.config/fish/config.fish
-cat ~/dotfiles/fish/config.fish >> ~/.config/fish/config.fish
+cat ~/dotfiles/macos/pre_config.fish ~/dotfiles/fish/config.fish > ~/.config/fish/config.fish
 
 # neovim
 rm -rf ~/.config/nvim/ && cp -r ~/dotfiles/nvim/ ~/.config/nvim/
