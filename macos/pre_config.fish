@@ -12,5 +12,5 @@ end
 set -l open_jdk_path "/opt/homebrew/Cellar/openjdk/"
 set -l open_jdk_versions (ls $open_jdk_path)
 if test -n "$open_jdk_versions"
-	fish_add_path "$open_jdk_path$open_jdk_versions[1]/bin"
+	set -x JAVA_HOME "$open_jdk_path$open_jdk_versions[1]/bin"
 end
