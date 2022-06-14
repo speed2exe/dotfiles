@@ -5,4 +5,4 @@ fish_add_path "/opt/homebrew/bin"
 fish_add_path "/opt/homebrew/opt/node@16/bin"
 
 # openjdk
-set -x JAVA_HOME "/opt/homebrew/opt/openjdk/bin"
+set -x JAVA_HOME "/opt/homebrew/opt/openjdk"
