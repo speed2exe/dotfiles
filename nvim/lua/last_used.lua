@@ -17,24 +17,33 @@ local function directory_exists(path)
 	return vim.fn.isdirectory(path) == 1
 end
 
+local function create_directory_if_not_exists(path)
+	if not directory_exists(path) then
+		vim.fn.mkdir(path)
+	end
+end
+
+local function create_file_if_not_exists(path)
+	io.close(io.open(path, "a+"))
+end
+
+-- create marks directory if it doesn't exist
+local marks_path = os.getenv("HOME") .. '/marks'
+create_directory_if_not_exists(marks_path)
+
 -- create global lru files if it doesn't exist
 local last_used_path = os.getenv("HOME") .. '/marks/file_history.txt'
-io.close(io.open(last_used_path, "a+"))
+create_file_if_not_exists(last_used_path)
 
 -- set up dir lru folders and file if not exists
 local current_dir = vim.fn.getcwd()
-local hash = vim.fn.sha256(current_dir)
-local dir_sha256_path = os.getenv("HOME") .. '/marks/dir_sha256/'
-local dir_sha256_hash_path = dir_sha256_path .. hash
-local dir_last_used_path = dir_sha256_hash_path .. '/last_used.txt'
-if not directory_exists(dir_sha256_path) then
-	vim.fn.mkdir(dir_sha256_path)
-end
-if not directory_exists(dir_sha256_hash_path) then
-	vim.fn.mkdir(dir_sha256_hash_path)
-end
-io.close(io.open(dir_last_used_path, "a+"))
-
+local hash = string.gsub(current_dir, "/", ":")
+local dir_hash_path = os.getenv("HOME") .. '/marks/dir_hash/'
+create_directory_if_not_exists(dir_hash_path)
+local dir_hash_hash_path = dir_hash_path .. hash
+create_directory_if_not_exists(dir_hash_hash_path)
+local dir_last_used_path = dir_hash_hash_path .. '/last_used.txt'
+create_file_if_not_exists(dir_last_used_path)
 
 local function file_exists(name)
 	local f = io.open(name,"r")
