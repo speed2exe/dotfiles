@@ -42,7 +42,7 @@ local dir_hash_path = os.getenv("HOME") .. '/marks/dir_hash/'
 create_directory_if_not_exists(dir_hash_path)
 local dir_hash_hash_path = dir_hash_path .. hash
 create_directory_if_not_exists(dir_hash_hash_path)
-local dir_last_used_path = dir_hash_hash_path .. '/last_used.txt'
+local dir_last_used_path = dir_hash_hash_path .. '/file_history.txt'
 create_file_if_not_exists(dir_last_used_path)
 
 local function file_exists(name)
