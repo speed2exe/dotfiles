@@ -1,3 +1,11 @@
+-- -- Write log to file
+-- local function write_log(message)
+-- 	local logfile = io.open("/home/zx/logfile", "a")
+-- 	io.output(logfile)
+-- 	io.write(message)
+-- 	io.close(logfile)
+-- end
+
 local last_used_path = os.getenv("HOME") .. '/marks/file_history.txt'
 
 -- create file if it doesn't exist
@@ -74,19 +82,19 @@ vim.api.nvim_create_autocmd("ExitPre", {
 			end
 		end
 
-		local last_25_path_list = {}
-		for i, v in ipairs(final_path_list) do
-			if i > 25 then
-				break
-			end
+		local last_50_path_list = {}
+
+		for i=math.max(#final_path_list-51, 1), #final_path_list do
+			local v = final_path_list[i]
+			-- write_log(string.format("index: %d, value: %s\n", i, v))
 			if string.len(v) > 0 then
-				table.insert(last_25_path_list, v)
+				table.insert(last_50_path_list, v)
 			end
 		end
 
 		local last_used = io.open(last_used_path, "w")
 		io.output(last_used)
-		io.write(table.concat(last_25_path_list, "\n").."\n")
+		io.write(table.concat(last_50_path_list, "\n").."\n")
 		io.close(last_used)
 	end
 })
