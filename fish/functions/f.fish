@@ -1,4 +1,7 @@
 function f
+    set path fd_all $argv --exact-depth 1
+
+
     if [ ! $argv ]
         set argv "."
     end
