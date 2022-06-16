@@ -31,6 +31,8 @@ function cd_override
 
     string join \n $dir_hists | head -25 > ~/marks/dir_history.txt
 
-    la
+    echo; print_boxed $cur_path; echo; la
+    echo $cur_path > /tmp/.savedir
+
     alias cd "cd_override"
 end
