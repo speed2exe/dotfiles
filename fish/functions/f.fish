@@ -1,30 +1,25 @@
 function f
-    set path fd_all $argv --exact-depth 1
-
-
-    if [ ! $argv ]
+    if test -z "$argv"
         set argv "."
+    else if not test -d "$argv"
+        echo "$argv: not a directory"
+        return 1
     end
 
-    set dir (get_dir $argv)
-    set path (fd -H -I -d 1 . $dir | fprp --query "$dir/")
+    set dir (realpath $argv)
+    set path (fd_all $argv --absolute-path --exact-depth 1 | fprp --query "$dir/")
 
-    if test $status -eq 0
-        if [ (string match "*.." $path[1] ) ]
-            set path (realpath $path[1])
-        else
-            set path $path[2]
-        end
+    set input $path[1]
+    set selection $path[2]
 
-        if test -d $path
-            f $path
-        else
-            $dir/
-            echo $path
-            printf $path | xclip -sel clip
-            set_color yellow; echo "'$path' copied to clipboard!"
-        end
+    if test (string match "*.." "$input")
+        f "$input"
+    else if test -d "$selection"
+        f "$selection"
+    else if test -f "$selection"
+        cd (dirname "$selection")
+        nvim "$selection"
     else
-        $dir/
+        cd "$dir"
     end
 end
