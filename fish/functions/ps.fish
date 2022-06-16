@@ -1,3 +1,3 @@
-function ps --wraps=procs --description 'alias ps procs'
-  procs $argv; 
+function ps
+    procs $argv
 end
