@@ -1,5 +1,5 @@
 function get_dir
-    if [ $argv ]
+    if test $argv
         realpath $argv
     else
         echo (pwd)
