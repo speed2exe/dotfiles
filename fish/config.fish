@@ -34,7 +34,7 @@ end
 
 # neofetch && set_color brblack; fortune
 echo
-set_color brblack; fortune
+set_color brblack ; fortune ; set_color normal
 
 # cd to .savedir if exists
 if test -f /tmp/.savedir
