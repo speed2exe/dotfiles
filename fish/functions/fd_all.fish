@@ -1,3 +1,3 @@
 function fd_all
-    fd --hidden --no-ignore --color=always $argv
+    fd --hidden --no-ignore --color=always . $argv
 end
