@@ -1,9 +1,5 @@
 let mapleader = " "
 
-" Visual
-nnoremap vv V
-nnoremap V v$h
-
 " Auto bracketing
 inoremap {<CR> {}<LEFT><CR><ESC>O
 inoremap { {}<LEFT>
