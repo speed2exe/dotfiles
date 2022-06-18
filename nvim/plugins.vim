@@ -80,6 +80,8 @@ Plug 'tami5/lspsaga.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'p00f/nvim-ts-rainbow'
+" https://github.com/ziontee113/syntax-tree-surfer
+Plug 'ziontee113/syntax-tree-surfer'
 
 " nvim-tree
 Plug 'kyazdani42/nvim-tree.lua'
@@ -149,6 +151,8 @@ lua << EOF
     require('trouble').setup{}
 
     require('last_used')					-- ~/.config/nvim/lua/last_used.lua
+
+    require('syntax-tree-surfer').setup{}
 
     -- Cant get it to work
     -- require('nvim-navic_conf')              -- ~/.config/nvim/lua/nvim-navic_conf.lua
