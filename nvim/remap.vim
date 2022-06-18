@@ -185,3 +185,16 @@ nnoremap <leader>a :Trouble
 nnoremap <leader>at <CMD>TroubleToggle<CR>
 nnoremap <leader>ar <CMD>TroubleRefresh<CR>
 nnoremap <leader>ac <CMD>TroubleClose<CR>
+
+" Syntax Tree Navigation
+" from normal mode
+nnoremap vv <CMD>STSSelectCurrentNode<CR>
+nnoremap vm <CMD>STSSelectMasterNode<CR>
+" in visual mode
+vnoremap <TAB> <CMD>STSSelectNextSiblingNode<CR>
+vnoremap <S-TAB> <CMD>STSSelectPrevSiblingNode<CR>
+vnoremap <BS> <CMD>STSSelectParentNode<CR>
+vnoremap <CR> <CMD>STSSelectChildNode<CR>
+" swap in visual mode
+vnoremap J <CMD>STSSwapNextVisual<CR>
+vnoremap K <CMD>STSSwapPrevVisual<CR>
