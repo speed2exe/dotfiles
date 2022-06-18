@@ -60,14 +60,12 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 
-" https://github.com/stevearc/aerial.nvim
-Plug 'stevearc/aerial.nvim'
-
 " Not working
 " https://github.com/SmiteshP/nvim-navic
-" Plug 'SmiteshP/nvim-navic'
-"
-"
+Plug 'SmiteshP/nvim-navic'
+
+" https://github.com/stevearc/aerial.nvim
+Plug 'stevearc/aerial.nvim'
 
 " Display LSP stuff nicer
 Plug 'folke/trouble.nvim'
@@ -146,16 +144,16 @@ lua << EOF
     require('project_conf')                 -- ~/.config/nvim/lua/project_conf.lua
     require('nvim-ts-rainbow_conf')         -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
     require('cmp_dictionary_conf')			-- ~/.config/nvim/lua/cmp_dictionary_conf.lua
-    require("aerial_conf")			        -- ~/.config/nvim/lua/aerial_conf.lua
+    require('aerial_conf')			        -- ~/.config/nvim/lua/aerial_conf.lua
+    require('nvim-navic_conf')              -- ~/.config/nvim/lua/nvim-navic_conf.lua
 
+    -- default setup
     require('trouble').setup{}
-
-    require('last_used')					-- ~/.config/nvim/lua/last_used.lua
-
     require('syntax-tree-surfer').setup{}
 
-    -- Cant get it to work
-    -- require('nvim-navic_conf')              -- ~/.config/nvim/lua/nvim-navic_conf.lua
+    -- custom plugin (self made)
+    require('last_used')					-- ~/.config/nvim/lua/last_used.lua
+
 EOF
 
 " https://github.com/kevinhwang91/nvim-hlslens
