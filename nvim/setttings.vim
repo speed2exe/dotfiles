@@ -39,4 +39,6 @@ set wildmode=longest:full,full
 set laststatus=2
 set statusline+=%F
 set lazyredraw
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
 " set autochdir "might break plugins
