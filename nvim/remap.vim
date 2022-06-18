@@ -1,44 +1,5 @@
 let mapleader = " "
 
-" Auto bracketing
-inoremap {<CR> {}<LEFT><CR><ESC>O
-inoremap { {}<LEFT>
-inoremap {} {}
-inoremap {<ESC> {<ESC>
-
-inoremap (<CR> ()<LEFT><CR><ESC>O
-inoremap ( ()<LEFT>
-inoremap () ()
-inoremap (<ESC> (<ESC>
-
-inoremap [<CR> []<LEFT><CR><ESC>O
-inoremap [ []<LEFT>
-inoremap [] []
-inoremap [<ESC> [<ESC>
-
-inoremap <<CR> <><LEFT><CR><ESC>O
-inoremap < <><LEFT>
-inoremap <> <>
-inoremap <- <-
-inoremap <= <=
-inoremap <<ESC> <<ESC>
-
-" Auto quoting
-inoremap ' ''<LEFT>
-inoremap '' ''
-inoremap ''' ''''''<LEFT><LEFT><LEFT><CR><ESC>O
-inoremap '<ESC> '<ESC>
-
-inoremap " ""<LEFT>
-inoremap "" ""
-inoremap """ """"""<LEFT><LEFT><LEFT><CR><ESC>O
-inoremap "<ESC> "<ESC>
-
-inoremap ` ``<LEFT>
-inoremap `` ``
-inoremap ``` ``````<LEFT><LEFT><LEFT><CR><ESC>O
-inoremap `<ESC> `<ESC>
-
 " Remove all empty lines within a range
 " https://linuxize.com/post/vim-delete-line
 vnoremap <leader>d :g/^\s*$/d<CR>
@@ -48,6 +9,9 @@ nnoremap <ESC> <CMD>Beacon<CR>
 
 " quick macro (after qq)
 nnoremap Q @q
+
+" quick mark (after mm)
+nnoremap M `m
 
 " quick quit
 nnoremap <C-Q> <CMD>q!<CR>
@@ -83,8 +47,8 @@ nnoremap <leader>f gF
 nnoremap J mzJ`z
 
 " Move to end of sentence
-nnoremap ( k{<SPACE>^:Beacon<CR>
-nnoremap ) j}<BS>$:Beacon<CR>
+nnoremap ( k{<SPACE>^
+nnoremap ) j}<BS>$
 
 " copy current file path to clipboard
 nnoremap <leader>c <CMD>let @+ = expand("%:p")<CR>
@@ -121,8 +85,8 @@ nnoremap <leader>i jgg=G<C-O>k
 nnoremap , @:
 
 " toggle jump back and forth
-nnoremap <PAGEUP> <C-O>:Beacon<CR>
-nnoremap <PAGEDOWN> <C-I>:Beacon<CR>
+nnoremap <PAGEUP> <C-O>
+nnoremap <PAGEDOWN> <C-I>
 
 " To project root
 nnoremap <HOME> <CMD>ProjectRoot<CR>
@@ -158,30 +122,27 @@ vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " Quick fix list
 " " Global List
-nnoremap [[ <CMD>cprev<CR>:Beacon<CR>
-nnoremap ]] <CMD>cnext<CR>:Beacon<CR>
+nnoremap [[ <CMD>cprev<CR>
+nnoremap ]] <CMD>cnext<CR>
 " " Local List
-nnoremap {{ <CMD>lprev<CR>:Beacon<CR>
-nnoremap }} <CMD>lnext<CR>:Beacon<CR>
-
-" Startify
-nnoremap <leader><ESC> <CMD>Startify<CR>
+nnoremap {{ <CMD>lprev<CR>
+nnoremap }} <CMD>lnext<CR>
 
 " Telescope
 nnoremap <leader>t :Telescope 
-nnoremap <leader>tf <CMD>Telescope find_files<CR>
 nnoremap <leader>tl <CMD>Telescope live_grep<CR>
 nnoremap <leader>tg <CMD>Telescope grep_string<CR>
 nnoremap <leader>tj <CMD>Telescope jumplist<CR>
-nnoremap <leader>tb <CMD>Telescope buffers<CR>
 nnoremap <leader>ta <CMD>Telescope lsp_code_actions<CR>
 vnoremap <leader>ta <CMD>Telescope lsp_range_code_actions<CR>
 vnoremap <leader>to <CMD>Telescope lsp_document_diagnostics<CR>
 vnoremap <leader>tw <CMD>Telescope lsp_workspace_diagnostics<CR>
 nnoremap <leader>tt <CMD>Telescope lsp_type_definitions<CR>
-nnoremap <leader>td <CMD>Telescope lsp_definitions<CR>:Beacon<CR>
+nnoremap <leader>td <CMD>Telescope lsp_definitions<CR>
 nnoremap <leader>ti <CMD>Telescope lsp_implementations<CR>
 nnoremap <leader>tr <CMD>Telescope lsp_references<CR>
+nnoremap <TAB> <CMD>Telescope buffers<CR>
+nnoremap <BS> <CMD>Telescope find_files<CR>
 
 " NvimTree
 nnoremap <leader>n :nvimtree
@@ -202,16 +163,6 @@ nnoremap <leader>ss <CMD>Lspsaga signature_help<CR>
 nnoremap <leader>sj <CMD>Lspsaga diagnostic_jump_next<CR>
 nnoremap <leader>sk <CMD>Lspsaga diagnostic_jump_prev<CR>
 
-" barbar.nvim
-nnoremap <S-TAB> <CMD>BufferPrevious<CR>
-nnoremap <TAB> <CMD>BufferNext<CR>
-nnoremap <C-LEFT> <CMD>BufferMovePrevious<CR>
-nnoremap <C-RIGHT> <CMD>BufferMoveNext<CR>
-nnoremap <leader><TAB> <CMD>BufferPick<CR>
-nnoremap <leader>b :Buffer
-nnoremap <leader>bp <CMD>BufferPin<CR>
-nnoremap <leader>bc <CMD>BufferClose<CR>
-
 " debug adapter protocol
 nnoremap <leader>db <CMD>lua require('dap').toggle_breakpoint()<CR>
 nnoremap <leader>de <CMD>lua require('dap').set_exception_breakpoints()<CR>
@@ -225,8 +176,7 @@ nnoremap <leader>d<SPACE> <CMD>lua require('dap').run_to_cursor()<CR>
 nnoremap <leader>d<CR> <CMD>lua require('dap').continue()<CR>
 nnoremap <leader>d<TAB> <CMD>lua require('dap').repl.toggle()<CR>
 
-" terminal access with https://github.com/voldikss/vim-floaterm
-nnoremap <leader><CR> :!savedir<CR>:FloatermNew --autoclose=1<CR><CR>
+" terminal access
 nnoremap <leader><leader> o<ESC>:.!
 vnoremap <leader><leader> c<CR><CR><UP><ESC>:.!<C-R>"<CR>k
 
