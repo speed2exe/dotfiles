@@ -17,7 +17,7 @@ Plug 'ahmedkhalf/project.nvim'
 " Fancy Start Screen
 Plug 'mhinz/vim-startify'
 
-" Blink Cursor when doing jumps
+" Blink Cursor
 Plug 'danilamihailov/beacon.nvim'
 
 " Auto save
@@ -38,18 +38,12 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " https://draculatheme.com/vim
 Plug 'dracula/vim', {'as': 'dracula'}
 
-" floating terminal
-Plug 'voldikss/vim-floaterm'
-
 " lualine
 Plug 'nvim-lualine/lualine.nvim'
 
 " dev icons
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
-
-" tabline
-Plug 'romgrk/barbar.nvim'
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -66,14 +60,8 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 
-" inlay hints
-Plug 'nvim-lua/lsp_extensions.nvim'
-
 " Display LSP stuff nicer
 Plug 'folke/trouble.nvim'
-
-" Display LSP status
-Plug 'nvim-lua/lsp-status.nvim'
 
 " Lspsaga
 " Plug 'glepnir/lspsaga.nvim'
@@ -132,7 +120,6 @@ lua << EOF
     require('autosave_conf')                -- ~/.config/nvim/lua/autosave_conf.lua
     require('nvim-web-devicons')            -- ~/.config/nvim/lua/nvim-web-devicons_conf.lua
     require('nvim-tree_conf')               -- ~/.config/nvim/lua/nvim-tree_conf.lua
-    require('barbar_conf')                  -- ~/.config/nvim/lua/barbar_conf.lua
     require('lualine_conf')                 -- ~/.config/nvim/lua/lualine_conf.lua
     require('nvim-lsp-installer_conf')      -- ~/.config/nvim/lua/nvim-lsp-installer_conf.lua
     require('lspsaga_conf')                 -- ~/.config/nvim/lua/lspsaga_conf.lua
@@ -153,23 +140,6 @@ lua << EOF
 
     require('last_used')					-- ~/.config/nvim/lua/last_used.lua
 EOF
-
-" LSP Statusline
-function! LspStatus() abort
-    if luaeval('#vim.lsp.buf_get_clients() > 0')
-        return luaeval("require('lsp-status').status()")
-    endif
-
-    return ''
-endfunction
-
-func RustInlay(timer)
-    lua require'lsp_extensions'.inlay_hints{ prefix = ' -> ', highlight = "Comment", enabled = {"TypeHint", "ChainingHint", "ParameterHint"}}
-endfunc
-
-" lsp_extensions: Rust Analyzer Inlay
-autocmd BufWritePost *.rs call timer_start(0, 'RustInlay')
-autocmd BufReadPost *.rs call timer_start(2000, 'RustInlay')
 
 " https://github.com/kevinhwang91/nvim-hlslens
 noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
