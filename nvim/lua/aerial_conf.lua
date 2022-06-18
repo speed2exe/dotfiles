@@ -1,5 +1,7 @@
 local aerial = require("aerial")
-aerial.setup({})
+aerial.setup({
+    filter_kind = false,
+})
 
 local servers = require("nvim-lsp-installer").get_installed_servers()
 local lspconfig = require("lspconfig")
