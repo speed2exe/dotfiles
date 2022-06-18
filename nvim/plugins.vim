@@ -59,6 +59,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " LSP stuff
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
+" Plug 'nvim-lua/lsp-status.nvim'
 
 " Not working
 " https://github.com/SmiteshP/nvim-navic
@@ -145,6 +146,7 @@ lua << EOF
     require('nvim-ts-rainbow_conf')         -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
     require('cmp_dictionary_conf')			-- ~/.config/nvim/lua/cmp_dictionary_conf.lua
     require('aerial_conf')			        -- ~/.config/nvim/lua/aerial_conf.lua
+    -- require('lsp-status_conf')              -- ~/.config/nvim/lua/lsp-status_conf.lua
     require('nvim-navic_conf')              -- ~/.config/nvim/lua/nvim-navic_conf.lua
 
     -- default setup
@@ -155,6 +157,15 @@ lua << EOF
     require('last_used')					-- ~/.config/nvim/lua/last_used.lua
 
 EOF
+
+" Statusline
+" function! LspStatus() abort
+"     if luaeval('#vim.lsp.buf_get_clients() > 0')
+"         return luaeval("require('lsp-status').status()")
+"     endif
+" 
+"     return ''
+" endfunction
 
 " https://github.com/kevinhwang91/nvim-hlslens
 noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
