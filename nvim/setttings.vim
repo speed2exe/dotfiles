@@ -20,7 +20,6 @@ set breakindent
 set nowrap
 set number
 set relativenumber
-set cursorline
 set ignorecase
 set smartcase
 set noswapfile
