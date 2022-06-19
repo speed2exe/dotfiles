@@ -78,8 +78,7 @@ Plug 'tami5/lspsaga.nvim'
 " TreeSitter stuff
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
-" https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+Plug 'nvim-treesitter/playground'
 Plug 'p00f/nvim-ts-rainbow'
 " https://github.com/ziontee113/syntax-tree-surfer
 Plug 'ziontee113/syntax-tree-surfer'
