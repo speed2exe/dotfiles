@@ -13,7 +13,7 @@ require('lualine').setup {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', { 'diagnostics', sources = {'nvim_diagnostic'} }, },
         lualine_c = { 'filename', { navic.get_location, cond = navic.is_available } },
-        lualine_x = { 'aerial', 'filetype' },
+        lualine_x = { 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }
     },

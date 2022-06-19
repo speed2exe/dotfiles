@@ -133,14 +133,13 @@ nnoremap <leader>t :Telescope
 nnoremap <leader>tl <CMD>Telescope live_grep<CR>
 nnoremap <leader>tg <CMD>Telescope grep_string<CR>
 nnoremap <leader>tj <CMD>Telescope jumplist<CR>
-nnoremap <leader>ta <CMD>Telescope lsp_code_actions<CR>
-vnoremap <leader>ta <CMD>Telescope lsp_range_code_actions<CR>
-vnoremap <leader>to <CMD>Telescope lsp_document_diagnostics<CR>
-vnoremap <leader>tw <CMD>Telescope lsp_workspace_diagnostics<CR>
-nnoremap <leader>tt <CMD>Telescope lsp_type_definitions<CR>
+vnoremap <leader>te <CMD>Telescope diagnostics<CR>
+nnoremap <leader>tr <CMD>Telescope lsp_references<CR>
 nnoremap <leader>td <CMD>Telescope lsp_definitions<CR>
 nnoremap <leader>ti <CMD>Telescope lsp_implementations<CR>
-nnoremap <leader>tr <CMD>Telescope lsp_references<CR>
+nnoremap <leader>tt <CMD>Telescope lsp_type_definitions<CR>
+nnoremap <leader>ts <CMD>Telescope lsp_document_symbols<CR>
+nnoremap <leader>tw <CMD>Telescope lsp_dynamic_workspace_symbols<CR>
 nnoremap <TAB> <CMD>Telescope buffers<CR>
 nnoremap <BS> <CMD>Telescope find_files<CR>
 
