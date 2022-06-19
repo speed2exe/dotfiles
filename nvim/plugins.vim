@@ -64,10 +64,6 @@ Plug 'williamboman/nvim-lsp-installer'
 " https://github.com/SmiteshP/nvim-navic
 Plug 'SmiteshP/nvim-navic'
 
-" https://github.com/stevearc/aerial.nvim
-" kind of does too much
-" Plug 'stevearc/aerial.nvim'
-
 " Display LSP stuff nicer
 Plug 'folke/trouble.nvim'
 
@@ -79,6 +75,7 @@ Plug 'tami5/lspsaga.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'nvim-treesitter/playground'
+Plug 'simrat39/symbols-outline.nvim'
 Plug 'p00f/nvim-ts-rainbow'
 " https://github.com/ziontee113/syntax-tree-surfer
 Plug 'ziontee113/syntax-tree-surfer'
@@ -146,9 +143,9 @@ lua << EOF
     require('project_conf')                 -- ~/.config/nvim/lua/project_conf.lua
     require('nvim-ts-rainbow_conf')         -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
     require('cmp_dictionary_conf')			-- ~/.config/nvim/lua/cmp_dictionary_conf.lua
-    -- require('aerial_conf')			        -- ~/.config/nvim/lua/aerial_conf.lua
     -- require('lsp-status_conf')              -- ~/.config/nvim/lua/lsp-status_conf.lua
     require('nvim-navic_conf')              -- ~/.config/nvim/lua/nvim-navic_conf.lua
+    require('symbols-outline_conf')         -- ~/.config/nvim/lua/symbols-outline_conf.lua
 
     -- default setup
     require('trouble').setup{}
