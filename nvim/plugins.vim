@@ -20,8 +20,14 @@ Plug 'mhinz/vim-startify'
 " Blink Cursor
 Plug 'danilamihailov/beacon.nvim'
 
+" Auto complete braces
+Plug 'windwp/nvim-autopairs'
+
 " Auto save
 Plug 'Pocco81/AutoSave.nvim'
+
+" Indent Guide
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 " go to last cursor position
 Plug 'farmergreg/vim-lastplace'
@@ -146,10 +152,12 @@ lua << EOF
     -- require('lsp-status_conf')              -- ~/.config/nvim/lua/lsp-status_conf.lua
     require('nvim-navic_conf')              -- ~/.config/nvim/lua/nvim-navic_conf.lua
     require('symbols-outline_conf')         -- ~/.config/nvim/lua/symbols-outline_conf.lua
+    require('indent-blankline_conf')        -- ~/.config/nvim/lua/indent-blankline_conf.lua
 
     -- default setup
     require('trouble').setup{}
     require('syntax-tree-surfer').setup{}
+    require('nvim-autopairs').setup{}
 
     -- custom plugin (self made)
     require('last_used')					-- ~/.config/nvim/lua/last_used.lua
