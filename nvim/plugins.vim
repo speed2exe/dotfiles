@@ -26,7 +26,7 @@ Plug 'windwp/nvim-autopairs'
 " Auto save
 Plug 'Pocco81/AutoSave.nvim'
 
-" Indent Guide
+" Indent guide lines
 Plug 'lukas-reineke/indent-blankline.nvim'
 
 " go to last cursor position
@@ -53,7 +53,10 @@ Plug 'ryanoasis/vim-devicons'
 
 " git
 Plug 'tpope/vim-fugitive'
-Plug 'mhinz/vim-signify'
+" https://github.com/lewis6991/gitsigns.nvim
+Plug 'lewis6991/gitsigns.nvim'
+"
+" Plug 'mhinz/vim-signify'
 
 " Telescope stuff
 Plug 'nvim-lua/popup.nvim'
@@ -158,6 +161,7 @@ lua << EOF
     require('trouble').setup{}
     require('syntax-tree-surfer').setup{}
     require('nvim-autopairs').setup{}
+    require('gitsigns').setup{}
 
     -- custom plugin (self made)
     require('last_used')					-- ~/.config/nvim/lua/last_used.lua
