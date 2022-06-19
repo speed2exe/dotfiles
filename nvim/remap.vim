@@ -144,11 +144,7 @@ nnoremap <TAB> <CMD>Telescope buffers<CR>
 nnoremap <BS> <CMD>Telescope find_files<CR>
 
 " NvimTree
-nnoremap <leader>n :nvimtree
-nnoremap <leader>nt <CMD>NvimTreeToggle<CR>
-nnoremap <leader>nf <CMD>NvimTreeFindFile<CR>
-nnoremap <leader>nc <CMD>NvimTreeClose<CR>
-nnoremap <leader>nr <CMD>NvimTreeRefresh<CR>
+nnoremap <leader>n <CMD>NvimTreeToggle<CR>
 
 " Lspsaga
 nnoremap <leader>s :Lspsaga 
@@ -197,3 +193,6 @@ vnoremap <CR> <CMD>STSSelectChildNode<CR>
 " swap in visual mode
 vnoremap J <CMD>STSSwapNextVisual<CR>
 vnoremap K <CMD>STSSwapPrevVisual<CR>
+
+" Symbols Outline
+nnoremap <leader>o <CMD>SymbolsOutline<CR>
