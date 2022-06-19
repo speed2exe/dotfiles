@@ -37,7 +37,6 @@ set splitright
 set wildmenu
 set wildmode=longest:full,full
 set laststatus=2
-set statusline+=%F
 set lazyredraw
 " set foldmethod=expr
 " set foldexpr=nvim_treesitter#foldexpr()
