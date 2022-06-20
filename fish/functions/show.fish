@@ -9,7 +9,8 @@ function show
     else if test -d $argv
         ll $argv
     else
-        set file (string split : $argv) # handle case for file with line number
+        # handle case for file with line number
+        set file (string split --max 1 --right : $argv)
         if [ (count $file) -ne 2 ]
             bat --color=always --style=numbers $argv
         else
