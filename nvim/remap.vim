@@ -21,6 +21,9 @@ inoremap <C-Q> <CMD>q!<CR>
 nnoremap <C-W> <CMD>wa<CR>
 inoremap <C-W> <CMD>wa<CR>
 
+" quick fold
+vnoremap <leader>z :fold<CR>
+
 " https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
 inoremap <C-BS> <C-W>
 inoremap <C-H> <C-W>

@@ -4,10 +4,5 @@ function gf
         return
     end
 
-    set splitted (string split ":" $file) # account for line number if exists
-    if [ (count $splitted) -ne 2 ]
-        nvim $file
-    else
-        nvim +$splitted[2] $splitted[1]
-    end
+    nvim "$file"
 end

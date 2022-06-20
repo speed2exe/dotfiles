@@ -1,6 +1,6 @@
 function v
 	if count $argv > /dev/null
-		command nvim $argv
+		nvim $argv
 	else
 		set path (tac ~/marks/file_history.txt | fpr)
 		if test $status -eq 0

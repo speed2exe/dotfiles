@@ -17,7 +17,7 @@ function m
                 echo $path >> ~/marks/files.txt
                 sort ~/marks/files.txt -o ~/marks/files.txt
             else
-                set splitted (string split : $arg)
+                set splitted (string split --max 1 --right : $arg)
                 set splitted[1] (realpath $splitted[1])
                 if test -e $splitted[1]
                     echo "$splitted[1]:$splitted[2]" >> ~/marks/files.txt
