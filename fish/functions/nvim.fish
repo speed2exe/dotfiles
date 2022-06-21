@@ -1,8 +1,13 @@
 function nvim
     set splitted (string split --max 1 --right ":" "$argv") # account for line number if exists
-    if test (count $splitted) -eq 0
-        command nvim "$argv"
-    else
+    set count (count $splitted)
+    if test $count -eq 2
         command nvim "+$splitted[2]" "$splitted[1]"
+    else
+        if test -n "$argv"
+            command nvim $argv
+        else
+            command nvim
+        end
     end
 end
