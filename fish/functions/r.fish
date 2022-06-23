@@ -6,7 +6,9 @@ function r
         return
     end
 
-    set path (tac ~/marks/dir_hash/$dir_hash/file_history.txt | fpr)
+    set path (tac ~/marks/dir_hash/$dir_hash/file_history.txt \
+        | xargs -I {} realpath --relative-to=. {} | fpr)
+
     if test $status -eq 0
         nvim $path
     end
