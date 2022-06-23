@@ -1,8 +1,8 @@
 function r
-	set pwd (pwd)
-	set dir_hash (string replace --all / : $pwd)
-	if count $argv > /dev/null
-		command nvim $argv
+    set pwd (pwd)
+    set dir_hash (string replace --all / : $pwd)
+    if count $argv > /dev/null
+        command nvim $argv
         return
     end
 
