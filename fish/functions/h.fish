@@ -1,5 +1,5 @@
 function h
-    set cmd (history | fr --no-sort)
+    set cmd (history | fr)
     if test $status -eq 0
         eval $cmd
     end
