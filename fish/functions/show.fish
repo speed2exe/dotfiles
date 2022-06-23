@@ -1,25 +1,37 @@
 function show
-    if [ (count $argv) -eq 0 ]
-        set path (fd_all --exact-depth 1 . | fpr)
-        if [ $path ]
-            show $path
-        end
-    else if [ (count $argv) -ne 1 ]
-        set_color red; echo "invalid arguments: $argv"
-    else if test -d $argv
-        ll $argv
-    else
-        # handle case for file with line number
-        set file (string split --max 1 --right : $argv)
-        if [ (count $file) -ne 2 ]
-            bat --color=always --style=numbers $argv
-        else
-            set line_start (math $file[2] - 5)
-            if [ $line_start -lt 0 ]
-                set line_start 0
-            end
-
-            bat --color=always --style=numbers --line-range $line_start: --highlight-line $file[2]: $file[1]
-        end
+    set arg_count (count $argv)
+    
+    if test $arg_count -eq 0
+        show "."
+        return
     end
+
+    if test $arg_count -gt 1
+        set_color red; echo "show: expected 1 argument, got $arg_count"
+        return
+    end
+
+    if test -d $argv
+        ll $argv
+        return
+    end
+
+    # handle case for file with line number
+    set file_line_pair (string split --max 1 --right : $argv)
+    set file $file_line_pair[1]
+    set line $file_line_pair[2]
+
+    if test -f $file
+        if test -z "$line"
+            bat --color=always --style=numbers $file
+            return
+        end
+        
+        set from_line (math max 0, $line - 5)
+
+        bat --color=always --style=numbers --line-range $from_line: --highlight-line $line: $file
+        return
+    end
+
+    set_color red; echo "neither file[ with line number] nor directory: $argv"
 end
