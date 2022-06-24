@@ -7,4 +7,4 @@ augroup END
 " https://stackoverflow.com/questions/630884/opening-vim-help-in-a-vertical-split-window
 autocmd FileType help wincmd L
 
-source ~/.config/nvim/async/plugins.vim
+source ~/.config/nvim/plugins_async.vim

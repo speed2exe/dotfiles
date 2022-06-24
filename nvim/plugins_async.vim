@@ -71,6 +71,10 @@ Plug 'kevinhwang91/nvim-hlslens'
 
 call plug#end()
 
+if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    PlugInstall --sync | q
+endif
+
 lua << EOF
     require('autosave_conf')                -- ~/.config/nvim/lua/autosave_conf.lua
     require('lspsaga_conf')                 -- ~/.config/nvim/lua/lspsaga_conf.lua
@@ -92,10 +96,6 @@ lua << EOF
     -- custom plugin (self made)
     require('last_used')					-- ~/.config/nvim/lua/last_used.lua
 EOF
-
-if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-    PlugInstall --sync | q
-endif
 
 " Statusline
 " function! LspStatus() abort

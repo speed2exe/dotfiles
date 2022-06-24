@@ -48,6 +48,10 @@ Plug 'p00f/nvim-ts-rainbow'
 " nvim-tree
 Plug 'kyazdani42/nvim-tree.lua'
 
+if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+    PlugInstall --sync | q
+endif
+
 call plug#end()
 
 lua << EOF
@@ -65,9 +69,5 @@ lua << EOF
 
     require('gitsigns').setup{}
 EOF
-
-if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-    PlugInstall --sync | q
-endif
 
 colorscheme dracula
