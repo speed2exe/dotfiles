@@ -10,7 +10,7 @@ function! LoadAsync() abort
 endfunction
 
 function! LoadAsyncTimerid(timerid) abort
-    source ~/.config/nvim/async/init.vim
+    source ~/.config/nvim/init_async.vim
 endfunction
 
 call LoadAsync()
