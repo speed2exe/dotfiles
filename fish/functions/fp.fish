@@ -1,6 +1,6 @@
 function fp
 	fzf \
-	--ansi --preview 'show {}' $argv \
+	--ansi --preview 'fish -c "show {}"' $argv \
 	--bind ctrl-d:preview-page-down \
 	--bind ctrl-u:preview-page-up \
 	--bind ctrl-j:preview-down \
