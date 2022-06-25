@@ -1,4 +1,4 @@
-function f
+function t
     if test -z "$argv"
         set argv "."
     else if not test -d "$argv"
