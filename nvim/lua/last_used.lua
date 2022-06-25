@@ -157,27 +157,27 @@ create_file_if_not_exists(dir_last_used_path)
 local global_path_list, global_line_by_path = paths_lines_pair(file_contents_by_line_to_table(last_used_path))
 local dir_path_list, dir_line_by_path = paths_lines_pair(file_contents_by_line_to_table(dir_last_used_path))
 
+local function after_buf_enter()
+    local cur_path = vim.api.nvim_buf_get_name(0)
+    if not file_exists(cur_path) then return end
+
+    local found_in_path_list = update_lru_list(global_path_list, cur_path)
+    if not found_in_path_list then
+        table.insert(global_path_list, cur_path)
+        global_line_by_path[cur_path] = 0
+        append_path_to_file(last_used_path, cur_path, 0)
+    end
+
+    local found_in_dir_path_list = update_lru_list(dir_path_list, cur_path)
+    if not found_in_dir_path_list then
+        table.insert(dir_path_list, cur_path)
+        global_line_by_path[cur_path] = 0
+        append_path_to_file(dir_last_used_path, cur_path, 0)
+    end
+end
+after_buf_enter()
 vim.api.nvim_create_autocmd("BufEnter", {
-	callback = function()
-		local cur_path = vim.api.nvim_buf_get_name(0)
-		if not file_exists(cur_path) then return end
-
-		local found_in_path_list = update_lru_list(global_path_list, cur_path)
-		if not found_in_path_list then
-			table.insert(global_path_list, cur_path)
-            global_line_by_path[cur_path] = 0
-			append_path_to_file(last_used_path, cur_path, 0)
-		end
-
-
-
-		local found_in_dir_path_list = update_lru_list(dir_path_list, cur_path)
-		if not found_in_dir_path_list then
-			table.insert(dir_path_list, cur_path)
-            global_line_by_path[cur_path] = 0
-			append_path_to_file(dir_last_used_path, cur_path, 0)
-		end
-	end
+	callback = after_buf_enter,
 })
 
 vim.api.nvim_create_autocmd("BufLeave", {
