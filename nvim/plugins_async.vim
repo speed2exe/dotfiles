@@ -9,9 +9,6 @@ Plug 'danilamihailov/beacon.nvim'
 " Auto complete braces
 Plug 'windwp/nvim-autopairs'
 
-" Auto save
-Plug 'Pocco81/AutoSave.nvim'
-
 " Smooth Scrolling
 Plug 'karb94/neoscroll.nvim'
 
@@ -75,7 +72,6 @@ if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 endif
 
 lua << EOF
-    require('autosave_conf')                -- ~/.config/nvim/lua/autosave_conf.lua
     require('lspsaga_conf')                 -- ~/.config/nvim/lua/lspsaga_conf.lua
     require('lspkind_conf')                 -- ~/.config/nvim/lua/lspkind_conf.lua
     require('nvim-cmp_conf')                -- ~/.config/nvim/lua/nvim-cmp_conf.lua
