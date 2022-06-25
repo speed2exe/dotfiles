@@ -13,9 +13,9 @@ function t
     set selection $path[2]
 
     if test (string match "*.." "$input")
-        f "$input"
+        t "$input"
     else if test -d "$selection"
-        f "$selection"
+        t "$selection"
     else if test -f "$selection"
         cd (dirname "$selection")
         nvim "$selection"
