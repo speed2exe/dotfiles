@@ -1,11 +1,10 @@
 -- local function log(message)
--- local function write_log(message)
 -- 	local logfile = io.open("/home/zx/logfile", "a")
 -- 	io.output(logfile)
 -- 	io.write(message)
 -- 	io.close(logfile)
 -- end
-
+--
 -- local function log_table(t)
 -- 	log("table\n")
 -- 	for k, v in pairs(t) do
@@ -169,9 +168,10 @@ local function after_buf_enter()
     end
 
     local found_in_dir_path_list = update_lru_list(dir_path_list, cur_path)
+
     if not found_in_dir_path_list then
         table.insert(dir_path_list, cur_path)
-        global_line_by_path[cur_path] = 0
+        dir_line_by_path[cur_path] = 0
         append_path_to_file(dir_last_used_path, cur_path, 0)
     end
 end
