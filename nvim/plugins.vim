@@ -49,6 +49,7 @@ Plug 'williamboman/nvim-lsp-installer'
 
 " TreeSitter stuff
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'p00f/nvim-ts-rainbow'
 
 " nvim-cmp
@@ -95,6 +96,8 @@ lua << EOF
     require('treesitter_conf')              -- ~/.config/nvim/lua/treesitter_conf.lua
     require('treesitter-refactor_conf')     -- ~/.config/nvim/lua/treesitter-refactor_conf.lua
     require('lspkind_conf')                 -- ~/.config/nvim/lua/lspkind_conf.lua
+    require('snippy_conf')                  -- ~/.config/nvim/lua/snippy_conf.lua
+    -- require('cmp_dictionary_conf')			-- ~/.config/nvim/lua/cmp_dictionary_conf.lua
     require('nvim-cmp_conf')                -- ~/.config/nvim/lua/nvim-cmp_conf.lua
     require('project_conf')                 -- ~/.config/nvim/lua/project_conf.lua
     require('nvim-ts-rainbow_conf')         -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
