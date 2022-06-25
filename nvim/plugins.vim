@@ -106,9 +106,6 @@ lua << EOF
     require('neoscroll_conf')               -- ~/.config/nvim/lua/neoscroll_conf.lua
 
     require('gitsigns').setup{}
-
-    -- custom plugin (self made)
-    require('last_used')					-- ~/.config/nvim/lua/last_used.lua
 EOF
 
 colorscheme dracula
