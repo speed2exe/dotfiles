@@ -61,6 +61,9 @@ lua << EOF
     require('trouble').setup{}
     require('syntax-tree-surfer').setup{}
     require('nvim-autopairs').setup{}
+
+    -- custom plugin (self made)
+    require('last_used')					-- ~/.config/nvim/lua/last_used.lua
 EOF
 
 " Statusline
