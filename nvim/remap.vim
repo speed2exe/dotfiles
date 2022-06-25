@@ -180,15 +180,12 @@ nnoremap <leader><leader> o<ESC>:.!
 vnoremap <leader><leader> c<CR><CR><UP><ESC>:.!<C-R>"<CR>k
 
 " lsp trouble
-nnoremap <leader>a :Trouble
-nnoremap <leader>at <CMD>TroubleToggle<CR>
-nnoremap <leader>ar <CMD>TroubleRefresh<CR>
-nnoremap <leader>ac <CMD>TroubleClose<CR>
+nnoremap <leader>a <CMD>TroubleToggle<CR>
 
 " Syntax Tree Navigation
 " from normal mode
-nnoremap vv <CMD>STSSelectCurrentNode<CR>
-nnoremap vm <CMD>STSSelectMasterNode<CR>
+nnoremap v<BS> <CMD>STSSelectCurrentNode<CR>
+
 " in visual mode
 vnoremap <TAB> <CMD>STSSelectNextSiblingNode<CR>
 vnoremap <S-TAB> <CMD>STSSelectPrevSiblingNode<CR>
