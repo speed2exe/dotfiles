@@ -4,7 +4,6 @@ let mapleader = " "
 " https://linuxize.com/post/vim-delete-line
 vnoremap <leader>d :g/^\s*$/d<CR>
 
-
 " Show Cursor
 nnoremap <ESC> <CMD>Beacon<CR>
 
@@ -92,6 +91,8 @@ nnoremap , @:
 nnoremap <PAGEUP> <C-O>
 nnoremap <PAGEDOWN> <C-I>
 
+" Back 1 Directory
+nnoremap <DEL> <CMD>cd ..<CR>
 " To project root
 nnoremap <HOME> <CMD>ProjectRoot<CR>
 " Current File Directory
