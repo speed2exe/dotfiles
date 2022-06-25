@@ -31,6 +31,9 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 
+" lsp-kind
+Plug 'onsails/lspkind-nvim'
+
 " Telescope stuff
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -44,6 +47,30 @@ Plug 'williamboman/nvim-lsp-installer'
 " TreeSitter stuff
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
+
+" nvim-cmp
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
+Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-calc'
+" Plug 'hrsh7th/cmp-copilot'
+Plug 'dmitmel/cmp-digraphs'
+Plug 'uga-rosa/cmp-dictionary'
+Plug 'mtoohey31/cmp-fish'
+Plug 'ray-x/cmp-treesitter'
+
+" snippets
+Plug 'dcampos/nvim-snippy'
+Plug 'honza/vim-snippets'
+Plug 'dcampos/cmp-snippy'
+
+" Smooth Scrolling
+Plug 'karb94/neoscroll.nvim'
 
 " nvim-tree
 Plug 'kyazdani42/nvim-tree.lua'
@@ -62,12 +89,19 @@ lua << EOF
     require('nvim-web-devicons')            -- ~/.config/nvim/lua/nvim-web-devicons_conf.lua
     require('telescope_conf')               -- ~/.config/nvim/lua/telescope_conf.lua
     require('treesitter_conf')              -- ~/.config/nvim/lua/treesitter_conf.lua
+    require('treesitter-refactor_conf')     -- ~/.config/nvim/lua/treesitter-refactor_conf.lua
+    require('lspkind_conf')                 -- ~/.config/nvim/lua/lspkind_conf.lua
+    require('nvim-cmp_conf')                -- ~/.config/nvim/lua/nvim-cmp_conf.lua
     require('project_conf')                 -- ~/.config/nvim/lua/project_conf.lua
     require('nvim-ts-rainbow_conf')         -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
     require('nvim-navic_conf')              -- ~/.config/nvim/lua/nvim-navic_conf.lua
     require('indent-blankline_conf')        -- ~/.config/nvim/lua/indent-blankline_conf.lua
+    require('neoscroll_conf')               -- ~/.config/nvim/lua/neoscroll_conf.lua
 
     require('gitsigns').setup{}
+
+    -- custom plugin (self made)
+    require('last_used')					-- ~/.config/nvim/lua/last_used.lua
 EOF
 
 colorscheme dracula
