@@ -32,7 +32,6 @@ Plug 'tami5/lspsaga.nvim'
 Plug 'nvim-treesitter/nvim-treesitter-refactor'
 Plug 'nvim-treesitter/playground'
 Plug 'simrat39/symbols-outline.nvim'
-Plug 'p00f/nvim-ts-rainbow'
 Plug 'ziontee113/syntax-tree-surfer'
 
 " lsp-kind

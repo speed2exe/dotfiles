@@ -4,6 +4,7 @@ let mapleader = " "
 " https://linuxize.com/post/vim-delete-line
 vnoremap <leader>d :g/^\s*$/d<CR>
 
+
 " Show Cursor
 nnoremap <ESC> <CMD>Beacon<CR>
 
