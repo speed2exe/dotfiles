@@ -1,5 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
+" Auto save
+Plug 'Pocco81/AutoSave.nvim'
+
 " Project management
 Plug 'ahmedkhalf/project.nvim'
 
@@ -82,6 +85,7 @@ endif
 call plug#end()
 
 lua << EOF
+    require('autosave_conf')                -- ~/.config/nvim/lua/autosave_conf.lua
     require('nvim-web-devicons')            -- ~/.config/nvim/lua/nvim-web-devicons_conf.lua
     require('nvim-tree_conf')               -- ~/.config/nvim/lua/nvim-tree_conf.lua
     require('lualine_conf')                 -- ~/.config/nvim/lua/lualine_conf.lua
