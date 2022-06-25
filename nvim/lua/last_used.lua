@@ -100,7 +100,7 @@ end
 local function update_lru_file(current_path_list, line_by_path, lru_file_path)
 	local final_lru_path_list = {}
 	local final_lru_path_set = {}
-	for i, v in pairs(current_path_list) do
+	for _, v in pairs(current_path_list) do
 		if not final_lru_path_set[v] then
 			table.insert(final_lru_path_list, v)
 			final_lru_path_set[v] = true
@@ -168,6 +168,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
             global_line_by_path[cur_path] = 0
 			append_path_to_file(last_used_path, cur_path, 0)
 		end
+
+
 
 		local found_in_dir_path_list = update_lru_list(dir_path_list, cur_path)
 		if not found_in_dir_path_list then
