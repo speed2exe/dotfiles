@@ -22,8 +22,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'folke/trouble.nvim'
 
 " Lspsaga
-" Plug 'glepnir/lspsaga.nvim'
-Plug 'tami5/lspsaga.nvim'
+Plug 'glepnir/lspsaga.nvim'
+" Plug 'tami5/lspsaga.nvim'
 
 " TreeSitter stuff
 Plug 'nvim-treesitter/playground'

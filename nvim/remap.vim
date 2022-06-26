@@ -154,12 +154,18 @@ nnoremap <leader>n <CMD>NvimTreeToggle<CR>
 " Lspsaga
 nnoremap <leader>s :Lspsaga 
 nnoremap <leader>sd <CMD>Lspsaga preview_definition<CR>
+" need to set keybinding
 nnoremap <leader>sf <CMD>Lspsaga lsp_finder<CR>
 nnoremap <leader>sr <CMD>Lspsaga rename<CR>
 nnoremap <leader>si <CMD>Lspsaga implement<CR>
 nnoremap <leader>sa <CMD>Lspsaga code_action<CR>
+vnoremap <leader>sa <CMD>Lspsaga range_code_action<CR>
+nnoremap <leader>sv <CMD>Lspsaga toggle_virtual_text<CR>
 nnoremap <leader>sh <CMD>Lspsaga hover_doc<CR>
 nnoremap <leader>ss <CMD>Lspsaga signature_help<CR>
+nnoremap <leader>sl <CMD>Lspsaga show_line_diagnostics<CR>
+nnoremap <leader>sc <CMD>Lspsaga show_cursor_diagnostics<CR>
+nnoremap <leader>sy <CMD>Lspsaga yank_line_diagnostics<CR>
 nnoremap <leader>sj <CMD>Lspsaga diagnostic_jump_next<CR>
 nnoremap <leader>sk <CMD>Lspsaga diagnostic_jump_prev<CR>
 
