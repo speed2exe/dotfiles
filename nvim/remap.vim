@@ -41,10 +41,8 @@ vnoremap <C-C> y
 inoremap <C-V> <C-R>*
 
 " create file with filename under cursor if not exists
-nnoremap <leader>e :e <cfile><CR>
-
-" navigate to file with line number
-nnoremap <leader>f gF
+" otherwise edit the file
+nnoremap gf :e <cfile><CR>
 
 " Move next line up
 nnoremap J mzJ`z
