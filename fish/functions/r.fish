@@ -24,6 +24,6 @@ function r
         | xargs -I {} realpath --relative-to=. {} 2> /dev/null | fpr)
 
     if test $status -eq 0
-        nvim $path
+        v $path
     end
 end
