@@ -7,6 +7,9 @@ vnoremap <leader>d :g/^\s*$/d<CR>
 " Show Cursor
 nnoremap <ESC> <CMD>Beacon<CR>
 
+" Search highlighted
+vnoremap / y/<C-R>"<CR>
+
 " quick macro (after qq)
 nnoremap Q @q
 
