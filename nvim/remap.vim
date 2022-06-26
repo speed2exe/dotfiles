@@ -201,3 +201,6 @@ vnoremap K <CMD>STSSwapPrevVisual<CR>
 
 " Symbols Outline
 nnoremap <leader>o <CMD>SymbolsOutline<CR>
+
+" from quick custom module
+nnoremap <leader>qv <CMD>lua require('quick').toggle_virtual_text()<CR>
