@@ -1,5 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
+" https://github.com/folke/which-key.nvim
+Plug 'folke/which-key.nvim'
+
 " Auto save
 Plug 'Pocco81/AutoSave.nvim'
 
@@ -106,6 +109,8 @@ lua << EOF
     require('neoscroll_conf')               -- ~/.config/nvim/lua/neoscroll_conf.lua
 
     require('gitsigns').setup{}
+    require('which-key').setup{}
 EOF
 
+set timeoutlen=0
 colorscheme dracula
