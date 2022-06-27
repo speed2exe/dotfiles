@@ -9,6 +9,7 @@ nnoremap <ESC> <CMD>Beacon<CR>
 
 " Search highlighted
 vnoremap / y/<C-R>"<CR>
+vnoremap ? y?<C-R>"<CR>
 
 " quick macro (after qq)
 nnoremap Q @q
