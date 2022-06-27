@@ -112,5 +112,5 @@ lua << EOF
     require('which-key').setup{}
 EOF
 
-set timeoutlen=0
+set timeoutlen=200
 colorscheme dracula
