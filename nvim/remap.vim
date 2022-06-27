@@ -129,11 +129,11 @@ vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
 
 " Quick fix list
 " " Global List
-nnoremap [[ <CMD>cprev<CR>
-nnoremap ]] <CMD>cnext<CR>
+nnoremap [ <CMD>cprev<CR>
+nnoremap ] <CMD>cnext<CR>
 " " Local List
-nnoremap {{ <CMD>lprev<CR>
-nnoremap }} <CMD>lnext<CR>
+nnoremap { <CMD>lprev<CR>
+nnoremap } <CMD>lnext<CR>
 
 " Telescope
 nnoremap <leader>t :Telescope 
