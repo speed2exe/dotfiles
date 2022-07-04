@@ -11,6 +11,15 @@ nnoremap <ESC> <CMD>Beacon<CR>
 vnoremap * y/<C-R>"<CR>
 vnoremap # y?<C-R>"<CR>
 
+" Auto surround
+vnoremap " c"<ESC>maa<C-R>""<ESC>mb`av`b
+vnoremap ' c'<ESC>maa<C-R>"'<ESC>mb`av`b
+vnoremap ` c`<ESC>maa<C-R>"`<ESC>mb`av`b
+vnoremap [ c[<ESC>maa<C-R>"]<ESC>mb`av`b
+vnoremap { c{<ESC>maa<C-R>"}<ESC>mb`av`b
+vnoremap ( c(<ESC>maa<C-R>")<ESC>mb`av`b
+vnoremap < c<<ESC>maa<C-R>"><ESC>mb`av`b
+
 " quick macro (after qq)
 nnoremap Q @q
 
