@@ -8,8 +8,10 @@ vnoremap <leader>d :g/^\s*$/d<CR>
 nnoremap <ESC> <CMD>Beacon<CR>
 
 " Search highlighted
-vnoremap * y/<C-R>"<CR>
-vnoremap # y?<C-R>"<CR>
+vnoremap * y/<C-R>"<CR>gn
+vnoremap # y?<C-R>"<CR>gn
+vnoremap n <ESC>ngn
+vnoremap N <ESC>NNgN
 
 " Auto surround
 vnoremap " c"<ESC>maa<C-R>""<ESC>mb`av`b
