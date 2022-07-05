@@ -376,7 +376,7 @@
 #selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.
-  #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
+  #semantic_escape_chars: ",‚îÇ`|:\"' ()[]{}<>\t"
 
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
@@ -387,7 +387,7 @@
     # Cursor shape
     #
     # Values for `shape`:
-    #   - ▇ Block
+    #   - ‚ñá Block
     #   - _ Underline
     #   - | Beam
     #shape: Block
@@ -426,7 +426,7 @@
 # Shell
 #
 # You can set `shell.program` to the path of your favorite shell, e.g.
-# `/bin/fish`. Entries in `shell.args` are passed unmodified as arguments to the
+# `/opt/homebrew/bin/fish`. Entries in `shell.args` are passed unmodified as arguments to the
 # shell.
 #
 # Default:
@@ -496,8 +496,8 @@
   #       Move the vi mode cursor to the beginning of the hint.
   #enabled:
   # - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
-  #           [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
-  #   command: xdg-open
+  #           [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^‚ü®‚ü©`]+"
+  #   command: open
   #   post_processing: true
   #   mouse:
   #     enabled: true
@@ -885,7 +885,7 @@
 
 # Shell
 shell:
-  program: /bin/fish
+  program: /opt/homebrew/bin/fish
 
 # Font configuration
 font:
@@ -895,9 +895,9 @@ font:
     #
     # Default:
     #   - (macOS) Menlo
-    #   - (Linux/BSD) Iosevka Custom
+    #   - (Linux/BSD) Iosevka Nerd Font
     #   - (Windows) Consolas
-    family: Iosevka Custom
+    family: Iosevka Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -908,7 +908,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Iosevka Custom
+    family: Iosevka Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -919,7 +919,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Iosevka Custom
+    family: Iosevka Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -930,13 +930,13 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Iosevka Custom
+    family: Iosevka Nerd Font
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 8.0
+  size: 12.0
 
 key_bindings:
   - { key: V,        mods: Alt,           action: Paste            }
@@ -984,8 +984,8 @@ hints:
   #       Move the vi mode cursor to the beginning of the hint.
   enabled:
    - regex: "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
-             [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
-     command: xdg-open
+             [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^‚ü®‚ü©`]+"
+     command: open
      post_processing: true
      binding:
        key: Escape
@@ -1006,7 +1006,7 @@ hints:
        mods: Alt
 
 window:
-  opacity: 0.5
+  opacity: 0.7
 
 colors:
   primary:
@@ -1060,3 +1060,17 @@ colors:
     magenta: '#ff92df'
     cyan: '#a4ffff'
     white: '#ffffff'
+
+key_bindings:
+  - { key: N,        mods: Command, action: CreateNewWindow  }
+  - { key: Q,        mods: Control, chars: "\x11"           }
+  - { key: V,        mods: Option,  action: Paste            }
+  - { key: C,        mods: Option,  action: Copy             }
+  - { key: Equals,   mods: Option,  action: IncreaseFontSize }
+  - { key: Minus,    mods: Option,  action: DecreaseFontSize}
+  - { key: D,        mods: Option,  action: ScrollPageDown   }
+  - { key: U,        mods: Option,  action: ScrollPageUp     }
+  - { key: J,        mods: Option,  action: ScrollLineDown   }
+  - { key: K,        mods: Option,  action: ScrollLineUp     }
+  - { key: G,        mods: Option,  action: ScrollToBottom   }
+  - { key: Space,    mods: Option,  action: ToggleViMode     }
