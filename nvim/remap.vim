@@ -133,9 +133,6 @@ nnoremap - <CMD>vertical resize -10<CR>
 nnoremap \| <CMD>resize +10<CR>
 nnoremap _ <CMD>resize -10<CR>
 
-" search visually selected text
-vnoremap * y/\V<C-R>=escape(@",'/\')<CR><CR>
-
 " Quick fix list
 " " Global List
 nnoremap [ <CMD>cprev<CR>
