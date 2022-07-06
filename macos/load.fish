@@ -28,6 +28,6 @@ printf '\nkey_bindings:
   - { key: K,        mods: Option,  action: ScrollLineUp     }
   - { key: G,        mods: Option,  action: ScrollToBottom   }
   - { key: Space,    mods: Option,  action: ToggleViMode     }' >> ~/.config/alacritty/alacritty.yml
-sed -i -e 's/Iosevka\ Custom/Iosevka\ Nerd\ Font/g' ~/.config/alacritty/alacritty.yml
+sed -i -e 's/iosevka2/Iosevka\ Nerd\ Font/g' ~/.config/alacritty/alacritty.yml
 sed -i -e 's/xdg\-open/open/g' ~/.config/alacritty/alacritty.yml
 sed -i -e 's/\/bin\/fish/\/opt\/homebrew\/bin\/fish/g' ~/.config/alacritty/alacritty.yml
