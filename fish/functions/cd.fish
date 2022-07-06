@@ -4,7 +4,7 @@ function cd_override
     alias cd "cd"
 
     set prev_git (git rev-parse --show-toplevel 2> /dev/null)
-    cd $argv
+    cd $argv || return
     set cur_git (git rev-parse --show-toplevel 2> /dev/null)
 
     # display git info if in different git repo
