@@ -13,7 +13,8 @@ Plug 'windwp/nvim-autopairs'
 Plug 'kevinhwang91/nvim-hlslens'
 
 " Smooth Scrolling
-Plug 'karb94/neoscroll.nvim'
+" Remove due to neovide
+" Plug 'karb94/neoscroll.nvim'
 
 " camelCase and snake_case handling
 Plug 'chaoren/vim-wordmotion'
@@ -119,9 +120,6 @@ Plug 'dcampos/nvim-snippy'
 Plug 'honza/vim-snippets'
 Plug 'dcampos/cmp-snippy'
 
-" Smooth Scrolling
-Plug 'karb94/neoscroll.nvim'
-
 " nvim-tree
 Plug 'kyazdani42/nvim-tree.lua'
 
@@ -149,7 +147,6 @@ lua << EOF
     require('nvim-ts-rainbow_conf')         -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
     require('nvim-navic_conf')              -- ~/.config/nvim/lua/nvim-navic_conf.lua
     require('indent-blankline_conf')        -- ~/.config/nvim/lua/indent-blankline_conf.lua
-    require('neoscroll_conf')               -- ~/.config/nvim/lua/neoscroll_conf.lua
     require('lspsaga_conf')                 -- ~/.config/nvim/lua/lspsaga_conf.lua
     require('treesitter-refactor_conf')     -- ~/.config/nvim/lua/treesitter-refactor_conf.lua
     require('symbols-outline_conf')         -- ~/.config/nvim/lua/symbols-outline_conf.lua
