@@ -6,9 +6,6 @@ call plug#begin('~/.vim/plugged')
 " Comment Helper
 Plug 'numToStr/Comment.nvim'
 
-" Blink Cursor
-Plug 'danilamihailov/beacon.nvim'
-
 " Auto complete braces
 Plug 'windwp/nvim-autopairs'
 
