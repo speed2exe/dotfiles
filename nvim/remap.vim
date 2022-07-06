@@ -156,7 +156,7 @@ nnoremap <leader>tt <CMD>Telescope lsp_type_definitions<CR>
 nnoremap <leader>ts <CMD>Telescope lsp_document_symbols<CR>
 nnoremap <leader>tw <CMD>Telescope lsp_dynamic_workspace_symbols<CR>
 nnoremap <TAB> <CMD>Telescope buffers<CR>
-nnoremap <BS> <CMD>Telescope find_files<CR>
+nnoremap <leader><TAB> <CMD>Telescope find_files<CR>
 
 " NvimTree
 nnoremap <leader>n <CMD>NvimTreeToggle<CR>
@@ -210,6 +210,10 @@ vnoremap K <CMD>STSSwapPrevVisual<CR>
 
 " Symbols Outline
 nnoremap <leader>o <CMD>SymbolsOutline<CR>
+
+" Comment
+nnoremap <BS> <CMD>lua require('Comment.api').toggle_current_linewise()<CR>j
+vnoremap <BS> <ESC>gv<CMD>lua require('Comment.api').toggle_blockwise_op(vim.fn.visualmode())<CR>
 
 " from quick custom module
 nnoremap <leader>qv <CMD>lua require('quick').toggle_virtual_text()<CR>
