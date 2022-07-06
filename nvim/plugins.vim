@@ -152,7 +152,6 @@ lua << EOF
     require('neoscroll_conf')               -- ~/.config/nvim/lua/neoscroll_conf.lua
     require('lspsaga_conf')                 -- ~/.config/nvim/lua/lspsaga_conf.lua
     require('treesitter-refactor_conf')     -- ~/.config/nvim/lua/treesitter-refactor_conf.lua
-    require('neoscroll_conf')               -- ~/.config/nvim/lua/neoscroll_conf.lua
     require('symbols-outline_conf')         -- ~/.config/nvim/lua/symbols-outline_conf.lua
     -- require('cmp_dictionary_conf')			-- ~/.config/nvim/lua/cmp_dictionary_conf.lua
     -- require('dapinstall_conf')              -- ~/.config/nvim/lua/dapinstall_conf.lua
