@@ -3,6 +3,9 @@ call plug#begin('~/.vim/plugged')
 " Github Co-pilot
 "Plug 'github/copilot.vim'
 
+" Comment Helper
+Plug 'numToStr/Comment.nvim'
+
 " Blink Cursor
 Plug 'danilamihailov/beacon.nvim'
 
@@ -165,8 +168,9 @@ lua << EOF
     require('trouble').setup{}
     require('syntax-tree-surfer').setup{}
     require('nvim-autopairs').setup{}
-    require("scrollbar").setup{}
-    require("scrollbar.handlers.search").setup{}
+    require('scrollbar').setup{}
+    require('scrollbar.handlers.search').setup{}
+    require('Comment').setup{}
 
     -- custom plugin (self made)
     require('last_used')					-- ~/.config/nvim/lua/last_used.lua
