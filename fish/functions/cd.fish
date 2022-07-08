@@ -29,7 +29,7 @@ function cd_override
         set -p dir_hists $cur_path
     end
 
-    string join \n $dir_hists | head -25 > ~/marks/dir_history.txt
+    string join \n $dir_hists | head -100 > ~/marks/dir_history.txt
 
     echo; print_boxed $cur_path; echo; la
     echo $cur_path > /tmp/.savedir
