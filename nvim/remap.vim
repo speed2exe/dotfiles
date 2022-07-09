@@ -7,6 +7,12 @@ vnoremap <leader>d :g/^\s*$/d<CR>
 " Show Cursor
 " nnoremap <ESC> <CMD>set cursorline!<Bar>set cursorcolumn!<CR>
 
+" Auto braces after return
+inoremap {<CR> {<CR>}<ESC>O
+inoremap (<CR> (<CR>)<ESC>O
+inoremap [<CR> [<CR>]<ESC>O
+inoremap <<CR> <<CR>><ESC>O
+
 " Search highlighted
 vnoremap * y/<C-R>"<CR>gn
 vnoremap # y?<C-R>"<CR>gn
