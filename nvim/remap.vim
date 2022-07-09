@@ -12,6 +12,11 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap (<CR> (<CR>)<ESC>O
 inoremap [<CR> [<CR>]<ESC>O
 inoremap <<CR> <<CR>><ESC>O
+" Prevent action from cancelled when back to normal mode
+inoremap {<ESC> {<ESC>
+inoremap (<ESC> (<ESC>
+inoremap [<ESC> [<ESC>
+inoremap <<ESC> <<ESC>
 
 " Search highlighted
 vnoremap * y/<C-R>"<CR>gn
