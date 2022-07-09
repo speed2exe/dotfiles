@@ -5,7 +5,7 @@ let mapleader = " "
 vnoremap <leader>d :g/^\s*$/d<CR>
 
 " Show Cursor
-nnoremap <ESC> <CMD>set cursorline!<Bar>set cursorcolumn!<CR>
+" nnoremap <ESC> <CMD>set cursorline!<Bar>set cursorcolumn!<CR>
 
 " Search highlighted
 vnoremap * y/<C-R>"<CR>gn
