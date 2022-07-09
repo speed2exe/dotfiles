@@ -7,7 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'numToStr/Comment.nvim'
 
 " Auto complete braces
-Plug 'windwp/nvim-autopairs'
+" Plug 'windwp/nvim-autopairs'
 
 " Highlight assistance for search result
 Plug 'kevinhwang91/nvim-hlslens'
@@ -160,7 +160,7 @@ lua << EOF
     require('which-key').setup{}
     require('trouble').setup{}
     require('syntax-tree-surfer').setup{}
-    require('nvim-autopairs').setup{}
+    -- require('nvim-autopairs').setup{}
     require('scrollbar').setup{}
     require('scrollbar.handlers.search').setup{}
     require('Comment').setup{}
