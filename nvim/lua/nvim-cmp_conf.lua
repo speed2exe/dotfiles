@@ -4,6 +4,9 @@ local lspkind = require('lspkind')
 lspkind.init()
 
 cmp.setup({
+    -- completion = {
+    --     autocomplete = false,
+    -- },
     mapping = {
         ['<C-U>'] = cmp.mapping.scroll_docs(-4),
         ['<C-D>'] = cmp.mapping.scroll_docs(4),
