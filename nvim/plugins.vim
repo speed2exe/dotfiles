@@ -169,7 +169,7 @@ lua << EOF
     require('last_used')					-- ~/.config/nvim/lua/last_used.lua
 EOF
 
-set timeoutlen=200
+set timeoutlen=500
 colorscheme dracula
 
 " Statusline
