@@ -85,8 +85,8 @@ nnoremap <leader>m <CMD>redir @m<CR><CMD>echo expand('%:p') . ':' . line(".")<CR
 nnoremap <leader>g <CMD>e ~/marks/files.txt<CR>
 
 " Copy and Paste
-vnoremap <leader>c :w! ~/.clipboard<CR>
-nnoremap <leader>p :r ~/.clipboard<CR>
+vnoremap <leader>c :w! /tmp/.clipboard<CR>
+nnoremap <leader>p :r /tmp/.clipboard<CR>
 
 " Move lines up and down
 vnoremap <C-J> :m '>+1<CR>gv
