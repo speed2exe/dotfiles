@@ -62,8 +62,10 @@ vnoremap <C-C> y
 inoremap <C-V> <C-R>*
 
 " create file with filename under cursor if not exists
-" otherwise edit the file
-nnoremap gf :e <cfile><CR>
+" and edit the file
+nnoremap <leader>e :e <cfile><CR>
+" go to file with line if any
+nnoremap <leader>f gF
 
 " Move next line up
 nnoremap J mzJ`z
@@ -148,13 +150,10 @@ nnoremap <leader>t :Telescope
 nnoremap <leader>tl <CMD>Telescope live_grep<CR>
 nnoremap <leader>tg <CMD>Telescope grep_string<CR>
 nnoremap <leader>tj <CMD>Telescope jumplist<CR>
-vnoremap <leader>te <CMD>Telescope diagnostics<CR>
-nnoremap <leader>tr <CMD>Telescope lsp_references<CR>
-nnoremap <leader>td <CMD>Telescope lsp_definitions<CR>
-nnoremap <leader>ti <CMD>Telescope lsp_implementations<CR>
-nnoremap <leader>tt <CMD>Telescope lsp_type_definitions<CR>
-nnoremap <leader>ts <CMD>Telescope lsp_document_symbols<CR>
-nnoremap <leader>tw <CMD>Telescope lsp_dynamic_workspace_symbols<CR>
+nnoremap <leader>tk <CMD>Telescope keymaps<CR>
+nnoremap <leader>td <CMD>Telescope diagnostics<CR>
+nnoremap <leader>ta <CMD>Telescope lsp_document_symbols<CR>
+nnoremap <leader>te <CMD>Telescope lsp_dynamic_workspace_symbols<CR>
 nnoremap <TAB> <CMD>Telescope buffers<CR>
 nnoremap <leader><TAB> <CMD>Telescope find_files<CR>
 
@@ -218,12 +217,12 @@ vnoremap <leader><BS> <ESC>gv<CMD>lua require('Comment.api').toggle_blockwise_op
 nnoremap <leader>a <CMD>lua require('lsp_lines_conf').toggle_inline_text()<CR>
 
 " Custom Personal Mapping
-nnoremap <leader>r <CMD>lua vim.lsp.buf.rename()<CR>
-nnoremap <leader>f <CMD>lua vim.lsp.buf.formatting()<CR>
+nnoremap gn <CMD>lua vim.lsp.buf.rename()<CR>
+nnoremap gf <CMD>lua vim.lsp.buf.formatting()<CR>
 nnoremap gd <CMD>lua vim.lsp.buf.definition()<CR>
 nnoremap gi <CMD>lua vim.lsp.buf.implementation()<CR>
 nnoremap gr <CMD>lua vim.lsp.buf.references()<CR>
 nnoremap gh <CMD>lua vim.lsp.buf.hover()<CR>
-" vim.lsp.buf.declaration()
-" vim.lsp.buf.code_action()
-"       
+nnoremap ga <CMD>lua vim.lsp.buf.code_action()<CR>
+nnoremap gt <CMD>lua vim.lsp.buf.type_definition()<CR>
+" TODO: add more if needed, shouldn't need more

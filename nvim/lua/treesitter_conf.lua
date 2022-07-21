@@ -9,8 +9,11 @@ require'nvim-treesitter.configs'.setup {
     indent = {
         enable = false,
     },
-    incremental_selection = {
-        enable = true,
-    },
+
+    -- conflict with `gn` keymap
+    -- replace with lsp
+    -- incremental_selection = {
+    --     enable = true,
+    -- },
 }
 
