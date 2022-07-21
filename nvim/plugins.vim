@@ -24,7 +24,7 @@ Plug 'chaoren/vim-wordmotion'
 Plug 'tpope/vim-fugitive'
 
 " Lspsaga
-Plug 'glepnir/lspsaga.nvim'
+" Plug 'glepnir/lspsaga.nvim'
 " Plug 'tami5/lspsaga.nvim'
 
 " TreeSitter stuff
@@ -145,7 +145,7 @@ lua << EOF
     require('nvim-ts-rainbow_conf')         -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
     require('nvim-navic_conf')              -- ~/.config/nvim/lua/nvim-navic_conf.lua
     require('indent-blankline_conf')        -- ~/.config/nvim/lua/indent-blankline_conf.lua
-    require('lspsaga_conf')                 -- ~/.config/nvim/lua/lspsaga_conf.lua
+    -- require('lspsaga_conf')                 -- ~/.config/nvim/lua/lspsaga_conf.lua
     require('treesitter-refactor_conf')     -- ~/.config/nvim/lua/treesitter-refactor_conf.lua
     require('symbols-outline_conf')         -- ~/.config/nvim/lua/symbols-outline_conf.lua
     require('lsp_lines_conf')               -- ~/.config/nvim/lua/lsp_lines_conf.lua
