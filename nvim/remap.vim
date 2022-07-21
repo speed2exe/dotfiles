@@ -12,11 +12,6 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap (<CR> (<CR>)<ESC>O
 inoremap [<CR> [<CR>]<ESC>O
 inoremap <<CR> <<CR>><ESC>O
-" Prevent action from cancelled when back to normal mode
-inoremap {<ESC> {<ESC>
-inoremap (<ESC> (<ESC>
-inoremap [<ESC> [<ESC>
-inoremap <<ESC> <<ESC>
 
 " Search highlighted
 vnoremap * y/<C-R>"<CR>gn
@@ -84,10 +79,6 @@ nnoremap <leader>m <CMD>redir @m<CR><CMD>echo expand('%:p') . ':' . line(".")<CR
 " quick access to marked files
 nnoremap <leader>g <CMD>e ~/marks/files.txt<CR>
 
-" Copy and Paste
-vnoremap <leader>c :w! /tmp/.clipboard<CR>
-nnoremap <leader>p :r /tmp/.clipboard<CR>
-
 " Move lines up and down
 vnoremap <C-J> :m '>+1<CR>gv
 vnoremap <C-K> :m '<-2<CR>gv
@@ -147,12 +138,10 @@ nnoremap \| <CMD>resize +10<CR>
 nnoremap _ <CMD>resize -10<CR>
 
 " Quick fix list
-" " Global List
-nnoremap [ <CMD>cprev<CR>
-nnoremap ] <CMD>cnext<CR>
-" " Local List
-nnoremap { <CMD>lprev<CR>
-nnoremap } <CMD>lnext<CR>
+" Add location list here if i ever use it
+nnoremap { <CMD>cprev<CR>
+nnoremap } <CMD>cnext<CR>
+nnoremap <leader>q <CMD>lua require('function').toggle_quick_fix_list()<CR>
 
 " Telescope
 nnoremap <leader>t :Telescope 
@@ -174,9 +163,11 @@ nnoremap <leader>n <CMD>NvimTreeToggle<CR>
 
 " Lspsaga
 nnoremap <leader>sf <CMD>lua require'lspsaga.finder'.lsp_finder()<CR>
+" got
+nnoremap <leader>sh <CMD>lua require'lspsaga.hover'.render_hover_doc()<CR>
 nnoremap <leader>sa <CMD>lua require'lspsaga.codeaction'.code_action()<CR>
 vnoremap <leader>sa <CMD>lua require'lspsaga.codeaction'.range_code_action()<CR>
-nnoremap <leader>sh <CMD>lua require'lspsaga.hover'.render_hover_doc()<CR>
+
 nnoremap <leader>ss <CMD>lua require'lspsaga.signaturehelp'.signature_help()<CR>
 nnoremap <leader>sr <CMD>lua require'lspsaga.rename'.lsp_rename()<CR>
 nnoremap <leader>sd <CMD>lua require'lspsaga.definition'.preview_definition()<CR>
@@ -224,4 +215,15 @@ nnoremap <BS> <CMD>lua require('Comment.api').toggle_current_linewise()<CR>j
 vnoremap <leader><BS> <ESC>gv<CMD>lua require('Comment.api').toggle_blockwise_op(vim.fn.visualmode())<CR>
 
 " Toggle lsp lines diagnostics
-nnoremap <leader>a <CMD>lua require('lsp_lines_conf').toggle_virtual_lines()<CR>
+nnoremap <leader>a <CMD>lua require('lsp_lines_conf').toggle_inline_text()<CR>
+
+" Custom Personal Mapping
+nnoremap <leader>r <CMD>lua vim.lsp.buf.rename()<CR>
+nnoremap <leader>f <CMD>lua vim.lsp.buf.formatting()<CR>
+nnoremap gd <CMD>lua vim.lsp.buf.definition()<CR>
+nnoremap gi <CMD>lua vim.lsp.buf.implementation()<CR>
+nnoremap gr <CMD>lua vim.lsp.buf.references()<CR>
+nnoremap gh <CMD>lua vim.lsp.buf.hover()<CR>
+" vim.lsp.buf.declaration()
+" vim.lsp.buf.code_action()
+"       
