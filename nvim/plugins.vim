@@ -43,7 +43,7 @@ Plug 'onsails/lspkind-nvim'
 Plug 'petertriho/nvim-scrollbar'
 
 " https://github.com/folke/which-key.nvim
-Plug 'folke/which-key.nvim'
+" Plug 'folke/which-key.nvim'
 
 " Auto save
 Plug 'Pocco81/AutoSave.nvim'
@@ -148,6 +148,7 @@ lua << EOF
     require('lspsaga_conf')                 -- ~/.config/nvim/lua/lspsaga_conf.lua
     require('treesitter-refactor_conf')     -- ~/.config/nvim/lua/treesitter-refactor_conf.lua
     require('symbols-outline_conf')         -- ~/.config/nvim/lua/symbols-outline_conf.lua
+    require('lsp_lines_conf')               -- ~/.config/nvim/lua/lsp_lines_conf.lua
     -- require('cmp_dictionary_conf')			-- ~/.config/nvim/lua/cmp_dictionary_conf.lua
     -- require('dapinstall_conf')              -- ~/.config/nvim/lua/dapinstall_conf.lua
     -- require('lsp-status_conf')              -- ~/.config/nvim/lua/lsp-status_conf.lua
@@ -155,7 +156,7 @@ lua << EOF
     -- default setup
     require('hlslens').setup{}
     require('gitsigns').setup{}
-    require('which-key').setup{}
+    -- require('which-key').setup{}
     require('syntax-tree-surfer').setup{}
     -- require('nvim-autopairs').setup{}
     require('scrollbar').setup{}
@@ -164,10 +165,10 @@ lua << EOF
 
     -- custom plugin (self made)
     require('last_used')					-- ~/.config/nvim/lua/last_used.lua
-    require('lsp_lines_conf')               -- ~/.config/nvim/lua/lsp_lines_conf.lua
+    -- require('autocmd')                      -- ~/.config/nvim/lua/autocmd.lua
 EOF
 
-set timeoutlen=500
+set timeoutlen=1000
 colorscheme dracula
 
 " Statusline
