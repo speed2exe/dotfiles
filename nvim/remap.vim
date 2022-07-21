@@ -203,9 +203,6 @@ nnoremap <leader>d<TAB> <CMD>lua require('dap').repl.toggle()<CR>
 nnoremap <leader><leader> o<ESC>:.!
 vnoremap <leader><leader> c<CR><CR><UP><ESC>:.!<C-R>"<CR>k
 
-" lsp trouble
-nnoremap <leader>a <CMD>TroubleToggle<CR>
-
 " Syntax Tree Navigation
 " from normal mode
 nnoremap v<BS> <CMD>STSSelectCurrentNode<CR>
@@ -226,5 +223,5 @@ nnoremap <leader>o <CMD>SymbolsOutline<CR>
 nnoremap <BS> <CMD>lua require('Comment.api').toggle_current_linewise()<CR>j
 vnoremap <leader><BS> <ESC>gv<CMD>lua require('Comment.api').toggle_blockwise_op(vim.fn.visualmode())<CR>
 
-" from quick custom module
-nnoremap <leader>qv <CMD>lua require('quick').toggle_virtual_text()<CR>
+" Toggle lsp lines diagnostics
+nnoremap <leader>a <CMD>lua require('lsp_lines_conf').toggle_virtual_lines()<CR>
