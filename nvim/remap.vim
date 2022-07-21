@@ -34,13 +34,9 @@ nnoremap Q @q
 " quick mark (after mm)
 nnoremap M `m
 
-" quick quit
+" quick quit window
 nnoremap <C-Q> <CMD>q!<CR>
 inoremap <C-Q> <CMD>q!<CR>
-
-" quick write
-nnoremap <C-W> <CMD>wa<CR>
-inoremap <C-W> <CMD>wa<CR>
 
 " quick fold
 vnoremap <leader>z :fold<CR>
@@ -48,6 +44,8 @@ vnoremap <leader>z :fold<CR>
 " https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
 inoremap <C-BS> <C-W>
 inoremap <C-H> <C-W>
+cnoremap <C-BS> <C-W>
+cnoremap <C-H> <C-W>
 
 " Search and replace for visually selected on entire document template
 vnoremap <leader>S y:%s/<C-R>"/<C-R>"
@@ -161,18 +159,16 @@ nnoremap <leader><TAB> <CMD>Telescope find_files<CR>
 nnoremap <leader>n <CMD>NvimTreeToggle<CR>
 
 " Lspsaga
-nnoremap <leader>sf <CMD>lua require'lspsaga.finder'.lsp_finder()<CR>
-" got
-nnoremap <leader>sh <CMD>lua require'lspsaga.hover'.render_hover_doc()<CR>
-nnoremap <leader>sa <CMD>lua require'lspsaga.codeaction'.code_action()<CR>
-vnoremap <leader>sa <CMD>lua require'lspsaga.codeaction'.range_code_action()<CR>
-
-nnoremap <leader>ss <CMD>lua require'lspsaga.signaturehelp'.signature_help()<CR>
-nnoremap <leader>sr <CMD>lua require'lspsaga.rename'.lsp_rename()<CR>
-nnoremap <leader>sd <CMD>lua require'lspsaga.definition'.preview_definition()<CR>
-nnoremap <leader>sl <CMD>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>
-nnoremap <leader>sk <CMD>lua require'lspsaga.diagnostic'.goto_prev()<CR>
-nnoremap <leader>sj <CMD>lua require'lspsaga.diagnostic'.goto_next()<CR>
+" nnoremap <leader>sf <CMD>lua require'lspsaga.finder'.lsp_finder()<CR>
+" nnoremap <leader>sh <CMD>lua require'lspsaga.hover'.render_hover_doc()<CR>
+" nnoremap <leader>sa <CMD>lua require'lspsaga.codeaction'.code_action()<CR>
+" vnoremap <leader>sa <CMD>lua require'lspsaga.codeaction'.range_code_action()<CR>
+" nnoremap <leader>ss <CMD>lua require'lspsaga.signaturehelp'.signature_help()<CR>
+" nnoremap <leader>sr <CMD>lua require'lspsaga.rename'.lsp_rename()<CR>
+" nnoremap <leader>sd <CMD>lua require'lspsaga.definition'.preview_definition()<CR>
+" nnoremap <leader>sl <CMD>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>
+" nnoremap <leader>sk <CMD>lua require'lspsaga.diagnostic'.goto_prev()<CR>
+" nnoremap <leader>sj <CMD>lua require'lspsaga.diagnostic'.goto_next()<CR>
 " nnoremap <leader>sd <CMD>lua require'lspsaga.action'.smart_scroll_with_saga(1)<CR>
 " nnoremap <leader>su <CMD>lua require'lspsaga.action'.smart_scroll_with_saga(-1)<CR>
 
