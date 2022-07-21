@@ -3,9 +3,10 @@ call plug#begin('~/.vim/plugged')
 " Github Co-pilot
 "Plug 'github/copilot.vim'
 
+Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
+
 " Comment Helper
 Plug 'numToStr/Comment.nvim'
-
 " Auto complete braces
 " Plug 'windwp/nvim-autopairs'
 
@@ -21,9 +22,6 @@ Plug 'chaoren/vim-wordmotion'
 
 " Git
 Plug 'tpope/vim-fugitive'
-
-" Display LSP stuff nicer
-Plug 'folke/trouble.nvim'
 
 " Lspsaga
 Plug 'glepnir/lspsaga.nvim'
@@ -158,7 +156,6 @@ lua << EOF
     require('hlslens').setup{}
     require('gitsigns').setup{}
     require('which-key').setup{}
-    require('trouble').setup{}
     require('syntax-tree-surfer').setup{}
     -- require('nvim-autopairs').setup{}
     require('scrollbar').setup{}
@@ -167,6 +164,7 @@ lua << EOF
 
     -- custom plugin (self made)
     require('last_used')					-- ~/.config/nvim/lua/last_used.lua
+    require('lsp_lines_conf')               -- ~/.config/nvim/lua/lsp_lines_conf.lua
 EOF
 
 set timeoutlen=500
