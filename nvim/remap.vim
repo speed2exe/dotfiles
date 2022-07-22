@@ -152,8 +152,9 @@ nnoremap <leader>tk <CMD>Telescope keymaps<CR>
 nnoremap <leader>td <CMD>Telescope diagnostics<CR>
 nnoremap <leader>ta <CMD>Telescope lsp_document_symbols<CR>
 nnoremap <leader>te <CMD>Telescope lsp_dynamic_workspace_symbols<CR>
-nnoremap <TAB> <CMD>Telescope buffers<CR>
-nnoremap <leader><TAB> <CMD>Telescope find_files<CR>
+nnoremap <leader>tb <CMD>Telescope buffers<CR>
+nnoremap <leader>tf <CMD>Telescope find_files<CR>
+nnoremap <TAB> <CMD>Telescope resume<CR>
 
 " NvimTree
 nnoremap <leader>n <CMD>NvimTreeToggle<CR>
