@@ -61,7 +61,10 @@ cmp.setup({
 })
 
 cmp.setup.cmdline('/', {
-	mapping = cmp.mapping.preset.cmdline(),
+	mapping = {
+        ['<UP>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'c' }),
+        ['<DOWN>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'c' }),
+    },
 	sources = cmp.config.sources(
 		{ { name = 'nvim_lsp_document_symbol' } },
 		{ { name = 'buffer' } }
@@ -69,7 +72,10 @@ cmp.setup.cmdline('/', {
 })
 
 cmp.setup.cmdline(':', {
-	mapping = cmp.mapping.preset.cmdline(),
+	mapping = {
+        ['<UP>'] = cmp.mapping(cmp.mapping.select_prev_item(), { 'c' }),
+        ['<DOWN>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'c' }),
+    },
 	sources = cmp.config.sources(
 		{ { name = 'path' } }, 
 		{ { name = 'cmdline' } }
