@@ -72,8 +72,11 @@ nnoremap J mzJ`z
 nnoremap ( k{<SPACE>^
 nnoremap ) j}<BS>$
 
+" print current file
+nnoremap <ESC> <CMD>echo expand("%:p")<CR>
 " copy current file path to clipboard
-nnoremap <leader>c <CMD>let @+ = expand("%:p")<CR>
+nnoremap yf <CMD>let @+ = expand("%:p")<CR>
+nnoremap y% <CMD>:%y+<CR>
 " copy current file path and line number to ~/marks/files.txt
 nnoremap <leader>m <CMD>redir @m<CR><CMD>echo expand('%:p') . ':' . line(".")<CR><CMD>redir END<CR>:!m<C-R>m<CR><CR>
 " quick access to marked files
