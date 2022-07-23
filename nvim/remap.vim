@@ -13,6 +13,9 @@ inoremap (<CR> (<CR>)<ESC>O
 inoremap [<CR> [<CR>]<ESC>O
 inoremap <<CR> <<CR>><ESC>O
 
+" Keep cursor position after copy
+vnoremap y ygv<ESC>
+
 " Search highlighted
 vnoremap * y/<C-R>"<CR>gn
 vnoremap # y?<C-R>"<CR>gn
