@@ -114,14 +114,14 @@ nnoremap , @:
 nnoremap <PAGEUP> <C-O>
 nnoremap <PAGEDOWN> <C-I>
 
-" Back 1 Directory
-nnoremap <DEL> <CMD>cd ..<CR>
-" To project root
-nnoremap <HOME> <CMD>ProjectRoot<CR>
-" Current File Directory
-nnoremap <END> <CMD>lcd %:p:h<CR>
+" go to prev directory
+nnoremap <DEL> :cd ..<CR>:pwd<CR>
+" go to project root
+nnoremap <HOME> :ProjectRoot<CR>:pwd<CR>
+" go to current file directory
+nnoremap <END> :lcd %:p:h<CR>:pwd<CR>
 
-" new windows
+" new window
 nnoremap <leader>x <CMD>split<CR>
 nnoremap <leader>X <CMD>new<CR>
 nnoremap <leader>v <CMD>vsplit<CR>
