@@ -80,7 +80,7 @@ nnoremap <ESC> <CMD>echo expand("%:p")<CR>
 " copy current file path to clipboard
 nnoremap yf <CMD>let @+ = expand("%:p")<CR>
 " hightlight entire file
-nnoremap <C-A> gg^vG$
+nnoremap v% gg^vG$
 nnoremap y% <CMD>:%y+<CR>
 " copy current file path and line number to ~/marks/files.txt
 nnoremap <leader>m <CMD>redir @m<CR><CMD>echo expand('%:p') . ':' . line(".")<CR><CMD>redir END<CR>:!m<C-R>m<CR><CR>
