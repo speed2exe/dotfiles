@@ -42,7 +42,7 @@ Plug 'onsails/lspkind-nvim'
 Plug 'petertriho/nvim-scrollbar'
 
 " https://github.com/folke/which-key.nvim
-" Plug 'folke/which-key.nvim'
+Plug 'folke/which-key.nvim'
 
 " Auto save
 Plug 'Pocco81/AutoSave.nvim'
@@ -155,7 +155,7 @@ lua << EOF
     -- default setup
     require('hlslens').setup{}
     require('gitsigns').setup{}
-    -- require('which-key').setup{}
+    require('which-key').setup{}
     require('syntax-tree-surfer').setup{}
     -- require('nvim-autopairs').setup{}
     require('scrollbar').setup{}
