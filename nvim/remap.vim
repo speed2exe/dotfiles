@@ -25,11 +25,28 @@ vnoremap N <ESC>NNgN
 " Auto surround
 vnoremap " c"<ESC>maa<C-R>""<ESC>mb`av`b
 vnoremap ' c'<ESC>maa<C-R>"'<ESC>mb`av`b
-vnoremap ` c`<ESC>maa<C-R>"`<ESC>mb`av`b
+" vnoremap ` c`<ESC>maa<C-R>"`<ESC>mb`av`b
 vnoremap [ c[<ESC>maa<C-R>"]<ESC>mb`av`b
+vnoremap ] c[<ESC>maa<C-R>"]<ESC>mb`av`b
 vnoremap { c{<ESC>maa<C-R>"}<ESC>mb`av`b
+vnoremap } c{<ESC>maa<C-R>"}<ESC>mb`av`b
 vnoremap ( c(<ESC>maa<C-R>")<ESC>mb`av`b
+vnoremap ) c(<ESC>maa<C-R>")<ESC>mb`av`b
 vnoremap < c<<ESC>maa<C-R>"><ESC>mb`av`b
+vnoremap > c<<ESC>maa<C-R>"><ESC>mb`av`b
+
+" Remove First and Last char Surround
+vnoremap <leader>" c <ESC>maa<C-R>" <ESC>dT"x`adt"ci"<BS><DEL><C-R>"<ESC>v`ao
+vnoremap <leader>' c <ESC>maa<C-R>" <ESC>dT'x`adt'ci'<BS><DEL><C-R>"<ESC>v`ao
+vnoremap <leader>` c <ESC>maa<C-R>" <ESC>dT`x`adt`ci`<BS><DEL><C-R>"<ESC>v`ao
+vnoremap <leader>[ c <ESC>maa<C-R>" <ESC>dT]x`adt[ci[<BS><DEL><C-R>"<ESC>v`ao
+vnoremap <leader>] c <ESC>maa<C-R>" <ESC>dT]x`adt[ci[<BS><DEL><C-R>"<ESC>v`ao
+vnoremap <leader>{ c <ESC>maa<C-R>" <ESC>dT}x`adt{ci{<BS><DEL><C-R>"<ESC>v`ao
+vnoremap <leader>} c <ESC>maa<C-R>" <ESC>dT}x`adt{ci{<BS><DEL><C-R>"<ESC>v`ao
+vnoremap <leader>( c <ESC>maa<C-R>" <ESC>dT)x`adt(ci(<BS><DEL><C-R>"<ESC>v`ao
+vnoremap <leader>) c <ESC>maa<C-R>" <ESC>dT)x`adt(ci(<BS><DEL><C-R>"<ESC>v`ao
+vnoremap <leader>< c <ESC>maa<C-R>" <ESC>dT>x`adt<ci<<BS><DEL><C-R>"<ESC>v`ao
+vnoremap <leader>> c <ESC>maa<C-R>" <ESC>dT>x`adt<ci<<BS><DEL><C-R>"<ESC>v`ao
 
 " quick macro (after qq)
 nnoremap Q @q
@@ -70,10 +87,6 @@ nnoremap <leader>f gF
 
 " Move next line up
 nnoremap J mzJ`z
-
-" Move to end of sentence
-nnoremap ( k{<SPACE>^
-nnoremap ) j}<BS>$
 
 " print current file
 nnoremap <ESC> <CMD>echo expand("%:p")<CR>
@@ -210,8 +223,8 @@ vnoremap <CR> <CMD>STSSelectChildNode<CR>
 " swap in visual mode
 vnoremap J <CMD>STSSwapNextVisual<CR>
 vnoremap K <CMD>STSSwapPrevVisual<CR>
-
 " Symbols Outline
+
 nnoremap <leader>o <CMD>SymbolsOutline<CR>
 
 " Comment
