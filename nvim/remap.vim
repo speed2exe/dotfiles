@@ -25,7 +25,7 @@ vnoremap N <ESC>NNgN
 " Auto surround
 vnoremap " c"<ESC>maa<C-R>""<ESC>mb`av`b
 vnoremap ' c'<ESC>maa<C-R>"'<ESC>mb`av`b
-" vnoremap ` c`<ESC>maa<C-R>"`<ESC>mb`av`b
+vnoremap ` c`<ESC>maa<C-R>"`<ESC>mb`av`b
 vnoremap [ c[<ESC>maa<C-R>"]<ESC>mb`av`b
 vnoremap ] c[<ESC>maa<C-R>"]<ESC>mb`av`b
 vnoremap { c{<ESC>maa<C-R>"}<ESC>mb`av`b
@@ -223,8 +223,8 @@ vnoremap <CR> <CMD>STSSelectChildNode<CR>
 " swap in visual mode
 vnoremap J <CMD>STSSwapNextVisual<CR>
 vnoremap K <CMD>STSSwapPrevVisual<CR>
-" Symbols Outline
 
+" Symbols Outline
 nnoremap <leader>o <CMD>SymbolsOutline<CR>
 
 " Comment
