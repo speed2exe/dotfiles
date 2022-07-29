@@ -1,7 +1,7 @@
 function fprp_optional
     set path (get_dir "$argv")
     set path (fd_all . "$path" | fprp --query "$path/")
-    if test $status -eq 0
+    if success
         if [ (string match "*.." "$path[1]" ) ]
             echo (realpath "$path[1]")
         else
