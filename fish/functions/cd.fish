@@ -19,7 +19,7 @@ function cd_override
     # update file
     set dir_hists (string split ' ' (cat ~/marks/dir_history.txt))
     set cur_path (pwd)
-    set existing_item_idx (contains -i "$cur_path" "$dir_hists")
+    set existing_item_idx (contains -i "$cur_path" $dir_hists)
     if success
         if test ! $existing_item_idx -eq 1
             set -e dir_hists[$existing_item_idx]
