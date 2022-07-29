@@ -4,7 +4,7 @@ function cd_override
     alias cd "cd"
 
     set prev_git (git rev-parse --show-toplevel 2> /dev/null)
-    cd $argv || return
+    cd "$argv" || return
     set cur_git (git rev-parse --show-toplevel 2> /dev/null)
 
     # display git info if in different git repo
@@ -19,20 +19,20 @@ function cd_override
     # update file
     set dir_hists (string split ' ' (cat ~/marks/dir_history.txt))
     set cur_path (pwd)
-    set existing_item_idx (contains -i $cur_path $dir_hists)
-    if test $status -eq 0
+    set existing_item_idx (contains -i "$cur_path" "$dir_hists")
+    if test "$status" -eq 0
         if test ! $existing_item_idx -eq 1
             set -e dir_hists[$existing_item_idx]
-            set -p dir_hists $cur_path
+            set -p dir_hists "$cur_path"
         end
     else
-        set -p dir_hists $cur_path
+        set -p dir_hists "$cur_path"
     end
 
     string join \n $dir_hists | head -100 > ~/marks/dir_history.txt
 
-    echo; print_boxed $cur_path; echo; la
-    echo $cur_path > /tmp/.savedir
+    echo; print_boxed "$cur_path"; echo; la
+    echo "$cur_path" > /tmp/.savedir
 
     alias cd "cd_override"
 end

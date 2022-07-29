@@ -1,3 +1,3 @@
-function mktbz --wraps='compress j' --description 'alias mktbz compress j'
-  compress j $argv; 
+function mktbz
+  compress j $argv
 end

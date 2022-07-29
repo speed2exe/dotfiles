@@ -1,3 +1,3 @@
-function lta --wraps='lt --all' --description 'alias lta lt --all'
-  lt --all $argv; 
+function lta
+    lt --all $argv
 end
