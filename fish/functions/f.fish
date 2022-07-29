@@ -1,8 +1,6 @@
-function gf
+function f
     set file (cat ~/marks/files.txt | fpr)
-    if test ! $status -eq 0
-        return
-    end
+    test ! $status -eq 0 && return
 
     nvim "$file"
 end

@@ -1,8 +1,5 @@
 function extract
-    if test ! -f $argv
-        echo "extract expects a path to file"
-        return 1
-    end
+    test ! -f "$argv" && error "not a file path" && return
 
     set path $argv
     switch $path
