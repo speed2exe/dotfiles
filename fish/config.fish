@@ -52,3 +52,11 @@ end
 # keybinding to emulate yank line and paste in vi mode
 bind yy fish_clipboard_copy
 bind p fish_clipboard_paste
+
+# keybinding for switching jobs
+bind -M insert \cz 'z'
+bind \cz 'z'
+
+# keybinding to kill all background jobs
+bind -M insert \cq 'q'
+bind \cq 'q'
