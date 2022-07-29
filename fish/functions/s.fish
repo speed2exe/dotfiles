@@ -6,9 +6,6 @@ function s
     else if test -f "$path"
         cd (dirname "$path")
         set filename (basename "$path")
-        prompt "edit $filename?"
-        if test $status -eq 0
-            nvim "$filename"
-        end
+        prompt "edit $filename?" && nvim "$filename"
     end
 end
