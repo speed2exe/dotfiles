@@ -18,5 +18,5 @@ function v
         return
     end
 
-    nvim $file
+    nvim "$file"
 end

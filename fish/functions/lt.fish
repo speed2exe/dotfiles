@@ -1,3 +1,3 @@
-function lt --wraps='ll --tree' --description 'alias lt ll --tree'
-  ll --tree $argv; 
+function lt
+    ll --tree $argv
 end
