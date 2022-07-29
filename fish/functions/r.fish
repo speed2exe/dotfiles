@@ -7,12 +7,9 @@ function r
             return 1
         end
     else
-        set git_dir (git rev-parse --show-toplevel 2> /dev/null)
-        if test $status -eq 0
-            set path "$git_dir"
-        else
-            set path (pwd)
-        end
+        set git_dir (git rev-parse --show-toplevel 2> /dev/null) \
+            && set path "$git_dir" \
+            || set path (pwd)
     end
 
     set dir_hash (string replace --all / : $path)
@@ -21,9 +18,6 @@ function r
     touch ~/marks/dir_hash/"$dir_hash"/file_history.txt
 
     set path (tac ~/marks/dir_hash/"$dir_hash"/file_history.txt \
-        | xargs -I {} realpath --relative-to=. {} 2> /dev/null | fpr)
-
-    if test $status -eq 0
-        v "$path"
-    end
+        | xargs -I {} realpath --relative-to=. {} 2> /dev/null | fpr) \
+        && v "$path"
 end
