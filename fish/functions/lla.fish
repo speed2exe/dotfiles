@@ -1,3 +1,3 @@
-function lla --wraps='ll -all' --description 'alias lla ll -all'
-  ll -all $argv; 
+function lla
+    ll -all $argv
 end

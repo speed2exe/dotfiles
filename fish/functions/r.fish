@@ -17,13 +17,13 @@ function r
 
     set dir_hash (string replace --all / : $path)
 
-    mkdir -p ~/marks/dir_hash/$dir_hash/
-    touch ~/marks/dir_hash/$dir_hash/file_history.txt
+    mkdir -p ~/marks/dir_hash/"$dir_hash"/
+    touch ~/marks/dir_hash/"$dir_hash"/file_history.txt
 
-    set path (tac ~/marks/dir_hash/$dir_hash/file_history.txt \
+    set path (tac ~/marks/dir_hash/"$dir_hash"/file_history.txt \
         | xargs -I {} realpath --relative-to=. {} 2> /dev/null | fpr)
 
     if test $status -eq 0
-        v $path
+        v "$path"
     end
 end

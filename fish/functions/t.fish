@@ -6,11 +6,11 @@ function t
         return 1
     end
 
-    set dir (realpath $argv)
-    set path (fd_all $argv --absolute-path --exact-depth 1 | fprp --query "$dir/")
+    set dir (realpath "$argv")
+    set path (fd_all "$argv" --absolute-path --exact-depth 1 | fprp --query "$dir/")
 
-    set input $path[1]
-    set selection $path[2]
+    set input "$path[1]"
+    set selection "$path[2]"
 
     if test (string match "*.." "$input")
         t "$input"
