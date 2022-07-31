@@ -45,7 +45,8 @@ Plug 'petertriho/nvim-scrollbar'
 Plug 'folke/which-key.nvim'
 
 " Auto save
-Plug 'Pocco81/AutoSave.nvim'
+" TODO: change to main branch when it gets stable
+Plug 'Pocco81/AutoSave.nvim', {'commit': '8df684bcb3c5fff8fa9a772952763fc3f6eb75ad'}
 
 " Project management
 Plug 'ahmedkhalf/project.nvim'
@@ -128,7 +129,7 @@ call plug#end()
 
 lua << EOF
     -- configured setup
-    require('autosave_conf')                -- ~/.config/nvim/lua/autosave_conf.lua
+    -- require('autosave_conf')                -- ~/.config/nvim/lua/autosave_conf.lua
     require('nvim-web-devicons')            -- ~/.config/nvim/lua/nvim-web-devicons_conf.lua
     require('nvim-tree_conf')               -- ~/.config/nvim/lua/nvim-tree_conf.lua
     require('lualine_conf')                 -- ~/.config/nvim/lua/lualine_conf.lua
@@ -153,6 +154,7 @@ lua << EOF
     -- require('lsp-status_conf')              -- ~/.config/nvim/lua/lsp-status_conf.lua
 
     -- default setup
+    require('autosave').setup{}
     require('hlslens').setup{}
     require('gitsigns').setup{}
     require('which-key').setup{}

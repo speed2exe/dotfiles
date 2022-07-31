@@ -50,6 +50,7 @@ vnoremap <leader>> c <ESC>maa<C-R>" <ESC>dT>x`adt<ci<<BS><DEL><C-R>"<ESC>v`ao
 
 " quick macro (after qq)
 nnoremap Q @q
+vnoremap Q :'<,'>normal @q<CR>
 
 " quick mark (after mm)
 nnoremap M `m
