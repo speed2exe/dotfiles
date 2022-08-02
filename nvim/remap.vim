@@ -62,6 +62,9 @@ inoremap <C-Q> <CMD>q!<CR>
 " quick fold
 vnoremap <leader>z :fold<CR>
 
+" highlight after paste
+nnoremap vp `[v`]
+
 " https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
 inoremap <C-BS> <C-W>
 inoremap <C-H> <C-W>
@@ -115,8 +118,8 @@ nnoremap <expr> <leader>h (&hls && v:hlsearch ? ':set nohlsearch' : ':set hlsear
 " Indent
 vnoremap , <gv
 vnoremap . >gv
-nnoremap < <<^
-nnoremap > >>$
+nnoremap << <<^
+nnoremap >> >>$
 inoremap <C-N> <ESC><<I
 inoremap <C-T> <ESC>>>A
 nnoremap <leader>i jgg=G<C-O>k
