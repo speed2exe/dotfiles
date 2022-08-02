@@ -7,9 +7,7 @@ function r
             return 1
         end
     else
-        set git_dir (git rev-parse --show-toplevel 2> /dev/null) \
-            && set path "$git_dir" \
-            || set path (pwd)
+        set path (pwd)
     end
 
     set dir_hash (string replace --all / : $path)
