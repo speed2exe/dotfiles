@@ -1,7 +1,7 @@
 -- local function log(message)
 -- 	local logfile = io.open("/home/zx/logfile", "a")
 -- 	io.output(logfile)
--- 	io.write(message)
+-- 	io.write(message .. "\n")
 -- 	io.close(logfile)
 -- end
 --
@@ -11,7 +11,7 @@
 -- 		log("i: " .. k .. ", v:" .. v .. "\n")
 -- 	end
 -- end
-
+--
 local vim = vim
 
 local function directory_exists(path)
@@ -168,14 +168,13 @@ local function after_buf_enter()
     end
 
     local found_in_dir_path_list = update_lru_list(dir_path_list, cur_path)
-
     if not found_in_dir_path_list then
         table.insert(dir_path_list, cur_path)
         dir_line_by_path[cur_path] = 0
         append_path_to_file(dir_last_used_path, cur_path, 0)
     end
 end
-after_buf_enter()
+
 vim.api.nvim_create_autocmd("BufEnter", {
 	callback = after_buf_enter,
 })
