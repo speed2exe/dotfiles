@@ -52,7 +52,7 @@ Plug 'Pocco81/AutoSave.nvim', {'commit': '8df684bcb3c5fff8fa9a772952763fc3f6eb75
 Plug 'ahmedkhalf/project.nvim'
 
 " Fancy Start Screen
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 
 " Indent guide lines
 Plug 'lukas-reineke/indent-blankline.nvim'
