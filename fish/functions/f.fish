@@ -1,5 +1,5 @@
 function f
-    set path (fd --type f --hidden --no-ignore --color=always . $argv | fpr)
+    set path (fd_all --type f . $argv | fpr)
 
     if test -d "$path"
         cd "$path"
