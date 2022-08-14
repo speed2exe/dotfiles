@@ -992,14 +992,14 @@ hints:
        mods: Alt
 
    - regex: "[A-Za-z0-9_-]+ "
-     action: MoveViModeCursor
+     action: Copy
      post_processing: true
      binding:
        key: A
        mods: Alt
 
    - regex: ".+ "
-     action: MoveViModeCursor
+     action: Copy
      post_processing: true
      binding:
        key: T
