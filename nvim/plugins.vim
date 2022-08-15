@@ -165,8 +165,9 @@ lua << EOF
     require('Comment').setup{}
 
     -- custom plugin (self made)
-    require('last_used')					-- ~/.config/nvim/lua/last_used.lua
-    -- require('autocmd')                      -- ~/.config/nvim/lua/autocmd.lua
+    require('last_used')					    -- ~/.config/nvim/lua/last_used.lua
+    -- require('autocmd')                       -- ~/.config/nvim/lua/autocmd.lua
+    require('nvim-lsp-installer_setup')         -- ~/.config/nvim/lua/nvim-lsp-installer_setup.lua
 EOF
 
 set timeoutlen=1000
