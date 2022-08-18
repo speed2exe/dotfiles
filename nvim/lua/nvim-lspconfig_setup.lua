@@ -6,6 +6,7 @@ local cmp = require('cmp_nvim_lsp')
 
 for _, server in ipairs(servers) do
     lspconfig[server].setup {
+        root_dir = lspconfig.util.root_pattern('.git'),
         on_attach = function(client, bufnr)
             navic.attach(client, bufnr)
         end,
