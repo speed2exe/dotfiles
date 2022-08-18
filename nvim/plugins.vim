@@ -168,7 +168,7 @@ lua << EOF
 
     -- custom plugin (self made)
     require('last_used')                -- ~/.config/nvim/lua/last_used.lua
-    require('autocmd')                  -- ~/.config/nvim/lua/autocmd.lua
+    -- require('autocmd')                  -- ~/.config/nvim/lua/autocmd.lua
     require('nvim-lspconfig_setup')     -- ~/.config/nvim/lua/nvim-lspconfig_setup.lua
 EOF
 
