@@ -1,3 +1,6 @@
+# jdtls jvm args
+set -x JDTLS_JVM_ARGS "-javaagent:$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar -Xbootclasspath/a:$HOME/.local/share/nvim/mason/packages/jdtls/lombok.jar"
+
 # homebrew
 fish_add_path "/usr/local/bin"
 
