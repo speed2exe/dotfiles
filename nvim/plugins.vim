@@ -89,7 +89,8 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 " Plug 'nvim-lua/lsp-status.nvim'
 
 " TreeSitter stuff
@@ -133,7 +134,6 @@ lua << EOF
     require('nvim-web-devicons')            -- ~/.config/nvim/lua/nvim-web-devicons_conf.lua
     require('nvim-tree_conf')               -- ~/.config/nvim/lua/nvim-tree_conf.lua
     require('lualine_conf')                 -- ~/.config/nvim/lua/lualine_conf.lua
-    require('nvim-lsp-installer_conf')      -- ~/.config/nvim/lua/nvim-lsp-installer_conf.lua
     require('nvim-web-devicons')            -- ~/.config/nvim/lua/nvim-web-devicons_conf.lua
     require('telescope_conf')               -- ~/.config/nvim/lua/telescope_conf.lua
     require('treesitter_conf')              -- ~/.config/nvim/lua/treesitter_conf.lua
@@ -163,11 +163,13 @@ lua << EOF
     require('scrollbar').setup{}
     require('scrollbar.handlers.search').setup{}
     require('Comment').setup{}
+    require('mason').setup{}
+    require('mason-lspconfig').setup{}
 
     -- custom plugin (self made)
-    require('last_used')					    -- ~/.config/nvim/lua/last_used.lua
+    require('last_used')                        -- ~/.config/nvim/lua/last_used.lua
     -- require('autocmd')                       -- ~/.config/nvim/lua/autocmd.lua
-    require('nvim-lsp-installer_setup')         -- ~/.config/nvim/lua/nvim-lsp-installer_setup.lua
+    require('nvim-lspconfig_setup')             -- ~/.config/nvim/lua/nvim-lspconfig_setup.lua
 EOF
 
 set timeoutlen=1000
