@@ -1,14 +1,10 @@
 call plug#begin('~/.vim/plugged')
 
 " Github Co-pilot
-"Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 
+" Display better lsp diagnostics with virtual lines below
 Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
-
-" Comment Helper
-Plug 'numToStr/Comment.nvim'
-" Auto complete braces
-" Plug 'windwp/nvim-autopairs'
 
 " Highlight assistance for search result
 Plug 'kevinhwang91/nvim-hlslens'
@@ -20,11 +16,8 @@ Plug 'karb94/neoscroll.nvim'
 Plug 'chaoren/vim-wordmotion'
 
 " Git
+" TODO: maybe there's a better nvim version out there
 Plug 'tpope/vim-fugitive'
-
-" Lspsaga
-" Plug 'glepnir/lspsaga.nvim'
-" Plug 'tami5/lspsaga.nvim'
 
 " TreeSitter stuff
 Plug 'nvim-treesitter/playground'
@@ -40,9 +33,6 @@ Plug 'onsails/lspkind-nvim'
 
 " Fancy Scroll Bar
 Plug 'petertriho/nvim-scrollbar'
-
-" https://github.com/folke/which-key.nvim
-Plug 'folke/which-key.nvim'
 
 " Auto save
 " TODO: change to main branch when it gets stable
@@ -91,7 +81,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
-" Plug 'nvim-lua/lsp-status.nvim'
+Plug 'nvim-lua/lsp-status.nvim'
 
 " TreeSitter stuff
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -130,7 +120,6 @@ call plug#end()
 
 lua << EOF
     -- configured setup
-    -- require('autosave_conf')                -- ~/.config/nvim/lua/autosave_conf.lua
     require('nvim-web-devicons')            -- ~/.config/nvim/lua/nvim-web-devicons_conf.lua
     require('nvim-tree_conf')               -- ~/.config/nvim/lua/nvim-tree_conf.lua
     require('lualine_conf')                 -- ~/.config/nvim/lua/lualine_conf.lua
@@ -143,26 +132,20 @@ lua << EOF
     require('nvim-cmp_conf')                -- ~/.config/nvim/lua/nvim-cmp_conf.lua
     require('project_conf')                 -- ~/.config/nvim/lua/project_conf.lua
     require('nvim-ts-rainbow_conf')         -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
-    require('nvim-navic_conf')              -- ~/.config/nvim/lua/nvim-navic_conf.lua
     require('indent-blankline_conf')        -- ~/.config/nvim/lua/indent-blankline_conf.lua
     require('treesitter-refactor_conf')     -- ~/.config/nvim/lua/treesitter-refactor_conf.lua
     require('symbols-outline_conf')         -- ~/.config/nvim/lua/symbols-outline_conf.lua
     require('lsp_lines_conf')               -- ~/.config/nvim/lua/lsp_lines_conf.lua
     require('neoscroll_conf')               -- ~/.config/nvim/lua/neoscroll_conf.lua
-    -- require('cmp_dictionary_conf')			-- ~/.config/nvim/lua/cmp_dictionary_conf.lua
     -- require('dapinstall_conf')              -- ~/.config/nvim/lua/dapinstall_conf.lua
-    -- require('lsp-status_conf')              -- ~/.config/nvim/lua/lsp-status_conf.lua
 
     -- default setup
     require('autosave').setup{}
     require('hlslens').setup{}
     require('gitsigns').setup{}
-    require('which-key').setup{}
     require('syntax-tree-surfer').setup{}
-    -- require('nvim-autopairs').setup{}
     require('scrollbar').setup{}
     require('scrollbar.handlers.search').setup{}
-    require('Comment').setup{}
     require('mason').setup{}
     require('mason-lspconfig').setup{}
 
@@ -174,12 +157,3 @@ EOF
 
 set timeoutlen=1000
 colorscheme dracula
-
-" Statusline
-" function! LspStatus() abort
-"     if luaeval('#vim.lsp.buf_get_clients() > 0')
-"         return luaeval("require('lsp-status').status()")
-"     endif
-" 
-"     return ''
-" endfunction
