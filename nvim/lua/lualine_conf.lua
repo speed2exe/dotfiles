@@ -1,4 +1,15 @@
 local navic = require('nvim-navic')
+local lsp_status = require('lsp-status')
+lsp_status.register_progress()
+
+local function get_lsp_status()
+    return lsp_status.status()
+end
+
+local function condition()
+    return #vim.lsp.buf_get_clients() > 0
+end
+
 require('lualine').setup {
     options = {
         icons_enabled = true,
@@ -13,11 +24,10 @@ require('lualine').setup {
         lualine_a = { 'mode' },
         lualine_b = { 'branch', 'diff', { 'diagnostics', sources = {'nvim_diagnostic'} }, },
         lualine_c = { 'filename', { navic.get_location, cond = navic.is_available } },
-        lualine_x = { 'filetype' },
+        lualine_x = { { get_lsp_status, cond = condition }, 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }
     },
     tabline = {},
     extensions = {'nvim-tree'}
 }
-
