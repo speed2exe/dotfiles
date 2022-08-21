@@ -248,3 +248,6 @@ nnoremap gh <CMD>lua vim.lsp.buf.hover()<CR>
 nnoremap ga <CMD>lua vim.lsp.buf.code_action()<CR>
 nnoremap gt <CMD>lua vim.lsp.buf.type_definition()<CR>
 " TODO: add more if needed, shouldn't need more
+
+" Github copilot stuff
+let g:copilot_no_tab_map = v:true
