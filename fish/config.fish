@@ -64,3 +64,6 @@ bind \cz 'z'
 # keybinding to kill all background jobs
 bind -M insert \cq 'q'
 bind \cq 'q'
+
+# optionally source from home directory if any
+test -f ~/.init.fish && source ~/.init.fish
