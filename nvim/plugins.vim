@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Github Co-pilot
-" Plug 'github/copilot.vim'
+Plug 'github/copilot.vim'
 
 " Display better lsp diagnostics with virtual lines below
 Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
@@ -100,7 +100,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-calc'
 Plug 'mtoohey31/cmp-fish'
 Plug 'ray-x/cmp-treesitter'
-" Plug 'hrsh7th/cmp-copilot'
+Plug 'hrsh7th/cmp-copilot'
 " Plug 'dmitmel/cmp-digraphs'
 " Plug 'uga-rosa/cmp-dictionary'
 
