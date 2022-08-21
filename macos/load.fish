@@ -31,5 +31,6 @@ printf '\nkey_bindings:
 sed -i -e 's/iosevka2/Iosevka\ Nerd\ Font/g' ~/.config/alacritty/alacritty.yml
 sed -i -e 's/xdg\-open/open/g' ~/.config/alacritty/alacritty.yml
 sed -i -e 's/\/bin\/fish/\/opt\/homebrew\/bin\/fish/g' ~/.config/alacritty/alacritty.yml
+sed -i -e 's/12.0/16.0/g' ~/.config/alacritty/alacritty.yml
 
 cp ~/dotfiles/macos/neovide.vim ~/.config/nvim/neovide.vim
