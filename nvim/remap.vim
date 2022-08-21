@@ -170,16 +170,20 @@ nnoremap <leader>q <CMD>lua require('function').toggle_quick_fix_list()<CR>
 
 " Telescope
 nnoremap <leader>t :Telescope 
-nnoremap <leader>tl <CMD>Telescope live_grep<CR>
 nnoremap <leader>tg <CMD>Telescope grep_string<CR>
 nnoremap <leader>tj <CMD>Telescope jumplist<CR>
 nnoremap <leader>tk <CMD>Telescope keymaps<CR>
 nnoremap <leader>td <CMD>Telescope diagnostics<CR>
 nnoremap <leader>ta <CMD>Telescope lsp_document_symbols<CR>
 nnoremap <leader>te <CMD>Telescope lsp_dynamic_workspace_symbols<CR>
-nnoremap <leader>tb <CMD>Telescope buffers<CR>
-nnoremap <leader>tf <CMD>Telescope find_files<CR>
-nnoremap <TAB> <CMD>Telescope resume<CR>
+" find files, find buffer and find text
+nnoremap <leader><TAB> <CMD>Telescope buffers<CR>
+nnoremap <leader><BS> <CMD>Telescope find_files<CR>
+nnoremap <leader><ESC> <CMD>Telescope live_grep<CR>
+
+" Buffer Switching
+nnoremap <TAB> <CMD>bnext<CR>
+nnoremap <S-TAB> <CMD>bprevious<CR>
 
 " NvimTree
 nnoremap <leader>n <CMD>NvimTreeToggle<CR>
@@ -230,10 +234,6 @@ vnoremap K <CMD>STSSwapPrevVisual<CR>
 
 " Symbols Outline
 nnoremap <leader>o <CMD>SymbolsOutline<CR>
-
-" Comment
-nnoremap <BS> <CMD>lua require('Comment.api').toggle_current_linewise()<CR>j
-vnoremap <leader><BS> <ESC>gv<CMD>lua require('Comment.api').toggle_blockwise_op(vim.fn.visualmode())<CR>
 
 " Toggle lsp lines diagnostics
 nnoremap <leader>a <CMD>lua require('lsp_lines_conf').toggle_inline_text()<CR>
