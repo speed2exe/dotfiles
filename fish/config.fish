@@ -71,4 +71,4 @@ test -f ~/.init.fish && source ~/.init.fish
 # keybindings to insert into current line
 bind --mode insert \cf 'commandline --append (f) && commandline --function repaint-mode'
 bind --mode insert \ct 'commandline --append (t) && commandline --function repaint-mode'
-bind --mode insert \ch 'commandline --append (h) && commandline --function repaint-mode'
+bind --mode insert \ch 'commandline --insert (h) && commandline --function repaint-mode'
