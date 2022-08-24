@@ -69,6 +69,6 @@ bind \cq 'q'
 test -f ~/.init.fish && source ~/.init.fish
 
 # keybindings to insert into current line
-bind --mode insert \cf 'commandline --insert (f) && commandline --function repaint'
-bind --mode insert \ct 'commandline --insert (t) && commandline --function repaint'
-bind --mode insert \ch 'commandline --insert (h) && commandline --function repaint'
+bind --mode insert \cf 'commandline --insert (f) && commandline --function repaint-mode'
+bind --mode insert \ct 'commandline --insert (t) && commandline --function repaint-mode'
+bind --mode insert \ch 'commandline --insert (h) && commandline --function repaint-mode'
