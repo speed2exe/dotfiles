@@ -1,3 +1,3 @@
 function t
-    cd (navigate)
+    cd (navigate $argv)
 end
