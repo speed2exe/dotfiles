@@ -1,3 +1,3 @@
 function fr
-    fzf -i --layout reverse $argv
+    fzf --layout reverse --height 50% $argv
 end
