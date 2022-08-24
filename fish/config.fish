@@ -72,3 +72,6 @@ test -f ~/.init.fish && source ~/.init.fish
 bind --mode insert \cf 'commandline --insert (f) && commandline --function repaint-mode'
 bind --mode insert \ct 'commandline --insert (t) && commandline --function repaint-mode'
 bind --mode insert \ch 'commandline --insert (h) && commandline --function repaint-mode'
+
+# keybinding to edit file under cursor
+bind --mode default \ce 'e'
