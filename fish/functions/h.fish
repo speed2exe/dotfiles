@@ -1,3 +1,3 @@
 function h
-    set cmd (history | fr) && eval "$cmd"
+    history | fr --no-sort
 end

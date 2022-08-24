@@ -1,3 +1,3 @@
 function n
-    set dir (cat ~/marks/dir_history.txt | fpr) && cd "$dir"
+    cat ~/marks/dir_history.txt | fpr
 end
