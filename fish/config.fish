@@ -69,7 +69,7 @@ bind \cq 'q'
 test -f ~/.init.fish && source ~/.init.fish
 
 # keybindings to insert into current line
-bind --mode insert \cs 'bind_ctrl_s'
+bind --mode insert \cf 'bind_ctrl_f'
 bind --mode insert \ch 'bind_ctrl_h'
 bind --mode insert \cn 'bind_ctrl_n'
 bind --mode insert \ct 'bind_ctrl_t'
