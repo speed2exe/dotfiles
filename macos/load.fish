@@ -5,7 +5,7 @@ rm -f ~/.config/starship.toml && cp ~/dotfiles/starship.toml ~/.config/starship.
 
 # fish
 rm -rf ~/.config/fish/ && cp -r ~/dotfiles/fish/ ~/.config/fish/
-cat ~/dotfiles/macos/pre_config.fish ~/dotfiles/fish/config.fish > ~/.config/fish/config.fish
+/bin/cat ~/dotfiles/macos/pre_config.fish ~/dotfiles/fish/config.fish > ~/.config/fish/config.fish
 
 # neovim
 rm -rf ~/.config/nvim/ && cp -r ~/dotfiles/nvim/ ~/.config/nvim/
