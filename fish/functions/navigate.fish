@@ -13,9 +13,9 @@ function navigate
     set selection "$path[2]"
 
     if test (string match "*.." "$input") # user inputs ".."
-        t "$input"
+        navigate "$input"
     else if test -d "$selection"
-        t "$selection"
+        navigate "$selection"
     else if test -f "$selection"
         printf "$selection"
     else
