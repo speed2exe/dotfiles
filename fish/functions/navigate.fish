@@ -1,4 +1,4 @@
-function t
+function navigate
     if test -z "$argv"
         set argv "."
     else if not test -d "$argv"
