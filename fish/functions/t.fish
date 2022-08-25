@@ -1,3 +1,4 @@
 function t
-    cd (navigate $argv)
+    set path (navigate $argv)
+    test -f $path && v $path
 end
