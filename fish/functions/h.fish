@@ -1,3 +1,3 @@
 function h
-    history | fr
+    set cmd (history | fr) && $cmd
 end
