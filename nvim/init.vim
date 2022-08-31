@@ -24,5 +24,4 @@ lua << EOF
     require('settings')
 EOF
 
-" TODO: create function in lua to toggle highlight
 " TODO: map key to function in lua

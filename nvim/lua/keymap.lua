@@ -1,6 +1,7 @@
 local vim = vim
-
 local set = vim.keymap.set
+local fn = require'function'
+local lsp_lines_conf = require'lsp_lines_conf'
 
 vim.g.mapleader = ' ';
 
@@ -115,7 +116,8 @@ set('i', '<C-K>', '<ESC>:m .-2<CR>a')
 
 -- toggle search highlight
 -- set('n', '<expr>', '<leader>h (&hls && v:hlsearch ? \':set nohlsearch\' : \':set hlsearch\')."\n"')
-set('n', '<leader>h', function() vim.opt.hlsearch = not vim.opt.hlsearch:get() end)
+-- set('n', '<leader>h', function() vim.opt.hlsearch = not vim.opt.hlsearch:get() end)
+set('n', '<leader>h', fn.toggle_hlsearch)
 
 -- Indent
 set('v', ',', '<gv')
@@ -168,7 +170,7 @@ set('n', '_', '<CMD>resize -10<CR>')
 -- Add location list here if i ever use it
 set('n', '{', '<CMD>cprev<CR>')
 set('n', '}', '<CMD>cnext<CR>')
-set('n', '<leader>q', '<CMD>lua require(\'function\').toggle_quick_fix_list()<CR>')
+set('n', '<leader>q', fn.toggle_quick_fix_list)
 
 -- Telescope
 set('n', '<leader>t', '<CMD>Telescope<CR>')
@@ -220,16 +222,15 @@ set('v', 'K', '<CMD>STSSwapPrevVisual<CR>')
 set('n', '<leader>o', '<CMD>SymbolsOutline<CR>')
 
 -- Toggle lsp lines diagnostics
-set('n', '<leader>a', '<CMD>lua require(\'lsp_lines_conf\').toggle_inline_text()<CR>')
+set('n', '<leader>a', lsp_lines_conf.toggle_inline_text)
 
 -- Custom Personal Mapping
-set('n', 'gn', '<CMD>lua vim.lsp.buf.rename()<CR>')
-set('n', 'gf', '<CMD>lua vim.lsp.buf.formatting()<CR>')
-set('n', 'gd', '<CMD>lua vim.lsp.buf.definition()<CR>')
-set('n', 'gi', '<CMD>lua vim.lsp.buf.implementation()<CR>')
-set('n', 'gr', '<CMD>lua vim.lsp.buf.references()<CR>')
-set('n', 'gh', '<CMD>lua vim.lsp.buf.hover()<CR>')
-set('n', 'ga', '<CMD>lua vim.lsp.buf.code_action()<CR>')
-set('n', 'gt', '<CMD>lua vim.lsp.buf.type_definition()<CR>')
--- TODO: add more if needed, shouldn't need more
-
+-- Add more if needed, but shouldn't need more
+set('n', 'gn', vim.lsp.buf.rename)
+set('n', 'gf', vim.lsp.buf.formatting)
+set('n', 'gd', vim.lsp.buf.definition)
+set('n', 'gi', vim.lsp.buf.implementation)
+set('n', 'gr', vim.lsp.buf.references)
+set('n', 'gh', vim.lsp.buf.hover)
+set('n', 'ga', vim.lsp.buf.code_action)
+set('n', 'gt', vim.lsp.buf.type_definition)
