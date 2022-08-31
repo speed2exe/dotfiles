@@ -114,7 +114,8 @@ set('i', '<C-J>', '<ESC>:m .+1<CR>a')
 set('i', '<C-K>', '<ESC>:m .-2<CR>a')
 
 -- toggle search highlight
-set('n', '<expr>', '<leader>h (&hls && v:hlsearch ? \':set nohlsearch\' : \':set hlsearch\')."\n"')
+-- set('n', '<expr>', '<leader>h (&hls && v:hlsearch ? \':set nohlsearch\' : \':set hlsearch\')."\n"')
+set('n', '<leader>h', function() vim.opt.hlsearch = not vim.opt.hlsearch:get() end)
 
 -- Indent
 set('v', ',', '<gv')
@@ -234,3 +235,5 @@ set('n', 'gt', '<CMD>lua vim.lsp.buf.type_definition()<CR>')
 
 -- Github copilot stuff
 vim.g.copilot_no_tab_map = true
+
+
