@@ -1,5 +1,7 @@
-local M = {}
+-- module store custom created functions
 
+local M = {}
+local vim = vim
 M.toggle_quick_fix_list = function()
     local qf_exists = false
     for _, win in pairs(vim.fn.getwininfo()) do
@@ -14,6 +16,10 @@ M.toggle_quick_fix_list = function()
     if not vim.tbl_isempty(vim.fn.getqflist()) then
         vim.cmd "copen"
     end
+end
+
+M.toggle_hlsearch = function()
+    vim.opt.hlsearch = not vim.opt.hlsearch:get()
 end
 
 return M
