@@ -1,4 +1,5 @@
 local opt = vim.opt
+local cmd = vim.cmd
 
 opt.shell = '/usr/sbin/fish'
 opt.clipboard:prepend{'unnamed', 'unnamedplus'}
@@ -24,3 +25,6 @@ opt.splitbelow = true
 opt.splitright = true
 opt.wildmode = {'longest:full', 'full'}
 opt.lazyredraw = true
+
+-- crisp split
+cmd [[highlight WinSeparator guibg=None]]
