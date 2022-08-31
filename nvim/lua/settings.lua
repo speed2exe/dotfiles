@@ -1,5 +1,6 @@
 local opt = vim.opt
 local cmd = vim.cmd
+local g = vim.g
 
 opt.shell = '/usr/sbin/fish'
 opt.clipboard:prepend{'unnamed', 'unnamedplus'}
@@ -28,3 +29,11 @@ opt.lazyredraw = true
 
 -- crisp split
 cmd [[highlight WinSeparator guibg=None]]
+
+-- Github copilot stuff
+g.copilot_no_tab_map = true
+
+-- neovide stuff
+opt.guifont = 'iosevka2:h12'
+g.neovide_cursor_antialiasing = true
+g.neovide_transparency =0.5
