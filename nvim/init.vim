@@ -21,7 +21,6 @@ highlight Comment cterm=italic gui=italic
 " in process of migration to lua files
 lua << EOF
     require('keymap')
-    require('neovide')
     require('settings')
 EOF
 
