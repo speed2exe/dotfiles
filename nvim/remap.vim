@@ -169,7 +169,7 @@ nnoremap } <CMD>cnext<CR>
 nnoremap <leader>q <CMD>lua require('function').toggle_quick_fix_list()<CR>
 
 " Telescope
-nnoremap <leader>t :Telescope 
+nnoremap <leader>t <CMD>Telescope<CR>
 nnoremap <leader>tg <CMD>Telescope grep_string<CR>
 nnoremap <leader>tj <CMD>Telescope jumplist<CR>
 nnoremap <leader>tk <CMD>Telescope keymaps<CR>
@@ -177,30 +177,12 @@ nnoremap <leader>td <CMD>Telescope diagnostics<CR>
 nnoremap <leader>ta <CMD>Telescope lsp_document_symbols<CR>
 nnoremap <leader>te <CMD>Telescope lsp_dynamic_workspace_symbols<CR>
 " find files, find buffer and find text
-nnoremap <leader><TAB> <CMD>Telescope buffers<CR>
-nnoremap <leader><BS> <CMD>Telescope find_files<CR>
-nnoremap <leader><ESC> <CMD>Telescope live_grep<CR>
-
-" Buffer Switching
-nnoremap <TAB> <CMD>bnext<CR>
-nnoremap <S-TAB> <CMD>bprevious<CR>
+nnoremap <TAB> <CMD>Telescope buffers<CR>
+nnoremap <S-TAB> <CMD>Telescope find_files<CR>
+nnoremap <BS> <CMD>Telescope live_grep<CR>
 
 " NvimTree
 nnoremap <leader>n <CMD>NvimTreeToggle<CR>
-
-" Lspsaga
-" nnoremap <leader>sf <CMD>lua require'lspsaga.finder'.lsp_finder()<CR>
-" nnoremap <leader>sh <CMD>lua require'lspsaga.hover'.render_hover_doc()<CR>
-" nnoremap <leader>sa <CMD>lua require'lspsaga.codeaction'.code_action()<CR>
-" vnoremap <leader>sa <CMD>lua require'lspsaga.codeaction'.range_code_action()<CR>
-" nnoremap <leader>ss <CMD>lua require'lspsaga.signaturehelp'.signature_help()<CR>
-" nnoremap <leader>sr <CMD>lua require'lspsaga.rename'.lsp_rename()<CR>
-" nnoremap <leader>sd <CMD>lua require'lspsaga.definition'.preview_definition()<CR>
-" nnoremap <leader>sl <CMD>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>
-" nnoremap <leader>sk <CMD>lua require'lspsaga.diagnostic'.goto_prev()<CR>
-" nnoremap <leader>sj <CMD>lua require'lspsaga.diagnostic'.goto_next()<CR>
-" nnoremap <leader>sd <CMD>lua require'lspsaga.action'.smart_scroll_with_saga(1)<CR>
-" nnoremap <leader>su <CMD>lua require'lspsaga.action'.smart_scroll_with_saga(-1)<CR>
 
 " debug adapter protocol
 nnoremap <leader>db <CMD>lua require('dap').toggle_breakpoint()<CR>

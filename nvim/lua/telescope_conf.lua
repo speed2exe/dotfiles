@@ -2,8 +2,7 @@ local actions = require("telescope.actions")
 require('telescope').setup {
     defaults = {
         mappings = {
-            i = { ["<TAB>"] = actions.close },
-            n = { ["<TAB>"] = actions.close },
+            i = { ["<ESC>"] = actions.close },
         },
         border = false,
         prompt_prefix = "",
