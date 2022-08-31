@@ -2,10 +2,7 @@ let mapleader = " "
 
 " Remove all empty lines within a range
 " https://linuxize.com/post/vim-delete-line
-vnoremap <leader>d :g/^\s*$/d<CR>
-
-" Show Cursor
-" nnoremap <ESC> <CMD>set cursorline!<Bar>set cursorcolumn!<CR>
+vnoremap <leader>d <CMD>g/^\s*$/d<CR>
 
 " Auto braces after return
 inoremap {<CR> {<CR>}<ESC>O
