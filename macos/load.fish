@@ -9,7 +9,6 @@ rm -rf ~/.config/fish/ && cp -r ~/dotfiles/fish/ ~/.config/fish/
 
 # neovim
 rm -rf ~/.config/nvim/ && cp -r ~/dotfiles/nvim/ ~/.config/nvim/
-sed -i -e 's/set\ shell=\/usr\/sbin\/fish/set\ shell=\/opt\/homebrew\/bin\/fish/' ~/.config/nvim/setttings.vim
 
 # alacritty
 # https://github.com/alacritty/alacritty/issues/1359
@@ -33,4 +32,4 @@ sed -i -e 's/xdg\-open/open/g' ~/.config/alacritty/alacritty.yml
 sed -i -e 's/\/bin\/fish/\/opt\/homebrew\/bin\/fish/g' ~/.config/alacritty/alacritty.yml
 sed -i -e 's/12.0/16.0/g' ~/.config/alacritty/alacritty.yml
 
-cp ~/dotfiles/macos/neovide.vim ~/.config/nvim/neovide.vim
+sed -i -e 's/iosevka2:h12/Iosevka\ Nerd\ Font:h16/g' ~/.config/nvim/lua/settings.lua
