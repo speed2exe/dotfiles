@@ -51,7 +51,7 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'farmergreg/vim-lastplace'
 
 " fzf search
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " https://draculatheme.com/vim
 Plug 'dracula/vim', {'as': 'dracula'}
@@ -120,10 +120,9 @@ call plug#end()
 
 lua << EOF
     -- configured setup
-    require('nvim-web-devicons')            -- ~/.config/nvim/lua/nvim-web-devicons_conf.lua
-    require('nvim-tree_conf')               -- ~/.config/nvim/lua/nvim-tree_conf.lua
     require('lualine_conf')                 -- ~/.config/nvim/lua/lualine_conf.lua
     require('nvim-web-devicons')            -- ~/.config/nvim/lua/nvim-web-devicons_conf.lua
+    require('nvim-tree_conf')               -- ~/.config/nvim/lua/nvim-tree_conf.lua
     require('telescope_conf')               -- ~/.config/nvim/lua/telescope_conf.lua
     require('treesitter_conf')              -- ~/.config/nvim/lua/treesitter_conf.lua
     require('treesitter-refactor_conf')     -- ~/.config/nvim/lua/treesitter-refactor_conf.lua
@@ -133,10 +132,10 @@ lua << EOF
     require('project_conf')                 -- ~/.config/nvim/lua/project_conf.lua
     require('nvim-ts-rainbow_conf')         -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
     require('indent-blankline_conf')        -- ~/.config/nvim/lua/indent-blankline_conf.lua
-    require('treesitter-refactor_conf')     -- ~/.config/nvim/lua/treesitter-refactor_conf.lua
     require('symbols-outline_conf')         -- ~/.config/nvim/lua/symbols-outline_conf.lua
     require('lsp_lines_conf')               -- ~/.config/nvim/lua/lsp_lines_conf.lua
     require('neoscroll_conf')               -- ~/.config/nvim/lua/neoscroll_conf.lua
+
     -- require('dapinstall_conf')              -- ~/.config/nvim/lua/dapinstall_conf.lua
 
     -- default setup
@@ -145,6 +144,7 @@ lua << EOF
     require('gitsigns').setup{}
     require('syntax-tree-surfer').setup{}
     require('scrollbar').setup{}
+
     require('scrollbar.handlers.search').setup{}
     require('mason').setup{}
     require('mason-lspconfig').setup{}
