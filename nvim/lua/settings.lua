@@ -2,7 +2,6 @@ local opt = vim.opt
 local cmd = vim.cmd
 local g = vim.g
 
-opt.shell = '/usr/sbin/fish'
 opt.clipboard:prepend{'unnamed', 'unnamedplus'}
 opt.termguicolors = true
 opt.showmode = false
