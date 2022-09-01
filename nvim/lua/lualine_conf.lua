@@ -25,7 +25,7 @@ require('lualine').setup {
         lualine_b = { 'branch', 'diff', { 'diagnostics', sources = {'nvim_diagnostic'} }, },
         lualine_c = { 'filename', { navic.get_location, cond = navic.is_available } },
         lualine_x = { { get_lsp_status, cond = condition }, 'filetype' },
-        lualine_y = { 'progress' },
+        lualine_y = { 'progress' }, -- TODO: change to something else aside from percentage
         lualine_z = { 'location' }
     },
     tabline = {},
