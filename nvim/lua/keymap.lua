@@ -18,6 +18,9 @@ set('i', '<<CR>', '<<CR>><ESC>O')
 -- Keep cursor position after copy
 set('v', 'y', 'ygv<ESC>')
 
+-- Don't select the new line
+set('v', '$', '$h')
+
 -- Search highlighted
 set('v', '*', 'y/<C-R>"<CR>gn')
 set('v', '#', 'y?<C-R>"<CR>gn')

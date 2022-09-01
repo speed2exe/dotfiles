@@ -1,4 +1,4 @@
-source ~/.config/nvim/plugins.vim
+" source ~/.config/nvim/plugins.vim
 " source ~/.config/nvim/setttings.vim
 " source ~/.config/nvim/remap.vim
 " source ~/.config/nvim/neovide.vim
@@ -18,10 +18,18 @@ autocmd FileType help wincmd L
 " Comments in italic
 highlight Comment cterm=italic gui=italic
 
+augroup packer_user_config
+  autocmd!
+  autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+augroup end
+
 " in process of migration to lua files
 lua << EOF
+    require('plugins')
     require('keymap')
     require('settings')
-EOF
 
-" TODO: map key to function in lua
+    -- custom stuff
+    require('last_used')
+    require('nvim-lspconfig_setup')
+EOF

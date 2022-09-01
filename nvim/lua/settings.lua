@@ -25,9 +25,17 @@ opt.splitbelow = true
 opt.splitright = true
 opt.wildmode = {'longest:full', 'full'}
 opt.lazyredraw = true
+opt.timeoutlen = 1000 -- affects CursorHold autocmd
 
--- crisp split
-cmd [[highlight WinSeparator guibg=None]]
+-- TODO:
+-- commands that cannot be represented in neovim
+-- hopefully pure lua equivalent of the following commands
+-- can be implemented in neovim in the future
+cmd [[
+    highlight WinSeparator guibg=None
+    colorscheme dracula
+    highlight Comment cterm=italic gui=italic
+]]
 
 -- Github copilot stuff
 g.copilot_no_tab_map = true
