@@ -1,3 +1,3 @@
 function n
-    cd (cat ~/marks/dir_history.txt | fpr)
+    cat ~/marks/dir_history.txt | fpr | cd
 end
