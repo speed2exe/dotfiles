@@ -45,8 +45,7 @@ return require('packer').startup({function(use)
     }}
 
     -- Auto save
-    -- TODO: change to main branch when it gets stable
-    use { 'Pocco81/AutoSave.nvim', config = require('auto-save').setup() }
+    use { 'Pocco81/auto-save.nvim', config = require('auto-save').setup() }
 
     -- Project management
     -- TODO: maybe there's a better nvim version out there
