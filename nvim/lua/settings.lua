@@ -35,6 +35,7 @@ cmd [[
     highlight WinSeparator guibg=None
     colorscheme dracula
     highlight Comment cterm=italic gui=italic
+    highlight Normal guibg=NONE ctermbg=NONE
 ]]
 
 -- Github copilot stuff

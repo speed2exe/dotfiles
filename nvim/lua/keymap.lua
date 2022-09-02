@@ -2,6 +2,7 @@ local vim = vim
 local set = vim.keymap.set
 local fn = require'function'
 local lsp_lines_conf = require'lsp_lines_conf'
+local autosave = require'auto-save'
 
 vim.g.mapleader = ' ';
 
@@ -226,6 +227,9 @@ set('n', '<leader>o', '<CMD>SymbolsOutline<CR>')
 
 -- Toggle lsp lines diagnostics
 set('n', '<leader>a', lsp_lines_conf.toggle_inline_text)
+
+-- Toggle auto-save
+set('n', '<C-S>', autosave.toggle)
 
 -- Custom Personal Mapping
 -- Add more if needed, but shouldn't need more
