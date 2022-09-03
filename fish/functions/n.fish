@@ -1,3 +1,4 @@
 function n
-    set dir (cat ~/marks/dir_history.txt /tmp/dir_history | fpr) && cd $dir
+    set dir (tac /tmp/dir_history ~/marks/dir_history.txt | awk '!x[$0]++' | tail -n +2 | fpr) \
+        && cd $dir
 end
