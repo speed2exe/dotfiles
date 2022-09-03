@@ -25,7 +25,7 @@ opt.splitbelow = true
 opt.splitright = true
 opt.wildmode = {'longest:full', 'full'}
 opt.lazyredraw = true
-opt.timeoutlen = 1000 -- affects CursorHold autocmd
+opt.timeoutlen = 1000
 
 -- TODO:
 -- commands that cannot be represented in neovim
