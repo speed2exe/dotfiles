@@ -1,6 +1,6 @@
 function cd
     set prev_git (git rev-parse --show-toplevel 2> /dev/null)
-    builtin cd "$argv"
+    builtin cd $argv || return
     set cur_git (git rev-parse --show-toplevel 2> /dev/null)
     set cur_path "$PWD/"
 
