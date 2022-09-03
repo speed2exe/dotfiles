@@ -1,7 +1,7 @@
-" source ~/.config/nvim/plugins.vim
-" source ~/.config/nvim/setttings.vim
-" source ~/.config/nvim/remap.vim
-" source ~/.config/nvim/neovide.vim
+source ~/.config/nvim/plugins.vim
+source ~/.config/nvim/setttings.vim
+source ~/.config/nvim/remap.vim
+source ~/.config/nvim/neovide.vim
 
 " https://www.reddit.com/r/vim/comments/jcecyb/vims_background_turns_opaque_in_new_windows/
 autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE " transparent bg
@@ -22,14 +22,3 @@ augroup packer_user_config
   autocmd!
   autocmd BufWritePost plugins.lua source <afile> | PackerCompile
 augroup end
-
-" in process of migration to lua files
-lua << EOF
-    require('plugins')
-    require('keymap')
-    require('settings')
-
-    -- custom stuff
-    require('last_used')
-    require('nvim-lspconfig_setup')
-EOF
