@@ -16,13 +16,17 @@ return require('packer').startup({function(use)
     use 'github/copilot.vim'
 
     -- Display better lsp diagnostics with virtual lines below
-    use { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim', config = require('lsp_lines_conf') }
+    use { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim', config = function()
+        require('lsp_lines_conf')
+    end}
 
     -- Highlight assistance for search result
     use 'kevinhwang91/nvim-hlslens'
 
     -- Smooth Scrolling
-    use { 'karb94/neoscroll.nvim', config = require('neoscroll').setup() }
+    use { 'karb94/neoscroll.nvim', config = function()
+        require('neoscroll').setup()
+    end}
 
     -- camelCase and snake_case handling
     use 'chaoren/vim-wordmotion'
@@ -32,27 +36,33 @@ return require('packer').startup({function(use)
     use 'tpope/vim-fugitive'
 
     -- lsp-kind
-    use { 'onsails/lspkind-nvim', config = require('lspkind') }
+    use 'onsails/lspkind-nvim'
 
     -- Debugger Adapter Protocol
     -- use 'mfussenegger/nvim-dap'
     -- use 'Pocco81/DAPInstall.nvim'
 
     -- Fancy Scroll Bar
-    use { 'petertriho/nvim-scrollbar', config = {
-        require('scrollbar').setup(),
-        require('scrollbar.handlers.search').setup(),
-    }}
+    use { 'petertriho/nvim-scrollbar', config = function()
+        require('scrollbar').setup()
+        require('scrollbar.handlers.search').setup()
+    end}
 
     -- Auto save
-    use { 'Pocco81/auto-save.nvim', config = require('auto-save').setup() }
+    use { 'Pocco81/auto-save.nvim', config = function()
+        require('auto-save').setup()
+    end}
 
     -- Project management
     -- TODO: maybe there's a better nvim version out there
-    use { 'ahmedkhalf/project.nvim', config = require('project_conf') }
+    use { 'ahmedkhalf/project.nvim', config = function()
+        require('project_conf')
+    end}
 
     -- Indent guide lines
-    use { 'lukas-reineke/indent-blankline.nvim', config = require('indent-blankline_conf') }
+    use { 'lukas-reineke/indent-blankline.nvim', config = function()
+        require('indent-blankline_conf')
+    end}
 
     -- go to last cursor position
     -- TODO: write your own
@@ -62,44 +72,63 @@ return require('packer').startup({function(use)
     use 'dracula/vim'
 
     -- https://github.com/lewis6991/gitsigns.nvim
-    use { 'lewis6991/gitsigns.nvim', config = require('gitsigns').setup() }
+    use { 'lewis6991/gitsigns.nvim', config = function()
+        require('gitsigns').setup()
+    end}
 
     -- https://github.com/SmiteshP/nvim-navic
     use 'SmiteshP/nvim-navic'
 
     -- lualine
-    use { 'nvim-lualine/lualine.nvim', config = require('lualine_conf') }
+    use { 'nvim-lualine/lualine.nvim', config = function()
+        require('lualine_conf')
+    end}
 
     -- dev icons
     use { 'kyazdani42/nvim-web-devicons' }
     -- use 'ryanoasis/vim-devicons'
 
-    -- lsp-kind
-    use 'onsails/lspkind-nvim'
-
     -- Telescope stuff
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
-    use { 'nvim-telescope/telescope.nvim', config = require('telescope_conf') }
+    use { 'nvim-telescope/telescope.nvim', config = function()
+        require('telescope_conf')
+    end}
     use 'nvim-telescope/telescope-fzy-native.nvim'
 
-    use {'williamboman/mason.nvim', config = require('mason').setup() }
-    use { 'williamboman/mason-lspconfig.nvim', config = require('mason-lspconfig').setup() }
+    use { 'williamboman/mason.nvim', config = function()
+        require('mason').setup()
+    end}
+    use { 'williamboman/mason-lspconfig.nvim', config = function()
+        require('mason-lspconfig').setup()
+    end}
     use 'neovim/nvim-lspconfig'
 
     -- Live status update for LSP
     use 'nvim-lua/lsp-status.nvim'
 
     -- TreeSitter stuff
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = require('treesitter_conf') }
-    use { 'nvim-treesitter/nvim-treesitter-refactor', config = require('treesitter-refactor_conf') }
-    use { 'p00f/nvim-ts-rainbow', config = require('nvim-ts-rainbow_conf') }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function()
+        require('treesitter_conf')
+    end}
+    use { 'nvim-treesitter/nvim-treesitter-refactor', config = function()
+        require('treesitter-refactor_conf')
+    end}
+    use { 'p00f/nvim-ts-rainbow', config = function()
+        require('nvim-ts-rainbow_conf')
+    end}
     use 'nvim-treesitter/playground'
-    use { 'simrat39/symbols-outline.nvim', config = require("symbols-outline").setup() }
-    use { 'ziontee113/syntax-tree-surfer' , config = require('syntax-tree-surfer').setup() }
+    use { 'simrat39/symbols-outline.nvim', config = function()
+        require("symbols-outline").setup()
+    end}
+    use { 'ziontee113/syntax-tree-surfer' , config = function()
+        require('syntax-tree-surfer').setup()
+    end}
 
     -- Nvim-cmp
-    use { 'hrsh7th/nvim-cmp', config = require('nvim-cmp_conf') }
+    use { 'hrsh7th/nvim-cmp', config = function()
+        require('nvim-cmp_conf')
+    end}
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
     use 'hrsh7th/cmp-nvim-lsp-document-symbol'
@@ -112,13 +141,14 @@ return require('packer').startup({function(use)
     use 'ray-x/cmp-treesitter'
     use 'hrsh7th/cmp-copilot'
 
-    -- Snippets
-    use { 'dcampos/nvim-snippy', config = require('snippy').setup }
+    use 'dcampos/nvim-snippy'
     use 'honza/vim-snippets'
     use 'dcampos/cmp-snippy'
 
     -- File Tree
-    use { 'kyazdani42/nvim-tree.lua', config = require('nvim-tree_conf') }
+    use { 'kyazdani42/nvim-tree.lua', config = function()
+        require('nvim-tree_conf')
+    end}
 
     if packer_bootstrap then
         require('packer').sync()
