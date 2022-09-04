@@ -32,10 +32,10 @@ opt.timeoutlen = 1000
 -- hopefully pure lua equivalent of the following commands
 -- can be implemented in neovim in the future
 cmd [[
-    highlight WinSeparator guibg=None
     colorscheme dracula
     highlight Comment cterm=italic gui=italic
     highlight Normal guibg=NONE ctermbg=NONE
+    highlight WinSeparator guibg=None
 ]]
 
 -- Github copilot stuff
