@@ -129,8 +129,6 @@ set('v', ',', '<gv')
 set('v', '.', '>gv')
 set('n', '<<', '<<^')
 set('n', '>>', '>>$')
-set('i', '<C-N>', '<ESC><<I')
-set('i', '<C-T>', '<ESC>>>A')
 set('n', '<leader>i', 'jgg=G<C-O>k')
 
 -- repeat last command
@@ -193,7 +191,7 @@ set('n', '<BS>', '<CMD>Telescope find_files<CR>')
 set('n', '<leader><leader>', '<CMD>Telescope live_grep<CR>')
 
 -- NvimTree
-set('n', '<leader>n', '<CMD>NvimTreeFindFileToggle<CR>')
+set('n', '<C-N>', '<CMD>NvimTreeFindFileToggle<CR>')
 
 -- debug adapter protocol
 -- nnoremap <leader>db <CMD>lua require('dap').toggle_breakpoint()<CR>
