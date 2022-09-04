@@ -62,8 +62,7 @@ set('v', 'Q', '<CMD>\'<,\'>normal @q<CR>')
 set('n', 'M', '`m')
 
 -- quick quit window
-set('n', '<C-Q>', '<CMD>q!<CR>')
-set('i', '<C-Q>', '<CMD>q!<CR>')
+set('n', '<C-C>', '<CMD>q!<CR>')
 
 -- quick fold
 set('v', '<leader>z', ':fold<CR>')
@@ -176,7 +175,7 @@ set('n', '_', '<CMD>resize -10<CR>')
 -- Add location list here if i ever use it
 set('n', '{', '<CMD>cprev<CR>')
 set('n', '}', '<CMD>cnext<CR>')
-set('n', '<leader>q', fn.toggle_quick_fix_list)
+set('n', '<C-Q>', fn.toggle_quick_fix_list)
 
 -- Telescope
 set('n', '<leader>t', '<CMD>Telescope<CR>')
@@ -187,10 +186,12 @@ set('n', '<leader>th', '<CMD>Telescope help_tags<CR>')
 set('n', '<leader>td', '<CMD>Telescope diagnostics<CR>')
 set('n', '<leader>ta', '<CMD>Telescope lsp_document_symbols<CR>')
 set('n', '<leader>te', '<CMD>Telescope lsp_dynamic_workspace_symbols<CR>')
--- find files, find buffer and find text
+-- Non conforming Telescope keymap to the rest of the keybindings
+set('n', '<leader>q', '<CMD>Telescope quickfix<CR>')
 set('n', '<TAB>', '<CMD>Telescope oldfiles<CR>')
-set('n', '<S-TAB>', '<CMD>Telescope find_files<CR>')
-set('n', '<BS>', '<CMD>Telescope live_grep<CR>')
+set('n', '<BS>', '<CMD>Telescope find_files<CR>')
+set('n', '<leader><leader>', '<CMD>Telescope live_grep<CR>')
+
 
 -- NvimTree
 set('n', '<leader>n', '<CMD>NvimTreeToggle<CR>')
@@ -208,9 +209,9 @@ set('n', '<leader>n', '<CMD>NvimTreeToggle<CR>')
 -- nnoremap <leader>d<CR> <CMD>lua require('dap').continue()<CR>
 -- nnoremap <leader>d<TAB> <CMD>lua require('dap').repl.toggle()<CR>
 
--- terminal access
-set('n', '<leader><leader>', 'o<ESC>:.!')
-set('v', '<leader><leader>', 'c<CR><CR><UP><ESC>:.!<C-R>"<CR>k')
+-- command line execution
+set('n', '!', 'o<ESC>:.!')
+set('v', '!', 'c<CR><CR><UP><ESC>:.!<C-R>"<CR>k')
 
 -- Syntax Tree Navigation
 -- from normal mode
