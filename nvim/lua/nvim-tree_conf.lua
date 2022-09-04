@@ -1,4 +1,6 @@
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+
+-- TODO: Add telescope stuff here
 local list = {
 	{ key = {"<CR>"},                       cb = tree_cb("edit") },
 	{ key = {"."},                          cb = tree_cb("cd") },
@@ -30,7 +32,7 @@ local list = {
 	{ key = ")",                            cb = tree_cb("next_git_item") },
 	{ key = ",",                            cb = tree_cb("dir_up") },
 	{ key = "s",                            cb = tree_cb("system_open") },
-	{ key = "q",                            cb = tree_cb("close") },
+	{ key = "<leader>n",                    cb = tree_cb("close") },
 	{ key = "H",                            cb = tree_cb("toggle_help") },
 }
 
