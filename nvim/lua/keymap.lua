@@ -1,8 +1,8 @@
 local vim = vim
 local set = vim.keymap.set
-local fn = require'function'
-local lsp_lines_conf = require'lsp_lines_conf'
-local autosave = require'auto-save'
+local fn = require 'function'
+local lsp_lines_conf = require 'lsp_lines_conf'
+local autosave = require 'auto-save'
 
 vim.g.mapleader = ' ';
 
@@ -107,7 +107,8 @@ set('n', 'v%', 'gg^vG$')
 set('n', 'y%', '<CMD>:%y+<CR>')
 -- copy current file path and line number to ~/marks/files.txt
 -- TODO: currently not working, fix it
-set('n', '<leader>m', '<CMD>redir @m<CR><CMD>echo expand(\'%:p\') . \':\' . line(".")<CR><CMD>redir END<CR>:!m<C-R>m<CR><CR>')
+set('n', '<leader>m',
+    '<CMD>redir @m<CR><CMD>echo expand(\'%:p\') . \':\' . line(".")<CR><CMD>redir END<CR>:!m<C-R>m<CR><CR>')
 -- quick access to marked files
 set('n', '<leader>g', '<CMD>e ~/marks/files.txt<CR>')
 
