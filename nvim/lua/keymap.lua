@@ -193,7 +193,7 @@ set('n', '<BS>', '<CMD>Telescope find_files<CR>')
 set('n', '<leader><leader>', '<CMD>Telescope live_grep<CR>')
 
 -- NvimTree
-set('n', '<leader>n', '<CMD>NvimTreeToggle<CR>')
+set('n', '<leader>n', '<CMD>NvimTreeFindFileToggle<CR>')
 
 -- debug adapter protocol
 -- nnoremap <leader>db <CMD>lua require('dap').toggle_breakpoint()<CR>
