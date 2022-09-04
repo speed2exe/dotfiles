@@ -3,6 +3,7 @@ local set = vim.keymap.set
 local fn = require 'function'
 local lsp_lines_conf = require 'lsp_lines_conf'
 local autosave = require 'auto-save'
+local nvim_tree = require 'nvim-tree'
 
 vim.g.mapleader = ' ';
 
@@ -191,7 +192,8 @@ set('n', '<BS>', '<CMD>Telescope find_files<CR>')
 set('n', '<leader><leader>', '<CMD>Telescope live_grep<CR>')
 
 -- NvimTree
-set('n', '<C-N>', '<CMD>NvimTreeFindFileToggle<CR>')
+set('n', '<leader>n', '<CMD>NvimTreeFindFileToggle<CR>')
+set('n', '<C-N>', nvim_tree.open_replacing_current_buffer)
 
 -- debug adapter protocol
 -- nnoremap <leader>db <CMD>lua require('dap').toggle_breakpoint()<CR>
