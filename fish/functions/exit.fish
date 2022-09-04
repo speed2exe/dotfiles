@@ -1,4 +1,4 @@
 function exit
-    cleanup
+    cleanup 2> /dev/null
     builtin exit
 end
