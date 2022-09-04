@@ -8,7 +8,7 @@ vim.g.mapleader = ' ';
 
 -- Remove all empty lines within a range
 -- https://linuxize.com/post/vim-delete-line
-set('v', '<leader>d', '<CMD>g/^$/d<CR>')
+set('v', '<leader>d', '<CMD>\'<,\'>g/^$/d<CR>')
 
 -- Auto braces after return
 set('i', '{<CR>', '{<CR>}<ESC>O')
@@ -191,7 +191,6 @@ set('n', '<leader>q', '<CMD>Telescope quickfix<CR>')
 set('n', '<TAB>', '<CMD>Telescope oldfiles<CR>')
 set('n', '<BS>', '<CMD>Telescope find_files<CR>')
 set('n', '<leader><leader>', '<CMD>Telescope live_grep<CR>')
-
 
 -- NvimTree
 set('n', '<leader>n', '<CMD>NvimTreeToggle<CR>')
