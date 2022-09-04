@@ -190,6 +190,7 @@ set('n', '<leader>te', '<CMD>Telescope lsp_dynamic_workspace_symbols<CR>')
 -- find files, find buffer and find text
 set('n', '<TAB>', '<CMD>Telescope buffers<CR>')
 set('n', '<S-TAB>', '<CMD>Telescope find_files<CR>')
+set('n', '<leader><TAB>', '<CMD>Telescope oldfiles<CR>')
 set('n', '<BS>', '<CMD>Telescope live_grep<CR>')
 
 -- NvimTree
