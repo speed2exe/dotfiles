@@ -32,7 +32,7 @@ local list = {
 	{ key = ")",                            cb = tree_cb("next_git_item") },
 	{ key = ",",                            cb = tree_cb("dir_up") },
 	{ key = "s",                            cb = tree_cb("system_open") },
-	{ key = "<leader>n",                    cb = tree_cb("close") },
+	{ key = "<C-N>",                        cb = tree_cb("close") },
 	{ key = "H",                            cb = tree_cb("toggle_help") },
 }
 
@@ -162,7 +162,7 @@ require'nvim-tree'.setup {
 			resize_window = false,
 			window_picker = {
 				enable = true,
-				chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+				chars = "123456789",
 				exclude = {
 					filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
 					buftype = { "nofile", "terminal", "help" },
