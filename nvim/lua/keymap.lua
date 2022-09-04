@@ -187,13 +187,13 @@ set('n', '<leader>ta', '<CMD>Telescope lsp_document_symbols<CR>')
 set('n', '<leader>te', '<CMD>Telescope lsp_dynamic_workspace_symbols<CR>')
 -- Non conforming Telescope keymap to the rest of the keybindings
 set('n', '<leader>q', '<CMD>Telescope quickfix<CR>')
-set('n', '<TAB>', '<CMD>Telescope oldfiles<CR>')
+set('n', '<S-TAB>', '<CMD>Telescope oldfiles<CR>')
 set('n', '<BS>', '<CMD>Telescope find_files<CR>')
 set('n', '<leader><leader>', '<CMD>Telescope live_grep<CR>')
 
 -- NvimTree
 set('n', '<leader><TAB>', '<CMD>NvimTreeFindFileToggle<CR>')
-set('n', '<S-TAB>', nvim_tree.open_replacing_current_buffer)
+set('n', '<TAB>', nvim_tree.open_replacing_current_buffer)
 
 -- debug adapter protocol
 -- nnoremap <leader>db <CMD>lua require('dap').toggle_breakpoint()<CR>
