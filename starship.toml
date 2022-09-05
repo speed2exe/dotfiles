@@ -1,9 +1,9 @@
-format = "[ ](bg:blue) $all"
+format = " $all"
+add_newline = false
 
 [character]
 success_symbol = "[ ](bg:green)"
 error_symbol = "[ ](bg:red)"
-vicmd_symbol = "[ ](bg:yellow)"
 
 [status]
 disabled = false
