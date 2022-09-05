@@ -2,12 +2,7 @@ format = " $all"
 add_newline = false
 
 [character]
-success_symbol = "[ ](bg:green)"
-error_symbol = "[ ](bg:red)"
-
-[status]
-disabled = false
-format = "[$status]($style) "
+disabled = true
 
 [git_metrics]
 disabled = false
