@@ -152,6 +152,10 @@ set('n', '<leader>X', '<CMD>new<CR>')
 set('n', '<leader>v', '<CMD>vsplit<CR>')
 set('n', '<leader>V', '<CMD>vnew<CR>')
 
+-- Terminal
+set('n', '<leader><CR>', ':edit term://fish<CR>i')
+set('t', '<ESC><ESC>', '<C-\\><C-N>')
+
 -- move between windows
 set('n', '<LEFT>', '<C-W>h')
 set('n', '<DOWN>', '<C-W>j')
