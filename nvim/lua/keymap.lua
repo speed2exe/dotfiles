@@ -158,7 +158,7 @@ set('n', '<DOWN>', '<C-W>j')
 set('n', '<UP>', '<C-W>k')
 set('n', '<RIGHT>', '<C-W>l')
 
--- windows layout
+-- swap windows and change layout
 set('n', '<S-LEFT>', '<C-W>H')
 set('n', '<S-DOWN>', '<C-W>J')
 set('n', '<S-UP>', '<C-W>K')
@@ -169,6 +169,7 @@ set('n', '+', '<CMD>vertical resize +10<CR>')
 set('n', '-', '<CMD>vertical resize -10<CR>')
 set('n', '|', '<CMD>resize +10<CR>')
 set('n', '_', '<CMD>resize -10<CR>')
+set('n', '<C-T>', '<C-W>=')
 
 -- Quick fix list
 -- Add location list here if i ever use it
