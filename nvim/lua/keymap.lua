@@ -37,8 +37,8 @@ set('v', '[', 'c[<ESC>maa<C-R>"]<ESC>mb`av`b')
 set('v', ']', 'c[<ESC>maa<C-R>"]<ESC>mb`av`b')
 set('v', '{', 'c{<ESC>maa<C-R>"}<ESC>mb`av`b')
 set('v', '}', 'c{<ESC>maa<C-R>"}<ESC>mb`av`b')
-set('v', '(', 'c(<ESC>maa<C-R>")<ESC>mb`av`b')
-set('v', ')', 'c(<ESC>maa<C-R>")<ESC>mb`av`b')
+set('v', '(', 'c(<ESC>maa<C-R>")<ESC>mb`av`b') -- TODO: affecting nav during visual mode, fix
+set('v', ')', 'c(<ESC>maa<C-R>")<ESC>mb`av`b') -- TODO: affecting nav during visual mode, fix
 set('v', '<', 'c<<ESC>maa<C-R>"><ESC>mb`av`b')
 set('v', '>', 'c<<ESC>maa<C-R>"><ESC>mb`av`b')
 
