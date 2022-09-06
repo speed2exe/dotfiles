@@ -1,7 +1,6 @@
 function fish_prompt
-    starship prompt
-
     set last_status $status
+    starship prompt
     if test $last_status -eq 0
         set_color -b green black ; printf " " ; set_color normal
     else
