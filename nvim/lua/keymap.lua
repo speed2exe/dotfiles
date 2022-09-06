@@ -167,8 +167,8 @@ set('n', '<C-T>', '<C-W>=')
 
 -- Quick fix list
 -- Add location list here if i ever use it
-set('n', '{', '<CMD>cprev<CR>')
-set('n', '}', '<CMD>cnext<CR>')
+set('n', '(', '<CMD>cprev<CR>')
+set('n', ')', '<CMD>cnext<CR>')
 set('n', '<C-Q>', fn.toggle_quick_fix_list)
 
 -- Telescope
