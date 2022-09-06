@@ -12,6 +12,6 @@ function cd
     echo $cur_path >> /tmp/dir_history
 
     # print the current directory and the items in it
-    echo; print_boxed "$cur_path"; echo; la
+    print_boxed "$cur_path"; la
     echo "$cur_path" > /tmp/.savedir
 end

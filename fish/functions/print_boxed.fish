@@ -5,5 +5,5 @@ function print_boxed
     set top "┌$dashes┐"
     set content "│ $text │"
     set bottom "└$dashes┘"
-    printf "$top\n$content\n$bottom"
+    printf "$top\n$content\n$bottom\n"
 end
