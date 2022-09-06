@@ -2,14 +2,13 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 -- TODO: Add telescope stuff here
 local list = {
-	{ key = {"<CR>"},                       cb = tree_cb("edit") },
-	{ key = {"<TAB>"},                      cb = tree_cb("edit_in_place") },
+	{ key = {"<CR>"},                      cb = tree_cb("edit_in_place") },
 	{ key = {"."},                          cb = tree_cb("cd") },
 	{ key = "<C-V>",                        cb = tree_cb("vsplit") },
 	{ key = "<C-X>",                        cb = tree_cb("split") },
 	-- { key = "<C-t>",                        cb = tree_cb("tabnew") },
-	{ key = "d",                            cb = tree_cb("next_sibling") },
-	{ key = "u",                            cb = tree_cb("prev_sibling") },
+	{ key = "<TAB>",                        cb = tree_cb("next_sibling") },
+	{ key = "<S-TAB>",                      cb = tree_cb("prev_sibling") },
 	{ key = "<BS>",                         cb = tree_cb("parent_node") },
 	-- { key = "<CR>",                         cb = tree_cb("close_node") },
 	{ key = "<SPACE>",                      cb = tree_cb("preview") },
