@@ -40,7 +40,7 @@ require'nvim-tree'.setup {
 	auto_reload_on_write = true,
 	create_in_closed_folder = false,
 	disable_netrw = true,
-	hijack_cursor = true,
+	hijack_cursor = false,
 	hijack_netrw = true,
 	hijack_unnamed_buffer_when_opening = false,
 	ignore_buffer_on_setup = false,
@@ -117,12 +117,12 @@ require'nvim-tree'.setup {
 		special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
 	},
 	hijack_directories = {
-		enable = true,
-		auto_open = true,
+		enable = false,
+		auto_open = false,
 	},
 	update_focused_file = {
-		enable = true,
-		update_cwd  = true,
+		enable = false,
+		update_cwd  = false,
 		ignore_list = {},
 	},
 	ignore_ft_on_setup   = {},
@@ -158,7 +158,7 @@ require'nvim-tree'.setup {
 			restrict_above_cwd = false;
 		},
 		open_file = {
-			quit_on_open = false,
+			quit_on_open = true,
 			resize_window = false,
 			window_picker = {
 				enable = true,
