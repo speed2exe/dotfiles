@@ -30,30 +30,22 @@ set('v', 'n', '<ESC>ngn')
 set('v', 'N', '<ESC>NNgN')
 
 -- Auto surround
-set('v', '"', 'c"<ESC>maa<C-R>""<ESC>mb`av`b')
-set('v', '\'', 'c\'<ESC>maa<C-R>"\'<ESC>mb`av`b')
-set('v', '`', 'c`<ESC>maa<C-R>"`<ESC>mb`av`b')
-set('v', '[', 'c[<ESC>maa<C-R>"]<ESC>mb`av`b')
-set('v', ']', 'c[<ESC>maa<C-R>"]<ESC>mb`av`b')
-set('v', '{', 'c{<ESC>maa<C-R>"}<ESC>mb`av`b')
-set('v', '}', 'c{<ESC>maa<C-R>"}<ESC>mb`av`b')
-set('v', '(', 'c(<ESC>maa<C-R>")<ESC>mb`av`b') -- TODO: affecting nav during visual mode, fix
-set('v', ')', 'c(<ESC>maa<C-R>")<ESC>mb`av`b') -- TODO: affecting nav during visual mode, fix
-set('v', '<', 'c<<ESC>maa<C-R>"><ESC>mb`av`b')
-set('v', '>', 'c<<ESC>maa<C-R>"><ESC>mb`av`b')
+set('v', '""', 'c"<ESC>maa<C-R>""<ESC>mb`av`b')
+set('v', '\'\'', 'c\'<ESC>maa<C-R>"\'<ESC>mb`av`b')
+set('v', '``', 'c`<ESC>maa<C-R>"`<ESC>mb`av`b')
+set('v', '[]', 'c[<ESC>maa<C-R>"]<ESC>mb`av`b')
+set('v', '{}', 'c{<ESC>maa<C-R>"}<ESC>mb`av`b')
+set('v', '()', 'c(<ESC>maa<C-R>")<ESC>mb`av`b')
+set('v', '<>', 'c<<ESC>maa<C-R>"><ESC>mb`av`b')
 
 -- Remove First and Last char Surround
-set('v', '<leader>"', 'c <ESC>maa<C-R>" <ESC>dT"x`adt"ci"<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '<leader>\'', 'c <ESC>maa<C-R>" <ESC>dT\'x`adt\'ci\'<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '<leader>`', 'c <ESC>maa<C-R>" <ESC>dT`x`adt`ci`<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '<leader>[', 'c <ESC>maa<C-R>" <ESC>dT]x`adt[ci[<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '<leader>]', 'c <ESC>maa<C-R>" <ESC>dT]x`adt[ci[<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '<leader>{', 'c <ESC>maa<C-R>" <ESC>dT}x`adt{ci{<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '<leader>}', 'c <ESC>maa<C-R>" <ESC>dT}x`adt{ci{<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '<leader>(', 'c <ESC>maa<C-R>" <ESC>dT)x`adt(ci(<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '<leader>)', 'c <ESC>maa<C-R>" <ESC>dT)x`adt(ci(<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '<leader><', 'c <ESC>maa<C-R>" <ESC>dT>x`adt<ci<<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '<leader>>', 'c <ESC>maa<C-R>" <ESC>dT>x`adt<ci<<BS><DEL><C-R>"<ESC>v`ao')
+set('v', '"<BS>', 'c <ESC>maa<C-R>" <ESC>dT"x`adt"ci"<BS><DEL><C-R>"<ESC>v`ao')
+set('v', '\'<BS>', 'c <ESC>maa<C-R>" <ESC>dT\'x`adt\'ci\'<BS><DEL><C-R>"<ESC>v`ao')
+set('v', '`<BS>', 'c <ESC>maa<C-R>" <ESC>dT`x`adt`ci`<BS><DEL><C-R>"<ESC>v`ao')
+set('v', '][', 'c <ESC>maa<C-R>" <ESC>dT]x`adt[ci[<BS><DEL><C-R>"<ESC>v`ao')
+set('v', '}{', 'c <ESC>maa<C-R>" <ESC>dT}x`adt{ci{<BS><DEL><C-R>"<ESC>v`ao')
+set('v', ')(', 'c <ESC>maa<C-R>" <ESC>dT)x`adt(ci(<BS><DEL><C-R>"<ESC>v`ao')
+set('v', '><', 'c <ESC>maa<C-R>" <ESC>dT>x`adt<ci<<BS><DEL><C-R>"<ESC>v`ao')
 
 -- quick macro (after qq)
 set('n', 'Q', '@q')
@@ -121,8 +113,6 @@ set('i', '<C-J>', '<ESC>:m .+1<CR>a')
 set('i', '<C-K>', '<ESC>:m .-2<CR>a')
 
 -- toggle search highlight
--- set('n', '<expr>', '<leader>h (&hls && v:hlsearch ? \':set nohlsearch\' : \':set hlsearch\')."\n"')
--- set('n', '<leader>h', function() vim.opt.hlsearch = not vim.opt.hlsearch:get() end)
 set('n', '<leader>h', fn.toggle_hlsearch)
 
 -- Indent
