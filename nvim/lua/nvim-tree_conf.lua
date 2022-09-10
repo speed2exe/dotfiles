@@ -1,6 +1,5 @@
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
--- TODO: Add telescope stuff here
 local list = {
 	{ key = {"<CR>"},        cb = tree_cb("edit_in_place") },
 	{ key = {"."},           cb = tree_cb("cd") },
@@ -191,3 +190,5 @@ require'nvim-tree'.setup {
 		},
 	},
 }
+
+vim.cmd[[highlight NvimTreeNormal guibg=NONE ctermbg=NONE]]
