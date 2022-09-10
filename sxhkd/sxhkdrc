@@ -37,6 +37,8 @@ super + p
 super + w
     nitrogen --set-zoom-fill --random ~/wallpaper
 
+super + shift + w
+    ~/.config/sxhkd/get_wallpaper
 
 ###---------- System Keys ----------##
 
