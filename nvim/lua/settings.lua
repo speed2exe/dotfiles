@@ -26,6 +26,7 @@ opt.splitright = true
 opt.wildmode = {'longest:full', 'full'}
 opt.lazyredraw = true
 opt.timeoutlen = 1000
+opt.pumblend = 15
 
 -- TODO:
 -- commands that cannot be represented in neovim
@@ -35,6 +36,7 @@ cmd [[
     colorscheme dracula
     highlight Normal guibg=NONE ctermbg=NONE
     highlight WinSeparator guibg=None
+    highlight PmenuSel blend=0
 ]]
 
 -- Github copilot stuff
