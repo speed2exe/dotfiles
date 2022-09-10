@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+theme=$(rofi -steal-focus -l 0 -p 'wallpaper theme' -dmenu -theme-str 'window {width:10%;}entry{placeholder:"";}inputbar{children:[prompt,textbox-prompt-colon,entry];}')
+path="$HOME/wallpaper/random"
+reso="$(xdpyinfo | awk '/dimensions/{print $2}')"
+url="https://source.unsplash.com/$reso?$theme"
+
+wget -q -O "$path" "$url"
+nitrogen --set-zoom-fill ~/wallpaper/random
