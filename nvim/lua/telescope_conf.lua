@@ -16,3 +16,5 @@ require('telescope').setup {
 }
 
 require('telescope').load_extension('fzy_native')
+
+vim.cmd[[highlight TelescopeNormal guibg=NONE ctermbg=NONE]]
