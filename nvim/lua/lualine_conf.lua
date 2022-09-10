@@ -14,18 +14,18 @@ require('lualine').setup {
     options = {
         icons_enabled = true,
         theme = 'dracula-nvim',
-        component_separators = { left = '|', right = '|', },
-        section_separators = { left = '', right = '', },
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         disabled_filetypes = {},
         always_divide_middle = true,
         globalstatus = true
     },
     sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', { 'diagnostics', sources = {'nvim_diagnostic'} }, },
+        lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = { 'filename', { navic.get_location, cond = navic.is_available } },
         lualine_x = { { get_lsp_status, cond = condition }, 'filetype' },
-        lualine_y = { 'progress' }, -- TODO: change to something else aside from percentage
+        lualine_y = { 'progress' },
         lualine_z = { 'location' }
     },
     tabline = {},

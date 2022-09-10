@@ -33,7 +33,6 @@ opt.timeoutlen = 1000
 -- can be implemented in neovim in the future
 cmd [[
     colorscheme dracula
-    highlight Comment cterm=italic gui=italic
     highlight Normal guibg=NONE ctermbg=NONE
     highlight WinSeparator guibg=None
 ]]
