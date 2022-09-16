@@ -46,14 +46,6 @@ cat ~/.todo.md
 bind yy fish_clipboard_copy
 bind p fish_clipboard_paste
 
-# keybinding for switching jobs
-bind -M insert \cz 'z'
-bind \cz 'z'
-
-# keybinding to kill all background jobs
-bind -M insert \cq 'q'
-bind \cq 'q'
-
 # optionally source from home directory if any
 test -f ~/.init.fish && source ~/.init.fish
 
@@ -63,3 +55,7 @@ bind --mode insert \ch 'bind_ctrl_h'
 bind --mode insert \cn 'bind_ctrl_n'
 bind --mode insert \ct 'bind_ctrl_t'
 bind --mode insert \cd 'bind_ctrl_d'
+
+# keybinding for handling background jobs
+bind --mode insert \cz 'bind_ctrl_z'
+bind --mode insert \cq 'bind_ctrl_q'
