@@ -4,7 +4,7 @@ require('telescope').setup {
         winblend = 30,
         layout_config = {
             height = .99,
-            width = 0.99,
+            width = .99,
         },
     },
     extensions = {
