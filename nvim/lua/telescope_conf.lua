@@ -1,15 +1,7 @@
-local actions = require("telescope.actions")
 require('telescope').setup {
     defaults = {
-        layout_config = {
-            height = 0.99,
-            width = 0.99,
-        },
-        mappings = {
-            i = { ["<ESC>"] = actions.close },
-        },
         border = false,
-        prompt_prefix = "",
+        winblend = 30,
     },
     extensions = {
         fzy_native = {
@@ -20,5 +12,6 @@ require('telescope').setup {
 }
 
 require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('file_browser')
 
 vim.cmd[[highlight TelescopeNormal guibg=NONE ctermbg=NONE]]
