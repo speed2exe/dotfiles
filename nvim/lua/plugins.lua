@@ -100,6 +100,7 @@ return require('packer').startup({function(use)
         require('telescope_conf')
     end}
     use 'nvim-telescope/telescope-fzy-native.nvim'
+    use 'nvim-telescope/telescope-file-browser.nvim'
 
     use { 'williamboman/mason.nvim', config = function()
         require('mason').setup()
@@ -151,9 +152,9 @@ return require('packer').startup({function(use)
     use 'dcampos/cmp-snippy'
 
     -- File Tree
-    use { 'kyazdani42/nvim-tree.lua', config = function()
-        require('nvim-tree_conf')
-    end}
+    -- use { 'kyazdani42/nvim-tree.lua', config = function()
+    --     require('nvim-tree_conf')
+    -- end}
 
     if packer_bootstrap then
         require('packer').sync()
