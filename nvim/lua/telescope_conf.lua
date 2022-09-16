@@ -2,6 +2,10 @@ require('telescope').setup {
     defaults = {
         border = false,
         winblend = 30,
+        layout_config = {
+            height = .99,
+            width = 0.99,
+        }
     },
     extensions = {
         fzy_native = {
