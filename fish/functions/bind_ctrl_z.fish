@@ -6,6 +6,7 @@ function bind_ctrl_z
 
     if test (count $items) -eq 1
         fg (echo "$items" | cut -f 2)
+        return
     end
 
     set job (jobs | fr | cut -f 2) && fg $job
