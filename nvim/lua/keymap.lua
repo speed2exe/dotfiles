@@ -176,18 +176,17 @@ set('n', '<C-Q>', fn.toggle_quick_fix_list)
 
 -- Telescope
 set('n', '<leader>t', '<CMD>Telescope<CR>')
--- Non conforming Telescope keymap to the rest of the keybindings
--- set('n', '<leader>s', t_builtin.lsp_document_symbols)
 set('n', '<leader>h', t_builtin.help_tags)
 set('n', '<leader>s', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>d', t_builtin.diagnostics)
 set('n', '<leader>k', t_builtin.keymaps)
 set('n', '<leader>j', t_builtin.jumplist)
 set('n', '<leader>q', t_builtin.quickfix)
-set('n', '<S-TAB>', t_builtin.oldfiles)
+set('n', '<TAB>', t_builtin.oldfiles)
 set('n', '<BS>', t_builtin.find_files)
+set('n', '<leader><BS>', t_builtin.git_files)
 set('n', '<leader><leader>', t_builtin.live_grep)
-set('n', '<TAB>', t_fb.file_browser)
+set('n', '<S-TAB>', t_fb.file_browser)
 
 -- NvimTree
 -- set('n', '<leader><TAB>', '<CMD>NvimTreeFindFileToggle<CR>')
