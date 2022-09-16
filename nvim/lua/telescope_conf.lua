@@ -5,7 +5,7 @@ require('telescope').setup {
         layout_config = {
             height = .99,
             width = 0.99,
-        }
+        },
     },
     extensions = {
         fzy_native = {

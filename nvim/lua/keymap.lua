@@ -3,7 +3,10 @@ local set = vim.keymap.set
 local fn = require 'function'
 local lsp_lines_conf = require 'lsp_lines_conf'
 local autosave = require 'auto-save'
-local nvim_tree = require 'nvim-tree'
+local t_builtin = require 'telescope.builtin'
+local t_fb = require 'telescope'.extensions.file_browser
+local t_opt = {hidden=false}
+-- local nvim_tree = require 'nvim-tree'
 
 vim.g.mapleader = ' ';
 
@@ -113,7 +116,7 @@ set('i', '<C-J>', '<ESC>:m .+1<CR>a')
 set('i', '<C-K>', '<ESC>:m .-2<CR>a')
 
 -- toggle search highlight
-set('n', '<leader>h', fn.toggle_hlsearch)
+set('n', '<C-H>', fn.toggle_hlsearch)
 
 -- Indent
 set('v', ',', '<gv')
@@ -173,19 +176,18 @@ set('n', '<C-Q>', fn.toggle_quick_fix_list)
 
 -- Telescope
 set('n', '<leader>t', '<CMD>Telescope<CR>')
-set('n', '<leader>tg', '<CMD>Telescope grep_string<CR>')
-set('n', '<leader>tj', '<CMD>Telescope jumplist<CR>')
-set('n', '<leader>tk', '<CMD>Telescope keymaps<CR>')
-set('n', '<leader>th', '<CMD>Telescope help_tags<CR>')
-set('n', '<leader>td', '<CMD>Telescope diagnostics<CR>')
-set('n', '<leader>ta', '<CMD>Telescope lsp_document_symbols<CR>')
-set('n', '<leader>te', '<CMD>Telescope lsp_dynamic_workspace_symbols<CR>')
 -- Non conforming Telescope keymap to the rest of the keybindings
-set('n', '<leader>q', '<CMD>Telescope quickfix<CR>')
-set('n', '<TAB>', '<CMD>Telescope oldfiles<CR>')
-set('n', '<BS>', '<CMD>Telescope find_files<CR>')
-set('n', '<leader><leader>', '<CMD>Telescope live_grep<CR>')
-set('n', '<S-TAB>', '<CMD>Telescope file_browser<CR>')
+-- set('n', '<leader>s', t_builtin.lsp_document_symbols)
+set('n', '<leader>h', t_builtin.help_tags)
+set('n', '<leader>s', t_builtin.lsp_dynamic_workspace_symbols)
+set('n', '<leader>d', t_builtin.diagnostics)
+set('n', '<leader>k', t_builtin.keymaps)
+set('n', '<leader>j', t_builtin.jumplist)
+set('n', '<leader>q', t_builtin.quickfix)
+set('n', '<S-TAB>', t_builtin.oldfiles)
+set('n', '<BS>', t_builtin.find_files)
+set('n', '<leader><leader>', t_builtin.live_grep)
+set('n', '<TAB>', t_fb.file_browser)
 
 -- NvimTree
 -- set('n', '<leader><TAB>', '<CMD>NvimTreeFindFileToggle<CR>')
