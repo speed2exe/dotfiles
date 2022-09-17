@@ -18,9 +18,15 @@ require('telescope').setup {
         },
     },
     extensions = {
-        fzy_native = {
+        -- fzy_native = {
+        --     override_generic_sorter = true,
+        --     override_file_sorter = true,
+        -- },
+        fzf = {
+            fuzzy = true,
             override_generic_sorter = true,
             override_file_sorter = true,
+            case_mode = "smart_case",
         },
         file_browser = {
             hijack_netrw = true,
@@ -29,7 +35,8 @@ require('telescope').setup {
     },
 }
 
-require('telescope').load_extension('fzy_native')
+-- require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('fzf')
 require('telescope').load_extension('file_browser')
 
 vim.cmd[[highlight TelescopeNormal guibg=NONE ctermbg=NONE]]
