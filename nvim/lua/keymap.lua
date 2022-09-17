@@ -99,12 +99,6 @@ set('n', 'yf', '<CMD>let @+ = expand("%:p")<CR>')
 -- hightlight entire file
 set('n', 'v%', 'gg^vG$')
 set('n', 'y%', '<CMD>:%y+<CR>')
--- copy current file path and line number to ~/marks/files.txt
--- TODO: currently not working, fix it
-set('n', '<leader>m',
-    '<CMD>redir @m<CR><CMD>echo expand(\'%:p\') . \':\' . line(".")<CR><CMD>redir END<CR>:!m<C-R>m<CR><CR>')
--- quick access to marked files
-set('n', '<leader>g', '<CMD>e ~/marks/files.txt<CR>')
 
 -- Move lines up and down
 set('v', '<C-J>', ':m \'>+1<CR>gv')
@@ -182,6 +176,7 @@ set('n', '<leader>k', t_builtin.keymaps)
 set('n', '<leader>j', t_builtin.jumplist)
 set('n', '<leader>q', t_builtin.quickfix)
 set('n', '<leader>r', t_builtin.registers)
+set('n', '<leader>m', t_builtin.marks)
 set('n', '<TAB>', t_builtin.oldfiles)
 set('n', '<BS>', t_builtin.find_files)
 set('n', '<leader><BS>', t_builtin.git_files)
