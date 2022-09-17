@@ -99,7 +99,8 @@ return require('packer').startup({function(use)
     use { 'nvim-telescope/telescope.nvim', config = function()
         require('telescope_conf')
     end}
-    use 'nvim-telescope/telescope-fzy-native.nvim'
+    -- use 'nvim-telescope/telescope-fzy-native.nvim'
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use 'nvim-telescope/telescope-file-browser.nvim'
 
     use { 'williamboman/mason.nvim', config = function()
