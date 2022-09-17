@@ -7,12 +7,26 @@ require('telescope').setup {
             width = .99,
         },
     },
+    pickers = {
+        live_grep = {
+            additional_args = function()
+                return {"--hidden"}
+            end
+        },
+        find_files = {
+            hidden = true,
+        },
+    },
     extensions = {
         fzy_native = {
             override_generic_sorter = true,
             override_file_sorter = true,
-        }
-    }
+        },
+        file_browser = {
+            hijack_netrw = true,
+            hidden = true,
+        },
+    },
 }
 
 require('telescope').load_extension('fzy_native')
