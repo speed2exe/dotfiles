@@ -5,7 +5,6 @@ local lsp_lines_conf = require 'lsp_lines_conf'
 local autosave = require 'auto-save'
 local t_builtin = require 'telescope.builtin'
 local t_fb = require 'telescope'.extensions.file_browser
-local t_opt = {hidden=false}
 -- local nvim_tree = require 'nvim-tree'
 
 vim.g.mapleader = ' ';
