@@ -28,9 +28,6 @@ return require('packer').startup({function(use)
         require('neoscroll').setup()
     end}
 
-    -- camelCase and snake_case handling
-    use 'chaoren/vim-wordmotion'
-
     -- Git
     -- TODO: maybe there's a better nvim version out there
     use 'tpope/vim-fugitive'
