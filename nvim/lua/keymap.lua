@@ -223,7 +223,7 @@ set('n', '<C-S>', autosave.toggle)
 -- Custom Personal Mapping
 -- Add more if needed, but shouldn't need more
 set('n', 'gn', vim.lsp.buf.rename)
-set('n', 'gf', vim.lsp.buf.formatting)
+set('n', 'gf', vim.lsp.buf.format)
 set('n', 'gd', vim.lsp.buf.definition)
 set('n', 'gi', vim.lsp.buf.implementation)
 set('n', 'gr', vim.lsp.buf.references)
