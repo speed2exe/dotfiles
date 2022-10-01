@@ -25,12 +25,6 @@ set('v', 'y', 'ygv<ESC>')
 -- Don't select the new line
 set('v', '$', '$h')
 
--- Search highlighted
-set('v', '*', 'y/<C-R>"<CR>gn')
-set('v', '#', 'y?<C-R>"<CR>gn')
-set('v', 'n', '<ESC>ngn')
-set('v', 'N', '<ESC>NNgN')
-
 -- Auto surround
 set('v', '""', 'c"<ESC>maa<C-R>""<ESC>mb`av`b')
 set('v', '\'\'', 'c\'<ESC>maa<C-R>"\'<ESC>mb`av`b')
