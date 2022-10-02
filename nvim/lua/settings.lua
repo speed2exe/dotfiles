@@ -27,6 +27,7 @@ opt.wildmode = {'longest:full', 'full'}
 opt.lazyredraw = true
 opt.timeoutlen = 1000
 opt.pumblend = 15
+opt.winbar = '%f'
 
 -- TODO:
 -- commands that cannot be represented in neovim
