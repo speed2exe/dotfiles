@@ -22,9 +22,6 @@ set('i', '<<CR>', '<<CR>><ESC>O')
 -- Keep cursor position after copy
 set('v', 'y', 'ygv<ESC>')
 
--- Don't select the new line
-set('v', '$', '$h')
-
 -- Auto surround
 set('v', '""', 'c"<ESC>maa<C-R>""<ESC>mb`av`b')
 set('v', '\'\'', 'c\'<ESC>maa<C-R>"\'<ESC>mb`av`b')
@@ -45,16 +42,11 @@ set('v', '><', 'c <ESC>maa<C-R>" <ESC>dT>x`adt<ci<<BS><DEL><C-R>"<ESC>v`ao')
 
 -- quick macro (after qq)
 set('n', 'Q', '@q')
+-- apply macro to all lines
 set('v', 'Q', '<CMD>\'<,\'>normal @q<CR>')
 
 -- quick mark (after mm)
 set('n', 'M', '`m')
-
--- quick quit window
-set('n', '<C-C>', '<CMD>q!<CR>')
-
--- quick fold
-set('v', '<leader>z', ':fold<CR>')
 
 -- highlight after paste
 set('n', 'vp', '`[v`]')
@@ -79,15 +71,10 @@ set('i', '<C-V>', '<C-R>*')
 
 -- create file with filename under cursor if not exists
 -- and edit the file
-set('n', '<leader>e', ':e <cfile><CR>')
--- go to file with line if any
-set('n', '<leader>f', 'gF')
-
--- Move next line up
-set('n', 'J', 'mzJ`z')
+set('n', 'gf', ':e <cfile><CR>')
 
 -- print current file
-set('n', '<ESC>', '<CMD>echo expand("%:p")<CR>')
+set('n', '<ESC>', '<CMD>pwd<CR>')
 -- copy current file path to clipboard
 set('n', 'yf', '<CMD>let @+ = expand("%:p")<CR>')
 -- hightlight entire file
@@ -108,12 +95,7 @@ set('n', '<C-H>', fn.toggle_hlsearch)
 -- Indent
 set('v', ',', '<gv')
 set('v', '.', '>gv')
-set('n', '<<', '<<^')
-set('n', '>>', '>>$')
 set('n', '<leader>i', 'jgg=G<C-O>k')
-
--- repeat last command
-set('n', ',', '@:')
 
 -- toggle jump back and forth
 set('n', '<PAGEUP>', '<C-O>')
@@ -131,10 +113,6 @@ set('n', '<leader>x', '<CMD>split<CR>')
 set('n', '<leader>X', '<CMD>new<CR>')
 set('n', '<leader>v', '<CMD>vsplit<CR>')
 set('n', '<leader>V', '<CMD>vnew<CR>')
-
--- Terminal
-set('n', '<leader><CR>', ':edit term://fish<CR>i')
-set('t', '<ESC><ESC>', '<C-\\><C-N>')
 
 -- move between windows
 set('n', '<LEFT>', '<C-W>h')
@@ -176,10 +154,6 @@ set('n', '<BS>', t_builtin.find_files)
 set('n', '<leader><BS>', t_builtin.git_files)
 set('n', '<leader><leader>', t_builtin.live_grep)
 set('n', '<S-TAB>', t_fb.file_browser)
-
--- NvimTree
--- set('n', '<leader><TAB>', '<CMD>NvimTreeFindFileToggle<CR>')
--- set('n', '<TAB>', nvim_tree.open_replacing_current_buffer)
 
 -- debug adapter protocol
 -- nnoremap <leader>db <CMD>lua require('dap').toggle_breakpoint()<CR>
