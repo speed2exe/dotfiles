@@ -20,14 +20,6 @@ return require('packer').startup({function(use)
         require('lsp_lines_conf')
     end}
 
-    -- Highlight assistance for search result
-    use 'kevinhwang91/nvim-hlslens'
-
-    -- Smooth Scrolling
-    use { 'karb94/neoscroll.nvim', config = function()
-        require('neoscroll').setup()
-    end}
-
     -- Git
     -- TODO: maybe there's a better nvim version out there
     use 'tpope/vim-fugitive'
@@ -38,12 +30,6 @@ return require('packer').startup({function(use)
     -- Debugger Adapter Protocol
     -- use 'mfussenegger/nvim-dap'
     -- use 'Pocco81/DAPInstall.nvim'
-
-    -- Fancy Scroll Bar
-    use { 'petertriho/nvim-scrollbar', config = function()
-        require('scrollbar').setup()
-        require('scrollbar.handlers.search').setup()
-    end}
 
     -- Auto save
     use { 'Pocco81/auto-save.nvim', config = function()
