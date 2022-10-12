@@ -1,3 +1,6 @@
+-- speed up load time
+require('impatient')
+
 local vim = vim
 local fn = vim.fn
 
@@ -8,6 +11,9 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup({function(use)
+
+    -- https://github.com/lewis6991/impatient.nvim
+    use 'lewis6991/impatient.nvim'
 
     -- https://github.com/wbthomason/packer.nvim
     use 'wbthomason/packer.nvim'
