@@ -1,4 +1,3 @@
-local cmd = vim.cmd
 require('plugins')
 require('keymap')
 require('settings')
@@ -8,7 +7,7 @@ require('last_used')
 require('nvim-lspconfig_setup')
 require('autocmd')
 
-cmd [[
+vim.cmd [[
     " https://stackoverflow.com/questions/630884/opening-vim-help-in-a-vertical-split-window
     autocmd FileType help wincmd L
 
