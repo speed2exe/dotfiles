@@ -149,11 +149,11 @@ set('n', '<leader>j', t_builtin.jumplist)
 set('n', '<leader>q', t_builtin.quickfix)
 set('n', '<leader>r', t_builtin.registers)
 set('n', '<leader>m', t_builtin.marks)
+set('n', '<leader>f', t_builtin.find_files)
+set('n', '<leader>g', t_builtin.git_files)
+set('n', '<leader>l', t_builtin.live_grep)
 set('n', '<TAB>', t_builtin.oldfiles)
-set('n', '<BS>', t_builtin.find_files)
-set('n', '<leader><BS>', t_builtin.git_files)
-set('n', '<leader><leader>', t_builtin.live_grep)
-set('n', '<S-TAB>', t_fb.file_browser)
+set('n', '<BS>', t_fb.file_browser)
 
 -- debug adapter protocol
 -- nnoremap <leader>db <CMD>lua require('dap').toggle_breakpoint()<CR>
