@@ -6,6 +6,10 @@ require('telescope').setup {
             height = .99,
             width = .99,
         },
+        mappings = {
+            i = { ["<C-T>"] = require('telescope.actions').close },
+            n = { ["<C-T>"] = require('telescope.actions').close },
+        }
     },
     pickers = {
         live_grep = {
@@ -18,10 +22,6 @@ require('telescope').setup {
         },
     },
     extensions = {
-        -- fzy_native = {
-        --     override_generic_sorter = true,
-        --     override_file_sorter = true,
-        -- },
         fzf = {
             fuzzy = true,
             override_generic_sorter = true,
@@ -35,7 +35,6 @@ require('telescope').setup {
     },
 }
 
--- require('telescope').load_extension('fzy_native')
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('file_browser')
 
