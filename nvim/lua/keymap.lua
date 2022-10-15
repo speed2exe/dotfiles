@@ -152,6 +152,7 @@ set('n', '<leader>m', t_builtin.marks)
 set('n', '<leader>f', t_builtin.find_files)
 set('n', '<leader>g', t_builtin.git_files)
 set('n', '<leader>l', t_builtin.live_grep)
+set('n', '<C-T>', t_builtin.resume)
 set('n', '<TAB>', t_builtin.oldfiles)
 set('n', '<BS>', t_fb.file_browser)
 
@@ -189,7 +190,7 @@ set('v', 'K', '<CMD>STSSwapPrevVisual<CR>')
 set('n', '<leader>o', '<CMD>SymbolsOutline<CR>')
 
 -- Toggle lsp lines diagnostics
-set('n', '<C-E>', lsp_lines_conf.toggle_inline_text)
+set('n', '<C-L>', lsp_lines_conf.toggle_inline_text)
 
 -- Toggle auto-save
 set('n', '<C-S>', autosave.toggle)
