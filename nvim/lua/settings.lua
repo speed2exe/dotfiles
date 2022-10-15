@@ -26,8 +26,10 @@ opt.splitright = true
 opt.wildmode = {'longest:full', 'full'}
 opt.lazyredraw = true
 opt.timeoutlen = 1000
+opt.updatetime = 1000
 opt.pumblend = 15
 opt.winbar = '%f'
+opt.signcolumn = 'yes'
 
 -- TODO:
 -- commands that cannot be represented in neovim
@@ -36,7 +38,8 @@ opt.winbar = '%f'
 cmd [[
     colorscheme dracula
     highlight Normal guibg=NONE ctermbg=NONE
-    highlight WinSeparator guibg=None
+    highlight SignColumn guibg=NONE ctermbg=NONE
+    highlight WinSeparator guibg=NONE ctermbg=NONE
     highlight PmenuSel blend=0
 ]]
 
