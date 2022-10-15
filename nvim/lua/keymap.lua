@@ -189,7 +189,7 @@ set('v', 'K', '<CMD>STSSwapPrevVisual<CR>')
 set('n', '<leader>o', '<CMD>SymbolsOutline<CR>')
 
 -- Toggle lsp lines diagnostics
-set('n', '<leader>a', lsp_lines_conf.toggle_inline_text)
+set('n', '<C-E>', lsp_lines_conf.toggle_inline_text)
 
 -- Toggle auto-save
 set('n', '<C-S>', autosave.toggle)
