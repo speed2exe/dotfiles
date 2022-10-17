@@ -11,6 +11,12 @@ fish_add_path "~/.local/bin"
 # return if not interactive
 not status is-interactive && return
 
+# temp solution for preloading
+if test -z "$LD_PRELOAD"
+    set -x LD_PRELOAD /home/zx/stderred/build/libstderred.so
+    exec fish
+end
+
 set TERM xterm-256color
 set fish_term24bit 1
 
