@@ -18,7 +18,10 @@ function navigate
         navigate "$selection"
     else if test -f "$selection"
         printf "$selection"
-    else
+    else if test -n "$input"
+        echo "no such file or directory: $input" >&2
+        navigate "$dir"
+    else if test -z "$selection"
         printf "$dir"
     end
 end
