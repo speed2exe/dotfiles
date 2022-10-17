@@ -13,7 +13,7 @@ end
 require('lualine').setup {
     options = {
         icons_enabled = true,
-        theme = 'dracula-nvim',
+        theme = 'dracula',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
         disabled_filetypes = {},
