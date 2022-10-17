@@ -10,6 +10,6 @@ for _, server in ipairs(servers) do
         on_attach = function(client, bufnr)
             navic.attach(client, bufnr)
         end,
-        capabilities = cmp.update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+        capabilities = cmp.default_capabilities(vim.lsp.protocol.make_client_capabilities()),
     }
 end
