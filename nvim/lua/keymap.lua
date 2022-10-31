@@ -5,7 +5,6 @@ local lsp_lines_conf = require 'lsp_lines_conf'
 local autosave = require 'auto-save'
 local t_builtin = require 'telescope.builtin'
 local t_fb = require 'telescope'.extensions.file_browser
--- local nvim_tree = require 'nvim-tree'
 
 vim.g.mapleader = ' ';
 
@@ -191,9 +190,6 @@ set('n', '<leader>o', '<CMD>SymbolsOutline<CR>')
 
 -- Toggle lsp lines diagnostics
 set('n', '<C-L>', lsp_lines_conf.toggle_inline_text)
-
--- Toggle auto-save
-set('n', '<C-S>', autosave.toggle)
 
 -- Custom Personal Mapping
 -- Add more if needed, but shouldn't need more
