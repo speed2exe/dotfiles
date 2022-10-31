@@ -17,8 +17,8 @@ set('i', '(<CR>', '(<CR>)<ESC>O')
 set('i', '[<CR>', '[<CR>]<ESC>O')
 set('i', '<<CR>', '<<CR>><ESC>O')
 
--- Keep cursor position after copy
-set('v', 'y', 'ygv<ESC>')
+-- Search for text under cursor
+set('v', '/', 'y/<C-R>"<CR>')
 
 -- Auto surround
 set('v', '""', 'c"<ESC>maa<C-R>""<ESC>mb`av`b')
