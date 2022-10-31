@@ -37,11 +37,6 @@ return require('packer').startup({function(use)
     -- use 'mfussenegger/nvim-dap'
     -- use 'Pocco81/DAPInstall.nvim'
 
-    -- Auto save
-    use { 'Pocco81/auto-save.nvim', config = function()
-        require('auto-save').setup()
-    end}
-
     -- Project management
     -- TODO: maybe there's a better nvim version out there
     use { 'ahmedkhalf/project.nvim', config = function()
@@ -140,11 +135,6 @@ return require('packer').startup({function(use)
     use 'dcampos/nvim-snippy'
     use 'honza/vim-snippets'
     use 'dcampos/cmp-snippy'
-
-    -- File Tree
-    -- use { 'kyazdani42/nvim-tree.lua', config = function()
-    --     require('nvim-tree_conf')
-    -- end}
 
     if packer_bootstrap then
         require('packer').sync()
