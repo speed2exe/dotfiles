@@ -2,7 +2,6 @@ local vim = vim
 local set = vim.keymap.set
 local fn = require 'function'
 local lsp_lines_conf = require 'lsp_lines_conf'
-local autosave = require 'auto-save'
 local t_builtin = require 'telescope.builtin'
 local t_fb = require 'telescope'.extensions.file_browser
 
