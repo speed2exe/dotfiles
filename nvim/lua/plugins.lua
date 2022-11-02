@@ -94,9 +94,6 @@ return require('packer').startup({function(use)
     end}
     use 'neovim/nvim-lspconfig'
 
-    -- Live status update for LSP
-    use 'nvim-lua/lsp-status.nvim'
-
     -- TreeSitter stuff
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function()
         require('treesitter_conf')
