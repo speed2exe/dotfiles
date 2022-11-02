@@ -30,6 +30,7 @@ opt.updatetime = 1000
 opt.pumblend = 15
 opt.winbar = '%f'
 opt.cursorline = true
+opt.signcolumn = 'yes'
 
 -- TODO:
 -- commands that cannot be represented in neovim
