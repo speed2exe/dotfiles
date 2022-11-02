@@ -38,9 +38,8 @@ return require('packer').startup({function(use)
     -- use 'Pocco81/DAPInstall.nvim'
 
     -- Project management
-    -- TODO: maybe there's a better nvim version out there
     use { 'ahmedkhalf/project.nvim', config = function()
-        require('project_conf')
+        require('project_nvim').setup()
     end}
 
     -- Indent guide lines
