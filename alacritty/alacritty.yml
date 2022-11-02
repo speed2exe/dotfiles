@@ -991,7 +991,7 @@ hints:
        key: Escape
        mods: Alt
 
-   - regex: "[A-Za-z0-9_-]+ "
+   - regex: "[^ ]+ "
      action: Copy
      post_processing: true
      binding:
