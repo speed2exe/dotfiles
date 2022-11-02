@@ -995,14 +995,14 @@ hints:
      action: Copy
      post_processing: true
      binding:
-       key: A
+       key: D
        mods: Alt
 
    - regex: ".+ "
      action: Copy
      post_processing: true
      binding:
-       key: D
+       key: T
        mods: Alt
 
 window:
