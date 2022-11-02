@@ -185,7 +185,7 @@ set('v', 'J', '<CMD>STSSwapNextVisual<CR>')
 set('v', 'K', '<CMD>STSSwapPrevVisual<CR>')
 
 -- Symbols Outline
-set('n', '<leader>o', '<CMD>SymbolsOutline<CR>')
+set('n', '<C-S>', '<CMD>SymbolsOutline<CR>')
 
 -- Toggle lsp lines diagnostics
 set('n', '<C-L>', lsp_lines_conf.toggle_inline_text)
