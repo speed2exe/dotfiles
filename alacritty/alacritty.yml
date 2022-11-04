@@ -995,7 +995,7 @@ hints:
      action: Copy
      post_processing: true
      binding:
-       key: D
+       key: N
        mods: Alt
 
    - regex: ".+ "
