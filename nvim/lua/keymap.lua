@@ -171,19 +171,6 @@ set('n', '<BS>', t_fb.file_browser)
 set('n', '!', 'o<ESC>:.!')
 set('v', '!', 'c<CR><CR><UP><ESC>:.!<C-R>"<CR>k')
 
--- Syntax Tree Navigation
--- from normal mode
-set('n', 'v<BS>', '<CMD>STSSelectCurrentNode<CR>')
-
--- in visual mode
-set('v', '<TAB>', '<CMD>STSSelectNextSiblingNode<CR>')
-set('v', '<S-TAB>', '<CMD>STSSelectPrevSiblingNode<CR>')
-set('v', '<BS>', '<CMD>STSSelectParentNode<CR>')
-set('v', '<CR>', '<CMD>STSSelectChildNode<CR>')
--- swap in visual mode
-set('v', 'J', '<CMD>STSSwapNextVisual<CR>')
-set('v', 'K', '<CMD>STSSwapPrevVisual<CR>')
-
 -- Symbols Outline
 set('n', '<C-S>', '<CMD>SymbolsOutline<CR>')
 
