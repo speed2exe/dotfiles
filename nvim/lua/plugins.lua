@@ -112,9 +112,6 @@ return require('packer').startup({function(use)
     use { 'simrat39/symbols-outline.nvim', config = function()
         require("symbols-outline").setup()
     end}
-    use { 'ziontee113/syntax-tree-surfer' , config = function()
-        require('syntax-tree-surfer').setup()
-    end}
 
     -- Nvim-cmp
     use { 'hrsh7th/nvim-cmp', config = function()
