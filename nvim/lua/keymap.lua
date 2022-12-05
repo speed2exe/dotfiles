@@ -124,7 +124,7 @@ set('n', '+', '<CMD>vertical resize +10<CR>')
 set('n', '-', '<CMD>vertical resize -10<CR>')
 set('n', '|', '<CMD>resize +10<CR>')
 set('n', '_', '<CMD>resize -10<CR>')
-set('n', '<C-T>', '<C-W>=')
+set('n', '\\', '<C-W>=')
 
 -- Quick fix list
 -- Add location list here if i ever use it
