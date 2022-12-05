@@ -85,7 +85,6 @@ return require('packer').startup({function(use)
     end}
     -- use 'nvim-telescope/telescope-fzy-native.nvim'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use 'nvim-telescope/telescope-file-browser.nvim'
 
     use { 'williamboman/mason.nvim', config = function()
         require('mason').setup()
@@ -108,7 +107,6 @@ return require('packer').startup({function(use)
     use { 'p00f/nvim-ts-rainbow', config = function()
         require('nvim-ts-rainbow_conf')
     end}
-    use 'nvim-treesitter/playground'
     use { 'simrat39/symbols-outline.nvim', config = function()
         require("symbols-outline").setup()
     end}
