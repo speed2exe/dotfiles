@@ -3,7 +3,6 @@ local set = vim.keymap.set
 local fn = require 'function'
 local lsp_lines_conf = require 'lsp_lines_conf'
 local t_builtin = require 'telescope.builtin'
-local t_fb = require 'telescope'.extensions.file_browser
 
 vim.g.mapleader = ' ';
 
@@ -66,10 +65,6 @@ set('v', '<C-C>', 'y')
 
 -- Paste
 set('i', '<C-V>', '<C-R>*')
-
--- create file with filename under cursor if not exists
--- and edit the file
-set('n', 'gf', ':e <cfile><CR>')
 
 -- print current file
 set('n', '<ESC>', '<CMD>pwd<CR>')
@@ -150,9 +145,8 @@ set('n', '<leader>m', t_builtin.marks)
 set('n', '<leader>f', t_builtin.find_files)
 set('n', '<leader>g', t_builtin.git_files)
 set('n', '<leader>l', t_builtin.live_grep)
-set('n', '<C-T>', t_builtin.resume)
-set('n', '<TAB>', t_builtin.oldfiles)
-set('n', '<BS>', t_fb.file_browser)
+set('n', '<leader>o', t_builtin.oldfiles)
+set('n', '<TAB>', t_builtin.resume)
 
 -- debug adapter protocol
 -- nnoremap <leader>db <CMD>lua require('dap').toggle_breakpoint()<CR>
@@ -180,7 +174,7 @@ set('n', '<C-L>', lsp_lines_conf.toggle_inline_text)
 -- Custom Personal Mapping
 -- Add more if needed, but shouldn't need more
 set('n', 'gn', vim.lsp.buf.rename)
-set('n', 'gf', vim.lsp.buf.format)
+set('n', 'gl', vim.lsp.buf.format)
 set('n', 'gd', vim.lsp.buf.definition)
 set('n', 'gi', vim.lsp.buf.implementation)
 set('n', 'gr', vim.lsp.buf.references)
