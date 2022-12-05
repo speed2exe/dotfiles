@@ -47,7 +47,5 @@ cmd [[
 -- Github copilot stuff
 g.copilot_no_tab_map = true
 
--- neovide stuff
-opt.guifont = 'iosevka2:h12'
-g.neovide_cursor_antialiasing = true
-g.neovide_transparency = 0.5
+-- netrw
+g.netrw_liststyle = 3
