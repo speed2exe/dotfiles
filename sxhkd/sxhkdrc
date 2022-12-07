@@ -94,7 +94,7 @@ super + i
 
 # Rotate
 super + {Next,Prior,End}
-    bspc node @parent -R {90,180,270}
+    bspc node @parent -R {90,270,180}
 
 # Auto Resize with equal area
 super + g
