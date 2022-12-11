@@ -8,7 +8,7 @@ vim.g.mapleader = ' ';
 
 -- Remove all empty lines within a range
 -- https://linuxize.com/post/vim-delete-line
-set('v', '<leader>d', '<CMD>\'<,\'>g/^$/d<CR>')
+set('v', '<leader><BS>', '<CMD>\'<,\'>g/^$/d<CR>')
 
 -- Auto braces after return
 set('i', '{<CR>', '{<CR>}<ESC>O')
@@ -28,43 +28,20 @@ set('v', '{}', 'c{<ESC>maa<C-R>"}<ESC>mb`av`b')
 set('v', '()', 'c(<ESC>maa<C-R>")<ESC>mb`av`b')
 set('v', '<>', 'c<<ESC>maa<C-R>"><ESC>mb`av`b')
 
--- Remove First and Last char Surround
-set('v', '"<BS>', 'c <ESC>maa<C-R>" <ESC>dT"x`adt"ci"<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '\'<BS>', 'c <ESC>maa<C-R>" <ESC>dT\'x`adt\'ci\'<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '`<BS>', 'c <ESC>maa<C-R>" <ESC>dT`x`adt`ci`<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '][', 'c <ESC>maa<C-R>" <ESC>dT]x`adt[ci[<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '}{', 'c <ESC>maa<C-R>" <ESC>dT}x`adt{ci{<BS><DEL><C-R>"<ESC>v`ao')
-set('v', ')(', 'c <ESC>maa<C-R>" <ESC>dT)x`adt(ci(<BS><DEL><C-R>"<ESC>v`ao')
-set('v', '><', 'c <ESC>maa<C-R>" <ESC>dT>x`adt<ci<<BS><DEL><C-R>"<ESC>v`ao')
+-- Remove First and Last character
+set('v', '<BS>', 'c<ESC>maa<C-R>"<BS><ESC>`aa<DEL><ESC>gvhh')
 
--- quick macro (after qq)
-set('n', 'Q', '@q')
 -- apply macro to all lines
 set('v', 'Q', '<CMD>\'<,\'>normal @q<CR>')
 
--- quick mark (after mm)
-set('n', 'M', '`m')
-
--- highlight after paste
-set('n', 'vp', '`[v`]')
-
--- https://vim.fandom.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
-set('i', '<C-BS>', '<C-W>')
-set('i', '<C-H>', '<C-W>')
-set('c', '<C-BS>', '<C-W>')
-set('c', '<C-H>', '<C-W>')
+-- paste with visual highlight
+set('n', '<C-P>', 'p`[v`]')
 
 -- Search and replace for visually selected on entire document template
 set('v', '<leader>S', 'y:%s/<C-R>"/<C-R>"')
 
 -- Search and replace for clipboard content on visually selected
 set('v', '<leader>s', ':s/<C-R>"/<C-R>"')
-
--- Copy
-set('v', '<C-C>', 'y')
-
--- Paste
-set('i', '<C-V>', '<C-R>*')
 
 -- print current file
 set('n', '<ESC>', '<CMD>pwd<CR>')
@@ -89,10 +66,6 @@ set('n', '<C-H>', fn.toggle_hlsearch)
 set('v', ',', '<gv')
 set('v', '.', '>gv')
 set('n', '<leader>i', 'jgg=G<C-O>k')
-
--- toggle jump back and forth
-set('n', '<PAGEUP>', '<C-O>')
-set('n', '<PAGEDOWN>', '<C-I>')
 
 -- go to prev directory
 set('n', '<DEL>', ':cd ..<CR>:pwd<CR>')
@@ -146,7 +119,8 @@ set('n', '<leader>f', t_builtin.find_files)
 set('n', '<leader>g', t_builtin.git_files)
 set('n', '<leader>l', t_builtin.live_grep)
 set('n', '<leader>o', t_builtin.oldfiles)
-set('n', '<TAB>', t_builtin.resume)
+set('n', '<leader>b', t_builtin.buffers)
+set('n', '<leader>d', t_builtin.diagnostics)
 
 -- debug adapter protocol
 -- nnoremap <leader>db <CMD>lua require('dap').toggle_breakpoint()<CR>
