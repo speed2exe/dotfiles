@@ -6,10 +6,6 @@ require('telescope').setup {
             height = .99,
             width = .99,
         },
-        mappings = {
-            i = { ["<C-T>"] = require('telescope.actions').close },
-            n = { ["<C-T>"] = require('telescope.actions').close },
-        }
     },
     pickers = {
         live_grep = {
