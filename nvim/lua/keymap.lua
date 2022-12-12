@@ -44,7 +44,7 @@ set('v', '<leader>S', 'y:%s/<C-R>"/<C-R>"')
 set('v', '<leader>s', ':s/<C-R>"/<C-R>"')
 
 -- print current file
-set('n', '<ESC>', '<CMD>pwd<CR>')
+set('n', '<ESC>', '<CMD>pwd<CR><CMD>Beacon<CR>')
 -- copy current file path to clipboard
 set('n', 'yf', '<CMD>let @+ = expand("%:p")<CR>')
 -- hightlight entire file
