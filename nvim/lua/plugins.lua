@@ -36,6 +36,11 @@ return require('packer').startup({function(use)
     -- lsp-kind
     use 'onsails/lspkind-nvim'
 
+    -- https://github.com/numToStr/Comment.nvim
+    use { 'numToStr/Comment.nvim', config = function()
+        require('Comment').setup()
+    end}
+
     -- Debugger Adapter Protocol
     -- use 'mfussenegger/nvim-dap'
     -- use 'Pocco81/DAPInstall.nvim'
