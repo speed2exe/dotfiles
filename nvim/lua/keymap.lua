@@ -3,6 +3,7 @@ local set = vim.keymap.set
 local fn = require 'function'
 local lsp_lines_conf = require 'lsp_lines_conf'
 local t_builtin = require 'telescope.builtin'
+local comment_api = require('Comment.api')
 
 vim.g.mapleader = ' ';
 
@@ -121,6 +122,10 @@ set('n', '<leader>l', t_builtin.live_grep)
 set('n', '<leader>o', t_builtin.oldfiles)
 set('n', '<leader>b', t_builtin.buffers)
 set('n', '<leader>d', t_builtin.diagnostics)
+
+-- Quick Comment
+set('n', '<BS>', '<Plug>(comment_toggle_linewise_current)j')
+set('v', '<BS>', '<Plug>(comment_toggle_blockwise_visual)gv')
 
 -- debug adapter protocol
 -- nnoremap <leader>db <CMD>lua require('dap').toggle_breakpoint()<CR>
