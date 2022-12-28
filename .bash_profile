@@ -14,6 +14,4 @@ if [[ ! "$LD_PRELOAD" == *libstderred.so* ]]; then
 fi
 
 # Auto startx after login
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-    startx
-fi
+[[ -z $DISPLAY && $XDG_VTNR ]] && startx
