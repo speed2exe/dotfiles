@@ -35,8 +35,8 @@ set('v', '<BS>', 'c<ESC>maa<C-R>"<BS><ESC>`aa<DEL><ESC>gvhh')
 -- apply macro to all lines
 set('v', 'Q', '<CMD>\'<,\'>normal @q<CR>')
 
--- paste with visual highlight
-set('n', '<leader>p', 'p`[v`]')
+-- higlight yanked text, or just edited text
+set('n', 'vp', '`[v`]')
 
 -- Search and replace for visually selected on entire document template
 set('v', '<leader>S', 'y:%s/<C-R>"/<C-R>"')
