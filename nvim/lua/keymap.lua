@@ -36,7 +36,7 @@ set('v', '<BS>', 'c<ESC>maa<C-R>"<BS><ESC>`aa<DEL><ESC>gvhh')
 set('v', 'Q', '<CMD>\'<,\'>normal @q<CR>')
 
 -- paste with visual highlight
-set('n', '<C-P>', 'p`[v`]')
+set('n', '<leader>p', 'p`[v`]')
 
 -- Search and replace for visually selected on entire document template
 set('v', '<leader>S', 'y:%s/<C-R>"/<C-R>"')
