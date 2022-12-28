@@ -1,3 +1,5 @@
+#! /usr/bin/fish
+
 set folder_names (cat folders.txt)
 
 for name in $folder_names
@@ -8,5 +10,9 @@ end
 rm -f ~/.config/starship.toml
 cp starship.toml ~/.config/starship.toml
 
-rm -f ~/.xinitrc
-cp .xinitrc ~/.xinitrc
+if test "$(uname)" = "Linux"
+    rm -f ~/.xinitrc
+    cp .xinitrc ~/.xinitrc
+    rm -f ~/.bash_profile
+    cp .bash_profile ~/.bash_profile
+end
