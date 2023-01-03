@@ -3,7 +3,6 @@ local set = vim.keymap.set
 local fn = require 'function'
 local lsp_lines_conf = require 'lsp_lines_conf'
 local t_builtin = require 'telescope.builtin'
-local comment_api = require('Comment.api')
 
 vim.g.mapleader = ' ';
 
@@ -16,9 +15,6 @@ set('i', '{<CR>', '{<CR>}<ESC>O')
 set('i', '(<CR>', '(<CR>)<ESC>O')
 set('i', '[<CR>', '[<CR>]<ESC>O')
 set('i', '<<CR>', '<<CR>><ESC>O')
-
--- Search for text under cursor
-set('v', '/', 'y/<C-R>"<CR>')
 
 -- Auto surround
 set('v', '""', 'c"<ESC>maa<C-R>""<ESC>mb`av`b')
