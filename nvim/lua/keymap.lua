@@ -16,18 +16,6 @@ set('i', '(<CR>', '(<CR>)<ESC>O')
 set('i', '[<CR>', '[<CR>]<ESC>O')
 set('i', '<<CR>', '<<CR>><ESC>O')
 
--- Auto surround
-set('v', '""', 'c"<ESC>maa<C-R>""<ESC>mb`av`b')
-set('v', '\'\'', 'c\'<ESC>maa<C-R>"\'<ESC>mb`av`b')
-set('v', '``', 'c`<ESC>maa<C-R>"`<ESC>mb`av`b')
-set('v', '[]', 'c[<ESC>maa<C-R>"]<ESC>mb`av`b')
-set('v', '{}', 'c{<ESC>maa<C-R>"}<ESC>mb`av`b')
-set('v', '()', 'c(<ESC>maa<C-R>")<ESC>mb`av`b')
-set('v', '<>', 'c<<ESC>maa<C-R>"><ESC>mb`av`b')
-
--- Remove First and Last character
-set('v', '<BS>', 'c<ESC>maa<C-R>"<BS><ESC>`aa<DEL><ESC>gvhh')
-
 -- apply macro to all lines
 set('v', 'Q', '<CMD>\'<,\'>normal @q<CR>')
 
