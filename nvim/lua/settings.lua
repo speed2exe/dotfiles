@@ -2,7 +2,7 @@ local opt = vim.opt
 local cmd = vim.cmd
 local g = vim.g
 
-opt.clipboard:prepend{'unnamed', 'unnamedplus'}
+opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
 opt.termguicolors = true
 opt.showmode = false
 opt.hlsearch = false
@@ -20,13 +20,13 @@ opt.smartcase = true
 opt.swapfile = false
 opt.writebackup = false
 opt.scrolloff = 16
-opt.completeopt = {'menu', 'menuone', 'preview'}
+opt.completeopt = { 'menu', 'menuone', 'preview' }
 opt.splitbelow = true
 opt.splitright = true
-opt.wildmode = {'longest:full', 'full'}
+opt.wildmode = { 'longest:full', 'full' }
 opt.lazyredraw = true
-opt.timeoutlen = 1000
-opt.updatetime = 1000
+opt.timeoutlen = 500
+opt.updatetime = 0
 opt.pumblend = 15
 opt.winbar = '%f'
 opt.signcolumn = 'yes'
