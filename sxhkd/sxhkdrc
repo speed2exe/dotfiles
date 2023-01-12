@@ -163,6 +163,10 @@ super + shift + {4,6,5}
 super Tab
     bspc desktop -f last
 
+# select last desktop
+super + shift + Tab
+    bspc desktop -s last --follow
+
 # rename destkop
 super + d
     ~/.config/sxhkd/rename_desktop.sh
@@ -171,7 +175,7 @@ super + d
 
 # Move Node to last desktop
 # usually happens aftar rofi window search
-super + shift + Tab
+super + alt + Tab
     bspc node -d last --follow
 
 # Send node to first desktop
