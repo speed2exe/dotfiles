@@ -61,12 +61,10 @@ return require('packer').startup({function(use)
     use 'farmergreg/vim-lastplace'
 
     -- https://draculatheme.com/vim
-    use 'dracula/vim'
+    -- use 'dracula/vim'
 
     --https://github.com/Mofiqul/dracula.nvim
-    -- use {'Mofiqul/dracula.nvim', config = function()
-    --     require('dracula').setup{}
-    -- end}
+    use 'Mofiqul/dracula.nvim'
 
     -- https://github.com/lewis6991/gitsigns.nvim
     use { 'lewis6991/gitsigns.nvim', config = function()

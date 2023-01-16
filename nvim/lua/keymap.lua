@@ -80,7 +80,7 @@ set('n', '<S-RIGHT>', '<C-W>L')
 -- resize windows
 set('n', '+', '<CMD>vertical resize +10<CR>')
 set('n', '-', '<CMD>vertical resize -10<CR>')
-set('n', '|', '<CMD>resize +10<CR>')
+set('n', '=', '<CMD>resize +10<CR>')
 set('n', '_', '<CMD>resize -10<CR>')
 set('n', '\\', '<C-W>=')
 
