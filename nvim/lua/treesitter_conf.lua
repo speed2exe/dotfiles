@@ -1,10 +1,11 @@
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
     ensure_installed = "all",
-    sync_install = true,
-    ignore_install = {"phpdoc"},
+    sync_install = false,
+    auto_install = true,
+    ignore_install = { "phpdoc" },
     highlight = {
         enable = true,
-        additional_vim_regex_highlighting = true,
+        -- additional_vim_regex_highlighting = true,
     },
     indent = {
         enable = false,
@@ -16,4 +17,3 @@ require'nvim-treesitter.configs'.setup {
     --     enable = true,
     -- },
 }
-
