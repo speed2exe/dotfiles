@@ -2,7 +2,7 @@
 #
 # reset the keyboard daemon
 # usually happens after modification to sxhkd file
-super + l
+super + f
     killall -q sxhkd && sxhkd &
 
 # On the fly scripts
@@ -21,10 +21,6 @@ super + k
 super + space
     rofi -show combi -show-icons -sidebar-mode -steal-focus
 
-# file browser
-super + f
-    rofi -show filebrowser -steal-focus
-
 # screenshot menu
 super + s
     ~/.config/sxhkd/screenshot.sh
@@ -39,6 +35,7 @@ super + w
 
 super + shift + w
     ~/.config/sxhkd/get_wallpaper
+
 
 ###---------- System Keys ----------##
 
@@ -58,15 +55,15 @@ XF86AudioMute
 
 # Spawn Receptacle
 super + x
-    bspc node -i
+    bspc node --insert-receptacle
 
 # Next through floating windows
-super + n
-    bspc node -f next.local.floating
+super + j 
+    bspc node --focus next.local.floating
 
 # Previous through floating windows
-super + r
-    bspc node -f prev.local.floating
+super + g
+    bspc node --focus prev.local.floating
 
 # Close App
 super + q
@@ -77,7 +74,7 @@ super + shift + q
 	bspc node -k
 
 # Toggle Modes
-super + t
+super + o
     bspc node -t "~"{floating,tiled}
 
 # Change focus
@@ -86,7 +83,7 @@ super + {d,u,a,e}
 
 # Swap
 super + {Left,Up,Right,Down}
-    bspc node -s {west,north,east,south} --follow
+    bspc node --swap {west,north,east,south} --follow
 
 # Fill Receptacle
 super + i
@@ -94,10 +91,10 @@ super + i
 
 # Rotate
 super + {Next,Prior,End}
-    bspc node @parent -R {90,270,180}
+    bspc node @parent --rotate {90,270,180}
 
 # Auto Resize with equal area
-super + g
+super + l
     bspc node @/ -B
 
 # Expand from Left
@@ -118,19 +115,19 @@ super + shift + e
 
 # Shrink from Right
 super + alt + a
-    ~/.config/sxhkd/resize.sh left 16 0 || ~/.config/sxhkd/auto_recep.sh west
+    ~/.config/sxhkd/resize.sh left 16 0
 
 # Shrink from Left
 super + alt + d
-    ~/.config/sxhkd/resize.sh right -16 0 || ~/.config/sxhkd/auto_recep.sh east
+    ~/.config/sxhkd/resize.sh right -16 0
 
 # Shrink from Top
 super + alt + e
-    ~/.config/sxhkd/resize.sh top 0 16 || ~/.config/sxhkd/auto_recep.sh north
+    ~/.config/sxhkd/resize.sh top 0 16
 
 # Shrink from Bottom
 super + alt + u
-    ~/.config/sxhkd/resize.sh bottom 0 -16 || ~/.config/sxhkd/auto_recep.sh south
+    ~/.config/sxhkd/resize.sh bottom 0 -16
 
 # Move window left
 super + ctrl + d

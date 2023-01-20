@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 dir=$1
 hor=$2
 ver=$3

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 uptime=$(uptime -p)
 dunstify "$uptime"
 
