@@ -5,7 +5,7 @@ hor=$2
 ver=$3
 node=$(bspc query --nodes --node)
 
-mul=$(($(~/.config/sxhkd/inc "$node$dir$hor$ver")))
+mul=$(($(~/.config/sxhkd/inc_2x "$node$dir$hor$ver")))
 hor=$(($mul*$hor))
 ver=$(($mul*$ver))
 bspc node --resize $dir $hor $ver

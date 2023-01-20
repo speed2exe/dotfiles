@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+node=$(bspc query --nodes --node)
+
+count=$(($(~/.config/sxhkd/inc_1 "$node")))
+
+# loop count times
+for i in $(seq 1 $count); do
+    bspc node --insert-receptacle
+done
+
+bspc node @/ --balance
+~/.config/sxhkd/bspc_all_remove_receptacles
