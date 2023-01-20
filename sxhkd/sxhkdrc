@@ -150,29 +150,38 @@ super + ctrl + e
 
 ##---------- Desktop Management ----------##
 
-# focus desktop
-super + {4,6,5,8}
-    bspc desktop -f {prev,next,'^1',last}
+# Focus desktop
+super + {4,6}
+    bspc desktop --focus {prev,next}
 
 # Swap desktop
-super + shift + {4,6,5,8}
-    bspc desktop -s {prev,next,'^1',last} --follow
+super + shift + {4,6}
+    bspc desktop --swap {prev,next} --follow
 
-# rename destkop
-super + d
-    ~/.config/sxhkd/rename_desktop.sh
+##---------- Monitor Management ----------##
+
+# Focus monitor
+super + {8,5}
+    bspc monitor --focus {prev,next}
+
+# Swap Monitor
+super + shift + {8,5}
+    bspc monitor --swap {prev,next} --follow
 
 ##---------- Transfer Management ----------##
 
 # Move Node to last desktop
-# usually happens aftar rofi window search
-super + alt + Tab
-    bspc node -d last --follow
+super + Tab
+    bspc node --to-desktop last --follow
 
 # Send node to first desktop
 super + BackSpace
-	bspc node -d '^1'
+	bspc node --to-desktop '^1'
 
 # Send node to previous or next desktop
 super + alt + {4,6}
-    bspc node -d {prev,next} --follow
+    bspc node --to-desktop {prev,next} --follow
+
+# Send node to previous or next monitor
+super + alt + {8,5}
+    bspc node --to-monitor {prev,next} --follow
