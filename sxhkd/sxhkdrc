@@ -151,21 +151,12 @@ super + ctrl + e
 ##---------- Desktop Management ----------##
 
 # focus desktop
-super + {4,6,5}
-    bspc desktop -f {prev,next,'^1'}
+super + {4,6,5,8}
+    bspc desktop -f {prev,next,'^1',last}
 
 # Swap desktop
-super + shift + {4,6,5}
-    bspc desktop -s {prev,next,'^1'} --follow
-
-# select last desktop
-# good for switching back after rofi search
-super Tab
-    bspc desktop -f last
-
-# select last desktop
-super + shift + Tab
-    bspc desktop -s last --follow
+super + shift + {4,6,5,8}
+    bspc desktop -s {prev,next,'^1',last} --follow
 
 # rename destkop
 super + d
