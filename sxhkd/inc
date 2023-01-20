@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 input_key=$1
 current_key=$(cat /tmp/inc.key)
 
