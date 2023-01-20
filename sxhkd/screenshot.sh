@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 unique=$(date -Iseconds)
 mkdir ~/screenshots/
 file="$HOME/screenshots/${unique}.png"
