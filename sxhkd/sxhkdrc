@@ -7,7 +7,7 @@ super + f
 
 # On the fly scripts
 super + Escape
-    ~/.config/sxhkd/shortcuts.sh
+    ~/.config/sxhkd/shortcut
 
 # Terminal
 super + {_,shift +}Return
@@ -15,7 +15,7 @@ super + {_,shift +}Return
 
 # Remove all Receptacles
 super + k
-    ~/.config/sxhkd/remove_receptacle.sh
+    ~/.config/sxhkd/bspc_all_remove_receptacles
 
 # get window and pull it to current desktop
 super + space
@@ -23,11 +23,11 @@ super + space
 
 # screenshot menu
 super + s
-    ~/.config/sxhkd/screenshot.sh
+    ~/.config/sxhkd/screenshot
 
 # power menu
 super + p
-    ~/.config/sxhkd/power.sh
+    ~/.config/sxhkd/power
 
 # change wallpaper
 super + w
@@ -45,10 +45,10 @@ XF86MonBrightness{Up,Down}
 
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume}
-    pamixer --{increase,decrease} 5 && ~/.config/sxhkd/dunstify_volume.sh
+    pamixer --{increase,decrease} 5 && ~/.config/sxhkd/dunstify_volume
 
 XF86AudioMute
-    pamixer --toggle-mute && ~/.config/sxhkd/dunstify_volume.sh
+    pamixer --toggle-mute && ~/.config/sxhkd/dunstify_volume
 
 
 ##---------- Node Management ----------##
@@ -87,65 +87,74 @@ super + {Left,Up,Right,Down}
 
 # Fill Receptacle
 super + i
-    ~/.config/sxhkd/move_to_recep.sh
+    ~/.config/sxhkd/bspc_move_node_to_recep
 
 # Rotate
 super + {Next,Prior,End}
     bspc node @parent --rotate {90,270,180}
 
-# Auto Resize with equal area
+# Auto resize with equal area
 super + l
-    bspc node @/ -B
+    bspc node @/ --balance
+
+# Node increase size
+super + h
+# TODO
+    ~/.config/sxhkd/move_to_recep
 
 # Expand from Left
 super + shift + d
-    ~/.config/sxhkd/resize.sh left -16 0
+    ~/.config/sxhkd/bspc_resize_node left -16 0
 
 # Expand from Right
 super + shift + a
-    ~/.config/sxhkd/resize.sh right 16 0
+    ~/.config/sxhkd/bspc_resize_node right 16 0
 
 # Expand from Top
 super + shift + u
-    ~/.config/sxhkd/resize.sh top 0 -16
+    ~/.config/sxhkd/bspc_resize_node top 0 -16
 
 # Expand from Bottom
 super + shift + e
-    ~/.config/sxhkd/resize.sh bottom 0 16
+    ~/.config/sxhkd/bspc_resize_node bottom 0 16
 
 # Shrink from Right
 super + alt + a
-    ~/.config/sxhkd/resize.sh left 16 0
+    ~/.config/sxhkd/bspc_resize_node left 16 0
 
 # Shrink from Left
 super + alt + d
-    ~/.config/sxhkd/resize.sh right -16 0
+    ~/.config/sxhkd/bspc_resize_node right -16 0
 
 # Shrink from Top
 super + alt + e
-    ~/.config/sxhkd/resize.sh top 0 16
+    ~/.config/sxhkd/bspc_resize_node top 0 16
 
 # Shrink from Bottom
 super + alt + u
-    ~/.config/sxhkd/resize.sh bottom 0 -16
+    ~/.config/sxhkd/bspc_resize_node bottom 0 -16
 
 # Move window left
 super + ctrl + d
-    ~/.config/sxhkd/move.sh left -16 0
+    ~/.config/sxhkd/bspc_move_node left -16 0
 
 # Move window right
 super + ctrl + a
-    ~/.config/sxhkd/move.sh right 16 0
+    ~/.config/sxhkd/bspc_move_node right 16 0
 
 # Move window up
 super + ctrl + u
-    ~/.config/sxhkd/move.sh top 0 -16
+    ~/.config/sxhkd/bspc_move_node top 0 -16
 
 # Move window down
 super + ctrl + e
-    ~/.config/sxhkd/move.sh bottom 0 16
+    ~/.config/sxhkd/bspc_move_node bottom 0 16
 
 ##---------- Desktop Management ----------##
+
+# Rename desktop
+super + 0
+    ~/.config/sxhkd/rename_desktop
 
 # Focus desktop
 super + {4,6}
