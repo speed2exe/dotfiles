@@ -2,7 +2,7 @@
 #
 # reset the keyboard daemon
 # usually happens after modification to sxhkd file
-super + f
+super + l
     killall -q sxhkd && sxhkd &
 
 # On the fly scripts
@@ -94,13 +94,12 @@ super + {Next,Prior,End}
     bspc node @parent --rotate {90,270,180}
 
 # Auto resize with equal area
-super + l
-    bspc node @/ --balance
+super + n
+    bspc node @/ --balance && rm /tmp/inc.key
 
 # Node increase size
 super + h
-# TODO
-    ~/.config/sxhkd/move_to_recep
+    ~/.config/sxhkd/bspc_resize_node_auto_balance_increase
 
 # Expand from Left
 super + shift + d
@@ -153,12 +152,12 @@ super + ctrl + e
 ##---------- Desktop Management ----------##
 
 # Rename desktop
-super + 0
-    ~/.config/sxhkd/rename_desktop
+super + r
+    ~/.config/sxhkd/bspc_rename_desktop
 
 # Focus desktop
-super + {4,6}
-    bspc desktop --focus {prev,next}
+super + {4,6,0}
+    bspc desktop --focus {prev,next,'^1'}
 
 # Swap desktop
 super + shift + {4,6}
