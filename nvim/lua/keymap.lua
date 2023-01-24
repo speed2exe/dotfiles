@@ -45,7 +45,7 @@ set('i', '<C-J>', '<ESC>:m .+1<CR>a')
 set('i', '<C-K>', '<ESC>:m .-2<CR>a')
 
 -- toggle search highlight
-set('n', '<C-H>', fn.toggle_highlight)
+set('n', '<C-H>', fn.toggle_hlsearch)
 
 -- Indent
 set('v', ',', '<gv')
