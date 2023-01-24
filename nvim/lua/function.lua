@@ -18,8 +18,9 @@ M.toggle_quick_fix_list = function()
     end
 end
 
-M.toggle_hlsearch = function()
+M.toggle_highlight = function()
     vim.opt.hlsearch = not vim.opt.hlsearch:get()
+    vim.opt.cursorline = not vim.opt.cursorline:get()
 end
 
 return M
