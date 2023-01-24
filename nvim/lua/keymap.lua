@@ -29,10 +29,10 @@ set('v', '<leader>S', 'y:%s/<C-R>"/<C-R>"')
 set('v', '<leader>s', ':s/<C-R>"/<C-R>"')
 
 -- print current file
-set('n', '<ESC>', '<CMD>pwd<CR><CMD>Beacon<CR>')
+set('n', '<ESC>', '<CMD>pwd<CR>')
 -- copy current file path to clipboard
 set('n', 'yf', '<CMD>let @+ = expand("%:p")<CR>')
--- hightlight entire file
+-- highlight entire file
 set('n', 'v%', 'gg^vG$')
 set('n', 'y%', '<CMD>:%y+<CR>')
 
@@ -45,7 +45,7 @@ set('i', '<C-J>', '<ESC>:m .+1<CR>a')
 set('i', '<C-K>', '<ESC>:m .-2<CR>a')
 
 -- toggle search highlight
-set('n', '<C-H>', fn.toggle_hlsearch)
+set('n', '<C-H>', fn.toggle_highlight)
 
 -- Indent
 set('v', ',', '<gv')
