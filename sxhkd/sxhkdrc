@@ -78,8 +78,8 @@ super + o
     bspc node -t "~"{floating,tiled}
 
 # Change focus
-super + {d,u,a,e}
-	bspc node -f {west,north,east,south}
+super + {d,u,a,e,Tab}
+	bspc node -f {west,north,east,south,last}
 
 # Swap
 super + {Left,Up,Right,Down}
@@ -176,7 +176,7 @@ super + shift + {8,5}
 ##---------- Transfer Management ----------##
 
 # Move Node to last desktop
-super + Tab
+super + alt + Tab
     bspc node --to-desktop last --follow
 
 # Send node to first desktop
