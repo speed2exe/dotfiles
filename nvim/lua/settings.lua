@@ -25,7 +25,6 @@ opt.splitright = true
 opt.lazyredraw = true
 opt.timeoutlen = 500
 opt.updatetime = 0
-opt.pumblend = 15
 opt.winbar = '%f'
 opt.signcolumn = 'yes'
 opt.cursorline = true
@@ -39,7 +38,6 @@ cmd [[
     highlight Normal guibg=NONE ctermbg=NONE
     highlight SignColumn guibg=NONE ctermbg=NONE
     highlight WinSeparator guibg=NONE ctermbg=NONE
-    highlight PmenuSel blend=0
 ]]
 
 -- Github copilot stuff
