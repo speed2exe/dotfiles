@@ -61,9 +61,8 @@ set('n', '<END>', ':lcd %:p:h<CR>:pwd<CR>')
 
 -- new window
 set('n', '<leader>x', '<CMD>split<CR>')
-set('n', '<leader>X', '<CMD>new<CR>')
 set('n', '<leader>v', '<CMD>vsplit<CR>')
-set('n', '<leader>V', '<CMD>vnew<CR>')
+set('n', '<leader>n', '<CMD>enew<CR>')
 
 -- move between windows
 set('n', '<LEFT>', '<C-W>h')
@@ -93,7 +92,7 @@ set('n', '<C-Q>', fn.toggle_quick_fix_list)
 -- Telescope
 set('n', '<leader>t', '<CMD>Telescope<CR>')
 set('n', '<leader>h', t_builtin.help_tags)
-set('n', '<leader>s', t_builtin.lsp_dynamic_workspace_symbols)
+set('n', '<leader>l', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>d', t_builtin.diagnostics)
 set('n', '<leader>k', t_builtin.keymaps)
 set('n', '<leader>j', t_builtin.jumplist)
@@ -102,7 +101,7 @@ set('n', '<leader>r', t_builtin.registers)
 set('n', '<leader>m', t_builtin.marks)
 set('n', '<leader>f', t_builtin.find_files)
 set('n', '<leader>g', t_builtin.git_files)
-set('n', '<leader>l', t_builtin.live_grep)
+set('n', '<leader>s', t_builtin.live_grep)
 set('n', '<leader>o', t_builtin.oldfiles)
 set('n', '<leader>b', t_builtin.buffers)
 set('n', '<leader>d', t_builtin.diagnostics)

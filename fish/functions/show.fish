@@ -1,6 +1,6 @@
 function show
     set arg_count (count $argv)
-    
+
     if test $arg_count -eq 0
         ll
         return
@@ -33,5 +33,5 @@ function show
         return
     end
 
-    echo "neither file[ with line number] nor directory: $argv"
+    error "neither file[ with line number] nor directory: $argv"
 end
