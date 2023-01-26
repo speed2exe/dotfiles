@@ -12,12 +12,6 @@ echo
 set_color brblack ; fortune ; set_color normal
 echo
 
-# cd to .savedir if exists
-if test -f /tmp/.savedir
-	cd (cat /tmp/.savedir)
-	rm /tmp/.savedir
-end
-
 # run .cmd if exists
 if test -f /tmp/.cmd
 	mv /tmp/.cmd /tmp/.cmd.tmp
