@@ -13,5 +13,4 @@ function cd
 
     # print the current directory and the items in it
     print_boxed "$cur_path"; la
-    echo "$cur_path" > /tmp/.savedir
 end
