@@ -1,5 +1,7 @@
 function n
     touch /tmp/dir_history
-    set dir (tac /tmp/dir_history ~/marks/dir_history.txt | tail -n +2 | fpr --no-sort)
+    set dir (tac /tmp/dir_history ~/marks/dir_history.txt | fpr --no-sort)
     and cd $dir
+
+    update_dir_history &
 end
