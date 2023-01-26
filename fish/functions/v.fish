@@ -5,9 +5,7 @@ function v
 		set path (tac ~/marks/file_history.txt | fpr)
 	end
 
-    if test -z "$path"
-        return
-    end
+    test -z "$path" && return
 
     set splitted (string split --max 1 --right ":" "$path") # account for line number if exists
     set file "$splitted[1]"
@@ -15,8 +13,7 @@ function v
 
     if test -n "$line"
         nvim "$file" "+$line"
-        return
+    else
+        nvim "$file"
     end
-
-    nvim "$file"
 end

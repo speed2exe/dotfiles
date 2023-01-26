@@ -3,8 +3,8 @@ function r
         if test -d "$argv"
             set path (realpath "$argv")
         else
-            set_color red ; echo "path $argv does not exists"
-            return 1
+            error "path $argv does not exists"
+            return
         end
     else
         set path (pwd)
@@ -16,6 +16,6 @@ function r
     touch ~/marks/dir_hash/"$dir_hash"/file_history.txt
 
     set path (tac ~/marks/dir_hash/"$dir_hash"/file_history.txt \
-        | xargs -I {} realpath --relative-to=. {} 2> /dev/null | fpr) \
-        && v "$path"
+        | xargs -I {} realpath --relative-to=. {} 2> /dev/null | fpr)
+    and v "$path"
 end
