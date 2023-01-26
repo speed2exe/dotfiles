@@ -10,7 +10,7 @@ require('telescope').setup {
     pickers = {
         live_grep = {
             additional_args = function()
-                return {"--hidden"}
+                return { "--hidden" }
             end
         },
         find_files = {
@@ -32,5 +32,3 @@ require('telescope').setup {
 }
 
 require('telescope').load_extension('fzf')
-
-vim.cmd[[highlight TelescopeNormal guibg=NONE ctermbg=NONE]]
