@@ -6,8 +6,8 @@ super + l
     killall -q sxhkd && sxhkd &
 
 # On the fly scripts
-super + Escape
-    ~/.config/sxhkd/shortcut
+# super + Escape
+# TODO
 
 # Terminal
 super + {_,shift +}Return
