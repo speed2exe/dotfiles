@@ -1,8 +1,7 @@
 function bind_ctrl_z
     set items (jobs)
-    if test -z "$items"
-        return
-    end
+
+    test -z "$items" && return
 
     if test (count $items) -eq 1
         fg (echo "$items" | cut -f 2)

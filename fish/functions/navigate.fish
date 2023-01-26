@@ -2,8 +2,8 @@ function navigate
     if test -z "$argv"
         set argv "."
     else if not test -d "$argv"
-        echo "$argv: not a directory"
-        return 1
+        error "$argv: not a directory"
+        return
     end
 
     set dir (realpath "$argv")"/"
@@ -19,7 +19,7 @@ function navigate
     else if test -f "$selection"
         printf "$selection"
     else if test -n "$input"
-        echo "no such file or directory: $input" >&2
+        error "no such file or directory: $input"
         navigate "$dir"
     else if test -z "$selection"
         printf "$dir"

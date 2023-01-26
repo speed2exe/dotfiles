@@ -1,7 +1,7 @@
 function compress
     if test (count "$argv") -eq 0
         error "require at least 1 arg"
-        return 1
+        return
     else if test (count "$argv") -eq 1
         set type ""
         set path "$argv[1]"
@@ -10,6 +10,7 @@ function compress
         set path "$argv[2]"
     else
         error "too many args, max: 2 ([type], path)"
+        return
     end
 
     # set ext based on type

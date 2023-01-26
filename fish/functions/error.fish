@@ -1,3 +1,4 @@
 function error
-    set_color red; echo $argv; set_color normal
+    echo $argv >&2
+    return 1
 end
