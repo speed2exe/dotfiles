@@ -33,6 +33,3 @@ bind --mode insert \ct 'bind_ctrl_t'
 
 # keybinding for handling background jobs
 bind --mode insert \cz 'bind_ctrl_z'
-
-# update directory history
-update_dir_history # ~/.config/fish/functions/update_dir_history.fish
