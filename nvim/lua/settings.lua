@@ -33,12 +33,7 @@ opt.cursorline = true
 -- commands that cannot be represented in neovim
 -- hopefully pure lua equivalent of the following commands
 -- can be implemented in neovim in the future
-cmd [[
-    colorscheme dracula
-    highlight Normal guibg=NONE ctermbg=NONE
-    highlight SignColumn guibg=NONE ctermbg=NONE
-    highlight WinSeparator guibg=NONE ctermbg=NONE
-]]
+vim.cmd [[colorscheme dracula]]
 
 -- Github copilot stuff
 g.copilot_no_tab_map = true

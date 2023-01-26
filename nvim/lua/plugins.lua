@@ -64,6 +64,11 @@ return require('packer').startup({ function(use)
     --https://github.com/Mofiqul/dracula.nvim
     use 'Mofiqul/dracula.nvim'
 
+    -- https://github.com/xiyaowong/nvim-transparent
+    use { 'xiyaowong/nvim-transparent', config = function()
+        require("transparent").setup { enable = true }
+    end }
+
     -- https://github.com/lewis6991/gitsigns.nvim
     use { 'lewis6991/gitsigns.nvim', config = function()
         require('gitsigns').setup()
