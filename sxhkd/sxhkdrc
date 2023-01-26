@@ -5,10 +5,6 @@
 super + l
     killall -q sxhkd && sxhkd &
 
-# On the fly scripts
-# super + Escape
-# TODO
-
 # Terminal
 super + {_,shift +}Return
     {alacritty, bspc rule -a \* -o state=floating && alacritty}
@@ -17,9 +13,13 @@ super + {_,shift +}Return
 super + k
     ~/.config/sxhkd/bspc_all_remove_receptacles
 
-# get window and pull it to current desktop
+# search and open new app
 super + space
-    rofi -show combi -show-icons -sidebar-mode -steal-focus
+    rofi -show drun -show-icons -steal-focus
+
+# search and go to existing opened app
+super + Escape
+    rofi -show window -show-icons -steal-focus
 
 # screenshot menu
 super + s
@@ -33,6 +33,7 @@ super + p
 super + w
     nitrogen --set-zoom-fill --random ~/wallpaper
 
+# change wallpaper based on input
 super + shift + w
     ~/.config/sxhkd/get_wallpaper
 
