@@ -12,13 +12,6 @@ echo
 set_color brblack ; fortune ; set_color normal
 echo
 
-# run .cmd if exists
-if test -f /tmp/.cmd
-	mv /tmp/.cmd /tmp/.cmd.tmp
-	fish /tmp/.cmd.tmp
-	rm /tmp/.cmd.tmp
-end
-
 # display todos if not empty
 test -f ~/.todo.md || touch ~/.todo.md
 cat ~/.todo.md
