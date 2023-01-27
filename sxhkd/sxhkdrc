@@ -15,11 +15,11 @@ super + k
 
 # search and open new app
 super + space
-    rofi -show drun -show-icons -steal-focus
+    rofi -show window -show-icons -steal-focus
 
 # search and go to existing opened app
 super + Escape
-    rofi -show window -show-icons -steal-focus
+    rofi -show drun -show-icons -steal-focus
 
 # screenshot menu
 super + s
