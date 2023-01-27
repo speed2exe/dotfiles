@@ -14,10 +14,6 @@ echo
 set_color brblack ; fortune ; set_color normal
 echo
 
-# display todos if not empty
-test -f ~/.todo.md
-and cat ~/.todo.md
-
 # keybinding to emulate yank line and paste in vi mode
 bind yy fish_clipboard_copy
 bind p fish_clipboard_paste
