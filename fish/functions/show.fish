@@ -23,13 +23,15 @@ function show
 
     if test -f "$file"
         if test -z "$line"
-            bat --color=always --style=numbers "$file"
+            bat --theme=Dracula --color=always --style=numbers "$file"
             return
         end
-        
+
         set from_line (math max 0, "$line" - 5)
 
-        bat --color=always --style=numbers --line-range "$from_line": --highlight-line "$line:" "$file"
+        bat --theme=Dracula --color=always --style=numbers \
+            --line-range "$from_line": \
+            --highlight-line "$line:" "$file"
         return
     end
 
