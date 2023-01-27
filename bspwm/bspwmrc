@@ -20,10 +20,10 @@ workspaces() {
 }
 workspaces
 
-bspc config focused_border_color \#BD93F9
+bspc config normal_border_color \#21222C
+bspc config focused_border_color \#6272A4
 bspc config border_width 1
-bspc config window_gap 0
-#bspc config split_ratio 0.50
+bspc config window_gap 1
 
 # Kill if already running
 killall -9 xsettingsd sxhkd dunst xfce4-power-manager picom polybar
