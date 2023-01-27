@@ -13,13 +13,9 @@ super + {_,shift +}Return
 super + k
     ~/.config/sxhkd/bspc_all_remove_receptacles
 
-# search and open new app
+# search and open new app or go to existing app
 super + space
-    rofi -show window -show-icons -steal-focus
-
-# search and go to existing opened app
-super + Escape
-    rofi -show drun -show-icons -steal-focus
+    rofi -show combi -show-icons -steal-focus
 
 # screenshot menu
 super + s
@@ -177,8 +173,8 @@ super + shift + {8,5}
 ##---------- Transfer Management ----------##
 
 # Move Node to last desktop
-super + alt + Tab
-    bspc node --to-desktop last --follow
+super + Escape
+    bspc node --to-node last --follow
 
 # Send node to first desktop
 super + BackSpace
