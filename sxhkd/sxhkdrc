@@ -87,8 +87,8 @@ super + i
     ~/.config/sxhkd/bspc_move_node_to_recep
 
 # Rotate
-super + {Next,Prior,End}
-    bspc node @parent --rotate {90,270,180}
+super + {Next,Prior,Delete}
+    bspc node @parent --rotate {90,180,270}
 
 # Auto resize with equal area
 super + n
