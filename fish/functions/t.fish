@@ -1,5 +1,5 @@
 function t
-    set path (navigate $argv)
+    set path (navigate $argv) # ~/.config/fish/functions/navigate.fish
     if test -f "$path"
         cd (dirname "$path")
         v (basename "$path")
