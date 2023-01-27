@@ -1,6 +1,8 @@
 /*Dracula theme based on the Purple official rofi theme*/
 
 configuration {
+    modi: "combi";
+    combi-modi: "window,drun";
     font: "iosevka2 12";
 }
 
