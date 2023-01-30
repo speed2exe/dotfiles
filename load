@@ -1,7 +1,7 @@
-#! /usr/bin/fish
-
+#!/usr/bin/env fish
 set sys (uname)
-if test "$sys" = "Darwin"
+switch $sys
+case '*Darwin*'
     cd ~/dotfiles/macos/
     fish load.fish
     return
