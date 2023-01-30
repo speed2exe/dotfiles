@@ -3,7 +3,7 @@ set sys (uname)
 switch $sys
 case '*Darwin*'
     cd ~/dotfiles/macos/
-    fish load.fish
+    ./load
     return
 end
 
