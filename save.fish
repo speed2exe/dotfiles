@@ -1,3 +1,9 @@
+#  Important: Not valid for MacOS
+if (uname -a | grep -q Darwin)
+    echo "This script is not valid for MacOS"
+    exit 1
+end
+
 set folder_names (cat folders.txt)
 
 git stash

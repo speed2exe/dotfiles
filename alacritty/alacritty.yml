@@ -885,7 +885,7 @@
 
 # Shell
 shell:
-  program: /bin/fish
+  program: /usr/bin/env fish
 
 # Font configuration
 font:
