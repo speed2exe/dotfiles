@@ -1,3 +1,4 @@
+#!/usr/bin/env fish
 #  Important: Not valid for MacOS
 set sys (uname)
 switch $sys
