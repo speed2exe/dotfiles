@@ -48,9 +48,8 @@ set('i', '<C-K>', '<ESC>:m .-2<CR>a')
 set('n', '<C-H>', fn.toggle_hlsearch)
 
 -- Indent
-set('v', ',', '<gv')
-set('v', '.', '>gv')
-set('n', '<leader>i', 'jgg=G<C-O>k')
+set('v', '<', '<gv')
+set('v', '>', '>gv')
 
 -- go to prev directory
 set('n', '<DEL>', ':cd ..<CR>:pwd<CR>')
@@ -91,6 +90,7 @@ set('n', '<C-Q>', fn.toggle_quick_fix_list)
 
 -- Telescope
 set('n', '<leader>t', '<CMD>Telescope<CR>')
+set('n', '<leader><ESC>', t_builtin.resume)
 set('n', '<leader>h', t_builtin.help_tags)
 set('n', '<leader>l', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>d', t_builtin.diagnostics)
