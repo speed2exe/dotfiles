@@ -1,6 +1,3 @@
--- speed up load time
-require('impatient')
-
 local vim = vim
 local fn = vim.fn
 
