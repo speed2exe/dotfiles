@@ -1,3 +1,7 @@
+-- speed up load time
+-- comment this line if you set up for the first time
+require('impatient')
+
 require('plugins')
 require('keymap')
 require('settings')
