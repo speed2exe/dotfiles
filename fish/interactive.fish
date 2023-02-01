@@ -9,11 +9,6 @@ source ~/.config/fish/functions/dracula.fish
 # VI Key Bindings
 fish_vi_key_bindings
 
-# Print some stuff
-echo
-set_color brblack ; fortune ; set_color normal
-echo
-
 # keybinding to emulate yank line and paste in vi mode
 bind yy fish_clipboard_copy
 bind p fish_clipboard_paste
