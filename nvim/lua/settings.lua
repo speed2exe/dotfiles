@@ -35,6 +35,10 @@ opt.cursorline = true
 -- can be implemented in neovim in the future
 vim.cmd [[colorscheme dracula]]
 
+-- https://draculatheme.com/contribute
+-- use same background color as dracula theme
+vim.cmd [[ highlight CursorLine guibg=#282a36 ]]
+
 -- https://vim.fandom.com/wiki/Remove_unwanted_spaces
 vim.cmd [[ autocmd BufWritePre * :%s/\s\+$//e ]]
 
