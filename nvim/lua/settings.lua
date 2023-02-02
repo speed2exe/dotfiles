@@ -35,6 +35,9 @@ opt.cursorline = true
 -- can be implemented in neovim in the future
 vim.cmd [[colorscheme dracula]]
 
+-- https://vim.fandom.com/wiki/Remove_unwanted_spaces
+vim.cmd [[ autocmd BufWritePre * :%s/\s\+$//e ]]
+
 -- Github copilot stuff
 g.copilot_no_tab_map = true
 
