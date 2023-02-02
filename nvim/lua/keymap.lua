@@ -6,21 +6,14 @@ local t_builtin = require 'telescope.builtin'
 
 vim.g.mapleader = ' ';
 
--- Remove all empty lines within a range
--- https://linuxize.com/post/vim-delete-line
-set('v', '<leader><BS>', '<CMD>\'<,\'>g/^$/d<CR>')
+-- Remove lines with only whitespace or nothing
+set('v', '<leader><BS>', ':g/^\\s*$/d<CR>')
 
--- Auto braces after return
-set('i', '{<CR>', '{<CR>}<ESC>O')
-set('i', '(<CR>', '(<CR>)<ESC>O')
-set('i', '[<CR>', '[<CR>]<ESC>O')
-set('i', '<<CR>', '<<CR>><ESC>O')
-
--- apply macro to all lines
-set('v', 'Q', '<CMD>\'<,\'>normal @q<CR>')
+-- Apply macro to all lines to visual selection
+set('v', '<leader>q', ':normal @q<CR>')
 
 -- higlight yanked text, or just edited text
-set('n', 'vp', '`[v`]')
+set('n', 'vv', '`[v`]')
 
 -- Search and replace for visually selected on entire document template
 set('v', '<leader>S', 'y:%s/<C-R>"/<C-R>"')
@@ -28,7 +21,7 @@ set('v', '<leader>S', 'y:%s/<C-R>"/<C-R>"')
 -- Search and replace for clipboard content on visually selected
 set('v', '<leader>s', ':s/<C-R>"/<C-R>"')
 
--- print current file
+-- print current directory
 set('n', '<ESC>', '<CMD>pwd<CR>')
 -- copy current file path to clipboard
 set('n', 'yf', '<CMD>let @+ = expand("%:p")<CR>')
@@ -104,7 +97,6 @@ set('n', '<leader>g', t_builtin.git_files)
 set('n', '<leader>s', t_builtin.live_grep)
 set('n', '<leader>o', t_builtin.oldfiles)
 set('n', '<leader>b', t_builtin.buffers)
-set('n', '<leader>d', t_builtin.diagnostics)
 
 -- Quick Comment
 set('n', '<BS>', '<Plug>(comment_toggle_linewise_current)j')
