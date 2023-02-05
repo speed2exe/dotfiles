@@ -13,7 +13,7 @@ set('n', '<leader>c', function()
 end)
 
 -- :h gf => create file if not exists
-set('n', 'gf', ':e <cfile>')
+set('n', 'gf', ':e <cfile><CR>')
 
 -- Remove lines with only whitespace or nothing
 set('v', '<leader><BS>', ':g/^\\s*$/d<CR>')
