@@ -21,7 +21,7 @@ return require('packer').startup({ function(use)
 
     -- Display better lsp diagnostics with virtual lines below
     use { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim', config = function()
-        require('lsp_lines_conf')
+        require('lsp_lines_conf') -- ~/.config/nvim/lua/lsp_lines_conf.lua
     end }
 
     -- Git
@@ -46,12 +46,12 @@ return require('packer').startup({ function(use)
     -- Project management
     -- TODO: maybe there's a better nvim version out there
     use { 'ahmedkhalf/project.nvim', config = function()
-        require('project_conf')
+        require('project_conf') -- ~/.config/nvim/lua/project_conf.lua
     end }
 
     -- Indent guide lines
     use { 'lukas-reineke/indent-blankline.nvim', config = function()
-        require('indent-blankline_conf')
+        require('indent-blankline_conf') -- ~/.config/nvim/lua/indent-blankline_conf.lua
     end }
 
     -- go to last cursor position
@@ -94,6 +94,8 @@ return require('packer').startup({ function(use)
     end }
     -- use 'nvim-telescope/telescope-fzy-native.nvim'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    -- https://github.com/nvim-telescope/telescope-file-browser.nvim
+    use  'nvim-telescope/telescope-file-browser.nvim'
 
     use { 'williamboman/mason.nvim', config = function()
         require('mason').setup()

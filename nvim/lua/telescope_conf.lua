@@ -1,7 +1,5 @@
 require('telescope').setup {
     defaults = {
-        border = false,
-        winblend = 30,
         layout_config = {
             height = .99,
             width = .99,
@@ -32,3 +30,5 @@ require('telescope').setup {
 }
 
 require('telescope').load_extension('fzf')
+require('telescope').load_extension('file_browser')
+vim.cmd [[ highlight TelescopeNormal guibg=NONE ctermbg=NONE ]]
