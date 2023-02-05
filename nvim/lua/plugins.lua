@@ -28,6 +28,9 @@ return require('packer').startup({ function(use)
     -- TODO: maybe there's a better nvim version out there
     use 'tpope/vim-fugitive'
 
+    -- https://github.com/m00qek/baleia.nvim
+    use 'm00qek/baleia.nvim'
+
     -- lsp-kind
     use 'onsails/lspkind-nvim'
 
