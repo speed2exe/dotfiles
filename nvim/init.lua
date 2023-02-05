@@ -9,7 +9,7 @@ require('settings')
 -- custom stuff
 require('last_used')
 require('nvim-lspconfig_setup')
-require('autocmd')
+require('autocmd') -- ~/.config/nvim/lua/autocmd.lua
 
 vim.cmd [[
     " https://stackoverflow.com/questions/630884/opening-vim-help-in-a-vertical-split-window

@@ -3,8 +3,17 @@ local set = vim.keymap.set
 local fn = require 'function'
 local lsp_lines_conf = require 'lsp_lines_conf'
 local t_builtin = require 'telescope.builtin'
+local baleia = require('baleia')
 
 vim.g.mapleader = ' ';
+
+-- Interpret ansi colors
+set('n', '<leader>c', function()
+    baleia.setup().once(0)
+end)
+
+-- :h gf => create file if not exists
+set('n', 'gf', ':e <cfile>')
 
 -- Remove lines with only whitespace or nothing
 set('v', '<leader><BS>', ':g/^\\s*$/d<CR>')
@@ -41,8 +50,8 @@ set('i', '<C-K>', '<ESC>:m .-2<CR>a')
 set('n', '<C-H>', fn.toggle_hlsearch)
 
 -- Indent
-set('v', '<', '<gv')
-set('v', '>', '>gv')
+set('v', ',', '<gv')
+set('v', '.', '>gv')
 
 -- go to prev directory
 set('n', '<DEL>', ':cd ..<CR>:pwd<CR>')
