@@ -4,6 +4,7 @@ require('telescope').setup {
             height = .99,
             width = .99,
         },
+        borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
     },
     pickers = {
         live_grep = {
