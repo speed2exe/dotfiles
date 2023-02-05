@@ -3,17 +3,18 @@ local set = vim.keymap.set
 local fn = require 'function'
 local lsp_lines_conf = require 'lsp_lines_conf'
 local t_builtin = require 'telescope.builtin'
+local file_browser = require 'telescope'.extensions.file_browser.file_browser
 local baleia = require('baleia')
 
 vim.g.mapleader = ' ';
 
 -- Interpret ansi colors
 set('n', '<leader>c', function()
-    baleia.setup().once(0)
+    baleia.setup().once(vim.fn.bufnr())
 end)
 
--- :h gf => create file if not exists
-set('n', 'gf', ':e <cfile><CR>')
+-- create file if not exists
+set('n', '<leader>e', ':e <cfile><CR>')
 
 -- Remove lines with only whitespace or nothing
 set('v', '<leader><BS>', ':g/^\\s*$/d<CR>')
@@ -106,6 +107,7 @@ set('n', '<leader>g', t_builtin.git_files)
 set('n', '<leader>s', t_builtin.live_grep)
 set('n', '<leader>o', t_builtin.oldfiles)
 set('n', '<leader>b', t_builtin.buffers)
+set('n', '<leader><CR>', file_browser)
 
 -- Quick Comment
 set('n', '<BS>', '<Plug>(comment_toggle_linewise_current)j')
@@ -133,6 +135,9 @@ set('n', '<C-S>', '<CMD>SymbolsOutline<CR>')
 
 -- Toggle lsp lines diagnostics
 set('n', '<C-L>', lsp_lines_conf.toggle_inline_text)
+
+-- Toggle indent-blankline to show tabs
+set('n', '<C-C>', ':IndentBlanklineToggle<CR>')
 
 -- Custom Personal Mapping
 -- Add more if needed, but shouldn't need more
