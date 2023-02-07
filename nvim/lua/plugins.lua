@@ -95,7 +95,7 @@ return require('packer').startup({ function(use)
     -- use 'nvim-telescope/telescope-fzy-native.nvim'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     -- https://github.com/nvim-telescope/telescope-file-browser.nvim
-    use  'nvim-telescope/telescope-file-browser.nvim'
+    use 'nvim-telescope/telescope-file-browser.nvim'
 
     use { 'williamboman/mason.nvim', config = function()
         require('mason').setup()
