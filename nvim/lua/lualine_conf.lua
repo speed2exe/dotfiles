@@ -10,24 +10,29 @@ local function condition()
     return #vim.lsp.buf_get_clients() > 0
 end
 
+local function cwd()
+    return vim.fn.getcwd()
+end
+
 require('lualine').setup {
     options = {
-        icons_enabled = true,
-        theme = 'dracula',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
-        disabled_filetypes = {},
-        always_divide_middle = true,
-        globalstatus = true
     },
     sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { 'filename', { navic.get_location, cond = navic.is_available } },
-        lualine_x = { { get_lsp_status, cond = condition }, 'filetype' },
+        lualine_b = { { cwd } },
+        lualine_c = { { get_lsp_status, cond = condition } },
+        lualine_x = { 'filesize' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }
     },
-    tabline = {},
-    extensions = {'nvim-tree'}
+    winbar = {
+        lualine_a = { 'filetype' },
+        lualine_b = { { 'filename', file_status = true, newfile_status = true, path = 1 } },
+        lualine_c = { { navic.get_location, cond = navic.is_available } },
+        lualine_x = { 'diagnostics' },
+        lualine_y = { 'diff' },
+        lualine_z = { 'branch' },
+    },
 }
