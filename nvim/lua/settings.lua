@@ -25,7 +25,6 @@ opt.splitright = true
 opt.lazyredraw = true
 opt.timeoutlen = 500
 opt.updatetime = 0
-opt.winbar = '%f'
 opt.signcolumn = 'yes'
 opt.cursorline = true
 
