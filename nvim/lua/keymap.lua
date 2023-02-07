@@ -31,8 +31,6 @@ set('v', '<leader>S', 'y:%s/<C-R>"/<C-R>"')
 -- Search and replace for clipboard content on visually selected
 set('v', '<leader>s', ':s/<C-R>"/<C-R>"')
 
--- print current directory
-set('n', '<ESC>', '<CMD>pwd<CR>')
 -- copy current file path to clipboard
 set('n', 'yf', '<CMD>let @+ = expand("%:p")<CR>')
 -- highlight entire file
@@ -55,11 +53,11 @@ set('v', ',', '<gv')
 set('v', '.', '>gv')
 
 -- go to prev directory
-set('n', '<DEL>', ':cd ..<CR>:pwd<CR>')
+set('n', '<DEL>', ':cd ..<CR>')
 -- go to project root
-set('n', '<HOME>', ':ProjectRoot<CR>:pwd<CR>')
+set('n', '<HOME>', ':ProjectRoot<CR>')
 -- go to current file directory
-set('n', '<END>', ':lcd %:p:h<CR>:pwd<CR>')
+set('n', '<END>', ':lcd %:p:h<CR>')
 
 -- new window
 set('n', '<leader>x', '<CMD>split<CR>')
