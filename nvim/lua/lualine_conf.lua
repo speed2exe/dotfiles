@@ -22,7 +22,7 @@ require('lualine').setup {
     sections = {
         lualine_a = { 'mode' },
         lualine_b = { { cwd } },
-        lualine_c = { { get_lsp_status, cond = condition } },
+        lualine_c = { { get_lsp_status, cond = condition, color = { bg = 'NONE' } } },
         lualine_x = { 'filesize' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }
@@ -30,9 +30,11 @@ require('lualine').setup {
     winbar = {
         lualine_a = { 'filetype' },
         lualine_b = { { 'filename', file_status = true, newfile_status = true, path = 1 } },
-        lualine_c = { { navic.get_location, cond = navic.is_available } },
+        lualine_c = { { navic.get_location, cond = navic.is_available, color = { bg = 'NONE' } } },
         lualine_x = { 'diagnostics' },
         lualine_y = { 'diff' },
         lualine_z = { 'branch' },
     },
 }
+
+vim.cmd [[ highlight lualine_c_normal guibg=NONE ctermbg=NONE ]]
