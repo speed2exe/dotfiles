@@ -47,10 +47,10 @@ vim.cmd [[
 
     autocmd BufWritePre * :%s/\s\+$//e
 
-    inoremap <silent><script><expr> <RIGHT> copilot#Accept("\<CR>")
-    inoremap <DOWN> <Plug>(copilot-next)
-    inoremap <UP> <Plug>(copilot-previous)
-    inoremap <LEFT> <Plug>(copilot-dismiss)
+    inoremap <silent><script><expr> <S-RIGHT> copilot#Accept("\<CR>")
+    inoremap <S-DOWN> <Plug>(copilot-next)
+    inoremap <S-UP> <Plug>(copilot-previous)
+    inoremap <S-LEFT> <Plug>(copilot-dismiss)
 
     highlight WinSeparator guibg=NONE ctermbg=NONE
     highlight Normal guibg=NONE ctermbg=NONE
