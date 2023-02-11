@@ -10,8 +10,6 @@ end
 
 return require('packer').startup({ function(use)
 
-    use 'folke/tokyonight.nvim'
-
     -- https://github.com/lewis6991/impatient.nvim
     use 'lewis6991/impatient.nvim'
 
@@ -61,8 +59,10 @@ return require('packer').startup({ function(use)
         require('nvim-lastplace').setup()
     end }
 
-    --https://github.com/Mofiqul/dracula.nvim
-    use 'Mofiqul/dracula.nvim'
+    -- https://github.com/Mofiqul/dracula.nvim
+    -- use 'Mofiqul/dracula.nvim'
+    -- https://github.com/dracula/vim
+    use 'dracula/vim'
 
     -- https://github.com/xiyaowong/nvim-transparent
     use { 'xiyaowong/nvim-transparent', config = function()

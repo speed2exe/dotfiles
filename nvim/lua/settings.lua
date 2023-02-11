@@ -43,7 +43,7 @@ opt.cursorline = true
 -- vim.keymap.set('i', '<DOWN>', '<Plug>(copilot-next)')
 -- vim.keymap.set('i', '<UP>', '<Plug>(copilot-prev)')
 vim.cmd [[
-    colorscheme tokyonight
+    colorscheme dracula
 
     highlight CursorLine guibg=#282a36
 
