@@ -27,7 +27,6 @@ cmp.setup({
         { name = 'nvim_lua' },
         { name = 'calc' },
         { name = 'dictionary' },
-        { name = 'digraphs' },
     },
     snippet = {
         expand = function(args)
