@@ -18,7 +18,7 @@ cmp.setup({
     sources = {
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
-        { name = 'copilot'},
+        -- { name = 'copilot'},
         { name = 'treesitter' },
         { name = 'path' },
         { name = 'snippy' },
@@ -42,7 +42,7 @@ cmp.setup({
             menu = {
                 nvim_lsp = "[LSP]",
                 nvim_lsp_signature_help = "[signature]",
-                copilot = "[copilot]",
+                -- copilot = "[copilot]",
                 treesitter = "[TS]",
                 path = "[path]",
                 snippy = "[snip]",
