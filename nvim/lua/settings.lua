@@ -43,7 +43,7 @@ opt.cursorline = true
 -- vim.keymap.set('i', '<DOWN>', '<Plug>(copilot-next)')
 -- vim.keymap.set('i', '<UP>', '<Plug>(copilot-prev)')
 vim.cmd [[
-    colorscheme dracula
+    colorscheme tokyonight
 
     highlight CursorLine guibg=#282a36
 
@@ -52,6 +52,10 @@ vim.cmd [[
     imap <silent><script><expr> <RIGHT> copilot#Accept("\<CR>")
     imap <DOWN> <Plug>(copilot-next)
     imap <UP> <Plug>(copilot-previous)
+
+    autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
+    autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
+    autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
 ]]
 
 -- netrw
