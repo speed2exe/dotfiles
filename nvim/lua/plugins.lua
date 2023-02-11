@@ -90,7 +90,7 @@ return require('packer').startup({ function(use)
     use 'nvim-lua/popup.nvim'
     use 'nvim-lua/plenary.nvim'
     use { 'nvim-telescope/telescope.nvim', config = function()
-        require('telescope_conf')
+        require('telescope_conf') -- ~/.config/nvim/lua/telescope_conf.lua
     end }
     -- use 'nvim-telescope/telescope-fzy-native.nvim'
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
