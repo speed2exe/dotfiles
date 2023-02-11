@@ -32,17 +32,27 @@ opt.cursorline = true
 -- commands that cannot be represented in neovim
 -- hopefully pure lua equivalent of the following commands
 -- can be implemented in neovim in the future
-vim.cmd [[colorscheme dracula]]
-
+--
 -- https://draculatheme.com/contribute
 -- use same background color as dracula theme
-vim.cmd [[ highlight CursorLine guibg=#282a36 ]]
-
+--
 -- https://vim.fandom.com/wiki/Remove_unwanted_spaces
-vim.cmd [[ autocmd BufWritePre * :%s/\s\+$//e ]]
+--
+-- g.copilot_no_tab_map = true
+-- vim.keymap.set('i', '<RIGHT>', '<Plug>(copilot-accept)')
+-- vim.keymap.set('i', '<DOWN>', '<Plug>(copilot-next)')
+-- vim.keymap.set('i', '<UP>', '<Plug>(copilot-prev)')
+vim.cmd [[
+    colorscheme dracula
 
--- Github copilot stuff
-g.copilot_no_tab_map = true
+    highlight CursorLine guibg=#282a36
+
+    autocmd BufWritePre * :%s/\s\+$//e
+
+    imap <silent><script><expr> <RIGHT> copilot#Accept("\<CR>")
+    imap <DOWN> <Plug>(copilot-next)
+    imap <UP> <Plug>(copilot-previous)
+]]
 
 -- netrw
-g.netrw_liststyle = 3
+-- g.netrw_liststyle = 3
