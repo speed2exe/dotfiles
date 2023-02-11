@@ -10,6 +10,8 @@ end
 
 return require('packer').startup({ function(use)
 
+    use 'folke/tokyonight.nvim'
+
     -- https://github.com/lewis6991/impatient.nvim
     use 'lewis6991/impatient.nvim'
 
@@ -110,9 +112,9 @@ return require('packer').startup({ function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function()
         require('treesitter_conf') -- ~/.config/nvim/lua/treesitter_conf.lua
     end }
-    use { 'nvim-treesitter/nvim-treesitter-refactor', config = function()
-        require('treesitter-refactor_conf') -- ~/.config/nvim/lua/treesitter-refactor_conf.lua
-    end }
+    -- use { 'nvim-treesitter/nvim-treesitter-refactor', config = function()
+    --     require('treesitter-refactor_conf') -- ~/.config/nvim/lua/treesitter-refactor_conf.lua
+    -- end }
     use { 'p00f/nvim-ts-rainbow', config = function()
         require('nvim-ts-rainbow_conf') -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
     end }
