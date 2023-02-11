@@ -64,11 +64,6 @@ return require('packer').startup({ function(use)
     -- https://github.com/dracula/vim
     use 'dracula/vim'
 
-    -- https://github.com/xiyaowong/nvim-transparent
-    use { 'xiyaowong/nvim-transparent', config = function()
-        require("transparent").setup { enable = true }
-    end }
-
     -- https://github.com/lewis6991/gitsigns.nvim
     use { 'lewis6991/gitsigns.nvim', config = function()
         require('gitsigns').setup()
@@ -79,12 +74,11 @@ return require('packer').startup({ function(use)
 
     -- lualine
     use { 'nvim-lualine/lualine.nvim', config = function()
-        require('lualine_conf')
+        require('lualine_conf') -- ~/.config/nvim/lua/lualine_conf.lua
     end }
 
     -- dev icons
     use { 'kyazdani42/nvim-web-devicons' }
-    -- use 'ryanoasis/vim-devicons'
 
     -- Telescope stuff
     use 'nvim-lua/popup.nvim'
@@ -112,10 +106,8 @@ return require('packer').startup({ function(use)
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function()
         require('treesitter_conf') -- ~/.config/nvim/lua/treesitter_conf.lua
     end }
-    -- use { 'nvim-treesitter/nvim-treesitter-refactor', config = function()
-    --     require('treesitter-refactor_conf') -- ~/.config/nvim/lua/treesitter-refactor_conf.lua
-    -- end }
-    use { 'p00f/nvim-ts-rainbow', config = function()
+
+    use { 'https://git.sr.ht/~p00f/nvim-ts-rainbow', config = function()
         require('nvim-ts-rainbow_conf') -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
     end }
     use { 'simrat39/symbols-outline.nvim', config = function()

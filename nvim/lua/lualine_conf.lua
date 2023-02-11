@@ -27,12 +27,29 @@ require('lualine').setup {
         lualine_y = { 'diff' },
         lualine_z = { 'branch' },
     },
+    inactive_winbar = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { 'filetype', { 'filename', file_status = true, newfile_status = true, path = 1 },
+            { navic.get_location, cond = navic.is_available } },
+        lualine_x = { 'diagnostics', 'diff', 'branch' },
+        lualine_y = {},
+        lualine_z = {},
+    },
     sections = {
         lualine_a = { 'mode' },
         lualine_b = { { cwd } },
         lualine_c = { { get_lsp_status, cond = condition } },
         lualine_x = { 'filesize' },
         lualine_y = { 'progress' },
-        lualine_z = { 'location' }
+        lualine_z = { 'location' },
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { 'mode', { cwd }, { get_lsp_status, cond = condition } },
+        lualine_x = { 'filesize', 'progress', 'location' },
+        lualine_y = {},
+        lualine_z = {},
     },
 }
