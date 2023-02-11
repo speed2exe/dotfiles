@@ -53,9 +53,8 @@ vim.cmd [[
     imap <DOWN> <Plug>(copilot-next)
     imap <UP> <Plug>(copilot-previous)
 
-    autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()
-    autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
-    autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+    highlight WinSeparator guibg=NONE ctermbg=NONE
+    highlight Normal guibg=NONE ctermbg=NONE
 ]]
 
 -- netrw
