@@ -45,16 +45,16 @@ opt.cursorline = true
 vim.cmd [[
     colorscheme dracula
 
-    highlight CursorLine guibg=#282a36
-
     autocmd BufWritePre * :%s/\s\+$//e
 
-    imap <silent><script><expr> <RIGHT> copilot#Accept("\<CR>")
-    imap <DOWN> <Plug>(copilot-next)
-    imap <UP> <Plug>(copilot-previous)
+    inoremap <silent><script><expr> <RIGHT> copilot#Accept("\<CR>")
+    inoremap <DOWN> <Plug>(copilot-next)
+    inoremap <UP> <Plug>(copilot-previous)
+    inoremap <LEFT> <Plug>(copilot-dismiss)
 
     highlight WinSeparator guibg=NONE ctermbg=NONE
     highlight Normal guibg=NONE ctermbg=NONE
+    highlight CursorLine guibg=#282a36
 ]]
 
 -- netrw
