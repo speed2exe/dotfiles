@@ -32,4 +32,7 @@ require('telescope').setup {
 
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('file_browser')
-vim.cmd [[ highlight TelescopeNormal guibg=NONE ctermbg=NONE ]]
+vim.cmd [[
+    highlight TelescopeNormal guibg=NONE ctermbg=NONE
+    highlight TelescopeBorder guibg=NONE ctermbg=NONE
+]]
