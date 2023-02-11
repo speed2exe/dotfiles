@@ -25,7 +25,7 @@ return require('packer').startup({ function(use)
     end }
 
     -- Git
-    -- TODO: maybe there's a better nvim version out there
+    -- Still written in vimscript :(
     use 'tpope/vim-fugitive'
 
     -- https://github.com/m00qek/baleia.nvim
@@ -44,9 +44,8 @@ return require('packer').startup({ function(use)
     -- use 'Pocco81/DAPInstall.nvim'
 
     -- Project management
-    -- TODO: maybe there's a better nvim version out there
     use { 'ahmedkhalf/project.nvim', config = function()
-        require('project_conf') -- ~/.config/nvim/lua/project_conf.lua
+        require("project_nvim").setup()
     end }
 
     -- Indent guide lines
@@ -54,12 +53,11 @@ return require('packer').startup({ function(use)
         require('indent-blankline_conf') -- ~/.config/nvim/lua/indent-blankline_conf.lua
     end }
 
-    -- go to last cursor position
-    -- TODO: write your own
-    use 'farmergreg/vim-lastplace'
-
-    -- https://draculatheme.com/vim
-    -- use 'dracula/vim'
+    -- Go to last cursor position
+    -- https://github.com/ethanholz/nvim-lastplace
+    use { 'ethanholz/nvim-lastplace', config = function()
+        require('nvim-lastplace').setup()
+    end }
 
     --https://github.com/Mofiqul/dracula.nvim
     use 'Mofiqul/dracula.nvim'
@@ -110,13 +108,13 @@ return require('packer').startup({ function(use)
 
     -- TreeSitter stuff
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function()
-        require('treesitter_conf')
+        require('treesitter_conf') -- ~/.config/nvim/lua/treesitter_conf.lua
     end }
     use { 'nvim-treesitter/nvim-treesitter-refactor', config = function()
-        require('treesitter-refactor_conf')
+        require('treesitter-refactor_conf') -- ~/.config/nvim/lua/treesitter-refactor_conf.lua
     end }
     use { 'p00f/nvim-ts-rainbow', config = function()
-        require('nvim-ts-rainbow_conf')
+        require('nvim-ts-rainbow_conf') -- ~/.config/nvim/lua/nvim-ts-rainbow_conf.lua
     end }
     use { 'simrat39/symbols-outline.nvim', config = function()
         require("symbols-outline").setup()
@@ -124,7 +122,7 @@ return require('packer').startup({ function(use)
 
     -- Nvim-cmp
     use { 'hrsh7th/nvim-cmp', config = function()
-        require('nvim-cmp_conf')
+        require('nvim-cmp_conf') -- ~/.config/nvim/lua/nvim-cmp_conf.lua
     end }
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-nvim-lsp-signature-help'
