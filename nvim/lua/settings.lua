@@ -47,7 +47,7 @@ vim.cmd [[
 
     autocmd BufWritePre * :%s/\s\+$//e
 
-    inoremap <silent><script><expr> <CR> copilot#Accept("\<CR>")
+    inoremap <silent><script><expr> <RIGHT> copilot#Accept("<RIGHT>")
     inoremap <S-DOWN> <Plug>(copilot-next)
     inoremap <S-UP> <Plug>(copilot-previous)
     inoremap <S-LEFT> <Plug>(copilot-dismiss)
