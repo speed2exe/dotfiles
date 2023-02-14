@@ -1,3 +1,3 @@
 function fprp
-    fpr --print-query $argv
+    fp --print-query $argv
 end
