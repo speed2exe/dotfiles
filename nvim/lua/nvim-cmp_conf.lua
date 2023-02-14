@@ -22,7 +22,7 @@ cmp.setup({
         { name = 'treesitter' },
         { name = 'path' },
         { name = 'snippy' },
-        { name = 'buffer'},
+        { name = 'buffer' },
         { name = 'fish' },
         { name = 'nvim_lua' },
         { name = 'calc' },
@@ -33,7 +33,7 @@ cmp.setup({
             -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
             -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users
             -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-            require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+            require 'snippy'.expand_snippet(args.body) -- For `snippy` users.
         end,
     },
     formatting = {
@@ -58,17 +58,17 @@ cmp.setup({
 })
 
 cmp.setup.cmdline('/', {
-    	mapping = cmp.mapping.preset.cmdline(),
-	sources = cmp.config.sources(
-		{ { name = 'nvim_lsp_document_symbol' } },
-		{ { name = 'buffer' } }
-	)
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources(
+        { { name = 'nvim_lsp_document_symbol' } },
+        { { name = 'buffer' } }
+    )
 })
 
 cmp.setup.cmdline(':', {
-    	mapping = cmp.mapping.preset.cmdline(),
-	sources = cmp.config.sources(
-		{ { name = 'path' } },
-		{ { name = 'cmdline' } }
-	)
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources(
+        { { name = 'path' } },
+        { { name = 'cmdline' } }
+    )
 })
