@@ -135,7 +135,7 @@ set('n', '<C-S>', '<CMD>SymbolsOutline<CR>')
 set('n', '<C-L>', lsp_lines_conf.toggle_inline_text)
 
 -- Toggle indent-blankline to show tabs
-set('n', '<C-C>', ':IndentBlanklineToggle<CR>')
+set('n', '<C-B>', ':IndentBlanklineToggle<CR>')
 
 -- Custom Personal Mapping
 -- Add more if needed, but shouldn't need more
