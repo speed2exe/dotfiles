@@ -2,7 +2,7 @@ function v
 	if count $argv > /dev/null
 		set path "$argv"
 	else
-		set path (tac ~/marks/file_history.txt | fpr --no-sort)
+		set path (tac ~/marks/file_history.txt | fp --no-sort)
 	end
 
     test -z "$path" && return

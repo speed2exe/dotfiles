@@ -16,6 +16,6 @@ function r
     touch ~/marks/dir_hash/"$dir_hash"/file_history.txt
 
     set path (tac ~/marks/dir_hash/"$dir_hash"/file_history.txt \
-        | xargs -I {} realpath --relative-to=. {} 2> /dev/null | fpr --no-sort)
+        | xargs -I {} realpath --relative-to=. {} 2> /dev/null | fp --no-sort)
     and v "$path"
 end
