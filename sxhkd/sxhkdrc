@@ -55,7 +55,7 @@ super + x
     bspc node --insert-receptacle
 
 # Next through floating windows
-super + j 
+super + j
     bspc node --focus next.local.floating
 
 # Previous through floating windows
@@ -78,9 +78,13 @@ super + o
 super + {d,u,a,e,Tab}
 	bspc node -f {west,north,east,south,last}
 
-# Swap
+# Swap Node
 super + {Left,Up,Right,Down}
     bspc node --swap {west,north,east,south} --follow
+
+# Reinsert into Node
+super + shift + {Left,Up,Right,Down}
+    bspc node --to-node {west,north,east,south} --follow
 
 # Fill Receptacle
 super + i
