@@ -3,7 +3,8 @@
 set sys (uname)
 switch $sys
 case '*Darwin*'
-    error "Not valid for MacOS"
+    cd ~/dotfiles/macos
+    ./save
     return
 end
 
