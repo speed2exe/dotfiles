@@ -13,6 +13,12 @@ rm -rf ~/dotfiles/nvim/ && cp -r ~/.config/nvim/ ~/dotfiles/nvim/
 # alacritty
 rm ~/dotfiles/macos/alacritty.yml && cp ~/.config/alacritty/alacritty.yml ~/dotfiles/macos/alacritty.yml
 
+# yabai
+rm -f ~/dotfiles/macos/yabai/ && cp -r ~/.config/yabai/ ~/dotfiles/macos/yabai/
+
+# skhd
+rm -f ~/dotfiles/macos/skhd/ && cp -r ~/.config/skhd/ ~/dotfiles/macos/skhd/
+
 cd ..
 git add .
 git diff --cached

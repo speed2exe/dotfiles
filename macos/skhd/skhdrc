@@ -1,0 +1,72 @@
+# Open Alacritty
+cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+
+# Close App
+# cmd - q : yabai --message window --close
+
+# Focus Window
+cmd - u : yabai --message window --focus north
+cmd - e : yabai --message window --focus south
+cmd - d : yabai --message window --focus west
+cmd - a : yabai --message window --focus east
+
+# Increase window size
+cmd + shift - u : yabai --message window --resize top:0:-50
+cmd + shift - e : yabai --message window --resize bottom:0:50
+cmd + shift - d : yabai --message window --resize left:-50:0
+cmd + shift - a : yabai --message window --resize right:50:0
+
+# Decrease window size
+cmd + alt - u : yabai --message window --resize bottom:0:-50
+cmd + alt - e : yabai --message window --resize top:0:50
+cmd + alt - d : yabai --message window --resize right:-50:0
+cmd + alt - a : yabai --message window --resize left:50:0
+
+# Swap Window
+cmd - up    : yabai --message window --swap north
+cmd - down  : yabai --message window --swap south
+cmd - left  : yabai --message window --swap west
+cmd - right : yabai --message window --swap east
+
+# Warp Window
+cmd + shift - up    : yabai --message window --warp north
+cmd + shift - down  : yabai --message window --warp south
+cmd + shift - left  : yabai --message window --warp west
+cmd + shift - right : yabai --message window --warp east
+
+# Toggle Window Split
+cmd - pageup : yabai --message window --toggle split
+
+# Move Window to most recent window
+cmd - escape : yabai --message window --space recent && yabai --message window --focus recent
+
+# Auto-balance window
+cmd - n : yabai --message space --balance
+
+# Focus spaces
+# NOTE: need to create space first (1 time setup)
+cmd - 4 : yabai --message space --focus prev
+cmd - 6 : yabai --message space --focus next
+cmd - 2 : yabai --message space --focus first
+
+# Swap spaces
+cmd + shift - 4 : yabai --message space --swap prev
+cmd + shift - 6 : yabai --message space --swap next
+
+# Focus monitor
+cmd - 8 : yabai --message display --focus prev
+cmd - 5 : yabai --message display --focus next
+
+# Move window to previous or next space
+cmd + alt - 4 : yabai --message window --space prev && yabai --message window --focus recent
+cmd + alt - 6 : yabai --message window --space next && yabai --message window --focus recent
+
+# Move window to previous or next display
+cmd + alt - 8 : yabai --message window --display prev && yabai --message window --focus recent
+cmd + alt - 5 : yabai --message window --display next && yabai --message window --focus recent
+
+# Make window move to first space
+cmd - backspace : yabai --message window --space first
+
+# do nothing
+cmd - h : yabai --message window --resize bottom_right:50:50 ; yabai --message window --resize top_left:-50:-50
