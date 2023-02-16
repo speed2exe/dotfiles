@@ -4,7 +4,7 @@
 rm -f ~/dotfiles/starship.toml && cp ~/.config/starship.toml ~/dotfiles/starship.toml
 
 # fish
-rm -rf ~/dotfiles/fish/ && cp -r ~/.config/fish/ ~/dofiles/fish/
+rm -rf ~/dotfiles/fish/ && cp -r ~/.config/fish/ ~/dotfiles/fish/
 rm ~/dotfiles/macos/.init.fish && cp ~/.init.fish ~/dotfiles/macos/.init.fish
 
 # neovim
