@@ -13,9 +13,6 @@ fish_vi_key_bindings
 bind yy fish_clipboard_copy
 bind p fish_clipboard_paste
 
-# optionally source from home directory if any
-test -f ~/.init.fish && source ~/.init.fish
-
 # keybindings to insert text into current line
 bind --mode insert \cf 'bind_ctrl_f'
 bind --mode insert \ch 'bind_ctrl_h'
