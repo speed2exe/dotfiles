@@ -13,6 +13,7 @@ rm -rf ~/dotfiles/nvim/ && cp -r ~/.config/nvim/ ~/dotfiles/nvim/
 # alacritty
 rm ~/dotfiles/macos/alacritty.yml && cp ~/.config/alacritty/alacritty.yml ~/dotfiles/macos/alacritty.yml
 
+cd ..
 git add .
 git diff --cached
 git status
