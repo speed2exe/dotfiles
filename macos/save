@@ -11,7 +11,7 @@ rm ~/dotfiles/macos/.init.fish && cp ~/.init.fish ~/dotfiles/macos/.init.fish
 rm -rf ~/dotfiles/nvim/ && cp -r ~/.config/nvim/ ~/dotfiles/nvim/
 
 # alacritty
-rm ~/dotfiles/alacritty/alacritty.yml && cp ~/.config/alacritty/alacritty.yml ~/dotfiles/alacritty/alacritty.yml
+rm ~/dotfiles/macos/alacritty.yml && cp ~/.config/alacritty/alacritty.yml ~/dotfiles/macos/alacritty.yml
 
 git add .
 git diff --cached
