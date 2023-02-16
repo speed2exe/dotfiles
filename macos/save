@@ -1,0 +1,14 @@
+#!/opt/homebrew/bin/fish
+
+# starship
+rm -f ~/dotfiles/starship.toml && cp ~/.config/starship.toml ~/dotfiles/starship.toml
+
+# fish
+rm -rf ~/dotfiles/fish/ && cp -r ~/.config/fish/ ~/dofiles/fish/
+rm ~/dotfiles/macos/.init.fish && cp ~/.init.fish ~/dotfiles/macos/.init.fish
+
+# neovim
+rm -rf ~/dotfiles/nvim/ && cp -r ~/.config/nvim/ ~/dotfiles/nvim/
+
+# alacritty
+rm ~/dotfiles/alacritty/alacritty.yml && cp ~/.config/macos/alacritty.yml ~/dotfiles/alacritty/alacritty.yml
