@@ -938,18 +938,6 @@ font:
   # Point size
   size: 14.0
 
-key_bindings:
-  - { key: V,        mods: Alt,           action: Paste            }
-  - { key: C,        mods: Alt,           action: Copy             }
-  - { key: Equals,   mods: Alt,           action: IncreaseFontSize }
-  - { key: Minus,    mods: Alt,           action: DecreaseFontSize }
-  - { key: D,        mods: Alt,           action: ScrollPageDown   }
-  - { key: U,        mods: Alt,           action: ScrollPageUp     }
-  - { key: J,        mods: Alt,           action: ScrollLineDown   }
-  - { key: K,        mods: Alt,           action: ScrollLineUp     }
-  - { key: Space,    mods: Alt,           action: ToggleViMode     }
-  - { key: Return,   mods: Alt,           action: CreateNewWindow  }
-
 # Regex hints
 #
 # Terminal hints can be used to find text in the visible part of the terminal
@@ -1007,6 +995,7 @@ hints:
 
 window:
   opacity: 0.85
+  decorations: None
 
 colors:
   primary:
