@@ -33,8 +33,7 @@ set('v', '<leader>s', ':s/<C-R>"/<C-R>"')
 
 -- copy current file path to clipboard
 set('n', 'yf', '<CMD>let @+ = expand("%:p")<CR>')
--- highlight entire file
-set('n', 'v%', 'gg^vG$')
+-- yank current file content to clipboard
 set('n', 'y%', '<CMD>:%y+<CR>')
 
 -- Move lines up and down
@@ -63,7 +62,6 @@ set('n', '<END>', ':lcd %:p:h<CR>')
 set('n', '<leader>t', '<CMD>Telescope<CR>')
 set('n', '<leader><ESC>', t_builtin.resume)
 set('n', '<leader>h', t_builtin.help_tags)
-set('n', '<leader>l', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>d', t_builtin.diagnostics)
 set('n', '<leader>k', t_builtin.keymaps)
 set('n', '<leader>j', t_builtin.jumplist)
@@ -71,8 +69,9 @@ set('n', '<leader>q', t_builtin.quickfix)
 set('n', '<leader>r', t_builtin.registers)
 set('n', '<leader>m', t_builtin.marks)
 set('n', '<leader>f', t_builtin.find_files)
-set('n', '<leader>g', t_builtin.git_files)
+set('n', '<leader>F', t_builtin.git_files)
 set('n', '<leader>s', t_builtin.live_grep)
+set('n', '<leader>S', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>o', t_builtin.oldfiles)
 set('n', '<leader>b', t_builtin.buffers)
 set('n', '<leader><CR>', file_browser)
@@ -109,11 +108,11 @@ set('n', '<C-B>', ':IndentBlanklineToggle<CR>')
 
 -- Custom Personal Mapping
 -- Add more if needed, but shouldn't need more
-set('n', 'gn', vim.lsp.buf.rename)
-set('n', 'gl', vim.lsp.buf.format)
-set('n', 'gd', vim.lsp.buf.definition)
-set('n', 'gi', vim.lsp.buf.implementation)
-set('n', 'gr', vim.lsp.buf.references)
-set('n', 'gh', vim.lsp.buf.hover)
-set('n', 'ga', vim.lsp.buf.code_action)
-set('n', 'gt', vim.lsp.buf.type_definition)
+set('n', '<leader>lr', vim.lsp.buf.rename)
+set('n', '<leader>lf', vim.lsp.buf.format)
+set('n', '<leader>ld', vim.lsp.buf.definition)
+set('n', '<leader>li', vim.lsp.buf.implementation)
+set('n', '<leader>lr', vim.lsp.buf.references)
+set('n', '<leader>lh', vim.lsp.buf.hover)
+set('n', '<leader>la', vim.lsp.buf.code_action)
+set('n', '<leader>lt', vim.lsp.buf.type_definition)
