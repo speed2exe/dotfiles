@@ -15,7 +15,6 @@ function r
     mkdir -p ~/marks/dir_hash/"$dir_hash"/
     touch ~/marks/dir_hash/"$dir_hash"/file_history.txt
 
-    set path (tac ~/marks/dir_hash/"$dir_hash"/file_history.txt \
-        | xargs -I {} realpath --relative-to=. {} 2> /dev/null | fp --no-sort)
+    set path (tac ~/marks/dir_hash/"$dir_hash"/file_history.txt | fp --no-sort)
     and v "$path"
 end
