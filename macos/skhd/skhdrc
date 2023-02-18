@@ -1,9 +1,6 @@
 # Open Alacritty
 cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
 
-# Close App
-# cmd - q : yabai --message window --close
-
 # Focus Window
 cmd - u : yabai --message window --focus north
 cmd - e : yabai --message window --focus south
