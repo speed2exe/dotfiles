@@ -59,36 +59,6 @@ set('n', '<HOME>', ':ProjectRoot<CR>')
 -- go to current file directory
 set('n', '<END>', ':lcd %:p:h<CR>')
 
--- new window
-set('n', '<leader>x', '<CMD>split<CR>')
-set('n', '<leader>v', '<CMD>vsplit<CR>')
-set('n', '<leader>n', '<CMD>enew<CR>')
-
--- move between windows
-set('n', '<LEFT>', '<C-W>h')
-set('n', '<DOWN>', '<C-W>j')
-set('n', '<UP>', '<C-W>k')
-set('n', '<RIGHT>', '<C-W>l')
-
--- swap windows and change layout
-set('n', '<S-LEFT>', '<C-W>H')
-set('n', '<S-DOWN>', '<C-W>J')
-set('n', '<S-UP>', '<C-W>K')
-set('n', '<S-RIGHT>', '<C-W>L')
-
--- resize windows
-set('n', '+', '<CMD>vertical resize +10<CR>')
-set('n', '-', '<CMD>vertical resize -10<CR>')
-set('n', '=', '<CMD>resize +10<CR>')
-set('n', '_', '<CMD>resize -10<CR>')
-set('n', '\\', '<C-W>=')
-
--- Quick fix list
--- Add location list here if i ever use it
-set('n', '(', '<CMD>cprev<CR>')
-set('n', ')', '<CMD>cnext<CR>')
-set('n', '<C-Q>', fn.toggle_quick_fix_list)
-
 -- Telescope
 set('n', '<leader>t', '<CMD>Telescope<CR>')
 set('n', '<leader><ESC>', t_builtin.resume)
