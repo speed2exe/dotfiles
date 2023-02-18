@@ -11,13 +11,13 @@ rm ~/dotfiles/macos/.init.fish && cp ~/.init.fish ~/dotfiles/macos/.init.fish
 rm -rf ~/dotfiles/nvim/ && cp -r ~/.config/nvim/ ~/dotfiles/nvim/
 
 # alacritty
-rm -f ~/dotfiles/macos/alacritty/alacritty.yml && cp ~/.config/alacritty/alacritty.yml ~/dotfiles/macos/alacritty/alacritty.yml
+rm -rf ~/dotfiles/macos/alacritty/ && cp ~/.config/alacritty/alacritty.yml ~/dotfiles/macos/alacritty/
 
 # yabai
-rm -f ~/dotfiles/macos/yabai/ && cp -r ~/.config/yabai/ ~/dotfiles/macos/yabai/
+rm -rf ~/dotfiles/macos/yabai/ && cp -r ~/.config/yabai/ ~/dotfiles/macos/yabai/
 
 # skhd
-rm -f ~/dotfiles/macos/skhd/ && cp -r ~/.config/skhd/ ~/dotfiles/macos/skhd/
+rm -rf ~/dotfiles/macos/skhd/ && cp -r ~/.config/skhd/ ~/dotfiles/macos/skhd/
 
 cd ..
 git add .
