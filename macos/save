@@ -8,7 +8,7 @@ rm -rf ~/dotfiles/fish/ && cp -r ~/.config/fish/ ~/dotfiles/fish/
 rm ~/dotfiles/macos/.init.fish && cp ~/.init.fish ~/dotfiles/macos/.init.fish
 
 # neovim
-rm -rf ~/dotfiles/nvim/ && cp -r ~/.config/nvim/ -r ~/dotfiles/nvim/
+rm -rf ~/dotfiles/nvim/ && cp -r ~/.config/nvim/ ~/dotfiles/nvim/
 
 # alacritty
 rm -rf ~/dotfiles/macos/alacritty/ && cp -r ~/.config/alacritty/ ~/dotfiles/macos/alacritty/
