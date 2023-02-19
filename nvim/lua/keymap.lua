@@ -47,6 +47,11 @@ set('i', '<C-K>', '<ESC>:m .-2<CR>a')
 -- toggle search highlight
 set('n', '<C-H>', fn.toggle_hlsearch)
 
+-- toggle quickfix window
+set('n', '<C-Q>', fn.toggle_quick_fix_list)
+set('n', '<C-[>', '<CMD>cnext<CR>')
+set('n', '<C-]>', '<CMD>cprev<CR>')
+
 -- Indent
 set('v', ',', '<gv')
 set('v', '.', '>gv')
@@ -108,7 +113,7 @@ set('n', '<C-B>', ':IndentBlanklineToggle<CR>')
 
 -- Custom Personal Mapping
 -- Add more if needed, but shouldn't need more
-set('n', '<leader>lr', vim.lsp.buf.rename)
+set('n', '<leader>ln', vim.lsp.buf.rename)
 set('n', '<leader>lf', vim.lsp.buf.format)
 set('n', '<leader>ld', vim.lsp.buf.definition)
 set('n', '<leader>li', vim.lsp.buf.implementation)
