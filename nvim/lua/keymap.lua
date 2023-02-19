@@ -49,8 +49,8 @@ set('n', '<C-H>', fn.toggle_hlsearch)
 
 -- toggle quickfix window
 set('n', '<C-Q>', fn.toggle_quick_fix_list)
-set('n', '<C-[>', '<CMD>cnext<CR>')
-set('n', '<C-]>', '<CMD>cprev<CR>')
+set('n', '<C-[>', '<CMD>cprev<CR>')
+set('n', '<C-]>', '<CMD>cnext<CR>')
 
 -- Indent
 set('v', ',', '<gv')
