@@ -19,11 +19,6 @@ return require('packer').startup({ function(use)
     -- Github Co-pilot
     use 'github/copilot.vim'
 
-    -- Display better lsp diagnostics with virtual lines below
-    use { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim', config = function()
-        require('lsp_lines_conf') -- ~/.config/nvim/lua/lsp_lines_conf.lua
-    end }
-
     -- Git
     -- Still written in vimscript :(
     use 'tpope/vim-fugitive'
