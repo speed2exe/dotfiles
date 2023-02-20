@@ -9,12 +9,6 @@ local function create_directory_if_not_exists(path)
     end
 end
 
--- vim.api.nvim_create_autocmd("CursorHold", {
--- 	callback = function()
---         vim.lsp.buf.hover()
--- 	end
--- })
-
 vim.api.nvim_create_autocmd("BufWritePre", {
     callback = function()
         -- create directory if it doesn't exist

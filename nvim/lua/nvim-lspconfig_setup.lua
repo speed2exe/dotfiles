@@ -27,7 +27,6 @@ for _, server in ipairs(servers) do
                     desc = "Clear All the References",
                 })
             end
-
         end,
         capabilities = cmp.default_capabilities(vim.lsp.protocol.make_client_capabilities()),
     }
