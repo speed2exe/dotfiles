@@ -1,7 +1,6 @@
 local vim = vim
 local set = vim.keymap.set
 local fn = require 'function'
-local lsp_lines_conf = require 'lsp_lines_conf'
 local t_builtin = require 'telescope.builtin'
 local file_browser = require 'telescope'.extensions.file_browser.file_browser
 local baleia = require('baleia')
@@ -24,9 +23,6 @@ set('v', '<leader>q', ':normal @q<CR>')
 
 -- higlight yanked text, or just edited text
 set('n', 'vv', '`[v`]')
-
--- Search and replace for visually selected on entire document template
-set('v', '<leader>S', 'y:%s/<C-R>"/<C-R>"')
 
 -- Search and replace for clipboard content on visually selected
 set('v', '<leader>s', ':s/<C-R>"/<C-R>"')
@@ -65,18 +61,18 @@ set('n', '<END>', ':lcd %:p:h<CR>')
 
 -- Telescope
 set('n', '<leader>t', '<CMD>Telescope<CR>')
-set('n', '<leader><ESC>', t_builtin.resume)
-set('n', '<leader>h', t_builtin.help_tags)
-set('n', '<leader>d', t_builtin.diagnostics)
+set('n', '<leader>rs', t_builtin.resume)
+set('n', '<leader>ht', t_builtin.help_tags)
+set('n', '<leader>dn', t_builtin.diagnostics)
 set('n', '<leader>k', t_builtin.keymaps)
 set('n', '<leader>j', t_builtin.jumplist)
 set('n', '<leader>q', t_builtin.quickfix)
-set('n', '<leader>r', t_builtin.registers)
+set('n', '<leader>rg', t_builtin.registers)
 set('n', '<leader>m', t_builtin.marks)
-set('n', '<leader>f', t_builtin.find_files)
-set('n', '<leader>F', t_builtin.git_files)
-set('n', '<leader>s', t_builtin.live_grep)
-set('n', '<leader>S', t_builtin.lsp_dynamic_workspace_symbols)
+set('n', '<leader>ff', t_builtin.find_files)
+set('n', '<leader>g', t_builtin.git_files)
+set('n', '<leader>l', t_builtin.live_grep)
+set('n', '<leader>w', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>o', t_builtin.oldfiles)
 set('n', '<leader>b', t_builtin.buffers)
 set('n', '<leader><CR>', file_browser)
@@ -105,19 +101,19 @@ set('v', '!', 'c<CR><CR><UP><ESC>:.!<C-R>"<CR>k')
 -- Symbols Outline
 set('n', '<C-S>', '<CMD>SymbolsOutline<CR>')
 
--- Toggle lsp lines diagnostics
-set('n', '<C-L>', lsp_lines_conf.toggle_inline_text)
-
 -- Toggle indent-blankline to show tabs
 set('n', '<C-B>', ':IndentBlanklineToggle<CR>')
 
 -- Custom Personal Mapping
 -- Add more if needed, but shouldn't need more
-set('n', '<leader>ln', vim.lsp.buf.rename)
-set('n', '<leader>lf', vim.lsp.buf.format)
-set('n', '<leader>ld', vim.lsp.buf.definition)
-set('n', '<leader>li', vim.lsp.buf.implementation)
-set('n', '<leader>lr', vim.lsp.buf.references)
-set('n', '<leader>lh', vim.lsp.buf.hover)
-set('n', '<leader>la', vim.lsp.buf.code_action)
-set('n', '<leader>lt', vim.lsp.buf.type_definition)
+set('n', '<leader>rn', vim.lsp.buf.rename)
+set('n', '<leader>fm', vim.lsp.buf.format)
+set('n', '<leader>df', vim.lsp.buf.definition)
+set('n', '<leader>ip', vim.lsp.buf.implementation)
+set('n', '<leader>rf', vim.lsp.buf.references)
+set('n', '<leader>hv', vim.lsp.buf.hover)
+set('n', '<leader>ca', vim.lsp.buf.code_action)
+set('n', '<leader>td', vim.lsp.buf.type_definition)
+
+-- show diagnostics
+set('n', '<leader>do', vim.diagnostic.open_float)
