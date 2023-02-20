@@ -1,5 +1,5 @@
 function fp
-	fzf \
+    fzf \
         --ansi \
         --tabstop 4 \
         --layout reverse \
@@ -10,5 +10,5 @@ function fp
         --bind ctrl-u:preview-page-up \
         --bind ctrl-j:preview-down \
         --bind ctrl-k:preview-up \
-    $argv
+        -i $argv
 end
