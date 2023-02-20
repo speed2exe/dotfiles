@@ -14,10 +14,10 @@ cmd + shift - d : yabai --message window --resize left:-50:0
 cmd + shift - a : yabai --message window --resize right:50:0
 
 # Decrease window size
-cmd + alt - u : yabai --message window --resize bottom:0:-50
-cmd + alt - e : yabai --message window --resize top:0:50
-cmd + alt - d : yabai --message window --resize right:-50:0
-cmd + alt - a : yabai --message window --resize left:50:0
+cmd + ctrl - u : yabai --message window --resize bottom:0:-50
+cmd + ctrl - e : yabai --message window --resize top:0:50
+cmd + ctrl - d : yabai --message window --resize right:-50:0
+cmd + ctrl - a : yabai --message window --resize left:50:0
 
 # Swap Window
 cmd - up    : yabai --message window --swap north
@@ -55,12 +55,12 @@ cmd - 8 : yabai --message display --focus prev
 cmd - 5 : yabai --message display --focus next
 
 # Move window to previous or next space
-cmd + alt - 4 : yabai --message window --space prev && yabai --message window --focus recent
-cmd + alt - 6 : yabai --message window --space next && yabai --message window --focus recent
+cmd + ctrl - 4 : yabai --message window --space prev && yabai --message window --focus recent
+cmd + ctrl - 6 : yabai --message window --space next && yabai --message window --focus recent
 
 # Move window to previous or next display
-cmd + alt - 8 : yabai --message window --display prev && yabai --message window --focus recent
-cmd + alt - 5 : yabai --message window --display next && yabai --message window --focus recent
+cmd + ctrl - 8 : yabai --message window --display prev && yabai --message window --focus recent
+cmd + ctrl - 5 : yabai --message window --display next && yabai --message window --focus recent
 
 # Make window move to first space
 cmd - backspace : yabai --message window --space first
