@@ -4,7 +4,17 @@ local lspkind = require('lspkind')
 lspkind.init()
 
 cmp.setup({
-    mapping = cmp.mapping.preset.insert(),
+    mapping = {
+        ['<C-U>'] = cmp.mapping.scroll_docs( -4),
+        ['<C-D>'] = cmp.mapping.scroll_docs(4),
+        ['<C-E>'] = cmp.mapping.abort(),
+        ['<C-N>'] = cmp.mapping.select_next_item(),
+        ['<C-P>'] = cmp.mapping.select_prev_item(),
+    },
+    snippet = {
+        expand = function(_)
+        end,
+    },
     sources = {
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
