@@ -123,6 +123,10 @@ return require('packer').startup({
         use 'mtoohey31/cmp-fish'
         use 'ray-x/cmp-treesitter'
 
+        -- Snippets Engine without snippets(just to make nvim-cmp work)
+        use 'dcampos/nvim-snippy'
+        use 'dcampos/cmp-snippy'
+
         if packer_bootstrap then
             require('packer').sync()
         end
