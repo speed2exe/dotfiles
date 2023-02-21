@@ -7,12 +7,20 @@ cmp.setup({
     mapping = {
         ['<C-U>'] = cmp.mapping.scroll_docs( -4),
         ['<C-D>'] = cmp.mapping.scroll_docs(4),
+        ['<TAB>'] = cmp.mapping.select_next_item(),
+        ['<S-TAB>'] = cmp.mapping.select_prev_item(),
+        ['<DOWN>'] = cmp.mapping.select_next_item(),
+        ['<UP>'] = cmp.mapping.select_prev_item(),
         ['<C-E>'] = cmp.mapping.abort(),
-        ['<C-N>'] = cmp.mapping.select_next_item(),
-        ['<C-P>'] = cmp.mapping.select_prev_item(),
+        ['<C-C>'] = cmp.mapping.close(),
+        ['<CR>'] = cmp.mapping.confirm(),
     },
     snippet = {
-        expand = function(_)
+        expand = function(args)
+            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users
+            -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+            require 'snippy'.expand_snippet(args.body) -- For `snippy` users.
         end,
     },
     sources = {
