@@ -119,19 +119,19 @@ super + shift + e
     ~/.config/sxhkd/bspc_resize_node bottom 0 16
 
 # Shrink from Right
-super + alt + a
+super + ctrl + a
     ~/.config/sxhkd/bspc_resize_node left 16 0
 
 # Shrink from Left
-super + alt + d
+super + ctrl + d
     ~/.config/sxhkd/bspc_resize_node right -16 0
 
 # Shrink from Top
-super + alt + e
+super + ctrl + e
     ~/.config/sxhkd/bspc_resize_node top 0 16
 
 # Shrink from Bottom
-super + alt + u
+super + ctrl + u
     ~/.config/sxhkd/bspc_resize_node bottom 0 -16
 
 # Move window left
@@ -185,9 +185,9 @@ super + BackSpace
 	bspc node --to-desktop '^1'
 
 # Send node to previous or next desktop
-super + alt + {4,6}
+super + ctrl + {4,6}
     bspc node --to-desktop {prev,next} --follow
 
 # Send node to previous or next monitor
-super + alt + {8,5}
+super + ctrl + {8,5}
     bspc node --to-monitor {prev,next} --follow
