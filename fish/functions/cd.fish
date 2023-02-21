@@ -6,7 +6,8 @@ function cd
     builtin cd $argv || return
 
     # print the current directory and the items in it
-    print_boxed "$PWD"; la
+    print_boxed "$PWD"
+    lla
 
     # current git root
     set cur_git (git rev-parse --show-toplevel 2> /dev/null)
