@@ -24,16 +24,9 @@ return require('packer').startup({
         use 'tpope/vim-fugitive'
 
         -- Lua
-        use {
-            "folke/which-key.nvim",
-            config = function()
-                require("which-key").setup {
-                    -- your configuration comes here
-                    -- or leave it empty to use the default settings
-                    -- refer to the configuration section below
-                }
-            end
-        }
+        use { "folke/which-key.nvim", config = function()
+            require("which-key").setup {}
+        end }
 
         -- https://github.com/m00qek/baleia.nvim
         use 'm00qek/baleia.nvim'
