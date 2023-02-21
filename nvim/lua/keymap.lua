@@ -19,7 +19,7 @@ set('n', '<leader>e', ':e <cfile><CR>')
 set('v', '<leader><BS>', ':g/^\\s*$/d<CR>')
 
 -- Apply macro to all lines to visual selection
-set('v', '<leader>q', ':normal @q<CR>')
+set('v', 'q', ':normal @q<CR>')
 
 -- higlight yanked text, or just edited text
 set('n', 'vv', '`[v`]')
