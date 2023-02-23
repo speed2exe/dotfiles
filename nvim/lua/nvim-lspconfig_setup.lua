@@ -29,7 +29,7 @@ for _, server in ipairs(servers) do
             end
 
             -- autoformat on save
-            vim.api.nvim_create_augroup("lsp_document_format_on_save", { clear = true })
+            vim.api.nvim_create_augroup("lsp_document_format_on_save", { clear = false })
             vim.api.nvim_create_autocmd("BufWritePre", {
                 callback = function() vim.lsp.buf.format() end,
                 buffer = bufnr,
