@@ -31,6 +31,9 @@ for _, server in ipairs(servers) do
             -- autoformat on save
             vim.api.nvim_create_autocmd("BufWritePre", {
                 callback = function() vim.lsp.buf.format() end,
+                buffer = bufnr,
+                group = "lsp_document_format",
+                desc = "Document Format",
             })
         end,
         capabilities = cmp.default_capabilities(vim.lsp.protocol.make_client_capabilities()),
