@@ -5,7 +5,7 @@ lspkind.init()
 
 cmp.setup({
     mapping = {
-        ['<C-U>'] = cmp.mapping.scroll_docs( -4),
+        ['<C-U>'] = cmp.mapping.scroll_docs(-4),
         ['<C-D>'] = cmp.mapping.scroll_docs(4),
         ['<TAB>'] = cmp.mapping.select_next_item(),
         ['<S-TAB>'] = cmp.mapping.select_prev_item(),
@@ -13,7 +13,10 @@ cmp.setup({
         ['<UP>'] = cmp.mapping.select_prev_item(),
         ['<C-E>'] = cmp.mapping.abort(),
         ['<C-C>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm(),
+        ['<CR>'] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = true,
+        }),
     },
     snippet = {
         expand = function(args)
