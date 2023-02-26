@@ -20,3 +20,8 @@ vim.cmd [[
         autocmd BufWritePost plugins.lua source <afile> | PackerCompile
     augroup end
 ]]
+
+-- neovide stuff
+if vim.g.neovide then
+    require('neovide_conf')
+end
