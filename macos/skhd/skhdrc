@@ -31,6 +31,12 @@ cmd + shift - down  : yabai --message window --warp south
 cmd + shift - left  : yabai --message window --warp west
 cmd + shift - right : yabai --message window --warp east
 
+# Stack Window
+cmd + alt - up    : yabai --message window --stack north && yabai --message window --focus stack.recent
+cmd + alt - down  : yabai --message window --stack south && yabai --message window --focus stack.recent
+cmd + alt - left  : yabai --message window --stack west  && yabai --message window --focus stack.recent
+cmd + alt - right : yabai --message window --stack east  && yabai --message window --focus stack.recent
+
 # Toggle Window Split
 cmd - pageup : yabai --message window --toggle split
 
