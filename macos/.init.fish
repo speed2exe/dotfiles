@@ -6,6 +6,3 @@ fish_add_path "/opt/homebrew/bin"
 
 # node@16
 fish_add_path "/opt/homebrew/opt/node@16/bin"
-
-export NEOVIDE_FRAMELESS=true
-export NEOVIDE_FRAME=none
