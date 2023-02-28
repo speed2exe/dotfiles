@@ -55,10 +55,10 @@ set('v', '.', '>gv')
 -- go to project root
 set('n', '<leader><ESC>', '<CMD>ProjectRoot<CR>')
 -- go to current file directory
-set('n', '<ESC>', '<CMD>lcd %:p:h<CR>')
+set('n', '<leader><leader>', '<CMD>lcd %:p:h<CR>')
 
 -- Telescope
-set('n', '<leader>t', '<CMD>Telescope<CR>')
+set('n', '<leader>T', '<CMD>Telescope<CR>')
 set('n', '<leader>rs', t_builtin.resume)
 set('n', '<leader>ht', t_builtin.help_tags)
 set('n', '<leader>dn', t_builtin.diagnostics)
@@ -69,11 +69,11 @@ set('n', '<leader>rg', t_builtin.registers)
 set('n', '<leader>m', t_builtin.marks)
 set('n', '<leader>f', t_builtin.find_files)
 set('n', '<leader>g', t_builtin.git_files)
-set('n', '<leader>s', t_builtin.live_grep)
+set('n', '<leader>s', t_builtin.live_grep) -- search
 set('n', '<leader>l', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>o', t_builtin.oldfiles)
 set('n', '<leader>b', t_builtin.buffers)
-set('n', '<leader><CR>', file_browser)
+set('n', '<leader>t', file_browser) -- traverse
 
 -- Quick Comment
 set('n', '<BS>', '<Plug>(comment_toggle_linewise_current)j')
