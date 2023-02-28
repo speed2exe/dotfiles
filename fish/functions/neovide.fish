@@ -1,3 +1,3 @@
 function neovide
-    command neovide --multigrid --frame none
+    command neovide --multigrid
 end
