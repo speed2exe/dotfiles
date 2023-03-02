@@ -21,9 +21,9 @@ workspaces() {
 workspaces
 
 bspc config normal_border_color \#21222C
-bspc config focused_border_color \#6272A4
+bspc config focused_border_color \#BD93F9
 bspc config border_width 1
-bspc config window_gap 1
+bspc config window_gap 0
 
 # Kill if already running
 killall -9 xsettingsd sxhkd dunst xfce4-power-manager picom polybar
@@ -46,7 +46,7 @@ sxhkd &
 # Power management
 xfce4-power-manager &
 
-# picom 
+# picom
 picom &
 
 # set default desktop to be I
