@@ -6,8 +6,8 @@ function cd
     builtin cd $argv || return
 
     # print the current directory and the items in it
-    print_boxed "$PWD"
-    lla
+    # print_boxed "$PWD"
+    # lla
 
     # current git root
     # set cur_git (git rev-parse --show-toplevel 2> /dev/null)
@@ -16,5 +16,5 @@ function cd
     # test "$cur_git" && test "$prev_git" != "$cur_git" && onefetch 2>/dev/null
 
     # update directory history
-    echo "$PWD/" >> /tmp/dir_history
+    echo "$PWD/" >>/tmp/dir_history
 end
