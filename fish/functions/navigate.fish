@@ -6,7 +6,7 @@ function navigate
         return
     end
 
-    set dir (realpath "$argv")
+    set dir (realpath "$argv")"/"
     fd_all "$argv" --absolute-path --exact-depth 1 | fp \
         --query "$dir" \
         --bind "right:become(cd {} && navigate)" \
