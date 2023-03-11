@@ -7,7 +7,6 @@ then
     $machine_script
 fi
 
-
 set -U SXHKD_SHELL /usr/bin/bash
 
 ## Configurations --------------------------------------------#
@@ -25,9 +24,6 @@ bspc config focused_border_color \#BD93F9
 bspc config border_width 1
 bspc config window_gap 0
 
-# Kill if already running
-killall -9 xsettingsd sxhkd dunst xfce4-power-manager picom polybar
-
 # wallpaper
 nitrogen --set-zoom-fill --random ~/wallpaper
 
@@ -37,14 +33,8 @@ polybar main &
 # Notification daemon
 dunst &
 
-# Settings daemon
-xsettingsd &
-
 # Keybindings daemon
 sxhkd &
-
-# Power management
-xfce4-power-manager &
 
 # picom
 picom &
