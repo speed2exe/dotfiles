@@ -9,8 +9,7 @@ function navigate
     set dir (realpath "$argv")"/"
     fd_all "$argv" --absolute-path --exact-depth 1 | fp \
         --query "$dir" \
-        --bind "right:become(cd {} && navigate)" \
+        --bind "right:become(test -d {} && cd {} && navigate || echo {})" \
         --bind "left:become(cd .. && navigate)" \
-        --bind "esc:print-query" \
-
+        --bind "esc:print-query"
 end
