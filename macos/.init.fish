@@ -8,3 +8,5 @@ fish_add_path "/opt/homebrew/bin"
 fish_add_path "/opt/homebrew/opt/node@16/bin"
 
 export NEOVIDE_FRAME=none
+
+source ~/.init2.fish

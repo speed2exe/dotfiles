@@ -10,6 +10,5 @@ function navigate
     fd_all "$argv" --absolute-path --exact-depth 1 | fp \
         --query "$dir" \
         --bind "right:become(test -d {} && cd {} && navigate || echo {})" \
-        --bind "left:become(cd .. && navigate)" \
-        --bind "esc:print-query"
+        --bind "left:become(cd .. && navigate)"
 end
