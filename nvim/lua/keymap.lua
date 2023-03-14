@@ -73,7 +73,7 @@ set('n', '<leader>s', t_builtin.live_grep) -- search
 set('n', '<leader>l', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>o', t_builtin.oldfiles)
 set('n', '<leader>b', t_builtin.buffers)
-set('n', '<leader>t', file_browser) -- traverse
+set('n', '<leader>t', "<CMD>Telescope file_browser path=%:p:h<CR>") -- traverse
 
 -- Quick Comment
 set('n', '<BS>', '<Plug>(comment_toggle_linewise_current)j')
