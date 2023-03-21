@@ -1,3 +1,3 @@
 function h
-    set cmd (builtin history | fr) && eval $cmd
+    set cmd (builtin history | fr --no-sort) && eval $cmd
 end
