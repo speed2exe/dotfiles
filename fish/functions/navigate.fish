@@ -7,8 +7,9 @@ function navigate
     end
 
     set dir (realpath "$argv")"/"
-    fd_all "$argv" --absolute-path --exact-depth 1 | fp \
-        --query "$dir" \
-        --bind "right:become(test -d {} && cd {} && navigate || echo {})" \
-        --bind "left:become(cd .. && navigate)"
+    # because fd doesn't return the current directory and previous directory
+    printf "$dir..\n$dir\n" > /tmp/navigate_history
+    fd_all "$dir" --absolute-path --exact-depth 1 >> /tmp/navigate_history &
+    tail -fn +1 /tmp/navigate_history | fp --query "$dir" --bind "esc:change-query($dir)"
+    rm /tmp/navigate_history
 end
