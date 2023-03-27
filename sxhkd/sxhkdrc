@@ -157,21 +157,21 @@ super + r
     ~/.config/sxhkd/bspc_rename_desktop
 
 # Focus desktop
-super + {4,6,0}
+super + {1,3,0}
     bspc desktop --focus {prev,next,'^1'}
 
 # Swap desktop
-super + shift + {4,6}
+super + shift + {1,3}
     bspc desktop --swap {prev,next} --follow
 
 ##---------- Monitor Management ----------##
 
 # Focus monitor
-super + {8,5}
+super + {5,2}
     bspc monitor --focus {prev,next}
 
 # Swap Monitor
-super + shift + {8,5}
+super + shift + {5,2}
     bspc monitor --swap {prev,next} --follow
 
 ##---------- Transfer Management ----------##
@@ -185,9 +185,9 @@ super + BackSpace
 	bspc node --to-desktop '^1'
 
 # Send node to previous or next desktop
-super + ctrl + {4,6}
+super + ctrl + {1,3}
     bspc node --to-desktop {prev,next} --follow
 
 # Send node to previous or next monitor
-super + ctrl + {8,5}
+super + ctrl + {5,2}
     bspc node --to-monitor {prev,next} --follow
