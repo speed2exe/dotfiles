@@ -48,25 +48,25 @@ cmd - n : yabai --message space --balance
 
 # Focus spaces
 # NOTE: need to create space first (1 time setup)
-cmd - 1 : yabai --message space --focus prev
-cmd - 3 : yabai --message space --focus next
-cmd - 8 : yabai --message space --focus first
+cmd - g : yabai --message space --focus prev
+cmd - j : yabai --message space --focus next
+cmd - i : yabai --message space --focus first
 
 # Swap spaces
-cmd + shift - 1 : yabai --message space --swap prev
-cmd + shift - 3 : yabai --message space --swap next
+cmd + shift - g : yabai --message space --swap prev
+cmd + shift - j : yabai --message space --swap next
 
 # Focus monitor
-cmd - 5 : yabai --message display --focus prev
-cmd - 2 : yabai --message display --focus next
+cmd - k : yabai --message display --focus prev
+cmd - x : yabai --message display --focus next
 
 # Move window to previous or next space
-cmd + ctrl - 1 : yabai --message window --space prev && yabai --message window --focus recent
-cmd + ctrl - 3 : yabai --message window --space next && yabai --message window --focus recent
+cmd + ctrl - g : yabai --message window --space prev && yabai --message window --focus recent
+cmd + ctrl - j : yabai --message window --space next && yabai --message window --focus recent
 
 # Move window to previous or next display
-cmd + ctrl - 5 : yabai --message window --display prev && yabai --message window --focus recent
-cmd + ctrl - 2 : yabai --message window --display next && yabai --message window --focus recent
+cmd + ctrl - k : yabai --message window --display prev && yabai --message window --focus recent
+cmd + ctrl - x : yabai --message window --display next && yabai --message window --focus recent
 
 # Make window move to first space
 cmd - backspace : yabai --message window --space first
