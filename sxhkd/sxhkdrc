@@ -51,16 +51,16 @@ XF86AudioMute
 ##---------- Node Management ----------##
 
 # Spawn Receptacle
-super + x
-    bspc node --insert-receptacle
+# super + x
+#     bspc node --insert-receptacle
 
 # Next through floating windows
-super + j
-    bspc node --focus next.local.floating
+# super + j
+#     bspc node --focus next.local.floating
 
 # Previous through floating windows
-super + g
-    bspc node --focus prev.local.floating
+# super + g
+#     bspc node --focus prev.local.floating
 
 # Close App
 super + q
@@ -71,8 +71,8 @@ super + shift + q
 	bspc node -k
 
 # Toggle Modes
-super + o
-    bspc node -t "~"{floating,tiled}
+# super + o
+#     bspc node -t "~"{floating,tiled}
 
 # Change focus
 super + {d,u,a,e,Tab}
@@ -87,8 +87,8 @@ super + shift + {Left,Up,Right,Down}
     bspc node --to-node {west,north,east,south} --follow
 
 # Fill Receptacle
-super + i
-    ~/.config/sxhkd/bspc_move_node_to_recep
+# super + i
+#     ~/.config/sxhkd/bspc_move_node_to_recep
 
 # Rotate
 super + {Prior, Next}
@@ -157,21 +157,21 @@ super + r
     ~/.config/sxhkd/bspc_rename_desktop
 
 # Focus desktop
-super + {1,3,0}
+super + {g,j,i}
     bspc desktop --focus {prev,next,'^1'}
 
 # Swap desktop
-super + shift + {1,3}
+super + shift + {g,j}
     bspc desktop --swap {prev,next} --follow
 
 ##---------- Monitor Management ----------##
 
 # Focus monitor
-super + {5,2}
+super + {k,x}
     bspc monitor --focus {prev,next}
 
 # Swap Monitor
-super + shift + {5,2}
+super + shift + {k,x}
     bspc monitor --swap {prev,next} --follow
 
 ##---------- Transfer Management ----------##
@@ -185,9 +185,9 @@ super + BackSpace
 	bspc node --to-desktop '^1'
 
 # Send node to previous or next desktop
-super + ctrl + {1,3}
+super + ctrl + {g,j}
     bspc node --to-desktop {prev,next} --follow
 
 # Send node to previous or next monitor
-super + ctrl + {5,2}
+super + ctrl + {k,x}
     bspc node --to-monitor {prev,next} --follow
