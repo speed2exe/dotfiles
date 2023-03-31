@@ -5,7 +5,8 @@ function fp
         --layout reverse \
         --preview-window 'top,50%,border-bottom' \
         --preview 'fish -c "show {}"' $argv \
-        --bind 'tab:change-preview-window(right,50%,border-left|top,50%,border-bottom)' \
+        --bind tab:down \
+        --bind btab:up \
         --bind ctrl-d:preview-half-page-down \
         --bind ctrl-u:preview-half-page-up \
         --bind ctrl-j:preview-down \
