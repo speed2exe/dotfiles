@@ -1,7 +1,6 @@
-local navic = require('nvim-navic')
 local lsp_status = require('lsp-status')
 lsp_status.register_progress()
-
+local navic = require('nvim-navic')
 local function get_lsp_status()
     return lsp_status.status()
 end
@@ -14,6 +13,14 @@ local function cwd()
     return vim.fn.getcwd()
 end
 
+local function navic_location()
+    return navic.get_location()
+end
+
+local function navic_is_available()
+    return navic.is_available()
+end
+
 require('lualine').setup {
     options = {
         component_separators = { left = '', right = '' },
@@ -21,8 +28,8 @@ require('lualine').setup {
     },
     winbar = {
         lualine_a = { 'filetype' },
-        lualine_b = { { 'filename', file_status = true, newfile_status = true, path = 1 } },
-        lualine_c = { { navic.get_location, cond = navic.is_available } },
+        lualine_b = { { cwd } },
+        lualine_c = { { 'filename', file_status = true, newfile_status = true, path = 1 } },
         lualine_x = { 'diagnostics' },
         lualine_y = { 'diff' },
         lualine_z = { 'branch' },
@@ -30,15 +37,18 @@ require('lualine').setup {
     inactive_winbar = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { 'filetype', { 'filename', file_status = true, newfile_status = true, path = 1 },
-            { navic.get_location, cond = navic.is_available } },
+        lualine_c = {
+            'filetype',
+            { cwd },
+            { 'filename', file_status = true, newfile_status = true, path = 1 }
+        },
         lualine_x = { 'diagnostics', 'diff', 'branch' },
         lualine_y = {},
         lualine_z = {},
     },
     sections = {
         lualine_a = { 'mode' },
-        lualine_b = { { cwd } },
+        lualine_b = { { navic_location, cond = navic_is_available } },
         lualine_c = { { get_lsp_status, cond = condition } },
         lualine_x = { 'filesize' },
         lualine_y = { 'progress' },
@@ -47,7 +57,10 @@ require('lualine').setup {
     inactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { 'mode', { cwd }, { get_lsp_status, cond = condition } },
+        lualine_c = {
+            'mode',
+            { navic_location, cond = navic_is_available },
+            { get_lsp_status, cond = condition } },
         lualine_x = { 'filesize', 'progress', 'location' },
         lualine_y = {},
         lualine_z = {},
