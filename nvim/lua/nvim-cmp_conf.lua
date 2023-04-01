@@ -52,9 +52,9 @@ cmp.setup({
 })
 
 cmp.setup.cmdline('/', {
+    completion = { autocomplete = false },
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources(
-        { { name = 'nvim_lsp_document_symbol' } },
         { { name = 'buffer' } }
     )
 })
