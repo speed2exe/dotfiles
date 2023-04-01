@@ -19,10 +19,6 @@ return require('packer').startup({
         -- Github Co-pilot
         use 'github/copilot.vim'
 
-        -- Git
-        -- Still written in vimscript :(
-        use 'tpope/vim-fugitive'
-
         -- Lua
         use { "folke/which-key.nvim", config = function()
             require("which-key").setup {}
@@ -105,6 +101,10 @@ return require('packer').startup({
         -- TreeSitter stuff
         use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function()
             require('treesitter_conf') -- ~/.config/nvim/lua/treesitter_conf.lua
+        end }
+        -- https://github.com/nvim-treesitter/nvim-treesitter-context
+        use { 'nvim-treesitter/nvim-treesitter-context', config = function()
+            require('treesitter-context').setup()
         end }
 
         use { 'https://git.sr.ht/~p00f/nvim-ts-rainbow', config = function()
