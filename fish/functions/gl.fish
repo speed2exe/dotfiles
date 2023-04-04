@@ -3,7 +3,7 @@ function gl
         | fzf \
         --preview 'git diff --color=always $(echo {} | cut -f 1 -d " ")^ $(echo {} | cut -f 1 -d " ")' \
         --preview-window 'top,50%,border-bottom' \
-        --reverse --ansi \
+        --no-sort --reverse --ansi \
         --bind ctrl-d:preview-page-down \
         --bind ctrl-u:preview-page-up \
         --bind ctrl-j:preview-down \
