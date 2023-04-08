@@ -1,0 +1,80 @@
+#! /bin/bash
+
+# become root
+sudo -i
+
+mkdir -p ~/.local/bin
+cd ~/.local/bin
+
+FISH_VERSION=3.6.1
+wget https://github.com/mliszcz/fish-shell/releases/download/fish-$FISH_VERSION-x86_64/fish-$FISH_VERSION-x86_64.AppImage
+mv fish-$FISH_VERSION-x86_64.AppImage fish
+chmod +x fish
+
+FZF_VERSION=0.39.0
+wget https://github.com/junegunn/fzf/releases/download/$FZF_VERSION/fzf-$FZF_VERSION-linux_amd64.tar.gz
+tar -xzf fzf-$FZF_VERSION-linux_amd64.tar.gz
+rm -f fzf-$FZF_VERSION-linux_amd64.tar.gz
+
+EXA_VERSION=0.10.1
+wget https://github.com/ogham/exa/releases/download/v0.10.1/exa-linux-x86_64-v$EXA_VERSION.zip
+unzip exa-linux-x86_64-v$EXA_VERSION.zip -d exa-linux-x86_64-v$EXA_VERSION
+ln -s exa-linux-x86_64-v$EXA_VERSION/bin/exa exa
+rm -f exa-linux-x86_64-v$EXA_VERSION.zip
+
+BAT_VERSION=0.23.0
+wget https://github.com/sharkdp/bat/releases/download/v$BAT_VERSION/bat-v$BAT_VERSION-x86_64-unknown-linux-gnu.tar.gz
+tar -xzf bat-v$BAT_VERSION-x86_64-unknown-linux-gnu.tar.gz
+ln -s bat-v$BAT_VERSION-x86_64-unknown-linux-gnu/bat bat
+rm -f bat-v$BAT_VERSION-x86_64-unknown-linux-gnu.tar.gz
+
+FD_VERSION=8.7.0
+wget https://github.com/sharkdp/fd/releases/download/v$FD_VERSION/fd-v$FD_VERSION-x86_64-unknown-linux-gnu.tar.gz
+tar -xzf fd-v$FD_VERSION-x86_64-unknown-linux-gnu.tar.gz
+ln -s fd-v$FD_VERSION-x86_64-unknown-linux-gnu/fd fd
+rm -f fd-v$FD_VERSION-x86_64-unknown-linux-gnu.tar.gz
+
+PROCS_VERSION=0.14.0
+wget https://github.com/dalance/procs/releases/download/v$PROCS_VERSION/procs-v$PROCS_VERSION-x86_64-linux.zip
+unzip procs-v$PROCS_VERSION-x86_64-linux.zip -d procs-v$PROCS_VERSION-x86_64-linux
+ln -s procs-v$PROCS_VERSION-x86_64-linux/procs procs
+rm -f procs-v$PROCS_VERSION-x86_64-linux.zip
+
+NEOVIM_VERSION=0.9.0
+wget https://github.com/neovim/neovim/releases/download/v$NEOVIM_VERSION/nvim.appimage
+mv nvim.appimage nvim
+chmod +x nvim
+
+BTOP_VERSION=1.2.13
+wget https://github.com/aristocratos/btop/releases/download/v$BTOP_VERSION/btop-x86_64-linux-musl.tbz
+tar -xjf btop-x86_64-linux-musl.tbz
+mv btop btop-$BTOP_VERSION
+ln -s btop-$BTOP_VERSION/bin/btop btop
+rm -f btop-x86_64-linux-musl.tbz
+
+STARSHIP_VERSION=1.13.1
+wget https://github.com/starship/starship/releases/download/v$STARSHIP_VERSION/starship-x86_64-unknown-linux-gnu.tar.gz
+tar -xzf starship-x86_64-unknown-linux-gnu.tar.gz
+rm -f starship-x86_64-unknown-linux-gnu.tar.gz
+
+FORTUNE_VERSION=3.18.0
+wget https://www.shlomifish.org/open-source/projects/fortune-mod/arcs/fortune-mod-$FORTUNE_VERSION.tar.xz
+tar -xJf fortune-mod-$FORTUNE_VERSION.tar.xz
+
+# Neovim Package Manager
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+yum update
+yum install -y gcc
+# yum install -y epel-release
+amazon-linux-extras install -y epel
+
+git clone https://github.com/speed2exe/dotfiles.git
+cp -r dotfiles/starship.toml ~/.config/
+cp -r dotfiles/nvim ~/.config/
+cp -r dotfiles/fish ~/.config/
+rm -rf dotfiles
+
+echo "test FISH && export PATH=\$PATH:\$HOME/.local/bin && exec fish" >> ~/.bashrc
+echo "ssh -i <path/to/.pem> ec2-user@<public_ip> -t 'sudo FISH=true su'"
