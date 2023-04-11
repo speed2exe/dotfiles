@@ -76,5 +76,5 @@ cp -r dotfiles/nvim ~/.config/
 cp -r dotfiles/fish ~/.config/
 rm -rf dotfiles
 
-echo "test FISH && cd ~ && export PATH=\$PATH:\$HOME/.local/bin && exec fish" >> ~/.bashrc
-echo "ssh -i <path/to/.pem> ec2-user@<public_ip> -t 'sudo FISH=true su'"
+echo "test FISH && unset FISH && cd ~ && export PATH=\$PATH:\$HOME/.local/bin && exec fish" >> ~/.bashrc
+echo "ssh -i <path/to/.pem> ec2-user@<public_ip> -t 'sudo FISH=1 su'"
