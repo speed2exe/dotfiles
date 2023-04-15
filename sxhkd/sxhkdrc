@@ -6,8 +6,8 @@ super + l
     killall -q sxhkd && sxhkd &
 
 # Terminal
-super + {_,shift +}Return
-    {alacritty, bspc rule -a \* -o state=floating && alacritty}
+super + Return
+    alacritty
 
 # Remove all Receptacles
 super + k
@@ -30,7 +30,7 @@ super + w
     nitrogen --set-zoom-fill --random ~/wallpaper
 
 # change wallpaper based on input
-super + shift + w
+super + ctrl + w
     ~/.config/sxhkd/get_wallpaper
 
 
@@ -67,7 +67,7 @@ super + q
     bspc node -c
 
 # Kill App
-super + shift + q
+super + ctrl + q
 	bspc node -k
 
 # Toggle Modes
@@ -83,7 +83,7 @@ super + {Left,Up,Right,Down}
     bspc node --swap {west,north,east,south} --follow
 
 # Reinsert into Node
-super + shift + {Left,Up,Right,Down}
+super + ctrl + {Left,Up,Right,Down}
     bspc node --to-node {west,north,east,south} --follow
 
 # Fill Receptacle
@@ -103,51 +103,51 @@ super + h
     ~/.config/sxhkd/bspc_resize_node_auto_balance_increase
 
 # Expand from Left
-super + shift + d
+super + ctrl + d
     ~/.config/sxhkd/bspc_resize_node left -16 0
 
 # Expand from Right
-super + shift + a
+super + ctrl + a
     ~/.config/sxhkd/bspc_resize_node right 16 0
 
 # Expand from Top
-super + shift + u
+super + ctrl + u
     ~/.config/sxhkd/bspc_resize_node top 0 -16
 
 # Expand from Bottom
-super + shift + e
+super + ctrl + e
     ~/.config/sxhkd/bspc_resize_node bottom 0 16
 
 # Shrink from Right
-super + ctrl + a
+super + alt + a
     ~/.config/sxhkd/bspc_resize_node left 16 0
 
 # Shrink from Left
-super + ctrl + d
+super + alt + d
     ~/.config/sxhkd/bspc_resize_node right -16 0
 
 # Shrink from Top
-super + ctrl + e
+super + alt + e
     ~/.config/sxhkd/bspc_resize_node top 0 16
 
 # Shrink from Bottom
-super + ctrl + u
+super + alt + u
     ~/.config/sxhkd/bspc_resize_node bottom 0 -16
 
 # Move window left
-super + ctrl + d
+super + shift + d
     ~/.config/sxhkd/bspc_move_node left -16 0
 
 # Move window right
-super + ctrl + a
+super + shift + a
     ~/.config/sxhkd/bspc_move_node right 16 0
 
 # Move window up
-super + ctrl + u
+super + shift + u
     ~/.config/sxhkd/bspc_move_node top 0 -16
 
 # Move window down
-super + ctrl + e
+super + shift + e
     ~/.config/sxhkd/bspc_move_node bottom 0 16
 
 ##---------- Desktop Management ----------##
@@ -161,7 +161,7 @@ super + {g,j,i}
     bspc desktop --focus {prev,next,'^1'}
 
 # Swap desktop
-super + shift + {g,j}
+super + ctrl + {g,j}
     bspc desktop --swap {prev,next} --follow
 
 ##---------- Monitor Management ----------##
@@ -171,23 +171,23 @@ super + {k,x}
     bspc monitor --focus {prev,next}
 
 # Swap Monitor
-super + shift + {k,x}
+super + ctrl + {k,x}
     bspc monitor --swap {prev,next} --follow
 
 ##---------- Transfer Management ----------##
 
 # Move Node to last desktop
 super + Escape
-    bspc node --to-node last --follow
+    bspc node --to-desktop last --follow
 
 # Send node to first desktop
 super + BackSpace
 	bspc node --to-desktop '^1'
 
 # Send node to previous or next desktop
-super + ctrl + {g,j}
+super + alt + {g,j}
     bspc node --to-desktop {prev,next} --follow
 
 # Send node to previous or next monitor
-super + ctrl + {k,x}
+super + alt + {k,x}
     bspc node --to-monitor {prev,next} --follow
