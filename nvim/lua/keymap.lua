@@ -18,9 +18,6 @@ set('n', '<leader>e', ':e <cfile><CR>')
 -- Remove lines with only whitespace or nothing
 set('v', '<leader><BS>', ':g/^\\s*$/d<CR>')
 
--- Apply macro to all lines to visual selection
-set('v', 'q', ':normal @q<CR>')
-
 -- higlight yanked text, or just edited text
 set('n', 'vv', '`[v`]')
 
