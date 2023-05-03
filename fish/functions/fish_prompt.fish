@@ -3,7 +3,7 @@ function fish_prompt
 
     set job_list (jobs)
     if success
-        set_color -b brblack black ; printf " $(count $job_list) " ; set_color normal
+        set_color -b brblack black ; printf " (count $job_list) " ; set_color normal
     end
 
     starship prompt
