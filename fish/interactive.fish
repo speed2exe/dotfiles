@@ -1,5 +1,5 @@
 # set environment variables
-set SHELL "$(which fish)"
+set SHELL (which fish)
 set TERM xterm-256color
 set fish_term24bit 1
 
