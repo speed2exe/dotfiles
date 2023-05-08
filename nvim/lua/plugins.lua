@@ -74,7 +74,9 @@ return require('packer').startup({
         end }
 
         -- dev icons
-        use { 'kyazdani42/nvim-web-devicons' }
+        use { 'nvim-tree/nvim-web-devicons', config = function()
+            require('nvim-web-devicons').setup()
+        end }
 
         -- Telescope stuff
         use 'nvim-lua/popup.nvim'
