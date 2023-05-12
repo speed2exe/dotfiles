@@ -2,7 +2,6 @@ local vim = vim
 local set = vim.keymap.set
 local fn = require 'function'
 local t_builtin = require 'telescope.builtin'
-local file_browser = require 'telescope'.extensions.file_browser.file_browser
 local baleia = require('baleia')
 
 vim.g.mapleader = ' ';
@@ -26,6 +25,8 @@ set('v', '<leader>s', ':s/<C-R>"/<C-R>"')
 
 -- copy current file path to clipboard
 set('n', 'yf', '<CMD>let @+ = expand("%:p")<CR>')
+-- copy current file directory to clipboard
+set('n', 'yd', '<CMD>let @+ = expand("%:p:h")<CR>')
 -- yank current file content to clipboard
 set('n', 'y%', '<CMD>:%y+<CR>')
 
