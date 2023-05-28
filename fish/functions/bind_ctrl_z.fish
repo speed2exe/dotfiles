@@ -10,7 +10,11 @@ function bind_ctrl_z
         return
     end
 
-    set job (jobs | fr | cut -f 2) && fg $job
+    set job (jobs | fr --bind ctrl-z:abort)
+    set pid (echo $job | cut -f 2)
+    if test -n "$pid"
+        fg $pid
+    end
     echo
     commandline --function repaint
 end
