@@ -40,7 +40,7 @@ unzip procs-v$PROCS_VERSION-x86_64-linux.zip -d procs-v$PROCS_VERSION-x86_64-lin
 ln -s procs-v$PROCS_VERSION-x86_64-linux/procs procs
 rm -f procs-v$PROCS_VERSION-x86_64-linux.zip
 
-NEOVIM_VERSION=0.9.0
+NEOVIM_VERSION=0.9.1
 wget https://github.com/neovim/neovim/releases/download/v$NEOVIM_VERSION/nvim.appimage
 mv nvim.appimage nvim
 chmod +x nvim
@@ -57,18 +57,14 @@ wget https://github.com/starship/starship/releases/download/v$STARSHIP_VERSION/s
 tar -xzf starship-x86_64-unknown-linux-gnu.tar.gz
 rm -f starship-x86_64-unknown-linux-gnu.tar.gz
 
-FORTUNE_VERSION=3.18.0
-wget https://www.shlomifish.org/open-source/projects/fortune-mod/arcs/fortune-mod-$FORTUNE_VERSION.tar.xz
-tar -xJf fortune-mod-$FORTUNE_VERSION.tar.xz
-
 # Neovim Package Manager
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 yum update
-yum install -y gcc
 # yum install -y epel-release
 amazon-linux-extras install -y epel
+yum install -y fortune-mod
 
 git clone https://github.com/speed2exe/dotfiles.git
 cp -r dotfiles/starship.toml ~/.config/
@@ -76,5 +72,5 @@ cp -r dotfiles/nvim ~/.config/
 cp -r dotfiles/fish ~/.config/
 rm -rf dotfiles
 
-echo "test $FISH && unset FISH && cd ~ && export PATH=$PATH:$HOME/.local/bin && export KUBECONFIG=/etc/kubernetes/admin.conf && exec fish" >> ~/.bashrc
+echo "test \$FISH && unset FISH && cd ~ && export PATH=\$PATH:\$HOME/.local/bin && export KUBECONFIG=/etc/kubernetes/admin.conf && exec fish" >> ~/.bashrc
 echo "ssh -i <path/to/.pem> ec2-user@<public_ip> -t 'sudo FISH=1 su'"
