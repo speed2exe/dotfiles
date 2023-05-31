@@ -20,22 +20,22 @@ cmd + alt - d : yabai --message window --resize right:-50:0
 cmd + alt - a : yabai --message window --resize left:50:0
 
 # Swap Window
-cmd - up    : yabai --message window --swap north
-cmd - down  : yabai --message window --swap south
-cmd - left  : yabai --message window --swap west
-cmd - right : yabai --message window --swap east
+cmd - k : yabai --message window --swap north
+cmd - x : yabai --message window --swap south
+cmd - g : yabai --message window --swap west
+cmd - j : yabai --message window --swap east
 
 # Warp Window
-cmd + ctrl - up    : yabai --message window --warp north
-cmd + ctrl - down  : yabai --message window --warp south
-cmd + ctrl - left  : yabai --message window --warp west
-cmd + ctrl - right : yabai --message window --warp east
+cmd + ctrl - k : yabai --message window --warp north
+cmd + ctrl - x : yabai --message window --warp south
+cmd + ctrl - g : yabai --message window --warp west
+cmd + ctrl - j : yabai --message window --warp east
 
 # Stack Window
-cmd + shift - up    : yabai --message window --stack north && yabai --message window --focus stack.recent
-cmd + shift - down  : yabai --message window --stack south && yabai --message window --focus stack.recent
-cmd + shift - left  : yabai --message window --stack west  && yabai --message window --focus stack.recent
-cmd + shift - right : yabai --message window --stack east  && yabai --message window --focus stack.recent
+cmd + shift - k : yabai --message window --stack north && yabai --message window --focus stack.recent
+cmd + shift - x : yabai --message window --stack south && yabai --message window --focus stack.recent
+cmd + shift - g : yabai --message window --stack west  && yabai --message window --focus stack.recent
+cmd + shift - j : yabai --message window --stack east  && yabai --message window --focus stack.recent
 
 # Toggle Window Split
 cmd - pageup : yabai --message window --toggle split
@@ -48,25 +48,24 @@ cmd - n : yabai --message space --balance
 
 # Focus spaces
 # NOTE: need to create space first (1 time setup)
-cmd - g : yabai --message space --focus prev
-cmd - j : yabai --message space --focus next
-cmd - i : yabai --message space --focus first
+cmd - left  : yabai --message space --focus prev
+cmd - right : yabai --message space --focus next
 
 # Swap spaces
-cmd + ctrl - g : yabai --message space --swap prev
-cmd + ctrl - j : yabai --message space --swap next
+cmd + ctrl - left  : yabai --message space --swap prev
+cmd + ctrl - right : yabai --message space --swap next
 
 # Focus monitor
-cmd - k : yabai --message display --focus prev
-cmd - x : yabai --message display --focus next
+cmd - up   : yabai --message display --focus prev
+cmd - down : yabai --message display --focus next
 
 # Move window to previous or next space
-cmd + alt - g : yabai --message window --space prev && yabai --message window --focus recent
-cmd + alt - j : yabai --message window --space next && yabai --message window --focus recent
+cmd + alt - left  : yabai --message window --space prev && yabai --message window --focus recent
+cmd + alt - right : yabai --message window --space next && yabai --message window --focus recent
 
 # Move window to previous or next display
-cmd + alt - k : yabai --message window --display prev && yabai --message window --focus recent
-cmd + alt - x : yabai --message window --display next && yabai --message window --focus recent
+cmd + alt - up   : yabai --message window --display prev && yabai --message window --focus recent
+cmd + alt - down : yabai --message window --display next && yabai --message window --focus recent
 
 # Make window move to first space
 cmd - backspace : yabai --message window --space first
