@@ -83,7 +83,7 @@ super + {g,k,j,x}
     bspc node --swap {west,north,east,south} --follow
 
 # Reinsert into Node
-super + ctrl + {Left,Up,Right,Down}
+super + ctrl + {g,k,j,x}
     bspc node --to-node {west,north,east,south} --follow
 
 # Fill Receptacle
