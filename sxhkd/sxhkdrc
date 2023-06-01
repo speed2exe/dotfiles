@@ -9,10 +9,6 @@ super + l
 super + Return
     alacritty
 
-# Remove all Receptacles
-super + k
-    ~/.config/sxhkd/bspc_all_remove_receptacles
-
 # search and open new app or go to existing app
 super + space
     rofi -show combi -show-icons -steal-focus
