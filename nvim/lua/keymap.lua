@@ -46,10 +46,6 @@ set('n', '<C-Q>', fn.toggle_quick_fix_list)
 set('n', '<C-[>', '<CMD>cprev<CR>')
 set('n', '<C-]>', '<CMD>cnext<CR>')
 
--- Indent
-set('v', ',', '<gv')
-set('v', '.', '>gv')
-
 -- go to project root
 set('n', '<leader><ESC>', '<CMD>ProjectRoot<CR>')
 -- go to current file directory
