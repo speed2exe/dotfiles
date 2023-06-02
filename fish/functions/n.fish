@@ -1,7 +1,6 @@
 function n
-    touch /tmp/dir_history
-    set dir (tac /tmp/dir_history ~/marks/dir_history.txt | fp --no-sort)
-    and cd $dir
-
-    update_dir_history &
+    set dir (tac ~/marks/dir_history.txt | tee /tmp/dir_history.txt | fp --no-sort)
+    and builtin cd $dir
+    and tac /tmp/dir_history.txt | awk '!x[$0]++' > ~/marks/dir_history.txt
+    and echo $dir >> ~/marks/dir_history.txt
 end
