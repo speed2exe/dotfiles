@@ -16,5 +16,5 @@ function cd
     # test "$cur_git" && test "$prev_git" != "$cur_git" && onefetch 2>/dev/null
 
     # update directory history
-    echo "$PWD/" >>/tmp/dir_history
+    echo "$PWD/" >> ~/marks/dir_history.txt
 end
