@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-xinput set-prop 16 "libinput Tapping Enabled" 1 &
+xinput set-prop 14 "libinput Tapping Enabled" 1 &
