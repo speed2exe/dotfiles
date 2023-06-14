@@ -1,4 +1,6 @@
 function bind_ctrl_n
-    commandline --append (cat ~/marks/dir_history.txt | fp --no-sort)
+    tac ~/marks/dir_history.txt | awk '!x[$0]++' > /tmp/dir_history.txt
+    set dir (cat /tmp/dir_history.txt | fp --no-sort)
+    commandline --insert $dir
     commandline --function repaint-mode
 end

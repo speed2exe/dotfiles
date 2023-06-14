@@ -4,6 +4,6 @@ function t
         cd (dirname "$path")
         v (basename "$path")
     else if test -d "$path"
-        test "$path" != "$PWD"/ && cd "$path" && t
+        cd "$path"
     end
 end
