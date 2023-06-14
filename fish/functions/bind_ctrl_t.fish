@@ -1,4 +1,4 @@
 function bind_ctrl_t
-    commandline --append (navigate)
+    commandline --insert (navigate)
     commandline --function repaint-mode
 end
