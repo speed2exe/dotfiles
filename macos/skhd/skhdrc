@@ -20,22 +20,22 @@ cmd + alt - d : yabai --message window --resize right:-50:0
 cmd + alt - a : yabai --message window --resize left:50:0
 
 # Swap Window
-cmd - k : yabai --message window --swap north
-cmd - x : yabai --message window --swap south
-cmd - g : yabai --message window --swap west
-cmd - j : yabai --message window --swap east
+cmd - 8 : yabai --message window --swap north
+cmd - 5 : yabai --message window --swap south
+cmd - 4 : yabai --message window --swap west
+cmd - 6 : yabai --message window --swap east
 
 # Warp Window
-cmd + ctrl - k : yabai --message window --warp north
-cmd + ctrl - x : yabai --message window --warp south
-cmd + ctrl - g : yabai --message window --warp west
-cmd + ctrl - j : yabai --message window --warp east
+cmd + ctrl - 8 : yabai --message window --warp north
+cmd + ctrl - 5 : yabai --message window --warp south
+cmd + ctrl - 4 : yabai --message window --warp west
+cmd + ctrl - 6 : yabai --message window --warp east
 
 # Stack Window
-cmd + shift - k : yabai --message window --stack north && yabai --message window --focus stack.recent
-cmd + shift - x : yabai --message window --stack south && yabai --message window --focus stack.recent
-cmd + shift - g : yabai --message window --stack west  && yabai --message window --focus stack.recent
-cmd + shift - j : yabai --message window --stack east  && yabai --message window --focus stack.recent
+cmd + shift - 8 : yabai --message window --stack north && yabai --message window --focus stack.recent
+cmd + shift - 5 : yabai --message window --stack south && yabai --message window --focus stack.recent
+cmd + shift - 4 : yabai --message window --stack west  && yabai --message window --focus stack.recent
+cmd + shift - 6 : yabai --message window --stack east  && yabai --message window --focus stack.recent
 
 # Toggle Window Split
 cmd - pageup : yabai --message window --toggle split
