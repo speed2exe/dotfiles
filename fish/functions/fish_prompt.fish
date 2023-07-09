@@ -6,6 +6,13 @@ function fish_prompt
         set_color -b brblack black ; printf " $(count $job_list) " ; set_color normal
     end
 
+    # backup prompt if starship is not working properly
+    # set_color red ; printf " $(whoami)"
+    # set_color brblack ; printf "@" ;
+    # set_color green ; printf "$hostname" ;
+    # set_color brblack ; printf ":" ;
+    # set_color blue ; printf "$(pwd)/\n"
+
     starship prompt
 
     if test $last_status -eq 0
