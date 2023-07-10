@@ -90,11 +90,12 @@ set('v', '<BS>', '<Plug>(comment_toggle_blockwise_visual)gv')
 set('n', '!', 'o<ESC>:.!')
 set('v', '!', 'c<CR><CR><UP><ESC>:.!<C-R>"<CR>k')
 
--- Symbols Outline
-set('n', '<C-S>', '<CMD>SymbolsOutline<CR>')
-
 -- Toggle indent-blankline to show tabs
 set('n', '<C-B>', ':IndentBlanklineToggle<CR>')
+
+-- Toggle LSP diagnostics
+vim.diagnostic.config({ virtual_lines = false })
+set('n', '<C-L>', require('lsp_lines').toggle)
 
 -- Custom Personal Mapping
 -- Add more if needed, but shouldn't need more
