@@ -81,8 +81,7 @@ set('v', '!', 'c<CR><CR><UP><ESC>:.!<C-R>"<CR>k')
 set('n', '<C-B>', ':IndentBlanklineToggle<CR>')
 
 -- Toggle LSP diagnostics
-vim.diagnostic.config({ virtual_lines = false })
-set('n', '<C-L>', require('lsp_lines').toggle)
+set('n', '<C-L>', fn.toggle_lsp_lines)
 
 -- Custom Personal Mapping
 -- Add more if needed, but shouldn't need more
