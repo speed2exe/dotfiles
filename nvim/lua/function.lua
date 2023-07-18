@@ -2,6 +2,7 @@
 
 local M = {}
 local vim = vim
+
 M.toggle_quick_fix_list = function()
     local qf_exists = false
     for _, win in pairs(vim.fn.getwininfo()) do
