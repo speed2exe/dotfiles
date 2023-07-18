@@ -41,9 +41,7 @@ return require('packer').startup({
         use { 'nvim-tree/nvim-web-devicons', config = function()
             require('nvim-web-devicons').setup()
         end }
-        use { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim', config = function()
-            require('lsp_lines').setup()
-        end }
+        use 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
         use 'https://gitlab.com/HiPhish/rainbow-delimiters.nvim'
 
         -- Telescope stuff
