@@ -73,19 +73,6 @@ set('n', '<leader>t', "<CMD>Telescope file_browser path=%:p:h<CR>") -- traverse
 set('n', '<BS>', '<Plug>(comment_toggle_linewise_current)j')
 set('v', '<BS>', '<Plug>(comment_toggle_blockwise_visual)gv')
 
--- debug adapter protocol
--- nnoremap <leader>db <CMD>lua require('dap').toggle_breakpoint()<CR>
--- nnoremap <leader>de <CMD>lua require('dap').set_exception_breakpoints()<CR>
--- nnoremap <leader>dl <CMD>lua require('dap').list_breakpoints()<CR>
--- nnoremap <leader>dr <CMD>lua require('dap').run_last()<CR>
--- nnoremap <leader>da <CMD>lua require('dap').step_over()<CR>
--- nnoremap <leader>di <CMD>lua require('dap').step_into()<CR>
--- nnoremap <leader>do <CMD>lua require('dap').step_out()<CR>
--- nnoremap <leader>dt <CMD>lua require('dap').terminate()<CR>
--- nnoremap <leader>d<SPACE> <CMD>lua require('dap').run_to_cursor()<CR>
--- nnoremap <leader>d<CR> <CMD>lua require('dap').continue()<CR>
--- nnoremap <leader>d<TAB> <CMD>lua require('dap').repl.toggle()<CR>
-
 -- command line execution
 set('n', '!', 'o<ESC>:.!')
 set('v', '!', 'c<CR><CR><UP><ESC>:.!<C-R>"<CR>k')
