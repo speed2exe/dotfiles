@@ -3,7 +3,7 @@
 configuration {
     modi: "combi";
     combi-modi: "window,drun";
-    font: "iosevka3 12";
+    font: "Agave Nerd Font 14";
 }
 
 * {
