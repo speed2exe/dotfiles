@@ -24,7 +24,13 @@ M.toggle_hlsearch = function()
 end
 
 vim.diagnostic.config({ virtual_lines = false })
+local init = false
 M.toggle_lsp_lines = function()
+    if not init then
+        require('lsp_lines').setup()
+        init = true
+    end
+
     local enabled = vim.diagnostic.config().virtual_lines
     vim.diagnostic.config({
         virtual_lines = not enabled,
