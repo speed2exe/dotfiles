@@ -24,7 +24,7 @@ set('n', 'vv', '`[v`]')
 set('v', '<leader>s', ':s/<C-R>"/<C-R>"')
 
 -- copy current file path to clipboard
-set('n', 'yf', '<CMD>let @+ = expand("%:p")<CR>')
+set('n', 'yf', '<CMD>let @+ = join([expand("%:p"), line(".")], ":")<CR>')
 -- copy current file directory to clipboard
 set('n', 'yd', '<CMD>let @+ = expand("%:p:h")<CR>')
 -- yank current file content to clipboard

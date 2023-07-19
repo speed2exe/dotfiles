@@ -1,5 +1,8 @@
-# homebrew
+# local
 fish_add_path "/usr/local/bin"
+
+# rust
+fish_add_path "$HOME/.cargo/bin"
 
 # homebrew
 fish_add_path "/opt/homebrew/bin"
