@@ -1,6 +1,4 @@
 local opt = vim.opt
-local cmd = vim.cmd
-local g = vim.g
 
 opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
 opt.termguicolors = true
@@ -37,11 +35,6 @@ opt.cursorline = true
 -- use same background color as dracula theme
 --
 -- https://vim.fandom.com/wiki/Remove_unwanted_spaces
---
--- g.copilot_no_tab_map = true
--- vim.keymap.set('i', '<RIGHT>', '<Plug>(copilot-accept)')
--- vim.keymap.set('i', '<DOWN>', '<Plug>(copilot-next)')
--- vim.keymap.set('i', '<UP>', '<Plug>(copilot-prev)')
 vim.cmd [[
     colorscheme dracula
 
@@ -57,6 +50,3 @@ vim.cmd [[
     highlight Normal guibg=NONE ctermbg=NONE
     highlight CursorLine guibg=#282a36
 ]]
-
--- netrw
--- g.netrw_liststyle = 3
