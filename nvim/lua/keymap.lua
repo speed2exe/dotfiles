@@ -18,33 +18,25 @@ set('n', '<leader>e', ':e <cfile><CR>')
 set('v', '<leader><BS>', ':g/^\\s*$/d<CR>')
 
 -- higlight yanked text, or just edited text
-set('n', 'vv', '`[v`]')
+set('n', '<leader>v', '`[v`]')
 
 -- Search and replace for clipboard content on visually selected
 set('v', '<leader>s', ':s/<C-R>"/<C-R>"')
 
 -- copy current file path to clipboard
-set('n', 'yf', '<CMD>let @+ = join([expand("%:p"), line(".")], ":")<CR>')
+set('n', 'yf', '<CMD>let @+ = expand("%:p")<CR>')
+-- copy current file path with line number to clipboard
+set('n', 'yF', '<CMD>let @+ = join([expand("%:p"), line(".")], ":")<CR>')
 -- copy current file directory to clipboard
 set('n', 'yd', '<CMD>let @+ = expand("%:p:h")<CR>')
 -- yank current file content to clipboard
 set('n', 'y%', '<CMD>:%y+<CR>')
-
--- Move lines up and down
-set('v', '<C-J>', ':m \'>+1<CR>gv')
-set('v', '<C-K>', ':m \'<-2<CR>gv')
-set('n', '<C-J>', ':m .+1<CR>')
-set('n', '<C-K>', ':m .-2<CR>')
-set('i', '<C-J>', '<ESC>:m .+1<CR>a')
-set('i', '<C-K>', '<ESC>:m .-2<CR>a')
 
 -- toggle search highlight
 set('n', '<C-H>', fn.toggle_hlsearch)
 
 -- toggle quickfix window
 set('n', '<C-Q>', fn.toggle_quick_fix_list)
-set('n', '<C-[>', '<CMD>cprev<CR>')
-set('n', '<C-]>', '<CMD>cnext<CR>')
 
 -- go to project root
 set('n', '<leader><ESC>', '<CMD>ProjectRoot<CR>')
@@ -52,7 +44,6 @@ set('n', '<leader><ESC>', '<CMD>ProjectRoot<CR>')
 set('n', '<leader><leader>', '<CMD>lcd %:p:h<CR>')
 
 -- Telescope
-set('n', '<leader>T', '<CMD>Telescope<CR>')
 set('n', '<leader>rs', t_builtin.resume)
 set('n', '<leader>ht', t_builtin.help_tags)
 set('n', '<leader>dn', t_builtin.diagnostics)
@@ -74,8 +65,8 @@ set('n', '<BS>', '<Plug>(comment_toggle_linewise_current)j')
 set('v', '<BS>', '<Plug>(comment_toggle_blockwise_visual)gv')
 
 -- command line execution
-set('n', '!', 'o<ESC>:.!')
-set('v', '!', 'c<CR><CR><UP><ESC>:.!<C-R>"<CR>k')
+set('n', '!', ':.!')
+set('v', '!', 'c<CR><CR><UP><C-O>:.!<C-R>"<CR><ESC>`[v`]$')
 
 -- Toggle indent-blankline to show tabs
 set('n', '<C-B>', ':IndentBlanklineToggle<CR>')
