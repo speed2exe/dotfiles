@@ -87,6 +87,14 @@ return require('packer').startup({
         use 'dcampos/nvim-snippy'
         use 'dcampos/cmp-snippy'
 
+        -- language specific stuff
+        use { 'simrat39/rust-tools.nvim', config = function()
+            require('rust-tools').setup()
+        end }
+        use { 'Saecki/crates.nvim', config = function()
+            require('crates').setup()
+        end }
+
         if packer_bootstrap then
             require('packer').sync()
         end
