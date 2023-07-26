@@ -51,12 +51,12 @@ XF86AudioMute
 #     bspc node --insert-receptacle
 
 # Next through floating windows
-# super + j
-#     bspc node --focus next.local.floating
+super + j
+    bspc node --focus next.local.floating
 
 # Previous through floating windows
-# super + g
-#     bspc node --focus prev.local.floating
+super + g
+    bspc node --focus prev.local.floating
 
 # Close App
 super + q
@@ -67,8 +67,8 @@ super + ctrl + q
 	bspc node -k
 
 # Toggle Modes
-# super + o
-#     bspc node -t "~"{floating,tiled}
+super + o
+    bspc node -t "~"{floating,tiled}
 
 # Change focus
 super + {d,u,a,e,Tab}
