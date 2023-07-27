@@ -1,6 +1,4 @@
--- speed up load time
--- comment this line if you set up for the first time
-require('impatient')
+vim.loader.enable()
 
 require('plugins')  -- ~/.config/nvim/lua/plugins.lua
 require('keymap')   -- ~/.config/nvim/lua/keymap.lua
