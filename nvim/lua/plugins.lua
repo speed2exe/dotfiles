@@ -10,7 +10,6 @@ end
 
 return require('packer').startup({
     function(use)
-        use 'lewis6991/impatient.nvim'
         use 'wbthomason/packer.nvim'
         use 'github/copilot.vim'
         use { "folke/which-key.nvim", config = function()
