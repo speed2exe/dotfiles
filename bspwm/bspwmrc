@@ -12,8 +12,8 @@ set -U SXHKD_SHELL /usr/bin/bash
 ## Configurations --------------------------------------------#
 workspaces() {
 	name=0
-	for monitor in `bspc query -M`; do
-		bspc monitor ${monitor} -n "$name" -d 'N' 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII'
+    for monitor in $(bspc query --monitors); do
+		bspc monitor $monitor -n $name -d 'N' 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII'
 		let name++
 	done
 }
