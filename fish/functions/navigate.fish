@@ -11,6 +11,9 @@ function navigate
     printf "$dir..\n$dir\n" > /tmp/navigate_history
     fd_all "$dir" --absolute-path --exact-depth 1 >> /tmp/navigate_history
     set dest (cat /tmp/navigate_history | fp --query "$dir" --bind "esc:change-query($dir)")
+    if test $status = 130
+        return
+    end
     rm /tmp/navigate_history
 
     if test "$dest" = "$dir"
@@ -19,5 +22,7 @@ function navigate
         navigate "$dest"
     else if test -f "$dest"
         printf "$dest"
+    else
+        navigate "$dir"
     end
 end
