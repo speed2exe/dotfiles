@@ -4,3 +4,7 @@ fish_add_path /root/neovim/squashfs-root
 function cat $argv
     batcat --theme=Dracula $argv
 end
+
+function fd $argv
+    fdfind $argv
+end
