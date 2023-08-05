@@ -1,3 +1,3 @@
 function cat
-    bat $argv --theme=Dracula
+    bat --theme=Dracula $argv
 end

@@ -11,4 +11,4 @@ services:
     ports:
       - 6379:6379
   dev:
-    image: rust-img
+    image: debian-dev
