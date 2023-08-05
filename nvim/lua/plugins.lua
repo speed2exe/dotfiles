@@ -63,9 +63,14 @@ return require('packer').startup({
         use 'nvim-lua/lsp-status.nvim'
 
         -- TreeSitter stuff
-        use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function()
-            require('treesitter_conf') -- ~/.config/nvim/lua/treesitter_conf.lua
-        end }
+        use { 'nvim-treesitter/nvim-treesitter',
+            run = function()
+                local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+                ts_update()
+            end,
+            config = function()
+                require('treesitter_conf') -- ~/.config/nvim/lua/treesitter_conf.lua
+            end }
         use { 'nvim-treesitter/nvim-treesitter-context', config = function()
             require('treesitter-context').setup()
         end }
