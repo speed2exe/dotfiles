@@ -83,6 +83,8 @@ set('n', '<leader>rf', vim.lsp.buf.references)
 set('n', '<leader>hv', vim.lsp.buf.hover)
 set('n', '<leader>a', vim.lsp.buf.code_action)
 set('n', '<leader>dt', vim.lsp.buf.type_definition)
+set('n', '<leader>n', vim.lsp.buf.format) -- neat
+set('n', '<leader>hl', vim.lsp.buf.document_highlight)
 
 -- show diagnostics
 set('n', '<leader>do', vim.diagnostic.open_float)
