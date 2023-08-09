@@ -99,6 +99,29 @@ return require('packer').startup({
             require('crates').setup()
         end }
 
+        use { 'akinsho/flutter-tools.nvim',
+            requires = {
+                'nvim-lua/plenary.nvim',
+                'stevearc/dressing.nvim', -- optional for vim.ui.select
+            },
+            config = function()
+                require("flutter-tools").setup {
+                    lsp = {
+                        on_attach = function(client, bufnr)
+                            -- autoformat on save
+                            vim.api.nvim_create_augroup("lsp_document_format_on_save", { clear = false })
+                            vim.api.nvim_create_autocmd("BufWritePre", {
+                                callback = function() vim.lsp.buf.format() end,
+                                buffer = bufnr,
+                                group = "lsp_document_format_on_save",
+                                desc = "Document Format",
+                            })
+                        end,
+                    },
+                }
+            end
+        }
+
         if packer_bootstrap then
             require('packer').sync()
         end
