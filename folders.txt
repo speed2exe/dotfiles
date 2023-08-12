@@ -11,4 +11,3 @@ rofi
 picom
 dunst
 gtk-3.0
-Thunar
