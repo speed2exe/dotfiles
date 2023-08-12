@@ -92,7 +92,9 @@ return require('packer').startup({
         use 'dcampos/cmp-snippy'
 
         -- language specific stuff
-        use { 'simrat39/rust-tools.nvim', config = function()
+        use { 'simrat39/rust-tools.nvim',
+        requires = { 'williamboman/mason.nvim' },
+        config = function()
             require('rust-tools').setup()
         end }
         use { 'Saecki/crates.nvim', config = function()
