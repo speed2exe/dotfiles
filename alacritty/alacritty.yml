@@ -993,6 +993,13 @@ hints:
        key: Escape
        mods: Alt
 
+   - regex: "[\\w|/|-]+\\.[\\w]+(:[\\d]+)*"
+     command: neovide
+     post_processing: true
+     binding:
+       key: R
+       mods: Alt
+
    - regex: "[^ ]+ "
      action: Copy
      post_processing: true
