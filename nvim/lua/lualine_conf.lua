@@ -2,10 +2,10 @@ local lsp_status = require('lsp-status')
 lsp_status.register_progress()
 local navic = require('nvim-navic')
 local function get_lsp_status()
-    return lsp_status.status()
+    return string.sub(lsp_status.status(), 6)
 end
 
-local function condition()
+local function lsp_is_availabale()
     return #vim.lsp.buf_get_clients() > 0
 end
 
@@ -49,7 +49,7 @@ require('lualine').setup {
     sections = {
         lualine_a = { 'mode' },
         lualine_b = { { navic_location, cond = navic_is_available } },
-        lualine_c = { { get_lsp_status, cond = condition } },
+        lualine_c = { { get_lsp_status, cond = lsp_is_availabale } },
         lualine_x = { 'filesize' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
@@ -60,7 +60,7 @@ require('lualine').setup {
         lualine_c = {
             'mode',
             { navic_location, cond = navic_is_available },
-            { get_lsp_status, cond = condition } },
+            { get_lsp_status, cond = lsp_is_availabale } },
         lualine_x = { 'filesize', 'progress', 'location' },
         lualine_y = {},
         lualine_z = {},
