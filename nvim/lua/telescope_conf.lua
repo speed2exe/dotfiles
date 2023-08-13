@@ -16,17 +16,6 @@ require('telescope').setup {
             hidden = true,
         },
     },
-    extensions = {
-        file_browser = {
-            hijack_netrw = true,
-            hidden = true,
-        },
-    },
 }
 
 require('telescope').load_extension('fzf')
-require('telescope').load_extension('file_browser')
-vim.cmd [[
-    highlight TelescopeNormal guibg=NONE ctermbg=NONE
-    highlight TelescopeBorder guibg=NONE ctermbg=NONE
-]]
