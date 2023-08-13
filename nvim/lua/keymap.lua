@@ -64,7 +64,7 @@ set('v', '!', 'c<CR><CR><UP><C-O>:.!<C-R>"<CR><ESC>`[v`]$')
 set('n', '<C-B>', ':IndentBlanklineToggle<CR>')
 
 -- Toggle LSP diagnostics
-set('n', '<C-L>', fn.toggle_lsp_lines)
+set('n', '<leader>ll', fn.toggle_lsp_lines)
 
 -- Custom Personal Mapping
 -- Add more if needed, but shouldn't need more

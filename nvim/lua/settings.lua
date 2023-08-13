@@ -5,7 +5,6 @@ opt.termguicolors = true
 opt.wrap = false
 opt.number = true
 opt.relativenumber = true
-opt.cursorline = true
 
 -- TODO:
 -- commands that cannot be represented in neovim
@@ -29,5 +28,4 @@ vim.cmd [[
 
     highlight WinSeparator guibg=NONE ctermbg=NONE
     highlight Normal guibg=NONE ctermbg=NONE
-    highlight CursorLine guibg=#282a36
 ]]
