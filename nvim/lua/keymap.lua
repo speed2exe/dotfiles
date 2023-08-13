@@ -7,7 +7,7 @@ local baleia = require('baleia')
 vim.g.mapleader = ' ';
 
 -- Interpret ansi colors
-set('n', '<leader>c', function()
+set('n', '<leader>cl', function()
     baleia.setup().once(vim.fn.bufnr())
 end)
 
@@ -32,16 +32,13 @@ set('n', 'yd', '<CMD>let @+ = expand("%:p:h")<CR>')
 -- yank current file content to clipboard
 set('n', 'y%', '<CMD>:%y+<CR>')
 
--- toggle search highlight
-set('n', '<C-H>', fn.toggle_hlsearch)
-
 -- toggle quickfix window
 set('n', '<C-Q>', fn.toggle_quick_fix_list)
 
 -- go to project root
-set('n', '<leader><ESC>', '<CMD>ProjectRoot<CR>')
+set('n', '<leader>pr', '<CMD>ProjectRoot<CR>')
 -- go to current file directory
-set('n', '<leader><leader>', '<CMD>lcd %:p:h<CR>')
+set('n', '<leader>fd', '<CMD>lcd %:p:h<CR>')
 
 -- Telescope
 set('n', '<leader>rs', t_builtin.resume)
@@ -52,13 +49,12 @@ set('n', '<leader>j', t_builtin.jumplist)
 set('n', '<leader>q', t_builtin.quickfix)
 set('n', '<leader>rg', t_builtin.registers)
 set('n', '<leader>m', t_builtin.marks)
-set('n', '<leader>f', t_builtin.find_files)
-set('n', '<leader>g', t_builtin.git_files)
-set('n', '<leader>s', t_builtin.live_grep) -- search
-set('n', '<leader>l', t_builtin.lsp_dynamic_workspace_symbols)
+set('n', '<leader>ff', t_builtin.find_files)
+set('n', '<leader>gf', t_builtin.git_files)
+set('n', '<leader>lg', t_builtin.live_grep) -- search
+set('n', '<leader>ls', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>o', t_builtin.oldfiles)
 set('n', '<leader>b', t_builtin.buffers)
-set('n', '<leader>t', "<CMD>Telescope file_browser path=%:p:h<CR>") -- traverse
 
 -- Quick Comment
 set('n', '<BS>', '<Plug>(comment_toggle_linewise_current)j')
@@ -82,10 +78,8 @@ set('n', '<leader>i', vim.lsp.buf.implementation)
 set('n', '<leader>rf', vim.lsp.buf.references)
 set('n', '<leader>hv', vim.lsp.buf.hover)
 set('n', '<leader>a', vim.lsp.buf.code_action)
-set('n', '<leader>dt', vim.lsp.buf.type_definition)
-set('n', '<leader>n', vim.lsp.buf.format) -- neat
-set('n', '<leader>hl', vim.lsp.buf.document_highlight)
-set('n', '<leader>hc', vim.lsp.buf.clear_references)
-
--- show diagnostics
+set('n', '<leader>t', vim.lsp.buf.type_definition)
+set('n', '<leader>fm', vim.lsp.buf.format)
+set('n', '<leader>dl', vim.lsp.buf.document_highlight)
+set('n', '<leader>cr', vim.lsp.buf.clear_references)
 set('n', '<leader>do', vim.diagnostic.open_float)

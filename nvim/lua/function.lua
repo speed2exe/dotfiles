@@ -19,10 +19,6 @@ M.toggle_quick_fix_list = function()
     end
 end
 
-M.toggle_hlsearch = function()
-    vim.opt.hlsearch = not vim.opt.hlsearch:get()
-end
-
 vim.diagnostic.config({ virtual_lines = false })
 local init = false
 M.toggle_lsp_lines = function()
