@@ -50,7 +50,6 @@ return require('packer').startup({
             require('telescope_conf') -- ~/.config/nvim/lua/telescope_conf.lua
         end }
         use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-        use 'nvim-telescope/telescope-file-browser.nvim'
 
         -- LSP stuff
         use { 'williamboman/mason.nvim', config = function()
