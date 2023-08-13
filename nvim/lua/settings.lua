@@ -2,28 +2,9 @@ local opt = vim.opt
 
 opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
 opt.termguicolors = true
-opt.showmode = false
-opt.hlsearch = false
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
-opt.expandtab = true
-opt.smartindent = true
-opt.breakindent = true
 opt.wrap = false
 opt.number = true
 opt.relativenumber = true
-opt.ignorecase = true
-opt.smartcase = true
-opt.swapfile = false
-opt.writebackup = false
-opt.scrolloff = 16
-opt.splitbelow = true
-opt.splitright = true
-opt.lazyredraw = true
-opt.timeoutlen = 300
-opt.updatetime = 0
-opt.signcolumn = 'yes'
 opt.cursorline = true
 
 -- TODO:
