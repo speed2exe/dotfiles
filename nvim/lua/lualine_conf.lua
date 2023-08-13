@@ -1,6 +1,5 @@
 local lsp_status = require('lsp-status')
 lsp_status.register_progress()
-local navic = require('nvim-navic')
 local function get_lsp_status()
     return string.sub(lsp_status.status(), 6)
 end
@@ -13,14 +12,6 @@ local function cwd()
     return vim.fn.getcwd()
 end
 
-local function navic_location()
-    return navic.get_location()
-end
-
-local function navic_is_available()
-    return navic.is_available()
-end
-
 require('lualine').setup {
     options = {
         component_separators = { left = '', right = '' },
@@ -30,7 +21,7 @@ require('lualine').setup {
         lualine_a = { 'filetype' },
         lualine_b = { { cwd } },
         lualine_c = { { 'filename', file_status = true, newfile_status = true, path = 1 } },
-        lualine_x = { 'diagnostics' },
+        lualine_x = {},
         lualine_y = { 'diff' },
         lualine_z = { 'branch' },
     },
@@ -42,14 +33,14 @@ require('lualine').setup {
             { cwd },
             { 'filename', file_status = true, newfile_status = true, path = 1 }
         },
-        lualine_x = { 'diagnostics', 'diff', 'branch' },
+        lualine_x = { 'diff', 'branch' },
         lualine_y = {},
         lualine_z = {},
     },
     sections = {
         lualine_a = { 'mode' },
-        lualine_b = { { navic_location, cond = navic_is_available } },
-        lualine_c = { { get_lsp_status, cond = lsp_is_availabale } },
+        lualine_b = { { get_lsp_status, cond = lsp_is_availabale } },
+        lualine_c = { 'diagnostics' },
         lualine_x = { 'filesize' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' },
@@ -59,8 +50,9 @@ require('lualine').setup {
         lualine_b = {},
         lualine_c = {
             'mode',
-            { navic_location, cond = navic_is_available },
-            { get_lsp_status, cond = lsp_is_availabale } },
+            { get_lsp_status, cond = lsp_is_availabale },
+            { 'diagnostics' },
+    	},
         lualine_x = { 'filesize', 'progress', 'location' },
         lualine_y = {},
         lualine_z = {},
