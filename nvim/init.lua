@@ -6,7 +6,6 @@ require('settings') -- ~/.config/nvim/lua/settings.lua
 
 -- custom stuff
 require('last_used')            -- ~/.config/nvim/lua/last_used.lua
-require('nvim-lspconfig_setup') -- ~/.config/nvim/lua/nvim-lspconfig_setup.lua
 require('autocmd')              -- ~/.config/nvim/lua/autocmd.lua
 
 vim.cmd [[
