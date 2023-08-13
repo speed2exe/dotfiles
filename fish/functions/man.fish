@@ -1,5 +1,4 @@
 function man
-    command man "$argv" > /tmp/.man
-    and cat /tmp/.man | ansifilter | nvim -c "set syntax=man"
-    rm /tmp/.man
+    command man "$argv" | ansifilter > /tmp/.man
+    nvim -c "set syntax=man" /tmp/.man
 end
