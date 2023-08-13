@@ -56,10 +56,6 @@ set('n', '<leader>ls', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>o', t_builtin.oldfiles)
 set('n', '<leader>b', t_builtin.buffers)
 
--- Quick Comment
-set('n', '<BS>', '<Plug>(comment_toggle_linewise_current)j')
-set('v', '<BS>', '<Plug>(comment_toggle_blockwise_visual)gv')
-
 -- command line execution
 set('n', '!', ':.!')
 set('v', '!', 'c<CR><CR><UP><C-O>:.!<C-R>"<CR><ESC>`[v`]$')

@@ -16,24 +16,17 @@ return require('packer').startup({
             require('which-key').setup()
         end }
         use 'm00qek/baleia.nvim'
-        use 'onsails/lspkind-nvim'
-        use { 'numToStr/Comment.nvim', config = function()
-            require('Comment').setup()
-        end }
+	use 'onsails/lspkind-nvim'
         use { 'ahmedkhalf/project.nvim', config = function()
             require('project_nvim').setup()
         end }
         use { 'lukas-reineke/indent-blankline.nvim', config = function()
             require('indent-blankline_conf') -- ~/.config/nvim/lua/indent-blankline_conf.lua
         end }
-        use { 'ethanholz/nvim-lastplace', config = function()
-            require('nvim-lastplace').setup()
-        end }
         use 'dracula/vim'
         use { 'lewis6991/gitsigns.nvim', config = function()
             require('gitsigns').setup()
         end }
-        use 'SmiteshP/nvim-navic'
         use { 'nvim-lualine/lualine.nvim', config = function()
             require('lualine_conf') -- ~/.config/nvim/lua/lualine_conf.lua
         end }
@@ -102,10 +95,10 @@ return require('packer').startup({
         use { 'Saecki/crates.nvim', config = function()
             require('crates').setup()
         end }
-        use { 'akinsho/flutter-tools.nvim',
-            requires = { 'nvim-lua/plenary.nvim', 'stevearc/dressing.nvim' },
-            config = function() require('flutter-tools').setup() end
-        }
+        -- use { 'akinsho/flutter-tools.nvim',
+        --     requires = { 'nvim-lua/plenary.nvim', 'stevearc/dressing.nvim' },
+        --     config = function() require('flutter-tools').setup() end
+        -- }
 
         if packer_bootstrap then
             require('packer').sync()
