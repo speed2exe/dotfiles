@@ -39,9 +39,9 @@ set('n', '<leader>yc', function()
 end)
 
 -- go to project root
-set('n', '<leader>pr', '<CMD>ProjectRoot<CR>')
+set('n', '<leader>p', '<CMD>ProjectRoot<CR>')
 -- go to current file directory
-set('n', '<leader>fd', '<CMD>lcd %:p:h<CR>')
+set('n', '<leader>u', '<CMD>lcd %:p:h<CR>')
 
 -- Telescope
 set('n', '<leader>rs', t_builtin.resume)
