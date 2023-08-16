@@ -32,8 +32,8 @@ set('n', '<leader>yl', '<CMD>let @+ = join([expand("%:p"), line(".")], ":")<CR>'
 -- copy current file path with line number and column number to clipboard
 set('n', '<leader>yc', function()
     local p = vim.fn.expand("%:p")
-    local l = vim.fn.winline()
-    local c = vim.fn.wincol()
+    local l = vim.fn.line('.')
+    local c = vim.fn.col('.')
     local result = p .. ":" .. l .. ":" .. c
     vim.fn.setreg("+", result)
 end)
