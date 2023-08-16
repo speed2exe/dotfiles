@@ -56,10 +56,6 @@ set('n', '<leader>ls', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>o', t_builtin.oldfiles)
 set('n', '<leader>b', t_builtin.buffers)
 
--- command line execution
-set('n', '!', ':.!')
-set('v', '!', 'c<CR><CR><UP><C-O>:.!<C-R>"<CR><ESC>`[v`]$')
-
 -- Toggle indent-blankline to show tabs
 set('n', '<C-B>', ':IndentBlanklineToggle<CR>')
 
