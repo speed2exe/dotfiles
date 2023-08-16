@@ -21,14 +21,22 @@ set('n', '<leader>v', '`[v`]')
 -- Search and replace for clipboard content on visually selected
 set('v', '<leader>s', ':s/<C-R>"/<C-R>"')
 
+-- yank current file content to clipboard
+set('n', '<leader>yy', '<CMD>:%y+<CR>')
+-- copy current file directory to clipboard
+set('n', '<leader>yd', '<CMD>let @+ = expand("%:p:h")<CR>')
 -- copy current file path to clipboard
 set('n', '<leader>yf', '<CMD>let @+ = expand("%:p")<CR>')
 -- copy current file path with line number to clipboard
 set('n', '<leader>yl', '<CMD>let @+ = join([expand("%:p"), line(".")], ":")<CR>')
--- copy current file directory to clipboard
-set('n', '<leader>yd', '<CMD>let @+ = expand("%:p:h")<CR>')
--- yank current file content to clipboard
-set('n', '<leader>yy', '<CMD>:%y+<CR>')
+-- copy current file path with line number and column number to clipboard
+set('n', '<leader>yc', function()
+    local p = vim.fn.expand("%:p")
+    local l = vim.fn.winline()
+    local c = vim.fn.wincol()
+    local result = p .. ":" .. l .. ":" .. c
+    vim.fn.setreg("+", result)
+end)
 
 -- go to project root
 set('n', '<leader>pr', '<CMD>ProjectRoot<CR>')
