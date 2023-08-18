@@ -9,9 +9,6 @@ vim.g.mapleader = ' ';
 -- Interpret ansi colors
 set('n', '<leader>cl', function() baleia.setup().once(vim.fn.bufnr()) end)
 
--- create file if not exists
-set('n', '<leader>e', ':e <cfile><CR>')
-
 -- Remove lines with only whitespace or nothing
 set('v', '<leader><BS>', ':g/^\\s*$/d<CR>')
 
@@ -64,7 +61,7 @@ set('n', '<leader>dt', fn.toggle_lsp_lines) -- diagnostics line
 
 -- Custom Personal Mapping
 set('n', '<leader>rn', vim.lsp.buf.rename)
-set('n', '<leader>df', vim.lsp.buf.definition)
+set('n', '<leader>e', vim.lsp.buf.definition) -- enter
 set('n', '<leader>i', vim.lsp.buf.implementation)
 set('n', '<leader>rf', vim.lsp.buf.references)
 set('n', '<leader>hv', vim.lsp.buf.hover)
