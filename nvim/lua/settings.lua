@@ -5,6 +5,7 @@ opt.termguicolors = true
 opt.wrap = false
 opt.number = true
 opt.relativenumber = true
+opt.signcolumn = 'yes'
 
 -- TODO:
 -- commands that cannot be represented in neovim
