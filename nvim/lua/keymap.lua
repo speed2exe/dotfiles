@@ -50,23 +50,24 @@ set('n', '<leader>q', t_builtin.quickfix)
 set('n', '<leader>rg', t_builtin.registers)
 set('n', '<leader>m', t_builtin.marks)
 set('n', '<leader>f', t_builtin.find_files)
-set('n', '<leader>gf', t_builtin.git_files)
+set('n', '<leader>g', t_builtin.git_files)
 set('n', '<leader>s', t_builtin.live_grep) -- search
-set('n', '<leader>ls', t_builtin.lsp_dynamic_workspace_symbols)
+set('n', '<leader>l', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>o', t_builtin.oldfiles)
 set('n', '<leader>b', t_builtin.buffers)
+set('n', '<leader>df', t_builtin.lsp_definitions)
+set('n', '<leader>dt', t_builtin.lsp_type_definitions)
+set('n', '<leader>i', t_builtin.lsp_implementations)
+set('n', '<leader>rf', t_builtin.lsp_references)
+set('n', '<leader>t', "<CMD>Telescope file_browser path=%:p:h<CR>") -- traverse
 
 -- Toggle LSP diagnostics
-set('n', '<leader>dt', fn.toggle_lsp_lines) -- diagnostics line
+set('n', '<leader>dl', fn.toggle_lsp_lines) -- diagnostics line
 
 -- Custom Personal Mapping
 set('n', '<leader>rn', vim.lsp.buf.rename)
-set('n', '<leader>e', vim.lsp.buf.definition) -- enter
-set('n', '<leader>i', vim.lsp.buf.implementation)
-set('n', '<leader>rf', vim.lsp.buf.references)
 set('n', '<leader>hv', vim.lsp.buf.hover)
 set('n', '<leader>a', vim.lsp.buf.code_action)
-set('n', '<leader>t', vim.lsp.buf.type_definition)
 set('n', '<leader>n', vim.lsp.buf.format) -- neat
 set('n', '<leader>hl', vim.lsp.buf.document_highlight)
 set('n', '<leader>cr', vim.lsp.buf.clear_references)
