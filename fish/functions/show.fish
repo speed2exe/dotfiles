@@ -2,7 +2,7 @@ function show
     set arg_count (count $argv)
 
     if test $arg_count -eq 0
-        ll
+        ll --color=always
         return
     end
 
@@ -12,7 +12,7 @@ function show
     end
 
     if test -d "$argv"
-        ll $argv
+        ll --color=always $argv
         return
     end
 
