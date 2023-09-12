@@ -1,13 +1,5 @@
 function v
-	if count $argv > /dev/null
-		set path "$argv"
-	else
-		set path (tac ~/marks/file_history.txt | fp --no-sort)
-	end
-
-    test -z "$path" && return
-
-    set splitted (string split --max 2 --right ":" "$path") # account for line number if exists
+    set splitted (string split --max 2 --right ":" "$argv") # account for line number if exists
     set file "$splitted[1]"
     set line "$splitted[2]"
     set column "$splitted[3]"
