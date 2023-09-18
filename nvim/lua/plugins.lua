@@ -49,11 +49,16 @@ return require('packer').startup({
         use { 'williamboman/mason.nvim', config = function()
             require('mason').setup()
         end }
+        -- language specific stuff
+        use 'simrat39/rust-tools.nvim'
+        use 'Saecki/crates.nvim'
         use { 'williamboman/mason-lspconfig.nvim',
             requires = { 'williamboman/mason.nvim' },
             config = function()
                 require('mason-lspconfig').setup()
                 require('nvim-lspconfig_setup') -- ~/.config/nvim/lua/nvim-lspconfig_setup.lua
+                require('rust-tools').setup()
+                require('crates').setup()
             end }
         use 'neovim/nvim-lspconfig'
         use 'nvim-lua/lsp-status.nvim'
@@ -87,15 +92,6 @@ return require('packer').startup({
         use 'dcampos/nvim-snippy'
         use 'dcampos/cmp-snippy'
 
-        -- language specific stuff
-        use { 'simrat39/rust-tools.nvim',
-            requires = { 'williamboman/mason.nvim' },
-            config = function()
-                require('rust-tools').setup()
-            end }
-        use { 'Saecki/crates.nvim', config = function()
-            require('crates').setup()
-        end }
         -- use { 'akinsho/flutter-tools.nvim',
         --     requires = { 'nvim-lua/plenary.nvim', 'stevearc/dressing.nvim' },
         --     config = function() require('flutter-tools').setup() end
