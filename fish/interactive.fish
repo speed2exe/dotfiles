@@ -17,3 +17,6 @@ bind --mode insert \ct 'bind_ctrl_t'
 
 # keybinding for handling background jobs
 bind --mode insert \cz 'bind_ctrl_z'
+
+# use neovim for manpages
+set -x MANPAGER 'nvim +Man!'
