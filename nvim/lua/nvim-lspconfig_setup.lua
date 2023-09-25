@@ -23,8 +23,13 @@ local function lsp_server_on_attach(client, bufnr)
 	-- 	})
 	-- end
 
+	-- show inlay hints (after version 0.10.0)
+	if client.server_capabilities.inlayHintProvider then
+		vim.lsp.inlay_hint(bufnr, true)
+	end
+
 	-- autoformat on save
-	if client.documentFormattingProvider then
+	if client.supports_method("textDocument/formatting") then
 		vim.api.nvim_create_augroup("lsp_document_format_on_save", { clear = false })
 		vim.api.nvim_create_autocmd("BufWritePre", {
 			callback = function() vim.lsp.buf.format() end,
