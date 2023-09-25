@@ -6,6 +6,7 @@ opt.wrap = false
 opt.number = true
 opt.relativenumber = true
 opt.signcolumn = 'yes'
+opt.swapfile = false
 opt.timeoutlen = 0
 opt.updatetime = 0
 
