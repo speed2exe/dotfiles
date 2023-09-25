@@ -6,6 +6,8 @@ opt.wrap = false
 opt.number = true
 opt.relativenumber = true
 opt.signcolumn = 'yes'
+opt.timeoutlen = 0
+opt.updatetime = 0
 
 -- TODO:
 -- commands that cannot be represented in neovim
