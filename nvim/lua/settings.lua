@@ -32,4 +32,6 @@ vim.cmd [[
 
     highlight WinSeparator guibg=NONE ctermbg=NONE
     highlight Normal guibg=NONE ctermbg=NONE
+    highlight SignColumn guibg=NONE ctermbg=NONE
+    highlight TelescopeNormal guibg=NONE ctermbg=NONE
 ]]
