@@ -15,7 +15,12 @@ return {
 			require('project_nvim').setup()
 		end
 	},
-	'dracula/vim',
+	{
+		'Mofiqul/dracula.nvim',
+		config = function()
+			vim.cmd('colorscheme dracula')
+		end
+	},
 	{
 		'lewis6991/gitsigns.nvim',
 		config = function()

@@ -4,7 +4,6 @@ return {
 		local cmp = require('cmp')
 		local lspkind = require('lspkind')
 		local snippy = require('snippy')
-		lspkind.init()
 
 		local has_words_before = function()
 			unpack = unpack or table.unpack
