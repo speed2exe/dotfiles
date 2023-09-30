@@ -9,6 +9,8 @@ opt.signcolumn = 'yes'
 opt.swapfile = false
 opt.timeoutlen = 0
 opt.updatetime = 0
+opt.pumblend = 30
+opt.winblend = 30
 
 -- TODO:
 -- commands that cannot be represented in neovim
@@ -30,8 +32,10 @@ vim.cmd [[
     inoremap <S-LEFT> <Plug>(copilot-dismiss)
     inoremap <S-RIGHT> <Plug>(copilot-suggest)
 
-    highlight WinSeparator guibg=NONE ctermbg=NONE
-    highlight Normal guibg=NONE ctermbg=NONE
-    highlight SignColumn guibg=NONE ctermbg=NONE
+    highlight WinSeparator    guibg=NONE ctermbg=NONE
+    highlight Normal          guibg=NONE ctermbg=NONE
+    highlight SignColumn      guibg=NONE ctermbg=NONE
+    highlight Pmenu           guibg=NONE ctermbg=NONE
     highlight TelescopeNormal guibg=NONE ctermbg=NONE
+    highlight NormalFloat     guibg=NONE ctermbg=NONE
 ]]
