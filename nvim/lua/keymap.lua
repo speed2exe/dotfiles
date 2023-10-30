@@ -28,11 +28,11 @@ set('n', '<leader>yf', '<CMD>let @+ = expand("%:p")<CR>')
 set('n', '<leader>yl', '<CMD>let @+ = join([expand("%:p"), line(".")], ":")<CR>')
 -- copy current file path with line number and column number to clipboard
 set('n', '<leader>yc', function()
-    local p = vim.fn.expand("%:p")
-    local l = vim.fn.line('.')
-    local c = vim.fn.col('.')
-    local result = p .. ":" .. l .. ":" .. c
-    vim.fn.setreg("+", result)
+	local p = vim.fn.expand("%:p")
+	local l = vim.fn.line('.')
+	local c = vim.fn.col('.')
+	local result = p .. ":" .. l .. ":" .. c
+	vim.fn.setreg("+", result)
 end)
 
 -- go to project root
@@ -72,3 +72,4 @@ set('n', '<leader>n', vim.lsp.buf.format) -- neat
 set('n', '<leader>hl', vim.lsp.buf.document_highlight)
 set('n', '<leader>cr', vim.lsp.buf.clear_references)
 set('n', '<leader>do', vim.diagnostic.open_float)
+set('n', '<leader>e', ':term ')
