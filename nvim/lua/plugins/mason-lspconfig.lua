@@ -8,6 +8,7 @@ return {
 		local lspconfig = require("lspconfig")
 		local cmp = require('cmp_nvim_lsp')
 
+
 		local function lsp_server_on_attach(client, bufnr)
 			-- currently using treesitter refactor instead
 			-- -- https://sbulav.github.io/til/til-neovim-highlight-references/
@@ -30,7 +31,7 @@ return {
 
 			-- show inlay hints (after version 0.10.0)
 			if client.server_capabilities.inlayHintProvider then
-				vim.lsp.inlay_hint(bufnr, true)
+				vim.lsp.inlay_hint.enable()
 			end
 
 			-- autoformat on save
