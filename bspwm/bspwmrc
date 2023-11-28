@@ -16,7 +16,8 @@ workspaces() {
 		bspc monitor $monitor -n $name -d 'N' 'I' 'II' 'III' 'IV' 'V' 'VI' 'VII'
 		let name++
 	done
-}()
+}
+workspaces
 
 bspc config normal_border_color \#21222C
 bspc config focused_border_color \#BD93F9
