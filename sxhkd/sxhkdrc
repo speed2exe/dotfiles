@@ -13,13 +13,13 @@ super + Return
 super + space
     rofi -show combi -show-icons -steal-focus
 
-# screenshot menu
-super + s
-    ~/.config/sxhkd/screenshot
-
-# power menu
-super + p
-    ~/.config/sxhkd/power
+# # screenshot menu
+# super + s
+#     ~/.config/sxhkd/screenshot
+#
+# # power menu
+# super + p
+#     ~/.config/sxhkd/power
 
 # change wallpaper
 super + w
@@ -55,7 +55,7 @@ super + j
     bspc node --focus next.local.floating
 
 # Previous through floating windows
-super + g
+super + k
     bspc node --focus prev.local.floating
 
 # Close App
