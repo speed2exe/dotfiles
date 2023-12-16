@@ -31,7 +31,7 @@ return {
 
 			-- show inlay hints (after version 0.10.0)
 			if client.server_capabilities.inlayHintProvider then
-				vim.lsp.inlay_hint.enable()
+				vim.lsp.inlay_hint(0, true)
 			end
 
 			-- autoformat on save
