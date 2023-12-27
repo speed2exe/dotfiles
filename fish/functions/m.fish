@@ -1,4 +1,4 @@
 function m
     touch ~/.todo.md
-    nvim ~/.todo.md
+    $EDITOR ~/.todo.md
 end
