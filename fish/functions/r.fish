@@ -3,6 +3,6 @@ function r
     if test -d $path
 	cd $path
     else if test -f $path
-	nvim $path
+	$EDITOR $path
     end
 end
