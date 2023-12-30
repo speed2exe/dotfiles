@@ -3,3 +3,5 @@
     frame_color = "#bd93f9"
     font = Jost Regular 12
     format = %s\n%b
+    background = "#282a36"
+    foreground = "#bd93f9"
