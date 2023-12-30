@@ -2,6 +2,6 @@
 
 set -e
 
-EXEC=$(cat /usr/share/applications/*.desktop ~/.local/share/applications/*.desktop | grep "^Exec=" | fzf)
+DESKTOP=$(find /usr/share/applications/ ~/.local/share/applications/ -name "*.desktop" | fzf)
 
-hyprctl dispatch exec ${EXEC#Exec=}
+hyprctl dispatch exec gio launch $DESKTOP
