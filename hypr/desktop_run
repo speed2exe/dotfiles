@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+EXEC=$(cat /usr/share/applications/*.desktop ~/.local/share/applications/*.desktop | grep "^Exec=" | fzf)
+
+hyprctl dispatch exec ${EXEC#Exec=}
