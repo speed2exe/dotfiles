@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+ADDRESS=$(hyprctl clients -j \
+	| jq -r '.[] | select(.pid != -1) | "address:\(.address) class:\(.class) title:\(.title)"' \
+	| fzf)
+
+awk '{print $1}' <<< $ADDRESS | xargs hyprctl dispatch focuswindow
