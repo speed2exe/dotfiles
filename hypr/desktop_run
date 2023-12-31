@@ -3,6 +3,8 @@
 set -e
 
 DESKTOP=$(find /usr/share/applications/ ~/.local/share/applications/ -name "*.desktop" \
-	| fzf --preview 'cat {}')
+	| fzf \
+        --preview-window '70%' \
+	--preview 'cat {}')
 
 hyprctl dispatch exec gio launch $DESKTOP
