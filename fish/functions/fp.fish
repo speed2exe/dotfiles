@@ -4,7 +4,7 @@ function fp
         --tabstop 4 \
         --layout reverse \
         --preview-window 'top,50%,border-bottom' \
-        --preview 'fish -c "show {}"' $argv \
+        --preview 'fish -c "show {}"' \
         --bind tab:down \
         --bind btab:up \
         --bind ctrl-d:preview-half-page-down \
