@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+
+cat << EOF | fzf --preview 'eval {}' \
+	--layout reverse \
+        --preview-window '70%,border-bottom' \
+        --bind ctrl-d:preview-half-page-down \
+        --bind ctrl-u:preview-half-page-up \
+        --bind ctrl-j:preview-down \
+        --bind ctrl-k:preview-up
+
+date
+ifconfig
+df -h
+free -h
+lsblk
+mpstat -P ALL
+iostat -p ALL
+pidstat -T ALL
+ping 8.8.8.8
+ps aux
