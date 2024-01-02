@@ -2,7 +2,7 @@
 
 set -e
 
-cat << EOF | fzf --preview 'eval {}' \
+cat << EOF | fzf --preview "CMD={}; test -z \"\$CMD\" && ~/.config/hypr/general || eval \$CMD" \
 	--layout reverse \
         --preview-window '70%,border-bottom' \
         --bind ctrl-d:preview-half-page-down \
@@ -10,13 +10,19 @@ cat << EOF | fzf --preview 'eval {}' \
         --bind ctrl-j:preview-down \
         --bind ctrl-k:preview-up
 
-date
+neofetch
+cpufetch
+lsusb
+bluetoothctl devices
 ifconfig
-df -h
-free -h
-lsblk
 mpstat -P ALL
 iostat -p ALL
 pidstat -T ALL
 ping 8.8.8.8
 ps aux
+lscpu
+lspci
+cat /etc/passwd
+wlr-randr
+xrandr
+lsblk --all

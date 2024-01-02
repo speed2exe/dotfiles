@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+while IFS= read -r CMD; do
+printf "\e[1;34m$CMD\e[m\n%s\n\n" "$(eval $CMD)"
+done <<< "date
+nmcli --color=yes | head -n 1
+S_COLORS=always mpstat
+free -h
+df -h
+curl --silent https://ipinfo.io/ip"
