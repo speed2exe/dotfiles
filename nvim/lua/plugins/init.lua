@@ -1,5 +1,4 @@
 return {
-	'wbthomason/packer.nvim',
 	'github/copilot.vim',
 	{
 		"folke/which-key.nvim",
