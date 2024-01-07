@@ -11,6 +11,7 @@ opt.timeoutlen = 0
 opt.updatetime = 0
 opt.pumblend = 30
 opt.winblend = 30
+opt.cursorline = true
 
 -- TODO:
 -- commands that cannot be represented in neovim
@@ -32,10 +33,14 @@ vim.cmd [[
     inoremap <S-LEFT> <Plug>(copilot-dismiss)
     inoremap <S-RIGHT> <Plug>(copilot-suggest)
 
-    highlight WinSeparator    guibg=NONE ctermbg=NONE
-    highlight Normal          guibg=NONE ctermbg=NONE
-    highlight SignColumn      guibg=NONE ctermbg=NONE
-    highlight Pmenu           guibg=NONE ctermbg=NONE
-    highlight TelescopeNormal guibg=NONE ctermbg=NONE
-    highlight NormalFloat     guibg=NONE ctermbg=NONE
+    highlight WinSeparator    guibg=NONE
+    highlight Normal          guibg=NONE
+    highlight SignColumn      guibg=NONE
+    highlight Pmenu           guibg=NONE
+    highlight TelescopeNormal guibg=NONE
+    highlight NormalFloat     guibg=NONE
+
+    highlight CursorLine     guibg=#282a36
+    highlight Search         guibg=#282a36 guifg=reverse
+    highlight IncSearch      guibg=#44475a guifg=reverse
 ]]
