@@ -62,7 +62,7 @@ return {
 			-- autohover on cursor move
 			if client.supports_method("textDocument/hover") then
 				vim.api.nvim_create_augroup("lsp_document_auto_hover", { clear = false })
-				vim.api.nvim_create_autocmd("CursorMoved", {
+				vim.api.nvim_create_autocmd("CursorHold", {
 					callback = vim.lsp.buf.hover,
 					buffer = bufnr,
 					group = "lsp_document_auto_hover",
