@@ -20,5 +20,5 @@ bind --mode insert \cz 'bind_ctrl_z'
 
 # use neovim for manpages
 set -x MANPAGER 'nvim +Man!'
-set -x GIT_EXTERNAL_DIFF 'difft --color=always'
+# set -x GIT_EXTERNAL_DIFF 'difft --color=always'
 set -x $EDITOR nvim

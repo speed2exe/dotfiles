@@ -1,9 +1,23 @@
+local vim = vim
+
+-- ignore "No information available" notifications for autohover
+local original_notify = vim.notify
+local function custom_notify(msg, log_level, _opts)
+	if msg == "No information available" then
+		return
+	end
+	original_notify(msg, log_level, _opts)
+end
+vim.notify = custom_notify
+
 return {
 	'williamboman/mason-lspconfig.nvim',
 	dependencies = { 'williamboman/mason.nvim' },
 	config = function()
 		require('mason-lspconfig').setup()
-		local vim = vim
+
+
+
 		local servers = require("mason-lspconfig").get_installed_servers()
 		local lspconfig = require("lspconfig")
 		local cmp = require('cmp_nvim_lsp')
@@ -30,9 +44,9 @@ return {
 			-- end
 
 			-- show inlay hints (after version 0.10.0)
-			if client.server_capabilities.inlayHintProvider then
-				vim.lsp.inlay_hint(0, true)
-			end
+			-- if client.server_capabilities.inlayHintProvider then
+			-- 	vim.lsp.inlay_hint(0, true)
+			-- end
 
 			-- autoformat on save
 			if client.supports_method("textDocument/formatting") then
@@ -42,6 +56,17 @@ return {
 					buffer = bufnr,
 					group = "lsp_document_format_on_save",
 					desc = "Document Format",
+				})
+			end
+
+			-- autohover on cursor move
+			if client.supports_method("textDocument/hover") then
+				vim.api.nvim_create_augroup("lsp_document_auto_hover", { clear = false })
+				vim.api.nvim_create_autocmd("CursorMoved", {
+					callback = vim.lsp.buf.hover,
+					buffer = bufnr,
+					group = "lsp_document_auto_hover",
+					desc = "Document Hover",
 				})
 			end
 		end
