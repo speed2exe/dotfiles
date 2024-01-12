@@ -9,11 +9,18 @@ source ~/.config/fish/functions/dracula.fish
 # VI Key Bindings
 fish_vi_key_bindings
 
-# keybindings to insert text into current line
-bind --mode insert \cf 'bind_ctrl_f'
 bind --mode insert \ch 'bind_ctrl_h'
 bind --mode insert \cn 'bind_ctrl_n'
 bind --mode insert \ct 'bind_ctrl_t'
+bind --mode insert \cr 'bind_ctrl_r'
+bind --mode insert \ca 'bind_ctrl_a'
+bind --mode insert \cu 'bind_ctrl_u'
+bind --mode insert \co 'bind_ctrl_o'
+bind --mode insert \cf 'bind_ctrl_f'
+bind --mode insert \ct 'bind_ctrl_t'
+bind --mode insert \cs 'bind_ctrl_s'
+bind --mode insert \cb 'bind_ctrl_b'
+bind --mode insert \ce 'bind_ctrl_e'
 
 # keybinding for handling background jobs
 bind --mode insert \cz 'bind_ctrl_z'

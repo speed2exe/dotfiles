@@ -1,4 +1,4 @@
 function bind_ctrl_h
-    commandline --insert (history | fr --no-sort)
-    commandline --function repaint-mode
+    set cmd (builtin history | fr --no-sort) && eval $cmd
+    commandline --function repaint
 end
