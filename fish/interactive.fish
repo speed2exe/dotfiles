@@ -21,6 +21,7 @@ bind --mode insert \ct 'bind_ctrl_t'
 bind --mode insert \cs 'bind_ctrl_s'
 bind --mode insert \cb 'bind_ctrl_b'
 bind --mode insert \ce 'bind_ctrl_e'
+bind --mode insert \cg 'bind_ctrl_g'
 
 # keybinding for handling background jobs
 bind --mode insert \cz 'bind_ctrl_z'
