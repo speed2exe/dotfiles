@@ -66,19 +66,19 @@ text = "CellBackground"
 size = 14.0
 
 [font.bold]
-family = "Terminess Nerd Font"
+family = "IosevkaTerm Nerd Font Mono"
 style = "Bold"
 
 [font.bold_italic]
-family = "Terminess Nerd Font"
+family = "IosevkaTerm Nerd Font Mono"
 style = "Bold Italic"
 
 [font.italic]
-family = "Terminess Nerd Font"
+family = "IosevkaTerm Nerd Font Mono"
 style = "Italic"
 
 [font.normal]
-family = "Terminess Nerd Font"
+family = "IosevkaTerm Nerd Font Mono"
 style = "Regular"
 
 [hints]
