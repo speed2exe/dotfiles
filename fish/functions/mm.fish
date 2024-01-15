@@ -1,6 +1,6 @@
-function mm
-    inotifywait --monitor --event modify --recursive $argv[1] | while read -l line
+function wait_change_then_run
+    inotifywait --monitor --event modify --recursive . | while read -l line
         echo $line
-        $argv[2..]
+        $argv
     end
 end

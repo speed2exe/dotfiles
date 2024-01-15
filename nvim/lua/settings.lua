@@ -12,6 +12,7 @@ opt.updatetime = 0
 opt.pumblend = 30
 opt.winblend = 30
 opt.cursorline = true
+opt.guicursor = ""
 
 -- TODO:
 -- commands that cannot be represented in neovim
