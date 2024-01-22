@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
 # curl https://raw.githubusercontent.com/speed2exe/dotfiles/main/setup.sh | bash
 
