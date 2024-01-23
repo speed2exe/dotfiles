@@ -1,4 +1,4 @@
-local vim = vim
+-- local vim = vim
 
 -- -- ignore "No information available" notifications for autohover
 -- local original_notify = vim.notify
@@ -74,7 +74,7 @@ return {
 		local function setup_lsp_server_config(server_config)
 			server_config.setup {
 				capabilities = cmp.default_capabilities(vim.lsp.protocol.make_client_capabilities()),
-				on_attach = lsp_server_on_attach,
+				-- on_attach = lsp_server_on_attach,
 			}
 		end
 
