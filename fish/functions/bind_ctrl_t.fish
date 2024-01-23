@@ -3,7 +3,7 @@ function bind_ctrl_t
     if test -f "$path"
         cd (dirname "$path")
 	commandline --function repaint
-        $EDITOR (basename "$path")
+        nvim (basename "$path")
     else if test -d "$path"
         cd "$path"
 	commandline --function repaint

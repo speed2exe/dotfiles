@@ -5,7 +5,7 @@ function bind_ctrl_r
             cd $path
             commandline --function repaint
         else if test -f $path
-            $EDITOR $path
+            nvim $path
         end
     end
 end
