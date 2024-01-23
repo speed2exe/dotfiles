@@ -38,7 +38,7 @@ XF86MonBrightness{Up,Down}
 
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume}
-    pamixer --{increase,decrease} 5 && ~/.config/sxhkd/dunstify_volume
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%{+,-} && ~/.config/sxhkd/dunstify_volume
 
 XF86AudioMute
     pamixer --toggle-mute && ~/.config/sxhkd/dunstify_volume
