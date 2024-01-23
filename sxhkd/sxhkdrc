@@ -34,7 +34,7 @@ super + ctrl + w
 
 # Brighness control
 XF86MonBrightness{Up,Down}
-    backlight_control {+,-}10
+    brightnessctl set {+5%,5%-}
 
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume}
