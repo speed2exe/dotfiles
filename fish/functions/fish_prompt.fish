@@ -1,17 +1,15 @@
 function fish_prompt
     set last_status $status
 
-    set job_list (jobs)
-    if success
-        set_color -b brblack black ; printf " $(count $job_list) " ; set_color normal
+    if test -n "$NIX_SHELL_STACK"
+	set COUNT (echo "$NIX_SHELL_STACK" | wc --words)
+	set_color -b blue ; printf " $COUNT " ; set_color normal
     end
 
-    # backup prompt if starship is not working properly
-    # set_color red ; printf " $(whoami)"
-    # set_color brblack ; printf "@" ;
-    # set_color green ; printf "$hostname" ;
-    # set_color brblack ; printf ":" ;
-    # set_color blue ; printf "$(pwd)/\n"
+    set job_list (jobs)
+    if success
+        set_color -b brblack ; printf " $(count $job_list) " ; set_color normal
+    end
 
     starship prompt
 
