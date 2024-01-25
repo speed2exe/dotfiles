@@ -42,6 +42,6 @@ vim.cmd [[
     highlight NormalFloat     guibg=NONE
 
     highlight CursorLine     guibg=#282a36
-    highlight Search         guibg=#282a36 guifg=reverse
     highlight IncSearch      guibg=#44475a guifg=reverse
+    highlight Search         guibg=#44475a guifg=reverse
 ]]
