@@ -26,11 +26,9 @@ return {
 	{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
 	'nvim-telescope/telescope-file-browser.nvim',
 
+	-- LSP stuff
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
-
-
-	-- LSP stuff
 	'neovim/nvim-lspconfig',
 	'nvim-lua/lsp-status.nvim',
 
