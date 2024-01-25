@@ -28,3 +28,6 @@ bind --mode insert \cz 'bind_ctrl_z'
 
 # use neovim for manpages
 set -x MANPAGER 'nvim +Man!'
+
+# https://direnv.net/docs/hook.html#fish
+direnv hook fish | source
