@@ -3,12 +3,12 @@ function fish_prompt
 
     if test -n "$NIX_SHELL_STACK"
 	set COUNT (echo "$NIX_SHELL_STACK" | wc --words)
-	set_color -b blue ; printf " $COUNT " ; set_color normal
+	set_color -b blue black ; printf " $COUNT " ; set_color normal
     end
 
     set job_list (jobs)
     if success
-        set_color -b brblack ; printf " $(count $job_list) " ; set_color normal
+        set_color -b brblack black ; printf " $(count $job_list) " ; set_color normal
     end
 
     starship prompt
