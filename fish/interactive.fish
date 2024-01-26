@@ -31,3 +31,6 @@ set -x MANPAGER 'nvim +Man!'
 
 # https://direnv.net/docs/hook.html#fish
 direnv hook fish | source
+
+# sign commits with GPG
+set -x GPG_TTY (tty)
