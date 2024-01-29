@@ -9,10 +9,13 @@ opt.signcolumn = 'yes'
 opt.swapfile = false
 opt.timeoutlen = 0
 opt.updatetime = 0
-opt.pumblend = 30
-opt.winblend = 30
 opt.cursorline = true
-opt.guicursor = ""
+opt.guicursor = "" -- always use block
+
+-- Tabs and Indentation
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
 
 -- TODO:
 -- commands that cannot be represented in neovim
@@ -37,7 +40,6 @@ vim.cmd [[
     highlight WinSeparator    guibg=NONE
     highlight Normal          guibg=NONE
     highlight SignColumn      guibg=NONE
-    highlight Pmenu           guibg=NONE
     highlight TelescopeNormal guibg=NONE
     highlight NormalFloat     guibg=NONE
 
