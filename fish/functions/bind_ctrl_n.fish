@@ -1,8 +1,10 @@
 function bind_ctrl_n
-    tac ~/marks/dir_history.txt | awk '!x[$0]++' > /tmp/dir_history.txt
-    set dir (cat /tmp/dir_history.txt | fp --no-sort)
-    and builtin cd $dir
-    and tac /tmp/dir_history.txt > ~/marks/dir_history.txt
-    and echo $dir >> ~/marks/dir_history.txt
+    set dir (tac ~/marks/dir_history.txt \
+      | awk '!x[$0]++' \
+      | tee /tmp/dir_history.txt \
+      | fp --no-sort)
+    tac /tmp/dir_history.txt > ~/marks/dir_history.txt
+
+    test -n "$dir" && cd $dir
     commandline --function repaint
 end
