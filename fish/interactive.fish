@@ -34,3 +34,6 @@ direnv hook fish | source
 
 # sign commits with GPG
 set -x GPG_TTY (tty)
+
+# Go to previous directory
+cd (tail -n 1 ~/marks/dir_history.txt 2> /dev/null)
