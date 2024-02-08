@@ -62,7 +62,7 @@ set('n', '<leader>u', '<CMD>lcd %:p:h<CR>')
 -- set('n', '<leader>t', "<CMD>Telescope file_browser path=%:p:h<CR>") -- traverse
 
 -- Toggle LSP diagnostics
-set('n', '<leader>dl', fn.toggle_lsp_lines) -- diagnostics line
+set('n', '<leader>l', fn.toggle_lsp_lines) -- diagnostics line
 
 -- Custom Personal Mapping
 set('n', '<leader>r', vim.lsp.buf.rename)
@@ -71,7 +71,9 @@ set('n', '<leader>a', vim.lsp.buf.code_action)
 set('n', '<leader>n', vim.lsp.buf.format) -- neat
 set('n', '<leader>hl', vim.lsp.buf.document_highlight)
 set('n', '<leader>cr', vim.lsp.buf.clear_references)
-set('n', '<leader>d', vim.diagnostic.open_float)
+set('n', '<leader>do', vim.diagnostic.open_float)
+set('n', '<leader>dn', vim.diagnostic.goto_next)
+set('n', '<leader>dp', vim.diagnostic.goto_prev)
 set('n', '<leader>e', ':term ')
 set('v', '<leader>e', 'y:term <C-R>"<CR>')
 set('n', '<leader>g', vim.lsp.buf.definition)
