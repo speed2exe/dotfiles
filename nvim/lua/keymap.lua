@@ -72,6 +72,7 @@ set('n', '<leader>n', vim.lsp.buf.format) -- neat
 set('n', '<leader>hl', vim.lsp.buf.document_highlight)
 set('n', '<leader>cr', vim.lsp.buf.clear_references)
 set('n', '<leader>do', vim.diagnostic.open_float)
+set('n', '<leader>dq', vim.diagnostic.setqflist)
 set('n', '<leader>dn', vim.diagnostic.goto_next)
 set('n', '<leader>dp', vim.diagnostic.goto_prev)
 set('n', '<leader>e', ':term ')
