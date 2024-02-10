@@ -7,7 +7,7 @@ local baleia = require('baleia')
 vim.g.mapleader = ' ';
 
 -- Interpret ansi colors
-set('n', '<leader>cl', function() baleia.setup().once(vim.fn.bufnr()) end)
+set('n', '<leader>c', function() baleia.setup().once(vim.fn.bufnr()) end)
 
 -- Remove lines with only whitespace or nothing
 set('v', '<leader><BS>', ':g/^\\s*$/d<CR>')
@@ -66,11 +66,9 @@ set('n', '<leader>l', fn.toggle_lsp_lines) -- diagnostics line
 
 -- Custom Personal Mapping
 set('n', '<leader>r', vim.lsp.buf.rename)
-set('n', '<leader>hv', vim.lsp.buf.hover)
+set('n', '<leader>h', vim.lsp.buf.hover)
 set('n', '<leader>a', vim.lsp.buf.code_action)
 set('n', '<leader>n', vim.lsp.buf.format) -- neat
-set('n', '<leader>hl', vim.lsp.buf.document_highlight)
-set('n', '<leader>cr', vim.lsp.buf.clear_references)
 set('n', '<leader>do', vim.diagnostic.open_float)
 set('n', '<leader>dq', vim.diagnostic.setqflist)
 set('n', '<leader>dn', vim.diagnostic.goto_next)
@@ -85,3 +83,4 @@ set('n', '<leader>o', ':enew<CR>:redir => m | silent oldfiles | redir END | put=
 set('n', '<leader>b', ':enew<CR>:redir => m | silent buffers | redir END | put=m<CR>ggdj:set buftype=nofile<CR>:%normal dt"di"viwpldtldt r:<CR>:set syntax=rust<CR>:g/^\\[/d<CR>:g/^term:/normal $vF:x<CR>gg^')
 set('n', '<leader>j', ':enew<CR>:redir => m | silent jumps | redir END | put=m<CR>ddggd2j:set buftype=nofile<CR>:%normal wwhyt $pF r:0veeelx<CR>:g/^term/d<CR>:set syntax=rust<CR>')
 set('n', '<leader>m', ':enew<CR>:redir => m | silent marks | redir END | put=m<CR>ggdj:set buftype=nofile<CR>')
+set('n', '<leader>q', fn.toggle_quickfix)
