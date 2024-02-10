@@ -25,3 +25,8 @@ require('settings') -- ~/.config/nvim/lua/settings.lua
 if vim.g.neovide then
 	require('neovide')
 end
+
+-- go to last cursor position when opening a file
+vim.api.nvim_create_autocmd("BufEnter", {
+  command = 'normal `"',
+})
