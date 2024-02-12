@@ -5,9 +5,6 @@ return {
 	end },
 	'm00qek/baleia.nvim',
 	'onsails/lspkind-nvim',
-	{ 'ahmedkhalf/project.nvim', config = function()
-		require('project_nvim').setup()
-	end },
 	{ 'Mofiqul/dracula.nvim',
 	config = function() vim.cmd('colorscheme dracula')
 	end },
