@@ -35,11 +35,6 @@ set('n', '<leader>yc', function()
 	vim.fn.setreg("+", result)
 end)
 
--- go to project root
-set('n', '<leader>p', '<CMD>ProjectRoot<CR>')
--- go to current file directory
-set('n', '<leader>u', '<CMD>lcd %:p:h<CR>')
-
 -- Telescope
 -- set('n', '<leader>rs', t_builtin.resume)
 -- set('n', '<leader>ht', t_builtin.help_tags)
@@ -89,3 +84,4 @@ set('n', '<leader>s', ':term rg --hidden --no-ignore --no-heading ')
 set('v', '<leader>s', 'y:term rg --hidden --no-ignore --no-heading <C-R>"<CR>')
 set('n', '<leader>f', ':term fd --hidden --no-ignore ')
 set('v', '<leader>f', 'y:term fd --hidden --no-ignore <C-R>"<CR>')
+set('n', '<leader>u', '<CMD>lcd %:p:h<CR>') -- go to current file directory
