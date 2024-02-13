@@ -16,7 +16,7 @@ set('v', '<leader><BS>', ':g/^\\s*$/d<CR>')
 set('n', '<leader>v', '`[v`]')
 
 -- Search and replace for clipboard content on visually selected
-set('v', '<leader>s', ':s/<C-R>"/<C-R>"')
+set('v', '<leader>/', ':s/<C-R>"/<C-R>"')
 
 -- yank current file content to clipboard
 set('n', '<leader>yy', '<CMD>:%y+<CR>')
@@ -85,5 +85,7 @@ set('n', '<leader>b', '<CMD> enew | redir => m | silent buffers | redir END | si
 set('n', '<leader>j', '<CMD> enew | redir => m | silent jumps | redir END | put=m | silent %s/.*:\\/\\/.*// | silent! :%s/ *[0-9]* *[0-9]* *[0-9]* $// | silent %g/^$/d <CR>Gddggdj <CMD> %normal wwhyt $pF r:0veeelx<CR><CMD>noh | set buftype=nofile | set syntax=rust | 1 <CR>')
 set('n', '<leader>m', ':enew<CR>:redir => m | silent marks | redir END | put=m<CR>ggdj^:set buftype=nofile<CR>')
 set('n', '<leader>q', fn.toggle_quickfix)
-set('n', '<leader>s', ':term rg --no-heading ')
+set('n', '<leader>s', ':term rg --hidden --no-ignore --no-heading ')
+set('v', '<leader>s', 'y:term rg --hidden --no-ignore --no-heading <C-R>"<CR>')
 set('n', '<leader>f', ':term fd --hidden --no-ignore ')
+set('v', '<leader>f', 'y:term fd --hidden --no-ignore <C-R>"<CR>')
