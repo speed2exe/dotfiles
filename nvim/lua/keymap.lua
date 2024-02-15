@@ -75,13 +75,38 @@ set('n', '<leader>x', vim.lsp.buf.type_definition)
 set('n', '<leader>k', vim.lsp.buf.references)
 set('n', '<leader>t', ':term tree -fC --gitignore ')
 set('n', '<leader>i', vim.lsp.buf.implementation)
-set('n', '<leader>o', '<CMD> enew | redir => m | silent oldfiles | redir END | silent put=m | silent %s/^[0-9]*: // | silent %v/^\\//d | noh | set buftype=nofile | set syntax=rust | 1 <CR>')
-set('n', '<leader>b', '<CMD> enew | redir => m | silent buffers | redir END | silent put=m | silent %s/.\\{-}"// | silent %s/".*line /:/ | silent %s/\\[.*// | silent %s/.*:\\/\\/.*// | silent %g/^$/d | noh | set buftype=nofile | set syntax=rust | 1 <CR>')
-set('n', '<leader>j', '<CMD> enew | redir => m | silent jumps | redir END | put=m | silent %s/.*:\\/\\/.*// | silent! :%s/ *[0-9]* *[0-9]* *[0-9]* $// | silent %g/^$/d <CR>Gddggdj <CMD> %normal wwhyt $pF r:0veeelx<CR><CMD>noh | set buftype=nofile | set syntax=rust | 1 <CR>')
-set('n', '<leader>m', ':enew<CR>:redir => m | silent marks | redir END | put=m<CR>ggdj^:set buftype=nofile<CR>')
+-- set('n', '<leader>m', ':enew<CR>:redir => m | silent marks | redir END | put=m<CR>ggdj^:set buftype=nofile<CR>')
 set('n', '<leader>q', fn.toggle_quickfix)
 set('n', '<leader>s', ':term rg --hidden --no-ignore --no-heading ')
 set('v', '<leader>s', 'y:term rg --hidden --no-ignore --no-heading <C-R>"<CR>')
 set('n', '<leader>f', ':term fd --hidden --no-ignore ')
 set('v', '<leader>f', 'y:term fd --hidden --no-ignore <C-R>"<CR>')
 set('n', '<leader>u', '<CMD>lcd %:p:h<CR>') -- go to current file directory
+
+-- buffers into quickfix
+set('n', '<leader>b', function()
+  loaded = {}
+  for key, value in pairs(vim.fn.getbufinfo()) do
+    if value.listed == 1 then
+      table.insert(loaded, value)
+    end
+  end
+  vim.fn.setqflist(loaded)
+  vim.cmd [[ copen ]]
+end)
+
+-- oldfiles into quickfix
+set('n', '<leader>o', function()
+  res = {}
+  for key, value in pairs(vim.v.oldfiles) do
+    res[key] = { filename = value }
+  end
+  vim.fn.setqflist(res)
+  vim.cmd [[ copen ]]
+end)
+
+-- jumplist into quickfix
+set('n', '<leader>j', function()
+  vim.fn.setqflist(vim.fn.getjumplist()[1])
+  vim.cmd [[ copen ]]
+end)
