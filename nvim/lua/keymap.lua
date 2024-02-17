@@ -72,10 +72,10 @@ set('n', '<leader>e', ':term ')
 set('v', '<leader>e', 'y:term <C-R>"<CR>')
 set('n', '<leader>g', vim.lsp.buf.definition)
 set('n', '<leader>x', vim.lsp.buf.type_definition)
+set('n', '<leader>m', vim.lsp.buf.incoming_calls)
 set('n', '<leader>k', vim.lsp.buf.references)
 set('n', '<leader>t', ':term tree -fC --gitignore ')
 set('n', '<leader>i', vim.lsp.buf.implementation)
--- set('n', '<leader>m', ':enew<CR>:redir => m | silent marks | redir END | put=m<CR>ggdj^:set buftype=nofile<CR>')
 set('n', '<leader>q', fn.toggle_quickfix)
 set('n', '<leader>s', ':term rg --hidden --no-ignore --no-heading ')
 set('v', '<leader>s', 'y:term rg --hidden --no-ignore --no-heading <C-R>"<CR>')
@@ -83,30 +83,32 @@ set('n', '<leader>f', ':term fd --hidden --no-ignore ')
 set('v', '<leader>f', 'y:term fd --hidden --no-ignore <C-R>"<CR>')
 set('n', '<leader>u', '<CMD>lcd %:p:h<CR>') -- go to current file directory
 
--- buffers into quickfix
+-- current buffers
 set('n', '<leader>b', function()
-  loaded = {}
-  for key, value in pairs(vim.fn.getbufinfo()) do
+  handle = vim.api.nvim_create_buf(false, true)
+  listed = {}
+  for _, value in ipairs(vim.fn.getbufinfo()) do
     if value.listed == 1 then
-      table.insert(loaded, value)
+      if vim.api.nvim_buf_get_option(value.bufnr, "buftype") == "" then
+        table.insert(listed, value.name..":"..value.lnum)
+      else
+        table.insert(listed, value.name)
+      end
     end
   end
-  vim.fn.setqflist(loaded)
-  vim.cmd [[ copen ]]
+  vim.api.nvim_buf_set_lines(handle, 0, -1, false, listed)
+  vim.api.nvim_set_current_buf(handle)
 end)
 
--- oldfiles into quickfix
+-- list oldfiles in a throwaway buffer
 set('n', '<leader>o', function()
-  res = {}
-  for key, value in pairs(vim.v.oldfiles) do
-    res[key] = { filename = value }
+  handle = vim.api.nvim_create_buf(false, true)
+  files = {}
+  for _, value in ipairs(vim.v.oldfiles) do
+    if string.sub(value, 1, 1) == '/' then
+      table.insert(files, value)
+    end
   end
-  vim.fn.setqflist(res)
-  vim.cmd [[ copen ]]
-end)
-
--- jumplist into quickfix
-set('n', '<leader>j', function()
-  vim.fn.setqflist(vim.fn.getjumplist()[1])
-  vim.cmd [[ copen ]]
+  vim.api.nvim_buf_set_lines(handle, 0, -1, false, files)
+  vim.api.nvim_set_current_buf(handle)
 end)
