@@ -40,8 +40,7 @@ vim.cmd [[
     highlight WinSeparator    guibg=NONE
     highlight Normal          guibg=NONE
     highlight SignColumn      guibg=NONE
-    highlight TelescopeNormal guibg=NONE
-    highlight NormalFloat     guibg=NONE
+    highlight CmpItemAbbr     guibg=NONE
 
     highlight CursorLine     guibg=#282a36 guifg=reverse
     highlight IncSearch      guibg=#44475a guifg=reverse
@@ -49,3 +48,6 @@ vim.cmd [[
 
     highlight QuickFixLine   guibg=#44475a guifg=reverse
 ]]
+
+-- highlight TelescopeNormal guibg=NONE
+-- highlight NormalFloat     guibg=NONE
