@@ -884,10 +884,10 @@
 # Start of Actual Configuration
 
 # Shell
-shell:
-  program: /usr/bin/env
-  args:
-    - fish
+# shell:
+#   program: /usr/bin/env
+#   args:
+#     - fish
 
 # Font configuration
 font:

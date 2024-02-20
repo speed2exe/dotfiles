@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+dir=$(tac ~/marks/dir_history.txt \
+  | awk '!x[$0]++' \
+  | tee /tmp/dir_history.txt \
+  | fzf --no-sort)
+tac /tmp/dir_history.txt > ~/marks/dir_history.txt
+
+test -d "$dir" && cd "$dir"
