@@ -1,0 +1,4 @@
+set editing-mode vi
+
+"\C-f": "fd --hidden --no-ignore "
+"\C-s": "rg --hidden --no-ignore --no-heading "
