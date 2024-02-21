@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+test -n "$READLINE_LINE" && nvim -c ":term $READLINE_LINE"
