@@ -23,6 +23,15 @@ cp ~/.config/starship.toml .
 rm .xinitrc
 cp ~/.xinitrc .
 
+rm .inputrc
+cp ~/.inputrc .
+
+rm .bashrc
+cp ~/.bashrc .
+
+rm .bash_profile
+cp ~/.bash_profile .
+
 git add .
 git diff --cached
 git status
