@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+nvim -c "redir! > /tmp/vimoldfiles | silent oldfiles | redir END | q" > /dev/null
+file=$(sed '1d' /tmp/vimoldfiles | awk -F ": " '{print $2}' | rg '^/' | fzf)
+if [ -f $file ]; then
+  nvim $file
+fi
