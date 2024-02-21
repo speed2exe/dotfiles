@@ -11,3 +11,4 @@ picom
 dunst
 gtk-3.0
 hypr
+bash
