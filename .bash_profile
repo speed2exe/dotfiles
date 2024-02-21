@@ -2,16 +2,9 @@
 # ~/.bash_profile
 #
 
-[[ -f ~/.bashrc ]] && . ~/.bashrc
+export PS1='$(exit_status)$(starship prompt)\n '
+export MANPAGER='nvim +Man!'
+export PATH=$PATH:~/.config/bash
 
-# # Source this file in your shell to enable stderred for all commands
-# if [[ ! "$LD_PRELOAD" == *libstderred.so* ]]; then
-#   if [[ -f /usr/lib/libstderred.so ]]; then
-#     export LD_PRELOAD="/usr/lib/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
-#   elif [[ -f /usr/lib64/libstderred.so ]]; then
-#     export LD_PRELOAD="/usr/lib64/libstderred.so${LD_PRELOAD:+:$LD_PRELOAD}"
-#   fi
-# fi
-
-# Auto startx after login
+# auto startx after login
 [[ -z $DISPLAY && $XDG_VTNR ]] && startx
