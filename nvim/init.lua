@@ -1,7 +1,7 @@
 local vim = vim
 vim.loader.enable()
 
--- plugins setup
+-- https://github.com/folke/lazy.nvim?tab=readme-ov-file#-installation
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -14,10 +14,10 @@ if not vim.loop.fs_stat(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
 require('lazy').setup('plugins')
 
+-- Custom stuff
 require('keymap')   -- ~/.config/nvim/lua/keymap.lua
 require('settings') -- ~/.config/nvim/lua/settings.lua
 
