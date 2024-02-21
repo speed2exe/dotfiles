@@ -28,4 +28,4 @@ bind -x '"\C-G":"source ~/.config/bash/bind_ctrl_g"'
 stty -ixon
 
 builtin cd $(tail -n 1 ~/marks/dir_history.txt 2> /dev/null)
-test -f ~/.init.sh && source ~/.init.sh || true
+test -f ~/.init.bash && source ~/.init.bash || true
