@@ -7,7 +7,9 @@ local baleia = require('baleia')
 vim.g.mapleader = ' ';
 
 -- Interpret ansi colors
-set('n', '<leader>c', function() baleia.setup().once(vim.fn.bufnr()) end)
+vim.api.nvim_create_user_command('Ansi', function()
+  baleia.setup().once(vim.fn.bufnr())
+end, {})
 
 -- Remove lines with only whitespace or nothing
 set('v', '<leader><BS>', ':g/^\\s*$/d<CR>')
@@ -64,51 +66,49 @@ set('n', '<leader>r', vim.lsp.buf.rename)
 set('n', '<leader>h', vim.lsp.buf.hover)
 set('n', '<leader>a', vim.lsp.buf.code_action)
 set('n', '<leader>n', vim.lsp.buf.format) -- neat
-set('n', '<leader>do', vim.diagnostic.open_float)
-set('n', '<leader>dq', vim.diagnostic.setqflist)
-set('n', '<leader>dn', vim.diagnostic.goto_next)
-set('n', '<leader>dp', vim.diagnostic.goto_prev)
+set('n', '<leader>m', vim.diagnostic.open_float)
+set('n', '<leader>d', vim.diagnostic.setqflist)
 set('n', '<leader>e', ':term ')
 set('v', '<leader>e', 'y:term <C-R>"<CR>')
 set('n', '<leader>g', vim.lsp.buf.definition)
 set('n', '<leader>x', vim.lsp.buf.type_definition)
-set('n', '<leader>m', vim.lsp.buf.incoming_calls)
+set('n', '<leader>c', vim.lsp.buf.incoming_calls)
 set('n', '<leader>k', vim.lsp.buf.references)
-set('n', '<leader>t', ':term tree -fC --gitignore %:h')
+set('n', '<leader>t', '<CMD>term tree -fC --gitignore<CR>')
 set('n', '<leader>i', vim.lsp.buf.implementation)
-set('n', '<leader>q', fn.toggle_quickfix)
 set('n', '<leader>s', ':term rg --hidden --no-ignore --no-heading ')
 set('v', '<leader>s', 'y:term rg --hidden --no-ignore --no-heading <C-R>"<CR>')
 set('n', '<leader>f', ':term fd --hidden --no-ignore ')
 set('v', '<leader>f', 'y:term fd --hidden --no-ignore <C-R>"<CR>')
 set('n', '<leader>u', '<CMD>lcd %:p:h<CR>') -- go to current file directory
 
--- current buffers
+-- quickfix navigation
+set('n', '<C-Q>', fn.toggle_quickfix)
+set('n', '<C-J>', '<CMD>cnext<CR>')
+set('n', '<C-K>', '<CMD>cprevious<CR>')
+set('n', '<C-N>', '<CMD>colder<CR>')
+set('n', '<C-H>', '<CMD>cnewer<CR>')
+
+-- current buffers to quickfix
 set('n', '<leader>b', function()
-  handle = vim.api.nvim_create_buf(false, true)
-  listed = {}
-  for _, value in ipairs(vim.fn.getbufinfo()) do
+  loaded = {}
+  for key, value in pairs(vim.fn.getbufinfo()) do
     if value.listed == 1 then
-      if vim.api.nvim_buf_get_option(value.bufnr, "buftype") == "" then
-        table.insert(listed, value.name..":"..value.lnum)
-      else
-        table.insert(listed, value.name)
-      end
+      table.insert(loaded, value)
     end
   end
-  vim.api.nvim_buf_set_lines(handle, 0, -1, false, listed)
-  vim.api.nvim_set_current_buf(handle)
+  vim.fn.setqflist(loaded)
+  vim.cmd [[ copen ]]
 end)
 
 -- list oldfiles in a throwaway buffer
 set('n', '<leader>o', function()
-  handle = vim.api.nvim_create_buf(false, true)
-  files = {}
+  res = {}
   for _, value in ipairs(vim.v.oldfiles) do
     if string.sub(value, 1, 1) == '/' then
-      table.insert(files, value)
+      table.insert(res, {filename = value})
     end
   end
-  vim.api.nvim_buf_set_lines(handle, 0, -1, false, files)
-  vim.api.nvim_set_current_buf(handle)
+  vim.fn.setqflist(res)
+  vim.cmd [[ copen ]]
 end)
