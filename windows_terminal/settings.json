@@ -1,7 +1,7 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
+    "actions":
     [
         {
             "command": "unbound",
@@ -268,7 +268,7 @@
             "keys": "ctrl+alt+v"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "copy",
                 "singleLine": false
@@ -276,7 +276,7 @@
             "keys": "alt+c"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "swapPane",
                 "direction": "down"
@@ -284,7 +284,7 @@
             "keys": "alt+shift+down"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newTab",
                 "index": 8
@@ -292,7 +292,7 @@
             "keys": "ctrl+9"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "adjustFontSize",
                 "delta": -1
@@ -304,7 +304,7 @@
             "keys": "alt+v"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "right"
@@ -312,14 +312,14 @@
             "keys": "alt+6"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newTab"
             },
             "keys": "alt+t"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newWindow"
             },
@@ -332,7 +332,7 @@
             "command": "toggleFullscreen"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newTab",
                 "index": 1
@@ -340,14 +340,14 @@
             "keys": "ctrl+2"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "scrollUp"
             },
             "keys": "alt+k"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "down"
@@ -355,7 +355,7 @@
             "keys": "alt+5"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "moveFocus",
                 "direction": "previous"
@@ -363,7 +363,7 @@
             "keys": "alt+backspace"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newTab",
                 "index": 6
@@ -371,7 +371,7 @@
             "keys": "ctrl+7"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newTab",
                 "index": 7
@@ -383,7 +383,7 @@
             "keys": "alt+f"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "auto",
@@ -399,7 +399,7 @@
             "keys": "ctrl+w"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "right"
@@ -407,7 +407,7 @@
             "keys": "alt+shift+6"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "left"
@@ -415,7 +415,7 @@
             "keys": "alt+4"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "adjustFontSize",
                 "delta": 1
@@ -426,7 +426,7 @@
             "command": "duplicateTab"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "commandPalette"
             },
@@ -437,7 +437,7 @@
             "keys": "alt+shift+g"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "scrollDown"
             },
@@ -448,7 +448,7 @@
             "keys": "alt+d"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "splitPane",
                 "split": "up"
@@ -460,7 +460,7 @@
             "keys": "alt+g"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "swapPane",
                 "direction": "up"
@@ -468,7 +468,7 @@
             "keys": "alt+shift+up"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "left"
@@ -476,7 +476,7 @@
             "keys": "alt+shift+4"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "down"
@@ -484,7 +484,7 @@
             "keys": "alt+shift+5"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "swapPane",
                 "direction": "left"
@@ -492,7 +492,7 @@
             "keys": "alt+shift+left"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "resizePane",
                 "direction": "up"
@@ -500,7 +500,7 @@
             "keys": "alt+shift+8"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newTab",
                 "index": 0
@@ -508,7 +508,7 @@
             "keys": "ctrl+1"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newTab",
                 "index": 2
@@ -516,7 +516,7 @@
             "keys": "ctrl+3"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newTab",
                 "index": 3
@@ -524,7 +524,7 @@
             "keys": "ctrl+4"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newTab",
                 "index": 4
@@ -532,7 +532,7 @@
             "keys": "ctrl+5"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "newTab",
                 "index": 5
@@ -540,7 +540,7 @@
             "keys": "ctrl+6"
         },
         {
-            "command": 
+            "command":
             {
                 "action": "swapPane",
                 "direction": "right"
@@ -553,19 +553,19 @@
     "defaultProfile": "{776d54a6-0adb-468e-bed2-a472f4a66e6b}",
     "firstWindowPreference": "persistedWindowLayout",
     "focusFollowMouse": true,
-    "profiles": 
+    "profiles":
     {
-        "defaults": 
+        "defaults":
         {
             "antialiasingMode": "cleartype",
-            "bellStyle": 
+            "bellStyle":
             [
                 "audible",
                 "taskbar"
             ],
             "colorScheme": "Dracula",
             "experimental.retroTerminalEffect": false,
-            "font": 
+            "font":
             {
                 "face": "Iosevka Term SS14"
             },
@@ -577,7 +577,7 @@
             "unfocusedAppearance": {},
             "useAcrylic": true
         },
-        "list": 
+        "list":
         [
             {
                 "commandline": "powershell.exe",
@@ -615,7 +615,7 @@
                 "closeOnExit": "graceful",
                 "commandline": "powershell.exe -Command  \"docker start dev; docker exec -it dev /bin/fish\"",
                 "cursorShape": "bar",
-                "font": 
+                "font":
                 {
                     "size": 12
                 },
@@ -629,7 +629,7 @@
             }
         ]
     },
-    "schemes": 
+    "schemes":
     [
         {
             "background": "#0C0C0C",
