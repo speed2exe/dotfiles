@@ -1,15 +1,11 @@
 #!/usr/bin/env bash
 
-machine=$(cat /etc/machine-id)
-machine_script="$HOME/.config/bspwm/$machine"
-if test -f $machine_script
-then
-    $machine_script
+# Additional configurations (if any)
+if test -f ~/.bspwmrc; then
+    source ~/.bspwmrc
 fi
 
-set -U SXHKD_SHELL /usr/bin/bash
-
-## Configurations --------------------------------------------#
+# Setup workspaces
 workspaces() {
 	name=0
 	for monitor in $(bspc query --monitors); do
@@ -19,15 +15,16 @@ workspaces() {
 }
 workspaces
 
+# Set bspwm configurations
 bspc config normal_border_color \#21222C
 bspc config focused_border_color \#BD93F9
 bspc config border_width 1
 bspc config window_gap 0
 
-# wallpaper
+# Set wallpaper
 nitrogen --set-zoom-fill --random ~/wallpaper
 
-# start polybar
+# Launch polybar
 polybar main &
 
 # Notification daemon
@@ -36,5 +33,5 @@ dunst &
 # Keybindings daemon
 sxhkd &
 
-# picom
+# Compositor
 picom &
