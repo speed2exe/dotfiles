@@ -19,15 +19,16 @@ alias lla='ll --all'
 
 bind -x '"\C-R":"source ~/.config/bash/bind_ctrl_r"'
 bind -x '"\C-N":"source ~/.config/bash/bind_ctrl_n"'
+bind -x '"\C-T":"source ~/.config/bash/bind_ctrl_t"'
 bind -x '"\C-A":"source ~/.config/bash/bind_ctrl_a"'
 bind -x '"\C-O":"source ~/.config/bash/bind_ctrl_o"'
 bind -x '"\C-E":"source ~/.config/bash/bind_ctrl_e"'
 bind -x '"\C-G":"source ~/.config/bash/bind_ctrl_g"'
 bind -x '"\C-H":"source ~/.config/bash/bind_ctrl_h"'
 
-bind '"\C-f": "fd --hidden --no-ignore "'
-bind '"\C-s": "rg --hidden --no-ignore --no-heading "'
-bind '"\C-x": " | xargs -I {} "'
+bind '"\C-F": "fd --hidden --no-ignore "'
+bind '"\C-S": "rg --hidden --no-ignore --no-heading "'
+bind '"\C-X": " | xargs -I {} "'
 
 stty -ixon
 
