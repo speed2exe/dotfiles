@@ -27,27 +27,27 @@ opt.expandtab = true
 --
 -- https://vim.fandom.com/wiki/Remove_unwanted_spaces
 vim.cmd [[
-    colorscheme dracula
+  colorscheme dracula
 
-    autocmd BufWritePre * :%s/\s\+$//e
+  autocmd BufWritePre * :%s/\s\+$//e
 
-    inoremap <silent><script><expr> <RIGHT> copilot#Accept("<RIGHT>")
-    inoremap <S-DOWN> <Plug>(copilot-next)
-    inoremap <S-UP> <Plug>(copilot-previous)
-    inoremap <S-LEFT> <Plug>(copilot-dismiss)
-    inoremap <S-RIGHT> <Plug>(copilot-suggest)
+  inoremap <silent><script><expr> <RIGHT> copilot#Accept("<RIGHT>")
+  inoremap <S-DOWN> <Plug>(copilot-next)
+  inoremap <S-UP> <Plug>(copilot-previous)
+  inoremap <S-LEFT> <Plug>(copilot-dismiss)
+  inoremap <S-RIGHT> <Plug>(copilot-suggest)
 
-    highlight WinSeparator    guibg=NONE
-    highlight Normal          guibg=NONE
-    highlight SignColumn      guibg=NONE
-    highlight CmpItemAbbr     guibg=NONE
+  highlight WinSeparator    guibg=NONE
+  highlight Normal          guibg=NONE
+  highlight SignColumn      guibg=NONE
+  highlight CmpItemAbbr     guibg=NONE
 
-    highlight CursorLine     guibg=#282a36 guifg=reverse
-    highlight IncSearch      guibg=#44475a guifg=reverse
-    highlight Search         guibg=#44475a guifg=reverse
+  highlight TelescopeNormal guibg=NONE
+  highlight NormalFloat     guibg=NONE
 
-    highlight QuickFixLine   guibg=#44475a guifg=reverse
+  highlight CursorLine     guibg=#282a36 guifg=reverse
+  highlight IncSearch      guibg=#44475a guifg=reverse
+  highlight Search         guibg=#44475a guifg=reverse
+
+  highlight QuickFixLine   guibg=#44475a guifg=reverse
 ]]
-
--- highlight TelescopeNormal guibg=NONE
--- highlight NormalFloat     guibg=NONE
