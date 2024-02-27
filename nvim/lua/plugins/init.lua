@@ -31,10 +31,9 @@ return {
   'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
 
   -- Telescope stuff
-  -- 'nvim-lua/popup.nvim',
-  -- 'nvim-lua/plenary.nvim',
-  -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-  -- 'nvim-telescope/telescope-file-browser.nvim',
+  'nvim-lua/plenary.nvim',
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  'nvim-telescope/telescope-file-browser.nvim',
 
   -- LSP stuff
   "williamboman/mason.nvim",

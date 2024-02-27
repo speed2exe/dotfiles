@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# TODO
+# path=$(fd --hidden --no-ignore --type=directory | fzf)
+# if [ -d "$path" ]; then
+#   cd "$path"
+# fi
