@@ -29,9 +29,7 @@ bind -x '"\C-G":"source ~/.config/bash/goto_git_root"'
 bind -x '"\C-O":"nvim +:Telescope\ oldfiles"'
 bind -x '"\C-S":"nvim +:Telescope\ live_grep"'
 bind -x '"\C-F":"nvim +:Telescope\ find_files"'
-bind '"\C-P":"nix-shell --command bash --packages "'
 
-set -o vi
 stty -ixon
 
 builtin cd $(tail -n 1 ~/marks/dir_history.txt 2> /dev/null)
