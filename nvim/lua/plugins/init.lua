@@ -53,15 +53,11 @@ return {
   -- Cmp stuff
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-nvim-lsp-signature-help',
-  'hrsh7th/cmp-nvim-lsp-document-symbol',
   'hrsh7th/cmp-nvim-lua',
   'hrsh7th/cmp-cmdline',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
-  'mtoohey31/cmp-fish',
   'ray-x/cmp-treesitter',
-  'dcampos/nvim-snippy',
-  'dcampos/cmp-snippy',
 
   -- Zig
   {

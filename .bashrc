@@ -29,6 +29,7 @@ bind -x '"\C-G":"source ~/.config/bash/goto_git_root"'
 bind -x '"\C-O":"nvim +:Telescope\ oldfiles"'
 bind -x '"\C-S":"nvim +:Telescope\ live_grep"'
 bind -x '"\C-F":"nvim +:Telescope\ find_files"'
+bind -x '"\C-L":"clear"'
 
 stty -ixon
 
