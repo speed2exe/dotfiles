@@ -23,9 +23,6 @@ cp ~/.config/starship.toml .
 rm .xinitrc
 cp ~/.xinitrc .
 
-rm .inputrc
-cp ~/.inputrc .
-
 rm .bashrc
 cp ~/.bashrc .
 
