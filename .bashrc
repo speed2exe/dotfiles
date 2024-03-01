@@ -5,14 +5,15 @@
 # If not running interactively, don't do anything
 test -z "$PS1" && return
 
-if [ -z "$TMUX" ]; then
-  UNATTACHED=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_id}')
-  if [ -n "$UNATTACHED" ]; then
-    exec tmux attach-session -t "$UNATTACHED"
-  else
-    exec tmux
-  fi
-fi
+# if [ -z "$TMUX" ]; then
+#   UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_id}')
+#   for UNATTACHED in $UNATTACHEDS; do
+#     if [ -n "$UNATTACHED" ]; then
+#       exec tmux attach-session -t "$UNATTACHED"
+#     fi
+#   done
+#   exec tmux
+# fi
 
 function exit_status {
   test $? -eq 0 && printf "\033[42m \033[0m" \
@@ -41,8 +42,8 @@ bind -x '"\C-O":"nvim +:Telescope\ oldfiles"'
 bind -x '"\C-S":"nvim +:Telescope\ live_grep"'
 bind -x '"\C-F":"nvim +:Telescope\ find_files"'
 bind -x '"\C-L":"clear"'
-bind -x '"\C-B":"tmux choose-client"'
-bind -x '"\C-Q":"tmux detach-client"'
+# bind -x '"\C-B":"tmux choose-session"'
+# bind -x '"\C-Q":"tmux detach-client"'
 
 stty -ixon
 
