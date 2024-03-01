@@ -990,28 +990,28 @@ hints:
      command: xdg-open
      post_processing: true
      binding:
-       key: Escape
+       key: O
        mods: Alt
 
    - regex: "[\\w|/|-]+\\.[\\w]+(:[\\d]+)*"
      command: neovide
      post_processing: true
      binding:
-       key: R
+       key: E
        mods: Alt
 
    - regex: "[^ ]+ "
      action: Copy
      post_processing: true
      binding:
-       key: N
+       key: W
        mods: Alt
 
    - regex: ".+ "
      action: Copy
      post_processing: true
      binding:
-       key: T
+       key: L
        mods: Alt
 
 window:
@@ -1071,3 +1071,6 @@ colors:
     magenta: '#ff92df'
     cyan: '#a4ffff'
     white: '#ffffff'
+
+env:
+  TERM: xterm-256color
