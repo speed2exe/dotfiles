@@ -10,6 +10,7 @@ opt.timeoutlen = 0
 opt.updatetime = 0
 opt.cursorline = true
 opt.guicursor = "" -- always use block
+opt.cmdheight = 0
 
 -- Tabs and Indentation
 opt.tabstop = 2
