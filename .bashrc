@@ -42,6 +42,7 @@ bind -x '"\C-S":"nvim +:Telescope\ live_grep"'
 bind -x '"\C-F":"nvim +:Telescope\ find_files"'
 bind -x '"\C-L":"clear"'
 bind -x '"\C-B":"tmux choose-client"'
+bind -x '"\C-Q":"tmux detach-client"'
 
 stty -ixon
 
