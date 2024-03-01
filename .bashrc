@@ -5,15 +5,15 @@
 # If not running interactively, don't do anything
 test -z "$PS1" && return
 
-# if [ -z "$TMUX" ]; then
-#   UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_id}')
-#   for UNATTACHED in $UNATTACHEDS; do
-#     if [ -n "$UNATTACHED" ]; then
-#       exec tmux attach-session -t "$UNATTACHED"
-#     fi
-#   done
-#   exec tmux
-# fi
+if [ -z "$TMUX" ]; then
+  UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_id}')
+  for UNATTACHED in $UNATTACHEDS; do
+    if [ -n "$UNATTACHED" ]; then
+      exec tmux attach-session -t "$UNATTACHED"
+    fi
+  done
+  exec tmux
+fi
 
 function exit_status {
   test $? -eq 0 && printf "\033[42m \033[0m" \
