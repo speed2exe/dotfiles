@@ -5,14 +5,17 @@
 # If not running interactively, don't do anything
 test -z "$PS1" && return
 
-if [ -z "$TMUX" ]; then
-  UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_id}')
-  for UNATTACHED in $UNATTACHEDS; do
-    if [ -n "$UNATTACHED" ]; then
-      exec tmux attach-session -t "$UNATTACHED"
-    fi
-  done
-  exec tmux
+# Attach to tmux session if exists
+if command -v tmux &> /dev/null; then
+  if [ -z "$TMUX" ]; then
+    UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_id}')
+    for UNATTACHED in $UNATTACHEDS; do
+      if [ -n "$UNATTACHED" ]; then
+        exec tmux attach-session -t "$UNATTACHED"
+      fi
+    done
+    exec tmux
+  fi
 fi
 
 function exit_status {
@@ -21,6 +24,7 @@ function exit_status {
 }
 PS1='$(exit_status)$(starship prompt)\n$ '
 
+alias v='nvim'
 alias cat='bat --theme=Dracula --plain --no-pager'
 alias xcopy='xclip -selection clipboard'
 alias cd='source ~/.config/bash/cd'
