@@ -56,7 +56,7 @@ set('n', '<leader>t', "<CMD>Telescope file_browser path=%:p:h<CR>") -- traverse
 set('n', '<leader><leader>', ":Telescope ")
 
 -- Toggle LSP diagnostics
-set('n', '<leader>dl', fn.toggle_lsp_lines) -- diagnostics line
+set('n', '<leader>l', fn.toggle_lsp_lines) -- diagnostics line
 
 -- Custom Personal Mapping
 set('n', '<leader>r', vim.lsp.buf.rename)
