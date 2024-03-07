@@ -38,25 +38,20 @@ set('n', '<leader>yc', function()
 end)
 
 -- Telescope
-set('n', '<leader>rs', t_builtin.resume)
-set('n', '<leader>ht', t_builtin.help_tags)
-set('n', '<leader>dn', t_builtin.diagnostics)
-set('n', '<leader>k', t_builtin.keymaps)
+set('n', '<leader>z', t_builtin.resume)
+set('n', '<leader>d', t_builtin.diagnostics)
 set('n', '<leader>j', t_builtin.jumplist)
 set('n', '<leader>q', t_builtin.quickfix)
-set('n', '<leader>rg', t_builtin.registers)
-set('n', '<leader>m', t_builtin.marks)
 set('n', '<leader>f', t_builtin.find_files)
-set('n', '<leader>g', t_builtin.git_files)
 set('n', '<leader>s', t_builtin.live_grep) -- search
 set('v', '<leader>s', t_builtin.grep_string)
 set('n', '<leader>w', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>o', t_builtin.oldfiles)
 set('n', '<leader>b', t_builtin.buffers)
-set('n', '<leader>de', t_builtin.lsp_definitions)
-set('n', '<leader>dt', t_builtin.lsp_type_definitions)
+set('n', '<leader>g', t_builtin.lsp_definitions)
+set('n', '<leader>x', t_builtin.lsp_type_definitions)
 set('n', '<leader>i', t_builtin.lsp_implementations)
-set('n', '<leader>re', t_builtin.lsp_references)
+set('n', '<leader>k', t_builtin.lsp_references)
 set('n', '<leader>t', "<CMD>Telescope file_browser path=%:p:h<CR>") -- traverse
 set('n', '<leader><leader>', ":Telescope ")
 
@@ -64,14 +59,14 @@ set('n', '<leader><leader>', ":Telescope ")
 set('n', '<leader>dl', fn.toggle_lsp_lines) -- diagnostics line
 
 -- Custom Personal Mapping
-set('n', '<leader>rn', vim.lsp.buf.rename)
-set('n', '<leader>hv', vim.lsp.buf.hover)
+set('n', '<leader>r', vim.lsp.buf.rename)
+set('n', '<leader>h', vim.lsp.buf.hover)
 set('n', '<leader>a', vim.lsp.buf.code_action)
 set('n', '<leader>n', vim.lsp.buf.format) -- neat
 set('n', '<leader>e', ':term ')
 set('v', '<leader>e', 'y:term <C-R>"<CR>')
 set('n', '<leader>u', '<CMD>lcd %:p:h<CR>') -- go to current file directory
-set('n', '<leader>do', vim.diagnostic.open_float)
+set('n', '<leader>m', vim.diagnostic.open_float)
 
 -- quickfix navigation
 set('n', '<C-Q>', fn.toggle_quickfix)
