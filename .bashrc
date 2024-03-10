@@ -5,18 +5,18 @@
 # If not running interactively, don't do anything
 test -z "$PS1" && return
 
-# Attach to tmux session if exists
-if command -v tmux &> /dev/null; then
-  if [ -z "$TMUX" ]; then
-    UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_id}')
-    for UNATTACHED in $UNATTACHEDS; do
-      if [ -n "$UNATTACHED" ]; then
-        exec tmux attach-session -t "$UNATTACHED"
-      fi
-    done
-    exec tmux
-  fi
-fi
+# # Attach to tmux session if exists
+# if command -v tmux &> /dev/null; then
+#   if [ -z "$TMUX" ]; then
+#     UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_id}')
+#     for UNATTACHED in $UNATTACHEDS; do
+#       if [ -n "$UNATTACHED" ]; then
+#         exec tmux attach-session -t "$UNATTACHED"
+#       fi
+#     done
+#     exec tmux
+#   fi
+# fi
 
 function exit_status {
   test $? -eq 0 && printf "\033[42m \033[0m" \
@@ -46,11 +46,11 @@ bind -x '"\C-O":"nvim +:Telescope\ oldfiles"'
 bind -x '"\C-S":"nvim +:Telescope\ live_grep"'
 bind -x '"\C-F":"nvim +:Telescope\ find_files"'
 bind -x '"\C-L":"clear"'
-bind -x '"\C-H":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
+# bind -x '"\C-H":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
 # bind -x '"\C-B":"tmux choose-session"'
 # bind -x '"\C-Q":"tmux detach-client"'
 
 stty -ixon
 
-builtin cd $(tail -n 1 ~/marks/dir_history.txt 2> /dev/null)
+# builtin cd $(tail -n 1 ~/marks/dir_history.txt 2> /dev/null)
 test -f ~/.init.bash && source ~/.init.bash || true
