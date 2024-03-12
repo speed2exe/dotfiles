@@ -5,19 +5,18 @@
 # If not running interactively, don't do anything
 test -z "$PS1" && return
 
-# # Attach to tmux session if exists
-# if command -v tmux &> /dev/null; then
-#   if [ -z "$TMUX" ]; then
-#     UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_id}')
-#     for UNATTACHED in $UNATTACHEDS; do
-#       if [ -n "$UNATTACHED" ]; then
-#         exec tmux attach-session -t "$UNATTACHED"
-#       fi
-#     done
-#     exec tmux
-#   fi
-# fi
-[ -z "$TMUX" ] && exec tmux new -As .
+# Attach to tmux session if exists
+if command -v tmux &> /dev/null; then
+  if [ -z "$TMUX" ]; then
+    UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_name}')
+    for UNATTACHED in $UNATTACHEDS; do
+      if [ "${UNATTACHED:0:1}" = "_" ]; then
+        exec tmux attach-session -t "$UNATTACHED"
+      fi
+    done
+    exec tmux new -s _$RANDOM
+  fi
+fi
 
 function exit_status {
   test $? -eq 0 && printf "\033[42m \033[0m" \
