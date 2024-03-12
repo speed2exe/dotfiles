@@ -17,6 +17,7 @@ test -z "$PS1" && return
 #     exec tmux
 #   fi
 # fi
+[ -z "$TMUX" ] && exec tmux new -As .
 
 function exit_status {
   test $? -eq 0 && printf "\033[42m \033[0m" \
