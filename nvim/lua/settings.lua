@@ -10,6 +10,8 @@ opt.timeoutlen = 0
 opt.updatetime = 0
 opt.cursorline = true
 opt.guicursor = "" -- always use block
+opt.laststatus = 0 -- disable statusline
+opt.winbar = '%f'
 
 -- Tabs and Indentation
 opt.tabstop = 2
