@@ -10,7 +10,7 @@ opt.timeoutlen = 0
 opt.updatetime = 0
 opt.cursorline = true
 opt.guicursor = "" -- always use block
-opt.laststatus = 0 -- disable statusline
+opt.cmdheight = 0
 opt.winbar = '%f'
 
 -- Tabs and Indentation
@@ -27,6 +27,8 @@ opt.expandtab = true
 -- use same background color as dracula theme
 --
 -- https://vim.fandom.com/wiki/Remove_unwanted_spaces
+--
+-- https://github.com/neovim/neovim/issues/18965
 vim.cmd [[
   colorscheme dracula
 
@@ -45,4 +47,9 @@ vim.cmd [[
   highlight Search         guibg=#44475a guifg=reverse
 
   highlight QuickFixLine   guibg=#44475a guifg=reverse
+
+  set laststatus=0
+  hi! link StatusLine Normal
+  hi! link StatusLineNC Normal
+  set statusline=%{repeat('─',winwidth('.'))}
 ]]
