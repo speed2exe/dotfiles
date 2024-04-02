@@ -37,7 +37,7 @@ alias git-tag='git-ref refs/tags'
 alias git-graph='git log --graph --decorate --oneline --all'
 
 bind -x '"\C-R":"source ~/.config/bash/fzf_rev_cmd_history"'
-bind -x '"\C-K":"source ~/.config/bash/fzf_rev_dir_history"'
+bind -x '"\C-H":"source ~/.config/bash/fzf_rev_dir_history"'
 bind -x '"\C-T":"source ~/.config/bash/fd_goto"'
 bind -x '"\C-A":"source ~/.config/bash/fzf_rev_git_history"'
 bind -x '"\C-E":"source ~/.config/bash/nvim_term"'
@@ -46,7 +46,7 @@ bind -x '"\C-O":"nvim +:Telescope\ oldfiles"'
 bind -x '"\C-S":"nvim +:Telescope\ live_grep"'
 bind -x '"\C-F":"nvim +:Telescope\ find_files"'
 bind -x '"\C-L":"clear"'
-bind -x '"\C-H":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
+# bind -x '"\C-H":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
 
 stty -ixon
 
