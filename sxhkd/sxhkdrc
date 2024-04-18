@@ -7,7 +7,8 @@ super + l
 
 # Terminal
 super + Return
-  alacritty
+  st -f 'IosevkaTerm Nerd Font:pixelsize=20'
+  # alacritty
 
 # search and open new app or go to existing app
 super + space

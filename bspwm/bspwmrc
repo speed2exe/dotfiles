@@ -22,7 +22,7 @@ bspc config border_width 1
 bspc config window_gap 0
 
 # Set wallpaper
-nitrogen --set-zoom-fill --random ~/wallpaper
+# nitrogen --set-zoom-fill --random ~/wallpaper
 
 # Launch polybar
 polybar main &
@@ -34,4 +34,4 @@ dunst &
 sxhkd &
 
 # Compositor
-picom &
+# picom &
