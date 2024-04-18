@@ -25,6 +25,7 @@ function exit_status {
 PS1='$(exit_status)$(starship prompt)\n$ '
 
 alias v='nvim'
+alias open='xdg-open'
 alias cat='bat --theme=Dracula --plain --no-pager'
 alias xcopy='xclip -selection clipboard'
 alias cd='source ~/.config/bash/cd'
@@ -45,8 +46,9 @@ bind -x '"\C-G":"source ~/.config/bash/goto_git_root"'
 bind -x '"\C-O":"nvim +:Telescope\ oldfiles"'
 bind -x '"\C-S":"nvim +:Telescope\ live_grep"'
 bind -x '"\C-F":"nvim +:Telescope\ find_files"'
-bind -x '"\C-L":"clear"'
-# bind -x '"\C-H":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
+bind -x '"\C-L":"source ~/.config/bash/fzf_term_line"'
+bind -x '"\C-K":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
+bind -x '"\C-X":"source ~/.config/bash/fzf_term_word"'
 
 stty -ixon
 
