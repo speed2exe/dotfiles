@@ -47,6 +47,7 @@ bind -x '"\C-S":"nvim +:Telescope\ live_grep"'
 bind -x '"\C-F":"nvim +:Telescope\ find_files"'
 bind -x '"\C-L":"clear"'
 bind -x '"\C-X":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
+bind -x '"\C-K":"v ~/temp.bash"'
 
 stty -ixon
 
