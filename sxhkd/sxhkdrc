@@ -41,7 +41,7 @@ XF86Audio{RaiseVolume,LowerVolume}
   wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%{+,-} && ~/.config/sxhkd/dunstify_volume
 
 XF86AudioMute
-  pamixer --toggle-mute && ~/.config/sxhkd/dunstify_volume
+  wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && ~/.config/sxhkd/dunstify_volume
 
 
 ##---------- Node Management ----------##
