@@ -38,6 +38,7 @@ vim.cmd [[
 
   highlight TelescopeNormal guibg=NONE
   highlight NormalFloat     guibg=NONE
+  highlight Pmenu           guibg=NONE
 
   highlight CursorLine     guibg=#282a36 guifg=reverse
   highlight IncSearch      guibg=#44475a guifg=reverse
