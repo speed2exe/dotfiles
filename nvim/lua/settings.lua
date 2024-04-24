@@ -8,7 +8,7 @@ opt.signcolumn = 'yes'
 opt.swapfile = false
 opt.cursorline = true
 opt.cmdheight = 0
-opt.winbar = '%f'
+-- opt.winbar = '%f'
 
 -- Tabs and Indentation
 opt.tabstop = 2
@@ -25,13 +25,13 @@ opt.expandtab = true
 --
 -- https://vim.fandom.com/wiki/Remove_unwanted_spaces
 --
--- https://github.com/neovim/neovim/issues/18965
 vim.cmd [[
   colorscheme dracula
 
   autocmd BufWritePre * :%s/\s\+$//e
 
   highlight WinSeparator    guibg=NONE
+  highlight StatusLine      guibg=NONE
   highlight Normal          guibg=NONE
   highlight SignColumn      guibg=NONE
   highlight CmpItemAbbr     guibg=NONE
@@ -46,8 +46,11 @@ vim.cmd [[
 
   highlight QuickFixLine   guibg=#44475a guifg=reverse
 
-  set laststatus=0
-  hi! link StatusLine Normal
-  hi! link StatusLineNC Normal
-  set statusline=%{repeat('─',winwidth('.'))}
 ]]
+
+-- Allow disabling all statuslines
+-- https://github.com/neovim/neovim/issues/18965
+-- set laststatus=0
+-- hi! link StatusLine Normal
+-- hi! link StatusLineNC Normal
+-- set statusline=%{repeat('─',winwidth('.'))}
