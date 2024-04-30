@@ -1,7 +1,6 @@
 local opt = vim.opt
 
 opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
-opt.wrap = false
 opt.number = true
 opt.relativenumber = true
 opt.signcolumn = 'yes'
