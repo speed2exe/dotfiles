@@ -5,13 +5,15 @@ return {
     local lspkind = require('lspkind')
 
     cmp.setup({
-      mapping = cmp.mapping.preset.insert({
-        ['<C-B>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-F>'] = cmp.mapping.scroll_docs(4),
-        ['<C-SPACE>'] = cmp.mapping.complete(),
-        ['<C-E>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
-      }),
+      mapping = cmp.mapping.preset.insert(
+      -- {
+      --   ['<C-B>'] = cmp.mapping.scroll_docs(-4),
+      --   ['<C-F>'] = cmp.mapping.scroll_docs(4),
+      --   ['<C-SPACE>'] = cmp.mapping.complete(),
+      --   ['<C-E>'] = cmp.mapping.abort(),
+      --   ['<CR>'] = cmp.mapping.confirm({ select = true }),
+      -- }
+      ),
       sources = {
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },

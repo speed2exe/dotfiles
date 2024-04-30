@@ -4,12 +4,9 @@ selection=$(history | cut -c 8- \
   | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \
   | tac \
   | awk '!x[$0]++' \
-  | tee /tmp/.bash_history \
   | rg --color=always "$READLINE_LINE" \
   | fzf --ansi --no-sort --query "$READLINE_LINE")
 
 test -n "$selection" \
   && READLINE_LINE="$selection" \
   && READLINE_POINT=${#READLINE_LINE}
-
-tac /tmp/.bash_history > ~/.bash_history
