@@ -6,4 +6,6 @@ dir=$(tac ~/marks/dir_history.txt \
   | fzf --no-sort)
 tac /tmp/dir_history.txt > ~/marks/dir_history.txt
 
-test -d "$dir" && cd "$dir"
+test -n "$dir" \
+  && READLINE_LINE="$READLINE_LINE$dir" \
+  && READLINE_POINT=${#READLINE_LINE}
