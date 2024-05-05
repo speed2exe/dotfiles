@@ -6,8 +6,6 @@ opt.relativenumber = true
 opt.signcolumn = 'yes'
 opt.swapfile = false
 opt.cursorline = true
-opt.cmdheight = 0
--- opt.winbar = '%f'
 
 -- Tabs and Indentation
 opt.tabstop = 2
@@ -44,12 +42,4 @@ vim.cmd [[
   highlight Search         guibg=#44475a guifg=reverse
 
   highlight QuickFixLine   guibg=#44475a guifg=reverse
-
 ]]
-
--- Allow disabling all statuslines
--- https://github.com/neovim/neovim/issues/18965
--- set laststatus=0
--- hi! link StatusLine Normal
--- hi! link StatusLineNC Normal
--- set statusline=%{repeat('─',winwidth('.'))}
