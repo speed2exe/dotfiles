@@ -39,10 +39,8 @@ return {
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   'neovim/nvim-lspconfig',
-  'nvim-lua/lsp-status.nvim',
 
   -- TreeSitter stuff
-  'nvim-treesitter/nvim-treesitter-refactor',
   {
     'nvim-treesitter/nvim-treesitter-context',
     config = function()
