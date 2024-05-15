@@ -52,7 +52,7 @@ set('n', '<leader>g', t_builtin.lsp_definitions)
 set('n', '<leader>x', t_builtin.lsp_type_definitions)
 set('n', '<leader>i', t_builtin.lsp_implementations)
 set('n', '<leader>k', t_builtin.lsp_references)
-set('n', '<leader>t', "<CMD>Oil<CR>") -- traverse
+set('n', '<leader>t', "<CMD>Telescope file_browser path=%:p:h<CR>") -- traverse
 set('n', '<leader><leader>', ":Telescope ")
 
 -- Toggle LSP diagnostics

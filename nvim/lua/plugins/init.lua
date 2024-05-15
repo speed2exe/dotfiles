@@ -33,6 +33,7 @@ return {
   -- Telescope stuff
   'nvim-lua/plenary.nvim',
   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  'nvim-telescope/telescope-file-browser.nvim',
 
   -- LSP stuff
   "williamboman/mason.nvim",
@@ -55,16 +56,6 @@ return {
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-path',
   'ray-x/cmp-treesitter',
-
-  {
-    'stevearc/oil.nvim',
-    opts = {},
-    -- Optional dependencies
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("oil").setup()
-    end
-  },
 
   -- Zig
   {
