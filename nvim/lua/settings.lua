@@ -29,6 +29,7 @@ vim.cmd [[
 
   highlight WinSeparator    guibg=NONE
   highlight StatusLine      guibg=NONE
+  highlight TabLineFill     guibg=NONE
   highlight Normal          guibg=NONE
   highlight SignColumn      guibg=NONE
   highlight CmpItemAbbr     guibg=NONE
