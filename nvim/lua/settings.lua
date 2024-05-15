@@ -6,8 +6,6 @@ opt.relativenumber = true
 opt.signcolumn = 'yes'
 opt.swapfile = false
 opt.cursorline = true
-opt.laststatus = 0
-opt.showtabline = 2
 
 -- Tabs and Indentation
 opt.tabstop = 2
