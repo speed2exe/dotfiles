@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-path=$(fd --hidden --no-ignore | fzf)
+path=$(fd --color=always --hidden --no-ignore | fzf --ansi)
 pre_cursor="${READLINE_LINE:0:$READLINE_POINT}$path"
 test -n "$path" \
   && READLINE_LINE="$pre_cursor${READLINE_LINE:$READLINE_POINT}" \
