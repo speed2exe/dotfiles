@@ -30,11 +30,11 @@ set('n', '<leader>yf', '<CMD>let @+ = expand("%:p")<CR>')
 set('n', '<leader>yl', '<CMD>let @+ = join([expand("%:p"), line(".")], ":")<CR>')
 -- copy current file path with line number and column number to clipboard
 set('n', '<leader>yc', function()
-	local p = vim.fn.expand("%:p")
-	local l = vim.fn.line('.')
-	local c = vim.fn.col('.')
-	local result = p .. ":" .. l .. ":" .. c
-	vim.fn.setreg("+", result)
+  local p = vim.fn.expand("%:p")
+  local l = vim.fn.line('.')
+  local c = vim.fn.col('.')
+  local result = p .. ":" .. l .. ":" .. c
+  vim.fn.setreg("+", result)
 end)
 
 -- Telescope
@@ -63,6 +63,17 @@ set('n', '<leader>l', fn.toggle_lsp_lines) -- diagnostics line
 set('n', '<leader>r', vim.lsp.buf.rename)
 set('n', '<leader>a', vim.lsp.buf.code_action)
 set('n', '<leader>n', vim.lsp.buf.format) -- neat
+set('n', '<leader>c', function()          -- check
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end)
+set('n', '<leader>m', function() -- print lsp status
+  local status = vim.lsp.status()
+  if status == '' then
+    print('vim.lsp.status() => (no message)')
+  else
+    print(status)
+  end
+end)
 set('n', '<leader>e', ':term ')
 set('v', '<leader>e', ':w! /tmp/nvim-shell-cmd.sh<CR>:term source /tmp/nvim-shell-cmd.sh<CR>')
 set('n', '<leader>u', '<CMD>lcd %:p:h<CR>') -- go to current file directory
