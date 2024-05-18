@@ -60,7 +60,6 @@ set('n', '<leader>l', fn.toggle_lsp_lines) -- diagnostics line
 
 -- Custom Personal Mapping
 set('n', '<leader>r', vim.lsp.buf.rename)
-set('n', '<leader>h', vim.lsp.buf.hover)
 set('n', '<leader>a', vim.lsp.buf.code_action)
 set('n', '<leader>n', vim.lsp.buf.format) -- neat
 set('n', '<leader>e', ':term ')
