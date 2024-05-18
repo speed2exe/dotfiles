@@ -33,6 +33,7 @@ vim.cmd [[
   highlight Normal          guibg=NONE
   highlight SignColumn      guibg=NONE
   highlight CmpItemAbbr     guibg=NONE
+  highlight LspInlayHint    guibg=NONE
 
   highlight TelescopeNormal guibg=NONE
   highlight NormalFloat     guibg=NONE
