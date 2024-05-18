@@ -66,7 +66,6 @@ set('n', '<leader>n', vim.lsp.buf.format) -- neat
 set('n', '<leader>e', ':term ')
 set('v', '<leader>e', ':w! /tmp/nvim-shell-cmd.sh<CR>:term source /tmp/nvim-shell-cmd.sh<CR>')
 set('n', '<leader>u', '<CMD>lcd %:p:h<CR>') -- go to current file directory
-set('n', '<leader>m', vim.diagnostic.open_float)
 
 -- quickfix navigation
 set('n', '<C-Q>', fn.toggle_quickfix)
