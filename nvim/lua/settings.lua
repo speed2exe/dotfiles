@@ -42,6 +42,7 @@ vim.cmd [[
   highlight CursorLine     guibg=#282a36 guifg=reverse
   highlight IncSearch      guibg=#44475a guifg=reverse
   highlight Search         guibg=#44475a guifg=reverse
+  highlight CurSearch      guibg=#44475a guifg=reverse
 
   highlight QuickFixLine   guibg=#44475a guifg=reverse
 ]]
