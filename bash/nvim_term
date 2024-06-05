@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-test -n "$READLINE_LINE" && nvim -c ":term $READLINE_LINE"
+printf "$READLINE_LINE" > /tmp/nvim-shell-cmd.sh
+nvim -c ":term source /tmp/nvim-shell-cmd.sh"
