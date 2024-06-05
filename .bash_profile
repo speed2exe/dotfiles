@@ -2,7 +2,6 @@
 # ~/.bash_profile
 #
 
-export PS1='$(exit_status)$(starship prompt)\n '
 export MANPAGER='nvim +Man!'
 export PATH=$PATH:~/.config/bash
 
