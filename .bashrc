@@ -52,6 +52,8 @@ bind -x '"\C-O":"nvim +:Telescope\ oldfiles"'
 bind -x '"\C-S":"nvim +:Telescope\ live_grep"'
 bind -x '"\C-F":"nvim +:Telescope\ find_files"'
 bind -x '"\C-L":"clear"'
+bind -x '"\C-X":"source ~/.config/bash/fzf_tmux_line"'
+bind -x '"\C-A":"source ~/.config/bash/fzf_tmux_word"'
 # bind -x '"\C-X":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
 # bind -m vi-command -x '"v":"echo$ v ~/temp.bash"'
 

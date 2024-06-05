@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+word="$(tmux capture-pane -pe \
+  | tr ' ' '\n' \
+  | awk '!x[$0]++' \
+  | fzf --ansi --layout=reverse --height=30%)" || return
+
+pre_cursor="${READLINE_LINE:0:$READLINE_POINT}$word"
+READLINE_LINE="$pre_cursor${READLINE_LINE:$READLINE_POINT}"
+READLINE_POINT=${#pre_cursor}
