@@ -90,16 +90,7 @@ post_processing = true
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
 
 [hints.enabled.binding]
-key = "Escape"
-mods = "Alt"
-
-[[hints.enabled]]
-command = "neovide"
-post_processing = true
-regex = '[\w|/|-]+\.[\w]+(:[\d]+)*'
-
-[hints.enabled.binding]
-key = "R"
+key = "O"
 mods = "Alt"
 
 [[hints.enabled]]
@@ -108,7 +99,7 @@ post_processing = true
 regex = "[^ ]+ "
 
 [hints.enabled.binding]
-key = "N"
+key = "L"
 mods = "Alt"
 
 [[hints.enabled]]
@@ -117,62 +108,8 @@ post_processing = true
 regex = ".+ "
 
 [hints.enabled.binding]
-key = "T"
+key = "W"
 mods = "Alt"
-
-[[keyboard.bindings]]
-action = "Paste"
-key = "V"
-mods = "Alt"
-
-[[keyboard.bindings]]
-action = "Copy"
-key = "C"
-mods = "Alt"
-
-[[keyboard.bindings]]
-action = "IncreaseFontSize"
-key = "Equals"
-mods = "Alt"
-
-[[keyboard.bindings]]
-action = "DecreaseFontSize"
-key = "Minus"
-mods = "Alt"
-
-[[keyboard.bindings]]
-action = "ScrollPageDown"
-key = "D"
-mods = "Alt"
-
-[[keyboard.bindings]]
-action = "ScrollPageUp"
-key = "U"
-mods = "Alt"
-
-[[keyboard.bindings]]
-action = "ScrollLineDown"
-key = "J"
-mods = "Alt"
-
-[[keyboard.bindings]]
-action = "ScrollLineUp"
-key = "K"
-mods = "Alt"
-
-[[keyboard.bindings]]
-action = "ToggleViMode"
-key = "Space"
-mods = "Alt"
-
-[[keyboard.bindings]]
-action = "CreateNewWindow"
-key = "Return"
-mods = "Alt"
-
-[shell]
-args = ["fish"]
-program = "/usr/bin/env"
 
 [window]
 opacity = 0.5
