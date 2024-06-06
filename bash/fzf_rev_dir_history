@@ -3,7 +3,7 @@
 dir=$(tac ~/marks/dir_history.txt \
   | awk '!x[$0]++' \
   | tee /tmp/dir_history.txt \
-  | fzf --no-sort)
+  | fzf --no-sort --inline-info)
 tac /tmp/dir_history.txt > ~/marks/dir_history.txt
 
 test -n "$dir" && cd "$dir"
