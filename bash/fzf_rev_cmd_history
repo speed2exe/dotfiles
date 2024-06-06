@@ -5,7 +5,7 @@ selection=$(history | cut -c 8- \
   | tac \
   | awk '!x[$0]++' \
   | rg --color=always "$READLINE_LINE" \
-  | fzf --ansi --no-sort --query "$READLINE_LINE")
+  | fzf --ansi --no-sort --query "$READLINE_LINE" --inline-info)
 
 test -n "$selection" \
   && READLINE_LINE="$selection" \
