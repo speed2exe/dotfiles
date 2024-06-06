@@ -3,7 +3,7 @@
 word="$(tmux capture-pane -pe \
   | tr ' ' '\n' \
   | awk '!x[$0]++' \
-  | fzf --ansi --layout=reverse --height=30%)" || return
+  | fzf --ansi --layout=reverse --height=1 --inline-info)" || return
 
 pre_cursor="${READLINE_LINE:0:$READLINE_POINT}$word"
 READLINE_LINE="$pre_cursor${READLINE_LINE:$READLINE_POINT}"
