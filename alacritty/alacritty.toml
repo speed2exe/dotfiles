@@ -99,7 +99,7 @@ post_processing = true
 regex = "[^ ]+ "
 
 [hints.enabled.binding]
-key = "L"
+key = "W"
 mods = "Alt"
 
 [[hints.enabled]]
@@ -108,7 +108,7 @@ post_processing = true
 regex = ".+ "
 
 [hints.enabled.binding]
-key = "W"
+key = "L"
 mods = "Alt"
 
 [window]
