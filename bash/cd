@@ -5,7 +5,7 @@ builtin cd $@
 
 # update dir history
 mkdir -p ~/marks/
-echo "$PWD/" >> ~/marks/dir_history.txt
+echo "$PWD" | sed "s|$HOME|~|" >> ~/marks/dir_history.txt
 
 # update git dir history
 git_dir=$(git rev-parse --show-toplevel 2> /dev/null) \
