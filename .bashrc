@@ -62,3 +62,6 @@ stty -ixon
 
 # source extra init file (if any)
 test -f ~/.init.bash && source ~/.init.bash || true
+
+# clean up when shell exits
+trap 'source ~/.config/bash/cleanup' EXIT

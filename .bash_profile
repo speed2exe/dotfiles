@@ -7,7 +7,6 @@ export HISTSIZE=4096
 export HISTFILESIZE=8192
 
 export MANPAGER='nvim +Man!'
-export PATH=$PATH:~/.config/bash
 
 # auto startx after login
 [[ -z $DISPLAY && $XDG_VTNR ]] && startx

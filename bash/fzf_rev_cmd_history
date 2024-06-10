@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 
-selection=$(history | cut -c 8- \
-  | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \
+selection=$(history \
   | tac \
-  | awk '!x[$0]++' \
-  | rg --color=always "$READLINE_LINE" \
-  | fzf --ansi --no-sort --query "$READLINE_LINE" --inline-info)
+  | rg "$READLINE_LINE" \
+  | fzf --no-sort --query "$READLINE_LINE" --inline-info)
 
 test -n "$selection" \
-  && READLINE_LINE="$selection" \
+  && READLINE_LINE="${selection:7}" \
   && READLINE_POINT=${#READLINE_LINE}
