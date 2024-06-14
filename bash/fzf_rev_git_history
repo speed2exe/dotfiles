@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-dir=$(tac ~/marks/git_dir_history.txt \
-  | awk '!x[$0]++' \
-  | tee /tmp/git_dir_history.txt \
-  | fzf --no-sort --inline-info)
-tac /tmp/git_dir_history.txt > ~/marks/git_dir_history.txt
-
-test -n "$dir" && cd "$dir"

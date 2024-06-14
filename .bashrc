@@ -18,7 +18,7 @@ if command -v tmux &> /dev/null; then
   fi
 fi
 
-alias v='nvim'
+alias e='nvim'
 alias cat='bat --theme=Dracula --plain --no-pager'
 alias xcopy='xclip -selection clipboard'
 alias cd='source ~/.config/bash/cd'
@@ -43,15 +43,13 @@ PS1='$(exit_status)$(starship prompt)\n$ '
 set -o vi
 
 # key bindings
-bind -x '"\C-H":"source ~/.config/bash/fzf_rev_dir_history"'
 bind -x '"\C-T":"source ~/.config/bash/fd_goto"'
-bind -x '"\C-G":"source ~/.config/bash/fzf_rev_git_history"'
+bind -x '"\C-H":"source ~/.config/bash/fzf_rev_dir_history"'
+bind -x '"\C-G":"source ~/.config/bash/fzf_rev_git_dir_history"'
 bind -x '"\C-R":"source ~/.config/bash/fzf_rev_cmd_history"'
 bind -x '"\C-E":"source ~/.config/bash/nvim_term"'
 bind -x '"\C-O":"nvim +:Telescope\ oldfiles"'
-# bind -x '"\C-S":"nvim +:Telescope\ live_grep"'
 bind -x '"\C-S":"source ~/.config/bash/fzf_rg"'
-# bind -x '"\C-F":"nvim +:Telescope\ find_files"'
 bind -x '"\C-F":"source ~/.config/bash/fzf_fd"'
 bind -x '"\C-L":"clear"'
 bind -x '"\C-X":"source ~/.config/bash/fzf_tmux_line"'
