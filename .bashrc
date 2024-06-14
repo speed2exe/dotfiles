@@ -43,7 +43,7 @@ PS1='$(exit_status)$(starship prompt)\n$ '
 set -o vi
 
 # key bindings
-bind -x '"\C-T":"source ~/.config/bash/fd_goto"'
+bind -x '"\C-T":"source ~/.config/bash/fzf_nav_rec"'
 bind -x '"\C-H":"source ~/.config/bash/fzf_rev_dir_history"'
 bind -x '"\C-G":"source ~/.config/bash/fzf_rev_git_dir_history"'
 bind -x '"\C-R":"source ~/.config/bash/fzf_rev_cmd_history"'
