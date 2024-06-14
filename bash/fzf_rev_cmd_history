@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
 selection=$(history \
-  | tac \
   | rg "$READLINE_LINE" \
-  | fzf --no-sort --color=16 --query "$READLINE_LINE" --inline-info)
+  | fzf --tac --no-sort --layout=reverse --color=16 --query "$READLINE_LINE" --inline-info)
 
 test -n "$selection" \
   && READLINE_LINE="${selection:7}" \
