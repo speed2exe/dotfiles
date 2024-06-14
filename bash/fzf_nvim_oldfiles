@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 selection=$(nvim --headless +':oldfiles' +':qa!' 2>&1 \
-  | rg "$PWD" \
+  | rg "$PWD/" \
   | sed 's/.$//' \
   | fzf --ansi --inline-info \
         --preview='bat --number --color=always --theme=Dracula {2}' \
