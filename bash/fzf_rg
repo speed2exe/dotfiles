@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+selection=$(rg "$READLINE_LINE" --line-number --color=always \
+  | fzf --ansi --inline-info \
+        --delimiter=':' \
+        --preview='bat --number --color=always --theme=Dracula --highlight-line={2} {1}' \
+        --preview-window='+{2}/2' \
+        --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
+      )
+
+test -z "$selection" && return
+
+file_name=$(cut --delimiter=':' --fields=1 <<< "$selection")
+line_number=$(cut --delimiter=':' --fields=2 <<< "$selection")
+nvim +"$line_number" "$file_name"
