@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 selection=$(rg "$READLINE_LINE" --line-number --color=always --hidden --no-ignore \
-  | fzf --ansi --inline-info \
+  | fzf --ansi --color=16 --inline-info \
         --delimiter=':' \
         --preview='bat --number --color=always --theme=Dracula --highlight-line={2} {1}' \
         --preview-window='noborder,+{2}/2' \
