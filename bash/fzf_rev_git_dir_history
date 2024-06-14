@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-dir=$(tac ~/marks/dir_history.txt \
+dir=$(tac ~/marks/git_dir_history.txt \
   | awk '!x[$0]++' \
-  | tee /tmp/dir_history.txt \
+  | tee /tmp/git_dir_history.txt \
   | fzf --no-sort --inline-info \
         --preview='exa --color=always --icons --sort accessed --color-scale=all --no-quotes --long --binary --time-style long-iso --git {}' \
         --preview-window=noborder)
 
-tac /tmp/dir_history.txt > ~/marks/dir_history.txt
+tac /tmp/git_dir_history.txt > ~/marks/git_dir_history.txt
 
 test -n "$dir" && cd "$dir"
