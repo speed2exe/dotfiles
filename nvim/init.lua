@@ -20,6 +20,7 @@ require('lazy').setup('plugins')
 -- Custom stuff
 require('keymap')   -- ~/.config/nvim/lua/keymap.lua
 require('settings') -- ~/.config/nvim/lua/settings.lua
+require('autocmd')  -- ~/.config/nvim/lua/autocmd.lua
 
 -- neovide stuff
 if vim.g.neovide then
