@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
 selection=$(history \
+  | sed 's/^.\{7\}//' \
   | rg "$READLINE_LINE" \
-  | fzf --tac --no-sort --layout=reverse --color=16 --query "$READLINE_LINE" --inline-info)
+  | fzf --tac --no-sort --color=16 --query "$READLINE_LINE" --inline-info)
 
 test -n "$selection" \
-  && READLINE_LINE="${selection:7}" \
+  && READLINE_LINE="$selection" \
   && READLINE_POINT=${#READLINE_LINE}
