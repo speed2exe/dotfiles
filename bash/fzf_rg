@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-selection=$(rg "$READLINE_LINE" --line-number --color=always \
+selection=$(rg "$READLINE_LINE" --line-number --color=always --hidden --no-ignore \
   | fzf --ansi --inline-info \
         --delimiter=':' \
         --preview='bat --number --color=always --theme=Dracula --highlight-line={2} {1}' \
