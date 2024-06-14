@@ -3,7 +3,7 @@
 line="$(tmux capture-pane -pe \
   | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \
   | awk '!x[$0]++' \
-  | fzf --ansi --layout=reverse --height=1 --inline-info)" || return
+  | fzf --ansi --color=16 --layout=reverse --height=1 --inline-info)" || return
 
 pre_cursor="${READLINE_LINE:0:$READLINE_POINT}$line"
 READLINE_LINE="$pre_cursor${READLINE_LINE:$READLINE_POINT}"

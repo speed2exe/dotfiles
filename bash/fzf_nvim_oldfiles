@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 selection=$(nvim --headless +':oldfiles' +':qa!' 2>&1 \
-  | rg "$PWD/" \
   | sed 's/.$//' \
-  | fzf --ansi --inline-info \
-        --preview='bat --number --color=always --theme=Dracula {2}' \
-        --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
-        --preview-window=noborder \
-      )
+  | fzf --ansi --color=16 --inline-info \
+      --query "$PWD/" \
+      --preview='bat --number --color=always --theme=Dracula {2}' \
+      --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
+      --preview-window=noborder \
+    )
 
 test -z "$selection" && return
 nvim $(cut --delimiter=' ' --fields=2 <<< "$selection")
