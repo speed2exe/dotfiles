@@ -65,3 +65,6 @@ test -f ~/.init.bash && source ~/.init.bash || true
 
 # clean up when shell exits
 trap 'source ~/.config/bash/cleanup' EXIT
+
+# put cursor at the bottom of the screen
+tput cup $(tput lines) 0
