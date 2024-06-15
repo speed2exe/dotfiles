@@ -46,7 +46,9 @@ set('n', '<leader>f', t_builtin.find_files)
 set('n', '<leader>s', t_builtin.live_grep) -- search
 set('v', '<leader>s', t_builtin.grep_string)
 set('n', '<leader>w', t_builtin.lsp_dynamic_workspace_symbols)
-set('n', '<leader>o', t_builtin.oldfiles)
+set('n', '<leader>o', function()
+  t_builtin.oldfiles({ default_text = vim.fn.getcwd() })
+end)
 set('n', '<leader>b', t_builtin.buffers)
 set('n', '<leader>g', t_builtin.lsp_definitions)
 set('n', '<leader>x', t_builtin.lsp_type_definitions)
@@ -54,7 +56,6 @@ set('n', '<leader>i', t_builtin.lsp_implementations)
 set('n', '<leader>k', t_builtin.lsp_references)
 set('n', '<leader>h', t_builtin.help_tags)
 set('n', '<leader>t', "<CMD>Telescope file_browser path=%:p:h<CR>") -- traverse
-set('n', '<leader><leader>', ":Telescope ")
 
 -- Toggle LSP diagnostics
 set('n', '<leader>l', fn.toggle_lsp_lines) -- diagnostics line
