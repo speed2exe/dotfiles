@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 selection=$(nvim --headless +':oldfiles' +':qa!' 2>&1 \
+  | cut --delimiter=' ' --fields=2- \
   | sed 's/.$//' \
   | fzf --ansi --color=16 --inline-info \
       --query "$PWD/" \
@@ -10,4 +11,4 @@ selection=$(nvim --headless +':oldfiles' +':qa!' 2>&1 \
     )
 
 test -z "$selection" && return
-nvim $(cut --delimiter=' ' --fields=2 <<< "$selection")
+nvim $selection"
