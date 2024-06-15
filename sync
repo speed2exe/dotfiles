@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# This script symlinks all the dotfiles to the home directory
+set -e
+
+# must be run in the current directory
+cd "$(dirname "$0")"
+
+# create the config directory if it doesn't exist
+mkdir -p ~/.config
+
+sources=(
+  ".config/nix"
+  ".config/nvim"
+  ".config/neofetch"
+  ".config/fontconfig"
+  ".config/alacritty"
+  ".config/bspwm"
+  ".config/polybar"
+  ".config/sxhkd"
+  ".config/rofi"
+  ".config/picom"
+  ".config/dunst"
+  ".config/gtk-3.0"
+  ".config/hypr"
+  ".config/bash"
+  ".config/tmux"
+  ".config/starship.toml"
+
+  ".xinitrc"
+  ".bash_profile"
+  ".bashrc"
+)
+
+for source in "${sources[@]}"; do
+  rm -rf ~/$source
+  ln --symbolic --force $(pwd)/$source ~/$source
+done
