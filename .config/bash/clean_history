@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Remove duplicates from the bash history
+tac ~/.bash_history \
+  | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \
+  | awk '!x[$0]++' \
+  | tac > ~/.bash_history.tmp
+
+mv ~/.bash_history.tmp ~/.bash_history

@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-# Remove duplicates from the bash history
-sed 's/^[[:space:]]*//;s/[[:space:]]*$//' ~/.bash_history \
-  | awk '{ lines[$0] = NR } END { for (line in lines) order[lines[line]] = line; for (i = 1; i <= NR; i++) if (i in order) print order[i] }' > ~/.bash_history.tmp
-mv ~/.bash_history.tmp ~/.bash_history
