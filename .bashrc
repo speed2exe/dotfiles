@@ -38,7 +38,7 @@ function exit_status {
 }
 
 # nicer prompt
-PS1='$(exit_status)$(starship prompt)\n$ '
+PS1='$(exit_status) $(starship prompt)\n$ '
 
 # vi mode
 set -o vi
