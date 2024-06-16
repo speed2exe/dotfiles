@@ -29,6 +29,7 @@ alias lla='ll --all'
 alias git-ref='git for-each-ref --sort=creatordate --format "%(color:red)%(refname) %(color:green)%(objectname) %(color:blue)%(creatordate) %(color:magenta)%(authorname) %(color:yellow)%(contents:subject)"'
 alias git-tag='git-ref refs/tags'
 alias git-graph='git log --graph --decorate --oneline --all'
+alias clean-history='source ~/.config/bash/clean_history'
 
 # show exit status in prompt
 function exit_status {
@@ -62,6 +63,3 @@ stty -ixon
 
 # source extra init file (if any)
 test -f ~/.init.bash && source ~/.init.bash || true
-
-# clean up when shell exits
-trap 'source ~/.config/bash/cleanup' EXIT
