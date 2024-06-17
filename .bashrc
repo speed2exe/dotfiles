@@ -30,6 +30,7 @@ alias git-ref='git for-each-ref --sort=creatordate --format "%(color:red)%(refna
 alias git-tag='git-ref refs/tags'
 alias git-graph='git log --graph --decorate --oneline --all'
 alias clean-history='source ~/.config/bash/clean_history'
+alias v='tmux capture-pane -p -e -S -3000 | nvim -c ":%s/\v\n{2,}$/\r/" -c "Ansi"'
 
 # show exit status in prompt
 function exit_status {
