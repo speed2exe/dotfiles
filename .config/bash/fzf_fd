@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-selection=$(fd "$READLINE_LINE" --color=always --hidden --no-ignore \
+selection=$(fd --color=always --hidden --no-ignore \
   | fzf --ansi --color=16 --inline-info \
         --preview='(test -f {} && bat --number --color=always --theme=Dracula {}) || (test -d {} && exa --color=always --icons --sort accessed --color-scale=all --no-quotes --long --binary --time-style long-iso --git {})' \
         --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
         --preview-window=noborder \
+        --query="$READLINE_LINE" \
       )
 
 test -z "$selection" && return
