@@ -4,8 +4,7 @@ dir=$(tac ~/marks/git_dir_history.txt \
   | awk '!x[$0]++' \
   | tee /tmp/git_dir_history.txt \
   | fzf --no-sort --color=16 --inline-info \
-        --preview='exa --color=always --icons --sort accessed --color-scale=all --no-quotes --long --binary --time-style long-iso --git {}' \
-        --preview-window=noborder \
+        --query="$PWD/" \
     )
 
 tac /tmp/git_dir_history.txt > ~/marks/git_dir_history.txt
