@@ -111,5 +111,5 @@ regex = ".+ "
 key = "L"
 mods = "Alt"
 
-[window]
-opacity = 0.5
+# [window]
+# opacity = 0.5
