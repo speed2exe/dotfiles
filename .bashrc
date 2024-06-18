@@ -41,9 +41,6 @@ function exit_status {
 # nicer prompt
 PS1='$(exit_status) $(starship prompt)\n$ '
 
-# vi mode
-set -o vi
-
 # key bindings
 bind -x '"\C-T":"source ~/.config/bash/fzf_nav_rec"'
 bind -x '"\C-H":"source ~/.config/bash/fzf_rev_dir_history"'

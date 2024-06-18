@@ -30,6 +30,7 @@ sources=(
   ".xinitrc"
   ".bash_profile"
   ".bashrc"
+  ".inputrc"
 )
 
 for source in "${sources[@]}"; do
