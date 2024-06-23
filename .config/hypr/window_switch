@@ -2,11 +2,7 @@
 
 set -e
 
-ADDRESS=$(hyprctl clients -j \
-	| jq -r '.[] | select(.pid != -1) | "address:\(.address) class:\(.class)"' \
-	| column --table \
-	| fzf \
-        --preview-window '70%' \
-	--preview 'A=$(echo {} | cut -d" " -f1 | cut -d: -f2); hyprctl clients -j | jq -r ".[] | select(.address == \"$A\")"')
-
-awk '{print $1}' <<< $ADDRESS | xargs hyprctl dispatch focuswindow
+SELECTION=$(hyprctl clients | rg '^Window ' --color=always | fzf --ansi --color=16 --inline-info)
+test -n "$SELECTION" || exit
+ADDRESS=$(cut -d' ' -f2 <<< "$SELECTION")
+hyprctl dispatch focuswindow "address:0x$ADDRESS"
