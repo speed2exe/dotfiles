@@ -2,7 +2,7 @@
 
 set -e
 
-APP=$(fd '.desktop$' $(tr ':' ' ' <<< $XDG_DATA_DIRS) --color=always \
+APP=$(fd '\.desktop$' $(tr ':' ' ' <<< $XDG_DATA_DIRS) --color=always \
 	| fzf --ansi \
   --preview-window '70%' \
 	--preview 'cat {}')
