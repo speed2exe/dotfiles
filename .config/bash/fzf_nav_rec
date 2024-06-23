@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 while true; do
-  selection=$(fd . "$PWD" --max-depth=1 --color=always --hidden --no-ignore \
+  selection=$(exa --color=always --all \
     | fzf --ansi --color=16 --inline-info \
           --preview='(test -f {} && bat --number --color=always --theme=Dracula {}) || (test -d {} && exa --color=always --icons --sort accessed --color-scale=all --no-quotes --long --binary --time-style long-iso --git {})' \
           --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up,left:become(echo ".."),right:accept' \
