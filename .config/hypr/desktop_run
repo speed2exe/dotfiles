@@ -3,8 +3,7 @@
 set -e
 
 APP=$(fd '\.desktop$' $(tr ':' ' ' <<< $XDG_DATA_DIRS) --color=always \
-	| fzf --ansi \
-  --preview-window '70%' \
-	--preview 'cat {}')
+	| fzf --ansi --color=16 --inline-info --preview='cat {}' --preview-window=noborder)
 
+test -n "$APP" || exit
 hyprctl dispatch exec gio launch $APP
