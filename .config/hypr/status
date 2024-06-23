@@ -1,30 +1,3 @@
 #!/usr/bin/env bash
 
-set -e
-
-cat << EOF | fzf --preview "CMD={}; test -z \"\$CMD\" && ~/.config/hypr/general || eval \$CMD" \
-	--layout reverse \
-        --preview-window '70%,border-bottom' \
-        --bind ctrl-d:preview-half-page-down \
-        --bind ctrl-u:preview-half-page-up \
-        --bind ctrl-j:preview-down \
-        --bind ctrl-k:preview-up
-
-neofetch
-cpufetch
-lsusb
-bluetoothctl devices
-ifconfig
-while true; do mpstat -P ALL; sleep 1; clear; done
-while true; do iostat -p ALL; sleep 1; clear; done
-while true; do pidstat -T ALL; sleep 1; clear; done
-ping 8.8.8.8
-ps aux
-lscpu
-lspci
-cat /etc/passwd
-wlr-randr
-xrandr
-while true; do top -b -n 1; sleep 1; clear; done
-btop --tty_on
-lsblk --all
+echo "DATE: $(date)"
