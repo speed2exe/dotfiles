@@ -24,6 +24,7 @@ sources=(
   ".config/gtk-3.0"
   ".config/hypr"
   ".config/waybar"
+  ".config/dconf"
   ".config/bash"
   ".config/tmux"
   ".config/starship.toml"
