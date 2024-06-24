@@ -23,6 +23,7 @@ sources=(
   ".config/dunst"
   ".config/gtk-3.0"
   ".config/hypr"
+  ".config/waybar"
   ".config/bash"
   ".config/tmux"
   ".config/starship.toml"
