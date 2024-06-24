@@ -1,0 +1,51 @@
+{
+  "modules-left": [
+    "cpu",
+    "memory",
+    "disk",
+  ],
+  "modules-center": [
+    "hyprland/workspaces",
+  ],
+  "modules-right": [
+    "backlight",
+    "battery",
+    "wireplumber",
+    "custom/network",
+    "custom/clock",
+  ],
+
+  "cpu": {
+    "interval": 2,
+    "format": "<span color=\"#bd93f9\">CPU</span> {usage}%",
+  },
+  "memory": {
+    "interval": 5,
+    "format": " <span color=\"#ff5555\">|</span> <span color=\"#bd93f9\">MEM</span> {used}/{total} <span color=\"#ff5555\">|</span> <span color=\"#bd93f9\">SWAP</span> {swapUsed}/{swapTotal}"
+  },
+  "disk": {
+    "interval": 10,
+    "format": " <span color=\"#ff5555\">|</span> <span color=\"#bd93f9\">DISK</span> {used}/{total}",
+  },
+
+  "backlight": {
+    "format": "<span color=\"#bd93f9\">BL</span> {percent}% <span color=\"#ff5555\">|</span> ",
+  },
+  "battery": {
+    "interval": 5,
+    "format": "<span color=\"#bd93f9\">BATT</span> {capacity} {power} {time} <span color=\"#ff5555\">|</span> ",
+  },
+  "wireplumber": {
+    "format": "<span color=\"#bd93f9\">VOL</span> {volume}% <span color=\"#ff5555\">|</span> ",
+    "format-muted": "<span color=\"#bd93f9\">VOL</span> MUT <span color=\"#ff5555\">|</span> ",
+  },
+  "custom/network": {
+    "format": "<span color=\"#bd93f9\">NET</span> {} <span color=\"#ff5555\">|</span> ",
+    "interval": 2,
+    "exec": "nmcli",
+  },
+  "custom/clock": {
+    "interval": 1,
+    "exec": "date"
+  },
+}
