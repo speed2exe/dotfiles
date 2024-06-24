@@ -1,0 +1,12 @@
+* {
+  font-family: 'Jost*';
+  font-size: 14pt;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+#workspaces button.active {
+  background: #bd93f9;
+  color: #000;
+}
