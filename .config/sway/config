@@ -1,6 +1,9 @@
 exec dunst
 exec waybar
 
+output * bg #000000 solid_color
+output DP-2 mode 3440x1440@175Hz
+
 default_border pixel 1
 default_floating_border pixel 1
 
