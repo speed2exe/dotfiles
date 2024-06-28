@@ -57,6 +57,7 @@
   # Packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    vulkan-validation-layers
 
     # Nix
     home-manager
@@ -101,6 +102,7 @@
   programs.waybar.enable = true;
   environment.variables.WLR_NO_HARDWARE_CURSORS = "1";
   environment.variables.NIXOS_OZONE_WL = "1";
+  environment.variables.WLR_RENDERER = "vulkan";
 
   # SwayWM
   programs.sway = {
