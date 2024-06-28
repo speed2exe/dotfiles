@@ -10,3 +10,12 @@
   background: #bd93f9;
   color: #000;
 }
+
+#workspaces button.focused {
+  background: #bd93f9;
+  color: #000;
+}
+
+#workspaces button.urgent {
+  background: #ff5555;
+}
