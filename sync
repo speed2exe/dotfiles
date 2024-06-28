@@ -23,6 +23,7 @@ sources=(
   ".config/dunst"
   ".config/gtk-3.0"
   ".config/hypr"
+  ".config/sway"
   ".config/waybar"
   ".config/dconf"
   ".config/bash"
