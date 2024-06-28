@@ -18,7 +18,7 @@
 
   "cpu": {
     "interval": 2,
-    "format": "<span color=\"#bd93f9\">CPU</span> {usage}%",
+    "format": " <span color=\"#bd93f9\">CPU</span> {usage}%",
   },
   "memory": {
     "interval": 5,
@@ -46,6 +46,7 @@
     "exec": "nmcli",
   },
   "custom/clock": {
+    "format": "<span color=\"#bd93f9\">TIME</span> {} ",
     "interval": 1,
     "exec": "date"
   },
