@@ -18,7 +18,7 @@ if command -v tmux &> /dev/null; then
   fi
 fi
 
-alias e='nvim'
+alias e='source ~/.config/bash/edit'
 alias cat='bat --theme=Dracula --plain --no-pager'
 alias xcopy='xclip -selection clipboard'
 alias cd='source ~/.config/bash/cd'
