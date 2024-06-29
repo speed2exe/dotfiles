@@ -80,7 +80,7 @@
     wl-clipboard
 
     # flakes
-    inputs.persway.packages.${system}.default
+    # inputs.persway.packages.${system}.default
   ];
 
   # https://github.com/Mic92/nix-ld
