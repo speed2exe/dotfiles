@@ -24,6 +24,9 @@ bindsym Mod4+q kill
 # Reload the configuration file
 bindsym Mod4+l reload
 
+# Screenshot
+bindsym Mod4+s exec ~/.config/sway/screenshot
+
 # Change Focus
 bindsym Mod4+d focus left
 bindsym Mod4+e focus down

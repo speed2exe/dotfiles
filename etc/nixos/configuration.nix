@@ -78,6 +78,7 @@
     tmux glib neovim
     # Wayland
     wl-clipboard
+    grim slurp
 
     # flakes
     # inputs.persway.packages.${system}.default
