@@ -13,10 +13,12 @@ client.unfocused #000000 #000000 #bd93f9
 client.urgent #ff5555 #ff5555 #000000
 
 # Terminal
-bindsym Mod4+Return exec alacritty
+bindsym Mod4+x splitv; exec alacritty
+bindsym Mod4+k splith; exec alacritty
 
 # Switcher
-bindsym Mod4+Space exec rofi -show combi -show-icons -steal-focus
+bindsym Mod4+b splitv; exec rofi -show combi -show-icons -steal-focus
+bindsym Mod4+v splith; exec rofi -show combi -show-icons -steal-focus
 
 # Kill focused window
 bindsym Mod4+q kill
@@ -70,10 +72,6 @@ bindsym Mod4+Control+8 move container to workspace number 8; workspace number 8
 bindsym Mod4+Control+9 move container to workspace number 9; workspace number 9
 bindsym Mod4+Control+0 move container to workspace number 0; workspace number 0
 bindsym Mod4+Escape move container to workspace back_and_forth; workspace back_and_forth
-
-# Toggle using vertical or horizontal split
-bindsym Mod4+v splith
-bindsym Mod4+b splitv
 
 # Toggle the current focus between tiling and floating mode
 bindsym Mod4+o floating toggle
