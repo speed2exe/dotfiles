@@ -63,5 +63,18 @@ return {
     config = function()
       require('zig-comp-diag').setup()
     end
+  },
+
+  -- Flutter
+  {
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+    config = function()
+      require("flutter-tools").setup {} -- use defaults
+    end
   }
 }
