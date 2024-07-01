@@ -5,8 +5,8 @@
     "disk",
   ],
   "modules-center": [
-    // "hyprland/workspaces",
-    "sway/workspaces",
+    "hyprland/workspaces"
+    // "sway/workspaces",
   ],
   "modules-right": [
     "backlight",
