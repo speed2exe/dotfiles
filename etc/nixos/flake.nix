@@ -2,7 +2,7 @@
 
   inputs = {
     nixpkgs.url = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
-    persway.url = "https://github.com/johnae/persway/archive/main.tar.gz";
+    # persway.url = "https://github.com/johnae/persway/archive/main.tar.gz";
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
