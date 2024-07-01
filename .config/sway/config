@@ -15,9 +15,12 @@ client.urgent #ff5555 #ff5555 #000000
 bindsym Mod4+x splitv; exec alacritty
 bindsym Mod4+k splith; exec alacritty
 
-# Switcher
-bindsym Mod4+b splitv; exec rofi -show combi -show-icons -steal-focus
-bindsym Mod4+v splith; exec rofi -show combi -show-icons -steal-focus
+# New window from rofi
+bindsym Mod4+b splitv; exec rofi -show drun -show-icons -steal-focus
+bindsym Mod4+v splith; exec rofi -show drun -show-icons -steal-focus
+
+# Window switcher
+bindsym Mod4+Space exec rofi -show window -show-icons -steal-focus
 
 # Kill focused window
 bindsym Mod4+q kill
