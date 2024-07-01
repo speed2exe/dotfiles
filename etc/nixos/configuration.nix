@@ -57,8 +57,6 @@
   # Packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
-    vulkan-validation-layers
-
     # Nix
     home-manager
 
@@ -78,7 +76,9 @@
     tmux glib neovim
     # Wayland
     wl-clipboard
-    grim slurp
+    grim slurp swaybg
+    xdg-desktop-portal
+    xdg-desktop-portal-wlr
 
     # flakes
     # inputs.persway.packages.${system}.default
@@ -100,16 +100,12 @@
   # direnv
   programs.direnv.enable = true;
 
-  programs.waybar.enable = true;
-  environment.variables.WLR_NO_HARDWARE_CURSORS = "1";
-  environment.variables.NIXOS_OZONE_WL = "1";
-  environment.variables.WLR_RENDERER = "vulkan";
-
-  # SwayWM
-  programs.sway = {
+  # Hyprland
+  programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
+  programs.waybar.enable = true;
 
   # # GPG sign
   # programs.gnupg.agent = {
@@ -120,6 +116,8 @@
 
   # Environment
   environment.variables.EDITOR = "nvim";
+  environment.variables.WLR_NO_HARDWARE_CURSORS = "1";
+  environment.variables.NIXOS_OZONE_WL = "1";
 
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
