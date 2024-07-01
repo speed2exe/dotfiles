@@ -61,22 +61,22 @@
     home-manager
 
     ## Desktop
-    xclip maim pinta xdotool picom
-    sxhkd brightnessctl polybar
-    # rofi
-    rofi-wayland
+    brightnessctl rofi-wayland
     dracula-theme dracula-icon-theme
-    lxappearance dunst nitrogen
-    microsoft-edge firefox
+    dunst microsoft-edge firefox pinta
     ## Terminal
     starship fortune fzf btop
     alacritty bat git fzf eza
     wget fd ripgrep procs
     gh killall gcc gnumake tree
     tmux glib neovim
-    # Wayland
+    ## X11
+    xclip sxhkd polybar
+    nitrogen lxappearance
+    maim xdotool picom
+    ## Wayland
     wl-clipboard
-    grim slurp swaybg
+    grim slurp hyprpaper
 
     # flakes
     # inputs.persway.packages.${system}.default
