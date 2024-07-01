@@ -77,8 +77,6 @@
     # Wayland
     wl-clipboard
     grim slurp swaybg
-    xdg-desktop-portal
-    xdg-desktop-portal-wlr
 
     # flakes
     # inputs.persway.packages.${system}.default
