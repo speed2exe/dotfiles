@@ -9,7 +9,7 @@ cd "$(dirname "$0")"
 # create the config directory if it doesn't exist
 mkdir -p ~/.config
 
-sources=(
+home_config_dirs=(
   ".config/nix"
   ".config/nvim"
   ".config/neofetch"
@@ -36,7 +36,7 @@ sources=(
   ".inputrc"
 )
 
-for source in "${sources[@]}"; do
-  rm -rf ~/$source
-  ln --symbolic --force $(pwd)/$source ~/$source
+for dir in "${home_config_dirs[@]}"; do
+  rm -rf ~/$dir
+  ln --symbolic --force $(pwd)/$dir ~/$dir
 done
