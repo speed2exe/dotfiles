@@ -3,7 +3,7 @@
 {
   imports =
     [ # Hardware
-      ./hardware-configuration.nix
+      /etc/nixos/hardware-configuration.nix
     ];
 
   # Boot loader
