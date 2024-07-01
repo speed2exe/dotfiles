@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# Must be run as root
+# This script symlinks nixos configuration files
+
+# must be run in the current directory
+cd "$(dirname "$0")"
+
+rm -rf /etc/nixos/configuration.nix
+ln --symbolic --force $(pwd)/etc/nixos/configuration.nix /etc/nixos/configuration.nix
+
+rm -rf /etc/nixos/flake.nix
+ln --symbolic --force $(pwd)/etc/nixos/flake.nix /etc/nixos/flake.nix
