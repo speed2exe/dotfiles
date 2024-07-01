@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+set -e
+
+mkdir -p ~/screenshots/
+file="$HOME/screenshots/$(date --iso-8601=seconds).png"
+
+ts=$(date +%s)
+countdown () {
+  for sec in $(seq $1 -1 1); do
+    dunstify -t 1100 --replace=$ts "screenshot in: $sec" &
+    sleep 1
+  done
+}
+
+chosen=$(rofi -steal-focus -l 5 -p 'screenshot' -dmenu -theme-str 'window {width:15%;}' <<EOF
+desktop
+area
+in_5_seconds
+EOF
+)
+
+case $chosen in
+  "desktop")
+    grim -c - | tee "$file" | wl-copy
+    ;;
+  "area")
+    grim -g "$(slurp)" - | tee "$file" | wl-copy
+    ;;
+  "in_5_seconds")
+    countdown '5'
+    sleep 1 && maim -f png "$file"
+    ;;
+  *) dunstify "invalid option: $chosen" exit 1 ;;
+esac
+
+pinta "$file"
