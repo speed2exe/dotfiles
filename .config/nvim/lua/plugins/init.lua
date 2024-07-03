@@ -1,4 +1,5 @@
 local vim = vim
+
 return {
   'github/copilot.vim',
   {
@@ -65,16 +66,10 @@ return {
     end
   },
 
-  -- Flutter
   {
-    'akinsho/flutter-tools.nvim',
-    lazy = false,
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'stevearc/dressing.nvim', -- optional for vim.ui.select
-    },
+    'stevearc/dressing.nvim',
     config = function()
-      require("flutter-tools").setup {} -- use defaults
+      require('dressing').setup()
     end
   }
 }
