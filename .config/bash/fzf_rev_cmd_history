@@ -2,6 +2,7 @@
 
 selection=$(history \
   | sed 's/^.\{7\}//' \
+  | uniq \
   | rg "$READLINE_LINE" \
   | fzf --tac --no-sort --color=16 --query "$READLINE_LINE" --inline-info)
 

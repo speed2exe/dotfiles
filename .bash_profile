@@ -8,8 +8,5 @@ export HISTFILESIZE=8192
 
 export MANPAGER='nvim +Man!'
 
-# auto startx after login
-[[ -z $DISPLAY && $XDG_VTNR ]] && return
-
-# load bashrc if exists
-test -f ~/.bashrc && source ~/.bashrc
+# bashrc
+source ~/.bashrc
