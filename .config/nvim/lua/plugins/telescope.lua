@@ -7,8 +7,8 @@ return {
           height = .99,
           width = .99,
         },
-        -- borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-        borderchars = { "", "", "", "", "", "", "", "" },
+        borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+        -- borderchars = { "", "", "", "", "", "", "", "" },
       },
       pickers = {
         live_grep = {
