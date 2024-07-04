@@ -65,11 +65,4 @@ return {
       require('zig-comp-diag').setup()
     end
   },
-
-  {
-    'stevearc/dressing.nvim',
-    config = function()
-      require('dressing').setup()
-    end
-  }
 }
