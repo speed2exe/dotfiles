@@ -53,6 +53,7 @@ bind -x '"\C-F":"source ~/.config/bash/fzf_fd"'
 bind -x '"\C-L":"clear"'
 bind -x '"\C-X":"source ~/.config/bash/fzf_tmux_line"'
 bind -x '"\C-A":"source ~/.config/bash/fzf_tmux_word"'
+# bind -x '"\C-I":"source ~/.config/bash/fzf_comp"'
 # bind -x '"\C-X":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
 # bind -m vi-command -x '"v":"echo$ v ~/temp.bash"'
 

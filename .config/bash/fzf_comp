@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# inspired from: https://unix.stackexchange.com/questions/25935/how-to-output-string-completions-to-stdout/31023#31023
+
+PRE_CURSOR="${READLINE_LINE:0:$READLINE_POINT}"
+POST_CURSOR="${READLINE_LINE:$READLINE_POINT}"
+
+COMP_LINE="$PRE_CURSOR"
+COMP_WORDS=()
+for WORD in $PRE_CURSOR; do COMP_WORDS+=($WORD); done
+test "${READLINE_LINE:READLINE_POINT-1:1}" = ' ' && COMP_WORDS+=('')
+COMP_CWORD=${#COMP_WORDS[@]}
+((COMP_CWORD--))
+COMP_POINT=${#COMP_LINE}
+COMP_WORDBREAKS='"'"'><=;|&(:"
+COMP_TYPE=9
+COMP_KEY=9
+_command_offset 0 2> /dev/null
+
+test 0 -eq ${#COMPREPLY[@]} && return
+
+test -d "$COMPREPLY" && COMPREPLY="$COMPREPLY/"
+test 1 -eq ${#COMPREPLY[@]} && PRE_CURSOR="${COMP_WORDS[@]:0:${#COMP_WORDS[@]}-1} $COMPREPLY" \
+                            && READLINE_POINT=${#PRE_CURSOR} \
+                            && READLINE_LINE="$PRE_CURSOR$POST_CURSOR" \
+                            && return
+
+SELECTION=$(printf "%s\n" ${COMPREPLY[@]} | fzf --color=16 --inline-info --reverse --height=~30% --query="${COMP_WORDS[-1]}")
+test -d "$SELECTION" && SELECTION="$SELECTION/"
+test -n "$SELECTION" && PRE_CURSOR="${COMP_WORDS[@]:0:${#COMP_WORDS[@]}-1} $SELECTION" \
+                     && READLINE_POINT=${#PRE_CURSOR} \
+                     && READLINE_LINE="$PRE_CURSOR$POST_CURSOR" \
+                     && return
