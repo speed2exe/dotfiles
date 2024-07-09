@@ -54,6 +54,12 @@
     jack.enable = true;
   };
 
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox;
+    nativeMessagingHosts.packages = [ pkgs.firefoxpwa ];
+  };
+
   # Packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -63,7 +69,7 @@
     ## Desktop
     brightnessctl rofi-wayland
     dracula-theme dracula-icon-theme
-    dunst microsoft-edge firefox pinta
+    dunst pinta firefoxpwa
     ## Terminal
     starship fortune fzf btop
     alacritty bat git fzf eza
