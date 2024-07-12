@@ -18,15 +18,14 @@ COMP_KEY=9
 _command_offset 0 2> /dev/null
 
 test 0 -eq ${#COMPREPLY[@]} && return
-
-test -d "$COMPREPLY" && COMPREPLY="$COMPREPLY/"
 test 1 -eq ${#COMPREPLY[@]} && PRE_CURSOR="${COMP_WORDS[@]:0:${#COMP_WORDS[@]}-1} $COMPREPLY" \
                             && READLINE_POINT=${#PRE_CURSOR} \
                             && READLINE_LINE="$PRE_CURSOR$POST_CURSOR" \
                             && return
 
-SELECTION=$(printf "%s\n" ${COMPREPLY[@]} | fzf --color=16 --inline-info --reverse --height=~30% --query="${COMP_WORDS[-1]}")
-test -d "$SELECTION" && SELECTION="$SELECTION/"
+SELECTION=$(printf "%s\n" ${COMPREPLY[@]} | fzf --color=16 --inline-info --reverse --height=~30% \
+  --bind='ctrl-i:accept' \
+  --query="${COMP_WORDS[-1]}")
 test -n "$SELECTION" && PRE_CURSOR="${COMP_WORDS[@]:0:${#COMP_WORDS[@]}-1} $SELECTION" \
                      && READLINE_POINT=${#PRE_CURSOR} \
                      && READLINE_LINE="$PRE_CURSOR$POST_CURSOR" \

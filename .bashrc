@@ -38,6 +38,7 @@ function exit_status {
     || printf "\033[30;41m $? \033[0m"
 }
 
+
 # nicer prompt
 PS1='$(exit_status) $(starship prompt)\n$ '
 
