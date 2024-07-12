@@ -36,8 +36,9 @@ alias v='tmux capture-pane -p -e -S -3000 | nvim -c ":%s/\v\n{2,}$/\r/" -c "Ansi
 function exit_status {
   test $? -eq 0 && printf "\033[42m \033[0m" \
     || printf "\033[30;41m $? \033[0m"
+  local COUNT=$(jobs | wc -l)
+  test $COUNT -ne 0 && printf "\033[30;100m $COUNT \033[0m"
 }
-
 
 # nicer prompt
 PS1='$(exit_status) $(starship prompt)\n$ '
