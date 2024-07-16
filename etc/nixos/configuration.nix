@@ -70,6 +70,7 @@
     brightnessctl rofi-wayland
     dracula-theme dracula-icon-theme
     dunst pinta firefoxpwa
+    gpu-screen-recorder-gtk
     ## Terminal
     starship fortune fzf btop
     alacritty bat git fzf eza
