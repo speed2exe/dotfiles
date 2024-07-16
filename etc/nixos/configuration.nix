@@ -104,12 +104,12 @@
   # direnv
   programs.direnv.enable = true;
 
-  # Hyprland
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-  programs.waybar.enable = true;
+  # # Hyprland
+  # programs.hyprland = {
+  #   enable = true;
+  #   xwayland.enable = true;
+  # };
+  # programs.waybar.enable = true;
 
   # # GPG sign
   # programs.gnupg.agent = {
@@ -120,8 +120,8 @@
 
   # Environment
   environment.variables.EDITOR = "nvim";
-  environment.variables.WLR_NO_HARDWARE_CURSORS = "1";
-  environment.variables.NIXOS_OZONE_WL = "1";
+  # environment.variables.WLR_NO_HARDWARE_CURSORS = "1";
+  # environment.variables.NIXOS_OZONE_WL = "1";
 
   # Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
