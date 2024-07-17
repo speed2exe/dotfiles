@@ -9,6 +9,5 @@ return {
         lspconfig[server].setup {}
       end
     })
-    vim.lsp.inlay_hint.enable()
   end
 }
