@@ -60,21 +60,15 @@ set('n', '<leader>t', "<CMD>Telescope file_browser path=%:p:h<CR>") -- traverse
 -- Toggle LSP diagnostics
 set('n', '<leader>l', fn.toggle_lsp_lines) -- diagnostics line
 
+-- Toggle LSP inlay hints
+set('n', '<leader>c', function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end)
+
 -- Custom Personal Mapping
 set('n', '<leader>r', vim.lsp.buf.rename)
 set('n', '<leader>a', vim.lsp.buf.code_action)
 set('n', '<leader>n', vim.lsp.buf.format) -- neat
-set('n', '<leader>c', function()          -- check
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-end)
-set('n', '<leader>m', function() -- print lsp status
-  local status = vim.lsp.status()
-  if status == '' then
-    print('vim.lsp.status() => (no message)')
-  else
-    print(status)
-  end
-end)
 set('n', '<leader>e', ':term ')
 set('v', '<leader>e', ':w! /tmp/nvim-shell-cmd.sh<CR>:term source /tmp/nvim-shell-cmd.sh<CR>')
 set('n', '<leader>u', '<CMD>lcd %:p:h<CR>') -- go to current file directory
