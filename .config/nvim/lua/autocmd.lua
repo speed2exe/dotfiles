@@ -16,3 +16,19 @@ vim.api.nvim_create_autocmd("BufWritePre", {
         create_directory_if_not_exists(dir)
     end
 })
+
+-- background task to poll for LSP status
+local has_message = false
+local timer = vim.loop.new_timer()
+timer:start(0, 1000, vim.schedule_wrap(function()
+  local status = vim.lsp.status()
+  if #status > 0 then
+    has_message = true
+    print(status)
+  else
+    if has_message then
+      print('\n')
+      has_message = false
+    end
+  end
+end))
