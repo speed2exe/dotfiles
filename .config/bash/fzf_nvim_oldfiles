@@ -3,7 +3,7 @@
 selection=$(nvim --headless +':oldfiles' +':qa!' 2>&1 \
   | cut --delimiter=' ' --fields=2 \
   | sed 's/.$//' \
-  | xargs eza --sort=none --color=always --icons=always \
+  | xargs eza --sort=none --color=always --icons=always 2> /dev/null \
   | fzf --ansi --color=16 --inline-info --no-sort \
       --query "$PWD/" \
       --preview='bat --number --color=always --theme=Dracula {2}' \
