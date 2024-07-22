@@ -5,6 +5,7 @@ dir=$(tac ~/marks/git_dir_history.txt \
   | tee /tmp/git_dir_history.txt \
   | xargs eza --sort=none --list-dirs --color=always 2> /dev/null \
   | fzf --ansi --no-sort --color=16 --inline-info --query="$PWD" \
+  | cut --delimiter=' ' --fields=1
     )
 
 tac /tmp/git_dir_history.txt > ~/marks/git_dir_history.txt
