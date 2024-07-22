@@ -6,7 +6,7 @@ selection=$(eza --list-dirs --color=always --icons=always $(fd --hidden --no-ign
         --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
         --preview-window=noborder \
         --query="$READLINE_LINE" \
-        | cut -d ' ' -f 2- \
+        | cut --delimiter=' ' --fields=2
       )
 
 test -z "$selection" && return
