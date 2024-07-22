@@ -3,8 +3,8 @@
 dir=$(tac ~/marks/dir_history.txt \
   | awk '!x[$0]++' \
   | tee /tmp/dir_history.txt \
-  | fzf --no-sort --color=16 --inline-info \
-        --query="$PWD/" \
+  | xargs eza --sort=none --list-dirs --color=always 2> /dev/null \
+  | fzf --ansi --no-sort --color=16 --inline-info --query="$PWD" \
     )
 
 tac /tmp/dir_history.txt > ~/marks/dir_history.txt
