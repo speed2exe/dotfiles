@@ -9,7 +9,11 @@ while true; do
           | cut --delimiter=' ' --fields=2
   )
 
-  test -z "$selection" && break
-  test -f "$selection" && nvim "$selection" && break
-  test -d "$selection" && cd "$selection"
+  test -d "$selection" && cd "$selection" && continue
+  test -z "$selection" && return
+  test -x "$selection" && pre_cursor="${READLINE_LINE:0:$READLINE_POINT}./$selection" \
+                       && READLINE_LINE="$pre_cursor${READLINE_LINE:$READLINE_POINT}" \
+                       && READLINE_POINT=${#pre_cursor} \
+                       && return
+  test -f "$selection" && nvim "$selection" && return
 done
