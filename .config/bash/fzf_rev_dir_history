@@ -4,7 +4,7 @@ dir=$(tac ~/marks/dir_history.txt \
   | awk '!x[$0]++' \
   | tee /tmp/dir_history.txt \
   | xargs eza --sort=none --list-dirs --color=always 2> /dev/null \
-  | fzf --ansi --no-sort --color=16 --inline-info --query="$PWD/" \
+  | fzf --ansi --no-sort --color=16 --inline-info \
   | cut --delimiter=' ' --fields=1
     )
 
