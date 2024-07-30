@@ -23,8 +23,11 @@ test 1 -eq ${#COMPREPLY[@]} && PRE_CURSOR="${COMP_WORDS[@]:0:${#COMP_WORDS[@]}-1
                             && READLINE_LINE="$PRE_CURSOR$POST_CURSOR" \
                             && return
 
-SELECTION=$(printf "%s\n" ${COMPREPLY[@]} | fzf --color=16 --inline-info --reverse --height=~30% \
+SELECTION=$(printf "%s\n" ${COMPREPLY[@]} \
+  | awk '!x[$0]++' \
+  | fzf --color=16 --inline-info --reverse --height=~30% \
   --query="${COMP_WORDS[-1]}")
+
 test -n "$SELECTION" && PRE_CURSOR="${COMP_WORDS[@]:0:${#COMP_WORDS[@]}-1} $SELECTION" \
                      && READLINE_POINT=${#PRE_CURSOR} \
                      && READLINE_LINE="$PRE_CURSOR$POST_CURSOR" \
