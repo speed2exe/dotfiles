@@ -7,7 +7,7 @@ POST_CURSOR="${READLINE_LINE:$READLINE_POINT}"
 
 COMP_LINE="$PRE_CURSOR"
 COMP_WORDS=()
-for WORD in $PRE_CURSOR; do COMP_WORDS+=($WORD); done
+for WORD in $PRE_CURSOR; do COMP_WORDS+=("$WORD"); done
 test "${READLINE_LINE:READLINE_POINT-1:1}" = ' ' && COMP_WORDS+=('')
 COMP_CWORD=${#COMP_WORDS[@]}
 ((COMP_CWORD--))
@@ -24,7 +24,6 @@ test 1 -eq ${#COMPREPLY[@]} && PRE_CURSOR="${COMP_WORDS[@]:0:${#COMP_WORDS[@]}-1
                             && return
 
 SELECTION=$(printf "%s\n" ${COMPREPLY[@]} | fzf --color=16 --inline-info --reverse --height=~30% \
-  --bind='ctrl-i:accept' \
   --query="${COMP_WORDS[-1]}")
 test -n "$SELECTION" && PRE_CURSOR="${COMP_WORDS[@]:0:${#COMP_WORDS[@]}-1} $SELECTION" \
                      && READLINE_POINT=${#PRE_CURSOR} \
