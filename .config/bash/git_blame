@@ -5,11 +5,11 @@ while IFS= read -r line; do
   blame_lines+=("$line")
 done < <(git blame "$@" --color-lines --color-by-age)
 
-first_line="$(head -n 1 $@)"
+first_line="$(head -n 1 "$@")"
 offset=$(("${#blame_lines[0]}" - "${#first_line}"))
 
 index=0
 while IFS= read -r line; do
-  printf "${blame_lines[$index]:0:$offset}$line\n"
+  printf "%s%s\n" "${blame_lines[$index]:0:$offset}" "$line"
   ((index++))
 done < <(bat --theme=Dracula --plain --color=always "$@")
