@@ -68,7 +68,7 @@ super + w
 
 # Toggle Modes
 super + o
-  bspc node -t "~"{fullscreen,tiled}
+  bspc node -t "~"{tiled,fullscreen}
 
 # Change focus
 super + {d,u,a,e,p}
