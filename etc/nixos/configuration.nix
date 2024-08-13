@@ -81,9 +81,9 @@
     xclip sxhkd polybar
     nitrogen lxappearance
     maim xdotool picom
-    ## Wayland
-    wl-clipboard
-    grim slurp hyprpaper
+    # ## Wayland
+    # wl-clipboard
+    # grim slurp hyprpaper
 
     # flakes
     # inputs.persway.packages.${system}.default
@@ -91,6 +91,9 @@
 
   # https://github.com/Mic92/nix-ld
   programs.nix-ld.enable = true;
+
+  # zram
+  zramSwap.enable = true;
 
   # https://nixos.wiki/wiki/Thunar
   programs.thunar.enable = true;
