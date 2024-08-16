@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+pre_cursor="${READLINE_LINE:0:$READLINE_POINT}$*" \
+  && READLINE_LINE="$pre_cursor${READLINE_LINE:$READLINE_POINT}" \
+  && READLINE_POINT=${#pre_cursor}
