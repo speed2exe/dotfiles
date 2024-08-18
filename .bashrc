@@ -44,15 +44,19 @@ function exit_status {
 # nicer prompt
 PS1='$(exit_status) $(starship prompt)\n$ '
 
+# save and load command line
+bind -x '"\M-1":"source ~/.config/bash/save_cmd_line && clear"'
+bind -x '"\M-2":"source ~/.config/bash/load_cmd_line"'
+
 # key bindings
-bind -x '"\C-T":"source ~/.config/bash/fzf_nav_rec"'
-bind -x '"\C-H":"source ~/.config/bash/fzf_rev_dir_history"'
-bind -x '"\C-G":"source ~/.config/bash/fzf_rev_git_dir_history"'
+bind '"\C-T":"\M-1source ~/.config/bash/fzf_nav_rec\n\M-2"'
+bind '"\C-H":"\M-1source ~/.config/bash/fzf_rev_dir_history\n\M-2"'
+bind '"\C-G":"\M-1source ~/.config/bash/fzf_rev_git_dir_history\n\M-2"'
+bind '"\C-F":"\M-1source ~/.config/bash/fzf_fd\n\M-2"'
 bind -x '"\C-R":"source ~/.config/bash/fzf_rev_cmd_history"'
 bind -x '"\C-E":"source ~/.config/bash/nvim_term"'
 bind -x '"\C-O":"source ~/.config/bash/fzf_nvim_oldfiles"'
 bind -x '"\C-S":"source ~/.config/bash/fzf_rg"'
-bind -x '"\C-F":"source ~/.config/bash/fzf_fd"'
 bind -x '"\C-L":"clear"'
 bind -x '"\C-X":"source ~/.config/bash/fzf_tmux_line"'
 bind -x '"\C-A":"source ~/.config/bash/fzf_tmux_word"'
