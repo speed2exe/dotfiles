@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-READLINE_LINE=$(</tmp/readline_line)
-READLINE_POINT=$(</tmp/readline_point)
+READLINE_LINE="$(</tmp/readline_line)"
+readline_point="$(</tmp/readline_point)"
+READLINE_POINT=${readline_point}
