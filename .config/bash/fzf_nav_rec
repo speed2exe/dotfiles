@@ -11,6 +11,6 @@ while true; do
 
   test -d "$selection" && cd "$selection" && continue
   test -z "$selection" && return
-  test -x "$selection" && "$selection" && return
+  test -x "$selection" && ./"$selection" && return
   test -f "$selection" && nvim "$selection" && return
 done
