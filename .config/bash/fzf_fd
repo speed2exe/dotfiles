@@ -11,9 +11,6 @@ selection=$(fd --hidden --no-ignore | xargs eza --sort=none --list-dirs --color=
 
 test -z "$selection" && return
 test -d "$selection" && cd "$selection" && return
-test -x "$selection" && pre_cursor="${READLINE_LINE:0:$READLINE_POINT}./$selection" \
-                     && READLINE_LINE="$pre_cursor${READLINE_LINE:$READLINE_POINT}" \
-                     && READLINE_POINT=${#pre_cursor} \
-                     && return
+test -x "$selection" && "$selection" && return
 test -f "$selection" && nvim "$selection" && return
 echo "$selection" not found && return 1
