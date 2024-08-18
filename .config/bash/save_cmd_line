@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+printf "$READLINE_LINE" > /tmp/readline_line
+printf "$READLINE_POINT" > /tmp/readline_point
+READLINE_LINE=""
+READLINE_POINT=""
