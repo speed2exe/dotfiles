@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 # Additional configurations (if any)
-if test -f ~/.bspwmrc; then
-    source ~/.bspwmrc
-fi
+test -f ~/.bspwmrc && source ~/.bspwmrc
 
 # Setup workspaces
 workspaces() {
@@ -35,4 +33,4 @@ dunst &
 sxhkd &
 
 # Compositor
-picom &
+picom --backend egl &
