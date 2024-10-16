@@ -57,12 +57,12 @@ bind -x '"\C-R":"source ~/.config/bash/fzf_rev_cmd_history"'
 bind -x '"\C-E":"source ~/.config/bash/nvim_term"'
 bind -x '"\C-O":"source ~/.config/bash/fzf_nvim_oldfiles"'
 bind -x '"\C-S":"source ~/.config/bash/fzf_rg"'
-bind -x '"\C-L":"clear"'
-bind -x '"\C-X":"source ~/.config/bash/fzf_tmux_line"'
-bind -x '"\C-A":"source ~/.config/bash/fzf_tmux_word"'
+# bind -x '"\C-X":"source ~/.config/bash/fzf_tmux_line"'
+# bind -x '"\C-A":"source ~/.config/bash/fzf_tmux_word"'
 # bind -x '"\C-N":"source ~/.config/bash/fzf_comp"'
 # bind -x '"\C-X":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
 # bind -m vi-command -x '"v":"echo$ v ~/temp.bash"'
+# bind -x '"\C-L":"clear"'
 
 # disable default ctrl-s and ctrl-q behavior
 stty -ixon
