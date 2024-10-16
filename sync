@@ -33,7 +33,7 @@ home_config_dirs=(
   ".xinitrc"
   ".bash_profile"
   ".bashrc"
-  ".inputrc"
+  # ".inputrc"
 )
 
 for dir in "${home_config_dirs[@]}"; do
