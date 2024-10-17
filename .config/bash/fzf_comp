@@ -2,6 +2,8 @@
 
 # inspired from: https://unix.stackexchange.com/questions/25935/how-to-output-string-completions-to-stdout/31023#31023
 
+test 0 -eq $READLINE_POINT && source ~/.config/bash/fzf_comp_empty && return
+
 PRE_CURSOR="${READLINE_LINE:0:$READLINE_POINT}"
 POST_CURSOR="${READLINE_LINE:$READLINE_POINT}"
 
@@ -17,17 +19,26 @@ COMP_TYPE=9
 COMP_KEY=9
 _command_offset 0 2> /dev/null
 
-test 0 -eq ${#COMPREPLY[@]} && return
-test 1 -eq ${#COMPREPLY[@]} && PRE_CURSOR="${COMP_WORDS[@]:0:${#COMP_WORDS[@]}-1} $COMPREPLY" \
-                            && READLINE_POINT=${#PRE_CURSOR} \
-                            && READLINE_LINE="$PRE_CURSOR$POST_CURSOR" \
-                            && return
+# deduplicate completions
+COMPREPLY=($(printf "%s\n" "${COMPREPLY[@]}" | awk '!x[$0]++'))
 
-SELECTION=$(printf "%s\n" ${COMPREPLY[@]} \
-  | awk '!x[$0]++' \
-  | fzf --reverse --height=~30% \
-  --query="${COMP_WORDS[-1]}")
+# if no completions, use current directory files and directories
+test 0 -eq ${#COMPREPLY[@]} && COMPREPLY=($(ls --all))
 
+# if there are more than one completion, use fzf to select one
+if [ ${#COMPREPLY[@]} -gt 1 ]; then
+  SELECTION=$(printf "%s\n" "${COMPREPLY[@]}" | fzf --query="${COMP_WORDS[-1]}")
+else
+  SELECTION=${COMPREPLY[0]}
+fi
+
+# if no selection, return
+test -z "$SELECTION" && return
+
+# if completion is a directory, append a slash if it is not already there
+test -d "$SELECTION" && test "${SELECTION:-1}" != "/" && SELECTION="$SELECTION/"
+
+# replace command line with selection at cursor
 test -n "$SELECTION" && PRE_CURSOR="${COMP_WORDS[@]:0:${#COMP_WORDS[@]}-1} $SELECTION" \
                      && READLINE_POINT=${#PRE_CURSOR} \
                      && READLINE_LINE="$PRE_CURSOR$POST_CURSOR" \

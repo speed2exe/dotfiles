@@ -81,35 +81,35 @@ style = "Italic"
 family = "IosevkaTerm Nerd Font"
 style = "Regular"
 
-[hints]
-alphabet = "123456789"
-
-[[hints.enabled]]
-command = "xdg-open"
-post_processing = true
-regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
-
-[hints.enabled.binding]
-key = "O"
-mods = "Alt"
-
-[[hints.enabled]]
-action = "Copy"
-post_processing = true
-regex = "[^ ]+ "
-
-[hints.enabled.binding]
-key = "W"
-mods = "Alt"
-
-[[hints.enabled]]
-action = "Copy"
-post_processing = true
-regex = ".+ "
-
-[hints.enabled.binding]
-key = "L"
-mods = "Alt"
-
 [window]
 opacity = 0.7
+
+# [hints]
+# alphabet = "123456789"
+#
+# [[hints.enabled]]
+# command = "xdg-open"
+# post_processing = true
+# regex = "(ipfs:|ipns:|magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
+#
+# [hints.enabled.binding]
+# key = "O"
+# mods = "Alt"
+#
+# [[hints.enabled]]
+# action = "Copy"
+# post_processing = true
+# regex = "[^ ]+ "
+#
+# [hints.enabled.binding]
+# key = "W"
+# mods = "Alt"
+#
+# [[hints.enabled]]
+# action = "Copy"
+# post_processing = true
+# regex = ".+ "
+#
+# [hints.enabled.binding]
+# key = "L"
+# mods = "Alt"
