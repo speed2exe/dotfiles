@@ -1,5 +1,6 @@
 local opt = vim.opt
 
+opt.guicursor = ''
 opt.clipboard = 'unnamedplus'
 opt.number = true
 opt.relativenumber = true
@@ -23,8 +24,6 @@ opt.expandtab = true
 -- https://vim.fandom.com/wiki/Remove_unwanted_spaces
 --
 vim.cmd [[
-  colorscheme dracula
-
   autocmd BufWritePre * :%s/\s\+$//e
 
   highlight WinSeparator    guibg=NONE
