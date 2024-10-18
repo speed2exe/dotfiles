@@ -20,7 +20,7 @@ COMP_KEY=9
 _command_offset 0 2> /dev/null
 
 # if no completions, use current directory files and directories
-test 0 -eq ${#COMPREPLY[@]} && COMPREPLY=($(compgen -f "${COMP_WORDS[-1]}"))
+test 0 -eq ${#COMPREPLY[@]} && COMPREPLY=($(compgen -f -- "${COMP_WORDS[-1]}"))
 
 # deduplicate completions
 COMPREPLY=($(printf "%s\n" "${COMPREPLY[@]}" | awk '!x[$0]++'))
