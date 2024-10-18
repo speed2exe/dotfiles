@@ -19,15 +19,15 @@ COMP_TYPE=9
 COMP_KEY=9
 _command_offset 0 2> /dev/null
 
+# if no completions, use current directory files and directories
+test 0 -eq ${#COMPREPLY[@]} && COMPREPLY=($(compgen -f "${COMP_WORDS[-1]}"))
+
 # deduplicate completions
 COMPREPLY=($(printf "%s\n" "${COMPREPLY[@]}" | awk '!x[$0]++'))
 
-# if no completions, use current directory files and directories
-test 0 -eq ${#COMPREPLY[@]} && COMPREPLY=($(ls --all))
-
 # if there are more than one completion, use fzf to select one
 if [ ${#COMPREPLY[@]} -gt 1 ]; then
-  SELECTION=$(printf "%s\n" "${COMPREPLY[@]}" | fzf --query="${COMP_WORDS[-1]}")
+  SELECTION=$(printf "%s\n" "${COMPREPLY[@]}" | fzf --query="${COMP_WORDS[-1]}" --bind='tab:accept')
 else
   SELECTION=${COMPREPLY[0]}
 fi
