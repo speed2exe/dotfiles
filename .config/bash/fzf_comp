@@ -2,8 +2,6 @@
 
 # inspired from: https://unix.stackexchange.com/questions/25935/how-to-output-string-completions-to-stdout/31023#31023
 
-test 0 -eq $READLINE_POINT && source ~/.config/bash/fzf_comp_empty && return
-
 PRE_CURSOR="${READLINE_LINE:0:$READLINE_POINT}"
 POST_CURSOR="${READLINE_LINE:$READLINE_POINT}"
 
@@ -11,6 +9,8 @@ COMP_LINE="$PRE_CURSOR"
 COMP_WORDS=()
 for WORD in $PRE_CURSOR; do COMP_WORDS+=("$WORD"); done
 test "${READLINE_LINE:READLINE_POINT-1:1}" = ' ' && COMP_WORDS+=('')
+test 0 -eq ${#COMP_WORDS[@]} && source ~/.config/bash/fzf_comp_empty && return
+test 1 -eq ${#COMP_WORDS[@]} && source ~/.config/bash/fzf_comp_empty "${COMP_WORDS[-1]}" && return
 COMP_CWORD=${#COMP_WORDS[@]}
 ((COMP_CWORD--))
 COMP_POINT=${#COMP_LINE}
