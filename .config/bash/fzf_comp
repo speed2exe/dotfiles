@@ -2,6 +2,9 @@
 
 # inspired from: https://unix.stackexchange.com/questions/25935/how-to-output-string-completions-to-stdout/31023#31023
 
+# Get last word before cursor for autocompletion
+# LAST_SEGMENT="${PRE_CURSOR##* }"
+
 PRE_CURSOR="${READLINE_LINE:0:$READLINE_POINT}"
 POST_CURSOR="${READLINE_LINE:$READLINE_POINT}"
 
