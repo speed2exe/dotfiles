@@ -24,7 +24,10 @@
   users.users.zack2827 = {
     isNormalUser = true;
     home = "/home/zack2827";
-    extraGroups = [ "wheel" "libvirtd" ];
+    extraGroups = [
+      "wheel"
+      # "libvirtd"
+    ];
   };
 
   # X11
@@ -89,30 +92,30 @@
     # flakes
     # inputs.persway.packages.${system}.default
 
-    # Virtualisation
-    virt-manager
-    virt-viewer
-    spice
-    spice-gtk
-    spice-protocol
-    win-virtio
-    win-spice
+    # # Virtualisation
+    # virt-manager
+    # virt-viewer
+    # spice
+    # spice-gtk
+    # spice-protocol
+    # win-virtio
+    # win-spice
   ];
 
-  virtualisation = {
-    libvirtd = {
-      enable = true;
-      qemu = {
-        package = pkgs.qemu_kvm;
-        swtpm.enable = true;
-        ovmf.enable = true;
-        ovmf.packages = [ pkgs.OVMFFull.fd ];
-      };
-    };
-    spiceUSBRedirection.enable = true;
-  };
-  programs.virt-manager.enable = true;
-  services.spice-vdagentd.enable = true;
+  # virtualisation = {
+  #   libvirtd = {
+  #     enable = true;
+  #     qemu = {
+  #       package = pkgs.qemu_kvm;
+  #       swtpm.enable = true;
+  #       ovmf.enable = true;
+  #       ovmf.packages = [ pkgs.OVMFFull.fd ];
+  #     };
+  #   };
+  #   spiceUSBRedirection.enable = true;
+  # };
+  # programs.virt-manager.enable = true;
+  # services.spice-vdagentd.enable = true;
 
   # https://github.com/Mic92/nix-ld
   programs.nix-ld.enable = true;
