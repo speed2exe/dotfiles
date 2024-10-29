@@ -1,15 +1,19 @@
 #!/usr/bin/env bash
 
 while true; do
-  selection=$(exa --color=always --all --dereference --icons=always \
+  SELECTION=$(exa --color=always --all --dereference --icons=always \
     | fzf --preview='(test -f {2} && bat --number --color=always --theme=Dracula {2}) || (test -d {2} && exa --color=always --icons --sort accessed --color-scale=all --no-quotes --long --binary --time-style long-iso --git {2})' \
           --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up,left:become(echo ".."),right:accept' \
           --preview-window=noborder \
           | cut --delimiter=' ' --fields=2
   )
 
-  test -d "$selection" && cd "$selection" && continue
-  test -z "$selection" && return
-  test -x "$selection" && ./"$selection" && return
-  test -f "$selection" && nvim "$selection" && return
+  test -d "$SELECTION" && cd "$SELECTION" && continue
+  break
 done
+
+# insert selected directory at cursor
+POST_CURSOR="${READLINE_LINE:READLINE_POINT}"
+PRE_CURSOR="${READLINE_LINE:0:READLINE_POINT}${SELECTION}"
+READLINE_POINT=${#PRE_CURSOR}
+READLINE_LINE="$PRE_CURSOR$POST_CURSOR"

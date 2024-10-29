@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
-dir=$(tac ~/marks/dir_history.txt \
+DIR=$(tac ~/marks/dir_history.txt \
   | awk '!x[$0]++' \
   | tee /tmp/dir_history.txt \
   | xargs eza --sort=none --list-dirs --color=always 2> /dev/null \
   | fzf --no-sort \
-  | cut --delimiter=' ' --fields=1
-    )
+  | cut --delimiter=' ' --fields=1)
 
-tac /tmp/dir_history.txt > ~/marks/dir_history.txt
+test -z "$DIR" && return
 
-test -n "$dir" && cd "$dir"
+# insert selected directory at cursor
+POST_CURSOR="${READLINE_LINE:READLINE_POINT}"
+PRE_CURSOR="${READLINE_LINE:0:READLINE_POINT}${DIR}"
+READLINE_POINT=${#PRE_CURSOR}
+READLINE_LINE="$PRE_CURSOR$POST_CURSOR"
