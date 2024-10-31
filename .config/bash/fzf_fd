@@ -8,9 +8,5 @@ SELECTION=$(fd --hidden --no-ignore | xargs eza --sort=none --list-dirs --color=
       )
 
 test -z "$SELECTION" && return
-
-# insert selected directory at cursor
-POST_CURSOR="${READLINE_LINE:READLINE_POINT}"
-PRE_CURSOR="${READLINE_LINE:0:READLINE_POINT}${SELECTION}"
-READLINE_POINT=${#PRE_CURSOR}
-READLINE_LINE="$PRE_CURSOR$POST_CURSOR"
+test -d "$SELECTION" && cd "$SELECTION" && return
+test -f "$SELECTION" && $EDITOR "$SELECTION" && return
