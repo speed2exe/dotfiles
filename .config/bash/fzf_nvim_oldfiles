@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-selection=$(nvim --headless +':oldfiles' +':qa!' 2>&1 \
+SELECTION=$(nvim --headless +':oldfiles' +':qa!' 2>&1 \
   | cut --delimiter=' ' --fields=2 \
   | sed 's/.$//' \
   | xargs eza --sort=none --color=always --icons=always 2> /dev/null \
@@ -11,4 +11,4 @@ selection=$(nvim --headless +':oldfiles' +':qa!' 2>&1 \
       | cut --delimiter=' ' --fields=2
     )
 
-test -n "$selection" && nvim "$selection"
+test -n "$SELECTION" && nvim "$SELECTION"

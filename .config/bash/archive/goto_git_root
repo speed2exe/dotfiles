@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-dir=$(git rev-parse --show-toplevel 2> /dev/null)
-test -n "$dir" && cd "$dir"
