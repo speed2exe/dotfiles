@@ -42,7 +42,7 @@ function exit_status {
 }
 
 # nicer prompt
-PS1='$(exit_status) $(starship prompt)\n '
+PS1='$(exit_status) $(starship prompt)\n$ '
 
 # keybind utils to save and load command line
 bind -x '"\M-0":"source ~/.config/bash/save_cmd_line"'
