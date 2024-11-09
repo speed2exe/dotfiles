@@ -71,7 +71,7 @@
     home-manager
 
     ## Desktop
-    brightnessctl rofi-wayland
+    brightnessctl
     dracula-theme dracula-icon-theme
     dunst pinta firefoxpwa
     gpu-screen-recorder-gtk
@@ -82,14 +82,15 @@
     gh killall gcc gnumake tree
     tmux glib neovim delta
     ## X11
-    xclip sxhkd polybar
+    xclip sxhkd polybar rofi
     nitrogen lxappearance
     maim xdotool picom
     # ## Wayland
+    # rofi-wayland
     # wl-clipboard
     # grim slurp hyprpaper
 
-    # flakes
+    # Flakes
     # inputs.persway.packages.${system}.default
 
     # # Virtualisation

@@ -3,6 +3,7 @@ local set = vim.keymap.set
 local fn = require 'function'
 local t_builtin = require 'telescope.builtin'
 local baleia = require('baleia')
+local ts_ctx = require('treesitter-context')
 
 vim.g.mapleader = ' ';
 
@@ -58,10 +59,13 @@ set('n', '<leader>h', t_builtin.help_tags)
 set('n', '<leader>t', "<CMD>Telescope file_browser path=%:p:h<CR>") -- traverse
 
 -- Toggle LSP diagnostics
-set('n', '<leader>l', fn.toggle_lsp_lines) -- diagnostics line
+set('n', '<C-M>', fn.toggle_lsp_lines) -- diagnostics line
+
+-- Toggle Treesitter Context
+set('n', '<C-S>', ts_ctx.toggle)
 
 -- Toggle LSP inlay hints
-set('n', '<leader>c', function()
+set('n', '<C-P>', function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end)
 
