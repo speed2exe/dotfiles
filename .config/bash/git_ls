@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+for item in $(ls); do
+  eza_output=$(eza --icons=always --color=always --list-dirs "$item")
+  git log -1 --oneline --format="%C(red)%h %C(cyan)%ad $eza_output %C(green)%an <%ae> %C(yellow)%s" --date=iso-local $@ -- $item
+done
