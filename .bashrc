@@ -26,10 +26,11 @@ alias l='exa --icons --sort accessed --color-scale=all --no-quotes --dereference
 alias la='l --all'
 alias ll='l --long --binary --time-style long-iso --git'
 alias lla='ll --all'
-alias git-ref='git for-each-ref --sort=creatordate --format "%(color:red)%(refname) %(color:green)%(objectname) %(color:blue)%(creatordate) %(color:magenta)%(authorname) %(color:yellow)%(contents:subject)"'
+alias git-ref='git for-each-ref --sort=creatordate --format "%(color:red)%(objectname) %(color:blue)%(creatordate) %(color:reset)%(refname) %(color:green)%(tagger)%(author) %(color:yellow)%(contents:subject)"'
 alias git-tag='git-ref refs/tags'
 alias git-graph='git log --graph --decorate --oneline --all'
 alias git-blame='source ~/.config/bash/git_blame'
+alias git-ls='source ~/.config/bash/git_ls'
 alias clean-history='source ~/.config/bash/clean_history'
 alias v='tmux capture-pane -p -e -S -3000 | nvim -c ":%s/\v\n{2,}$/\r/" -c "Ansi"'
 
