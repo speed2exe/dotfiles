@@ -45,7 +45,11 @@ set('n', '<leader>j', t_builtin.jumplist)
 set('n', '<leader>q', t_builtin.quickfix)
 set('n', '<leader>f', t_builtin.find_files)
 set('n', '<leader>s', t_builtin.live_grep) -- search
-set('v', '<leader>s', t_builtin.grep_string)
+set('v', '<leader>s', t_builtin.grep_string) -- search for text under cursor
+set('v', '<leader>f', function() -- search for files under cursor
+  t_builtin.find_files({ default_text = vim.fn.expand("<cword>") })
+end)
+
 set('n', '<leader>w', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>o', function()
   t_builtin.oldfiles({ default_text = vim.fn.getcwd() })
