@@ -19,10 +19,11 @@ if command -v tmux &> /dev/null; then
 fi
 
 alias e='source ~/.config/bash/edit'
+alias use-nix='echo use nix > .envrc && direnv allow'
 alias cat='bat --theme=Dracula --plain --no-pager'
 alias xcopy='xclip -selection clipboard'
 alias cd='source ~/.config/bash/cd'
-alias l='exa --icons --sort accessed --color-scale=all --no-quotes --dereference'
+alias l='exa --icons --sort accessed --color-scale=all --no-quotes --dereference --color=always'
 alias la='l --all'
 alias ll='l --long --binary --time-style long-iso --git'
 alias lla='ll --all'
