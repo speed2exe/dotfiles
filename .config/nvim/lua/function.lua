@@ -28,4 +28,11 @@ M.toggle_quickfix = function()
   vim.cmd "copen"
 end
 
+M.open_term_at_file_dir = function()
+  vim.cmd('lcd ' .. vim.fn.expand('%:p:h'))
+  vim.cmd('terminal')
+  vim.cmd('startinsert')
+  vim.cmd('lcd -')
+end
+
 return M
