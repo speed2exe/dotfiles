@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+(cd $PWD && unset TMUX && st -f "IosevkaTermNerdFont:size=14" 2>/dev/null) & disown

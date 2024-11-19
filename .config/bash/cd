@@ -7,7 +7,7 @@ builtin cd $@
 mkdir -p ~/marks/
 echo "$PWD" >> ~/marks/dir_history.txt
 
-# update git dir history
-git_dir=$(git rev-parse --show-toplevel 2> /dev/null) \
-  && echo "$git_dir" >> ~/marks/git_dir_history.txt \
-  || true
+# # update git dir history
+# git_dir=$(git rev-parse --show-toplevel 2> /dev/null) \
+#   && echo "$git_dir" >> ~/marks/git_dir_history.txt \
+#   || true

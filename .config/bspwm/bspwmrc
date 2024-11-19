@@ -20,8 +20,8 @@ bspc config focused_border_color \#BD93F9
 bspc config border_width 1
 bspc config window_gap 0
 
-# Set wallpaper
-nitrogen --set-zoom-fill --random ~/wallpaper
+# # Set wallpaper
+# nitrogen --set-zoom-fill --random ~/wallpaper
 
 # Launch polybar
 polybar main &
@@ -32,5 +32,5 @@ dunst &
 # Keybindings daemon
 sxhkd &
 
-# Compositor
-picom --backend egl &
+# # Compositor
+# picom --backend egl &

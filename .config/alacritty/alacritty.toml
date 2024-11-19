@@ -83,10 +83,11 @@ style = "Regular"
 
 [window]
 opacity = 0.7
-
+#
 # [hints]
 # alphabet = "123456789"
 #
+# # Open URLs with xdg-open
 # [[hints.enabled]]
 # command = "xdg-open"
 # post_processing = true
@@ -96,6 +97,7 @@ opacity = 0.7
 # key = "O"
 # mods = "Alt"
 #
+# # Copy line to clipboard
 # [[hints.enabled]]
 # action = "Copy"
 # post_processing = true
@@ -105,6 +107,7 @@ opacity = 0.7
 # key = "W"
 # mods = "Alt"
 #
+# # Copy word to clipboard
 # [[hints.enabled]]
 # action = "Copy"
 # post_processing = true

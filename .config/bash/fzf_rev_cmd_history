@@ -2,9 +2,12 @@
 
 selection=$(history \
   | sed 's/^.\{7\}//' \
-  | uniq \
+  | awk '!x[$0]++' \
+  | tee /tmp/.bash_history \
   | rg "$READLINE_LINE" \
   | fzf --tac --no-sort --query "$READLINE_LINE")
+
+cp /tmp/.bash_history ~/.bash_history
 
 test -n "$selection" \
   && READLINE_LINE="$selection" \
