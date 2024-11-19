@@ -43,11 +43,12 @@ set('n', '<leader>z', t_builtin.resume)
 set('n', '<leader>d', t_builtin.diagnostics)
 set('n', '<leader>j', t_builtin.jumplist)
 set('n', '<leader>q', t_builtin.quickfix)
+set('n', '<leader>g', t_builtin.git_status)
 set('n', '<leader>f', t_builtin.find_files)
-set('n', '<leader>s', t_builtin.live_grep) -- search
+set('n', '<leader>s', t_builtin.live_grep)   -- search
 set('v', '<leader>s', t_builtin.grep_string) -- search for text under cursor
-set('v', '<leader>f', function() -- search for files under cursor
-  t_builtin.find_files({ default_text = vim.fn.expand("<cword>") })
+set('v', '<leader>f', function()             -- search for files under cursor
+  t_builtin.find_files({ default_text = table.concat(fn.get_visual_selection_text(), ' ') })
 end)
 
 set('n', '<leader>w', t_builtin.lsp_dynamic_workspace_symbols)
@@ -55,32 +56,31 @@ set('n', '<leader>o', function()
   t_builtin.oldfiles({ default_text = vim.fn.getcwd() })
 end)
 set('n', '<leader>b', t_builtin.buffers)
-set('n', '<leader>g', t_builtin.lsp_definitions)
-set('n', '<leader>x', t_builtin.lsp_type_definitions)
+set('n', 'gd', t_builtin.lsp_definitions)
+set('n', 'gD', t_builtin.lsp_type_definitions)
 set('n', '<leader>i', t_builtin.lsp_implementations)
 set('n', '<leader>k', t_builtin.lsp_references)
 set('n', '<leader>h', t_builtin.help_tags)
+set('n', '<leader>c', t_builtin.lsp_incoming_calls)
 set('n', '<leader>t', "<CMD>Telescope file_browser path=%:p:h<CR>") -- traverse
-
--- Toggle LSP diagnostics
-set('n', '<C-M>', fn.toggle_lsp_lines) -- diagnostics line
 
 -- Toggle Treesitter Context
 set('n', '<C-S>', ts_ctx.toggle)
 
--- Toggle LSP inlay hints
+-- Toggle LSP inlay hints and LSP diagnostics
 set('n', '<C-P>', function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  fn.toggle_lsp_lines()
 end)
 
 -- Custom Personal Mapping
+set('n', '<leader>n', vim.lsp.buf.format)
 set('n', '<leader>r', vim.lsp.buf.rename)
 set('n', '<leader>a', vim.lsp.buf.code_action)
-set('n', '<leader>n', vim.lsp.buf.format) -- neat
 set('n', '<leader>e', ':term ')
 set('v', '<leader>e', ':w! /tmp/nvim-shell-cmd.sh<CR>:term source /tmp/nvim-shell-cmd.sh<CR>')
-set('n', '<leader>u', '<CMD>lcd %:p:h<CR>') -- go to current file directory
-set('n', '<leader>c', fn.open_term_at_file_dir) -- open interactive terminal at current file directory
+set('n', '<leader>u', '<CMD>lcd %:p:h<CR>')     -- go to current file directory
+set('n', '<leader>x', fn.open_term_at_file_dir) -- open interactive terminal at current file directory
 
 -- quickfix navigation
 set('n', '<C-Q>', fn.toggle_quickfix)

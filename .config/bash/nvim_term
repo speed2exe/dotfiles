@@ -2,3 +2,4 @@
 
 printf "$READLINE_LINE" > /tmp/nvim-shell-cmd.sh
 nvim -c ":term source /tmp/nvim-shell-cmd.sh"
+rm /tmp/nvim-shell-cmd.sh

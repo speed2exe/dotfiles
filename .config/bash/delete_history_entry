@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+SELECTION=$(history | fzf --tac --no-sort --query "$READLINE_LINE")
+test -z "$SELECTION" && return
+ENTRY=$(echo "$SELECTION" | awk '{ print $1 }')
+history -d $ENTRY
+history -w

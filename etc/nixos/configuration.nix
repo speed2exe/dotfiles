@@ -1,5 +1,9 @@
 { config, pkgs, libs, inputs, system, ... }:
 
+# # if require from unstable
+# let
+#   unstablePkgs = import inputs.unstable {};
+# in
 {
   imports =
     [ # Hardware
@@ -9,7 +13,7 @@
   # Boot loader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Network
   networking.networkmanager.enable = true;
@@ -40,7 +44,7 @@
 
   # Fonts
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "IosevkaTerm" ]; })
+    nerd-fonts.iosevka-term
     jost
   ];
 
@@ -66,6 +70,7 @@
 
   # Packages
   nixpkgs.config.allowUnfree = true;
+
   environment.systemPackages = with pkgs; [
     # Nix
     home-manager
@@ -78,9 +83,9 @@
     ## Terminal
     starship fortune fzf btop
     alacritty bat git fzf eza
-    wget fd ripgrep procs
+    wget fd ripgrep procs st
     gh killall gcc gnumake tree
-    tmux glib neovim delta
+    tmux glib delta luarocks neovim
     ## X11
     xclip sxhkd polybar rofi
     nitrogen lxappearance

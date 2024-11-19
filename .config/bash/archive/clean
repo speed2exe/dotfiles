@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# Enable strict error handling
+set -euo pipefail
+
+# Define files to process
+FILES=()
+
+for FILE in "${FILES[@]}"; do
+  # Expand ~ to full path
+  FILE=$(realpath "$FILE")
+
+  # Check if file exists
+  if [[ ! -f "$FILE" ]]; then
+    echo "File not found: $FILE. Skipping."
+    continue
+  fi
+
+  # Create a timestamped backup
+  BACKUP="$FILE.bak.$(date +%Y%m%d%H%M%S)"
+  cp "$FILE" "$BACKUP"
+
+  echo "Processing $FILE and creating backup: $BACKUP"
+
+  # Remove duplicates and preserve order
+  tac "$FILE" \
+    | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \
+    | awk '!seen[$0]++' \
+    | tac > "$FILE.tmp"
+
+  # Preserve file permissions
+  chmod --reference="$FILE" "$FILE.tmp"
+
+  # Replace the original file with the cleaned file
+  mv "$FILE.tmp" "$FILE"
+
+  echo "Duplicates removed from $FILE"
+done

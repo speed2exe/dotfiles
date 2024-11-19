@@ -7,6 +7,8 @@ opt.relativenumber = true
 opt.signcolumn = 'yes'
 opt.swapfile = false
 opt.cursorline = true
+opt.statusline = '%f:%l:%c'
+opt.wrap = false
 
 -- Tabs and Indentation
 opt.tabstop = 2
@@ -24,8 +26,6 @@ opt.expandtab = true
 -- https://vim.fandom.com/wiki/Remove_unwanted_spaces
 --
 vim.cmd [[
-  autocmd BufWritePre * :%s/\s\+$//e
-
   highlight WinSeparator    guibg=NONE
   highlight StatusLine      guibg=NONE
   highlight TabLineFill     guibg=NONE
@@ -45,3 +45,15 @@ vim.cmd [[
 
   highlight QuickFixLine   guibg=#44475a guifg=reverse
 ]]
+
+-- remove below code section if issue is resolved
+-- https://github.com/neovim/neovim/issues/30985
+for _, method in ipairs({ 'textDocument/diagnostic', 'workspace/diagnostic' }) do
+  local default_diagnostic_handler = vim.lsp.handlers[method]
+  vim.lsp.handlers[method] = function(err, result, context, config)
+    if err ~= nil and err.code == -32802 then
+      return
+    end
+    return default_diagnostic_handler(err, result, context, config)
+  end
+end

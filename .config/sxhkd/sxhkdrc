@@ -6,15 +6,16 @@ super + l
   killall -q sxhkd && sxhkd &
 
 # Terminal
-super + Return
-  alacritty
+super + g
+  st -f "IosevkaTermNerdFont:size=14"
+  # alacritty
 
 # search and open new app or go to existing app
 super + space
   rofi -show combi -show-icons -steal-focus
 
 # screenshot menu
-super + Escape
+super + c
     ~/.config/sxhkd/screenshot
 #
 # # power menu
@@ -60,7 +61,11 @@ super + k
 
 # Close App
 super + w
-  bspc node -c
+  bspc node --close
+
+# Kill App
+super + x
+  bspc node --kill
 
 # # Kill App
 # super + ctrl + q
@@ -68,11 +73,11 @@ super + w
 
 # Toggle Modes
 super + o
-  bspc node -t "~"{tiled,fullscreen}
+  bspc node --state "~"{tiled,fullscreen}
 
 # Change focus
 super + {d,u,a,e,p}
-	bspc node -f {west,north,east,south,last}
+	bspc node --focus {west,north,east,south,last}
 
 # Swap Node
 super + ctrl + {d,u,a,e}
@@ -89,10 +94,10 @@ super + alt + {d,u,a,e}
 # Rotate
 # super + {Prior, Next}
 #   bspc node @parent --rotate {-90, 90}
-super + x
-  bspc node @parent --rotate 90
-super + ctrl + x
-  bspc node @parent --rotate -90
+# super + x
+#   bspc node @parent --rotate 90
+# super + ctrl + x
+#   bspc node @parent --rotate -90
 
 # Auto resize with equal area
 super + b
