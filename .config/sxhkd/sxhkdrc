@@ -6,15 +6,16 @@ super + l
   killall -q sxhkd && sxhkd &
 
 # Terminal
-super + Return
-  alacritty
+super + g
+  st -f "IosevkaTermNerdFont:size=14"
+  # alacritty
 
 # search and open new app or go to existing app
 super + space
   rofi -show combi -show-icons -steal-focus
 
 # screenshot menu
-super + Escape
+super + c
     ~/.config/sxhkd/screenshot
 #
 # # power menu

@@ -7,4 +7,6 @@ SELECTION=$(fd --hidden --no-ignore --type=executable | xargs eza --sort=none --
         | cut --delimiter=' ' --fields=2
       )
 
-test -x "$SELECTION" && ./"$SELECTION"
+test -z "$SELECTION" && return
+READLINE_LINE="./$SELECTION"
+READLINE_POINT=${#READLINE_LINE}
