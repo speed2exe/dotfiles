@@ -37,6 +37,7 @@ alias git-blame='source ~/.config/bash/git_blame'
 alias git-ls='source ~/.config/bash/git_ls'
 alias clean-history='source ~/.config/bash/clean_history'
 alias v='tmux capture-pane -p -e -S -3000 | nvim -c ":%s/\v\n{2,}$/\r/" -c "Ansi" -c "set buftype=nofile"'
+alias sqlite='sqlite3 ~/sqlite/data.db'
 
 # Show last exit status and number of background jobs
 function exit_status {
