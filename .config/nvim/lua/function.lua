@@ -37,8 +37,8 @@ end
 
 -- https://www.reddit.com/r/neovim/comments/1b1sv3a/function_to_get_visually_selected_text/
 M.get_visual_selection_text = function()
-  local _, srow, scol = unpack(vim.fn.getpos('v'))
-  local _, erow, ecol = unpack(vim.fn.getpos('.'))
+  local _, srow, scol = table.unpack(vim.fn.getpos('v'))
+  local _, erow, ecol = table.unpack(vim.fn.getpos('.'))
 
   -- visual line mode
   if vim.fn.mode() == 'V' then
