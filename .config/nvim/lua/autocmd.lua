@@ -41,7 +41,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function()
     local cusor_pos = vim.api.nvim_win_get_cursor(0)
     if cusor_pos[1] == 1 and cusor_pos[2] == 0 then
-      vim.cmd([[normal! `"]])
+      vim.cmd([[keepjumps normal! `"]])
     end
   end
 })
