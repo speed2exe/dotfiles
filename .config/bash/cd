@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # change directory
-builtin cd $@
+builtin cd "$@"
 
 # update dir history
 mkdir -p ~/marks/

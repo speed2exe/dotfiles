@@ -7,10 +7,10 @@ return {
     -- modified from: https://github.com/hrsh7th/nvim-cmp?tab=readme-ov-file#recommended-configuration
     cmp.setup({
       mapping = cmp.mapping.preset.insert({
-        ['<C-U>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-D>'] = cmp.mapping.scroll_docs(4),
-        ['<C-C>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        -- ['<C-U>'] = cmp.mapping.scroll_docs(-4),
+        -- ['<C-D>'] = cmp.mapping.scroll_docs(4),
+        -- ['<C-C>'] = cmp.mapping.abort(),
+        -- ['<CR>'] = cmp.mapping.confirm({ select = true }),
       }),
       sources = {
         { name = 'nvim_lsp' },
