@@ -22,7 +22,6 @@ if command -v tmux &> /dev/null; then
 fi
 
 alias e='source ~/.config/bash/edit'
-alias use-nix='echo use nix > .envrc && direnv allow'
 alias cat='bat --theme=Dracula --plain --no-pager'
 alias xcopy='xclip -selection clipboard'
 alias cd='source ~/.config/bash/cd'
@@ -35,9 +34,10 @@ alias git-tag='git-ref refs/tags'
 alias git-graph='git log --graph --decorate --oneline --all'
 alias git-blame='source ~/.config/bash/git_blame'
 alias git-ls='source ~/.config/bash/git_ls'
-alias clean-history='source ~/.config/bash/clean_history'
 alias v='tmux capture-pane -p -e -S -3000 | nvim -c ":%s/\v\n{2,}$/\r/" -c "Ansi" -c "set buftype=nofile"'
-alias sqlite='sqlite3 ~/sqlite/data.db'
+alias gh-copilot-suggest-shell='gh copilot suggest --target shell'
+# alias use-nix='echo use nix > .envrc && direnv allow'
+# alias clean-history='source ~/.config/bash/clean_history'
 
 # Show last exit status and number of background jobs
 function exit_status {
