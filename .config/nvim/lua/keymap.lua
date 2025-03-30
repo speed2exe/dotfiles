@@ -44,13 +44,14 @@ set('n', '<leader>d', t_builtin.diagnostics)
 set('n', '<leader>j', t_builtin.jumplist)
 set('n', '<leader>q', t_builtin.quickfix)
 set('n', '<leader>g', t_builtin.git_status)
+set('n', '<leader>s', t_builtin.live_grep)
+set('v', '<leader>s', t_builtin.grep_string)
 set('n', '<leader>f', t_builtin.find_files)
-set('n', '<leader>s', t_builtin.live_grep)   -- search
-set('v', '<leader>s', t_builtin.grep_string) -- search for text under cursor
-set('v', '<leader>f', function()             -- search for files under cursor
+set('v', '<leader>f', function()
   t_builtin.find_files({ default_text = table.concat(fn.get_visual_selection_text(), ' ') })
 end)
 
+set('n', '<leader>n', t_builtin.lsp_document_symbols)
 set('n', '<leader>w', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>o', function()
   t_builtin.oldfiles({ default_text = vim.fn.getcwd() })
@@ -72,11 +73,11 @@ local show_more = false
 set('n', '<C-P>', function()
   show_more = not show_more
   vim.lsp.inlay_hint.enabled = show_more
-  vim.diagnostic.config({ virtual_lines = show_more } )
+  vim.diagnostic.config({ virtual_lines = show_more })
 end)
 
 -- Custom Personal Mapping
-set('n', '<leader>n', vim.lsp.buf.format)
+set('n', '<leader>l', vim.lsp.buf.format)
 set('n', '<leader>r', vim.lsp.buf.rename)
 set('n', '<leader>a', vim.lsp.buf.code_action)
 set('n', '<leader>e', ':term ')
