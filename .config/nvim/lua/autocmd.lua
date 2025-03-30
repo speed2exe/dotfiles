@@ -30,7 +30,7 @@ timer:start(0, 1000, vim.schedule_wrap(function()
     print(status)
   else
     if has_message then
-      print('\n')
+      vim.api.nvim_echo({}, false, {})
       has_message = false
     end
   end
