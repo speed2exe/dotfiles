@@ -26,12 +26,17 @@
   # Internationalisation
   i18n.defaultLocale = "en_US.UTF-8";
 
+  virtualisation.docker = {
+    enable = true;
+  };
+
   # Users
   users.users.zack2827 = {
     isNormalUser = true;
     home = "/home/zack2827";
     extraGroups = [
       "wheel"
+      "docker"
       # "libvirtd"
     ];
   };
