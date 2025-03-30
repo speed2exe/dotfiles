@@ -68,9 +68,11 @@ set('n', '<leader>t', "<CMD>Telescope file_browser path=%:p:h<CR>") -- traverse
 set('n', '<C-S>', ts_ctx.toggle)
 
 -- Toggle LSP inlay hints and LSP diagnostics
+local show_more = false
 set('n', '<C-P>', function()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-  fn.toggle_lsp_lines()
+  show_more = not show_more
+  vim.lsp.inlay_hint.enabled = show_more
+  vim.diagnostic.config({ virtual_lines = show_more } )
 end)
 
 -- Custom Personal Mapping
