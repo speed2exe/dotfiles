@@ -28,7 +28,6 @@ return {
       require('nvim-web-devicons').setup()
     end
   },
-  'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
   'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
 
   -- Telescope stuff
