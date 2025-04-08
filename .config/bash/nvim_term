@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
-printf "$READLINE_LINE" > /tmp/nvim-shell-cmd.sh
-nvim -c ":term source /tmp/nvim-shell-cmd.sh"
-rm /tmp/nvim-shell-cmd.sh
+cp ~/.bashrc /tmp/nvim-shell-cmd.sh
+echo "$READLINE_LINE" >> /tmp/nvim-shell-cmd.sh
+echo "exit" >> /tmp/nvim-shell-cmd.sh
+nvim -c ":term bash --rcfile /tmp/nvim-shell-cmd.sh"
