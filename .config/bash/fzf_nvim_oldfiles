@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SELECTION=$(nvim --headless +':oldfiles' +':qa!' 2>&1 \
-  | cut -d' ' -f2
+  | cut -d' ' -f2 \
   | sed 's/.$//' \
   | xargs eza --sort=none --color=always --icons=always 2> /dev/null \
   | fzf --no-sort --query "$PWD/" \
