@@ -5,6 +5,14 @@
 # exit if not running interactively
 test -z "$PS1" && return
 
+# set custom prompt
+PS1='$(test $? -eq 0 && printf "\033[42m \033[0m" || printf "\033[30;41m $? \033[0m") $(starship prompt)\n$ '
+
+# set environment variables
+export MANPAGER='nvim +Man!'
+export GIT_PAGER="delta --syntax-theme=Dracula"
+export FZF_DEFAULT_OPTS='--ansi --color=16 --inline-info --select-1 --exit-0'
+
 # attach to tmux session if exists
 if command -v tmux &> /dev/null; then
   if [ -z "$TMUX" ]; then
@@ -21,6 +29,7 @@ if command -v tmux &> /dev/null; then
   fi
 fi
 
+# set commonly used aliases
 alias e='source ~/.config/bash/edit'
 alias cat='bat --theme=Dracula --plain --no-pager'
 alias xcopy='xclip -selection clipboard'
@@ -39,16 +48,9 @@ alias gh-copilot-suggest-shell='gh copilot suggest --target shell'
 # alias use-nix='echo use nix > .envrc && direnv allow'
 # alias clean-history='source ~/.config/bash/clean_history'
 
-# Show last exit status and number of background jobs
-function exit_status {
-  test $? -eq 0 && printf "\033[42m \033[0m" \
-    || printf "\033[30;41m $? \033[0m"
-  local COUNT=$(jobs | wc -l)
-  test $COUNT -ne 0 && printf "\033[30;100m $COUNT \033[0m"
-}
-
-# Custom prompt
-PS1='$(exit_status) $(starship prompt)\n$ '
+# disable keybinds not applicable for modern terminals
+stty -ixon
+stty susp undef
 
 # Keybind utils to save and load command line
 bind -x '"\M-0":"source ~/.config/bash/save_cmd_line"'
@@ -61,36 +63,28 @@ bind -x '"\M-4":"source ~/.config/bash/fzf_nav_rec"'
 bind -x '"\M-5":"source ~/.config/bash/goto_git_root"'
 
 # Keybinds
-bind '"\C-A":"\M-0\M-2\n\M-1"'
-bind '"\C-F":"\M-0\M-3\n\M-1"'
-bind '"\C-T":"\M-0\M-4\n\M-1"'
-bind '"\C-G":"\M-0\M-5\n\M-1"'
-bind -x '"\C-R":"source ~/.config/bash/fzf_rev_cmd_history"'
-bind -x '"\C-E":"source ~/.config/bash/nvim_term"'
-bind -x '"\C-O":"source ~/.config/bash/fzf_nvim_oldfiles"'
-bind -x '"\C-S":"source ~/.config/bash/fzf_rg"'
-bind -x '"\C-X":"source ~/.config/bash/fzf_exe"'
-bind -x '"\C-Q":"source ~/.config/bash/delete_history_entry"'
-bind -x '"\C-L":"clear"'
-bind -x '"\C-K":"v"'
-bind -x '"\C-Y":"source ~/.config/bash/clipboard_copy"'
-# bind -x '"\C-P":"source ~/.config/bash/clipboard_paste"'
-# bind -x '"\C-N":"source ~/.config/bash/new_term"'
-# bind -x '"\C-X":"source ~/.config/bash/fzf_tmux_line"'
-# bind -x '"\C-A":"source ~/.config/bash/fzf_tmux_word"'
-# bind -x '"\C-N":"source ~/.config/bash/fzf_comp"'
-# bind -x '"\C-X":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
+bind '"\C-a":"\M-0\M-2\n\M-1"'
+bind '"\C-f":"\M-0\M-3\n\M-1"'
+bind '"\C-t":"\M-0\M-4\n\M-1"'
+bind '"\C-g":"\M-0\M-5\n\M-1"'
+bind -x '"\C-r":"source ~/.config/bash/fzf_rev_cmd_history"'
+bind -x '"\C-e":"source ~/.config/bash/nvim_term"'
+bind -x '"\C-o":"source ~/.config/bash/fzf_nvim_oldfiles"'
+bind -x '"\C-s":"source ~/.config/bash/fzf_rg"'
+bind -x '"\C-x":"source ~/.config/bash/fzf_exe"'
+bind -x '"\C-q":"source ~/.config/bash/delete_history_entry"'
+bind -x '"\C-l":"clear"'
+bind -x '"\C-k":"v"'
+bind -x '"\C-y":"source ~/.config/bash/clipboard_copy"'
+bind -x '"\C-z":"tmux choose-tree"'
+# bind -x '"\C-p":"source ~/.config/bash/clipboard_paste"'
+# bind -x '"\C-n":"source ~/.config/bash/new_term"'
+# bind -x '"\C-l":"source ~/.config/bash/fzf_tmux_line"'
+# bind -x '"\C-;":"source ~/.config/bash/fzf_tmux_word"'
+# bind -x '"\C-n":"source ~/.config/bash/fzf_comp"'
+# bind -x '"\C-x":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
 # bind -m vi-command -x '"v":"echo$ v ~/temp.bash"'
-# bind -x '"\C-L":"clear"'
-
-# Disable default ctrl-s and ctrl-q behavior
-stty -ixon
-
-# # Set the trap to call the cleanup function upon shell exit
-# trap 'source ~/.config/bash/clean_history' EXIT
-
-# Append to history file instead of overwriting
-shopt -s histappend
+# bind -x '"\C-l":"clear"'
 
 # Source extra init file (if any)
 test -f ~/.init.bash && source ~/.init.bash || true
