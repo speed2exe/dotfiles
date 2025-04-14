@@ -9,4 +9,4 @@ SELECTION=$(fd --hidden --no-ignore | xargs eza --sort=none --list-dirs --color=
 
 test -z "$SELECTION" && return
 test -d "$SELECTION" && cd "$SELECTION" && return
-test -f "$SELECTION" && $EDITOR "$SELECTION" && return
+test -f "$SELECTION" && nvim "$SELECTION" && return
