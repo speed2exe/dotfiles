@@ -163,7 +163,6 @@
   # };
 
   # Environment
-  environment.variables.EDITOR = "nvim";
   # environment.variables.WLR_NO_HARDWARE_CURSORS = "1";
   # environment.variables.NIXOS_OZONE_WL = "1";
 

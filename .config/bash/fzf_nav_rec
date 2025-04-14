@@ -11,4 +11,4 @@ while true; do
   break
 done
 
-test -f "$SELECTION" && $EDITOR "$SELECTION"
+test -f "$SELECTION" && nvim "$SELECTION"
