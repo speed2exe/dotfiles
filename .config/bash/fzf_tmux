@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# words
+tmux capture-pane -pe | tr ' ' '\n' > /tmp/fzf-tmux
+# lines
+tmux capture-pane -pe | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' >> /tmp/fzf-tmux
+
+word="$(cat /tmp/fzf-tmux \
+  | awk '!x[$0]++' \
+  | fzf --layout=reverse --height=7)" || return
+
+pre_cursor="${READLINE_LINE:0:$READLINE_POINT}$word"
+READLINE_LINE="$pre_cursor${READLINE_LINE:$READLINE_POINT}"
+READLINE_POINT=${#pre_cursor}
