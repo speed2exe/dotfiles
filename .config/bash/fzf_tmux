@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
-# words
+word="$(source ~/.config/bash/get_last_word_before_cursor)"
+
 tmux capture-pane -pe | tr ' ' '\n' > /tmp/fzf-tmux
-# lines
 tmux capture-pane -pe | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' >> /tmp/fzf-tmux
 
-word="$(cat /tmp/fzf-tmux \
+selected="$(cat /tmp/fzf-tmux \
   | awk '!x[$0]++' \
-  | fzf --layout=reverse --height=7)" || return
+  | fzf --layout=reverse --height=7 --query=$word)" || return
 
-pre_cursor="${READLINE_LINE:0:$READLINE_POINT}$word"
-READLINE_LINE="$pre_cursor${READLINE_LINE:$READLINE_POINT}"
+post_cursor="${READLINE_LINE:$READLINE_POINT}"
+pre_cursor="${READLINE_LINE:0:$(($READLINE_POINT-${#word}))}$selected"
+READLINE_LINE="$pre_cursor$post_cursor"
 READLINE_POINT=${#pre_cursor}
