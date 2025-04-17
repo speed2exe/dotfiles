@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+line="$READLINE_LINE"
+point="$READLINE_POINT"
+test "$point" -eq 0 && return
+
+# Check if the character BEFORE the cursor is whitespace
+[[ "${line:point-1:1}" =~ [[:space:]] ]] && return
+
+# Extract the last word normally
+before_cursor="${line:0:point}"
+before_cursor="${before_cursor%"${before_cursor##*[![:space:]]}"}"
+[[ "$before_cursor" =~ [^[:space:]]+$ ]] && printf "${BASH_REMATCH[0]}"
