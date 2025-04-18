@@ -11,7 +11,7 @@ super + x
   # alacritty
 
 # search and open new app or go to existing app
-super + g
+super + space
   rofi -show combi -show-icons -steal-focus
 
 # screenshot menu
