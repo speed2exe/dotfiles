@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 selection=$(history \
-  | sed 's/^.\{7\}//' \
+  | sed 's/^.\{7\}//; s/^[[:space:]]*//; s/[[:space:]]*$//' \
   | awk '!x[$0]++' \
   | tee /tmp/.bash_history \
   | rg "$READLINE_LINE" \
