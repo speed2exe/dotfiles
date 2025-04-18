@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SELECTION=$(fd --hidden --no-ignore --type=executable | xargs eza --sort=none --list-dirs --color=always --icons=always 2> /dev/null \
+SELECTION=$(eza --all --color=always --icons=always --recurse --oneline --absolute --classify=always | rg '\*$' | sed "s|$PWD/||" | sed 's/.$//' \
   | fzf --preview='test "$(dd bs=2 count=1 < {2} 2> /dev/null)" = "#!" && bat --theme=Dracula --number --color=always {2} || (file {2} && ldd {2})' \
         --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
         --preview-window=noborder \
