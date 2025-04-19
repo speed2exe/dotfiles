@@ -4,7 +4,7 @@
 pos="${1%%:*}"
 if [[ "$pos" == "$1" ]]; then
   # No ':' found, open the file directly
-  nvim "$1" && return 0
+  nvim "$@" && return 0
 fi
 
 # Extract the file and line parts
@@ -15,11 +15,11 @@ line="${1#*:}"
 pos="${line%%:*}"
 if [[ "$pos" == "$line" ]]; then
   # No second ':' found, open the file at the given line number
-  nvim "$file" +$line && return 0
+  nvim "$file" +$line "$@" && return 0
 fi
 
 # Extract column and line
 column="${line#*:}"
 line="${line%%:*}"
 
-nvim "$file" "+call cursor($line, $column)"
+nvim "$file" "+call cursor($line, $column)" "$@"
