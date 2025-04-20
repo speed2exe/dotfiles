@@ -92,7 +92,7 @@
     alacritty bat git fzf eza
     wget fd ripgrep procs st
     gh killall gcc gnumake tree
-    tmux glib delta luarocks neovim
+    tmux glib luarocks neovim
     ## X11
     xclip sxhkd polybar rofi
     nitrogen lxappearance
