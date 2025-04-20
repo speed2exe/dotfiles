@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
+# word is last word before cursor
+# selected is something to be inserted
+
 post_cursor="${READLINE_LINE:$READLINE_POINT}"
-pre_cursor="${READLINE_LINE:0:$(($READLINE_POINT-${#word}))}$@"
+pre_cursor="${READLINE_LINE:0:$(($READLINE_POINT-${#word}))}$selected"
 READLINE_LINE="$pre_cursor$post_cursor"
 READLINE_POINT=${#pre_cursor}

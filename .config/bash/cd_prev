@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+DIR_HIST_INDEX=${DIR_HIST_INDEX:-2}
+dir="$(tail -n $DIR_HIST_INDEX ~/marks/dir_history.txt | head -n 1)"
+builtin cd "$dir"
+DIR_HIST_INDEX=$((++DIR_HIST_INDEX))
