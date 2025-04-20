@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-SELECTION=$(eza --all --color=always --icons=always --recurse --oneline --absolute | rg -v '^$|:$' | sed "s|$PWD/||" \
+selected=$(eza --all --color=always --icons=always --recurse --oneline --absolute | rg -v '^$|:$' | sed "s|$PWD/||" \
   | fzf --preview='(test -f {2} && bat --number --color=always --theme=Dracula {2}) || (test -d {2} && exa --color=always --icons --sort accessed --color-scale=all --no-quotes --long --binary --time-style long-iso --git {2})' \
         --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
         --preview-window=noborder \
   | cut -d' ' -f2)
 
-test -z "$SELECTION" && return
-test -d "$SELECTION" && cd "$SELECTION" && return
-test -f "$SELECTION" && nvim "$SELECTION" && return
+test -z "$selected" && return
+test -d "$selected" && cd "$selected" && return
+test -f "$selected" && nvim "$selected" && return
