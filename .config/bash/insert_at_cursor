@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+post_cursor="${READLINE_LINE:$READLINE_POINT}"
+pre_cursor="${READLINE_LINE:0:$(($READLINE_POINT-${#word}))}$@"
+READLINE_LINE="$pre_cursor$post_cursor"
+READLINE_POINT=${#pre_cursor}
