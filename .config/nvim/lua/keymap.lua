@@ -54,19 +54,11 @@ end)
 set('n', '<leader>n', t_builtin.lsp_document_symbols)
 set('n', '<leader>w', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>o', function()
-  -- https://github.com/nvim-telescope/telescope.nvim/issues/3078
-  local sorter = require("telescope.sorters").get_fzy_sorter()
-  local score_fn = sorter.scoring_function
-  sorter.scoring_function = function(_, prompt, line)
-    local score = score_fn(_, prompt, line)
-    return score > 0 and 1 or -1;
-  end
-
+  -- https://github.com/nvim-telescope/telescope.nvim/issues/2539
   t_builtin.oldfiles({
-    default_text = vim.fn.getcwd(),
-    sorter = sorter,
+    default_text = vim.fn.getcwd() .. '/',
     tiebreak = function(current_entry, existing_entry, _)
-      return current_entry.index > existing_entry.index
+      return current_entry.index < existing_entry.index
     end,
   })
 end)
