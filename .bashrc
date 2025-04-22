@@ -47,8 +47,10 @@ alias gh-copilot-suggest-shell='gh copilot suggest --target shell'
 # alias clean-history='source ~/.config/bash/clean_history'
 
 # disable keybinds not applicable for modern terminals
-stty -ixon
-stty susp undef
+# ixon: ctrl-s, ctrl-q
+# susp undef: ctrl-z
+# discard undef: ctrl-o
+stty -ixon susp undef discard undef
 
 # vi mode
 set -o vi
