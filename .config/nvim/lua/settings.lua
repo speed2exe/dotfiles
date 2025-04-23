@@ -25,6 +25,8 @@ opt.expandtab = true
 --
 -- https://vim.fandom.com/wiki/Remove_unwanted_spaces
 --
+-- highlight NormalFloat     guibg=NONE
+-- highlight Pmenu           guibg=NONE
 vim.cmd [[
   highlight WinSeparator    guibg=NONE
   highlight StatusLine      guibg=NONE
@@ -35,8 +37,6 @@ vim.cmd [[
   highlight LspInlayHint    guibg=NONE
 
   highlight TelescopeNormal guibg=NONE
-  highlight NormalFloat     guibg=NONE
-  highlight Pmenu           guibg=NONE
 
   highlight CursorLine     guibg=#282a36 guifg=reverse
   highlight IncSearch      guibg=#44475a guifg=reverse
