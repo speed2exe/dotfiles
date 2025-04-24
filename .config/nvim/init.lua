@@ -24,5 +24,5 @@ require('autocmd')  -- ~/.config/nvim/lua/autocmd.lua
 
 -- neovide stuff
 if vim.g.neovide then
-	require('neovide')
+	require('neovide') -- ~/.config/nvim/lua/neovide.lua
 end
