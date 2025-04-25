@@ -67,20 +67,20 @@ super + k
 super + w
   bspc node --close
 
-# Kill App
-super + q
-  bspc node --kill
+# # Kill App
+# super + q
+#   bspc node --kill
 
 # # Kill App
 # super + ctrl + q
 # 	bspc node -k
 
-# Toggle Modes
-super + o
-  bspc node --state "~"{tiled,fullscreen}
+# Toggle Fullscreen
+super + g
+  bspc node --state ~fullscreen
 
 # Change focus
-super + {d,u,a,e,z}
+super + {d,u,a,e,o}
 	bspc node --focus {west,north,east,south,last}
 
 # Swap Node
