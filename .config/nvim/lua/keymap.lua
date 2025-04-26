@@ -12,6 +12,9 @@ vim.api.nvim_create_user_command('Ansi', function()
   baleia.setup().once(vim.fn.bufnr())
 end, {})
 
+-- Print current working directory
+set('n', '<C-c>', '<CMD>pwd<CR>')
+
 -- Remove lines with only whitespace or nothing
 set('v', '<leader><BS>', ':g/^\\s*$/d<CR>')
 
