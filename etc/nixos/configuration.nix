@@ -88,14 +88,14 @@
     gpu-screen-recorder-gtk
     ## Terminal
     starship fortune fzf btop
-    alacritty bat git fzf eza
+    bat git fzf eza delta
     wget fd ripgrep procs st
-    gh killall gcc gnumake tree
+    gh killall gcc gnumake
     tmux glib luarocks neovim
     ## X11
     xclip sxhkd polybar rofi
-    nitrogen lxappearance
     maim xdotool picom
+    lxappearance
     # ## Wayland
     # rofi-wayland
     # wl-clipboard
