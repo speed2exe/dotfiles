@@ -11,6 +11,7 @@ PS1='$(test $? -eq 0 && printf "\033[42m \033[0m" || printf "\033[30;41m $? \033
 # set environment variables
 export MANPAGER='nvim +Man!'
 export FZF_DEFAULT_OPTS='--ansi --color=16 --inline-info'
+export GIT_PAGER='delta --syntax-theme Dracula --paging=never'
 
 # attach to tmux session if exists
 if command -v tmux &> /dev/null; then
