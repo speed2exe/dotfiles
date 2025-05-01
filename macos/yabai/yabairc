@@ -2,12 +2,6 @@
 # it will be able to run the command without password
 
 sudo /opt/homebrew/bin/yabai --load-sa
-yabai -m signal --add event=dock_did_restart action="sudo /opt/homebrew/bin/yabai --load-sa"
+yabai --message signal --add event=dock_did_restart action="sudo /opt/homebrew/bin/yabai --load-sa"
 
 yabai --message config layout bsp
-yabai --message config external_bar all:27:0
-yabai --message config active_window_border_color 0xFFBD93F9
-yabai --message config normal_window_border_color 0x00FFFFFF
-yabai --message config window_border on
-yabai --message config window_border_radius 0
-yabai --message config window_border_width 2
