@@ -83,6 +83,8 @@ style = "Regular"
 
 [window]
 opacity = 0.7
+decorations = "None"
+
 #
 # [hints]
 # alphabet = "123456789"
