@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+options=(
+	style=square
+	active_color=0x80bd93f9
+	inactive_color=0x8021222c
+)
+
+borders "${options[@]}"

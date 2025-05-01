@@ -1,9 +1,4 @@
 # use xev cli app (from org-xev package) to check input
-#
-# reset the keyboard daemon
-# usually happens after modification to sxhkd file
-super + l
-  killall -q sxhkd && sxhkd &
 
 # Terminal
 super + x
@@ -76,7 +71,7 @@ super + w
 # 	bspc node -k
 
 # Toggle Fullscreen
-super + g
+super + v
   bspc node --state ~fullscreen
 
 # Change focus
@@ -84,24 +79,16 @@ super + {d,u,a,e,o}
 	bspc node --focus {west,north,east,south,last}
 
 # Swap Node
-super + ctrl + {d,u,a,e}
-  bspc node --swap {west,north,east,south} --follow
+super + ctrl + {d,u,a,e,o}
+  bspc node --swap {west,north,east,south,last} --follow
 
 # Reinsert into Node
-super + alt + {d,u,a,e}
-  bspc node --to-node {west,north,east,south} --follow
-
-# Fill Receptacle
-# super + i
-#     ~/.config/sxhkd/bspc_move_node_to_recep
+super + alt + {d,u,a,e,o}
+  bspc node --to-node {west,north,east,south,last} --follow
 
 # Rotate
-# super + {Prior, Next}
-#   bspc node @parent --rotate {-90, 90}
-# super + x
-#   bspc node @parent --rotate 90
-# super + ctrl + x
-#   bspc node @parent --rotate -90
+super + g
+  bspc node @parent --rotate -90
 
 # Auto resize with equal area
 super + b
@@ -159,48 +146,36 @@ super + shift + u
 super + shift + e
   ~/.config/sxhkd/bspc_move_node bottom 0 16
 
+
 ##---------- Desktop Management ----------##
 
-# # Rename desktop
-# super + r
-#   ~/.config/sxhkd/bspc_rename_desktop
-
-# Focus desktop
-# super + {Left,Right}
-#   bspc desktop --focus {prev,next}
+# Focus desktop 1-9
 super + {1-9}
   bspc desktop --focus '^{1-9}'
 
-# # Swap desktop
-# super + ctrl + {Left,Right}
-#   bspc desktop --swap {prev,next} --follow
+# Focus desktop last
+super + l
+  bspc desktop --focus last
+
+# Move Node to desktop 1-9
+super + ctrl + {1-9}
+  bspc node --to-desktop {1-9} --follow
+
+# Move Node to last desktop
+super + ctrl + l
+  bspc node --to-desktop last --follow
+
 
 ##---------- Monitor Management ----------##
 
 # Focus monitor
-super + {Up,Down}
-  bspc monitor --focus {prev,next}
+super + {Up,Down,m}
+  bspc monitor --focus {prev,next,last}
 
 # Swap Monitor
-super + ctrl + {Up,Down}
-  bspc monitor --swap {prev,next} --follow
-
-##---------- Transfer Management ----------##
-
-# Move Node to last desktop
-super + m
-  bspc node --to-desktop last --follow
-
-# Send node to first desktop
-# super + BackSpace
-#   bspc node --to-desktop '^1'
-
-# Send node to previous or next desktop
-# super + alt + {Left,Right}
-#   bspc node --to-desktop {prev,next} --follow
-super + ctrl + {1-9}
-  bspc node --to-desktop {1-9} --follow
+super + ctrl + {Up,Down,m}
+  bspc monitor --swap {prev,next,last} --follow
 
 # Send node to previous or next monitor
-super + alt + {Up,Down}
-  bspc node --to-monitor {prev,next} --follow
+super + alt + {Up,Down,m}
+  bspc node --to-monitor {prev,next,last} --follow
