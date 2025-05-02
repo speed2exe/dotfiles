@@ -82,14 +82,14 @@
     home-manager
 
     ## Desktop
-    brightnessctl
+    alacritty brightnessctl
     dracula-theme dracula-icon-theme
     dunst pinta firefoxpwa
     gpu-screen-recorder-gtk
     ## Terminal
     starship fortune fzf btop
     bat git fzf eza delta
-    wget fd ripgrep procs st
+    wget fd ripgrep procs
     gh killall gcc gnumake
     tmux glib luarocks neovim
     ## X11
