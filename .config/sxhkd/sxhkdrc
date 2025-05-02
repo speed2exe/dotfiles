@@ -1,28 +1,28 @@
 # use xev cli app (from org-xev package) to check input
 
 # Terminal
-super + x
+alt + x
   alacritty
   # st -f "IosevkaTermNerdFont:size=14"
 
 # search and open new app or go to existing app
-super + space
+alt + space
   rofi -show combi -show-icons -steal-focus
 
 # screenshot menu
-super + c
+alt + c
     ~/.config/sxhkd/screenshot
 #
 # # power menu
-# super + p
+# alt + p
 #     ~/.config/sxhkd/power
 
 # # change wallpaper
-# super + w
+# alt + w
 #   nitrogen --set-zoom-fill --random ~/wallpaper
 
 # change wallpaper based on input
-# super + ctrl + w
+# alt + ctrl + w
 #   ~/.config/sxhkd/get_wallpaper
 
 
@@ -43,139 +43,139 @@ XF86AudioMute
 ##---------- Node Management ----------##
 
 # Spawn Receptacle
-# super + x
+# alt + x
 #     bspc node --insert-receptacle
 
 # Toggle floating
-super + p
+alt + p
   bspc node --state "~"{floating,tiled}
 
 # Next through floating windows
-super + j
+alt + j
   bspc node --focus next.local.floating
 
 # Previous through floating windows
-super + k
+alt + k
   bspc node --focus prev.local.floating
 
 # Close App
-super + w
+alt + w
   bspc node --close
 
 # # Kill App
-# super + q
+# alt + q
 #   bspc node --kill
 
 # # Kill App
-# super + ctrl + q
+# alt + ctrl + q
 # 	bspc node -k
 
 # Toggle Fullscreen
-super + v
+alt + v
   bspc node --state ~fullscreen
 
 # Change focus
-super + {d,u,a,e,o}
+alt + {d,u,a,e,o}
 	bspc node --focus {west,north,east,south,last}
 
 # Swap Node
-super + ctrl + {d,u,a,e,o}
+alt + ctrl + {d,u,a,e,o}
   bspc node --swap {west,north,east,south,last} --follow
 
 # Reinsert into Node
-super + alt + {d,u,a,e,o}
+alt + super + {d,u,a,e,o}
   bspc node --to-node {west,north,east,south,last} --follow
 
 # Rotate
-super + g
+alt + g
   bspc node @parent --rotate -90
 
 # Auto resize with equal area
-super + b
+alt + b
   bspc node @/ --balance && rm /tmp/inc.key
 
 # Node increase size
-super + ctrl + b
+alt + ctrl + b
   ~/.config/sxhkd/bspc_resize_node_auto_balance_increase
 
 # Expand from Left
-super + r
+alt + r
   ~/.config/sxhkd/bspc_resize_node left -16 0
 
 # Expand from Right
-super + t
+alt + t
   ~/.config/sxhkd/bspc_resize_node right 16 0
 
 # Expand from Top
-super + h
+alt + h
   ~/.config/sxhkd/bspc_resize_node top 0 -16
 
 # Expand from Bottom
-super + n
+alt + n
   ~/.config/sxhkd/bspc_resize_node bottom 0 16
 
 # Shrink from Right
-super + ctrl + t
+alt + ctrl + t
   ~/.config/sxhkd/bspc_resize_node left 16 0
 
 # Shrink from Left
-super + ctrl + r
+alt + ctrl + r
   ~/.config/sxhkd/bspc_resize_node right -16 0
 
 # Shrink from Top
-super + ctrl + n
+alt + ctrl + n
   ~/.config/sxhkd/bspc_resize_node top 0 16
 
 # Shrink from Bottom
-super + ctrl + h
+alt + ctrl + h
   ~/.config/sxhkd/bspc_resize_node bottom 0 -16
 
 # Move window left
-super + shift + d
+alt + shift + d
   ~/.config/sxhkd/bspc_move_node left -16 0
 
 # Move window right
-super + shift + a
+alt + shift + a
   ~/.config/sxhkd/bspc_move_node right 16 0
 
 # Move window up
-super + shift + u
+alt + shift + u
   ~/.config/sxhkd/bspc_move_node top 0 -16
 
 # Move window down
-super + shift + e
+alt + shift + e
   ~/.config/sxhkd/bspc_move_node bottom 0 16
 
 
 ##---------- Desktop Management ----------##
 
 # Focus desktop 1-9
-super + {1-9}
+alt + {1-9}
   bspc desktop --focus '^{1-9}'
 
 # Focus desktop last
-super + l
+alt + l
   bspc desktop --focus last
 
 # Move Node to desktop 1-9
-super + ctrl + {1-9}
+alt + ctrl + {1-9}
   bspc node --to-desktop {1-9} --follow
 
 # Move Node to last desktop
-super + ctrl + l
+alt + ctrl + l
   bspc node --to-desktop last --follow
 
 
 ##---------- Monitor Management ----------##
 
 # Focus monitor
-super + {Up,Down,m}
+alt + {Up,Down,m}
   bspc monitor --focus {prev,next,last}
 
 # Swap Monitor
-super + ctrl + {Up,Down,m}
+alt + ctrl + {Up,Down,m}
   bspc monitor --swap {prev,next,last} --follow
 
 # Send node to previous or next monitor
-super + alt + {Up,Down,m}
+alt + super + {Up,Down,m}
   bspc node --to-monitor {prev,next,last} --follow
