@@ -2,8 +2,8 @@
 
 # Terminal
 super + x
-  st -f "IosevkaTermNerdFont:size=14"
-  # alacritty
+  alacritty
+  # st -f "IosevkaTermNerdFont:size=14"
 
 # search and open new app or go to existing app
 super + space
