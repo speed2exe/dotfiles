@@ -48,7 +48,7 @@ alt - 6 : yabai --message space --focus 6
 alt - 7 : yabai --message space --focus 7
 alt - 8 : yabai --message space --focus 8
 alt - 9 : yabai --message space --focus 9
-alt - l : yabai --message space --focus last
+alt - l : yabai --message space --focus recent
 
 # Move window to previous or next space
 alt + ctrl - 1 : yabai --message window --space 1 && yabai --message window --focus recent
@@ -60,7 +60,7 @@ alt + ctrl - 6 : yabai --message window --space 6 && yabai --message window --fo
 alt + ctrl - 7 : yabai --message window --space 7 && yabai --message window --focus recent
 alt + ctrl - 8 : yabai --message window --space 8 && yabai --message window --focus recent
 alt + ctrl - 9 : yabai --message window --space 9 && yabai --message window --focus recent
-alt + ctrl - l : yabai --message window --space last && yabai --message window --focus recent
+alt + ctrl - l : yabai --message window --space recent && yabai --message window --focus recent
 
 # Auto-balance window
 alt - b : yabai --message space --balance
@@ -71,12 +71,12 @@ alt + ctrl - b : yabai --message window --resize bottom_right:50:50 ; yabai --me
 # Focus monitor
 alt - up   : yabai --message display --focus prev
 alt - down : yabai --message display --focus next
-alt - m    : yabai --message display --focus last
+alt - m    : yabai --message display --focus recent
 
 # Move window to previous or next monitor
-alt + cmd - up   : yabai --message window --display prev && yabai --message window --focus recent
-alt + cmd - down : yabai --message window --display next && yabai --message window --focus recent
-alt + cmd - m    : yabai --message window --display last && yabai --message window --focus recent
+alt + cmd - up   : yabai --message window --display prev   && yabai --message window --focus recent
+alt + cmd - down : yabai --message window --display next   && yabai --message window --focus recent
+alt + cmd - m    : yabai --message window --display recent && yabai --message window --focus recent
 
 # # Stack Window
 # cmd + shift - 8 : yabai --message window --stack north && yabai --message window --focus stack.recent
