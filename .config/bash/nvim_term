@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 
-eval "$READLINE_LINE" > /tmp/exec-output
-nvim +Ansi /tmp/exec-output
+eval "$READLINE_LINE" | nvim +Ansi
