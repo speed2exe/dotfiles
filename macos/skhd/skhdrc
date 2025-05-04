@@ -50,7 +50,7 @@ alt - 8 : yabai --message space --focus 8
 alt - 9 : yabai --message space --focus 9
 alt - l : yabai --message space --focus recent
 
-# Move window to previous or next space
+# Move window to space
 alt + ctrl - 1 : yabai --message window --space 1 && yabai --message window --focus recent
 alt + ctrl - 2 : yabai --message window --space 2 && yabai --message window --focus recent
 alt + ctrl - 3 : yabai --message window --space 3 && yabai --message window --focus recent
@@ -74,9 +74,9 @@ alt - down : yabai --message display --focus next
 alt - m    : yabai --message display --focus recent
 
 # Move window to previous or next monitor
-alt + cmd - up   : yabai --message window --display prev   && yabai --message window --focus recent
-alt + cmd - down : yabai --message window --display next   && yabai --message window --focus recent
-alt + cmd - m    : yabai --message window --display recent && yabai --message window --focus recent
+alt + ctrl - up   : yabai --message window --display prev   && yabai --message window --focus recent
+alt + ctrl - down : yabai --message window --display next   && yabai --message window --focus recent
+alt + ctrl - m    : yabai --message window --display recent && yabai --message window --focus recent
 
 # # Stack Window
 # cmd + shift - 8 : yabai --message window --stack north && yabai --message window --focus stack.recent

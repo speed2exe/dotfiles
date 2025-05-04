@@ -177,5 +177,5 @@ alt + ctrl + {Up,Down,m}
   bspc monitor --swap {prev,next,last} --follow
 
 # Send node to previous or next monitor
-alt + super + {Up,Down,m}
+alt + ctrl + {Up,Down,m}
   bspc node --to-monitor {prev,next,last} --follow
