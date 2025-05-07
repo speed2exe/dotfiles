@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# . <(curl https://raw.githubusercontent.com/speed2exe/dotfiles/main/dev/nix.sh)
+
 # Download config and load into machine
 cd
 curl -L "https://github.com/speed2exe/dotfiles/archive/refs/heads/main.tar.gz" -o dotfiles.tar.gz
@@ -11,6 +13,8 @@ rm dotfiles.tar.gz
 # Install Nix Package Manager
 # https://nixos.org/download/#nix-install-linux
 sh <(curl -L https://nixos.org/nix/install) --daemon --yes
+# load nix env in the same shell
+. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
 # Install Home Manager
 # https://nix-community.github.io/home-manager/index.xhtml#sec-install-standalone
@@ -32,3 +36,6 @@ for pkg in "${pkgs[@]}"; do
     sed -i "/home.packages = with pkgs;/a \    $pkg" ~/.config/home-manager/home.nix
 done
 home-manager switch
+
+# Restart Shell
+exec bash

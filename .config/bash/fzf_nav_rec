@@ -8,7 +8,7 @@ SELECTION=$(exa --color=always --all --dereference --icons=always \
 
 if test -d "$SELECTION"; then
   cd "$SELECTION"
-  source ~/.config/bash/fzf_nav_rec
+  . ~/.config/bash/fzf_nav_rec
 else
   test -f "$SELECTION" && nvim "$SELECTION"
 fi

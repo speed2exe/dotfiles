@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Additional configurations (if any)
-test -f ~/.bspwmrc && source ~/.bspwmrc
+test -f ~/.bspwmrc && . ~/.bspwmrc
 
 # Setup workspaces
 workspaces() {
