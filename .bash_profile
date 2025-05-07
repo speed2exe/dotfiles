@@ -6,4 +6,4 @@
 [[ -z $DISPLAY && $XDG_VTNR ]] && return
 
 # bashrc
-source ~/.bashrc
+. ~/.bashrc
