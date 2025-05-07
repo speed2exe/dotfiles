@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-word="$(source ~/.config/bash/get_last_word_before_cursor)"
+word="$(. ~/.config/bash/get_last_word_before_cursor)"
 
 selected=$(eza --all --color=always --icons=always --recurse --oneline --absolute --classify=always | rg '\*$' | sed "s|$PWD/||" | sed 's/.$//' \
   | fzf --preview='test "$(dd bs=2 count=1 < {2} 2> /dev/null)" = "#!" && bat --theme=Dracula --number --color=always {2} || (file {2} && ldd {2})' \
@@ -10,4 +10,4 @@ selected=$(eza --all --color=always --icons=always --recurse --oneline --absolut
       )
 
 test -z "$selected" && return
-source ~/.config/bash/insert_at_cursor "./$selected"
+. ~/.config/bash/insert_at_cursor "./$selected"

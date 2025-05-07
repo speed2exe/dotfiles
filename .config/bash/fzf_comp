@@ -12,8 +12,8 @@ COMP_LINE="$PRE_CURSOR"
 COMP_WORDS=()
 for WORD in $PRE_CURSOR; do COMP_WORDS+=("$WORD"); done
 test "${READLINE_LINE:READLINE_POINT-1:1}" = ' ' && COMP_WORDS+=('')
-test 0 -eq ${#COMP_WORDS[@]} && source ~/.config/bash/fzf_comp_empty && return
-test 1 -eq ${#COMP_WORDS[@]} && source ~/.config/bash/fzf_comp_empty "${COMP_WORDS[-1]}" && return
+test 0 -eq ${#COMP_WORDS[@]} && . ~/.config/bash/fzf_comp_empty && return
+test 1 -eq ${#COMP_WORDS[@]} && . ~/.config/bash/fzf_comp_empty "${COMP_WORDS[-1]}" && return
 COMP_CWORD=${#COMP_WORDS[@]}
 ((COMP_CWORD--))
 COMP_POINT=${#COMP_LINE}

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-word="$(source ~/.config/bash/get_last_word_before_cursor)"
+word="$(. ~/.config/bash/get_last_word_before_cursor)"
 
 tmux capture-pane -pe | tr ' ' '\n' > /tmp/fzf-tmux
 tmux capture-pane -pe | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' >> /tmp/fzf-tmux
@@ -9,4 +9,4 @@ selected="$(cat /tmp/fzf-tmux \
   | awk '!x[$0]++' \
   | fzf --layout=reverse --height=7 --query=$word)" || return
 
-source ~/.config/bash/insert_at_cursor "$selected"
+. ~/.config/bash/insert_at_cursor "$selected"

@@ -31,10 +31,10 @@ if command -v tmux &> /dev/null; then
 fi
 
 # set commonly used aliases
-alias e='source ~/.config/bash/edit'
+alias e='. ~/.config/bash/edit'
 alias cat='bat --theme=Dracula --plain --no-pager'
 alias xcopy='xclip -selection clipboard'
-alias cd='source ~/.config/bash/cd'
+alias cd='. ~/.config/bash/cd'
 alias l='exa --icons --sort accessed --color-scale=all --no-quotes --color=always'
 alias la='l --all'
 alias ll='l --long --binary --time-style long-iso --git'
@@ -42,11 +42,11 @@ alias lla='ll --all'
 alias git-ref='git for-each-ref --sort=creatordate --format "%(color:red)%(objectname) %(color:blue)%(creatordate) %(color:reset)%(refname) %(color:green)%(tagger)%(author) %(color:yellow)%(contents:subject)"'
 alias git-tag='git-ref refs/tags'
 alias git-graph='git log --graph --decorate --oneline --all'
-alias git-blame='source ~/.config/bash/git_blame'
-alias git-ls='source ~/.config/bash/git_ls'
+alias git-blame='. ~/.config/bash/git_blame'
+alias git-ls='. ~/.config/bash/git_ls'
 alias gh-copilot-suggest-shell='gh copilot suggest --target shell'
 # alias use-nix='echo use nix > .envrc && direnv allow'
-# alias clean-history='source ~/.config/bash/clean_history'
+# alias clean-history='. ~/.config/bash/clean_history'
 
 # disable keybinds not applicable for modern terminals
 # ixon: ctrl-s, ctrl-q
@@ -58,16 +58,16 @@ stty -ixon susp undef discard undef
 set -o vi
 
 # Keybind utils to save and load command line
-bind -x '"\M-0":"source ~/.config/bash/save_cmd_line"'
-bind -x '"\M-1":"source ~/.config/bash/load_cmd_line"'
+bind -x '"\M-0":". ~/.config/bash/save_cmd_line"'
+bind -x '"\M-1":". ~/.config/bash/load_cmd_line"'
 
 # Keybinds involving changing directory
-bind -x '"\M-2":"source ~/.config/bash/fzf_rev_dir_history"'
-bind -x '"\M-3":"source ~/.config/bash/fzf_fd"'
-bind -x '"\M-4":"source ~/.config/bash/fzf_nav_rec"'
-# bind -x '"\M-5":"source ~/.config/bash/goto_git_root"'
+bind -x '"\M-2":". ~/.config/bash/fzf_rev_dir_history"'
+bind -x '"\M-3":". ~/.config/bash/fzf_fd"'
+bind -x '"\M-4":". ~/.config/bash/fzf_nav_rec"'
+# bind -x '"\M-5":". ~/.config/bash/goto_git_root"'
 # bind -x '"\M-6":"cd .."'
-# bind -x '"\M-7":"source ~/.config/bash/cd_prev"'
+# bind -x '"\M-7":". ~/.config/bash/cd_prev"'
 
 # Keybinds
 bind '"\C-a":"\M-0\M-2\n\M-1"'
@@ -76,24 +76,24 @@ bind '"\C-t":"\M-0\M-4\n\M-1"'
 # bind '"\C-g":"\M-0\M-5\n\M-1"'
 # bind '"\C-u":"\M-0\M-6\n\M-1"'
 # bind '"\C-o":"\M-0\M-7\n\M-1"'
-bind -x '"\C-r":"source ~/.config/bash/fzf_rev_cmd_history"'
-bind -x '"\C-e":"source ~/.config/bash/nvim_term"'
-bind -x '"\C-o":"source ~/.config/bash/fzf_nvim_oldfiles"'
-bind -x '"\C-s":"source ~/.config/bash/fzf_rg"'
-bind -x '"\C-x":"source ~/.config/bash/fzf_exe"'
-bind -x '"\C-q":"source ~/.config/bash/delete_history_entry"'
+bind -x '"\C-r":". ~/.config/bash/fzf_rev_cmd_history"'
+bind -x '"\C-e":". ~/.config/bash/nvim_term"'
+bind -x '"\C-o":". ~/.config/bash/fzf_nvim_oldfiles"'
+bind -x '"\C-s":". ~/.config/bash/fzf_rg"'
+bind -x '"\C-x":". ~/.config/bash/fzf_exe"'
+bind -x '"\C-q":". ~/.config/bash/delete_history_entry"'
 bind -x '"\C-l":"clear"'
 bind -x '"\C-k":tmux capture-pane -p -e -S -3000 | nvim -c ":%s/\v\n{2,}$/\r/" -c "Ansi" -c "set buftype=nofile"'
-bind -x '"\C-y":"source ~/.config/bash/clipboard_copy"'
-# bind -x '"\C-p":"source ~/.config/bash/clipboard_paste"'
-# bind -x '"\C-n":"source ~/.config/bash/new_term"'
-# bind -x '"\C-l":"source ~/.config/bash/fzf_tmux_line"'
-# bind -x '"\C-;":"source ~/.config/bash/fzf_tmux_word"'
-bind -x '"\C-g":"source ~/.config/bash/fzf_tmux"'
-# bind -x '"\C-i":"source ~/.config/bash/fzf_comp_2"'
+bind -x '"\C-y":". ~/.config/bash/clipboard_copy"'
+# bind -x '"\C-p":". ~/.config/bash/clipboard_paste"'
+# bind -x '"\C-n":". ~/.config/bash/new_term"'
+# bind -x '"\C-l":". ~/.config/bash/fzf_tmux_line"'
+# bind -x '"\C-;":". ~/.config/bash/fzf_tmux_word"'
+bind -x '"\C-g":". ~/.config/bash/fzf_tmux"'
+# bind -x '"\C-i":". ~/.config/bash/fzf_comp_2"'
 # bind -x '"\C-x":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
 # bind -m vi-command -x '"v":"echo$ v ~/temp.bash"'
 # bind -x '"\C-l":"clear"'
 
 # Source extra init file (if any)
-test -f ~/.init.bash && source ~/.init.bash || true
+test -f ~/.init.bash && . ~/.init.bash || true

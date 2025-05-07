@@ -28,7 +28,7 @@ case "${#COMP_WORDS[@]}" in
     ;;
 esac
 
-word="$(source ~/.config/bash/get_last_word_before_cursor)"
+word="$(. ~/.config/bash/get_last_word_before_cursor)"
 
 tmux capture-pane -pe | sed 's/\x1b\[[0-9;]*[mGKHF]//g; s/[[:space:]]\+/\n/g' >> /tmp/fzf_comp
 tmux capture-pane -pe >> /tmp/fzf_comp
@@ -38,4 +38,4 @@ selected="$(cat /tmp/fzf_comp \
   | awk '!x[$0]++' \
   | fzf --layout=reverse --height=7 --query=$word)" || return
 
-source ~/.config/bash/insert_at_cursor "$selected"
+. ~/.config/bash/insert_at_cursor "$selected"
