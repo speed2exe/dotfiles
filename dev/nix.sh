@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
 # Download config and load into machine
+cd
 curl -L "https://github.com/speed2exe/dotfiles/archive/refs/heads/main.tar.gz" -o dotfiles.tar.gz
 rm -rf ~/dotfiles && tar -C ~/ -xzf dotfiles.tar.gz
 mv dotfiles-main dotfiles
+rm dotfiles.tar.gz
+./dotfiles/sync
 
 # Install Nix Package Manager
 # https://nixos.org/download/#nix-install-linux
-sh <(curl -L https://nixos.org/nix/install) --daemon
+sh <(curl -L https://nixos.org/nix/install) --daemon --yes
 
 # Install Home Manager
 # https://nix-community.github.io/home-manager/index.xhtml#sec-install-standalone
@@ -23,8 +26,9 @@ pkgs=(
     git direnv gh starship
     ripgrep procs delta
     fd neovim fzf eza bat
-    btop kalker
+    btop kalker gcc gnumake
 )
 for pkg in "${pkgs[@]}"; do
     sed -i "/home.packages = with pkgs;/a \    $pkg" ~/.config/home-manager/home.nix
 done
+home-manager switch

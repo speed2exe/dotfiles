@@ -6,7 +6,7 @@
 test -z "$PS1" && return
 
 # set custom prompt
-PS1='$(test $? -eq 0 && printf "\033[42m \033[0m" || printf "\033[30;41m $? \033[0m") $(starship prompt)\n$ '
+PS1='$(test $? -eq 0 && printf "\033[42m \033[0m" || printf "\033[30;41m $? \033[0m") $(starship prompt 2> /dev/null)\n$ '
 
 # set environment variables
 export MANPAGER='nvim +Man!'
