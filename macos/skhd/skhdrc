@@ -1,5 +1,5 @@
 # Open Alacritty
-alt - x : /Applications/Alacritty.app/Contents/MacOS/alacritty
+alt - x : alacritty
 
 # Focus Window
 # NOTE: need to create space first (1 time setup: 4 finger swipe up, '+')
@@ -24,7 +24,7 @@ alt + cmd - a : yabai --message window --warp east
 alt + cmd - o : yabai --message window --warp prev
 
 # Toggle Window Split
-cmd - g : yabai --message window --toggle split
+alt - g : yabai --message window --toggle split
 
 # Increase window size
 alt - h : yabai --message window --resize top:0:-50
