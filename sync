@@ -25,7 +25,6 @@ home_config_dirs=(
   ".config/hypr"
   ".config/sway"
   ".config/waybar"
-  ".config/dconf"
   ".config/bash"
   ".config/tmux"
   ".config/starship.toml"
