@@ -1,12 +1,16 @@
 # use xev cli app (from org-xev package) to check input
 
-# Terminal
 alt + x
-  alacritty
+  bspc node "$(xdotool search --class 'alacritty' | head -n 1)" --focus || alacritty &
   # st -f "IosevkaTermNerdFont:size=14"
 
-# Browser
+alt + ctrl + x
+  alacritty
+
 alt + g
+  bspc node "$(xdotool search --class 'firefox' | head -n 1)" --focus || firefox &
+
+alt + ctrl + g
   firefox
 
 # search and open new app or go to existing app
