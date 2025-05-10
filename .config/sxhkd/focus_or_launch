@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+WINDOW_ID="$(xdotool search --class "$1" | head -n 1)"
+if test -z "$WINDOW_ID"; then
+  "$@" &
+else
+  bspc node "$WINDOW_ID" --focus
+fi

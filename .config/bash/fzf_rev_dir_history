@@ -3,10 +3,13 @@
 DIR=$(tac ~/marks/dir_history.txt \
   | awk '!x[$0]++' \
   | tee /tmp/dir_history.txt \
-  | xargs eza --sort=none --list-dirs --color=always 2> /dev/null \
-  | fzf --no-sort \
-  | cut -d' ' -f1)
+  | xargs eza --sort=none --list-dirs --icons=always --color=always 2> /dev/null \
+  | sed "s|$PWD/||; s|$HOME|~|" \
+  | fzf --no-sort --preview="eza --color=always --icons --sort accessed --color-scale=all --no-quotes --long --binary --time-style long-iso --git \$(sed \"s|^~|$HOME|\" <<< '{2}')" \
+  | cut -d' ' -f2)
 
 tac /tmp/dir_history.txt > ~/marks/dir_history.txt
 
+test -z "$DIR" && return
+DIR=${DIR/#\~/$HOME}
 test -d "$DIR" && cd "$DIR"
