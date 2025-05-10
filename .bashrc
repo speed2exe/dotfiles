@@ -5,21 +5,9 @@
 # exit if not running interactively
 test -z "$PS1" && return
 
-# set custom prompt
-PS1='$(test $? -eq 0 && printf "\033[42m \033[0m" || printf "\033[30;41m $? \033[0m") $(starship prompt 2> /dev/null)\n$ '
-
-# set environment variables
-export MANPAGER='nvim +Man!'
-export FZF_DEFAULT_OPTS='--ansi --color=16 --inline-info'
-export GIT_PAGER='delta --syntax-theme Dracula --paging=never'
-export EDITOR='nvim'
-
 # attach to tmux session if exists
 if command -v tmux &> /dev/null; then
   if [ -z "$TMUX" ]; then
-    # Set terminal colors in a single printf call
-    # printf '\033]4;0;#21222c\033\\\033]4;1;#ff5555\033\\\033]4;2;#50fa7b\033\\\033]4;3;#f1fa8c\033\\\033]4;4;#bd93f9\033\\\033]4;5;#ff79c6\033\\\033]4;6;#8be9fd\033\\\033]4;7;#f8f8f2\033\\\033]4;8;#6272a4\033\\\033]4;9;#ff6e6e\033\\\033]4;10;#69ff94\033\\\033]4;11;#ffffa5\033\\\033]4;12;#d6acff\033\\\033]4;13;#ff92df\033\\\033]4;14;#a4ffff\033\\\033]4;15;#ffffff\033\\\033]10;#aaaaaa\033\\'
-
     UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_name}')
     for UNATTACHED in $UNATTACHEDS; do
       if [ "${UNATTACHED:0:1}" = "_" ]; then
@@ -29,6 +17,18 @@ if command -v tmux &> /dev/null; then
     exec tmux new -s _$RANDOM
   fi
 fi
+
+# Set terminal colors in a single printf call
+# printf '\033]4;0;#21222c\033\\\033]4;1;#ff5555\033\\\033]4;2;#50fa7b\033\\\033]4;3;#f1fa8c\033\\\033]4;4;#bd93f9\033\\\033]4;5;#ff79c6\033\\\033]4;6;#8be9fd\033\\\033]4;7;#f8f8f2\033\\\033]4;8;#6272a4\033\\\033]4;9;#ff6e6e\033\\\033]4;10;#69ff94\033\\\033]4;11;#ffffa5\033\\\033]4;12;#d6acff\033\\\033]4;13;#ff92df\033\\\033]4;14;#a4ffff\033\\\033]4;15;#ffffff\033\\\033]10;#aaaaaa\033\\'
+
+# set custom prompt
+PS1='$(test $? -eq 0 && printf "\033[42m \033[0m" || printf "\033[30;41m $? \033[0m") $(starship prompt 2> /dev/null)\n$ '
+
+# set environment variables
+export MANPAGER='nvim +Man!'
+export FZF_DEFAULT_OPTS='--ansi --color=16 --inline-info'
+export GIT_PAGER='delta --syntax-theme Dracula --paging=never'
+export EDITOR='nvim'
 
 # set commonly used aliases
 alias e='. ~/.config/bash/edit'
