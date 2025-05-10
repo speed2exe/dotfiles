@@ -7,15 +7,13 @@ test -z "$PS1" && return
 
 # attach to tmux session if exists
 if command -v tmux &> /dev/null; then
-  if [ -z "$TMUX" ]; then
-    UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_name}')
-    for UNATTACHED in $UNATTACHEDS; do
-      if [ "${UNATTACHED:0:1}" = "_" ]; then
-        exec tmux attach-session -t "$UNATTACHED"
-      fi
-    done
-    exec tmux new -s _$RANDOM
-  fi
+  UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_name}')
+  for UNATTACHED in $UNATTACHEDS; do
+    if [ "${UNATTACHED:0:1}" = "_" ]; then
+      exec tmux attach-session -t "$UNATTACHED"
+    fi
+  done
+  tmux new -s _$RANDOM 2> /dev/null && exit
 fi
 
 # Set terminal colors in a single printf call
@@ -94,6 +92,7 @@ bind -x '"\C-g":". ~/.config/bash/fzf_tmux"'
 # bind -x '"\C-x":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
 # bind -m vi-command -x '"v":"echo$ v ~/temp.bash"'
 # bind -x '"\C-l":"clear"'
+bind -x '"\C-b":"tmux"'
 
 # Source extra init file (if any)
 test -f ~/.init.bash && . ~/.init.bash || true

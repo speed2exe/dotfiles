@@ -5,6 +5,10 @@ alt + x
   alacritty
   # st -f "IosevkaTermNerdFont:size=14"
 
+# Browser
+alt + g
+  firefox
+
 # search and open new app or go to existing app
 alt + space
   rofi -show combi -show-icons -steal-focus
@@ -86,9 +90,13 @@ alt + ctrl + {d,u,a,e,o}
 alt + super + {d,u,a,e,o}
   bspc node --to-node {west,north,east,south,last} --follow
 
-# Rotate
-alt + g
-  bspc node @parent --rotate -90
+# Rotate clockwise
+# alt + g
+#   bspc node @parent --rotate +90
+
+# Rotate counter-clockwise
+# alt + x
+#   bspc node @parent --rotate -90
 
 # Auto resize with equal area
 alt + b
