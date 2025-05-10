@@ -95,7 +95,7 @@
     ## X11
     xclip sxhkd polybar rofi
     maim xdotool picom
-    lxappearance
+    lxappearance nitrogen
     # ## Wayland
     # rofi-wayland
     # wl-clipboard
