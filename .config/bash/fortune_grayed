@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+printf "\033[90m$(fortune)\n\n\033[0m"

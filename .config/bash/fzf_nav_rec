@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-SELECTION=$(exa --color=always --all --dereference --icons=always \
-  | fzf --preview='(test -f {2} && bat --number --color=always --theme=Dracula {2}) || (test -d {2} && exa --color=always --icons --sort accessed --color-scale=all --no-quotes --long --binary --time-style long-iso --git {2})' \
+SELECTION=$(eza --color=always --all --dereference --icons=always \
+  | fzf --preview='(test -f {2} && bat --number --color=always --theme=Dracula {2}) || (test -d {2} && eza --color=always --icons --sort accessed --color-scale=all --no-quotes --long --binary --time-style long-iso --git {2})' \
         --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up,left:become(echo ".."),right:accept' \
         --preview-window=noborder --header="$PWD" \
   | cut -d' ' -f2)
