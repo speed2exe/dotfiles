@@ -1,7 +1,8 @@
 # use xev cli app (from org-xev package) to check input
 
 alt + x
-  ~/.config/sxhkd/focus_or_launch alacritty
+  alacritty
+  # ~/.config/sxhkd/focus_or_launch alacritty
   # st -f "IosevkaTermNerdFont:size=14"
 
 # search and open new app or go to existing app
