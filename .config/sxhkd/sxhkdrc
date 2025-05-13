@@ -4,15 +4,6 @@ alt + x
   ~/.config/sxhkd/focus_or_launch alacritty
   # st -f "IosevkaTermNerdFont:size=14"
 
-alt + ctrl + x
-  alacritty
-
-alt + g
-  ~/.config/sxhkd/focus_or_launch firefox
-
-alt + ctrl + g
-  firefox
-
 # search and open new app or go to existing app
 alt + space
   rofi -show combi -show-icons -steal-focus
@@ -95,12 +86,12 @@ alt + super + {d,u,a,e,o}
   bspc node --to-node {west,north,east,south,last} --follow
 
 # Rotate clockwise
-# alt + g
-#   bspc node @parent --rotate +90
+alt + g
+  bspc node @parent --rotate +90
 
 # Rotate counter-clockwise
-# alt + x
-#   bspc node @parent --rotate -90
+alt + ctrl + g
+  bspc node @parent --rotate -90
 
 # Auto resize with equal area
 alt + b
