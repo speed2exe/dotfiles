@@ -11,6 +11,7 @@ mkdir -p ~/.config
 
 home_config_dirs=(
   ".config/nix"
+  ".config/direnv"
   ".config/nvim"
   ".config/neofetch"
   ".config/fontconfig"
