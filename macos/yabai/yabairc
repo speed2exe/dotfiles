@@ -5,4 +5,9 @@ sudo /opt/homebrew/bin/yabai --load-sa
 yabai --message signal --add event=dock_did_restart action="sudo /opt/homebrew/bin/yabai --load-sa"
 
 yabai --message config layout bsp
-yabai -m config external_bar all:32:0
+
+# give some space for ubersich bar
+yabai --message config external_bar all:32:0
+
+# launch daemon to highlight border of active window
+borders &
