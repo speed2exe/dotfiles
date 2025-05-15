@@ -4,7 +4,6 @@ selection=$(history \
   | sed 's/^.\{7\}//; s/^[[:space:]]*//; s/[[:space:]]*$//' \
   | awk '!x[$0]++' \
   | tee /tmp/.bash_history \
-  | rg "$READLINE_LINE" \
   | fzf --tac --no-sort --query "$READLINE_LINE" --select-1 --exit-0)
 
 cp /tmp/.bash_history ~/.bash_history
