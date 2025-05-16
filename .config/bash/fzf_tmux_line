@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 
-line="$(tmux capture-pane -pe \
+word="$(. ~/.config/bash/get_last_word_before_cursor)"
+selected="$(tmux capture-pane -pe \
   | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \
   | awk '!x[$0]++' \
-  | fzf --layout=reverse --height=1)" || return
+  | fzf --layout=reverse --height=7)" || return
 
-pre_cursor="${READLINE_LINE:0:$READLINE_POINT}$line"
-READLINE_LINE="$pre_cursor${READLINE_LINE:$READLINE_POINT}"
-READLINE_POINT=${#pre_cursor}
+. ~/.config/bash/insert_at_cursor
