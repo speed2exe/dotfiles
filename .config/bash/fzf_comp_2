@@ -23,19 +23,16 @@ case "${#COMP_WORDS[@]}" in
     # if no completions, use current directory files and directories
     test 0 -eq ${#COMPREPLY[@]} && COMPREPLY=($(compgen -f -- "${COMP_WORDS[-1]}"))
 
-    # deduplicate completions
     printf "%s\n" "${COMPREPLY[@]}" > /tmp/fzf_comp
     ;;
 esac
 
 word="$(. ~/.config/bash/get_last_word_before_cursor)"
-
-tmux capture-pane -pe | sed 's/\x1b\[[0-9;]*[mGKHF]//g; s/[[:space:]]\+/\n/g' >> /tmp/fzf_comp
-tmux capture-pane -pe >> /tmp/fzf_comp
-
 selected="$(cat /tmp/fzf_comp \
   | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \
   | awk '!x[$0]++' \
-  | fzf --layout=reverse --height=7 --query=$word)" || return
+  | fzf --layout=reverse --height=7 \
+        --query=$word \
+        --exit-0  --select-1 )" || return
 
-. ~/.config/bash/insert_at_cursor "$selected"
+. ~/.config/bash/insert_at_cursor
