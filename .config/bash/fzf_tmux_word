@@ -4,6 +4,6 @@ word="$(. ~/.config/bash/get_last_word_before_cursor)"
 selected="$(tmux capture-pane -pe \
   | tr ' ' '\n' \
   | awk '!x[$0]++' \
-  | fzf --layout=reverse --height=7)" || return
+  | fzf --layout=reverse --height=7 --query="$word")" || return
 
 . ~/.config/bash/insert_at_cursor
