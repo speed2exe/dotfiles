@@ -2,8 +2,9 @@
 
 options=(
 	style=square
-	active_color=0x80bd93f9
-	inactive_color=0x8021222c
+	active_color=0xffbd93f9
+	inactive_color=0xff21222c
+  width=1.0
 )
 
 borders "${options[@]}"
