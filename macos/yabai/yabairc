@@ -5,6 +5,7 @@ sudo /opt/homebrew/bin/yabai --load-sa
 yabai --message signal --add event=dock_did_restart action="sudo /opt/homebrew/bin/yabai --load-sa"
 
 yabai --message config layout bsp
+yabai --message config window_gap 1
 
 # give some space for ubersich bar
 yabai --message config external_bar all:32:0
