@@ -6,6 +6,12 @@ yabai --message signal --add event=dock_did_restart action="sudo /opt/homebrew/b
 
 yabai --message config layout bsp
 yabai --message config window_gap 1
+yabai --message config mouse_follows_focus on
+
+# https://github.com/koekeishiya/yabai/issues/485
+yabai --message signal --add event=window_destroyed action="yabai --message window --focus mouse"
+yabai --message signal --add event=window_minimized action="yabai --message window --focus mouse"
+yabai --message signal --add event=application_hidden action="yabai --message window --focus mouse"
 
 # give some space for ubersich bar
 yabai --message config external_bar all:32:0
