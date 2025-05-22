@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
+HOME_SYM="$(realpath $HOME)"
 DIR=$(tac ~/marks/dir_history.txt \
   | awk '!x[$0]++' \
   | tee /tmp/dir_history.txt \
   | xargs eza --sort=none --list-dirs --icons=always --color=always 2> /dev/null \
-  | sed "s|$PWD/||; s|$HOME|~|" \
+  | sed "s|$PWD/||; s| $HOME_SYM| ~|; s| $HOME| ~|" \
   | fzf --preview="eza --color=always --icons --sort accessed --color-scale=all --no-quotes --long --binary --time-style long-iso --git \$(sed \"s|^~|$HOME|\" <<< '{2}')" \
         --query="$(</tmp/readline_line)" \
         --no-sort \
