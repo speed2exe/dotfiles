@@ -2,13 +2,13 @@
 
 selection=$(history \
   | sed 's/^.\{7\}//; s/^[[:space:]]*//; s/[[:space:]]*$//' \
+  | tac \
   | awk '!x[$0]++' \
   | tee /tmp/.bash_history \
-  | tac \
   | bat --color=always --language=bash --theme=Dracula --style=plain \
   | fzf --no-sort --query "$READLINE_LINE" --select-1 --exit-0)
 
-cp /tmp/.bash_history ~/.bash_history
+tac /tmp/.bash_history > ~/.bash_history
 
 test -n "$selection" \
   && READLINE_LINE="$selection" \
