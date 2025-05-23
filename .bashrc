@@ -67,6 +67,7 @@ bind -x '"\M-4":". ~/.config/bash/fzf_nav_rec"'
 # bind -x '"\M-6":"cd .."'
 # bind -x '"\M-7":". ~/.config/bash/cd_prev"'
 bind -x '"\M-8":". ~/.config/bash/fzf_dir"'
+bind -m vi-command -x '"p": ". ~/.config/bash/vi_cmd_paste"'
 
 # Keybinds
 bind '"\C-a":"\M-0\M-2\n\M-1"'
