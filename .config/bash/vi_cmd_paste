@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if command -v xclip &> /dev/null; then
+  selected="$(xclip -o -selection clipboard)"
+elif command -v pbpaste &> /dev/null; then
+  selected="$(pbpaste)"
+fi
+
+test -z "$selected" && return
+
+# make it as close to vim as possible
+((READLINE_POINT++))
+pre_cursor="${READLINE_LINE:0:$READLINE_POINT}"
+post_cursor="${READLINE_LINE:$READLINE_POINT}"
+READLINE_LINE="$pre_cursor$selected$post_cursor"
+READLINE_POINT=$(( ${#pre_cursor} + ${#selected} - 1 ))
