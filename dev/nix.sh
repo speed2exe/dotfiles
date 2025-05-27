@@ -28,7 +28,7 @@ home-manager init
 sed -i 's/home.packages = /home.packages = with pkgs; /' ~/.config/home-manager/home.nix
 pkgs=(
     git direnv gh starship
-    ripgrep procs delta
+    ripgrep procs delta delve
     fd neovim fzf eza bat
     btop kalker gcc gnumake
 )
