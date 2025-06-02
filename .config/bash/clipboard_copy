@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-echo "$READLINE_LINE" | xclip -selection clipboard
+(command -v xclip > /dev/null) && (echo "$READLINE_LINE" | xclip -selection clipboard) && return
+(command -v pbcopy > /dev/null) && (echo "$READLINE_LINE" | pbcopy) && return

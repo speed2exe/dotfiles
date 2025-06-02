@@ -10,6 +10,16 @@
       /etc/nixos/hardware-configuration.nix
     ];
 
+  # https://nixos.wiki/wiki/Nvidia
+  hardware.graphics = {
+    enable = true;
+  };
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia = {
+    modesetting.enable = true;
+    open = false;
+  };
+
   # Boot loader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
