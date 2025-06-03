@@ -5,7 +5,6 @@ COMP_WORDS=($(compgen -abck))
 SELECTION=$(printf "%s\n" ${COMP_WORDS[@]} | awk '!x[$0]++' | fzf \
   --preview='{} --help 2> /dev/null || {} -h 2> /dev/null || -help 2> /dev/null || man {} 2> /dev/null' \
   --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
-  --preview-window=noborder \
   --query="$*" \
 )
 test -z "$SELECTION" && return
