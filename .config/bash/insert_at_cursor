@@ -5,8 +5,6 @@
 # selected is something to be inserted
 
 post_cursor="${READLINE_LINE:$READLINE_POINT}"
-echo "post_cursor: [$post_cursor]"
 pre_cursor="${READLINE_LINE:0:$(($READLINE_POINT-${#word}))}$selected "
-echo "pre_cursor: [$pre_cursor]"
 READLINE_LINE="$pre_cursor$post_cursor"
 READLINE_POINT=${#pre_cursor}
