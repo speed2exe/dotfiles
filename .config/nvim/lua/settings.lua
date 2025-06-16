@@ -9,6 +9,7 @@ opt.swapfile = false
 opt.cursorline = true
 opt.statusline = '%f:%l:%c'
 opt.wrap = false
+opt.shell = '/Users/bytedance/.nix-profile/bin/bash'
 
 -- Tabs and Indentation
 opt.tabstop = 2
