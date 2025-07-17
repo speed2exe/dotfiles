@@ -67,7 +67,7 @@ bind -x '"\M-4":". ~/.config/bash/fzf_nav_rec"'
 # bind -x '"\M-6":"cd .."'
 # bind -x '"\M-7":". ~/.config/bash/cd_prev"'
 bind -x '"\M-8":". ~/.config/bash/fzf_dir"'
-bind -m vi-command -x '"p": ". ~/.config/bash/vi_cmd_paste"'
+bind -x '"\M-9":". ~/.config/bash/save_cmd_to_hist"'
 
 # Keybinds
 bind '"\C-a":"\M-0\M-2\n\M-1"'
@@ -77,6 +77,7 @@ bind '"\C-t":"\M-0\M-4\n\M-1"'
 # bind '"\C-g":"\M-0\M-5\n\M-1"'
 # bind '"\C-u":"\M-0\M-6\n\M-1"'
 # bind '"\C-o":"\M-0\M-7\n\M-1"'
+bind '"\C-m":"\M-9\n"'
 bind -x '"\C-r":". ~/.config/bash/fzf_rev_cmd_history"'
 bind -x '"\C-e":". ~/.config/bash/nvim_term"'
 bind -x '"\C-o":". ~/.config/bash/fzf_nvim_oldfiles"'
@@ -97,7 +98,9 @@ bind -x '"\C-g":". ~/.config/bash/fzf_tmux"'
 # bind -m vi-command -x '"v":"echo$ v ~/temp.bash"'
 # bind -x '"\C-l":"clear"'
 bind -x '"\C-b":"tmux"'
+
 bind -m vi-command -x '"yy":". ~/.config/bash/clipboard_copy"'
+bind -m vi-command -x '"p": ". ~/.config/bash/vi_cmd_paste"'
 
 # Source extra init file (if any)
 test -f ~/.init.bash && . ~/.init.bash || true
