@@ -54,8 +54,8 @@ set('v', '<leader>f', function()
   t_builtin.find_files({ default_text = table.concat(fn.get_visual_selection_text(), ' ') })
 end)
 
-set('n', '<leader>/', t_builtin.lsp_document_symbols)
-set('n', '<leader>?', t_builtin.lsp_dynamic_workspace_symbols)
+set('n', '<leader>n', t_builtin.lsp_document_symbols)
+set('n', '<leader>w', t_builtin.lsp_dynamic_workspace_symbols)
 set('n', '<leader>o', function()
   -- https://github.com/nvim-telescope/telescope.nvim/issues/2539
   t_builtin.oldfiles({
@@ -79,7 +79,7 @@ set('n', '<C-S>', ts_ctx.toggle)
 
 -- Toggle LSP inlay hints and LSP diagnostics
 local show_more = false
-set('n', '<C-N>', function()
+set('n', '<C-P>', function()
   show_more = not show_more
   vim.lsp.inlay_hint.enabled = show_more
   vim.diagnostic.config({ virtual_lines = show_more })
@@ -98,5 +98,5 @@ set('n', '<leader>x', fn.open_term_at_file_dir) -- open interactive terminal at 
 set('n', '<C-Q>', fn.toggle_quickfix)
 set('n', '<C-J>', '<CMD>cnext<CR>')
 set('n', '<C-K>', '<CMD>cprevious<CR>')
-set('n', '<C-N>', '<CMD>cnewer<CR>')
-set('n', '<C-P>', '<CMD>colder<CR>')
+set('n', '<C-N>', '<CMD>colder<CR>')
+set('n', '<C-H>', '<CMD>cnewer<CR>')
