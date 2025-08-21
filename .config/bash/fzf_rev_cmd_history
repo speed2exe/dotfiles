@@ -4,7 +4,7 @@ selection=$(tac ~/.cmd_line_history \
   | awk '!x[$0]++' \
   | tee /tmp/.cmd_line_history \
   | bat --color=always --language=bash --theme=Dracula --style=plain \
-  | fzf --no-sort --query "$READLINE_LINE" --select-1 --exit-0)
+  | fzf --scheme=history --no-sort --query "$READLINE_LINE" --select-1 --exit-0)
 
 tac /tmp/.cmd_line_history > ~/.cmd_line_history
 

@@ -8,7 +8,7 @@ DIR=$(tac ~/marks/dir_history.txt \
   | sed "s|$PWD/|./|;s|$HOME_SYM|~|;s|$HOME|~|" \
   | fzf --preview="eza --color=always --icons --sort accessed --color-scale=all --no-quotes --long --binary --time-style long-iso --git \$(sed \"s|^~|$HOME|\" <<< '{2}')" \
         --query="$(</tmp/readline_line)" \
-        --no-sort \
+        --scheme=path --no-sort \
   | cut -d' ' -f2)
 
 tac /tmp/dir_history.txt > ~/marks/dir_history.txt
