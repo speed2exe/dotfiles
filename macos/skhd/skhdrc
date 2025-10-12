@@ -38,18 +38,18 @@ alt + ctrl - r : yabai --message window --resize right:-50:0
 alt + ctrl - t : yabai --message window --resize left:50:0
 
 # Focus on space
-# configure shortcuts in Settings -> Keyboard -> Shortcuts -> Mission Control
+# can also be configured shortcuts in Settings -> Keyboard -> Shortcuts -> Mission Control
 # # NOTE: need to create space first (1 time setup: 4 finger swipe up, '+')
-# alt - 1 : yabai --message space --focus 1
-# alt - 2 : yabai --message space --focus 2
-# alt - 3 : yabai --message space --focus 3
-# alt - 4 : yabai --message space --focus 4
-# alt - 5 : yabai --message space --focus 5
-# alt - 6 : yabai --message space --focus 6
-# alt - 7 : yabai --message space --focus 7
-# alt - 8 : yabai --message space --focus 8
-# alt - 9 : yabai --message space --focus 9
-# alt - l : yabai --message space --focus recent
+alt - 1 : yabai --message space --focus 1
+alt - 2 : yabai --message space --focus 2
+alt - 3 : yabai --message space --focus 3
+alt - 4 : yabai --message space --focus 4
+alt - 5 : yabai --message space --focus 5
+alt - 6 : yabai --message space --focus 6
+alt - 7 : yabai --message space --focus 7
+alt - 8 : yabai --message space --focus 8
+alt - 9 : yabai --message space --focus 9
+alt - l : yabai --message space --focus recent
 
 # Move window to space
 alt + ctrl - 1 : yabai --message window --space 1 && yabai --message window --focus recent
