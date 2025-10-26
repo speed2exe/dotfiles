@@ -7,13 +7,15 @@ test -z "$PS1" && return
 
 # attach to tmux session if exists
 if command -v tmux &> /dev/null; then
-  UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_name}')
-  for UNATTACHED in $UNATTACHEDS; do
-    if [ "${UNATTACHED:0:1}" = "_" ]; then
-      exec tmux attach-session -t "$UNATTACHED"
-    fi
-  done
-  tmux new -s _$RANDOM 2> /dev/null && exit
+  if test ! "$TMUX"; then
+    UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_name}')
+    for UNATTACHED in $UNATTACHEDS; do
+      if [ "${UNATTACHED:0:1}" = "_" ]; then
+        exec tmux attach-session -t "$UNATTACHED"
+      fi
+    done
+    exec tmux new -s _$RANDOM
+  fi
 fi
 
 # Set terminal colors in a single printf call
