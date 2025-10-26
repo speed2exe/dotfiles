@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo "$READLINE_LINE" >> ~/.cmd_line_history
+echo "$READLINE_LINE" | awk '{$1=$1; print}' >> ~/.cmd_line_history
