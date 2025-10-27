@@ -26,7 +26,7 @@ PS1='$(test $? -eq 0 && printf "\033[42m \033[0m" || printf "\033[30;41m $? \033
 
 # set environment variables
 export MANPAGER='nvim +Man!'
-export FZF_DEFAULT_OPTS='--ansi --color=16 --inline-info --preview-window=noborder'
+export FZF_DEFAULT_OPTS='--ansi --color=base16 --inline-info --preview-window=noborder'
 export GIT_PAGER='delta --syntax-theme Dracula --paging=never'
 export EDITOR='nvim'
 
@@ -42,9 +42,9 @@ alias lla='ll --all'
 alias git-ref='git for-each-ref --sort=creatordate --format "%(color:red)%(objectname) %(color:blue)%(creatordate) %(color:reset)%(refname) %(color:green)%(tagger)%(author) %(color:yellow)%(contents:subject)"'
 alias git-tag='git-ref refs/tags'
 alias git-graph='git log --graph --decorate --oneline --all'
-alias git-blame='. ~/.config/bash/git_blame'
+# alias git-blame='. ~/.config/bash/git_blame'
 alias git-ls='. ~/.config/bash/git_ls'
-alias gh-copilot-suggest-shell='gh copilot suggest --target shell'
+# alias gh-copilot-suggest-shell='gh copilot suggest --target shell'
 # alias use-nix='echo use nix > .envrc && direnv allow'
 # alias clean-history='. ~/.config/bash/clean_history'
 
@@ -99,7 +99,7 @@ bind -x '"\C-g":". ~/.config/bash/fzf_tmux"'
 # bind -x '"\C-x":"tmux capture-pane -p -e -S -3000 | nvim -c $ -c Ansi"'
 # bind -m vi-command -x '"v":"echo$ v ~/temp.bash"'
 # bind -x '"\C-l":"clear"'
-bind -x '"\C-b":"tmux"'
+# bind -x '"\C-b":"tmux"'
 
 bind -m vi-command -x '"yy":". ~/.config/bash/clipboard_copy"'
 bind -m vi-command -x '"p": ". ~/.config/bash/vi_cmd_paste"'
