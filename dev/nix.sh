@@ -2,6 +2,8 @@
 
 # . <(curl https://raw.githubusercontent.com/speed2exe/dotfiles/main/dev/nix.sh)
 
+set -e
+
 # Download config and load into machine
 cd
 curl -L "https://github.com/speed2exe/dotfiles/archive/refs/heads/main.tar.gz" -o dotfiles.tar.gz
