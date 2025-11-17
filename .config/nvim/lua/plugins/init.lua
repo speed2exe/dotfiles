@@ -2,32 +2,12 @@ local vim = vim
 
 return {
   'github/copilot.vim',
-  {
-    "folke/which-key.nvim",
-    config = function()
-      require('which-key').setup()
-    end
-  },
+  'folke/which-key.nvim',
   'm00qek/baleia.nvim',
   'onsails/lspkind-nvim',
-  {
-    'Mofiqul/dracula.nvim',
-    config = function()
-      vim.cmd.colorscheme('dracula')
-    end
-  },
-  {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup()
-    end
-  },
-  {
-    'nvim-tree/nvim-web-devicons',
-    config = function()
-      require('nvim-web-devicons').setup()
-    end
-  },
+  'Mofiqul/dracula.nvim',
+  'lewis6991/gitsigns.nvim',
+  'nvim-tree/nvim-web-devicons',
   'https://gitlab.com/HiPhish/rainbow-delimiters.nvim',
 
   -- Telescope stuff
@@ -36,17 +16,12 @@ return {
   'nvim-telescope/telescope-file-browser.nvim',
 
   -- LSP stuff
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
   'neovim/nvim-lspconfig',
 
   -- TreeSitter stuff
-  {
-    'nvim-treesitter/nvim-treesitter-context',
-    config = function()
-      require('treesitter-context').setup()
-    end
-  },
+  'nvim-treesitter/nvim-treesitter-context',
 
   -- Cmp stuff
   'hrsh7th/cmp-nvim-lsp',
@@ -58,10 +33,5 @@ return {
   'ray-x/cmp-treesitter',
 
   -- Zig
-  {
-    'speed2exe/zig-comp-diag.nvim',
-    config = function()
-      require('zig-comp-diag').setup()
-    end
-  },
+  { 'speed2exe/zig-comp-diag.nvim', opts = {} },
 }
