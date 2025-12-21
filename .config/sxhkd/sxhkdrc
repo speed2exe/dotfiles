@@ -75,16 +75,16 @@ alt + w
 #   bspc node --state ~fullscreen
 
 # Change focus
-alt + {h,k,l,j,o}
-	bspc node --focus {west,north,east,south,last}
+alt + {h,k,l,j}
+	bspc node --focus {west,north,east,south}
 
 # Swap Node
-alt + ctrl + {h,k,l,j,o}
-  bspc node --swap {west,north,east,south,last} --follow
+alt + ctrl + {h,k,l,j}
+  bspc node --swap {west,north,east,south} --follow
 
 # Reinsert into Node
-alt + shift + {h,k,l,j,o}
-  bspc node --to-node {west,north,east,south,last} --follow
+alt + shift + {h,k,l,j}
+  bspc node --to-node {west,north,east,south} --follow
 
 # Rotate clockwise
 alt + r
@@ -158,7 +158,7 @@ alt + {1-9}
   bspc desktop --focus '^{1-9}'
 
 # Focus desktop last
-alt + u
+alt + o
   bspc desktop --focus last
 
 # Move Node to desktop 1-9
@@ -166,7 +166,7 @@ alt + ctrl + {1-9}
   bspc node --to-desktop {1-9} --follow
 
 # Move Node to last desktop
-alt + ctrl + u
+alt + ctrl + o
   bspc node --to-desktop last --follow
 
 
