@@ -1,26 +1,23 @@
 # Open Alacritty
-alt - x : alacritty
+alt - return : alacritty
 
 # Focus Window
 alt - u : yabai --message window --focus north
 alt - e : yabai --message window --focus south
 alt - d : yabai --message window --focus west
 alt - a : yabai --message window --focus east
-alt - o : yabai --message window --focus prev
 
 # Swap Window
 alt + ctrl - u : yabai --message window --swap north
 alt + ctrl - e : yabai --message window --swap south
 alt + ctrl - d : yabai --message window --swap west
 alt + ctrl - a : yabai --message window --swap east
-alt + ctrl - o : yabai --message window --swap prev
 
 # Warp(Move) Window
 alt + cmd - u : yabai --message window --warp north
 alt + cmd - e : yabai --message window --warp south
 alt + cmd - d : yabai --message window --warp west
 alt + cmd - a : yabai --message window --warp east
-alt + cmd - o : yabai --message window --warp prev
 
 # Toggle Window Split
 alt - g : yabai --message window --toggle split
@@ -49,7 +46,7 @@ alt - 6 : yabai --message space --focus 6
 alt - 7 : yabai --message space --focus 7
 alt - 8 : yabai --message space --focus 8
 alt - 9 : yabai --message space --focus 9
-alt - l : yabai --message space --focus recent
+alt - o : yabai --message space --focus recent
 
 # Move window to space
 alt + ctrl - 1 : yabai --message window --space 1 && yabai --message window --focus recent
@@ -61,7 +58,7 @@ alt + ctrl - 6 : yabai --message window --space 6 && yabai --message window --fo
 alt + ctrl - 7 : yabai --message window --space 7 && yabai --message window --focus recent
 alt + ctrl - 8 : yabai --message window --space 8 && yabai --message window --focus recent
 alt + ctrl - 9 : yabai --message window --space 9 && yabai --message window --focus recent
-alt + ctrl - l : yabai --message window --space recent && yabai --message window --focus recent
+alt + ctrl - o : yabai --message window --space recent && yabai --message window --focus recent
 
 # Auto-balance window
 alt - b : yabai --message space --balance
@@ -72,12 +69,12 @@ alt + ctrl - b : yabai --message window --resize bottom_right:50:50 ; yabai --me
 # Focus monitor
 alt - up   : yabai --message display --focus prev
 alt - down : yabai --message display --focus next
-alt - m    : yabai --message display --focus recent
+alt - l    : yabai --message display --focus recent
 
 # Move window to previous or next monitor
 alt + ctrl - up   : yabai --message window --display prev   && yabai --message window --focus recent
 alt + ctrl - down : yabai --message window --display next   && yabai --message window --focus recent
-alt + ctrl - m    : yabai --message window --display recent && yabai --message window --focus recent
+alt + ctrl - l    : yabai --message window --display recent && yabai --message window --focus recent
 
 # # Stack Window
 # cmd + shift - 8 : yabai --message window --stack north && yabai --message window --focus stack.recent
