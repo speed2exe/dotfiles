@@ -1,6 +1,6 @@
 # use xev cli app (from org-xev package) to check input
 
-alt + x
+alt + Return
   alacritty
   # ~/.config/sxhkd/focus_or_launch alacritty
   # st -f "IosevkaTermNerdFont:size=14"
@@ -47,8 +47,8 @@ XF86AudioMute
 #     bspc node --insert-receptacle
 
 # Toggle floating
-alt + p
-  bspc node --state "~"{floating,tiled}
+# alt + p
+#   bspc node --state "~"{floating,tiled}
 
 # Next through floating windows
 alt + j
@@ -75,16 +75,16 @@ alt + v
   bspc node --state ~fullscreen
 
 # Change focus
-alt + {d,u,a,e,o}
-	bspc node --focus {west,north,east,south,last}
+alt + {d,u,a,e}
+	bspc node --focus {west,north,east,south}
 
 # Swap Node
-alt + ctrl + {d,u,a,e,o}
-  bspc node --swap {west,north,east,south,last} --follow
+alt + ctrl + {d,u,a,e}
+  bspc node --swap {west,north,east,south} --follow
 
 # Reinsert into Node
-alt + super + {d,u,a,e,o}
-  bspc node --to-node {west,north,east,south,last} --follow
+alt + super + {d,u,a,e}
+  bspc node --to-node {west,north,east,south} --follow
 
 # Rotate clockwise
 alt + g
@@ -158,7 +158,7 @@ alt + {1-9}
   bspc desktop --focus '^{1-9}'
 
 # Focus desktop last
-alt + l
+alt + o
   bspc desktop --focus last
 
 # Move Node to desktop 1-9
@@ -166,20 +166,20 @@ alt + ctrl + {1-9}
   bspc node --to-desktop {1-9} --follow
 
 # Move Node to last desktop
-alt + ctrl + l
+alt + ctrl + o
   bspc node --to-desktop last --follow
 
 
 ##---------- Monitor Management ----------##
 
 # Focus monitor
-alt + {Up,Down,m}
+alt + {Up,Down,l}
   bspc monitor --focus {prev,next,last}
 
 # Swap Monitor
-alt + ctrl + {Up,Down,m}
+alt + ctrl + {Up,Down,l}
   bspc monitor --swap {prev,next,last} --follow
 
 # Send node to previous or next monitor
-alt + ctrl + {Up,Down,m}
+alt + shift + {Up,Down,l}
   bspc node --to-monitor {prev,next,last} --follow
