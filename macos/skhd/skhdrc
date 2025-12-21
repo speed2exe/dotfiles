@@ -1,41 +1,41 @@
 # Open Alacritty
-alt - x : alacritty
+alt - return : alacritty
 
 # Focus Window
-alt - u : yabai --message window --focus north
-alt - e : yabai --message window --focus south
-alt - d : yabai --message window --focus west
-alt - a : yabai --message window --focus east
-alt - o : yabai --message window --focus prev
+alt - k : yabai --message window --focus north
+alt - j : yabai --message window --focus south
+alt - h : yabai --message window --focus west
+alt - l : yabai --message window --focus east
+# alt - o : yabai --message window --focus prev
 
 # Swap Window
-alt + ctrl - u : yabai --message window --swap north
-alt + ctrl - e : yabai --message window --swap south
-alt + ctrl - d : yabai --message window --swap west
-alt + ctrl - a : yabai --message window --swap east
-alt + ctrl - o : yabai --message window --swap prev
+alt + ctrl - k : yabai --message window --swap north
+alt + ctrl - j : yabai --message window --swap south
+alt + ctrl - h : yabai --message window --swap west
+alt + ctrl - l : yabai --message window --swap east
+# alt + ctrl - o : yabai --message window --swap prev
 
 # Warp(Move) Window
-alt + cmd - u : yabai --message window --warp north
-alt + cmd - e : yabai --message window --warp south
-alt + cmd - d : yabai --message window --warp west
-alt + cmd - a : yabai --message window --warp east
-alt + cmd - o : yabai --message window --warp prev
+alt + cmd - k : yabai --message window --warp north
+alt + cmd - j : yabai --message window --warp south
+alt + cmd - h : yabai --message window --warp west
+alt + cmd - l : yabai --message window --warp east
+# alt + cmd - o : yabai --message window --warp prev
 
 # Toggle Window Split
-alt - g : yabai --message window --toggle split
+alt - r : yabai --message window --toggle split
 
 # Increase window size
-alt - h : yabai --message window --resize top:0:-50
-alt - n : yabai --message window --resize bottom:0:50
-alt - r : yabai --message window --resize left:-50:0
-alt - t : yabai --message window --resize right:50:0
+alt - d : yabai --message window --resize top:0:-50
+alt - f : yabai --message window --resize bottom:0:50
+alt - s : yabai --message window --resize left:-50:0
+alt - g : yabai --message window --resize right:50:0
 
 # Decrease window size
-alt + ctrl - h : yabai --message window --resize bottom:0:-50
-alt + ctrl - n : yabai --message window --resize top:0:50
-alt + ctrl - r : yabai --message window --resize right:-50:0
-alt + ctrl - t : yabai --message window --resize left:50:0
+alt + ctrl - d : yabai --message window --resize bottom:0:-50
+alt + ctrl - f : yabai --message window --resize top:0:50
+alt + ctrl - s : yabai --message window --resize right:-50:0
+alt + ctrl - g : yabai --message window --resize left:50:0
 
 # Focus on space
 # can also be configured shortcuts in Settings -> Keyboard -> Shortcuts -> Mission Control
@@ -49,7 +49,7 @@ alt - 6 : yabai --message space --focus 6
 alt - 7 : yabai --message space --focus 7
 alt - 8 : yabai --message space --focus 8
 alt - 9 : yabai --message space --focus 9
-alt - l : yabai --message space --focus recent
+alt - o : yabai --message space --focus recent
 
 # Move window to space
 alt + ctrl - 1 : yabai --message window --space 1 && yabai --message window --focus recent
@@ -61,13 +61,13 @@ alt + ctrl - 6 : yabai --message window --space 6 && yabai --message window --fo
 alt + ctrl - 7 : yabai --message window --space 7 && yabai --message window --focus recent
 alt + ctrl - 8 : yabai --message window --space 8 && yabai --message window --focus recent
 alt + ctrl - 9 : yabai --message window --space 9 && yabai --message window --focus recent
-alt + ctrl - l : yabai --message window --space recent && yabai --message window --focus recent
+alt + ctrl - o : yabai --message window --space recent && yabai --message window --focus recent
 
 # Auto-balance window
-alt - b : yabai --message space --balance
+alt - i : yabai --message space --balance
 
 # Make window larger
-alt + ctrl - b : yabai --message window --resize bottom_right:50:50 ; yabai --message window --resize top_left:-50:-50
+alt + ctrl - i : yabai --message window --resize bottom_right:50:50 ; yabai --message window --resize top_left:-50:-50
 
 # Focus monitor
 alt - up   : yabai --message display --focus prev
