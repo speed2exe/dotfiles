@@ -1,5 +1,5 @@
 # Open Alacritty
-alt - return : alacritty
+alt - x : alacritty
 
 # Focus Window
 alt - u : yabai --message window --focus north
