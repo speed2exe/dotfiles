@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# deb: apt update && apt install -y xz-utils
 # . <(curl https://raw.githubusercontent.com/speed2exe/dotfiles/main/dev/nix.sh)
 
 set -e
