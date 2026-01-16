@@ -45,16 +45,3 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end
   end
 })
-
--- go to last edited file when opening nvim with no arguments
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    -- Only trigger if no file arguments were passed and we are in an empty buffer
-    if vim.fn.argc() == 0 and vim.api.nvim_buf_get_name(0) == "" then
-      -- Jump to the '0 mark (last file edited before exit)
-      vim.cmd('normal! `0')
-      -- Close the initial empty buffer
-      vim.cmd("bwipeout 1")
-    end
-  end,
-})
