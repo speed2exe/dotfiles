@@ -85,10 +85,6 @@ style = "Regular"
 opacity = 0.7
 decorations = "None"
 
-[terminal.shell]
-program = "/usr/bin/env"
-args = [ "bash" ]
-
 #
 # [hints]
 # alphabet = "123456789"
