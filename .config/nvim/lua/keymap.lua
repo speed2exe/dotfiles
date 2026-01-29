@@ -89,8 +89,10 @@ end)
 set('n', '<leader>l', vim.lsp.buf.format)
 set('n', '<leader>r', vim.lsp.buf.rename)
 set('n', '<leader>a', vim.lsp.buf.code_action)
-set('n', '<leader>e', ':term bash -i <<< \'\' 2> /dev/null<C-LEFT><C-LEFT><C-LEFT><RIGHT>')
-set('v', '<leader>e', ':w! /tmp/nvim-shell-cmd.sh<CR>:term bash -i < /tmp/nvim-shell-cmd.sh 2> /dev/null<CR>')
+set('v', '<leader>e', ':w! /tmp/nvim-shell-cmd.sh<CR>:term $SHELL < /tmp/nvim-shell-cmd.sh<CR>')
+
+set('n', '<leader>e', ':term ')
+-- set('v', '<leader>e', ':$SHELL<CR>')
 set('n', '<leader>u', '<CMD>lcd %:p:h<CR>')     -- go to current file directory
 set('n', '<leader>x', fn.open_term_at_file_dir) -- open interactive terminal at current file directory
 
