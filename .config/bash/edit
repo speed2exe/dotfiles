@@ -1,10 +1,16 @@
 #!/usr/bin/env bash
 
+editor="${VISUAL:-$EDITOR}"
+if [ -z "$editor" ]; then
+  echo "No editor set (VISUAL or EDITOR)" >&2
+  return 1
+fi
+
 # Find the position of the first ':'
 pos="${1%%:*}"
 if [[ "$pos" == "$1" ]]; then
   # No ':' found, open the file directly
-  nvim "$@" && return 0
+  $editor "$@" && return 0
 fi
 
 # Extract the file and line parts
@@ -15,11 +21,11 @@ line="${1#*:}"
 pos="${line%%:*}"
 if [[ "$pos" == "$line" ]]; then
   # No second ':' found, open the file at the given line number
-  nvim "$file" +$line "$@" && return 0
+  $editor "$file" +$line "$@" && return 0
 fi
 
 # Extract column and line
 column="${line#*:}"
 line="${line%%:*}"
 
-nvim "$file" "+call cursor($line, $column)" "$@"
+$editor "$file" "+call cursor($line, $column)" "$@"

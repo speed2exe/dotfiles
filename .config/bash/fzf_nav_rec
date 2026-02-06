@@ -10,5 +10,5 @@ if test -d "$SELECTION"; then
   cd "$SELECTION"
   . ~/.config/bash/fzf_nav_rec
 else
-  test -f "$SELECTION" && nvim "$SELECTION"
+  test -f "$SELECTION" && e "$SELECTION"
 fi

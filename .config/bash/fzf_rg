@@ -10,6 +10,6 @@ selection=$(rg "$READLINE_LINE" --line-number --color=always --hidden --no-ignor
 
 test -z "$selection" && return
 
-file_name=$(cut -d':' -f1 <<< "$selection")
-line_number=$(cut -d':' -f2 <<< "$selection")
-nvim +"$line_number" "$file_name" +"norm zz"
+# <filename>:<line_number>:<line_content> -> <filename>:<line_number>
+file_with_line=$(cut -d: -f1-2 <<< "$selection")
+e "$file_with_line" +"norm zz"

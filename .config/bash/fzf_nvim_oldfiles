@@ -13,4 +13,4 @@ SELECTION=$(nvim --headless +':oldfiles' +':qa!' 2>&1 \
 
 test -z "$SELECTION" && return
 SELECTION=${SELECTION/#\~/$HOME}
-test -n "$SELECTION" && nvim "$SELECTION"
+test -n "$SELECTION" && e "$SELECTION"

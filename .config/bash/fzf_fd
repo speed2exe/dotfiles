@@ -11,4 +11,4 @@ selected=$(eza --all --color=always --icons=always --recurse --oneline --absolut
 
 test -z "$selected" && return
 test -d "$selected" && cd "$selected" && return
-test -f "$selected" && nvim "$selected" && return
+test -f "$selected" && e "$selected" && return
