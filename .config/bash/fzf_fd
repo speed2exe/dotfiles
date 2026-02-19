@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 
-selected=$(eza --all --color=always --icons=always --recurse --oneline --absolute \
+X_LEFT_WORD="$(. ~/.config/bash/x_left_word)"
+X_INPUT=$(eza --all --color=always --icons=always --recurse --oneline --absolute \
   | rg -v '^$|:$' \
-  | sed "s|$PWD/||" \
+  | sed "s|$PWD/|./|" \
   | fzf --preview='(test -f {2} && bat --number --color=always --theme=Dracula {2}) || (test -d {2} && eza --color=always --icons --sort accessed --color-scale=all --no-quotes --long --binary --time-style long-iso --git {2})' \
         --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
-        --query="$(</tmp/readline_line)" \
-        --scheme=path --exit-0 \
+        --query="$X_LEFT_WORD" \
+        --scheme=path \
   | cut -d' ' -f2)
 
-test -z "$selected" && return
-test -d "$selected" && cd "$selected" && return
-test -f "$selected" && e "$selected" && return
+. ~/.config/bash/insert_at_cursor
