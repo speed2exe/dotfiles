@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+test $? -eq 0 && printf "\033[42m \033[0m " || printf "\033[30;41m $? \033[0m "
+starship prompt 2> /dev/null
+. ~/.config/bash/save_last_cmd

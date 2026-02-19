@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-word="$(. ~/.config/bash/get_last_word_before_cursor)"
-selected="$(tmux capture-pane -pe \
+X_LEFT_WORD="$(. ~/.config/bash/x_left_word)"
+X_INPUT="$(tmux capture-pane -pe \
   | tr ' ' '\n' \
   | awk '!x[$0]++' \
-  | fzf --layout=reverse --height=7 --query="$word")" || return
+  | fzf --layout=reverse --height=7 --query="$X_LEFT_WORD")" || return
 
 . ~/.config/bash/insert_at_cursor

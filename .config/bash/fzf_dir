@@ -5,7 +5,6 @@ selected=$(eza --only-dirs --all --color=always --icons=always --recurse --oneli
   | sed "s|$PWD/|./|" \
   | fzf --preview='eza --color=always --icons --sort accessed --color-scale=all --no-quotes --long --binary --time-style long-iso --git {2}' \
         --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
-        --exit-0 \
   | cut -d' ' -f2)
 
 test -z "$selected" && return

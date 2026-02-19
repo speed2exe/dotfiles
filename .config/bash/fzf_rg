@@ -5,7 +5,6 @@ selection=$(rg "$READLINE_LINE" --line-number --color=always --hidden --no-ignor
         --preview='bat --number --color=always --theme=Dracula --highlight-line={2} {1}' \
         --preview-window='noborder,+{2}/2' \
         --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
-        --exit-0 \
       )
 
 test -z "$selection" && return

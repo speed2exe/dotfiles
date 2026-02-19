@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Extract the word from the left of the cursor and export it as X_LEFT_WORD
+# e.g. text: "hello good|bye human" -> X_LEFT_WORD="good"
+
 line="$READLINE_LINE"
 point="$READLINE_POINT"
 test "$point" -eq 0 && return

@@ -27,12 +27,11 @@ case "${#COMP_WORDS[@]}" in
     ;;
 esac
 
-word="$(. ~/.config/bash/get_last_word_before_cursor)"
-selected="$(cat /tmp/fzf_comp \
+X_LEFT_WORD="$(. ~/.config/bash/x_left_word)"
+X_INPUT="$(cat /tmp/fzf_comp \
   | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' \
   | awk '!x[$0]++' \
   | fzf --layout=reverse --height=7 \
-        --query=$word \
-        --exit-0  --select-1 )" || return
+        --query=$X_LEFT_WORD)" || return
 
 . ~/.config/bash/insert_at_cursor
