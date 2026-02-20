@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 printf "$READLINE_LINE" > /tmp/readline_line
-VISUAL="$VISUAL_NO_FORK" e /tmp/readline_line -c "set syntax=bash"
+VISUAL="$VISUAL_NO_FORK" e /tmp/readline_line -c "set filetype=bash"
 READLINE_LINE="$(< /tmp/readline_line)"
