@@ -28,7 +28,8 @@ PS1='$(. ~/.config/bash/prompt)\n$ '
 export MANPAGER='nvim +Man!'
 export FZF_DEFAULT_OPTS='--ansi --color=base16 --inline-info --preview-window=noborder --select-1 --exit-0'
 export GIT_PAGER='delta --syntax-theme Dracula --paging=never'
-export VISUAL='neovide --frame=none --fork'
+export VISUAL_NO_FORK='neovide --frame=none --'
+export VISUAL='neovide --frame=none --fork --'
 export EDITOR='nvim'
 
 # set commonly used aliases
@@ -84,7 +85,7 @@ bind -x '"\C-f":". ~/.config/bash/fzf_fd"'
 bind -x '"\C-t":". ~/.config/bash/fzf_nav_rec"'
 bind -x '"\C-q":". ~/.config/bash/delete_history_entry"'
 bind -x '"\C-l":". ~/.config/bash/fortune_grayed"'
-bind -x '"\C-k":tmux capture-pane -p -e -S -3000 | nvim -c ":%s/\v\n{2,}$/\r/" -c "Ansi" -c "set buftype=nofile"'
+bind -x '"\C-k":tmux capture-pane -p -e -S -2048 > /tmp/tmux-capture && e -c "Ansi" /tmp/tmux-capture'
 # bind -x '"\C-l":". ~/.config/bash/fzf_tmux_line"'
 # bind -x '"\C-;":". ~/.config/bash/fzf_tmux_word"'
 bind -x '"\C-x":". ~/.config/bash/fzf_tmux"'
@@ -97,6 +98,7 @@ bind -x '"\C-x":". ~/.config/bash/fzf_tmux"'
 
 bind -m vi-command -x '"yy":". ~/.config/bash/clipboard_copy"'
 bind -m vi-command -x '"p": ". ~/.config/bash/vi_cmd_paste"'
+bind -m vi-command -x '"v": ". ~/.config/bash/edit_cmd_line"'
 
 # Source extra init file (if any)
 test -f ~/.init.bash && . ~/.init.bash || true
