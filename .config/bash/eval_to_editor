@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+eval "$READLINE_LINE" > /tmp/readline_line_eval
+e -c "Ansi" /tmp/readline_line_eval
