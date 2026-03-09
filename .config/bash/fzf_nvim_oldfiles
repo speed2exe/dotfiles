@@ -5,7 +5,8 @@ SELECTION=$(nvim --headless +':oldfiles' +':qa!' 2>&1 \
   | sed 's/.$//' \
   | xargs eza --sort=none --color=always --icons=always 2> /dev/null \
   | sed "s| .*$HOME| ~|" \
-  | fzf --no-sort --query "${PWD/#$HOME/\~}" \
+  | fzf --no-sort --query "${PWD/#$HOME/\~}/" \
+      --scheme=path \
       --preview="bat --number --color=always --theme=Dracula \$(sed \"s|^~|$HOME|\" <<< '{2}')" \
       --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
       | cut -d' ' -f2
