@@ -1,17 +1,16 @@
 #!/usr/bin/env bash
 
-SELECTION=$(nvim --headless --noplugin +':oldfiles' +':qa!' 2>&1 \
+X_LEFT_WORD="$(. ~/.config/bash/x_left_word)"
+X_INPUT=$(nvim --headless --noplugin +':oldfiles' +':qa!' 2>&1 \
   | cut -d' ' -f2 \
   | sed 's/.$//' \
   | xargs eza --sort=none --color=always --icons=always 2> /dev/null \
   | sed "s| .*$HOME| ~|" \
-  | fzf --no-sort --query "${PWD/#$HOME/\~}/" \
-      --scheme=path \
-      --preview="bat --number --color=always --theme=Dracula \$(sed \"s|^~|$HOME|\" <<< '{2}')" \
-      --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
-      | cut -d' ' -f2
+  | fzf --no-sort --query "${PWD/#$HOME/\~}/$X_LEFT_WORD" \
+        --scheme=path \
+        --preview="bat --number --color=always --theme=Dracula \$(sed \"s|^~|$HOME|\" <<< '{2}')" \
+        --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
+        | cut -d' ' -f2
     )
 
-test -z "$SELECTION" && return
-SELECTION=${SELECTION/#\~/$HOME}
-test -n "$SELECTION" && e "$SELECTION"
+. ~/.config/bash/insert_at_cursor
