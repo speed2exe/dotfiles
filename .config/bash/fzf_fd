@@ -10,4 +10,8 @@ X_INPUT=$(eza --all --color=always --icons=always --recurse --oneline --absolute
         --scheme=path \
   | cut -d' ' -f2)
 
-. ~/.config/bash/insert_at_cursor
+if test -f "$X_INPUT"; then
+  "$EDITOR" "$X_INPUT"
+elif test -d "$X_INPUT"; then
+  cd "$X_INPUT"
+fi
