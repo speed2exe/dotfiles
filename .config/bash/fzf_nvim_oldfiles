@@ -13,4 +13,6 @@ X_INPUT=$(nvim --headless --noplugin +':oldfiles' +':qa!' 2>&1 \
         | cut -d' ' -f2
     )
 
-. ~/.config/bash/insert_at_cursor
+if test -f "$X_INPUT"; then
+  nvim "$X_INPUT"
+fi
