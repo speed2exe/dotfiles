@@ -13,6 +13,4 @@ X_INPUT=$(nvim --headless --noplugin +':oldfiles' +':qa!' 2>&1 \
         | cut -d' ' -f2
     )
 
-if test -f "$X_INPUT"; then
-  nvim "$X_INPUT"
-fi
+test -n "$X_INPUT" && eval nvim "$X_INPUT"
