@@ -3,7 +3,7 @@
 X_LEFT_WORD="$(. ~/.config/bash/x_left_word)"
 X_INPUT=$(eza --all --color=always --icons=always --recurse --oneline --absolute --classify=always \
   | rg '\*$' | sed "s|$PWD/|./|;s/.$//" \
-  | fzf --preview='test "$(dd bs=2 count=1 < {2} 2> /dev/null)" = "#!" && bat --theme=Dracula --number --color=always {2} || (file {2} && ldd {2})' \
+  | fzf --preview='test "$(dd bs=2 count=1 < {2} 2> /dev/null)" = "#!" && bat --number --color=always {2} || (file {2} && ldd {2})' \
         --query="$X_LEFT_WORD" \
         --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
   | cut -d' ' -f2)

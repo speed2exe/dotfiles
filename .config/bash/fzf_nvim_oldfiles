@@ -8,7 +8,7 @@ X_INPUT=$(nvim --headless --noplugin +':oldfiles' +':qa!' 2>&1 \
   | sed "s| .*$HOME| ~|" \
   | fzf --no-sort --query "${PWD/#$HOME/\~}/$X_LEFT_WORD" \
         --scheme=path \
-        --preview="bat --number --color=always --theme=Dracula \$(sed \"s|^~|$HOME|\" <<< '{2}')" \
+        --preview="bat --number --color=always \$(sed \"s|^~|$HOME|\" <<< '{2}')" \
         --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
         | cut -d' ' -f2
     )

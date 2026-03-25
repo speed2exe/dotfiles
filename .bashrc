@@ -37,7 +37,7 @@ export EDITOR='nvim'
 
 # set commonly used aliases
 alias e='. ~/.config/bash/edit'
-alias cat='bat --theme=Dracula --plain --no-pager'
+alias cat='bat --plain --no-pager'
 alias xcopy='xclip -selection clipboard'
 alias cd='. ~/.config/bash/cd'
 alias l='eza --icons --sort accessed --color-scale=all --no-quotes --color=always'
