@@ -32,7 +32,7 @@ sed -i 's/home.packages = /home.packages = with pkgs; /' ~/.config/home-manager/
 pkgs=(
     git direnv gh starship
     ripgrep procs delta delve
-    fd neovim fzf eza bat
+    fd neovim fzf eza bat bat-extras.batman
     btop kalker gcc gnumake
 )
 for pkg in "${pkgs[@]}"; do
