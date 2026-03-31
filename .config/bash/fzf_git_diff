@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+GIT_DIFF_FILES=$(git diff --name-only --cached; git diff --name-only; git ls-files --others --exclude-standard)
+test -z "$GIT_DIFF_FILES" && return
+
+X_LEFT_WORD="$(. ~/.config/bash/x_left_word)"
+X_INPUT=$(eza --all --color=always --icons=always --oneline --absolute $GIT_DIFF_FILES \
+  | rg -v '^$|:$' \
+  | sed "s|$PWD/|./|" \
+  | fzf --preview='git diff HEAD -- {2} | delta' \
+        --bind='ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-j:preview-down,ctrl-k:preview-up' \
+        --query="$X_LEFT_WORD" \
+        --scheme=path \
+  | cut -d' ' -f2
+)
+
+test -n "$X_INPUT" && eval nvim "$X_INPUT"
