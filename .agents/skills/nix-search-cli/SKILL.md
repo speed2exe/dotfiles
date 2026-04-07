@@ -4,113 +4,36 @@ description: Search for Nix packages using the nix-search CLI tool
 ---
 # nix-search-cli
 
-Search for Nix packages using the nix-search CLI tool.
+Search for Nix packages using the nix-search CLI tool, which queries https://search.nixos.org. Supports filtering by name, version, programs, channel, and ElasticSearch QueryString syntax. Wildcards (`*`, `?`) are supported; regex is not.
 
-## Description
-
-This skill allows searching for Nix packages using the nix-search CLI, which queries the https://search.nixos.org index. Supports filtering by name, version, programs, and more.
-
-## Prerequisites
-
-- nix-search CLI installed and available in PATH
-- See: https://github.com/peterldowns/nix-search-cli
+**Prerequisites:** `nix-search` in PATH — https://github.com/peterldowns/nix-search-cli
+**Tip:** Use this before adding packages with the `home-manager-add-packages` skill to verify package names.
 
 ## Usage
 
-Basic search (same as web interface):
 ```
-nix-search python linter
-```
-
-Search by package name:
-```
-nix-search --name python
-nix-search --name 'emacsPackages.*'
-```
-
-Search by version:
-```
-nix-search --version 1.20
-nix-search --version '1.*'
+nix-search python linter                              # basic search
+nix-search --name 'emacsPackages.*'                   # by name (wildcard)
+nix-search --version '1.*'                            # by version
+nix-search --program "py*"                            # by installed program
+nix-search --channel=23.11 nodejs                     # specific channel (default: unstable)
+nix-search --flakes wayland                           # search flakes
+nix-search --query-string="package_programs:(crystal OR irb)"  # ElasticSearch
+nix-search golang --program go --version '1.*' --details       # combined
+nix-search --json --details --max-results 50 --reverse python  # output options
 ```
 
-Search by installed programs:
-```
-nix-search --program python
-nix-search --program "py*"
-```
-
-Search on specific channel (default: unstable):
-```
-nix-search --channel=unstable python3
-nix-search --channel=23.11 nodejs
-```
-
-Search flakes:
-```
-nix-search --flakes wayland
-```
-
-Advanced search with ElasticSearch QueryString:
-```
-nix-search --query-string="package_programs:(crystal OR irb)"
-nix-search --query-string='package_description:(MIT Scheme)'
-```
-
-Combined search with multiple filters:
-```
-nix-search golang --program go --version '1.*' --details
-```
-
-Output options:
-```
-nix-search --json python           # JSON output
-nix-search --details python      # Expanded details
-nix-search --max-results 50 python  # Limit results
-nix-search --reverse python        # Reverse order
-```
-
-## Common Options
+## Options
 
 | Flag | Description |
 |------|-------------|
-| -c, --channel | Which channel to search (default: unstable) |
-| -d, --details | Show expanded details |
-| -f, --flakes | Search flakes instead of nixpkgs |
-| -j, --json | JSON output format |
-| -m, --max-results | Maximum results (default: 20) |
-| -n, --name | Search by package name |
-| -p, --program | Search by installed programs |
-| -q, --query-string | ElasticSearch QueryString |
-| -r, --reverse | Reverse result order |
-| -s, --search | Default search (same as website) |
-| -v, --version | Search by version |
-
-## Examples
-
-1. Find Python development tools:
-   ```
-   nix-search --program python --details
-   ```
-
-2. Find Node.js version 20.x:
-   ```
-   nix-search --name nodejs --version '20.*'
-   ```
-
-3. Find all packages related to "linter":
-   ```
-   nix-search linter --max-results 100
-   ```
-
-4. Find packages with specific license:
-   ```
-   nix-search --query-string='package_license:"MIT"' --json
-   ```
-
-## Notes
-
-- The search index is provided by search.nixos.org
-- Wildcards (* and ?) are supported in name, version, and program filters
-- Regular expressions are NOT supported, use wildcards instead
-- QueryString syntax follows ElasticSearch conventions
+| `-c, --channel` | Channel to search (default: unstable) |
+| `-d, --details` | Show expanded details |
+| `-f, --flakes` | Search flakes instead of nixpkgs |
+| `-j, --json` | JSON output |
+| `-m, --max-results` | Max results (default: 20) |
+| `-n, --name` | Filter by package name |
+| `-p, --program` | Filter by installed program |
+| `-q, --query-string` | ElasticSearch QueryString |
+| `-r, --reverse` | Reverse result order |
+| `-v, --version` | Filter by version |
