@@ -33,6 +33,8 @@ home_config_dirs=(
   ".xinitrc"
   ".bash_profile"
   ".bashrc"
+
+  ".agents/skills"
 )
 
 for dir in "${home_config_dirs[@]}"; do

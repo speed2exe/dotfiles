@@ -19,4 +19,8 @@ ln -s ~/github.com/speed2exe/dotfiles/.config/direnv        direnv
 ln -s ~/github.com/speed2exe/dotfiles/macos/skhd    skhd
 ln -s ~/github.com/speed2exe/dotfiles/macos/yabai   yabai
 ln -s ~/github.com/speed2exe/dotfiles/macos/borders borders
+
+## Agent
+ln -s ~/github.com/speed2exe/dotfiles/.agents/skills ~/.agents/skills
+
 ```
