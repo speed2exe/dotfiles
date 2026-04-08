@@ -9,6 +9,26 @@ local function create_directory_if_not_exists(path)
   end
 end
 
+-- Enable treesitter highlighting for any filetype with an available parser
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function(ev)
+    local lang = vim.treesitter.language.get_lang(ev.match) or ev.match
+    if pcall(vim.treesitter.start, ev.buf, lang) then
+      return
+    end
+    -- Parser not installed or failed, attempt to install
+    local ok, ts = pcall(require, 'nvim-treesitter')
+    if not ok then return end
+    local available = ts.get_available()
+    if vim.tbl_contains(available, lang) then
+      ts.install({ lang })
+      -- what to do here?
+    else
+      vim.treesitter.start(ev.buf, lang)
+    end
+  end,
+})
+
 vim.api.nvim_create_autocmd("BufWritePre", {
   callback = function()
     -- remove trailing whitespace
