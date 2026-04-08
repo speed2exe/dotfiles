@@ -3,7 +3,6 @@
 X_LEFT_WORD="$(. ~/.config/bash/x_left_word)"
 X_INPUT=$(nvim --headless --noplugin +':oldfiles' +':qa!' 2>&1 \
   | cut -d' ' -f2 \
-  | sed 's/.$//' \
   | xargs eza --sort=none --color=always --icons=always 2> /dev/null \
   | sed "s| .*$HOME| ~|" \
   | fzf --no-sort --query "${PWD/#$HOME/\~}/$X_LEFT_WORD" \

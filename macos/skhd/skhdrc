@@ -1,3 +1,7 @@
+# No ops for annoying hide and minimize shortcuts
+cmd - h : :
+cmd - m : :
+
 # Open Alacritty
 alt - x : alacritty
 
