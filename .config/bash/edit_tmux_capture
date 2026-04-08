@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 tmux capture-pane -p -e -S -2048 > /tmp/tmux-capture
-e -c "Ansi" -c "$" /tmp/tmux-capture
+nvim -c "Ansi" -c 'normal! G{}' /tmp/tmux-capture
