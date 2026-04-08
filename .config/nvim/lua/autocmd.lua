@@ -20,10 +20,24 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end
 })
 
--- background task to poll for LSP status
+-- background task every second
 local has_message = false
+local installing = {}
 local timer = vim.loop.new_timer()
 timer:start(0, 1000, vim.schedule_wrap(function()
+  local buf = vim.api.nvim_get_current_buf()
+  if not vim.treesitter.highlighter.active[buf] then
+    local lang = vim.treesitter.language.get_lang(vim.bo.filetype)
+    if lang then
+      if not pcall(vim.treesitter.start, buf, lang) then
+        if not installing[lang] and not pcall(vim.treesitter.language.inspect, lang) then
+          installing[lang] = true
+          require('nvim-treesitter').install({ lang })
+        end
+      end
+    end
+  end
+
   local status = vim.lsp.status()
   if #status > 0 then
     has_message = true
