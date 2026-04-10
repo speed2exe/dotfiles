@@ -7,7 +7,7 @@ test -z "$PS1" && return
 
 # attach to tmux session if exists
 if command -v tmux &> /dev/null; then
-  if test ! "$TMUX"; then
+  if [[ "$TERM" != screen* && "$TERM" != tmux* ]]; then
     UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_name}')
     for UNATTACHED in $UNATTACHEDS; do
       if [ "${UNATTACHED:0:1}" = "_" ]; then
