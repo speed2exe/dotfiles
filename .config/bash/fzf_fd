@@ -11,7 +11,14 @@ X_INPUT=$(eza --all --color=always --icons=always --recurse --oneline --absolute
   | cut -d' ' -f2)
 
 if test -f "$X_INPUT"; then
+  READLINE_LINE=""
+  READLINE_POINT=0
   "$EDITOR" "$X_INPUT"
 elif test -d "$X_INPUT"; then
-  cd "$X_INPUT"
+  if cd "$X_INPUT"; then
+    READLINE_LINE=""
+    READLINE_POINT=0
+    echo $ cd "$X_INPUT"
+    . ~/.config/bash/prompt
+  fi
 fi
