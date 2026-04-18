@@ -60,11 +60,11 @@ stty -ixon susp undef discard undef
 set -o vi
 
 # Keybind utils to save and load command line
-bind -x '"\M-0":". ~/.config/bash/save_cmd_line"'
-bind -x '"\M-1":". ~/.config/bash/load_cmd_line"'
+# bind -x '"\M-0":". ~/.config/bash/save_cmd_line"'
+# bind -x '"\M-1":". ~/.config/bash/load_cmd_line"'
 
 # Keybinds involving changing directory
-bind -x '"\M-2":". ~/.config/bash/fzf_rev_dir_history"'
+# bind -x '"\M-2":". ~/.config/bash/fzf_rev_dir_history"'
 # bind -x '"\M-3":". ~/.config/bash/fzf_fd"'
 # bind -x '"\M-4":". ~/.config/bash/fzf_nav_rec"'
 # bind -x '"\M-5":". ~/.config/bash/goto_git_root"'
@@ -73,13 +73,14 @@ bind -x '"\M-2":". ~/.config/bash/fzf_rev_dir_history"'
 # bind -x '"\M-8":". ~/.config/bash/fzf_dir"'
 
 # Keybinds
-bind '"\C-a":"\M-0\M-2\n\M-1"'
+# bind '"\C-a":"\M-0\M-2\n\M-1"'
 # bind '"\C-f":"\M-0\M-3\n\M-1"'
 # bind '"\C-t":"\M-0\M-4\n\M-1"'
 # bind '"\C-g":"\M-0\M-8\n\M-1"'
 # bind '"\C-g":"\M-0\M-5\n\M-1"'
 # bind '"\C-u":"\M-0\M-6\n\M-1"'
 # bind '"\C-o":"\M-0\M-7\n\M-1"'
+bind -x '"\C-a":". ~/.config/bash/fzf_rev_dir_history"'
 bind -x '"\C-r":". ~/.config/bash/fzf_rev_cmd_history"'
 bind -x '"\C-e":". ~/.config/bash/eval_to_editor"'
 bind -x '"\C-o":". ~/.config/bash/fzf_nvim_oldfiles"'

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 HOME_SYM="$(realpath $HOME)"
-DIR=$(tac ~/marks/dir_history.txt \
+X_INPUT=$(tac ~/marks/dir_history.txt \
   | awk '!x[$0]++' \
   | tee /tmp/dir_history.txt \
   | xargs eza --sort=none --list-dirs --icons=always --color=always 2> /dev/null \
@@ -13,6 +13,13 @@ DIR=$(tac ~/marks/dir_history.txt \
 
 tac /tmp/dir_history.txt > ~/marks/dir_history.txt
 
-test -z "$DIR" && return
-DIR=${DIR/#\~/$HOME}
-test -d "$DIR" && cd "$DIR"
+test -z "$X_INPUT" && return
+X_INPUT=${X_INPUT/#\~/$HOME}
+if test -d "$X_INPUT"; then
+  if cd "$X_INPUT"; then
+    READLINE_LINE=""
+    READLINE_POINT=0
+    echo $ cd "$X_INPUT"
+    . ~/.config/bash/prompt
+  fi
+fi
