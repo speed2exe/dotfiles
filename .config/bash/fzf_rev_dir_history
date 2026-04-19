@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+X_LEFT_WORD="$(. ~/.config/bash/x_left_word)"
 HOME_SYM="$(realpath $HOME)"
 X_INPUT=$(tac ~/marks/dir_history.txt \
   | awk '!x[$0]++' \
@@ -7,7 +8,7 @@ X_INPUT=$(tac ~/marks/dir_history.txt \
   | xargs eza --sort=none --list-dirs --icons=always --color=always 2> /dev/null \
   | sed "s|$PWD/|./|;s|$HOME_SYM|~|;s|$HOME|~|" \
   | fzf --preview="eza --color=always --icons --sort accessed --color-scale=all --no-quotes --long --binary --time-style long-iso --git \$(sed \"s|^~|$HOME|\" <<< '{2}')" \
-        --query="$(</tmp/readline_line)" \
+        --query="$X_LEFT_WORD" \
         --scheme=path --no-sort \
   | cut -d' ' -f2)
 
