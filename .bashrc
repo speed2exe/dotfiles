@@ -26,7 +26,6 @@ PS1='$(. ~/.config/bash/prompt)\n$ '
 
 # set environment variables
 export BAT_THEME=Dracula
-eval "$(batman --export-env)"
 export FZF_DEFAULT_OPTS='--ansi --color=base16 --inline-info --preview-window=noborder --select-1 --exit-0'
 export GIT_PAGER='delta --syntax-theme Dracula --paging=never'
 export EDITOR='nvim'
