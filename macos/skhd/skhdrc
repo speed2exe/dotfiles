@@ -1,6 +1,7 @@
 # No ops for annoying hide and minimize shortcuts
 cmd - h : :
 cmd - m : :
+ctrl - space : ~/.config/bash/toggle_input
 
 # Open Alacritty
 alt - x : alacritty

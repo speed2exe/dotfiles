@@ -6,9 +6,6 @@ set -e
 # must be run in the current directory
 cd "$(dirname "$0")"
 
-# create the config directory if it doesn't exist
-mkdir -p ~/.config
-
 home_config_dirs=(
   ".config/nix"
   ".config/direnv"
@@ -39,5 +36,6 @@ home_config_dirs=(
 
 for dir in "${home_config_dirs[@]}"; do
   rm -rf ~/$dir
+  mkdir -p $(dirname ~/$dir)
   ln --symbolic --force $(pwd)/$dir ~/$dir
 done
