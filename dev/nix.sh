@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 
-# deb: apt update && apt install -y xz-utils
 # . <(curl https://raw.githubusercontent.com/speed2exe/dotfiles/main/dev/nix.sh)
 
 set -e
+
+if command -v apt &> /dev/null; then
+  if command -v sudo &> /dev/null; then
+    sudo apt update && sudo apt install -y xz-utils
+  else
+    apt update && apt install -y xz-utils
+  fi
+fi
 
 # Download config and load into machine
 cd

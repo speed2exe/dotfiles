@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+EN="com.apple.keylayout.US"
+ZH="com.apple.inputmethod.SCIM.ITABC"
+
+current=$(im-select)
+if [ "$current" = "$EN" ]; then
+    im-select "$ZH"
+else
+    im-select "$EN"
+fi
