@@ -47,5 +47,8 @@ for pkg in "${pkgs[@]}"; do
 done
 home-manager switch
 
+# add github.com to known_hosts to avoid ssh warning
+echo 'ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts'
+
 # Restart Shell
 exec bash
