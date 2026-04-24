@@ -40,7 +40,7 @@ pkgs=(
     git direnv gh starship
     ripgrep procs delta delve
     fd neovim fzf eza bat bat-extras.batman
-    btop kalker gcc gnumake
+    btop kalker gcc gnumake tree-sitter
 )
 for pkg in "${pkgs[@]}"; do
     sed -i "/home.packages = with pkgs;/a \    $pkg" ~/.config/home-manager/home.nix
