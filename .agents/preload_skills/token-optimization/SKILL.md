@@ -3,6 +3,12 @@ name: token-optimization
 description: Rules to minimize token usage
 ---
 
+## Concise responses
+
+State the result. Skip the process. Omit what the user already knows.
+
+- One short paragraph or a few bullets. Not both.
+
 ## Cap output
 
 Every command can produce unbounded output. Always limit it.
@@ -42,9 +48,3 @@ Check context before any read. Do not re-read files, re-run searches, or verify 
 ## Surgical edits only
 
 Use targeted replacements (`sed -i '' 's/old/new/g'`). Never rewrite whole files.
-
-## Concise responses
-
-State the result. Skip the process. Omit what the user already knows.
-
-- One short paragraph or a few bullets. Not both.
