@@ -4,7 +4,16 @@ ZH="com.apple.inputmethod.SCIM.ITABC"
 
 current=$(im-select)
 if [ "$current" = "$EN" ]; then
-    im-select "$ZH"
+    target="$ZH"
 else
-    im-select "$EN"
+    target="$EN"
 fi
+
+im-select "$target"
+
+# Wait until the switch is confirmed, up to ~500ms
+for i in $(seq 1 10); do
+    sleep 0.05
+    [ "$(im-select)" = "$target" ] && break
+    im-select "$target"
+done
