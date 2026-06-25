@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -e
+cd "$(dirname "$0")"
+
+# ~
+ln -s ~/github.com/speed2exe/dotfiles/.bashrc       ~/.bashrc
+ln -s ~/github.com/speed2exe/dotfiles/.bash_profile ~/.bash_profile
+
+# ~/.config
+mkdir -p ~/.config && cd ~/.config
+ln -s ./.config/starship.toml starship.toml
+ln -s ./.config/nvim          nvim
+ln -s ./.config/bash          bash
+ln -s ./.config/tmux          tmux
+ln -s ./.config/nix           nix
+ln -s ./.config/alacritty     alacritty
+ln -s ./.config/direnv        direnv
+
+## special stuff for macos
+ln -s ./macos/skhd    skhd
+ln -s ./macos/yabai   yabai
+ln -s ./macos/borders borders
