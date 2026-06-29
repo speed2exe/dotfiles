@@ -48,6 +48,7 @@ alias git-tag='git-ref refs/tags'
 alias git-graph='git log --graph --decorate --oneline --all'
 # alias git-blame='. ~/.config/bash/git_blame'
 alias git-ls='. ~/.config/bash/git_ls'
+alias edit-bashrc='e ~/.bashrc && . ~/.bashrc'
 
 # disable keybinds not applicable for modern terminals
 # ixon: ctrl-s, ctrl-q
@@ -106,3 +107,4 @@ bind -m vi-command -x '"v": ". ~/.config/bash/edit_cmd_line"'
 
 # Source extra init file (if any)
 test -f ~/.init.bash && . ~/.init.bash || true
+alias edit-init-bash='e ~/.init.bash && . ~/.init.bash'
