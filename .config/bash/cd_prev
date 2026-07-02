@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 DIR_HIST_INDEX=${DIR_HIST_INDEX:-2}
 dir="$(tail -n $DIR_HIST_INDEX ~/marks/dir_history.txt | head -n 1)"

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 CLIPBOARD=$(xclip -o -selection clipboard)
 PRE_CURSOR="${READLINE_LINE:0:$READLINE_POINT}"

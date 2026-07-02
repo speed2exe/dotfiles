@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 GIT_DIFF_FILES=$(git diff --name-only --cached; git diff --name-only; git ls-files --others --exclude-standard)
 test -z "$GIT_DIFF_FILES" && return

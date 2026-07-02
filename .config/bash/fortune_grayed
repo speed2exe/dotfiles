@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 printf "\033[90m$(fortune)\n\n\033[0m"

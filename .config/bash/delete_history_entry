@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 SELECTION=$(history | fzf --tac --no-sort --query "$READLINE_LINE")
 test -z "$SELECTION" && return
