@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 READLINE_LINE="$(</tmp/readline_line)"
 readline_point="$(</tmp/readline_point)"

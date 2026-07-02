@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 X_LEFT_WORD="$(. ~/.config/bash/x_left_word)"
 X_INPUT=$(eza --all --color=always --icons=always --recurse --oneline --absolute --classify=always \

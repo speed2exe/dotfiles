@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 post_cursor="${READLINE_LINE:$READLINE_POINT}"
 pre_cursor="${READLINE_LINE:0:$(($READLINE_POINT-${#X_LEFT_WORD}))}$X_INPUT"

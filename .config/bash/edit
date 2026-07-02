@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 editor="${VISUAL:-$EDITOR}"
 if [ -z "$editor" ]; then
