@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-selection=$(tac ~/.cmd_line_history \
+selection=$(set -o pipefail; tac ~/.cmd_line_history \
   | awk '!x[$0]++' \
   | tee /tmp/.cmd_line_history \
   | bat --color=always --language=bash --style=plain \
-  | fzf --scheme=history --no-sort --query "$READLINE_LINE")
+  | fzf --scheme=history --no-sort --query "$READLINE_LINE") || return
 
 tac /tmp/.cmd_line_history > ~/.cmd_line_history
 
