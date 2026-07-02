@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 (command -v xclip > /dev/null) && (echo "$READLINE_LINE" | xclip -selection clipboard) && return
 (command -v pbcopy > /dev/null) && (echo "$READLINE_LINE" | pbcopy) && return

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 X_LEFT_WORD="$(. ~/.config/bash/x_left_word)"
 HOME_SYM="$(realpath $HOME)"

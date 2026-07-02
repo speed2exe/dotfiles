@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 COMP_WORDS=($(compgen -abck))
 

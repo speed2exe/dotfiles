@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+EN="com.apple.keylayout.US"
+ZH="com.apple.inputmethod.SCIM.ITABC"
+
+current=$(im-select)
+if [ "$current" = "$EN" ]; then
+    target="$ZH"
+else
+    target="$EN"
+fi
+
+im-select "$target"
+
+# Wait until the switch is confirmed, up to ~500ms
+for i in $(seq 1 10); do
+    sleep 0.05
+    [ "$(im-select)" = "$target" ] && break
+    im-select "$target"
+done

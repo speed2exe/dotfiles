@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 selected=$(eza --only-dirs --all --color=always --icons=always --recurse --oneline --absolute 2> /dev/null \
   | rg -v '^$|:$' \

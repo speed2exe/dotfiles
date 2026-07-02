@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -euo pipefail
 
 for item in $(ls); do
   eza_output=$(eza --icons=always --color=always --list-dirs "$item")
