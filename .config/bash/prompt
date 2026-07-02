@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 test $? -eq 0 && printf "\033[42m \033[0m " || printf "\033[30;41m $? \033[0m "
 printf "\033[30;33m$(date)\033[0m "

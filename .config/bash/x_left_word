@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 # Extract the word from the left of the cursor and export it as X_LEFT_WORD
 # e.g. text: "hello good|bye human" -> X_LEFT_WORD="good"

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 printf "$READLINE_LINE" > /tmp/readline_line
 VISUAL="$VISUAL_NO_FORK" e /tmp/readline_line -c "set filetype=bash"

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -euo pipefail
 
 selection=$(rg "$READLINE_LINE" --line-number --color=always --hidden --no-ignore 2> /dev/null \
   | fzf --delimiter=':' \
