@@ -56,9 +56,6 @@ alias edit-bashrc='e ~/.bashrc && . ~/.bashrc'
 # discard undef: ctrl-o
 stty -ixon susp undef discard undef
 
-# vi mode
-set -o vi
-
 # Keybind utils to save and load command line
 # bind -x '"\M-0":". ~/.config/bash/save_cmd_line"'
 # bind -x '"\M-1":". ~/.config/bash/load_cmd_line"'

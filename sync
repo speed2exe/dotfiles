@@ -30,6 +30,7 @@ home_config_dirs=(
   ".xinitrc"
   ".bash_profile"
   ".bashrc"
+  ".inputrc"
 
   ".agents/skills"
 )
