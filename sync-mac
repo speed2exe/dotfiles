@@ -6,6 +6,7 @@ cd "$(dirname "$0")"
 # ~
 ln -s ~/github.com/speed2exe/dotfiles/.bashrc       ~/.bashrc
 ln -s ~/github.com/speed2exe/dotfiles/.bash_profile ~/.bash_profile
+ln -s ~/github.com/speed2exe/dotfiles/.inputrc      ~/.inputrc
 
 # ~/.config
 mkdir -p ~/.config && cd ~/.config
