@@ -14,6 +14,9 @@ opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 
+-- set cursor block
+opt.guicursor = ''
+
 vim.cmd.colorscheme('dracula')
 local nvim_set_hl = vim.api.nvim_set_hl
 nvim_set_hl(0, 'WinSeparator', {})
