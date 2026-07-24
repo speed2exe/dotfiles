@@ -104,4 +104,3 @@ bind -m vi-command -x '"v": ". ~/.config/bash/edit_cmd_line"'
 
 # Source extra init file (if any)
 test -f ~/.init.bash && . ~/.init.bash || true
-alias edit-init-bash='e ~/.init.bash && . ~/.init.bash'
