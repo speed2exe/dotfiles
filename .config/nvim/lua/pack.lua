@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd('PackChanged', {
 
 vim.pack.add({
   -- Editor
-  'https://github.com/github/copilot.vim',
+  -- 'https://github.com/github/copilot.vim',
   'https://github.com/folke/which-key.nvim',
   'https://github.com/m00qek/baleia.nvim',
   'https://github.com/onsails/lspkind-nvim',
