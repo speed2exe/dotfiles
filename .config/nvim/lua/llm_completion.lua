@@ -22,14 +22,26 @@ local function text_after_cursor()
   return table.concat(lines, '\n')
 end
 
+local completion_job_id = nil
+
 -- usage: fim_completion <before_cursor> <after_cursor>
-local function fim_completion(before_cursor, after_cursor)
-  local lines = vim.fn.systemlist({
-    "bash", "-c", ". ~/.completion.bash && fim_completion "
-  .. vim.fn.shellescape(before_cursor) .. " "
-  .. vim.fn.shellescape(after_cursor)
+local function fim_completion(before_cursor, after_cursor, callback)
+  local cmd = ". ~/.completion.bash && fim_completion "
+    .. vim.fn.shellescape(before_cursor) .. " "
+    .. vim.fn.shellescape(after_cursor)
+
+  completion_job_id = vim.fn.jobstart({ "bash", "-c", cmd }, {
+    stdout_buffered = true,
+    on_stdout = vim.schedule_wrap(function(_, data)
+      completion_job_id = nil
+      if data and #data > 0 then
+        callback(data)
+      end
+    end),
+    on_exit = vim.schedule_wrap(function()
+      completion_job_id = nil
+    end),
   })
-  return lines
 end
 
 local IDLE_DELAY_MS = 256
@@ -69,17 +81,29 @@ local function set_completion(completion_lines)
   end
 end
 
+-- Dismiss: clear extmarks without inserting
+local function dismiss_completion()
+  if completion_job_id then
+    vim.fn.jobstop(completion_job_id)
+    completion_job_id = nil
+  end
+  vim.api.nvim_buf_clear_namespace(0, ns_id, 0, -1)
+  vim.b.llm_completion_lines = nil
+end
+
 local function setup_completion_in_insert_mode()
   local before_cursor = text_before_cursor()
   local after_cursor = text_after_cursor()
-  local completion_lines = fim_completion(before_cursor, after_cursor)
-  -- for testing, we can just return a static string
-  -- local completion_lines = {
-  --   "This is a test completion.",
-  --   "You can replace this with the actual completion logic.",
-  --   "The completion will be inserted after the cursor."
-  -- }
-  set_completion(completion_lines)
+  local buf = vim.api.nvim_get_current_buf()
+
+  dismiss_completion()
+
+  fim_completion(before_cursor, after_cursor, function(completion_lines)
+    if vim.api.nvim_get_current_buf() == buf
+      and vim.api.nvim_get_mode().mode == "i" then
+      set_completion(completion_lines)
+    end
+  end)
 end
 
 -- Accept: insert the stored completion text at cursor and clear extmarks
@@ -108,12 +132,6 @@ local function accept_completion()
   vim.b.llm_completion_lines = nil
 end
 
--- Dismiss: clear extmarks without inserting
-local function dismiss_completion()
-  vim.api.nvim_buf_clear_namespace(0, ns_id, 0, -1)
-  vim.b.llm_completion_lines = nil
-end
-
 -- Set up keymaps (buffer-local so they only apply when completions are active)
 -- You can set these globally or conditionally
 vim.keymap.set("i", "<Tab>", function()
@@ -130,6 +148,10 @@ end, { desc = "Accept LLM completion or Tab" })
 -- Timer management
 local timer = vim.uv.new_timer() -- libuv timer (non-blocking)
 local function start_or_restart_timer()
+  if completion_job_id then
+    vim.fn.jobstop(completion_job_id)
+    completion_job_id = nil
+  end
   timer:stop()                   -- cancel any previous countdown
   timer:start(
     IDLE_DELAY_MS,               -- delay in milliseconds
