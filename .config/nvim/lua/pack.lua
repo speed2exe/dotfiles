@@ -34,15 +34,15 @@ vim.pack.add({
   'https://github.com/nvim-treesitter/nvim-treesitter',
   'https://github.com/nvim-treesitter/nvim-treesitter-context',
 
-  -- Completion
+  -- Insert Mode Completion
   'https://github.com/hrsh7th/nvim-cmp',
   'https://github.com/hrsh7th/cmp-nvim-lsp',
-  'https://github.com/hrsh7th/cmp-nvim-lsp-signature-help',
   'https://github.com/hrsh7th/cmp-nvim-lua',
-  'https://github.com/hrsh7th/cmp-cmdline',
   'https://github.com/hrsh7th/cmp-buffer',
   'https://github.com/hrsh7th/cmp-path',
-  'https://github.com/ray-x/cmp-treesitter',
+
+  -- Command Mode Completion
+  'https://github.com/hrsh7th/cmp-cmdline',
 
   -- Zig
   'https://github.com/speed2exe/zig-comp-diag.nvim',
@@ -97,8 +97,6 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({}),
   sources = {
     { name = 'nvim_lsp' },
-    { name = 'nvim_lsp_signature_help' },
-    { name = 'treesitter' },
     { name = 'path' },
     { name = 'buffer' },
     { name = 'nvim_lua' },
@@ -108,11 +106,9 @@ cmp.setup({
       with_text = true,
       menu = {
         nvim_lsp = '[LSP]',
-        nvim_lsp_signature_help = '[signature]',
-        treesitter = '[TS]',
         path = '[path]',
         buffer = '[buf]',
-        nvim_lua = '[lua]',
+        nvim_lua = '[nvim_lua]',
       },
     }),
   },
