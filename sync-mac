@@ -1,24 +1,47 @@
 #!/usr/bin/env bash
 
-set -e
+# This script symlinks the dotfiles to the home directory on macOS
+set -euo pipefail
+
+# must be run in the current directory
 cd "$(dirname "$0")"
+repo="$(pwd)"
 
-# ~
-ln -s ~/github.com/speed2exe/dotfiles/.bashrc       ~/.bashrc
-ln -s ~/github.com/speed2exe/dotfiles/.bash_profile ~/.bash_profile
-ln -s ~/github.com/speed2exe/dotfiles/.inputrc      ~/.inputrc
+home_links=(
+  ".bashrc"
+  ".bash_profile"
+  ".inputrc"
+)
 
-# ~/.config
-mkdir -p ~/.config && cd ~/.config
-ln -s ./.config/starship.toml starship.toml
-ln -s ./.config/nvim          nvim
-ln -s ./.config/bash          bash
-ln -s ./.config/tmux          tmux
-ln -s ./.config/nix           nix
-ln -s ./.config/alacritty     alacritty
-ln -s ./.config/direnv        direnv
+config_links=(
+  "starship.toml"
+  "nvim"
+  "bash"
+  "tmux"
+  "nix"
+  "alacritty"
+  "direnv"
+)
 
-## special stuff for macos
-ln -s ./macos/skhd    skhd
-ln -s ./macos/yabai   yabai
-ln -s ./macos/borders borders
+# special stuff for macos
+macos_links=(
+  "skhd"
+  "yabai"
+  "borders"
+)
+
+for f in "${home_links[@]}"; do
+  rm -rf "$HOME/$f"
+  ln -s -f "$repo/$f" "$HOME/$f"
+done
+
+mkdir -p "$HOME/.config"
+for d in "${config_links[@]}"; do
+  rm -rf "$HOME/.config/$d"
+  ln -s -f "$repo/.config/$d" "$HOME/.config/$d"
+done
+
+for d in "${macos_links[@]}"; do
+  rm -rf "$HOME/.config/$d"
+  ln -s -f "$repo/macos/$d" "$HOME/.config/$d"
+done

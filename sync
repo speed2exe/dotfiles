@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 # This script symlinks all the dotfiles to the home directory
-set -e
+set -euo pipefail
 
 # must be run in the current directory
 cd "$(dirname "$0")"
+repo="$(pwd)"
 
 home_config_dirs=(
   ".config/nix"
@@ -36,7 +37,7 @@ home_config_dirs=(
 )
 
 for dir in "${home_config_dirs[@]}"; do
-  rm -rf ~/$dir
-  mkdir -p $(dirname ~/$dir)
-  ln --symbolic --force $(pwd)/$dir ~/$dir
+  rm -rf "$HOME/$dir"
+  mkdir -p "$(dirname "$HOME/$dir")"
+  ln -s -f "$repo/$dir" "$HOME/$dir"
 done
