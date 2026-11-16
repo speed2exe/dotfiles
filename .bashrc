@@ -2,12 +2,15 @@
 # ~/.bashrc
 #
 
+# Source ~/.bashrc-before if exists
+test -f ~/.bashrc-before && . ~/.bashrc-before || true
+
 # exit if not running interactively
 test -z "$PS1" && return
 
 # attach to tmux session if exists
 if command -v tmux &> /dev/null; then
-  if [[ "$TERM" != screen* && "$TERM" != tmux* ]]; then
+  if [[ -z "$TMUX" ]]; then
     UNATTACHEDS=$(tmux list-session -f '#{==:#{session_attached},0}' -F '#{session_name}')
     for UNATTACHED in $UNATTACHEDS; do
       if [ "${UNATTACHED:0:1}" = "_" ]; then
@@ -102,5 +105,5 @@ bind -m vi-command -x '"yy":". ~/.config/bash/clipboard_copy"'
 bind -m vi-command -x '"p": ". ~/.config/bash/vi_cmd_paste"'
 bind -m vi-command -x '"v": ". ~/.config/bash/edit_cmd_line"'
 
-# Source extra init file (if any)
-test -f ~/.init.bash && . ~/.init.bash || true
+# Source ~/.bashrc-after if exists
+test -f ~/.bashrc-after && . ~/.bashrc-after || true
