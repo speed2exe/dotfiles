@@ -32,8 +32,6 @@ home_config_dirs=(
   ".bash_profile"
   ".bashrc"
   ".inputrc"
-
-  ".agents/skills"
 )
 
 for dir in "${home_config_dirs[@]}"; do
